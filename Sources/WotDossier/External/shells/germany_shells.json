@@ -13,6 +13,21 @@
       "devices": "\t17\t"
     }
   },
+  "_20mm_Pzgr39_bot": {
+    "id": "\t147\t",
+    "userString": "#germany_vehicles:_20mm_Pzgr39_bot",
+    "icon": "ap",
+    "price": "\t3\t",
+    "notInShop": "\ttrue\t",
+    "kind": "ARMOR_PIERCING",
+    "caliber": "\t20\t",
+    "isTracer": "\ttrue\t",
+    "effects": "autoArmorPiercing",
+    "damage": {
+      "armor": "\t6\t",
+      "devices": "\t8\t"
+    }
+  },
   "_7.92mm_APCR": {
     "id": "\t101\t",
     "userString": "#germany_vehicles:_7.92mm_APCR",
@@ -186,6 +201,21 @@
       "devices": "\t50\t"
     }
   },
+  "_37mm_Pzgr36_bot": {
+    "id": "\t144\t",
+    "userString": "#germany_vehicles:_37mm_Pzgr36_bot",
+    "icon": "ap",
+    "price": "\t0\t",
+    "notInShop": "\ttrue\t",
+    "kind": "ARMOR_PIERCING",
+    "caliber": "\t37\t",
+    "isTracer": "\ttrue\t",
+    "effects": "smallArmorPiercing",
+    "damage": {
+      "armor": "\t5\t",
+      "devices": "\t3\t"
+    }
+  },
   "_37mm_Pzgr39t": {
     "id": "\t6\t",
     "userString": "#germany_vehicles:_37mm_Pzgr39t",
@@ -215,6 +245,52 @@
     "damage": {
       "armor": "\t40\t",
       "devices": "\t50\t"
+    }
+  },
+  "_40mm_36_M_Pancelgranat": {
+    "id": "\t151\t",
+    "userString": "#germany_vehicles:_40mm_36_M_Pancelgranat",
+    "icon": "ap",
+    "price": "\t15\t",
+    "kind": "ARMOR_PIERCING",
+    "caliber": "\t40\t",
+    "isTracer": "\ttrue\t",
+    "effects": "smallArmorPiercing",
+    "damage": {
+      "armor": "\t45\t",
+      "devices": "\t54\t"
+    }
+  },
+  "_40mm_43_M_Magvas_Panceltoro_Granat": {
+    "id": "\t152\t",
+    "userString": "#germany_vehicles:_40mm_43_M_Magvas_Panceltoro_Granat",
+    "icon": "ap",
+    "price": {
+      "#text": "\t2\t",
+      "gold": ""
+    },
+    "kind": "ARMOR_PIERCING",
+    "caliber": "\t40\t",
+    "isTracer": "\ttrue\t",
+    "effects": "smallArmorPiercing",
+    "damage": {
+      "armor": "\t45\t",
+      "devices": "\t54\t"
+    }
+  },
+  "_40mm_39_M_Repeszgranat": {
+    "id": "\t153\t",
+    "userString": "#germany_vehicles:_40mm_39_M_Repeszgranat",
+    "icon": "he",
+    "price": "\t12\t",
+    "kind": "HIGH_EXPLOSIVE",
+    "caliber": "\t40\t",
+    "explosionRadius": "0.35",
+    "isTracer": "\ttrue\t",
+    "effects": "smallHighExplosive",
+    "damage": {
+      "armor": "\t60\t",
+      "devices": "\t54\t"
     }
   },
   "_37mm_Sprg.18t": {
@@ -552,6 +628,52 @@
     "effects": "mediumArmorPiercing",
     "damage": {
       "armor": "\t135\t",
+      "devices": "\t100\t"
+    }
+  },
+  "_75mm_43_M_Pancelgranat": {
+    "id": "\t148\t",
+    "userString": "#germany_vehicles:_75mm_43_M_Pancelgranat",
+    "icon": "ap",
+    "price": "\t76\t",
+    "kind": "ARMOR_PIERCING",
+    "caliber": "\t75\t",
+    "isTracer": "\ttrue\t",
+    "effects": "mediumArmorPiercing",
+    "damage": {
+      "armor": "\t110\t",
+      "devices": "\t100\t"
+    }
+  },
+  "_75mm_40_M_Kulonleges_Nemet_Pancelgranat": {
+    "id": "\t149\t",
+    "userString": "#germany_vehicles:_75mm_40_M_Kulonleges_Nemet_Pancelgranat",
+    "icon": "ap_cr",
+    "price": {
+      "#text": "\t7\t",
+      "gold": ""
+    },
+    "kind": "ARMOR_PIERCING_CR",
+    "caliber": "\t75\t",
+    "isTracer": "\ttrue\t",
+    "effects": "mediumAPCR",
+    "damage": {
+      "armor": "\t110\t",
+      "devices": "\t100\t"
+    }
+  },
+  "_75mm_43_M_Repeszgranat": {
+    "id": "\t150\t",
+    "userString": "#germany_vehicles:_75mm_43_M_Repeszgranat",
+    "icon": "he",
+    "price": "\t60\t",
+    "kind": "HIGH_EXPLOSIVE",
+    "caliber": "\t75\t",
+    "explosionRadius": "1.06",
+    "isTracer": "\ttrue\t",
+    "effects": "mediumHighExplosive",
+    "damage": {
+      "armor": "\t175\t",
       "devices": "\t100\t"
     }
   },

@@ -120,6 +120,21 @@
       "devices": "\t50\t"
     }
   },
+  "_37mm_Odr_mle._1935_bot": {
+    "id": "\t101\t",
+    "userString": "#france_vehicles:_37mm_Odr_mle._1935_bot",
+    "icon": "ap",
+    "price": "\t0\t",
+    "notInShop": "\ttrue\t",
+    "kind": "ARMOR_PIERCING",
+    "caliber": "\t37\t",
+    "isTracer": "\ttrue\t",
+    "effects": "mediumArmorPiercing",
+    "damage": {
+      "armor": "\t5\t",
+      "devices": "\t3\t"
+    }
+  },
   "_37mm_FrtPrf1935": {
     "id": "\t13\t",
     "userString": "#france_vehicles:_37mm_FrtPrf1935",
@@ -1086,6 +1101,21 @@
     "id": "\t92\t",
     "userString": "#france_vehicles:_120mm_Prf1943_fallout",
     "icon": "ap",
+    "price": "\t81\t",
+    "notInShop": "\ttrue\t",
+    "kind": "ARMOR_PIERCING",
+    "caliber": "\t120\t",
+    "isTracer": "\ttrue\t",
+    "effects": "largeArmorPiercing",
+    "damage": {
+      "armor": "\t400\t",
+      "devices": "\t165\t"
+    }
+  },
+  "_120mm_Prf1943_fallout2": {
+    "id": "\t104\t",
+    "userString": "#france_vehicles:_120mm_Prf1943_fallout",
+    "icon": "ap",
     "price": "\t1060\t",
     "kind": "ARMOR_PIERCING",
     "caliber": "\t120\t",
@@ -1147,6 +1177,22 @@
   },
   "_120mm_OE_mle_1930_fallout": {
     "id": "\t94\t",
+    "userString": "#france_vehicles:_120mm_OE_mle_1930_fallout",
+    "icon": "he",
+    "price": "\t72\t",
+    "notInShop": "\ttrue\t",
+    "kind": "HIGH_EXPLOSIVE",
+    "caliber": "\t120\t",
+    "explosionRadius": "2.42",
+    "isTracer": "\ttrue\t",
+    "effects": "largeHighExplosive",
+    "damage": {
+      "armor": "\t515\t",
+      "devices": "\t165\t"
+    }
+  },
+  "_120mm_OE_mle_1930_fallout2": {
+    "id": "\t105\t",
     "userString": "#france_vehicles:_120mm_OE_mle_1930_fallout",
     "icon": "he",
     "price": "\t900\t",

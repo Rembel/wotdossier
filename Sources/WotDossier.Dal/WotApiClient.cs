@@ -538,7 +538,7 @@ namespace WotDossier.Dal
 
                 if (response["status"].ToString() != "error" && response["data"].Any())
                 {
-                    battles = response["data"][clanId.ToString()].ToObject<List<BattleJson>>();
+                    battles = response["data"].ToObject<List<BattleJson>>();
                 }
             }
             catch (Exception e)

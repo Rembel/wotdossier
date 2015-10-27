@@ -181,6 +181,36 @@
       "devices": "\t50\t"
     }
   },
+  "_37mm_UBR-160_bot": {
+    "id": "\t154\t",
+    "userString": "#ussr_vehicles:_37mm_UBR-160_bot",
+    "icon": "ap",
+    "price": "\t8\t",
+    "notInShop": "\ttrue\t",
+    "kind": "ARMOR_PIERCING",
+    "caliber": "\t37\t",
+    "isTracer": "\ttrue\t",
+    "effects": "smallArmorPiercing",
+    "damage": {
+      "armor": "\t18\t",
+      "devices": "\t15\t"
+    }
+  },
+  "_37mm_UBRT1_bot": {
+    "id": "\t151\t",
+    "userString": "#ussr_vehicles:_37mm_UBRT1_bot",
+    "icon": "ap",
+    "price": "\t0\t",
+    "notInShop": "\ttrue\t",
+    "kind": "ARMOR_PIERCING",
+    "caliber": "\t37\t",
+    "isTracer": "\ttrue\t",
+    "effects": "smallArmorPiercing",
+    "damage": {
+      "armor": "\t5\t",
+      "devices": "\t3\t"
+    }
+  },
   "_37mm_UBR160PA": {
     "id": "\t8\t",
     "userString": "#ussr_vehicles:_37mm_UBR160PA",
@@ -1470,6 +1500,21 @@
     "id": "\t142\t",
     "userString": "#ussr_vehicles:_130mm_UBR-482_fallout",
     "icon": "ap",
+    "price": "\t108\t",
+    "notInShop": "\ttrue\t",
+    "kind": "ARMOR_PIERCING",
+    "caliber": "\t130\t",
+    "isTracer": "\ttrue\t",
+    "effects": "largeArmorPiercing",
+    "damage": {
+      "armor": "\t490\t",
+      "devices": "\t180\t"
+    }
+  },
+  "_130mm_UBR-482_fallout2": {
+    "id": "\t155\t",
+    "userString": "#ussr_vehicles:_130mm_UBR-482_fallout",
+    "icon": "ap",
     "price": "\t1118\t",
     "kind": "ARMOR_PIERCING",
     "caliber": "\t130\t",
@@ -1482,6 +1527,24 @@
   },
   "_130mm_UBR-482P_fallout": {
     "id": "\t143\t",
+    "userString": "#ussr_vehicles:_130mm_UBR-482P_fallout",
+    "icon": "ap_cr",
+    "price": {
+      "#text": "\t1\t",
+      "gold": ""
+    },
+    "notInShop": "\ttrue\t",
+    "kind": "ARMOR_PIERCING_CR",
+    "caliber": "\t130\t",
+    "isTracer": "\ttrue\t",
+    "effects": "largeAPCR",
+    "damage": {
+      "armor": "\t490\t",
+      "devices": "\t180\t"
+    }
+  },
+  "_130mm_UBR-482P_fallout2": {
+    "id": "\t156\t",
     "userString": "#ussr_vehicles:_130mm_UBR-482P_fallout",
     "icon": "ap_cr",
     "price": {
@@ -1499,6 +1562,22 @@
   },
   "_130mm_UOF-482_fallout": {
     "id": "\t144\t",
+    "userString": "#ussr_vehicles:_130mm_UOF-482_fallout",
+    "icon": "he",
+    "price": "\t99\t",
+    "notInShop": "\ttrue\t",
+    "kind": "HIGH_EXPLOSIVE",
+    "caliber": "\t130\t",
+    "explosionRadius": "2.78",
+    "isTracer": "\ttrue\t",
+    "effects": "largeHighExplosive",
+    "damage": {
+      "armor": "\t640\t",
+      "devices": "\t180\t"
+    }
+  },
+  "_130mm_UOF-482_fallout2": {
+    "id": "\t157\t",
     "userString": "#ussr_vehicles:_130mm_UOF-482_fallout",
     "icon": "he",
     "price": "\t978\t",

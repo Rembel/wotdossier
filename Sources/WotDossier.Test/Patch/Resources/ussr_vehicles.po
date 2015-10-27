@@ -11,54 +11,53 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 msgid "A-20"
-msgstr "А-20"
+msgstr "A-20"
 
 msgid "A-20_descr"
 msgstr ""
-"Танк проходил испытания вместе с прототипом Т-34 — танком А-32. "
-"Предполагалось выпускать серийно обе машины, но А-20 в серийное производство "
-"не пошёл."
+"Underwent trials at the same time as the A-32, a prototype of the T-34. Both "
+"vehicles were adopted for service. However, the A-20 was never mass-produced."
 
 msgid "A-20_mod_1938"
-msgstr "А-20 обр. 1938 г."
+msgstr "A-20 mod. 1938"
 
 msgid "A-20_mod_1941"
-msgstr "А-20 обр. 1940 г."
+msgstr "A-20 mod. 1941"
 
 msgid "A-20bis"
-msgstr "СП-3"
+msgstr "SP-3"
 
 msgid "A-32"
-msgstr "А-32"
+msgstr "A-32"
 
 msgid "A-32_descr"
 msgstr ""
-"Опытный средний танк, разрабатывался и испытывался параллельно с А-20. После "
-"доработок выпускался серийно как Т-34."
+"Experimental medium tank. The A-32 and A-20 were developed and put on trials "
+"at the same time. The A-32 was adopted for service and evolved into the T-34."
 
 msgid "A-32_mod_1939"
-msgstr "А-32"
+msgstr "A-32"
 
 msgid "A43"
-msgstr "А-43"
+msgstr "A-43"
 
 msgid "A43_descr"
 msgstr ""
-"Разработан в 1941 году на заводе № 183 под обозначением А-43. Новая машина "
-"должна была заменить танк Т-34. Танк предполагалось оснастить торсионной "
-"подвеской, дизелем В-5, новой КПП, командирской башенкой и усиленной до 60 "
-"мм лобовой бронёй."
+"Developed at Factory No. 183 in 1941 under the designation A-43. The vehicle "
+"was to replace the T-34. The A-43 was conceived to feature a torsion bar "
+"suspension, a V-5 engine, a new transmission, a commander’s cupola, and "
+"front armor enhanced to 60 mm."
 
 msgid "A44"
-msgstr "А-44"
+msgstr "A-44"
 
 msgid "A44_descr"
 msgstr ""
-"Проект был разработан в апреле 1941 года ведущим конструктором завода №183 "
-"И. С. Бером. Планировали выпускать машину в трёх вариантах, отличающихся по "
-"бронированию, вооружению, боевой массе и скорости. Опытный образец "
-"предполагалось выпустить к началу 1942 года, но в связи с началом войны и "
-"эвакуацией все работы над танком были прекращены."
+"The project was developed at Factory No. 183 by engineer I.S. Ber in April "
+"1941. The vehicle was to be manufactured in three different versions with "
+"different armor, armament, combat weight, and speed. The prototype was "
+"scheduled to be built by the beginning of 1942. However, the project was "
+"discontinued due to the outbreak of the Soviet–German war."
 
 msgid "AEC3"
 msgstr "AEC3"
@@ -67,369 +66,379 @@ msgid "AEC_A190"
 msgstr "AEC A190"
 
 msgid "AMO-3"
-msgstr "АМО-3"
+msgstr "AMO-3"
 
 msgid "AT-1"
-msgstr "АТ-1"
+msgstr "AT-1"
 
 msgid "AT-1_descr"
 msgstr ""
-"Опытная САУ на базе Т-26. В 1936–1937 гг. было изготовлено несколько машин и "
-"восемь бронекорпусов. Серийно не выпускалась."
+"Experimental self-propelled gun on the T-26 basis. Several vehicles and "
+"eight armored hulls were built. Never saw mass production."
 
 msgid "AT-1bis"
-msgstr "АТ-1 Бис"
+msgstr "AT-1 Bis"
 
 msgid "Alarm_flags"
-msgstr "«Сигнальные флажки»"
+msgstr "Signal Flags"
+
+msgid "Alarm_flags_bot"
+msgstr "Signal Flags"
 
 msgid "BD-2"
-msgstr "БД-2"
+msgstr "BD-2"
 
 msgid "BT-2"
-msgstr "БТ-2"
+msgstr "BT-2"
 
 msgid "BT-2_bis"
-msgstr "БТ-5"
+msgstr "BT-5"
 
 msgid "BT-2_cylindrical"
-msgstr "БТ-2"
+msgstr "BT-2"
 
 msgid "BT-2_descr"
 msgstr ""
-"Разработан на базе танка Christie М1931. Выпускался на Харьковском "
-"паровозостроительном заводе. Всего в 1932–1935 гг. было выпущено 650 БТ-2 и "
-"1884 БТ-5."
+"Developed on the basis of the Christie tank M1931. Produced at the Kharkiv "
+"Komintern Locomotive Factory (KhPZ), with 650 BT-2 tanks and 1,884 BT-5 "
+"tanks manufactured from 1932 through 1935."
 
 msgid "BT-2bis"
-msgstr "БТ-5"
+msgstr "BT-5"
 
 msgid "BT-5"
-msgstr "БТ-5"
+msgstr "BT-5"
 
 msgid "BT-5_cylindrical"
-msgstr "БТ-7 обр. 1935 г."
+msgstr "BT-7 mod. 1935"
 
 msgid "BT-5_cylindrical_short"
-msgstr "БТ-7 обр. 1935 г."
+msgstr "BT-7 mod. 1935"
 
 msgid "BT-7"
-msgstr "БТ-7"
+msgstr "BT-7"
 
 msgid "BT-7_conic"
-msgstr "БТ-7 обр. 1937 г."
+msgstr "BT-7 mod. 1937"
 
 msgid "BT-7_conic_short"
-msgstr "БТ-7 обр. 1937 г."
+msgstr "BT-7 mod. 1937"
 
 msgid "BT-7_descr"
 msgstr ""
-"Дальнейшая модернизация серии БТ. С 1935 по 1940 год было выпущено 5556 "
-"машин разных модификаций."
+"The BT-7 was a further modernization of the BT series, with a total of 5,556 "
+"vehicles of different variants produced from 1935 through 1940."
 
 msgid "BT-SV"
-msgstr "БТ-СВ"
+msgstr "BT-SV"
 
 msgid "BT-SV_descr"
 msgstr ""
-"Опытный танк, разработанный группой Цыганова в 1936–1938 гг. Прошёл "
-"полигонные испытания. На вооружении не состоял."
+"Experimental tank. Developed by the Tsyganov group from 1936 through 1938. "
+"The vehicle underwent field trials, but never saw service."
 
 msgid "Bedford_Twin-Six"
 msgstr "Bedford Twin-Six"
 
 msgid "Chassis_A43"
-msgstr "А-43 вариант А"
+msgstr "A-43 variant A"
 
 msgid "Chassis_A43_2"
-msgstr "А-43 вариант Б"
+msgstr "A-43 variant B"
 
 msgid "Chassis_A44"
-msgstr "А-44"
+msgstr "A-44"
 
 msgid "Chassis_A44_2"
-msgstr "А-44 усиленная"
+msgstr "A-44 enhanced"
 
 msgid "Chassis_IS-6"
-msgstr "ИС-6"
+msgstr "IS-6"
 
 msgid "Chassis_IS-7_fallout"
-msgstr "ИС-7"
+msgstr "IS-7"
 
 msgid "Chassis_IS4"
-msgstr "ИС-4М"
+msgstr "IS-4M"
 
 msgid "Chassis_IS8"
-msgstr "Т-10"
+msgstr "T-10"
 
 msgid "Chassis_IS8_2"
-msgstr "Т-10М"
+msgstr "T-10M"
 
 msgid "Chassis_KV-13"
-msgstr "КВ-13 обр. 1942 г."
+msgstr "KV-13 mod. 1942"
 
 msgid "Chassis_KV-13_2"
-msgstr "КВ-13 обр. 1943 г."
+msgstr "KV-13 mod. 1943"
 
 msgid "Chassis_KV-1s"
-msgstr "КВ-1С обр. 1942 г."
+msgstr "KV-1S mod. 1942"
 
 msgid "Chassis_KV-5"
-msgstr "КВ-5"
+msgstr "KV-5"
 
 msgid "Chassis_KV1"
-msgstr "КВ-1 обр. 1940 г."
+msgstr "KV-1 mod. 1940"
 
 msgid "Chassis_KV1_2"
-msgstr "КВ-1 обр. 1941 г."
+msgstr "KV-1 mod. 1941"
 
 msgid "Chassis_KV2_1"
-msgstr "КВ-2 обр. 1940 г."
+msgstr "KV-2 mod. 1940"
 
 msgid "Chassis_KV2_2"
-msgstr "КВ-2 обр. 1941 г."
+msgstr "KV-2 mod. 1941"
 
 msgid "Chassis_KV4"
-msgstr "КВ-4"
+msgstr "KV-4"
 
 msgid "Chassis_KV4_2"
-msgstr "КВ-4 Бис"
+msgstr "KV-4 Bis"
 
 msgid "Chassis_LTP"
-msgstr "ЛТП"
+msgstr "LTP"
 
 msgid "Chassis_Object263"
-msgstr "Объект 263"
+msgstr "Object 263"
 
 msgid "Chassis_Object268"
-msgstr "Объект 268"
-
-msgid "Chassis_Object268_fallout"
-msgstr "Объект 268"
+msgstr "Object 268"
 
 msgid "Chassis_Object416"
-msgstr "Объект 416 обр. 1952 г."
+msgstr "Object 416 mod. 1952"
 
 msgid "Chassis_Object416_2"
-msgstr "Объект 416 обр. 1953 г."
+msgstr "Object 416 mod. 1953"
 
 msgid "Chassis_Object_140"
-msgstr "Объект 140"
-
-msgid "Chassis_Object_140_fallout"
-msgstr "Объект 140"
+msgstr "Object 140"
 
 msgid "Chassis_Object_212"
-msgstr "212А"
+msgstr "212A"
 
 msgid "Chassis_Object_212_2"
-msgstr "212А усиленная"
+msgstr "212A enhanced"
 
 msgid "Chassis_Object_261"
-msgstr "Объект 261"
+msgstr "Object 261"
 
 msgid "Chassis_Object_430"
-msgstr "Объект 430"
+msgstr "Object 430"
 
 msgid "Chassis_Object_704"
-msgstr "Объект 704"
+msgstr "Object 704"
 
 msgid "Chassis_Object_704_2"
-msgstr "Объект 704М"
+msgstr "Object 704M"
 
 msgid "Chassis_Object_907"
-msgstr "Объект 907"
+msgstr "Object 907"
 
 msgid "Chassis_Object_907A"
-msgstr "Объект 907A"
+msgstr "Object 907A"
 
 msgid "Chassis_R100_SU122A"
-msgstr "СУ-122А"
+msgstr "SU-122A"
 
 msgid "Chassis_R100_SU122A_2"
-msgstr "СУ-122А усиленная"
+msgstr "SU-122A enhanced"
 
 msgid "Chassis_R101_MT25"
-msgstr "МТ-25"
+msgstr "MT-25"
 
 msgid "Chassis_R101_MT25_2"
-msgstr "МТ-25 усиленная"
+msgstr "MT-25 reinforced"
 
 msgid "Chassis_R104_Object_430_II"
-msgstr "Объект 430 Вариант II"
+msgstr "Object 430 Version II"
 
 msgid "Chassis_R104_Object_430_II_2"
-msgstr "Объект 430 Вариант II усиленная"
+msgstr "Object 430 Version II enhanced"
 
 msgid "Chassis_R105_BT_7A"
-msgstr "БТ-7 арт."
+msgstr "BT-7 art."
 
 msgid "Chassis_R106_KV85"
-msgstr "КВ-85"
+msgstr "KV-85"
 
 msgid "Chassis_R106_KV85_2"
-msgstr "КВ-122"
+msgstr "KV-122"
 
 msgid "Chassis_R107_LTB"
-msgstr "ЛТТБ"
+msgstr "LTTB"
 
 msgid "Chassis_R107_LTB_2"
-msgstr "ЛТТБ усиленная"
+msgstr "LTTB enhanced"
 
 msgid "Chassis_R108_T34_85M"
-msgstr "Т-34-85М"
+msgstr "T-34-85M"
 
 msgid "Chassis_R109_T54S"
-msgstr "Т-54 обл. вариант"
+msgstr "T-54 ltwt. version"
 
 msgid "Chassis_R109_T54S_2"
-msgstr "Т-54 обл. вариант усиленная"
+msgstr "T-54 enhanced ltwt. version"
 
 msgid "Chassis_R110_Object_260"
-msgstr "Объект 260 обр. 1945 г."
+msgstr "Object 260 mod. 1945"
 
 msgid "Chassis_R111_ISU130"
-msgstr "ИСУ-130"
+msgstr "ISU-130"
 
 msgid "Chassis_R112_T54_45"
-msgstr "Т-54 первый образец"
+msgstr "T-54 first prototype"
 
 msgid "Chassis_R113_Object_730"
-msgstr "ИС-5 (Объект 730)"
+msgstr "IS-5 (Object 730)"
 
 msgid "Chassis_R114_Object_244"
-msgstr "Объект 244"
+msgstr "Object 244"
 
 msgid "Chassis_R115_IS-3_auto"
-msgstr "ИС-3 с МЗ"
+msgstr "IS-3 auto"
 
 msgid "Chassis_R116_ISU122C_Berlin"
-msgstr "ИСУ-122С"
+msgstr "ISU-122S"
 
 msgid "Chassis_R117_T34_85_Rudy"
-msgstr "Т-34-85-60"
+msgstr "T-34-85-60"
 
 msgid "Chassis_R118_T28_F30"
-msgstr "Т-28Э с Ф-30"
+msgstr "T-28E with F-30"
 
 msgid "Chassis_R119_Object_777"
-msgstr "Объект 777 Вариант II"
+msgstr "Object 777 Version II"
+
+msgid "Chassis_R120_T22SR_A22"
+msgstr "T-22 medium"
+
+msgid "Chassis_R121_KV4_KTT"
+msgstr "KV-4 KTTS"
+
+msgid "Chassis_R122_T44_100"
+msgstr "T-44-100"
 
 msgid "Chassis_R71_IS_2B"
-msgstr "ИС-2М"
+msgstr "IS-2M"
 
 msgid "Chassis_ST_I"
-msgstr "СТ-I"
+msgstr "ST-I"
 
 msgid "Chassis_ST_I_2"
-msgstr "СТ-IМ"
+msgstr "ST-IM"
 
 msgid "Chassis_SU-101"
-msgstr "СУ-101"
+msgstr "SU-101"
 
 msgid "Chassis_SU-101_2"
-msgstr "СУ-102"
+msgstr "SU-102"
 
 msgid "Chassis_SU100M1"
-msgstr "СУ-100М1"
+msgstr "SU-100M1"
 
 msgid "Chassis_SU100M1_2"
-msgstr "СУ-100М1 Бис"
+msgstr "SU-100M1 Bis"
 
 msgid "Chassis_SU100Y"
-msgstr "СУ-100Y"
+msgstr "SU-100Y"
 
 msgid "Chassis_SU122_44_2"
-msgstr "СУ-122-44"
+msgstr "SU-122-44"
 
 msgid "Chassis_SU122_54"
-msgstr "СУ-122-54М1"
+msgstr "SU-122-54M1"
 
 msgid "Chassis_SU122_54_2"
-msgstr "СУ-122-54М2"
+msgstr "SU-122-54M2"
 
 msgid "Chassis_SU14_1"
-msgstr "СУ-14"
+msgstr "SU-14"
 
 msgid "Chassis_SU14_1_2"
-msgstr "СУ-14-1"
+msgstr "SU-14-1"
 
 msgid "Chassis_SU76I"
-msgstr "СУ-76И"
+msgstr "SU-76I"
 
 msgid "Chassis_SU_85I"
-msgstr "СУ-85И"
+msgstr "SU-85I"
 
 msgid "Chassis_T-127"
-msgstr "Т-127"
+msgstr "T-127"
 
 msgid "Chassis_T-50"
-msgstr "Т-50"
+msgstr "T-50"
 
 msgid "Chassis_T-50_2"
-msgstr "Т-50М"
+msgstr "T-50M"
 
 msgid "Chassis_T-54_2"
-msgstr "Т-54 обр. 1946 г."
+msgstr "T-54 mod. 1946"
 
 msgid "Chassis_T-54_3"
-msgstr "Т-54 обр. 1949 г."
+msgstr "T-54 mod. 1949"
 
 msgid "Chassis_T-60"
-msgstr "Т-60"
+msgstr "T-60"
 
 msgid "Chassis_T-60_2"
-msgstr "Т-60 усиленная"
+msgstr "T-60 enhanced"
 
 msgid "Chassis_T-70"
-msgstr "Т-70"
+msgstr "T-70"
 
 msgid "Chassis_T-70_2"
-msgstr "Т-70 усиленная"
+msgstr "T-70 enhanced"
 
 msgid "Chassis_T150"
-msgstr "Т-150"
+msgstr "T-150"
 
 msgid "Chassis_T150_2"
-msgstr "Т-150М"
+msgstr "T-150M"
 
 msgid "Chassis_T44_122"
-msgstr "Т-44-122"
+msgstr "T-44-122"
 
 msgid "Chassis_T44_85"
-msgstr "Т-44-85"
+msgstr "T-44-85"
 
 msgid "Chassis_T62A"
-msgstr "Т-62А"
+msgstr "T-62A"
+
+msgid "Chassis_T62A_fallout"
+msgstr "T-62A"
 
 msgid "Chassis_T80"
-msgstr "Т-80"
+msgstr "T-80"
 
 msgid "Chassis_T80_2"
-msgstr "Т-80 усиленная"
+msgstr "T-80 enhanced"
 
 msgid "Chassis_T_50_2_1"
-msgstr "Т-50-2"
+msgstr "T-50-2"
 
 msgid "Chassis_T_50_2_2"
-msgstr "Т-50-2М"
+msgstr "T-50-2M"
 
 msgid "Chassis_Tetrarch_LL"
 msgstr "Tetrarch"
 
 msgid "Churchill_LL"
-msgstr "Черчилль III"
+msgstr "Churchill III"
 
 msgid "Churchill_LL_descr"
 msgstr ""
-"Английский танк, поступавший в СССР по ленд-лизу. Всего был поставлен 301 "
-"танк, однако часть была потеряна при транспортировке морем в Мурманск."
+"A British tank supplied to the U.S.S.R. under Lend-Lease. The U.S.S.R. "
+"received a total of 301 vehicles, with some lost at sea during transport to "
+"Murmansk."
 
 msgid "Churchll"
 msgstr "Churchill"
 
 msgid "Churchll_mk_III"
-msgstr "Черчилль III"
+msgstr "Churchill III"
 
 msgid "Continental_W-670_LL"
 msgstr "Continental W-670"
@@ -440,368 +449,390 @@ msgstr ""
 "W-670"
 
 msgid "D-744"
-msgstr "Д-744"
+msgstr "D-744"
 
 msgid "D37812_LL"
 msgstr "D37812"
 
 msgid "GAZ-202"
-msgstr "ГАЗ-202"
+msgstr "GAZ 202"
 
 msgid "GAZ-203"
-msgstr "ГАЗ-203"
+msgstr "GAZ-203"
 
 msgid "GAZ-34-BT"
-msgstr "ГАМ-34-БТ"
+msgstr "GAM-34-BT"
 
 msgid "GAZ-74B"
-msgstr "СУ-85А"
+msgstr "SU-85A"
 
 msgid "GAZ-74b"
-msgstr "СУ-85Б"
+msgstr "SU-85B"
 
 msgid "GAZ-74b_descr"
 msgstr ""
-"Дальнейшее развитие СУ-76 с более мощным вооружением на удлинённом и "
-"переработанном шасси. Разработана зимой 1944–1945 гг. Серийно не выпускалась."
+"A further modernization of the SU-76, upgraded with an extended chassis. "
+"Developed in the winter of 1944–1945. Never saw mass production."
 
 msgid "GAZ-M1"
-msgstr "ГАЗ-М1"
+msgstr "GAZ-M1"
 
 msgid "GMC"
 msgstr "GMC 6004"
 
 msgid "IS"
-msgstr "ИС"
+msgstr "IS"
 
 msgid "IS-1"
-msgstr "ИС-1"
+msgstr "IS-1"
 
 msgid "IS-122"
-msgstr "ИС-122"
+msgstr "IS-122"
 
 msgid "IS-2M"
-msgstr "ИС-2М"
+msgstr "IS-2M"
 
 msgid "IS-3"
-msgstr "ИС-3"
+msgstr "IS-3"
 
 msgid "IS-3M"
-msgstr "ИС-3М"
+msgstr "IS-3M"
 
 msgid "IS-3_K"
-msgstr "Кировец-1"
+msgstr "Kirovets-1"
 
 msgid "IS-3_descr"
 msgstr ""
-"Серийное производство началось в мае 1945 года. 7 сентября машины этого типа "
-"приняли участие в параде стран-участниц антигитлеровской коалиции в Берлине. "
-"До прекращения серийного выпуска в середине 1946 года было выпущено 1170 "
-"танков. С 1948 года до конца 50-х гг. машины проходили модернизацию."
+"Mass production of the vehicle started in May 1945. On September 7,1945, "
+"IS-3 tanks took part in the Allied Victory Parade through Berlin. A total of "
+"1170 vehicles were manufactured by the end of 1946, when production was "
+"canceled. From 1948 through the late 1950s, the tanks underwent a number of "
+"modernization refits."
 
 msgid "IS-4"
-msgstr "ИС-4"
+msgstr "IS-4"
 
 msgid "IS-4_descr"
 msgstr ""
-"Проект разрабатывался в КБ Кировского завода с декабря 1943 г. В апреле 1944 "
-"г. начались работы по производству двух прототипов танка «Объект 701». После "
-"испытаний проект был доработан, и осенью 1944 – зимой 1945 гг. были испытаны "
-"ещё два прототипа. Танк «Объект 701» №5 был рекомендован к принятию на "
-"вооружение, но из-за начавшегося производства ИС-3 серийный выпуск танка "
-"начат не был. После приостановки производства ИС-3 в 1946 г. танк ИС-4 был "
-"принят на вооружение. В 1949 г. производство ИС-4 было прекращено. В 1951 "
-"году было выпущено 25 танков ИС-4М. В дальнейшем все выпущенные ранее танки "
-"были модернизированы до уровня ИС-4М. По разным сведениям всего было "
-"построено от 235 до 258 машин, которые использовались на Дальнем Востоке."
+"The project was developed by the Design Bureau of the Chelyabinsk Kirov "
+"Plant starting in December 1943. In April 1944 two prototypes of the Object "
+"701 were built. After prototype trials, the design was improved. In late "
+"1944 and early 1945 two more prototypes underwent trials. The Object 701 No. "
+"5 was recommended for adoption into service. However, production was called "
+"off in favor of the IS-3 just entering mass-production. After IS-3 "
+"production was suspended in 1946, production of the IS-4 began, continuing "
+"until 1949. A total of 25 IS-4M tanks were built in 1951. Later all "
+"previously produced tanks were modernized to the level of the IS-4M. "
+"According to different sources, between 235 and 258 vehicles were built in "
+"total; they were stationed in the Far East."
 
 msgid "IS-6"
-msgstr "ИС-6"
+msgstr "IS-6"
 
 msgid "IS-6_descr"
 msgstr ""
-"Эскизное проектирование танка проходило в КБ Челябинского Кировского завода "
-"с начала декабря 1943 до лета 1944 года. Затем работы были перенесены на "
-"Уралмаш, где были разработаны чертежи и опытный образец. Однако танк не имел "
-"никаких преимуществ перед другими тяжёлыми танками, а также уступал по "
-"броневой защите разрабатываемому ИС-4 («Объект 701»). На вооружение принят "
-"не был."
+"Plans for this vehicle were drawn up in the construction bureau of the "
+"Chelyabinsk Kirov plant from December 1943 to the summer of 1944. Further "
+"development and the construction of the first prototype took place at the "
+"Uralmash plant. However, the vehicle had no advantages over the other heavy "
+"tank designs under consideration, and its armor was seen as inferior to the "
+"IS-4 (Object 701), so the IS-6 was not selected for production."
 
 msgid "IS-7"
-msgstr "ИС-7"
+msgstr "IS-7"
 
 msgid "IS-7_descr"
 msgstr ""
-"Работа над танком началась весной 1945 года. Прототипы испытывались в 1946 и "
-"1947 гг. В 1948 г. прошёл госиспытания. Серийно не выпускался."
+"Development of the IS-7 started in the spring of 1945. Prototypes "
+"successfully underwent trials in 1946 and 1947. However, the IS-7 never saw "
+"mass production."
 
 msgid "IS-7_fallout"
-msgstr "ИС-7 (П)"
+msgstr "(R) IS-7"
 
 msgid "IS-7_fallout_descr"
 msgstr ""
-"Работа над танком началась весной 1945 года. Прототипы испытывались в 1946 и "
-"1947 гг. В 1948 году прошёл госиспытания. Серийно не выпускался."
+"Development of the IS-7 started in the spring of 1945. Prototypes "
+"successfully underwent trials in 1946 and 1947. However, the IS-7 never saw "
+"mass production."
 
 msgid "IS-85"
-msgstr "ИС-85"
+msgstr "IS-85"
 
 msgid "IS8"
-msgstr "ИС-8"
+msgstr "T-10"
 
 msgid "IS8_descr"
 msgstr ""
-"Разработка танка началась в 1949 году в конструкторском бюро ЧКЗ под "
-"руководством Ж. Я. Котина. При проектировании танк имел обозначение «Объект "
-"730», под которым в 1950 г. была выпущена установочная партия в 10 машин. В "
-"1953 г. до принятия на вооружение танк получил наименование ИС-8. Был принят "
-"на вооружение в 1953 году под индексом Т-10. Различные источники указывают "
-"количество от 2500 до 8000 выпущенных машин."
+"Development started in 1949. The vehicle entered service in 1953 under the "
+"designation T-10. Subsequent development yielded several modifications of "
+"the tank, the most mass-produced being the T-10M. Approximately 2,500 "
+"vehicles were produced."
 
 msgid "ISU-152"
-msgstr "ИСУ-152"
+msgstr "ISU-152"
 
 msgid "ISU-152_01"
-msgstr "ИСУ-152"
+msgstr "ISU-152"
 
 msgid "ISU-152_descr"
 msgstr ""
-"Разработана на базе танка ИС. Создавалась для замены СУ-152 в связи с "
-"прекращением производства КВ-1с. С ноября 1943 по июнь 1945 года было "
-"изготовлено 4635 машин."
+"Developed on the basis of the IS tank. The ISU-152 was conceived as a "
+"replacement for the SU-152, which was based on the KV-1s chassis. A total of "
+"4,635 vehicles were built from November 1943 through June 1945."
 
 msgid "ISU-152_mod_1945"
-msgstr "ИСУ-152М"
+msgstr "ISU-152M"
 
 msgid "IS_descr"
 msgstr ""
-"После вооружения 122-мм орудием стал неприятным сюрпризом для немцев. "
-"Выпускался с октября 1943 по июнь 1945 года. Всего было выпущено 3483 ИС-2 и "
-"107 ИС-1."
+"The IS (\"Iosif Stalin\"), with its 122 mm gun, was an unpleasant surprise "
+"for the Wehrmacht. Produced from October 1943 through June 1945, with a "
+"total of 107 of the IS-1 vehicles and 3,483 of the IS-2 version manufactured."
 
 msgid "KRSTB"
-msgstr "КРСТБ"
+msgstr "KRSTB"
 
 msgid "KV"
-msgstr "КВ"
+msgstr "KV"
 
 msgid "KV-13"
-msgstr "КВ-13"
+msgstr "KV-13"
 
 msgid "KV-13_descr"
 msgstr ""
-"Работы над танком начались осенью 1941 года по инициативе С. А. Гинзбурга. "
-"Осенью 1942 г. он был отправлен на испытания. По результатам испытаний "
-"начались работы над вторым опытным образцом."
+"Development was started in the fall of 1941, under the initiative of Semyon "
+"Ginsburg. After successful trials in the fall of 1942, the development of a "
+"second prototype was begun."
 
 msgid "KV-1s"
-msgstr "КВ-1С"
+msgstr "KV-1S"
 
 msgid "KV-1s_bis"
-msgstr "КВ-1С обр. 1943 г."
+msgstr "KV-1S mod. 1943"
 
 msgid "KV-1s_descr"
 msgstr ""
-"КВ-1С является дальнейшим развитием серии тяжёлых танков КВ-1. Разработан "
-"летом 1942 года. 20 августа 1942 года принят на вооружение РККА. По "
-"сравнению с предшественниками КВ-1С имел ряд конструктивных особенностей, "
-"благодаря которым масса танка была снижена до 42,3 т, увеличены скорость, "
-"манёвренность и надёжность машины. Однако оставшееся на вооружении 76-мм "
-"орудие ЗИС-5, ослабленная броня и неудачная схема бронирования практически "
-"уравнивали новый танк с Т-34 по боевым качествам. Всего было выпущено 1083 "
-"танка данной модификации, которые широко применялись на фронтах Великой "
-"Отечественной войны."
+"A further modification of the KV-1 heavy tank series developed in the summer "
+"of 1942. It passed into Red Army service on August 20, 1942. Compared to its "
+"predecessors, KV-1S had several design features which allowed for the tank’s "
+"weight to be reduced to 42.3 tons. Also, the KV-1S had increased top speed, "
+"maneuverability, and durability. However, the 76-mm ZIS-5 gun remained. "
+"This, coupled with reduced and inefficient armoring, made the new vehicle "
+"basically equal to the Т-34 in terms of battle performance. A total of 1,083 "
+"vehicles of this modification were manufactured. This tank was widely used "
+"on all fronts of the Great Patriotic War."
 
 msgid "KV-2"
-msgstr "КВ-2"
+msgstr "KV-2"
 
 msgid "KV-220"
-msgstr "КВ-220"
+msgstr "KV-220-2"
 
 msgid "KV-220-1"
-msgstr "КВ-220 обр. 1"
+msgstr "KV-220-2"
 
 msgid "KV-220_descr"
 msgstr ""
-"Опытный танк. Разрабатывался летом — осенью 1940 года. Единственный "
-"экземпляр был снят с испытаний после поломки двигателя."
+"Development of KV-220 on the basis of the KV heavy tank started in the "
+"summer of 1940. Prototype was built on December 5. Unlike other KV "
+"modifications, the tank featured an elongated hull, additional support "
+"roller, enhanced armor (100 mm), and a new turret with the 85 mm F-30 gun. "
+"In the fall of 1941, the production of the KV-1 was discontinued. The "
+"vehicle received the mass-produced KV turret and was sent to the front."
 
 msgid "KV-220_mod"
-msgstr "Т-220"
+msgstr "T-220"
 
 msgid "KV-220_test"
-msgstr "КВ-220 Бета-Тест"
+msgstr "KV-220-2 Beta Test"
 
 msgid "KV-220_test_short"
-msgstr "КВ-220 Т"
+msgstr "KV-220-2 T"
 
 msgid "KV-3"
-msgstr "КВ-3"
+msgstr "KV-3"
 
 msgid "KV-3_descr"
 msgstr ""
-"Проектировался как замена КВ-1. К началу войны были разработаны корпус и "
-"ходовая часть. Серийно не выпускался."
+"Initially designed as a replacement for the KV-1. The hull and suspension "
+"had been developed at the outbreak of World War II, but the KV-3 was never "
+"mass-produced."
 
 msgid "KV-3bis"
-msgstr "КВ-3 Бис"
+msgstr "KV-3 Bis"
 
 msgid "KV-5"
-msgstr "КВ-5"
+msgstr "KV-5"
 
 msgid "KV-5_descr"
 msgstr ""
-"Проектирование началось в июне 1941 года на ЛКЗ. К августу проект был "
-"завершён, но из-за сложной обстановки на фронте опытный образец построен не "
-"был. В танке предусматривалось использование узлов КВ-1. Была спроектирована "
-"новая башня, в которую устанавливалась 107-мм пушка ЗИС-6. Для танка "
-"разрабатывался новый дизельный двигатель мощностью 1200 л.с., но к окончанию "
-"проектных работ он не был завершён, и его заменили на 2 В-2К."
+"Development was started in June 1941 at the Leningrad Kirov Plant and "
+"completed by August, but the German invasion prevented development from "
+"progressing to the prototype stage. The KV-5 was expected to share some "
+"components with the KV-1. A new turret was designed, incorporating the 107-"
+"mm ZIS-6 gun. Early plans called for a new 1,200 hp diesel engine, but later "
+"adjustments, recognizing wartime disruptions, replaced this with two V-2K "
+"engines."
 
 msgid "KV1"
-msgstr "КВ-1"
+msgstr "KV-1"
 
 msgid "KV1S_mod_42"
-msgstr "КВ-1С"
+msgstr "KV-1S"
 
 msgid "KV1S_mod_43"
-msgstr "КВ-122 обр. 1944 г."
+msgstr "KV-122 mod. 1944"
 
 msgid "KV1_descr"
 msgstr ""
-"Разработка началась в конце 1938 года. Опытный образец был выпущен в августе "
-"1939 г. Впервые использовался в декабре 1939 г. во время боёв на «Линии "
-"Маннергейма». Серийно выпускался с марта 1940 по август 1942 года. Всего "
-"было выпущено 2769 машин этого типа."
+"Development started at the end of 1938. A prototype was produced in August "
+"1939. The vehicle first saw combat in December 1939 at the Mannerheim Line. "
+"The tank was mass-produced from March 1940 through August 1942, with a total "
+"of 2,769 vehicles manufactured."
 
 msgid "KV2"
-msgstr "КВ-2"
+msgstr "KV-2"
 
 msgid "KV220"
-msgstr "КВ-220"
+msgstr "KV-220-2"
 
 msgid "KV2_descr"
 msgstr ""
-"Тяжёлый штурмовой танк. Разработан на базе КВ-1 в январе 1940 года. В 1940–"
-"1941 гг. было выпущено 334 машины этого типа, которые активно использовались "
-"в боевых действиях 1941 года, и тогда же были практически все потеряны."
+"Heavy assault tank. Developed on the basis of the KV-1 in January 1940, with "
+"a total of 334 vehicles manufactured from 1940 through 1941. The KV-2 tanks "
+"were used in action in 1941, with most of the vehicles lost the same year."
 
 msgid "KV4"
-msgstr "КВ-4"
+msgstr "KV-4"
 
 msgid "KV4_descr"
 msgstr ""
-"Проект инженера Н. Л. Духова, разработанный в апреле 1941 года. К ноябрю "
-"1941 г. планировалось выпустить опытный образец, но в связи с началом "
-"Великой Отечественной войны все работы по созданию машины были прекращены."
+"The project of N. L. Dukhov developed in April 1941. A prototype was to be "
+"produced by November 1941. However, the work was discontinued due to the "
+"outbreak of the Soviet–German war."
 
 msgid "KV_1"
-msgstr "КВ-1"
+msgstr "KV-1"
 
 msgid "KV_2"
-msgstr "КВ-2"
+msgstr "KV-2"
 
 msgid "KV_descr"
 msgstr ""
-"Разработан в СКБ-2 Ленинградского Кировского завода в 1939 году. Выпускался "
-"с февраля 1940 по сентябрь 1942 года. Всего было выпущено 2769 КВ-1 и 334 "
-"КВ-2."
+"Developed by the Special Design Bureau No. 2 at the Kirov Plant in Leningrad "
+"in 1939. Produced from February 1940 through September 1942, with a total "
+"production of 2,769 KV-1 vehicles and 334 KV-2 vehicles."
 
 msgid "KZ-V8"
-msgstr "КЗ V8"
+msgstr "KZ V8"
 
 msgid "LTP"
-msgstr "ЛТП"
+msgstr "LTP"
 
 msgid "LTP_descr"
 msgstr ""
-"Аванпроект лёгкого танка, разработанный лейтенантом К. Я. Проворновым летом "
-"1942 года. Прототип выпущен не был."
+"A proposed light vehicle developed by Lieutenant Provornov in the summer of "
+"1942. No prototypes were manufactured."
 
 msgid "M-17E"
-msgstr "М-17Э"
+msgstr "M-17E"
 
 msgid "M-17F"
-msgstr "М-17Т"
+msgstr "M-17T"
 
 msgid "M-17FA"
-msgstr "М-17Т"
+msgstr "M-17T"
 
 msgid "M-17F_R"
-msgstr "М-17Ф"
+msgstr "M-17F"
 
 msgid "M-17L_R"
-msgstr "М-17Л 1445 об/мин"
+msgstr "M-17L 1,445 r/min"
 
 msgid "M-17T"
-msgstr "М-17Л 1400 об/мин"
+msgstr "M-17L 1,400 r/min"
 
 msgid "M-5-400"
-msgstr "М-5-400"
+msgstr "M-5-400"
 
 msgid "M-5-400F"
-msgstr "М-5-400Ф"
+msgstr "M-5-400F"
 
 msgid "M-5-400F_Bis"
-msgstr "М-5-400Ф Бис"
+msgstr "M-5-400F Bis"
 
 msgid "M-50T"
-msgstr "М-50Т"
+msgstr "M-50T"
 
 msgid "M-50TD"
-msgstr "М-50ТД"
+msgstr "M-50TD"
 
 msgid "M-50T_fallout"
-msgstr "М-50Т"
+msgstr "M-50T"
 
 msgid "M-80"
-msgstr "М-80"
+msgstr "M-80"
 
 msgid "M3_Stuart_LL"
-msgstr "М3 лёгкий"
+msgstr "M3 Light"
 
 msgid "M3_Stuart_LL_descr"
 msgstr ""
-"Самый известный лёгкий танк Второй мировой войны. С 1941 по сентябрь 1943 "
-"года было изготовлено 13859 машин. По ленд-лизу в СССР было поставлено 1576 "
-"танков, в основном модификации М3А1."
+"The most famous light tank of World War II, with a total of 13,859 vehicles "
+"manufactured from 1941 through September 1943. 1,576 tanks (mostly of the "
+"M3A1 version) were supplied to the U.S.S.R. under Lend-Lease, and many more "
+"to the British."
 
 msgid "M500"
-msgstr "М500"
+msgstr "M500"
 
 msgid "MS-1"
-msgstr "МС-1"
+msgstr "MS-1"
+
+msgid "MS-1_bot"
+msgstr "MS-1"
+
+msgid "MS-1_bot_descr"
+msgstr ""
+"The first Soviet mass-produced tank, with a total of 959 vehicles "
+"manufactured from 1928 through 1931."
 
 msgid "MS-1_descr"
 msgstr ""
-"Первый советский танк, запущенный в массовое производство. С 1928 по 1931 "
-"год было выпущено 959 машин."
+"The first Soviet mass-produced tank, with a total of 959 vehicles "
+"manufactured from 1928 through 1931."
 
 msgid "MT-5-1"
-msgstr "МТ-5-1"
+msgstr "MT-5-1"
 
 msgid "MT25"
-msgstr "МТ-25"
+msgstr "MT-25"
 
 msgid "MT25_descr"
 msgstr ""
-"Аванпроект лёгкого колёсно-гусеничного танка. Эскизные работы были закончены "
-"в феврале 1943 года. Главной особенностью была конструкция подвески — все "
-"опорные катки являлись ведущими. Прототип построен не был."
+"A proposed project of a light wheeled caterpillar vehicle. The draft was "
+"completed in February 1943. The most innovative feature was the suspension "
+"design. The suspension wheels were interleaved, and power was delivered to "
+"all wheels. No prototypes were manufactured."
 
 msgid "M_40"
-msgstr "М-40"
+msgstr "M-40"
+
+msgid "M_40_1200"
+msgstr "M-40"
 
 msgid "Matilda"
 msgstr "Matilda II"
 
 msgid "Matilda_II_LL"
-msgstr "Матильда IV"
+msgstr "Matilda IV"
 
 msgid "Matilda_II_LL_descr"
 msgstr ""
-"Английский танк, поступавший в СССР по ленд-лизу. Всего было поставлено 1084 "
-"танка, однако часть была потеряна при транспортировке морем в Мурманск."
+"A British tank supplied to the U.S.S.R. under Lend-Lease. A total of 1,084 "
+"vehicles were sent to the Soviet Union, with some lost at sea during "
+"transport to Murmansk."
 
 msgid "Maybach_HL_120_TRM_A"
 msgstr "Maybach HL 120 TRM"
@@ -813,1844 +844,1917 @@ msgid "Mk19R"
 msgstr "WS No. 19R"
 
 msgid "Mod_T-10"
-msgstr "ИС-3"
+msgstr "IS-3"
 
 msgid "Object263"
-msgstr "Объект 263"
+msgstr "Object 263"
 
 msgid "Object263_descr"
 msgstr ""
-"Разработка тяжёлой противотанковой самоходной установки на базе тяжёлого "
-"танка ИС-7 началась в 1950 году. Было разработано три эскизных варианта "
-"проекта. На основании одного из проектов был изготовлен полноразмерный "
-"деревянный макет машины. Однако в дальнейшем все работы по проекту были "
-"прекращены в связи с отказом от серийного производства ИС-7."
+"The development of a heavy tank destroyer on the basis of the IS-7 heavy "
+"tank was started in 1950. Three design projects were developed, one of which "
+"resulted in a full-size wooden prototype. However, further development was "
+"discontinued due to phasing out the IS-7 mass-production."
 
 msgid "Object263_short"
-msgstr "Об. 263"
+msgstr "Obj. 263"
 
 msgid "Object268"
-msgstr "Объект 268"
+msgstr "Object 268"
 
 msgid "Object268_descr"
 msgstr ""
-"Работы над машиной были начаты летом 1952 года в ОКБТ ЛКЗ под руководством "
-"Ж. Я. Котина. Установка разрабатывалась на базе тяжёлого танка Т-10. Опытный "
-"образец был выпущен в 1956 году. Машина прошла испытания, однако серийно не "
-"выпускалась."
-
-msgid "Object268_fallout"
-msgstr "Объект 268 (П)"
-
-msgid "Object268_fallout_descr"
-msgstr ""
-"Работы над машиной были начаты летом 1952 года в ОКБТ ЛКЗ под руководством "
-"Ж. Я. Котина. Установка разрабатывалась на базе тяжёлого танка Т-10. Опытный "
-"образец был выпущен в 1956 году. Машина прошла испытания, однако серийно не "
-"выпускалась."
-
-msgid "Object268_fallout_short"
-msgstr "Об. 268 (П)"
+"Development of the Object 268 was started in the summer of 1952 at the Kirov "
+"Plant, Leningrad, under the supervision of Joseph Kotin. The vehicle was "
+"developed on the basis of the T-10 heavy tank. A prototype was manufactured "
+"in 1956. The vehicle passed trials, but never saw mass production."
 
 msgid "Object268_short"
-msgstr "Об. 268"
+msgstr "Obj. 268"
 
 msgid "Object416"
-msgstr "Объект 416"
+msgstr "Object 416"
 
 msgid "Object416_descr"
 msgstr ""
-"Средний танк «Объект 416» разрабатывался в КБ завода №75 с осени 1949 года. "
-"Эскизный проект был закончен к марту 1950 года. Из-за проблем с башней "
-"экспериментальный образец машины был готов только в конце апреля 1952 г., а "
-"доработанный после заводских испытаний опытный образец — летом 1953. Машина "
-"прошла испытания, но серийно не выпускалась."
+"The development of the Object 416 started at the Construction Bureau of "
+"Factory No. 75 in the fall of 1949. The blueprint was developed by March "
+"1950. Due to technical problems with the turret, a working prototype was not "
+"ready until April 1952. Improvements were made, and another prototype was "
+"built in the summer of 1953, but the vehicle never entered mass production."
 
 msgid "Object416_short"
-msgstr "Об. 416"
+msgstr "Obj. 416"
 
 msgid "Object_140"
-msgstr "Объект 140"
+msgstr "Object 140"
 
 msgid "Object_140_descr"
 msgstr ""
-"Опытный вариант среднего танка. Разрабатывался в 1953–1958 годах в Нижнем "
-"Тагиле в рамках программы по созданию нового среднего танка с целью замены \n"
-"Т-54. Было выпущено два опытных образца. В 1958 году все работы были "
-"прекращены в пользу более совершенного «Объекта 430»."
-
-msgid "Object_140_fallout"
-msgstr "Объект 140 (П)"
-
-msgid "Object_140_fallout_descr"
-msgstr ""
-"Опытный вариант среднего танка. Разрабатывался в 1953–1958 годах в Нижнем "
-"Тагиле в рамках программы по созданию нового среднего танка с целью замены \n"
-"Т-54. Было выпущено два опытных образца. В 1958 году все работы были "
-"прекращены в пользу более совершенного «Объекта 430»."
-
-msgid "Object_140_fallout_short"
-msgstr "Об. 140 (П)"
+"An experimental medium tank. Developed between 1953 and 1958 in Nizhny Tagil "
+"to replace the T-54. Two prototypes were built, but in 1958 the project was "
+"terminated in favor of the Object 430."
 
 msgid "Object_140_short"
-msgstr "Об. 140"
+msgstr "Obj. 140"
 
 msgid "Object_212"
-msgstr "212А"
+msgstr "212A"
 
 msgid "Object_212_descr"
 msgstr ""
-"Разработана в 1939 году в СКБ-4 Ленинградского Кировского завода под общим "
-"руководством Ж. Я. Котина на базе танков КВ и СМК. Опытный образец построен "
-"не был. На вооружении не состояла."
+"Technical requirements for the 212A self-propelled gun were developed in "
+"August 1940. The Special Design Bureau No. 2 of the Leningrad Kirov Plant "
+"started development based on the KV-220. Blueprints for the vehicle were "
+"ready by February 24, 1941, but a prototype was never manufactured. By the "
+"end of 1941, development was passed on to the UHMP (Ural Heavy Machinery "
+"Plant), but a prototype was never built."
 
 msgid "Object_212_short"
-msgstr "212А"
+msgstr "212A"
 
 msgid "Object_261"
-msgstr "Объект 261"
+msgstr "Object 261"
 
 msgid "Object_261_descr"
 msgstr ""
-"Разрабатывалась в КБ Челябинского и Ленинградского Кировских заводов на базе "
-"танка ИС-7. Работы были начаты в 1947 году, однако вскоре были прекращены на "
-"стадии макета."
+"Developed on the basis of the IS-7 by the design bureaus of the Kirov Plants "
+"in Chelyabinsk and Leningrad. The project was launched in 1947, but was "
+"canceled while still in the design phase."
 
 msgid "Object_261_short"
-msgstr "Об. 261"
+msgstr "Obj. 261"
 
 msgid "Object_430"
-msgstr "Объект 430"
+msgstr "Object 430"
 
 msgid "Object_430_descr"
 msgstr ""
-"Опытный образец среднего танка. Разрабатывался в 1953–1957 годах с целью "
-"замены Т-54. Tребования к противоатомной, противокумулятивной защите и "
-"огневой мощи повысились. В результате в 1961 году работы над проектом были "
-"свёрнуты, и было принято решение о разработке «Объекта 432». Было выпущено "
-"несколько прототипов."
+"A prototype of this medium tank was developed from 1953 through 1957 to "
+"replace the T-54. Several prototypes were manufactured. Later, Soviet "
+"authorities wanted a tank with greater nuclear survivability and firepower. "
+"As a result, in 1961 the project was discontinued, and the decision was made "
+"to develop the Object 432."
 
 msgid "Object_430_short"
-msgstr "Об. 430"
+msgstr "Obj. 430"
 
 msgid "Object_907"
-msgstr "Объект 907"
+msgstr "Object 907"
 
 msgid "Object_907A"
-msgstr "Объект 907A"
+msgstr "Object 907A"
 
 msgid "Object_907A_descr"
 msgstr ""
-"Решение о начале работ над средними танками нового поколения было принято 13 "
-"июля 1953 года. Разработка велась в ВНИИ-100. Проект был представлен на "
-"рассмотрение в марте 1954 года, а в начале 1955 года были проведены "
-"испытания корпуса новой машины на снарядостойкость. Однако в дальнейшем "
-"работы над проектом были свёрнуты."
+"The decision to start development of a next-generation medium tank was made "
+"on July 13th, 1953. Development was carried out by Research Institute No. "
+"100. The project was submitted in March 1954, and at the beginning of 1955 "
+"the hull of the new vehicle was tested for shell resistance. However, later "
+"the project was canceled."
 
 msgid "Object_907A_short"
-msgstr "Об. 907A"
+msgstr "Obj. 907A"
 
 msgid "Object_907_descr"
 msgstr ""
-"Решение о начале работ над средними танками нового поколения было принято 13 "
-"июля 1953 года. Разработка велась в ВНИИ-100. Проект был представлен на "
-"рассмотрение в марте 1954 года, а в начале 1955 года были проведены "
-"испытания корпуса новой машины на снарядостойкость. Однако в дальнейшем "
-"работы над проектом были свёрнуты."
+"The decision to start development of a next-generation medium tank was made "
+"on July 13th, 1953. Development was carried out by Research Institute No. "
+"100. The project was submitted in March 1954, and at the beginning of 1955 "
+"the hull of the new vehicle was tested for shell resistance. However, later "
+"the project was canceled."
 
 msgid "Object_907_short"
-msgstr "Об. 907"
+msgstr "Obj. 907"
 
 msgid "Observer"
-msgstr "Наблюдатель"
+msgstr "Spectator"
 
 msgid "Observer_descr"
-msgstr "Машина Наблюдателя"
+msgstr "Spectator vehicle"
 
 msgid "QF_6_pounder_Mk_III"
 msgstr "QF 6-pdr Mk. V"
 
 msgid "R104_Object_430_II"
-msgstr "Объект 430 Вариант II"
+msgstr "Object 430 Version II"
 
 msgid "R104_Object_430_II_descr"
 msgstr ""
-"Танк разрабатывался в КБ завода №73 в начале 1953 года для замены танка "
-"Т-54. Проект был рассмотрен 8-10 марта 1953 года Министерством транспортного "
-"и тяжёлого машиностроения вместе с проектом среднего танка классической "
-"компоновки. Однако дальнейшие работы по проекту были свёрнуты."
+"Developed at the Construction Bureau of Factory No. 73 in early 1953. From "
+"March 8th through March 10th, 1953, the Ministry of Transport and Heavy "
+"Engineering considered the project, along with an alternate version of the "
+"tank with a more conventional configuration. However, later development was "
+"discontinued."
 
 msgid "R104_Object_430_II_short"
-msgstr "Об. 430 II"
+msgstr "Obj. 430 II"
 
 msgid "R105_BT_7A"
-msgstr "БТ-7 артиллерийский"
+msgstr "BT-7 artillery"
 
 msgid "R105_BT_7A_descr"
 msgstr ""
-"В 1934–1935 годах КБ Харьковского паровозостроительного завода был "
-"разработан артиллерийский вариант серийного танка БТ-7. В новую "
-"эллиптическую башню увеличенного размера была установлена 76,2-мм пушка "
-"КТ-28. Кроме того, часть машин получила новые радиостанции. Всего было "
-"выпущено 155 танков БТ-7 артиллерийский, которые приняли участие в боях на "
-"Карельском перешейке, в Маньчжурии и в первом периоде Великой Отечественной "
-"войны."
+"In 1934–1935 the design bureau of the Kharkiv Locomotive Factory developed "
+"this artillery modification of the BT-7. The new elliptical turret was "
+"equipped with the 76.2-mm CT-28 gun. In addition, some vehicles received new "
+"radio stations. A total of 155 artillery BT-7s were manufactured. The "
+"vehicles saw combat on the Karelian Isthmus, in Manchuria, and during the "
+"first period of the Great Patriotic War."
 
 msgid "R105_BT_7A_short"
-msgstr "БТ-7 арт."
+msgstr "BT-7 art."
 
 msgid "R106_KV85"
-msgstr "КВ-85"
+msgstr "KV-85"
 
 msgid "R106_KV85_descr"
 msgstr ""
-"КВ-85 являлся дальнейшим развитием танка КВ-1С. По сравнению с предыдущей "
-"модификацией, КВ-85 имел более мощное вооружение. Разработка проводилась "
-"весной 1943 года на ЧКЗ. Танк был принят на вооружение 8 августа 1943 года и "
-"серийно производился до сентября этого же года. КВ-85 активно использовался "
-"частями Красной Армии в составе танковых полков прорыва. Всего было выпущено "
-"148 машин этого типа."
+"A further development of the KV-1S tank. Unlike the previous modification, "
+"the KV-85 had enhanced armament. The vehicle was developed in the spring of "
+"1943 at the Chelyabinsk Kirov Plant. The tank entered service on August 8, "
+"1943, and was mass produced until September, with a total of 148 vehicles "
+"manufactured. The KV-85 was used by the breakthrough armored regiments of "
+"the Red Army."
 
 msgid "R107_LTB"
-msgstr "ЛТТБ"
+msgstr "LTTB"
 
 msgid "R107_LTB_descr"
 msgstr ""
-"Проект лёгкого танка. Разработка машины велась в начале 1944 года на заводе "
-"№ 174. Работы завершились на стадии эскизного проектирования и обсуждения "
-"тактико-технических требований."
+"Development of the light tank project was started in early 1944 at Factory "
+"No. 174. The project was canceled during the design phase and the phase of "
+"setting tactical and technical requirements."
 
 msgid "R108_T34_85M"
-msgstr "Т-34-85М"
+msgstr "T-34-85M"
 
 msgid "R108_T34_85M_descr"
 msgstr ""
-"Модификация танка Т-34-85. Производилась на заводе № 183. От оригинального "
-"танка отличалась усиленным лобовым бронированием за счёт снижения "
-"бронирования кормы и баками, которые были перенесены из боевого отделения в "
-"корму. Был выпущен единственный прототип, так как ходовая часть оказалась "
-"недостаточно надёжной."
+"A modification of the T-34-85 tank, produced at Factory No. 183. Unlike the "
+"original vehicle, it featured enhanced front armor and reduced rear armor. "
+"Fuel tanks were transferred from the fighting compartment to the rear. When "
+"the suspension proved faulty, production was halted after just one prototype "
+"was built."
 
 msgid "R109_T54S"
-msgstr "Т-54 облегчённый"
+msgstr "T-54 ltwt."
 
 msgid "R109_T54S_descr"
 msgstr ""
-"Проект облегчённого варианта среднего танка Т-54. Работы над машиной "
-"начались в мае 1949 года. Предполагалось, что данная машина, благодаря "
-"повышенной проходимости и манёвренности, сможет быть использована для задач, "
-"выполнение которых для обычных серийных танков Т-54 было нецелесообразно. "
-"Однако пока шло обсуждение проекта, Т-54 образца 1949 года был доработан и "
-"выпущен серийно, и необходимости в облегчённом среднем танке больше не было."
+"A proposed lightweight version of the T-54 medium tank. Development was "
+"started in May 1949. Compared to its series-produced predecessor, the tank "
+"had better performance and maneuverability. Therefore, the tank was planned "
+"to replace the T-54 in accomplishing complicated missions. However, the T-54 "
+"tank of 1949 was improved and mass produced, and the lightweight version was "
+"canceled while still in the design phase."
 
 msgid "R109_T54S_short"
-msgstr "Т-54 обл."
+msgstr "T-54 ltwt."
 
 msgid "R110_Object_260"
-msgstr "Объект 260"
+msgstr "Object 260"
 
 msgid "R110_Object_260_descr"
 msgstr ""
-"Один из вариантов проекта тяжёлого танка «Объект 260». Работа над эскизными "
-"чертежами была завершена в сентябре 1945 года. Опытный образец построен не "
-"был."
+"A version of the Object 260 heavy tank. The design plans were completed in "
+"September 1945, but no prototypes were manufactured."
 
 msgid "R110_Object_260_short"
-msgstr "Об. 260"
+msgstr "Obj. 260"
 
 msgid "R111_ISU130"
-msgstr "ИСУ-130"
+msgstr "ISU-130"
 
 msgid "R111_ISU130_descr"
 msgstr ""
-"Тяжёлая САУ на базе ИСУ-122С. Была разработана в 1944 году, а опытный "
-"образец был построен в октябре того же года. Создана посредством установки "
-"на ИСУ-122С 130-мм орудия C-26 на базе морской пушки Б-13. Ходовые и "
-"артиллерийские испытания проводились до июня 1945 года. В связи с окончанием "
-"Великой Отечественной войны и ввиду того, что машина по показателям "
-"бронепробиваемости уступала 122-мм орудиям, ИСУ-130 так и не была принята на "
-"вооружение."
+"This heavy SPG on the basis of the ISU-122S was developed in 1944, with a "
+"prototype built in October. The 130-mm S-26 gun, based on the B-13 naval "
+"gun, was mounted on the ISU-122S. The vehicle underwent automotive and "
+"firing trials by 1945, but penetration characteristics were inferior to "
+"those of the 122-mm guns, and the war was drawing to a close, so the vehicle "
+"never entered service."
 
 msgid "R112_T54_45"
-msgstr "Т-54 первый образец"
+msgstr "T-54 first prototype"
 
 msgid "R112_T54_45_descr"
 msgstr ""
-"Разработан в 1944 году на заводе № 183. При разработке были использованы "
-"многие узлы и механизмы танка Т-44, в которые были внесены изменения, "
-"направленные на усиление бронирования и вооружения новой машины. По данным "
-"одного из источников, первый опытный образец был построен в конце 1944, но "
-"некоторые источники называют другую дату — январь 1945. Испытания танка "
-"проводились в марте–апреле 1945. Машина серийно не выпускалась."
+"Developed at Factory No. 183 in 1944. It was based on the T-44, with many "
+"components modified to enhance the armor and armament of the new vehicle. "
+"According to one source, the first prototype was built at the end of 1944. "
+"However, some other sources mention another date—January 1945. The tank "
+"underwent trials in March and April 1945, but never entered mass production."
 
 msgid "R112_T54_45_short"
-msgstr "Т-54 обр. 1"
+msgstr "T-54 mod. 1"
 
 msgid "R113"
-msgstr "Р-113"
+msgstr "R-113"
 
 msgid "R113M"
-msgstr "Р-113М"
+msgstr "R-113M"
 
 msgid "R113M_fallout"
-msgstr "Р-113М"
+msgstr "R-113M"
 
 msgid "R113_Object_730"
-msgstr "ИС-5 (Объект 730)"
+msgstr "IS-5 (Object 730)"
 
 msgid "R113_Object_730_descr"
 msgstr ""
-"Разработка опытного советского тяжёлого танка началась в 1949 году в "
-"конструкторском бюро ЧКЗ под руководством Ж.Я. Котина. В 1950 году была "
-"выпущена установочная партия в 10 машин. После проведения полного комплекса "
-"испытаний и внесения доработок эту машину приняли на вооружение в 1953 году "
-"под обозначением ИС-8."
+"The development of the vehicle was started in 1949 by the Design Bureau of "
+"the Chelyabinsk Kirov Plant under the supervision of Joseph Kotin. In 1950 a "
+"preproduction batch of 10 vehicles was launched. After the vehicle underwent "
+"all trials and received upgrades, it was adopted for service in 1953 under "
+"the designation IS-8."
 
 msgid "R113_Object_730_short"
-msgstr "ИС-5"
+msgstr "IS-5"
 
 msgid "R114_Object_244"
-msgstr "Объект 244"
+msgstr "Object 244"
 
 msgid "R114_Object_244_descr"
 msgstr ""
-"Дальнейшее развитие опытного танка «Объект 237». Танк «Объект 244» отличался "
-"установкой более мощного основного орудия. Боевое отделение подверглось "
-"незначительным изменениям: радиостанция была расположена в нише башни, был "
-"установлен новый вентилятор повышенной производительности, были изменены "
-"боеукладка и перископический прицел. Устройство отделения управления, "
-"моторного и трансмиссионного отделений осталось без изменений. На вооружении "
-"танк не состоял из-за недостаточной прочности ствола орудия."
+"A further development of the experimental tank Object 237. The Object 244 "
+"featured a more powerful gun. The fighting compartment was slightly changed: "
+"the radio was placed in a turret recess, a more efficient fan was installed, "
+"and the ammo rack and periscopic sight were modified. The driver's "
+"compartment and engine-transmission compartment were not modified. The "
+"vehicle never entered service due to problems with the gun barrel."
 
 msgid "R114_Object_244_short"
-msgstr "Об. 244"
+msgstr "Obj. 244"
 
 msgid "R115_IS-3_auto"
-msgstr "ИС-3 с МЗ"
+msgstr "IS-3 auto"
 
 msgid "R115_IS-3_auto_descr"
 msgstr ""
-"В 1956–1957 годах слушатели Академии БТВ разработали дипломный проект "
-"установки механизма заряжания для тяжёлых танков ИС-3 и Т-10. В варианте для "
-"ИС-3 была предусмотрена двухрядная боеукладка магазинного типа. Экипаж был "
-"сокращён до трёх человек: командир, наводчик, механик-водитель. Ввиду "
-"размещения механизма заряжания была изменена конструкция башни. Работы над "
-"проектом прекратились на стадии эскизного проектирования."
+"In 1956–1957, the Military Armored Forces Academy developed a speculative "
+"design for a new loading system on the IS-3 and T-10 heavy tanks. The IS-3 "
+"variant featured a double-row ammo rack with an automatic loading system. "
+"The crew was reduced to three members: commander, gunner, and driver. The "
+"turret was redesigned in order to accommodate the loading mechanism. The "
+"vehicle existed only in blueprints."
 
 msgid "R115_IS-3_auto_short"
-msgstr "ИС-3 с МЗ"
+msgstr "IS-3 auto."
 
 msgid "R116_ISU122C_Berlin"
-msgstr "ИСУ-122С"
+msgstr "ISU-122S"
 
 msgid "R116_ISU122C_Berlin_descr"
 msgstr ""
-"Тяжёлая самоходная артиллерийская установка на базе танка ИС. На протяжении "
-"Второй мировой войны машина выполняла функции мощного штурмового орудия и "
-"истребителя танков. Прототип был построен на ЧКЗ в апреле 1944 года. Машина "
-"была принята на вооружение 22 августа 1944 года. Всего с августа 1944 до "
-"конца 1945 года было выпущено 675 ИСУ-122C."
+"A heavy assault gun, built on the basis of the IS tank, was effective "
+"against German heavy tanks as well as fortifications. The prototype was "
+"built at the Chelyabinsk Kirov Plant in April 1944. The vehicle entered "
+"service in August of that year, and a total of 675 vehicles were "
+"manufactured in 1944 and 1945."
 
 msgid "R117_T34_85_Rudy"
-msgstr "Т-34-85 Rudy"
+msgstr "T-34-85 Rudy"
 
 msgid "R117_T34_85_Rudy_descr"
 msgstr ""
-"Танк принимал участие в съёмках фильма «Четыре танкиста и собака». По сюжету "
-"фильма это танк Т-34-85 с бортовым номером 102 1-й танковой бригады Войска "
-"Польского имени Героев Вестерплатте. В реальности это танк Т-34-85 польского "
-"производства, имевший некоторые отличия от советского танка позднего "
-"военного периода. В 1951 году лицензию на производство Т-34-85 приобрёл "
-"польский завод Bumar Labedy, расположенный в городе Гливице, Польша."
+"This fictional T-34-85 tank, identified as Number 102 of the 1st Tank "
+"Brigade of the Polish Army, was featured in the Polish TV series \"Four Tank-"
+"Men and a Dog.\" In reality, Т-34-85s were produced in Poland in the 1950s "
+"at the Bumar Labedy plant, located in Gliwice. The Polish variant was "
+"slightly modified from the Soviet tank of the late-war period."
 
 msgid "R117_T34_85_Rudy_short"
 msgstr "Rudy"
 
 msgid "R118_T28_F30"
-msgstr "Т-28Э с Ф-30"
+msgstr "T-28E with F-30"
 
 msgid "R118_T28_F30_descr"
 msgstr ""
-"Танк Т-28 с 85-мм танковой пушкой Ф-30 был создан в 1941 году. Был "
-"изготовлен один опытный образец, который прошёл полигонные испытания. От "
-"серийных Т-28 танк отличался только вооружением. Данных о серийном "
-"производстве или использовании в боевых условиях этого танка нет."
+"The T-28 tank with the 85-mm F-30 gun was developed in 1941. One prototype "
+"was built and underwent trials. Unlike mass-produced T-28 tanks, the vehicle "
+"featured different armament. No sources were found proving that the tank was "
+"mass-produced or used in action."
 
 msgid "R118_T28_F30_short"
-msgstr "Т-28Э Ф-30"
+msgstr "T-28E F-30"
 
 msgid "R119_Object_777"
-msgstr "Объект 777 Вариант II"
+msgstr "Object 777 Version II"
 
 msgid "R119_Object_777_descr"
 msgstr ""
-"«Объект 777» представляет собой уникальный проект тяжёлого танка. Проектные "
-"работы велись на Кировском заводе в Челябинске. К 1953 году были "
-"подготовлены эскизные чертежи и изготовлен макет. Проект предусматривал "
-"изготовление литого корпуса и башни обтекаемой формы. На танк планировалось "
-"установить 122-мм пушку М-62-Т2. Однако работы над танком остановили на "
-"стадии проектирования. Серийно «Объект 777» не производился и на вооружение "
-"принят не был."
+"The Object 777 is a unique project of a heavy tank. The vehicle was "
+"developed at the Chelyabinsk Kirov Plant. By 1953, the design plans were "
+"made, and the dummy vehicle was built. The prototype was to feature a cast "
+"hull and streamlined turret. The 122-mm M-62-T2 gun was to be mounted on the "
+"tank. However, development proceeded no further. The Object 777 never "
+"entered mass production nor saw service."
 
 msgid "R119_Object_777_short"
-msgstr "Об. 777 II"
+msgstr "Obj. 777 II"
+
+msgid "R120_T22SR_A22"
+msgstr "T-22 medium"
+
+msgid "R120_T22SR_A22_descr"
+msgstr ""
+"The prototype of the A-22 hull was produced in 1949. The design incorporated "
+"rolled armor plates with maximum slope angles. Test firing showed that the "
+"hull was well-protected from high-caliber Armor-Piercing shells. The hull "
+"was used as a basis for the project of the T-22 medium tank. Development was "
+"discontinued after the preparation of the suspension and general design. "
+"Later, the best innovations were applied in the development of the Object "
+"907."
+
+msgid "R120_T22SR_A22_short"
+msgstr "T-22 med."
+
+msgid "R121_KV4_KTT"
+msgstr "KV-4 KTTS"
+
+msgid "R121_KV4_KTT_descr"
+msgstr ""
+"Heavy tank destroyer with the 107 mm M-75 (ZiS-24) gun mounted on the "
+"chassis of the proposed KV-4 tank. Existed only in blueprints."
+
+msgid "R121_KV4_KTT_short"
+msgstr "KV-4 KTTS"
+
+msgid "R122_T44_100"
+msgstr "T-44-100"
+
+msgid "R122_T44_100_descr"
+msgstr ""
+"Experimental medium tank that was developed in 1945 on the basis of the T-44 "
+"tank. Unlike the T-44 tank, the T-44-100 featured the 100 mm LB-1 gun "
+"mounted in a newly designed turret, and slat side armor. Only two vehicles "
+"were manufactured."
+
+msgid "R122_T44_100_short"
+msgstr "T-44-100"
 
 msgid "R123"
-msgstr "Р-123"
+msgstr "R-123"
+
+msgid "R123_fallout"
+msgstr "R-123"
 
 msgid "R53_Object_704"
-msgstr "Объект 704"
+msgstr "Object 704"
 
 msgid "R53_Object_704_descr"
 msgstr ""
-"Разработана в 1945 году под руководством Ж. Я. Котина на базе узлов ИС-3 и "
-"ИС-2. Отличалась рациональными углами наклона брони. Прошла испытания. На "
-"вооружении не состояла."
+"Developed in 1945 on the basis of the IS-2 and IS-3 vehicles, under the "
+"supervision of Joseph Kotin. One of the distinctive features was the slope "
+"angle of armor plates. Passed trials successfully, but never entered service."
 
 msgid "R53_Object_704_short"
-msgstr "Об. 704"
+msgstr "Obj. 704"
 
 msgid "R71_IS_2B"
-msgstr "ИС-2"
+msgstr "IS-2"
 
 msgid "R71_IS_2B_descr"
 msgstr ""
-"Тяжёлый танк ИС-2 (ИC-122) стал результатом модернизации танка ИС-1 и с 1944 "
-"года получил более простую в изготовлении литую лобовую деталь. В составе "
-"отдельных гвардейских тяжёлых танковых полков ИС-2 активно использовался для "
-"штурма укреплённых городов, таких как Будапешт, Бреслау, Берлин. Для "
-"взаимного опознавания на такие машины наносились специальные тактические "
-"знаки — белые полосы. Данная модель представляет танк 7-й Гвардейской "
-"тяжёлой танковой бригады, фотография которого на фоне Бранденбургских ворот "
-"приобрела всемирную известность."
+"Built in 1944, the IS-2 (IS-122) heavy tank was a modification of the IS-1. "
+"It featured a simple cast glacis plate. Elite Soviet Guards heavy tank "
+"regiments used the IS-2 extensively in the assaults on the fortress cities "
+"of Budapest, Breslau, and Berlin. These vehicles featured thick white "
+"stripes for quick identification by other Soviet tank crews. This vehicle, a "
+"tank of the 7th Guards Independent Heavy Tank Brigade, was made famous in a "
+"photo taken in front of the iconic Brandenburg Gate in the heart of Berlin."
 
 msgid "RTY_RCEHb"
-msgstr "РТУ («Ясень»)"
+msgstr "RTU (\"Yasen\")"
 
 msgid "S-51"
-msgstr "С-51"
+msgstr "S-51"
 
 msgid "S-51_01"
-msgstr "С-51"
+msgstr "S-51"
 
 msgid "S-51_descr"
 msgstr ""
-"Разработана осенью 1943 года в ЦАКБ В. Г. Грабина. Весной 1944 года успешно "
-"прошла испытания. Серийно не выпускалась."
+"Developed by the Grabin Central Artillery Design Bureau in the fall of 1943. "
+"The S-51 passed trials successfully in the spring of 1944, but never entered "
+"mass production."
 
 msgid "S-51bis"
-msgstr "С-51 Бис"
+msgstr "S-51 Bis"
 
 msgid "SCR_209"
 msgstr "SCR 209"
 
 msgid "ST_I"
-msgstr "СТ-I"
+msgstr "ST-I"
 
 msgid "ST_I_descr"
 msgstr ""
-"Проект танка был разработан на заводе № 92 инженерами В. А. Ганиным и А. С. "
-"Часовниковым. Целью проекта было создание тяжёлого танка, в котором были бы "
-"устранены основные недостатки существующих в то время тяжёлых танков. "
-"Существовал только в эскизах."
+"The design was developed at Factory No. 92 by engineers V.A. Ganin and A.S. "
+"Chasovnikov. The new tank was intended as an upgraded version of the "
+"unsatisfactory heavy tanks of that time. Existed only in blueprints."
 
 msgid "SU-100"
-msgstr "СУ-100"
+msgstr "SU-100"
 
 msgid "SU-100_descr"
 msgstr ""
-"САУ на базе Т-34-85 и СУ-85. Всего с сентября 1944 по июнь 1945 было "
-"выпущено 2495 машин."
+"Self-propelled gun on the basis of the T-34-85 and SU-85, with a total of "
+"2,495 vehicles produced from September 1944 through June 1945."
 
 msgid "SU-100_mod_1944"
-msgstr "СУ-100"
+msgstr "SU-100"
 
 msgid "SU-100_mod_1945"
-msgstr "СУ-100-60"
+msgstr "SU-100-60"
 
 msgid "SU-101"
-msgstr "СУ-101"
+msgstr "SU-101"
 
 msgid "SU-101_descr"
 msgstr ""
-"В 1944 году КБ УЗТМ параллельно разработало СУ-101 с орудием Д-10С и СУ-102 "
-"с орудием Д-25С. Обе машины назывались «Уралмаш-1». В апреле 1945 года были "
-"выпущены опытные образцы. Серийно не выпускались, на вооружении не состояли."
+"In 1944 the Construction Bureau of the Ural Heavy Machinery Plant developed "
+"the SU-101 with the D-10S gun and the SU-102 with the D-25S gun. Both "
+"vehicles were designated as Uralmash-1. Prototypes were manufactured in "
+"April 1945. The vehicles never entered mass production nor saw service."
 
 msgid "SU-101_short"
-msgstr "СУ-101"
+msgstr "SU-101"
 
 msgid "SU-14"
-msgstr "СУ-14-2"
+msgstr "SU-14-2"
 
 msgid "SU-14Bis"
-msgstr "СУ-14-2 усиленная"
+msgstr "SU-14-2 enhanced"
 
 msgid "SU-14_1"
-msgstr "СУ-14-2"
+msgstr "SU-14-2"
 
 msgid "SU-14_descr"
 msgstr ""
-"САУ «триплекса ТАОН». Разрабатывалась с 1932 по 1937 год. Серийно не "
-"выпускалась. Два прототипа были модернизированы в 1940 году."
+"A \"Special Purpose Heavy Triplex\" self-propelled gun developed from 1932 "
+"through 1937, with two prototypes modernized in 1940. It never entered mass "
+"production."
 
 msgid "SU-152"
-msgstr "СУ-152"
+msgstr "SU-152"
 
 msgid "SU-152_01"
-msgstr "СУ-152"
+msgstr "SU-152"
 
 msgid "SU-152_descr"
 msgstr ""
-"Тяжёлая САУ на базе танка КВ-1с. С февраля по декабрь 1943 года была "
-"изготовлена 671 машина."
+"A heavy self-propelled gun on the hull of the KV-1S tank, with a total of "
+"671 vehicles built from February through December 1943."
 
 msgid "SU-152_mod_1943"
-msgstr "СУ-152"
+msgstr "SU-152"
 
 msgid "SU-152_mod_1944"
-msgstr "СУ-152М"
+msgstr "SU-152M"
 
 msgid "SU-18"
-msgstr "СУ-18"
+msgstr "SU-18"
 
 msgid "SU-18Bis"
-msgstr "СУ-18 Бис"
+msgstr "SU-18 Bis"
 
 msgid "SU-18_descr"
 msgstr ""
-"Проект САУ на шасси танка МС. Существовал только в виде эскизов. Прототип "
-"построен не был. Серийно не выпускалась."
+"Self-propelled gun on the basis of the MS chassis. This model existed only "
+"in blueprints, with no prototypes developed. Never entered mass production."
 
 msgid "SU-26"
-msgstr "СУ-26"
+msgstr "SU-26"
 
 msgid "SU-26_descr"
 msgstr ""
-"САУ на базе танка Т-26. Выпускалась в Ленинграде в конце 1941 года. Всего "
-"было произведено 12 или 14 машин. Три из них состояли на вооружении до 1944 "
-"года."
+"Self-propelled gun on the basis of the T-26. Produced in Leningrad at the "
+"end of 1941, with a total of 12 or 14 vehicles built, three of which "
+"remained in service until 1944."
 
 msgid "SU-5"
-msgstr "СУ-5"
+msgstr "SU-5"
 
 msgid "SU-5_descr"
 msgstr ""
-"САУ «малого триплекса». Работы по разработке и испытания проводились в 1934 "
-"году. Экспериментальная машина была отправлена на парад на Красной площади. "
-"Серийно не выпускалась."
+"A \"Small Triplex\" light self-propelled gun. Prototypes were developed and "
+"put through trials in 1934, and participated in a parade on Red Square. The "
+"vehicle never saw mass production."
 
 msgid "SU-5bis"
-msgstr "СУ-5 Бис"
+msgstr "SU-5 Bis"
 
 msgid "SU-76"
-msgstr "СУ-76"
+msgstr "SU-76M"
 
 msgid "SU-76_1"
-msgstr "СУ-76"
+msgstr "SU-76"
 
 msgid "SU-76_descr"
 msgstr ""
-"Лёгкая САУ сопровождения пехоты на базе танка Т-70. С декабря 1942 по июнь "
-"1945 года было выпущено 14292 машины (из них 360 СУ-76, остальные СУ-76М)."
+"Light vehicle with a 76-mm gun, the most widely produced Soviet SPG. Despite "
+"its weak armor and armament, the vehicle was used to support infantry and "
+"cavalry."
 
 msgid "SU-76bis"
-msgstr "СУ-76М"
+msgstr "SU-76M"
 
 msgid "SU-8"
-msgstr "СУ-8"
+msgstr "SU-8"
 
 msgid "SU-85"
-msgstr "СУ-85"
+msgstr "SU-85"
 
 msgid "SU-85A"
-msgstr "СУ-85Б"
+msgstr "SU-85B"
 
 msgid "SU-85A1"
-msgstr "СУ-85А"
+msgstr "SU-85A"
 
 msgid "SU-85_01"
-msgstr "СУ-85"
+msgstr "SU-85"
 
 msgid "SU-85_descr"
 msgstr ""
-"Разработана на базе среднего танка Т-34 и штурмового орудия СУ-122. "
-"Выпускалась с августа 1943 по июль 1944 года. 85-мм пушка Д-5С позволяла "
-"СУ-85 эффективно поражать средние танки противника на дистанциях более "
-"километра, а на меньших дистанциях пробивать лобовую броню тяжёлых танков."
+"Developed on the basis of the T-34 medium tank and the SU-122 assault gun. "
+"Produced from August 1943 through July 1944. The 85-mm D-5S gun allowed the "
+"SU-85 to effectively hit enemy medium tanks at distances of more than 1,000 "
+"meters and to penetrate the front armor of heavy tanks at shorter distances."
 
 msgid "SU-85_mod_1942"
-msgstr "СУ-85-II"
+msgstr "SU-85-II"
 
 msgid "SU-85_mod_1942_short"
-msgstr "СУ-85-II"
+msgstr "SU-85-II"
 
 msgid "SU-85_mod_1943"
-msgstr "СУ-85"
+msgstr "SU-85"
 
 msgid "SU-85_mod_1943_short"
-msgstr "СУ-85"
+msgstr "SU-85"
 
 msgid "SU-8Bis"
-msgstr "СУ-8 Бис"
+msgstr "SU-8 Bis"
 
 msgid "SU-8_descr"
 msgstr ""
-"САУ «среднего триплекса». Разработка была начата в 1934 году и возобновлена "
-"в 1939. Серийно не выпускалась."
+"A \"Medium Triplex\" self-propelled gun. Development started in 1934, but "
+"was soon suspended. After a pause, development resumed in 1939, but the "
+"vehicle never entered mass production."
 
 msgid "SU100M1"
-msgstr "СУ-100М1"
+msgstr "SU-100M1"
 
 msgid "SU100M1_descr"
 msgstr ""
-"Разработана на УЗТМ в 1944 г. на базе танка Т-34-85. Боевое отделение машины "
-"располагалось в корме. Однако предпочтение было отдано другому проекту — "
-"СУ-100М-2 на базе танка T-44."
+"Developed at the UHMP (Ural Heavy Machinery Plant) on the basis of the "
+"T-34-85. The fighting compartment was located in the rear. The vehicle "
+"superceded by the SU-100M-2, based on the basis of the T-44, and never "
+"manufactured."
 
 msgid "SU100Y"
-msgstr "СУ-100Y"
+msgstr "SU-100Y"
 
 msgid "SU100Y_descr"
 msgstr ""
-"Разработана на базе тяжёлого танка Т-100. Предназначалась для подавления "
-"укреплённых огневых точек и уничтожения бронеобъектов противника. В марте "
-"1940 года был изготовлен один экземпляр. На вооружении не состояла."
+"Developed on the basis of the T-100 heavy tank. The vehicle was intended to "
+"neutralize enemy pillboxes and destroy enemy vehicles. The only prototype "
+"was manufactured in March 1940. The vehicle never entered mass production."
 
 msgid "SU122A"
-msgstr "СУ-122А"
+msgstr "SU-122A"
 
 msgid "SU122A_descr"
 msgstr ""
-"Проект 122-мм САУ на базе СУ-76. Не было построено ни одного прототипа."
+"A proposed 122-mm SPG on the basis of the SU-76. No prototypes were built."
 
 msgid "SU122_44"
-msgstr "СУ-122-44"
+msgstr "SU-122-44"
 
 msgid "SU122_44_descr"
 msgstr ""
-"Разработка СУ-122-44 была начата в июне 1944 г. в конструкторском бюро "
-"завода «Уралмаш». Машина имела классическую компоновку с передним "
-"расположением боевого отделения и базировалась на шасси нового танка Т-44. В "
-"октябре проект был рассмотрен на заседании технического совета НКТП. В "
-"декабре разработка проекта была закончена, однако предпочтение было отдано "
-"проекту СУ-100М-2 с кормовым расположением боевого отделения."
+"Development was started in June 1944 by the Uralmash Design Bureau. The "
+"vehicle was based on the T-44 chassis and had a conventional configuration, "
+"with the front placement of the fighting compartment. In October, People's "
+"Commissariat of the Tank Industry considered the SU-122-44 project. In "
+"December the design project was ready. However, the SU-100M-2 with the rear "
+"placement of the fighting compartment was preferred."
 
 msgid "SU122_44_short"
-msgstr "СУ-122-44"
+msgstr "SU-122-44"
 
 msgid "SU122_54"
-msgstr "СУ-122-54"
+msgstr "SU-122-54"
 
 msgid "SU122_54_descr"
 msgstr ""
-"Разработка началась в 1948 г. В конструкции широко использовались узлы и "
-"агрегаты танка Т-54. Была принята на вооружение в 1954 году. Выпускалась "
-"серийно с 1955 г. Всего было выпущено около 100 машин."
+"Development was started in 1948. The T-54 tank was used as a basis for this "
+"tank destroyer. The vehicle entered service in 1954. Mass production was "
+"launched in 1955, with a total of 100 vehicles manufactured."
 
 msgid "SU122_54_short"
-msgstr "СУ-122-54"
+msgstr "SU-122-54"
 
 msgid "SU14_1"
-msgstr "СУ-14-1"
+msgstr "SU-14-1"
 
 msgid "SU14_1_descr"
 msgstr ""
-"Разработана в 1935 году на основе опыта, полученного при работе над СУ-14. В "
-"1936 году был изготовлен и отправлен на испытания опытный образец. В 1937 "
-"году руководитель проекта был репрессирован, и все работы над проектом были "
-"свёрнуты, а опытный образец передан в Кубинку на хранение. В 1941 году, во "
-"время боёв под Москвой, САУ использовалась для стрельбы с дальних дистанций."
+"Developed on the basis of the SU-14. In 1936 a prototype was manufactured "
+"and tested. In 1937 the project supervisor was purged and the project was "
+"canceled. The prototype was shipped to Kubinka for storage. In 1941, during "
+"the Battle of Moscow, the SU-14-1 was used for long-range bombardment."
 
 msgid "SU76I"
-msgstr "СУ-76И"
+msgstr "SU-76I"
 
 msgid "SU76I_descr"
 msgstr ""
-"Разработана на базе немецких трофейных машин StuG III и PzKpfw III в 1943 "
-"году на заводе № 37 в Свердловске. Всего было выпущено 200 машин."
+"Developed on the basis of captured German StuG III and PzKpfw III vehicles "
+"in 1943 at Sverdlovsk plant No. 37. A total of 200 vehicles were "
+"manufactured."
 
 msgid "SU_85I"
-msgstr "СУ-85И"
+msgstr "SU-85I"
 
 msgid "SU_85I_descr"
 msgstr ""
-"Наряду с созданием известной СУ-76И проводились работы по установке 85-мм "
-"орудия в рубку на шасси трофейного немецкого танка PzKpfw III. В боевых "
-"действиях машина не применялась."
+"A proposed modification of captured German PzKpfw III tanks, which were to "
+"be mounted with the 85 mm gun. Never entered mass production nor saw service."
 
 msgid "Su-26A"
-msgstr "СУ-26"
+msgstr "SU-26"
 
 msgid "Su-26B"
-msgstr "СУ-26 Бис"
+msgstr "SU-26 Bis"
 
 msgid "T-127"
-msgstr "Т-127"
+msgstr "T-127"
 
 msgid "T-127_descr"
 msgstr ""
-"Машина разрабатывалась параллельно с Т-126 на заводе № 174 с весны по осень "
-"1940 года. Работы были остановлены на стадии эскизного проектирования и "
-"свёрнуты из-за проблем в доводке дизеля В-3."
+"Developed together with the T-126 at Factory No. 174 during the summer of "
+"1940. Vehicle development was suspended during the preliminary design phase "
+"and then discontinued due to problems with the V-3 diesel engine."
 
 msgid "T-18"
-msgstr "МС-1"
+msgstr "MS-1"
 
 msgid "T-18Bis"
-msgstr "Т-18"
+msgstr "T-18"
 
 msgid "T-18_Standart"
-msgstr "МС-1 обр. 1927 г."
+msgstr "MS-1 mod. 1927"
+
+msgid "T-18_Standart_bot"
+msgstr "MS-1 mod. 1927"
+
+msgid "T-18_bot"
+msgstr "MS-1"
 
 msgid "T-18_mod"
-msgstr "МС-1 обр. 1930 г."
+msgstr "MS-1 mod. 1930"
 
 msgid "T-26"
-msgstr "Т-26"
+msgstr "T-26"
 
 msgid "T-26F"
-msgstr "Т-26Ф"
+msgstr "T-26F"
 
 msgid "T-26M"
-msgstr "Т-26М"
+msgstr "T-26M"
+
+msgid "T-26_bot"
+msgstr "T-26"
+
+msgid "T-26_bot_descr"
+msgstr ""
+"Produced in greater numbers than any other tank of the Red Army during the "
+"pre-war period, with 11,218 vehicles in four main modifications built from "
+"1931 through 1941."
 
 msgid "T-26_conic"
-msgstr "Т-26 обр. 1938 г."
+msgstr "T-26 mod. 1938"
 
 msgid "T-26_conic_short"
-msgstr "Т-26 обр. 1938 г."
+msgstr "T-26 mod. 1938"
 
 msgid "T-26_cylindrical"
-msgstr "Т-26 обр. 1936–1937 гг."
+msgstr "T-26 mod. 1936–1937"
+
+msgid "T-26_cylindrical_bot"
+msgstr "T-26 mod. 1936–1937"
+
+msgid "T-26_cylindrical_bot_short"
+msgstr "T-26 mod. 1936–1937"
 
 msgid "T-26_cylindrical_short"
-msgstr "Т-26 обр. 1936–1937 гг."
+msgstr "T-26 mod. 1936–1937"
 
 msgid "T-26_descr"
 msgstr ""
-"Самый массовый предвоенный танк Красной Армии. С 1931 по 1941 год было "
-"выпущено 11218 машин четырёх основных модификаций."
+"Produced in greater numbers than any other tank of the Red Army during the "
+"pre-war period, with 11,218 vehicles in four main modifications built from "
+"1931 through 1941."
 
 msgid "T-28"
-msgstr "Т-28"
+msgstr "T-28"
 
 msgid "T-28_0"
-msgstr "Т-28"
+msgstr "T-28"
 
 msgid "T-28_A"
-msgstr "Т-28А"
+msgstr "T-28A"
 
 msgid "T-28_conic"
-msgstr "Т-28 коническая"
+msgstr "T-28 conical"
 
 msgid "T-28_conic_short"
-msgstr "Т-28 конич."
+msgstr "T-28 conic."
 
 msgid "T-28_cylindrical"
-msgstr "Т-28 цилиндрическая"
+msgstr "T-28 cylindrical"
 
 msgid "T-28_cylindrical_short"
-msgstr "Т-28 цилиндр."
+msgstr "T-28 cylindr."
 
 msgid "T-28_descr"
 msgstr ""
-"Разработан и принят на вооружение как танк прорыва. Выпускался заводом "
-"«Красный путиловец» в Ленинграде. С 1934 по 1940 год было выпущено 503 "
-"машины."
+"The T-28 tank was developed by the Experimental Machine Design Bureau of the "
+"Voroshilov plant. The vehicle saw service on August 11, 1933. A total of 503 "
+"tanks were manufactured at the Leningrad Kirov Plant between 1933 and 1940. "
+"During mass production, the T-28 tank underwent a number of changes in "
+"design and modifications. The vehicles were used in the war with Finland in "
+"the winter of 1939–1940 and at the beginning of WWII."
 
 msgid "T-34"
-msgstr "Т-34"
+msgstr "T-34"
 
 msgid "T-34-85"
-msgstr "Т-34-85"
+msgstr "T-34-85"
 
 msgid "T-34-85Bis"
-msgstr "Т-34-85-60"
+msgstr "T-34-85-60"
 
 msgid "T-34-85_descr"
 msgstr ""
-"Является завершающей модификацией танка Т-34 образца 1943 г. Новая "
-"трёхместная орудийная башня позволила установить более мощную 85-мм пушку. "
-"Это значительно повысило боевую эффективность танка по сравнению с "
-"предшественником Т-34-76. Всего было выпущено более 35 тысяч единиц "
-"различных модификаций. До настоящего времени состоит на вооружении ряда "
-"стран."
+"Final modification of the T-34 tank of 1943. A new three-man gun turret "
+"allowed a more powerful 85-mm gun to be mounted. This greatly increased the "
+"combat effectiveness of the tank compared to its predecessor, the T-34-76. A "
+"total of more than 35,000, in several variants, were produced. Today the "
+"tank is still in service in several countries."
 
 msgid "T-34_descr"
 msgstr ""
-"Легенда советских бронетанковых войск. Самый массовый советский танк Второй "
-"мировой войны. С 1940 по 1944 год на различных заводах СССР было изготовлено "
-"33805 машин трёх модификаций."
+"The legend of the Soviet armored forces and the most widely-produced Soviet "
+"tank of World War II, with a total of 33,805 vehicles manufactured. Three "
+"variants of this model were produced at several Soviet factories from 1940 "
+"through 1944."
 
 msgid "T-34_mod_100"
-msgstr "Т-34-85 расширенная"
+msgstr "T-34-85 extended"
 
 msgid "T-34_mod_100_short"
-msgstr "Т-34-85 расш."
+msgstr "T-34-85 enlarg."
 
 msgid "T-34_mod_1940"
-msgstr "Т-34 обр. 1940 г."
+msgstr "T-34 mod. 1940"
 
 msgid "T-34_mod_1941"
-msgstr "Т-34 обр. 1941 г."
+msgstr "T-34 mod. 1941"
 
 msgid "T-34_mod_1941_short"
-msgstr "Т-34 обр. 1941 г."
+msgstr "T-34 mod. 1941"
 
 msgid "T-34_mod_1942"
-msgstr "Т-34 обр. 1942 г."
+msgstr "T-34 mod. 1942"
 
 msgid "T-34_mod_1943"
-msgstr "Т-34 обр. 1943 г."
+msgstr "T-34 mod. 1943"
 
 msgid "T-34_mod_1943_short"
-msgstr "Т-34 обр. 1943 г."
+msgstr "T-34 mod. 1943"
 
 msgid "T-43"
-msgstr "Т-43"
+msgstr "T-43"
 
 msgid "T-43M"
-msgstr "Т-43 обр. 1943 г."
+msgstr "T-43 mod. 1943"
 
 msgid "T-43_descr"
 msgstr ""
-"Разрабатывался для замены Т-34 с весны 1942 года. Был рекомендован к "
-"принятию на вооружение. Серийно не выпускался."
+"Designed as a replacement for the T-34 in the spring of 1942. The T-43 was "
+"recommended for service, but never entered mass production."
 
 msgid "T-43_mod_100"
-msgstr "Т-43 обр. 1943 г."
+msgstr "T-43 mod. 1943"
 
 msgid "T-43_mod_43"
-msgstr "Т-43 обр. 1942 г."
+msgstr "T-43 mod. 1942"
 
 msgid "T-44"
-msgstr "Т-44"
+msgstr "T-44"
 
 msgid "T-44-100"
-msgstr "Т-44-100"
+msgstr "T-44-100"
 
 msgid "T-44Bis"
-msgstr "Т-44М"
+msgstr "T-44M"
 
 msgid "T-44_descr"
 msgstr ""
-"Принят на вооружение в 1944 году. До конца войны было выпущено 965 машин. "
-"Танк состоял на вооружении до конца 70-х годов."
+"Adopted in 1944, with a total of 965 vehicles produced by the end of the "
+"war. The T-44 remained in service until the end of the 1970s."
 
 msgid "T-46"
-msgstr "Т-46"
+msgstr "T-46"
 
 msgid "T-46-1"
-msgstr "Т-46-1"
+msgstr "T-46-1"
 
 msgid "T-46-1_short"
-msgstr "Т-46-1"
+msgstr "T-46-1"
 
 msgid "T-46_descr"
 msgstr ""
-"Разработан для замены Т-26. Выпускался с 1936 года. После постройки четырёх "
-"машин от серийного производства было решено отказаться из-за дороговизны "
-"танка."
+"Designed as a replacement for the T-26. The vehicle entered mass production "
+"in 1936. However, manufacture proved to be too expensive, so the model was "
+"phased out after only four vehicles had been completed."
 
 msgid "T-46_mod_1"
-msgstr "Т-46"
+msgstr "T-46"
 
 msgid "T-46_mod_2"
-msgstr "Т-46-1"
+msgstr "T-46-1"
 
 msgid "T-50"
-msgstr "Т-50"
+msgstr "T-50"
 
 msgid "T-50_descr"
 msgstr ""
-"Работы над машиной начались в октябре 1940 г. После испытаний опытного "
-"образца в феврале — марте 1941 г. машина была принята на вооружение."
+"Developed in October 1940. The design presented by Plant 174 was submitted "
+"for consideration. After successful trials in February and March 1941 the "
+"vehicle entered service."
 
 msgid "T-50_short"
-msgstr "Т-50"
+msgstr "T-50"
 
 msgid "T-54"
-msgstr "Т-54"
+msgstr "T-54"
 
 msgid "T-54_descr"
 msgstr ""
-"Прототип создан в конце 1944 года. После испытаний в 1945–1947 гг. был "
-"принят на вооружение обр. 1947 года. После выпуска 713 машин от серийного "
-"производства было решено отказаться. В 1949 году был начат выпуск новой "
-"модели."
+"The first prototype was constructed at the end of 1944. After successful "
+"trials in 1945–1947 the T-54 mod. 1947 was adopted for service. 713 vehicles "
+"were constructed before production was phased out. In 1949 production of a "
+"new variant was launched."
 
 msgid "T-60"
-msgstr "Т-60"
+msgstr "T-60"
 
 msgid "T-60_descr"
 msgstr ""
-"Разработан в августе 1941 года в КБ завода №37 под руководством Н. А. "
-"Астрова. Принят на вооружение в сентябре 1941 г. Серийное производство "
-"продолжалось до февраля 1943 года. Всего было выпущено 5920 танков. Состоял "
-"на вооружении до конца войны."
+"Developed in August 1941 at the Construction Bureau of Plant No. 37 under "
+"the supervision of N. A. Astrov. The vehicle came into service in September "
+"1941, and was mass-produced until February 1943, with a total of 5920 "
+"vehicles manufactured. The T-60 tank was in service until the end of the war."
 
 msgid "T-70"
-msgstr "Т-70"
+msgstr "T-70"
 
 msgid "T-70_descr"
 msgstr ""
-"Разработан в октябре — ноябре 1941 года в КБ Горьковского автомобильного "
-"завода под руководством Н. А. Астрова. Принят на вооружение в январе 1942 "
-"года. Серийное производство было прекращено в октябре 1943 года. Всего был "
-"выпущен 8231 танк. Применялся до конца войны."
+"Developed in October and November 1941 at the Construction Bureau of the "
+"Gorky Automobile Plant under the supervision of N. A. Astrov. The vehicle "
+"came into service in January 1942, and it was mass-produced until October "
+"1943, with a total of 8231 vehicles manufactured. Some vehicles were used "
+"until the end of the war."
 
 msgid "T150"
-msgstr "Т-150"
+msgstr "T-150"
 
 msgid "T150_descr"
 msgstr ""
-"Т-150 являлся дальнейшим развитием КВ-1. Масса машины достигла 50 тонн. В "
-"первой половине 1941 года танк прошёл полигонные испытания. Опытный образец "
-"принял участие в обороне Ленинграда, а также послужил основой для создания "
-"версии танка КВ-1 с усиленным бронированием."
+"The T-150 was a further development of the KV-1. The vehicle weighed as much "
+"as 50 tons. The T-150 underwent trials in the first half of 1941. A "
+"prototype fought in the battles for Leningrad, and became a basis for a "
+"modification of the KV-1 with reinforced armor."
 
 msgid "T44_122"
-msgstr "Т-44-122"
+msgstr "T-44-122"
 
 msgid "T44_122_descr"
 msgstr ""
-"Разработка машины началась в 1943 году. Работы над прототипом были завершены "
-"к концу года, а в январе 1944 года прототип прошёл испытания. В феврале 1944 "
-"года танк был перевооружён 122-мм орудием и снова отправлен на испытания. От "
-"серийного варианта прототип 1943 года отличался формой корпуса и башни, а "
-"также двигателем и бронированием."
+"Development of the vehicle started in 1943. The prototype was built by the "
+"end of the year and underwent trials in January 1944. In February 1944, the "
+"tank was re-equipped with a 122-mm gun and sent again for trials. Compared "
+"to the production vehicle, the 1943 prototype featured a different hull "
+"shape, turret, engine, and armor layout."
 
 msgid "T44_85"
-msgstr "Т-44-85"
+msgstr "T-44-85"
 
 msgid "T44_85_descr"
 msgstr ""
-"Разработка машины началась в 1943 году. После испытаний первого прототипа в "
-"конструкцию машины был внесён ряд изменений. Эталонный экземпляр Т-44А был "
-"готов к августу 1944 года и поступил на дальнейшие испытания. Данный вариант "
-"T-44 серийно не выпускался, однако в серию пошёл следующий образец машины."
+"Development started in 1943. The design received an upgrade after the trials "
+"of the prototype. A standard T-44A model was built in August 1944 and the "
+"trials continued. The T-44A never entered mass-production. However, the next "
+"prototype of the vehicle was mass-produced."
 
 msgid "T62A"
-msgstr "Т-62А"
+msgstr "T-62A"
 
 msgid "T62A_descr"
 msgstr ""
-"Разработка среднего танка первого послевоенного поколения началась в 1951 "
-"году. В 1961 году на вооружение были приняты Т-62А с нарезным орудием и Т-62 "
-"с гладкоствольным орудием. Однако в марте 1962 года было принято решение не "
-"начинать серийное производство Т-62А. Танк Т-62 выпускался серийно с 1961 по "
-"1975 год. Всего было выпущено 20 тысяч машин. Поздние модификации танка "
-"состоят на вооружении до настоящего времени."
+"Development of the first Soviet post-war medium tank started in 1951. In "
+"1961, the T-62 tank with a smoothbore gun was deployed. At the same time a "
+"variant, the T-62A, with a rifled gun was also deployed. In March 1962, mass "
+"production of the T-62A was discontinued. The T-62 tank was mass-produced "
+"from 1961 through 1975, with a total of twenty thousand vehicles "
+"manufactured. Later modifications of the vehicle are still in service."
+
+msgid "T62A_fallout"
+msgstr "(R) T-62A"
+
+msgid "T62A_fallout_descr"
+msgstr ""
+"Development of the first Soviet post-war medium tank started in 1951. In "
+"1961, after developing and testing several working prototypes, the T-62A "
+"with a rifled gun and the T-62 with a smoothbore gun were deployed. In March "
+"1962, mass production of the T-62A was discontinued. The T-62 tank was mass-"
+"produced from 1961 through 1975, with a total of twenty thousand vehicles "
+"manufactured. Later modifications of the vehicle are still in service."
+
+msgid "T62A_fallout_short"
+msgstr "(R) T-62A"
 
 msgid "T62A_short"
-msgstr "Т-62А"
+msgstr "T-62A"
 
 msgid "T80"
-msgstr "Т-80"
+msgstr "T-80"
 
 msgid "T80_descr"
 msgstr ""
-"Разработан летом — осенью 1942 года в КБ Горьковского автомобильного завода "
-"под руководством Н. А. Астрова. Принят на вооружение в декабре 1942 года. За "
-"время серийного производства было выпущено 85 машин."
+"Developed in the summer and fall of 1942 at the Construction Bureau of the "
+"Gorky Automobile Plant under the supervision of N. A. Astrov. The vehicle "
+"came into service in December 1942. A total of 85 vehicles were mass-"
+"produced."
 
 msgid "TD-12"
-msgstr "ТД-12"
-
-msgid "TD-12_fallout"
-msgstr "ТД-12"
+msgstr "TD-12"
 
 msgid "TD-30"
-msgstr "М-50Д"
+msgstr "M-50D"
 
 msgid "TDDG"
-msgstr "ДГ"
+msgstr "DG"
 
 msgid "T_50_2"
-msgstr "Т-50-2"
+msgstr "T-50-2"
 
 msgid "T_50_2_descr"
 msgstr ""
-"Одновременно с заводом №174 свой проект Т-50 подготовили в КБ ЛКЗ. "
-"Особенностями танка были литой корпус и подковообразный радиатор. В массовом "
-"производстве машина была сложнее проекта завода №174."
+"The designs of the T-50 were submitted by the Construction Bureau of the "
+"Kirov Plant (Leningrad) and Plant 174. The design introduced by the Kirov "
+"Plant was more difficult to implement. The distinctive features of the "
+"vehicle were its hull shape and a horseshoe-shaped radiator."
 
 msgid "T_50_2_short"
-msgstr "Т-50-2"
+msgstr "T-50-2"
 
 msgid "Tetrarch_LL"
-msgstr "Тетрарх"
+msgstr "Tetrarch"
 
 msgid "Tetrarch_LL_descr"
 msgstr ""
-"Разработан в 1936 году компанией Vickers-Armstrong. В 1941–1942 гг. было "
-"выпущено 177 машин двух основных модификаций — Tetrarch Mk I и Tetrarch Mk "
-"ICS. В 1942 году по ленд-лизу в СССР было поставлено 20 танков, из которых "
-"19 применялись на Восточном фронте до октября 1943 года."
+"Developed in 1936 by the Vickers-Armstrong company, with a total of 177 "
+"vehicles in two basic modifications the Tetrarch Mk I and the Tetrarch Mk "
+"ICS manufactured from 1941 through 1942. In 1942 twenty vehicles were "
+"delivered to the U.S.S.R. under Lend-Lease, of which 19 fought on the "
+"Eastern Front until October 1943."
 
 msgid "Tetrarch_LL_short"
-msgstr "Тетрарх"
+msgstr "Tetrarch"
 
 msgid "Tip_9"
-msgstr "Тип 9"
+msgstr "Type 9"
 
 msgid "Turret_1_A43"
-msgstr "А-43"
+msgstr "A-43"
 
 msgid "Turret_1_A44"
-msgstr "А-44"
+msgstr "A-44"
 
 msgid "Turret_1_IS8"
-msgstr "Т-10"
+msgstr "T-10"
 
 msgid "Turret_1_KV-13"
-msgstr "КВ-13 обр. 1942 г."
+msgstr "KV-13 mod. 1942"
 
 msgid "Turret_1_KV-5"
-msgstr "КВ-5"
+msgstr "KV-5"
 
 msgid "Turret_1_KV1"
-msgstr "КВ-1 ЛКЗ обр. 1940 г."
+msgstr "KV-1 LKZ mod. 1941"
 
 msgid "Turret_1_KV1_short"
-msgstr "КВ-1 ЛКЗ"
+msgstr "KV-1 LKZ"
 
 msgid "Turret_1_KV2"
-msgstr "МТ-1"
+msgstr "MT-1"
 
 msgid "Turret_1_KV4"
-msgstr "КВ-4"
+msgstr "KV-4"
 
 msgid "Turret_1_LTP"
-msgstr "ЛТП"
+msgstr "LTP"
 
 msgid "Turret_1_Object263"
-msgstr "Объект 263"
+msgstr "Object 263"
 
 msgid "Turret_1_Object268"
-msgstr "Объект 268"
-
-msgid "Turret_1_Object268_fallout"
-msgstr "Объект 268"
+msgstr "Object 268"
 
 msgid "Turret_1_Object416"
-msgstr "Объект 416 обр. 1952 г."
+msgstr "Object 416 mod. 1952"
 
 msgid "Turret_1_Object_140"
-msgstr "Объект 140"
-
-msgid "Turret_1_Object_140_fallout"
-msgstr "Объект 140"
+msgstr "Object 140"
 
 msgid "Turret_1_Object_212"
-msgstr "212А"
+msgstr "212A"
 
 msgid "Turret_1_Object_261"
-msgstr "Объект 261"
+msgstr "Object 261"
 
 msgid "Turret_1_Object_430"
-msgstr "Объект 430"
+msgstr "Object 430"
 
 msgid "Turret_1_Object_704"
-msgstr "Объект 704"
+msgstr "Object 704"
 
 msgid "Turret_1_Object_907"
-msgstr "Объект 907"
+msgstr "Object 907"
 
 msgid "Turret_1_Object_907A"
-msgstr "Объект 907A"
+msgstr "Object 907A"
 
 msgid "Turret_1_R100_SU122A"
-msgstr "СУ-122А"
+msgstr "SU-122A"
 
 msgid "Turret_1_R101_MT25"
-msgstr "МТ-25"
+msgstr "MT-25"
 
 msgid "Turret_1_R104_Object_430_II"
-msgstr "Объект 430 Вариант II"
+msgstr "Object 430 Version II"
 
 msgid "Turret_1_R105_BT_7A"
-msgstr "БТ-7 арт."
+msgstr "BT-7 art."
 
 msgid "Turret_1_R106_KV85"
-msgstr "КВ-85"
+msgstr "KV-85"
 
 msgid "Turret_1_R107_LTB"
-msgstr "ЛТТБ"
+msgstr "LTTB"
 
 msgid "Turret_1_R108_T34_85M"
-msgstr "Т-34-85М"
+msgstr "T-34-85M"
 
 msgid "Turret_1_R110_Object_260"
-msgstr "Объект 260 обр. 1945 г."
+msgstr "Object 260 mod. 1945"
 
 msgid "Turret_1_R111_ISU130"
-msgstr "ИСУ-130"
+msgstr "ISU-130"
 
 msgid "Turret_1_R112_T54_45"
-msgstr "Т-54 первый образец"
+msgstr "T-54 first prototype"
 
 msgid "Turret_1_R113_Object_730"
-msgstr "ИС-5 (Объект 730)"
+msgstr "IS-5 (Object 730)"
 
 msgid "Turret_1_R114_Object_244"
-msgstr "Объект 244"
+msgstr "Object 244"
 
 msgid "Turret_1_R115_IS-3_auto"
-msgstr "ИС-3 с МЗ"
+msgstr "IS-3 auto"
 
 msgid "Turret_1_R116_ISU122C_Berlin"
-msgstr "ИСУ-122С"
+msgstr "ISU-122S"
 
 msgid "Turret_1_R117_T34_85_Rudy"
-msgstr "Т-34-85"
+msgstr "T-34-85"
 
 msgid "Turret_1_R118_T28_F30"
-msgstr "Т-28Э с Ф-30"
+msgstr "T-28E with F-30"
 
 msgid "Turret_1_R119_Object_777"
-msgstr "Объект 777 Вариант II"
+msgstr "Object 777 Version II"
+
+msgid "Turret_1_R120_T22SR_A22"
+msgstr "T-22 medium"
+
+msgid "Turret_1_R121_KV4_KTT"
+msgstr "KV-4 KTTS"
+
+msgid "Turret_1_R122_T44_100"
+msgstr "T-44-100"
 
 msgid "Turret_1_R71_IS_2B"
-msgstr "ИС-122"
+msgstr "IS-122"
 
 msgid "Turret_1_ST_I"
-msgstr "Объект 701-1"
+msgstr "Object 701-1"
 
 msgid "Turret_1_SU100M1"
-msgstr "СУ-100М1"
+msgstr "SU-100M1"
 
 msgid "Turret_1_SU100Y"
-msgstr "СУ-100Y"
+msgstr "SU-100Y"
 
 msgid "Turret_1_SU122_44"
-msgstr "СУ-122-44"
+msgstr "SU-122-44"
 
 msgid "Turret_1_SU122_54"
-msgstr "СУ-122/54"
+msgstr "SU-122/54"
 
 msgid "Turret_1_SU14_1"
-msgstr "СУ-14-1"
+msgstr "SU-14-1"
 
 msgid "Turret_1_SU76I"
-msgstr "СУ-76И"
+msgstr "SU-76I"
 
 msgid "Turret_1_T-127"
-msgstr "Т-127"
+msgstr "T-127"
 
 msgid "Turret_1_T-50"
-msgstr "Т-50"
+msgstr "T-50"
 
 msgid "Turret_1_T-54_2"
-msgstr "Т-54 обр. 1946 г."
+msgstr "T-54 mod. 1946"
 
 msgid "Turret_1_T-60"
-msgstr "Т-40"
+msgstr "T-40"
 
 msgid "Turret_1_T-70"
-msgstr "Т-70"
+msgstr "T-70"
 
 msgid "Turret_1_T150"
-msgstr "Т-150-КВ"
+msgstr "T-150-KV"
 
 msgid "Turret_1_T44_122"
-msgstr "Т-44-122"
+msgstr "T-44-122"
 
 msgid "Turret_1_T44_85"
-msgstr "Т-44-85"
+msgstr "T-44-85"
 
 msgid "Turret_1_T46"
-msgstr "Т-26"
+msgstr "T-26"
 
 msgid "Turret_1_T62A"
-msgstr "Т-62А"
+msgstr "T-62A"
+
+msgid "Turret_1_T62A_fallout"
+msgstr "T-62A"
 
 msgid "Turret_1_T80"
-msgstr "Т-80"
+msgstr "T-80"
 
 msgid "Turret_1_T_50_2"
-msgstr "Т-50-2"
+msgstr "T-50-2"
 
 msgid "Turret_1_Tetrarch_LL"
 msgstr "Tetrarch"
 
 msgid "Turret_2_A43"
-msgstr "А-44"
+msgstr "A-44"
 
 msgid "Turret_2_A44"
-msgstr "А-44 экранированная"
+msgstr "A-44 shielded"
 
 msgid "Turret_2_IS8"
-msgstr "Т-10М"
+msgstr "T-10M"
 
 msgid "Turret_2_KV-13"
-msgstr "КВ-13 обр. 1943 г."
+msgstr "KV-13 mod. 1943"
 
 msgid "Turret_2_KV1"
-msgstr "КВ-1 ЧТЗ обр. 1942 г."
+msgstr "KV-1 ChTZ mod. 1942"
 
 msgid "Turret_2_KV1_short"
-msgstr "КВ-1 ЧТЗ"
+msgstr "KV-1 ChTZ"
 
 msgid "Turret_2_KV2"
-msgstr "МТ-2"
+msgstr "MT-2"
 
 msgid "Turret_2_KV4"
-msgstr "КВ-4-5"
+msgstr "KV-4-5"
 
 msgid "Turret_2_Object416"
-msgstr "Объект 416 обр. 1953 г."
+msgstr "Object 416 mod. 1953"
 
 msgid "Turret_2_R101_MT25"
-msgstr "Т-34М обр. 1941 г."
+msgstr "T-34M mod. 1941"
 
 msgid "Turret_2_R104_Object_430_II"
-msgstr "Объект 430 Вариант II усиленная"
+msgstr "Object 430 Version II enhanced"
 
 msgid "Turret_2_R106_KV85"
-msgstr "КВ-122 обр. 1944 г."
+msgstr "KV-122 mod. 1944"
 
 msgid "Turret_2_R109_T54S"
-msgstr "Т-54 облегчённый вариант"
+msgstr "T-54 ltwt. version"
 
 msgid "Turret_2_ST_I"
-msgstr "СТ-I"
+msgstr "ST-I"
 
 msgid "Turret_2_T-54_2"
-msgstr "Т-54 обр. 1949 г."
+msgstr "T-54 mod. 1949"
 
 msgid "Turret_2_T-60"
-msgstr "Т-60"
+msgstr "T-60"
 
 msgid "Turret_2_T-70"
-msgstr "Т-70М"
+msgstr "T-70M"
 
 msgid "Turret_2_T150"
-msgstr "Т-150-220"
+msgstr "T-150-220"
 
 msgid "Turret_2_T_50_2"
-msgstr "Т-50-2М"
+msgstr "T-50-2M"
 
 msgid "Turret_710_mod_5"
-msgstr "ИС-4М"
+msgstr "IS-4M"
 
 msgid "Turret_IS-6"
-msgstr "ИС-6"
+msgstr "IS-6"
 
 msgid "Turret_IS-7_fallout"
-msgstr "ИС-7"
+msgstr "IS-7"
 
 msgid "V-11"
-msgstr "В-11"
+msgstr "V-11"
 
 msgid "V-11-IS-3"
-msgstr "В-11-ИС-3"
+msgstr "V-11-IS-3"
 
 msgid "V-12"
-msgstr "В-12"
+msgstr "V-12"
 
 msgid "V-12-5"
-msgstr "В-12-5"
+msgstr "V-12-5"
 
 msgid "V-12-5A"
-msgstr "В-12-5"
+msgstr "V-12-5"
 
 msgid "V-12-5U"
-msgstr "В-12-5У"
+msgstr "V-12-5U"
+
+msgid "V-12-5_shortened"
+msgstr "V-12-5 shortened"
 
 msgid "V-12-6"
-msgstr "В-12-6"
+msgstr "V-12-6"
 
 msgid "V-12A"
-msgstr "В-12 А"
+msgstr "V-12 A"
 
 msgid "V-12P"
-msgstr "В-12П"
+msgstr "V-12P"
 
 msgid "V-16"
-msgstr "В-16"
+msgstr "V-16"
 
 msgid "V-16FN"
-msgstr "В-16ФН"
-
-msgid "V-16FN_fallout"
-msgstr "В-16ФН"
+msgstr "V-16FN"
 
 msgid "V-16M"
-msgstr "В-16М"
+msgstr "V-16M"
 
 msgid "V-2"
-msgstr "В-2"
+msgstr "V-2"
 
 msgid "V-2-212"
-msgstr "В-2К форсированный"
+msgstr "V-2K forced"
 
 msgid "V-2-34"
-msgstr "В-2-34"
+msgstr "V-2-34"
 
 msgid "V-2-34M"
-msgstr "В-2-34М"
+msgstr "V-2-34M"
 
 msgid "V-2-34_B"
-msgstr "В-2-34"
+msgstr "V-2-34"
 
 msgid "V-2-44"
-msgstr "В-2-44"
+msgstr "V-2-44"
 
 msgid "V-2-54"
-msgstr "В-2-54"
+msgstr "V-2-54"
 
 msgid "V-2-54A"
-msgstr "В-2-54"
+msgstr "V-2-54"
 
 msgid "V-2-54IS"
-msgstr "В-2-54ИС"
+msgstr "V-2-54IS"
 
 msgid "V-2IS"
-msgstr "В-2ИС"
+msgstr "V-2IS"
 
 msgid "V-2IS_B"
-msgstr "В-2ИС"
+msgstr "V-2IS"
 
 msgid "V-2IS_R"
-msgstr "В-2-10"
+msgstr "V-2-10"
 
 msgid "V-2K"
-msgstr "В-2К"
+msgstr "V-2K"
 
 msgid "V-2KT"
-msgstr "В-2КТ"
+msgstr "V-2SN"
 
 msgid "V-2SN"
-msgstr "В-2СН"
+msgstr "V-2SN"
 
 msgid "V-2SNx2"
-msgstr "2x В-2К-Ф"
+msgstr "2x V-2K-F"
 
 msgid "V-3"
-msgstr "В-3"
+msgstr "V-3"
 
 msgid "V-4"
-msgstr "В-4"
+msgstr "V-4"
 
 msgid "V-44"
-msgstr "В-44"
+msgstr "V-44"
 
 msgid "V-44A"
-msgstr "В-44-500"
+msgstr "V-44-500"
 
 msgid "V-5"
-msgstr "В-5"
+msgstr "V-5"
 
 msgid "V-54"
-msgstr "В-54"
+msgstr "V-54"
 
 msgid "V-54-6"
-msgstr "В-54-6"
+msgstr "V-54-6"
 
 msgid "V-54K"
-msgstr "В-54К"
+msgstr "V-54K"
 
 msgid "V-55"
-msgstr "В-55"
+msgstr "V-55"
 
 msgid "V-55U"
-msgstr "В-14"
+msgstr "V-14"
+
+msgid "V-55_fallout"
+msgstr "V-55"
 
 msgid "V-5F"
-msgstr "В-5Ф"
+msgstr "V-5F"
 
 msgid "V-5U"
-msgstr "В-5У"
+msgstr "V-5U"
+
+msgid "V-7"
+msgstr "V-7"
 
 msgid "ValentineMK_I"
-msgstr "Валентайн"
+msgstr "Valentine"
 
 msgid "Valentine_LL"
-msgstr "Валентайн II"
+msgstr "Valentine II"
 
 msgid "Valentine_LL_descr"
 msgstr ""
-"Английский танк, поступавший в СССР по ленд-лизу. Всего было поставлено 3782 "
-"танка, однако часть была потеряна при транспортировке морем в Мурманск."
+"A British tank supplied to the U.S.S.R. under Lend-Lease. A total of 3,782 "
+"vehicles were sent to the Soviet Union, with some lost at sea during "
+"transport to Murmansk."
 
 msgid "ZiS-16"
-msgstr "ЗИС-16"
+msgstr "ZiS-16"
 
 msgid "_100mm_3UBK4"
-msgstr "3УБК4"
+msgstr "ZUBK4"
 
 msgid "_100mm_3UBK4M"
-msgstr "3УБК4М"
+msgstr "ZUBK4M"
 
 msgid "_100mm_3UBK4M_fallout"
-msgstr "ЗУБК4М (П)"
+msgstr "ZUBK4M R"
 
 msgid "_100mm_3UOF10"
-msgstr "3УОФ10"
+msgstr "ZUOF10"
 
 msgid "_100mm_3UOF10_fallout"
-msgstr "ЗУОФ10 (П)"
+msgstr "ZUOF10 R"
 
 msgid "_100mm_BR-412D"
-msgstr "УБР-412Д"
+msgstr "UBR-412D"
 
 msgid "_100mm_D-10T2S"
-msgstr "100 мм Д-10Т2С"
+msgstr "100 mm D-10T2S"
 
 msgid "_100mm_D10S"
-msgstr "100 мм Д-10С"
+msgstr "100 mm D10S"
 
 msgid "_100mm_D10S_obr_44"
-msgstr "100 мм Д-10С обр. 1944 г."
+msgstr "100 mm D-10S mod. 1944"
 
 msgid "_100mm_D10T"
-msgstr "100 мм Д-10Т"
+msgstr "100 mm D10T"
 
 msgid "_100mm_D10TK"
-msgstr "100 мм Д-10Т-К"
+msgstr "100 mm D10T-K"
 
 msgid "_100mm_D10T_obr_45"
-msgstr "100 мм Д-10Т обр. 1945 г."
+msgstr "100 mm D10T mod. 1945"
 
 msgid "_100mm_D54S"
-msgstr "100 мм Д-54С"
+msgstr "100 mm D-54S"
 
 msgid "_100mm_D54_M"
-msgstr "100 мм Д-54ТС"
+msgstr "100 mm D-54TS"
 
 msgid "_100mm_D54_TS"
-msgstr "100 мм У-8ТС"
+msgstr "100 mm U-8TS"
 
 msgid "_100mm_D54_TS_fallout"
-msgstr "100 мм У-8ТС"
+msgstr "100 mm U-8TS"
 
 msgid "_100mm_D54_obr_45"
-msgstr "100 мм Д-54"
+msgstr "100 mm D-54"
 
 msgid "_100mm_LB-1"
-msgstr "100 мм ЛБ-1"
+msgstr "100 mm LB-1"
+
+msgid "_100mm_LB-1A"
+msgstr "100 mm LB-1"
 
 msgid "_100mm_LB-1S"
-msgstr "100 мм ЛБ-1С"
+msgstr "100 mm LB-1C"
 
 msgid "_100mm_M-63"
-msgstr "100 мм М-63"
+msgstr "100 mm M-63"
 
 msgid "_100mm_S34"
-msgstr "100 мм С-34"
+msgstr "100 mm S-34"
 
 msgid "_100mm_UBR-412"
-msgstr "УБР-412"
+msgstr "UBR-412"
 
 msgid "_100mm_UBR-412B"
-msgstr "УБР-412Б"
+msgstr "UBR-412B"
 
 msgid "_100mm_UBR-412P"
-msgstr "УБР-412П"
+msgstr "UBR-412P"
 
 msgid "_100mm_UBR-412PB"
-msgstr "УБР-412ПБ"
+msgstr "UBR-412PB"
 
 msgid "_100mm_UBR-412PB_fallout"
-msgstr "УБР-412ПБ (П)"
+msgstr "UBR-412PB R"
 
 msgid "_100mm_UOF-412"
-msgstr "УОФ-412"
+msgstr "UOF-412"
 
 msgid "_100mm_UOF-412B"
-msgstr "УОФ-412Б"
+msgstr "UOF-412B"
 
 msgid "_107mm_UBR-420"
-msgstr "УБР-420"
+msgstr "UBR-420"
 
 msgid "_107mm_UBR-420M"
-msgstr "УБР-420М"
+msgstr "UBR-420M"
 
 msgid "_107mm_UBR-420P"
-msgstr "УБР-420П"
+msgstr "UBR-420P"
 
 msgid "_107mm_UBR-420PM"
-msgstr "УБР-420ПМ"
+msgstr "UBR-420PM"
 
 msgid "_107mm_UOF-420"
-msgstr "УОФ-420"
+msgstr "UOF-420"
 
 msgid "_107mm_UOF-420M"
-msgstr "УОФ-420М"
+msgstr "UOF-420M"
 
 msgid "_107mm_ZiS-24"
-msgstr "107 мм ЗиС-24"
+msgstr "107 mm ZiS-24"
+
+msgid "_107mm_ZiS-24_A"
+msgstr "107 mm ZiS-24"
 
 msgid "_107mm_ZiS-6"
-msgstr "107 мм ЗиС-6"
+msgstr "107 mm ZiS-6"
 
 msgid "_107mm_ZiS-6M"
-msgstr "107 мм ЗиС-6М"
+msgstr "107 mm ZiS-6M"
 
 msgid "_107mm_ZiS-6_S"
-msgstr "107 мм ЗиС-6С"
+msgstr "107 mm ZiS-6S"
 
 msgid "_10R"
-msgstr "10Р"
+msgstr "10R"
 
 msgid "_10RK"
-msgstr "10РК"
+msgstr "10RK"
 
 msgid "_10RK-26"
-msgstr "10РК-26"
+msgstr "10RK-26"
 
 msgid "_10RK-26_fallout"
-msgstr "10РК-26"
+msgstr "10RK-26"
 
 msgid "_10RKM"
-msgstr "10РКМ"
+msgstr "10RKM"
 
 msgid "_10RT-26E"
-msgstr "10РТ-26"
+msgstr "10RT-26"
 
 msgid "_12.7mm_AP_B32"
-msgstr "Б-32"
+msgstr "B-32"
 
 msgid "_12.7mm_DSHK"
-msgstr "12,7 мм ДШК"
+msgstr "12.7 mm DShK"
 
 msgid "_122-mm_D-25S_with_a_piston_shutter"
-msgstr "122 мм Д-2-5С"
+msgstr "122 mm D-2-5S"
 
 msgid "_122-mm_D-25S_with_wedges_shutter"
-msgstr "122 мм Д-25С"
+msgstr "122 mm D-25S"
 
 msgid "_122-mm_D-25TA"
-msgstr "122 мм Д-25ТА"
+msgstr "122 mm D-25TA"
 
 msgid "_122-mm_D-25T_with_a_piston_shutter"
-msgstr "122 мм Д-2-5Т"
+msgstr "122 mm D-2-5T"
 
 msgid "_122-mm_D-25T_with_wedges_shutter"
-msgstr "122 мм Д-25Т"
+msgstr "122 mm D-25T"
 
 msgid "_122-mm_D-25T_with_wedges_shutter_B"
-msgstr "122 мм Д-25Т"
+msgstr "122 mm D-25T"
 
 msgid "_122-mm_D-30"
-msgstr "122 мм Д-30"
+msgstr "122 mm D-30"
 
 msgid "_122-mm_D-49"
-msgstr "122 мм Д-49"
+msgstr "122 mm D-49"
 
 msgid "_122mm_3BM14"
-msgstr "3БМ14"
+msgstr "ZBM14"
 
 msgid "_122mm_3VBK6"
-msgstr "3ВБК6"
+msgstr "ZVBK6"
 
 msgid "_122mm_A-19"
-msgstr "122 мм А-19 обр. 1937 г."
+msgstr "122 mm A-19 mod. 1937"
 
 msgid "_122mm_A-19_short"
-msgstr "122 мм А-19"
+msgstr "122 mm A-19"
 
 msgid "_122mm_BL-13-1"
-msgstr "122 мм БЛ-13-1"
+msgstr "122 mm BL-13-1"
 
 msgid "_122mm_BL-9"
-msgstr "122 мм БЛ-9"
+msgstr "122 mm BL-9"
 
 msgid "_122mm_BL-9S"
-msgstr "122 мм БЛ-9С"
+msgstr "122 mm BL-9S"
 
 msgid "_122mm_BM11"
-msgstr "БК-9"
+msgstr "BK-9"
 
 msgid "_122mm_BP-463"
-msgstr "БП-463"
+msgstr "BP-463"
 
 msgid "_122mm_BP450S"
-msgstr "БП-460А"
+msgstr "BP-460A"
 
 msgid "_122mm_BP450SO"
-msgstr "БП-460АО"
+msgstr "BP-450AO"
 
 msgid "_122mm_BR-471D"
-msgstr "БР-472"
+msgstr "BR-472"
 
 msgid "_122mm_D-25-44"
-msgstr "122 мм Д-25-44"
+msgstr "122 mm D-25-44"
 
 msgid "_122mm_D-25C_mod1944"
-msgstr "122 мм Д-25С обр. 1944 г."
+msgstr "122 mm D-25S mod. 1944"
 
 msgid "_122mm_D-25C_mod1944_B"
-msgstr "122 мм Д-25С обр. 1944 г."
+msgstr "122 mm D-25S mod. 1944"
 
 msgid "_122mm_D-25C_mod1944_B_short"
-msgstr "122 мм Д-25С"
+msgstr "122 mm D-25S"
 
 msgid "_122mm_D-25C_mod1944_short"
-msgstr "122 мм Д-25С"
+msgstr "122 mm D-25S"
 
 msgid "_122mm_M-30"
-msgstr "122 мм гаубица М-30"
+msgstr "122 mm Howitzer M-30"
 
 msgid "_122mm_M62-T2"
-msgstr "122 мм M62-T2"
+msgstr "122 mm M62-T2"
 
 msgid "_122mm_M62-T2A"
-msgstr "122 мм M62-T2"
+msgstr "122 mm M62-T2"
 
 msgid "_122mm_M62-T2S"
-msgstr "122 мм М62-С2"
+msgstr "122 mm M62-C2"
 
 msgid "_122mm_OF-462"
-msgstr "ОФ-462"
+msgstr "OF-462"
 
 msgid "_122mm_OF420S"
-msgstr "ОФ-42ОС"
+msgstr "OF-420S"
 
 msgid "_122mm_OF420SO"
-msgstr "ОФ-420СО"
+msgstr "OF-420-SO"
 
 msgid "_122mm_OF420SOMSH"
-msgstr "ОФ-420СОМШ"
+msgstr "OF-420-SOMSh"
 
 msgid "_122mm_S-41"
-msgstr "122 мм гаубица С-41"
+msgstr "122 mm Howitzer S-41"
 
 msgid "_122mm_UBP-471BM"
-msgstr "БП-471БМ"
+msgstr "BP-471BM"
 
 msgid "_122mm_UBR-471"
-msgstr "УБР-471"
+msgstr "UBR-471"
 
 msgid "_122mm_UBR-471P"
-msgstr "БР-471Д"
+msgstr "BR-471D"
 
 msgid "_122mm_UBR-471PBM"
-msgstr "БР-471ПБМ"
+msgstr "BR-471PBM"
 
 msgid "_122mm_UOF-471"
-msgstr "УОФ-471"
+msgstr "UOF-471"
 
 msgid "_122mm_UOF-471BM"
-msgstr "УОФ-471БМ"
+msgstr "UOF-471BM"
 
 msgid "_122mm_UOF-472"
-msgstr "УОФ-472"
+msgstr "UOF-472"
 
 msgid "_122mm_cannon_M-30S"
-msgstr "122 мм М-30С"
+msgstr "122 mm M-30S"
 
 msgid "_122mm_cannon_U-11"
-msgstr "122 мм У-11"
+msgstr "122 mm U-11"
 
 msgid "_122mm_cannon_mod_1930"
-msgstr "122 мм гаубица обр. 1910/30 г."
+msgstr "122 mm Howitzer mod. 1910/1930"
 
 msgid "_122mm_howitzer_A-19"
-msgstr "122 мм гаубица А-19"
+msgstr "122 mm Howitzer A-19"
 
 msgid "_12LL"
 msgstr "12LL"
 
 msgid "_12RT"
-msgstr "12РТ"
+msgstr "12RT"
 
 msgid "_130mm_2-01743"
-msgstr "Ч. № 2-01743"
+msgstr "Ch. № 2-01743"
 
 msgid "_130mm_2-02742"
-msgstr "Ч. № 2-02742"
+msgstr "Ch. № 2-02742"
 
 msgid "_130mm_2-02864A"
-msgstr "Ч. № 2-02864А"
+msgstr "Ch. № 2-02864A"
 
 msgid "_130mm_B-13-S2"
-msgstr "130 мм Б-13-С2"
+msgstr "130 mm B-13-S2"
 
 msgid "_130mm_OF-46"
-msgstr "ОФ-46"
+msgstr "OF-46"
 
 msgid "_130mm_PB-46"
-msgstr "ПБ-46"
+msgstr "PB-46"
 
 msgid "_130mm_PB-46A"
-msgstr "ПБ-46А"
+msgstr "PB-46A"
 
 msgid "_130mm_S-26A"
-msgstr "130 мм С-26"
+msgstr "130 mm S-26"
 
 msgid "_130mm_S-70"
-msgstr "130 мм С-70"
+msgstr "130 mm S-70"
 
 msgid "_130mm_S-70A"
-msgstr "130 мм С-70A"
+msgstr "130 mm S-70A"
 
 msgid "_130mm_S-70_fallout"
-msgstr "130 мм С-70"
+msgstr "130 mm S-70"
 
 msgid "_130mm_UBR-482"
-msgstr "УБР-482"
+msgstr "UBR-482"
 
 msgid "_130mm_UBR-482M"
-msgstr "УБР-482М"
+msgstr "UBR-482M"
 
 msgid "_130mm_UBR-482P"
-msgstr "УБР-482П"
+msgstr "UBR-482P"
 
 msgid "_130mm_UBR-482PM"
-msgstr "УБР-482ПМ"
+msgstr "UBR-482PM"
 
 msgid "_130mm_UBR-482P_fallout"
-msgstr "УБР-482П (П)"
+msgstr "UBR-482P R"
 
 msgid "_130mm_UBR-482_fallout"
-msgstr "УБР-482 (П)"
+msgstr "UBR-482 R"
 
 msgid "_130mm_UOF-482"
-msgstr "УОФ-482"
+msgstr "UOF-482"
 
 msgid "_130mm_UOF-482M"
-msgstr "УОФ-482М"
+msgstr "UOF-482M"
 
 msgid "_130mm_UOF-482_fallout"
-msgstr "УОФ-482 (П)"
+msgstr "UOF-482 R"
 
 msgid "_152mm_53-G-530"
-msgstr "53-Г-530"
+msgstr "53-G-530"
 
 msgid "_152mm_53-G-551"
-msgstr "53-Г-551"
+msgstr "53-G-551"
 
 msgid "_152mm_53-OF-530"
-msgstr "53-ОФ-530"
+msgstr "53-OF-530"
 
 msgid "_152mm_53-OF-551"
-msgstr "53-ОФ-551"
+msgstr "53-OF-551"
 
 msgid "_152mm_53-OF-551BM"
-msgstr "53-ОФ-551БМ"
+msgstr "53-OF-551BM"
 
 msgid "_152mm_53-OF-551M"
-msgstr "53-ОФ-551М"
+msgstr "53-HE-551M"
 
 msgid "_152mm_53-OF-551M_fallout"
-msgstr "53-ОФ-551М (П)"
-
-msgid "_152mm_53BP520"
-msgstr "53-БП-520"
+msgstr "53-OF-551M (D)"
 
 msgid "_152mm_53BP540"
-msgstr "53-БП-540"
+msgstr "53-BP-540"
 
 msgid "_152mm_53OF500"
-msgstr "53-ОФ-500"
+msgstr "53-OF-500"
 
 msgid "_152mm_BL-10"
-msgstr "152 мм БЛ-10"
+msgstr "152 mm BL-10"
 
 msgid "_152mm_BR-2"
-msgstr "152 мм БР-2"
+msgstr "152 mm BR-2"
 
 msgid "_152mm_M-10"
-msgstr "152 мм М-10"
+msgstr "152 mm M-10"
 
 msgid "_152mm_M64"
-msgstr "152 мм М64"
+msgstr "152 mm M64"
 
 msgid "_152mm_M64_fallout"
-msgstr "152 мм М64"
+msgstr "152 mm M64"
 
 msgid "_152mm_ML-20C"
-msgstr "152 мм МЛ-20С"
+msgstr "152 mm ML-20S"
 
 msgid "_152mm_ML-20CM_obr1944"
-msgstr "152 мм МЛ-20СМ обр. 1944 г."
+msgstr "152 mm ML-20SM mod. 1944"
 
 msgid "_152mm_ML-20CM_obr1944_short"
-msgstr "152 мм МЛ-20СМ"
+msgstr "152 mm ML-20SM"
 
 msgid "_152mm_ML-20_mod_1937"
-msgstr "152 мм МЛ-20 обр. 1931/37 гг."
+msgstr "152 mm ML-20 mod. 1931/37"
 
 msgid "_152mm_ML-20_mod_1937_short"
-msgstr "152 мм МЛ-20"
+msgstr "152 mm ML-20"
 
 msgid "_152mm_MPB_1915"
-msgstr "МПБ обр. 1915/28 г."
+msgstr "MPB mod. 1915/28"
 
 msgid "_152mm_UBK551M"
-msgstr "УБК551М"
+msgstr "UBK551M"
 
 msgid "_152mm_UBK551M_fallout"
-msgstr "УБК551М (П)"
+msgstr "UBK551M (D)"
 
 msgid "_152mm_UBR551"
-msgstr "УБР-551"
+msgstr "UBR-551"
 
 msgid "_152mm_UBR551M"
-msgstr "УБР551М"
+msgstr "UBR551M"
 
 msgid "_152mm_UBR551M_fallout"
-msgstr "УБР551М (П)"
+msgstr "UBR551M (D)"
 
 msgid "_152mm_UBR551P"
-msgstr "УБР-551П"
+msgstr "UBR-551P"
 
 msgid "_152mm_howitzer_D-1"
-msgstr "152 мм гаубица Д-1"
+msgstr "152 mm Howitzer D-1"
 
 msgid "_152mm_howitzer_ML-20_mod_1931"
-msgstr "152 мм гаубица МЛ-20 обр. 1931 г."
+msgstr "152 mm Howitzer ML-20 mod. 1931"
 
 msgid "_152mm_mortar_NM_mod1931"
-msgstr "152 мм мортира НМ обр. 1931 г."
+msgstr "152 mm Mortar NM mod. 1931"
 
 msgid "_180mm_B-1-P"
-msgstr "180 мм Б-1-П"
+msgstr "180 mm B-1-P"
 
 msgid "_180mm_F-600BM"
-msgstr "Ф-600БМ"
+msgstr "F-600BM"
 
 msgid "_180mm_F-600D"
-msgstr "Ф-600Д"
+msgstr "F-600D"
 
 msgid "_180mm_UBR-600"
-msgstr "УБР-600"
+msgstr "UBR-600"
 
 msgid "_203mm_B-4"
-msgstr "203 мм Б-4"
+msgstr "203 mm B-4"
 
 msgid "_203mm_F-625D"
-msgstr "Ф-625Д"
+msgstr "F-625D"
 
 msgid "_203mm_F-625DBM"
-msgstr "Ф-625ДБМ"
+msgstr "F-625DBM"
 
 msgid "_203mm_G-620"
-msgstr "Г-620"
+msgstr "G-620"
 
 msgid "_20mm_BC-20"
-msgstr "БЦ-20"
+msgstr "BC-20"
 
 msgid "_20mm_TNSH"
-msgstr "20 мм ТНШ"
+msgstr "20 mm TNSh"
 
 msgid "_20mm_UBR-20"
-msgstr "УБР-20"
+msgstr "UBR-20"
 
 msgid "_23mm_BC-23"
-msgstr "БЦ-23"
+msgstr "BC-23"
 
 msgid "_23mm_PT-23TB"
-msgstr "23 мм ПТ-23ТБ"
+msgstr "23 mm PT-23TB"
 
 msgid "_23mm_UBR-23"
-msgstr "УБР-23"
+msgstr "UBR-23"
 
 msgid "_23mm_VJA"
-msgstr "23 мм ВЯ"
+msgstr "23 mm VJa"
 
 msgid "_2pdr_APCNR_Mk.1"
 msgstr "APCNR Mk. 1"
@@ -2665,136 +2769,148 @@ msgid "_2pdr_QFSA"
 msgstr "QF 2-pdr Mk. IX-A"
 
 msgid "_2xV-16"
-msgstr "2x В-16"
+msgstr "2x V-16"
 
 msgid "_37mm_APC_M51_LL"
-msgstr "М51"
+msgstr "M51"
 
 msgid "_37mm_AP_M74_LL"
-msgstr "М74"
+msgstr "M74"
 
 msgid "_37mm_B-3"
-msgstr "37 мм Б-3"
+msgstr "37 mm B-3"
+
+msgid "_37mm_B-3_bot"
+msgstr "37 mm B-3"
 
 msgid "_37mm_BPT1"
-msgstr "БПТ1"
+msgstr "BPT1"
 
 msgid "_37mm_Gochkins"
-msgstr "37 мм Гочкис"
+msgstr "37 mm Hotchkiss"
+
+msgid "_37mm_Gochkins_bot"
+msgstr "37 mm Hotchkiss"
 
 msgid "_37mm_HE_M63_LL"
-msgstr "М63"
+msgstr "M63"
 
 msgid "_37mm_M-5_LL"
-msgstr "37 мм M5"
+msgstr "37 mm M5"
 
 msgid "_37mm_UBR-160"
-msgstr "УБР-160"
+msgstr "UBR-160"
 
 msgid "_37mm_UBR-160P"
-msgstr "УБР-160П"
+msgstr "UBR-160P"
+
+msgid "_37mm_UBR-160_bot"
+msgstr "UBR-160"
 
 msgid "_37mm_UBR160PA"
-msgstr "УБР-160ПА"
+msgstr "UBR-160PA"
 
 msgid "_37mm_UBR160bis"
-msgstr "УБР-160 бис"
+msgstr "UBR-160 bis"
 
 msgid "_37mm_UBRT1"
-msgstr "УБРТ1"
+msgstr "UBRT1"
+
+msgid "_37mm_UBRT1_bot"
+msgstr "UBRT1"
 
 msgid "_37mm_UO160A"
-msgstr "УО-160А"
+msgstr "UO-160A"
 
 msgid "_37mm_UOF-160"
-msgstr "УОФ-160"
+msgstr "UOF-160"
 
 msgid "_37mm_UOT1"
-msgstr "УОТ1"
+msgstr "UOT1"
 
 msgid "_37mm_ZiS-19"
-msgstr "37 мм ЗиС-19"
+msgstr "37 mm ZiS-19"
 
 msgid "_37mm_ZiS-19_S"
-msgstr "37 мм ЗиС-19С"
+msgstr "37 mm ZiS-19S"
 
 msgid "_37mm_automatic_SH-37"
-msgstr "37 мм автомат. Ш-37"
+msgstr "37 mm Automatic SH-37"
 
 msgid "_45mm_20K"
-msgstr "45 мм 20К"
+msgstr "45 mm 20K"
 
 msgid "_45mm_20KL"
-msgstr "45 мм 20К(л)"
+msgstr "45 mm 20KL"
 
 msgid "_45mm_20K_S"
-msgstr "45 мм 20КС"
+msgstr "45 mm 20KS"
 
 msgid "_45mm_UBR-240A"
-msgstr "УБР-240А"
+msgstr "UBR-240A"
 
 msgid "_45mm_UBR-240PA"
-msgstr "УБР-240ПА"
+msgstr "UBR-240PA"
 
 msgid "_45mm_UBR-243SP"
-msgstr "УБР-243СП"
+msgstr "UBR-243SP"
 
 msgid "_45mm_UBR-243SPA"
-msgstr "УБР-243СПА"
+msgstr "UBR-243SPA"
 
 msgid "_45mm_UOF-240A"
-msgstr "УОФ-240А"
+msgstr "UOF-240A"
 
 msgid "_45mm_UOF-243"
-msgstr "УОФ-243"
+msgstr "UOF-243"
 
 msgid "_45mm_VT-42"
-msgstr "45 мм ВТ-42"
+msgstr "45 mm VT-42"
 
 msgid "_45mm_VT-43"
-msgstr "45 мм ВТ-43"
+msgstr "45 mm VT-43"
 
 msgid "_45mm_mod_1932"
-msgstr "45 мм обр. 1932 г."
+msgstr "45 mm mod. 1932"
 
 msgid "_4TD"
-msgstr "4ТД"
+msgstr "4TD"
 
 msgid "_57mm_413"
-msgstr "57 мм проект 413"
+msgstr "57 mm project 413"
 
 msgid "_57mm_UBR-271K"
-msgstr "УБР-271К"
+msgstr "UBR-271K"
 
 msgid "_57mm_UBR-271KO"
-msgstr "УБР-271КО"
+msgstr "UBR-271KO"
 
 msgid "_57mm_UBR-271N"
-msgstr "УБР-271Н"
+msgstr "UBR-271N"
 
 msgid "_57mm_UBR-271NO"
-msgstr "УБР-271НО"
+msgstr "UBR-271NO"
 
 msgid "_57mm_UO-271U"
-msgstr "УО-271У"
+msgstr "UO-271U"
 
 msgid "_57mm_UO-271UO"
-msgstr "УО-271УО"
+msgstr "UO-271UO"
 
 msgid "_57mm_ZiS-2"
-msgstr "57 мм ЗиС-2"
+msgstr "57 mm ZiS-2"
 
 msgid "_57mm_ZiS-4"
-msgstr "57 мм ЗиС-4"
+msgstr "57 mm ZiS-4"
 
 msgid "_57mm_ZiS-8"
-msgstr "57 мм ЗиС-8"
+msgstr "57 mm ZiS-8"
 
 msgid "_57mm_ZiS-8_S"
-msgstr "57 мм ЗиС-8С"
+msgstr "57 mm ZiS-8S"
 
 msgid "_5TD"
-msgstr "5ТД"
+msgstr "5TD"
 
 msgid "_6pdr_APCR_MK_1T"
 msgstr "APCR Mk. 1T"
@@ -2803,187 +2919,190 @@ msgid "_6pdr_AP_MKs_4"
 msgstr "AP Mk. 1T"
 
 msgid "_71-TK-1"
-msgstr "71-ТК-1"
+msgstr "71-TK-1"
+
+msgid "_71-TK-1_bot"
+msgstr "71-TK-1"
 
 msgid "_71-TK-3"
-msgstr "71-ТК-3"
+msgstr "71-TK-3"
 
 msgid "_71-TK-3U"
-msgstr "71-ТК-3У"
+msgstr "71-TK-3U"
 
 msgid "_76mm_BP-354"
-msgstr "БП-350А"
+msgstr "BP-350A"
 
 msgid "_76mm_BR-350A"
-msgstr "БР-350А"
+msgstr "BR-350A"
 
 msgid "_76mm_F-32"
-msgstr "76 мм Ф-32"
+msgstr "76 mm F-32"
 
 msgid "_76mm_F-34"
-msgstr "76 мм Ф-34"
+msgstr "76 mm F-34"
 
 msgid "_76mm_F-34S_A"
-msgstr "76 мм С-1"
+msgstr "76 mm S-1"
 
 msgid "_76mm_KT-28"
-msgstr "76 мм КТ-28"
+msgstr "76 mm KT-28"
 
 msgid "_76mm_KT-28A"
-msgstr "76 мм КТ-28"
+msgstr "76 mm KT-28"
 
 msgid "_76mm_L-10"
-msgstr "76 мм Л-10"
+msgstr "76 mm L-10"
 
 msgid "_76mm_L-10U"
-msgstr "76 мм Л-10У"
+msgstr "76 mm L-10U"
 
 msgid "_76mm_L-10_S"
-msgstr "76 мм Л-10С"
+msgstr "76 mm L-10S"
 
 msgid "_76mm_L-11"
-msgstr "76 мм Л-11"
+msgstr "76 mm L-11"
 
 msgid "_76mm_S-54"
-msgstr "76 мм С-54"
+msgstr "76 mm S-54"
 
 msgid "_76mm_S-54_S"
-msgstr "76 мм С-54С"
+msgstr "76 mm S-54S"
 
 msgid "_76mm_UBR-354A"
-msgstr "УБР-354А"
+msgstr "UBR-354A"
 
 msgid "_76mm_UBR-354KA"
-msgstr "УБР-354КА"
+msgstr "UBR-354KA"
 
 msgid "_76mm_UBR-354MA"
-msgstr "УБР-354МА"
+msgstr "UBR-354MA"
 
 msgid "_76mm_UBR-354MP"
-msgstr "УБР-354МП"
+msgstr "UBR-354MP"
 
 msgid "_76mm_UOF-354"
-msgstr "УОФ-354"
+msgstr "UOF-354"
 
 msgid "_76mm_UOF-354K"
-msgstr "УОФ-354К"
+msgstr "UOF-354K"
 
 msgid "_76mm_UOF-354M"
-msgstr "УОФ-354М"
+msgstr "UOF-354M"
 
 msgid "_76mm_ZiS-3_mod_42"
-msgstr "76 мм ЗиС-3"
+msgstr "76 mm ZiS-3"
 
 msgid "_76mm_ZiS-5"
-msgstr "76 мм ЗиС-5"
+msgstr "76 mm ZiS-5"
 
 msgid "_76mm_ZiS-96"
-msgstr "76 мм Ф-96"
+msgstr "76 mm ZiS-96"
 
 msgid "_76mm_cannon_mod_1905_30"
-msgstr "76 мм пушка обр. 1902/30 г. 30 клб"
+msgstr "76 mm Gun mod. 1902/30 30 clb"
 
 msgid "_76mm_cannon_mod_1905_40"
-msgstr "76 мм пушка обр. 1902/30 г. 40 клб"
+msgstr "76 mm Gun mod. 1902/30 40 clb"
 
 msgid "_76mm_cannon_mod_1927"
-msgstr "76 мм полковая пушка обр. 1927 г."
+msgstr "76 mm Regimental Gun mod. 1927"
 
 msgid "_85mm_D-5S"
-msgstr "85 мм Д-5С"
+msgstr "85 mm D-5S"
 
 msgid "_85mm_D-5S-85A"
-msgstr "85 мм Д-5С-85А"
+msgstr "85 mm D-5S-85A"
 
 msgid "_85mm_D-5T"
-msgstr "85 мм Д-5Т"
+msgstr "85 mm D-5T"
 
 msgid "_85mm_D10_85"
-msgstr "85 мм Д-10-85"
+msgstr "85 mm D-10-85"
 
 msgid "_85mm_D5S-85BM"
-msgstr "85 мм Д-5С-85БМ"
+msgstr "85 mm D5S-85BM"
 
 msgid "_85mm_D5T-85BM"
-msgstr "85 мм Д-5Т-85БМ"
+msgstr "85 mm D5T-85BM"
 
 msgid "_85mm_D5T-85BMA"
-msgstr "85 мм Д-5Т-85БМ"
+msgstr "85 mm D-5T-85BM"
 
 msgid "_85mm_F-30"
-msgstr "85 мм Ф-30"
+msgstr "85 mm F-30"
 
 msgid "_85mm_F-30A"
-msgstr "85 мм Ф-30"
+msgstr "85 mm F-30"
 
 msgid "_85mm_LB-2S"
-msgstr "85 мм ЛБ-2С"
+msgstr "85 mm LB-2S"
 
 msgid "_85mm_S-31"
-msgstr "85 мм С-31"
+msgstr "85 mm S-31"
 
 msgid "_85mm_UBR-365K"
-msgstr "УБР-365К"
+msgstr "UBR-365K"
 
 msgid "_85mm_UBR-365KBM"
-msgstr "УБР-365КБМ"
+msgstr "UBR-365KBM"
 
 msgid "_85mm_UBR-365KBM100"
-msgstr "УБР-365КБМ100"
+msgstr "UBR-365KBM100"
 
 msgid "_85mm_UBR-365P"
-msgstr "УБР-365П"
+msgstr "UBR-365P"
 
 msgid "_85mm_UBR-365PBM"
-msgstr "УБР-365ПБМ"
+msgstr "UBR-365PBM"
 
 msgid "_85mm_UBR-365PBM100"
-msgstr "УБР-365ПБМ100"
+msgstr "UBR-365PBM100"
 
 msgid "_85mm_UBR-367"
-msgstr "УБР-367"
+msgstr "UBR-367"
 
 msgid "_85mm_UBR-367P"
-msgstr "УБР-367П"
+msgstr "UBR-367P"
 
 msgid "_85mm_UO-367"
-msgstr "УО-367"
+msgstr "UO-367"
 
 msgid "_85mm_UOF-365BM"
-msgstr "УОФ-365БМ"
+msgstr "UOF-365BM"
 
 msgid "_85mm_UOF-365BM100"
-msgstr "УОФ-365БМ100"
+msgstr "UOF-365BM100"
 
 msgid "_85mm_UOF-365K"
-msgstr "УОФ-365К"
+msgstr "UOF-365K"
 
 msgid "_85mm_ZiS_S-53"
-msgstr "85 мм С-53"
+msgstr "85 mm S-53"
 
 msgid "_85mm_ZiS_S-53A"
-msgstr "85 мм С-53"
+msgstr "85 mm S-53"
 
 msgid "_85mm_ZiS_S-53_44"
-msgstr "85 мм ЗИС-С-53"
+msgstr "85 mm ZIS-S-53"
 
 msgid "_85mm_ZiS_S-53_B"
-msgstr "85 мм С-53"
+msgstr "85 mm S-53"
 
 msgid "_9R"
-msgstr "9Р"
+msgstr "9R"
 
 msgid "_9RK"
-msgstr "9РК"
+msgstr "9RK"
 
 msgid "_9RM"
-msgstr "9РМ"
+msgstr "9RM"
 
 msgid "_9RS"
-msgstr "9РС"
+msgstr "9RS"
 
 msgid "_9RU"
-msgstr "9РУ"
+msgstr "9RU"
 
 msgid "chassisE1_LL"
 msgstr "Stuart E1"

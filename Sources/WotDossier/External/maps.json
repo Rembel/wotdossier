@@ -53,5 +53,7 @@
 {"mapid": 69, "mapidname": "103_ruinberg_winter", "mapname": "Winterberg"},
 {"mapid": 70, "mapidname": "109_battlecity_ny", "mapname": "Winter Showdown"},
 {"mapid": 71, "mapidname": "101_dday", "mapname": "Overlord"},
-{"mapid": 72, "mapidname": "111_paris", "mapname": "Icebound"}
+{"mapid": 72, "mapidname": "111_paris", "mapname": "Icebound"},
+{"mapid": 73, "mapidname": "105_germany", "mapname": "germany"},
+{"mapid": 74, "mapidname": "112_eiffel_tower", "mapname": "eiffel_tower"}
 ]

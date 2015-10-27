@@ -16,13 +16,12 @@ namespace WotDossier.Applications.Model
             Type = battle.type;
             Time = Utils.UnixDateToDateTime(battle.time, true, true);
             Province = battle.province_name;
-            //Map = battle.arenas[0].name_i18n;
             GlobalMapId = battle.front_id;
         }
 
         public BattleModel(StrongholdBattleJson battle)
         {
-            Type = battle.battle_type == StrongholBattleType.defense ? ClanBattleType.meeting_engagement : ClanBattleType.for_province;
+            Type = battle.battle_type;
             Time = Utils.UnixDateToDateTime(battle.battle_planned_date, true, true);
             Attacker = string.Format(FormatClanName, battle.attacker_clan_tag, battle.attacker_clan_name);
             AttackerId = battle.attacker_clan_id;
@@ -30,8 +29,6 @@ namespace WotDossier.Applications.Model
             Defender = string.Format(FormatClanName, battle.defender_clan_tag, battle.defender_clan_name);
             DefenderId = battle.defender_clan_id;
             DefenderTag = battle.defender_clan_tag;
-
-
         }
 
         public string DefenderLink

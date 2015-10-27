@@ -30,14 +30,17 @@
       }
     },
     "music": "/music/tutorial/battle_music",
+    "wwmusic": "music_tutorial",
     "loadingMusic": "/music/intro/rus_city",
+    "wwloadingMusic": "music_rus_city",
     "water": {
       "texScale": "\t0\t",
       "freqX": "\t0\t",
       "freqZ": "\t0\t"
     },
     "explicitRequestOnly": "\ttrue\t",
-    "maxPlayersInTeam": "\t1\t"
+    "maxPlayersInTeam": "\t1\t",
+    "waypoints": "spaces/00_tank_tutorial/paths.xml"
   },
   {
     "name": "#arenas:01_karelia/name",
@@ -52,7 +55,9 @@
     "vehicleCamouflageKind": "summer",
     "maxPlayersInTeam": "\t15\t",
     "loadingMusic": "/music/intro/rus_village",
+    "wwloadingMusic": "music_rus_vilage",
     "ambientSound": "/wind/wind/wind_autumn_01",
+    "wwambientSound": "ambient_wind_autumn_01",
     "umbraEnabled": "\t1\t",
     "batchingEnabled": "\t0\t",
     "water": {
@@ -162,6 +167,26 @@
           "guid": "66D27C49.44297C0F.BE12E997.1E565E1B"
         }
       }
+    },
+    "mapActivities": {
+      "warplane": [
+        {
+          "preset": "karelia_lightning_01",
+          "position": "\t0,000000 0,000000 0,000000\t",
+          "yaw": "\t0,000000\t",
+          "possibility": "\t1,000000\t",
+          "startTime": "\t0,000000 0,000000\t",
+          "period": "\t100,000000\t"
+        },
+        {
+          "preset": "karelia_lightning_02",
+          "position": "\t0,000000 0,000000 0,000000\t",
+          "yaw": "\t0,000000\t",
+          "possibility": "\t1,000000\t",
+          "startTime": "\t30,000000 30,000000\t",
+          "period": "\t110,000000\t"
+        }
+      ]
     }
   },
   {
@@ -178,7 +203,9 @@
     "umbraEnabled": "\t1\t",
     "batchingEnabled": "\t0\t",
     "loadingMusic": "/music/intro/Intro_Malinovka",
+    "wwloadingMusic": "music_malinovka",
     "ambientSound": "/wind/wind/wind_autumn_01",
+    "wwambientSound": "ambient_wind_autumn_01",
     "water": {
       "texScale": "\t0\t",
       "freqX": "\t0\t",
@@ -258,8 +285,10 @@
     "minimap": "spaces/04_himmelsdorf/mmap.dds",
     "vehicleCamouflageKind": "summer",
     "defaultGroundEffect": "\tNone\t",
+    "wwloadingMusic": "music_himmelsdorf",
     "loadingMusic": "/music/intro/Intro_Himmelsdorf",
     "ambientSound": "/wind/wind/wind_spring_01",
+    "wwambientSound": "ambient_wind_spring_01",
     "umbraEnabled": "\t1\t",
     "batchingEnabled": "\t0\t",
     "gameplayTypes": {
@@ -447,7 +476,9 @@
     "batchingEnabled": "\t0\t",
     "defaultGroundEffect": "ground",
     "loadingMusic": "/music/intro/rus_village",
+    "wwloadingMusic": "music_rus_vilage",
     "ambientSound": "/wind/wind/wind_autumn_01",
+    "wwambientSound": "ambient_wind_autumn_01",
     "water": {
       "texScale": "\t0\t",
       "freqX": "\t0\t",
@@ -521,7 +552,9 @@
     "umbraEnabled": "\t1\t",
     "batchingEnabled": "\t0\t",
     "loadingMusic": "/music/intro/rus_city",
+    "wwloadingMusic": "music_rus_city",
     "ambientSound": "/wind/wind/wind_autumn_01",
+    "wwambientSound": "ambient_wind_autumn_01",
     "gameplayTypes": {
       "ctf": {
         "teamBasePositions": {
@@ -566,7 +599,9 @@
     "batchingEnabled": "\t0\t",
     "defaultGroundEffect": "\tNone\t",
     "loadingMusic": "/music/intro/Intro_Himmelsdorf",
+    "wwloadingMusic": "music_himmelsdorf",
     "ambientSound": "/wind/wind/wind_spring_01",
+    "wwambientSound": "ambient_wind_spring_01",
     "water": {
       "texScale": "\t0\t",
       "freqX": "\t0\t",
@@ -634,7 +669,9 @@
     "batchingEnabled": "\t0\t",
     "defaultGroundEffect": "\tNone\t",
     "loadingMusic": "/music/intro/euro_city",
+    "wwloadingMusic": "music_euro_city",
     "ambientSound": "/wind/wind/wind_autumn_01",
+    "wwambientSound": "ambient_wind_autumn_01",
     "gameplayTypes": {
       "ctf": {
         "teamBasePositions": {
@@ -691,7 +728,9 @@
     "vehicleCamouflageKind": "summer",
     "maxPlayersInTeam": "\t15\t",
     "loadingMusic": "/music/intro/rus_village",
+    "wwloadingMusic": "music_malinovka",
     "ambientSound": "/wind/wind/wind_summer_01",
+    "wwambientSound": "ambient_wind_summer_01",
     "umbraEnabled": "\t1\t",
     "batchingEnabled": "\t0\t",
     "water": {
@@ -717,8 +756,31 @@
             "position": "-34.989 197.603"
           }
         }
+      },
+      "sandbox": {
+        "teamBasePositions": {
+          "team1": {
+            "position1": "-34.68 -100.709"
+          },
+          "team2": {
+            "position1": "-34.68 100.709"
+          }
+        },
+        "battleScenario": {
+          "level": [
+            {
+              "#text": "\t1\t",
+              "scenario": "spaces/100_thepit/bot_scenarios_1_lv1.xml"
+            },
+            {
+              "#text": "\t2\t",
+              "scenario": "spaces/100_thepit/bot_scenarios_1_lv2.xml"
+            }
+          ]
+        }
       }
-    }
+    },
+    "waypoints": "spaces/100_thepit/paths.xml"
   },
   {
     "name": "#arenas:101_dday/name",
@@ -733,7 +795,9 @@
     "vehicleCamouflageKind": "summer",
     "maxPlayersInTeam": "\t15\t",
     "loadingMusic": "/music/intro/euro_village",
+    "wwloadingMusic": "music_euro_vilage",
     "ambientSound": "/wind/wind/wind_summer_01",
+    "wwambientSound": "ambient_wind_summer_01",
     "umbraEnabled": "\t1\t",
     "batchingEnabled": "\t0\t",
     "water": {
@@ -852,7 +916,9 @@
     "batchingEnabled": "\t0\t",
     "defaultGroundEffect": "\tNone\t",
     "loadingMusic": "/music/intro/euro_city",
+    "wwloadingMusic": "music_euro_city",
     "ambientSound": "/wind/wind/wind_winter_01",
+    "wwambientSound": "ambient_wind_winter_01",
     "gameplayTypes": {
       "ctf": {
         "teamBasePositions": {
@@ -895,6 +961,146 @@
         }
       }
     }
+  },
+  {
+    "name": "#arenas:105_germany/name",
+    "description": "#arenas:105_germany/description",
+    "geometry": "spaces/105_germany",
+    "boundingBox": {
+      "bottomLeft": "\t-400,000000 -400,000000\t",
+      "upperRight": "\t400,000000 400,000000\t"
+    },
+    "roundLength": "\t900\t",
+    "minimap": "spaces/105_germany/mmap.dds",
+    "vehicleCamouflageKind": "summer",
+    "maxPlayersInTeam": "\t15\t",
+    "loadingMusic": "/music/intro/euro_city",
+    "wwloadingMusic": "music_euro_city",
+    "ambientSound": "/wind/wind/wind_autumn_01",
+    "wwambientSound": "ambient_wind_autumn_01",
+    "umbraEnabled": "\t1\t",
+    "batchingEnabled": "\t0\t",
+    "water": {
+      "texScale": "\t0\t",
+      "freqX": "\t0\t",
+      "freqZ": "\t0\t"
+    },
+    "gameplayTypes": {
+      "fallout5": {
+        "winPoints": "ONE_FLAG_15x15",
+        "maxPlayersInTeam": "\t15\t",
+        "flagSpawnPoint": {
+          "position": "\t59,598950 -0,070627 -1,443298\t",
+          "team": "\t0\t",
+          "flagType": "\t0\t"
+        },
+        "flagAbsorptionPoint": [
+          {
+            "team": "\t1\t",
+            "position": "\t325,184100 -0,070627 269,873200\t",
+            "radius": "\t15,000000\t",
+            "applyOverlay": "\tfalse\t",
+            "guid": "92A86DE0.4589A97F.BD87C693.BAB600AF"
+          },
+          {
+            "team": "\t1\t",
+            "position": "\t-368,494000 0,021517 175,627000\t",
+            "radius": "\t15,000000\t",
+            "applyOverlay": "\tfalse\t",
+            "guid": "7CC68895.419B1CA2.9F1679B5.49E70426"
+          },
+          {
+            "team": "\t2\t",
+            "position": "\t295,800400 -0,068765 -264,201500\t",
+            "radius": "\t15,000000\t",
+            "applyOverlay": "\tfalse\t",
+            "guid": "D11B7824.400D393E.9F857BAC.31CC9832"
+          },
+          {
+            "team": "\t2\t",
+            "position": "\t-364,410700 -0,614030 -179,739900\t",
+            "radius": "\t15,000000\t",
+            "applyOverlay": "\tfalse\t",
+            "guid": "300C741F.40B8B962.E29DE1B6.A2613C86"
+          }
+        ],
+        "repairPoint": {
+          "cooldown": "\t180,000000\t",
+          "repairTime": "\t5,000000\t",
+          "radius": "\t15,000000\t",
+          "repairFlags": "\t127\t",
+          "position": "\t-280,363900 -0,070619 -3,267601\t",
+          "guid": "4E8A0757.4F03449D.D8AF748E.6CD76D97"
+        }
+      },
+      "fallout6": {
+        "winPoints": "MANY_FLAGS_15x15",
+        "maxPlayersInTeam": "\t15\t",
+        "flagSpawnPoint": [
+          {
+            "position": "\t84,650810 -0,010579 276,043300\t",
+            "team": "\t0\t",
+            "flagType": "\t0\t"
+          },
+          {
+            "position": "\t84,720700 0,010448 -272,068300\t",
+            "team": "\t0\t",
+            "flagType": "\t0\t"
+          },
+          {
+            "position": "\t124,129400 -0,010511 276,180000\t",
+            "team": "\t0\t",
+            "flagType": "\t0\t"
+          },
+          {
+            "position": "\t124,199200 0,010516 -271,931700\t",
+            "team": "\t0\t",
+            "flagType": "\t0\t"
+          }
+        ],
+        "flagAbsorptionPoint": [
+          {
+            "team": "\t1\t",
+            "position": "\t325,184100 -0,070627 269,873200\t",
+            "radius": "\t15,000000\t",
+            "applyOverlay": "\tfalse\t",
+            "guid": "92A86DE0.4589A97F.BD87C693.BAB600AF"
+          },
+          {
+            "team": "\t1\t",
+            "position": "\t-368,494000 0,021517 175,627000\t",
+            "radius": "\t15,000000\t",
+            "applyOverlay": "\tfalse\t",
+            "guid": "7CC68895.419B1CA2.9F1679B5.49E70426"
+          },
+          {
+            "team": "\t2\t",
+            "position": "\t295,800400 -0,068765 -264,201500\t",
+            "radius": "\t15,000000\t",
+            "applyOverlay": "\tfalse\t",
+            "guid": "D11B7824.400D393E.9F857BAC.31CC9832"
+          },
+          {
+            "team": "\t2\t",
+            "position": "\t-364,410700 -0,614030 -179,739900\t",
+            "radius": "\t15,000000\t",
+            "applyOverlay": "\tfalse\t",
+            "guid": "300C741F.40B8B962.E29DE1B6.A2613C86"
+          }
+        ],
+        "repairPoint": {
+          "cooldown": "\t120,000000\t",
+          "repairTime": "\t5,000000\t",
+          "radius": "\t15,000000\t",
+          "repairFlags": "\t127\t",
+          "position": "\t73,025760 -0,070625 -1,675941\t",
+          "guid": "3CDDBAAD.482A166A.D5C8E2AA.CB2D6338"
+        }
+      }
+    },
+    "roadMap": "",
+    "mapActivities": "",
+    "explicitRequestOnly": "\ttrue\t"
   },
   {
     "name": "#arenas:109_battlecity_ny/name",
@@ -1059,7 +1265,9 @@
     "umbraEnabled": "\t1\t",
     "batchingEnabled": "\t0\t",
     "loadingMusic": "/music/intro/euro_village",
+    "wwloadingMusic": "music_rus_vilage",
     "ambientSound": "/wind/wind/wind_summer_01",
+    "wwambientSound": "ambient_wind_summer_01",
     "water": {
       "texScale": "\t0\t",
       "freqX": "\t0\t",
@@ -1092,13 +1300,10 @@
             ]
           }
         },
-        "teamBasePositions": {
-          "team1": "",
-          "team2": ""
-        },
         "controlPoint": "\t258,768800 132,322500\t"
       },
       "assault2": {
+        "roundLength": "\t420\t",
         "winnerIfTimeout": "\t1\t",
         "winnerIfExtermination": "\t1\t",
         "teamSpawnPoints": {
@@ -1111,10 +1316,9 @@
         },
         "teamBasePositions": {
           "team1": {
-            "position1": "\t194,706900 -18,788830\t",
-            "position2": "\t-222,759000 -81,180310\t"
-          },
-          "team2": ""
+            "position1": "\t194,706900 -18,788850\t",
+            "position2": "\t-222,759100 -81,180310\t"
+          }
         }
       },
       "fallout5": {
@@ -1181,8 +1385,32 @@
             "guid": "5B9B6760.42FE47D5.EC58E696.4CA22746"
           }
         ]
+      },
+      "sandbox": {
+        "artilleryPreparationChance": "0.0",
+        "teamBasePositions": {
+          "team1": {
+            "position1": "\t175,783700 -305,848400\t"
+          },
+          "team2": {
+            "position1": "\t-236,649100 329,674500\t"
+          }
+        },
+        "battleScenario": {
+          "level": [
+            {
+              "#text": "\t1\t",
+              "scenario": "spaces/10_hills/bot_scenarios_1_lv1.xml"
+            },
+            {
+              "#text": "\t2\t",
+              "scenario": "spaces/10_hills/bot_scenarios_1_lv2.xml"
+            }
+          ]
+        }
       }
-    }
+    },
+    "waypoints": "spaces/10_hills/paths.xml"
   },
   {
     "name": "#arenas:111_paris/name",
@@ -1197,6 +1425,7 @@
     "vehicleCamouflageKind": "winter",
     "maxPlayersInTeam": "\t15\t",
     "loadingMusic": "/music/intro/euro_city",
+    "wwloadingMusic": "music_euro_city",
     "ambientSound": "/wind/wind/wind_winter_01",
     "wwambientSound": "ambient_wind_winter_01",
     "umbraEnabled": "\t1\t",
@@ -1623,6 +1852,844 @@
         ]
       }
     },
+    "gasAttack": {
+      "gameplaySettings": {
+        "attackLength": "\t180\t",
+        "preparationPeriod": "\t10,000000\t",
+        "compressionTime": "\t110,000000\t",
+        "position": "\t0,000000 25,000000 -50,000010\t",
+        "startRadius": "\t700,000000\t",
+        "endRadius": "\t110,000000\t"
+      },
+      "visualSettings": {
+        "cloudModel": "particles/mesh_particles/funnel_death/gas_ring_light.model",
+        "cloudClimbTime": "\t15\t",
+        "cloudStartHeight": "\t-50\t",
+        "cloudEndHeight": "\t55\t",
+        "cameraProximityDist": "\t30\t",
+        "windSpeed": "0 -1",
+        "windGustiness": "\t2\t",
+        "postEffect": "",
+        "mapActivities": "gasAttackScenario",
+        "centerFogSettings": {
+          "Fog": {
+            "version": "\t1,000000\t",
+            "innerBB": "\t-50,000000 -50,000000 50,000000 50,000000\t",
+            "outerBB": "\t-770,000000 -870,000000 770,000000 770,000000\t",
+            "deferred": {
+              "heightFog": "\ttrue\t",
+              "nearLow": "\t200,000000\t",
+              "farLow": "\t500,000000\t",
+              "nearHigh": "\t500,000000\t",
+              "farHigh": "\t1000,000000\t",
+              "altitudeLow": "\t-6,000000\t",
+              "altitudeMid": "\t50,000000\t",
+              "altitudeHigh": "\t1500,000000\t",
+              "skyAltitudeLow": "\t-10,000000\t",
+              "skyAltitudeMid": "\t50,000000\t",
+              "skyAltitudeHigh": "\t10000,000000\t",
+              "exponent": "\t0,650000\t",
+              "sunAngle": "\t35,000000\t",
+              "sunExponent": "\t0,200000\t",
+              "colorLow": "\t0,991500 1,000000 0,490000 0,750000\t",
+              "colorHigh": "\t0,991501 1,000000 0,490000 0,650000\t",
+              "colorSunLow": "\t0,991500 1,000000 0,490000 0,750000\t",
+              "colorSunHigh": "\t0,991501 1,000000 0,490000 0,650000\t",
+              "useEdgeFog": "\ttrue\t"
+            },
+            "forward": {
+              "heightFog": "\ttrue\t",
+              "nearLow": "\t200,000000\t",
+              "farLow": "\t500,000000\t",
+              "nearHigh": "\t500,000000\t",
+              "farHigh": "\t1000,000000\t",
+              "altitudeLow": "\t-6,000000\t",
+              "altitudeMid": "\t40,000000\t",
+              "altitudeHigh": "\t1000,000000\t",
+              "skyAltitudeLow": "\t-10,000000\t",
+              "skyAltitudeMid": "\t50,000000\t",
+              "skyAltitudeHigh": "\t2000,000000\t",
+              "colorLow": "\t0,673000 0,670166 0,460332 0,000000\t",
+              "colorHigh": "\t0,630000 0,627338 0,430290 0,000000\t",
+              "useEdgeFog": "\ttrue\t"
+            },
+            "enable": "\ttrue\t"
+          }
+        },
+        "edgeFogSettings": {
+          "Fog": {
+            "version": "\t1,000000\t",
+            "innerBB": "\t-50,000000 -50,000000 50,000000 50,000000\t",
+            "outerBB": "\t-770,000000 -870,000000 770,000000 770,000000\t",
+            "deferred": {
+              "heightFog": "\ttrue\t",
+              "nearLow": "\t-150,000000\t",
+              "farLow": "\t50,000000\t",
+              "nearHigh": "\t-50,000000\t",
+              "farHigh": "\t350,000000\t",
+              "altitudeLow": "\t-6,000000\t",
+              "altitudeMid": "\t50,000000\t",
+              "altitudeHigh": "\t1500,000000\t",
+              "skyAltitudeLow": "\t-10,000000\t",
+              "skyAltitudeMid": "\t50,000000\t",
+              "skyAltitudeHigh": "\t10000,000000\t",
+              "exponent": "\t0,650000\t",
+              "sunAngle": "\t35,000000\t",
+              "sunExponent": "\t0,200000\t",
+              "colorLow": "\t0,991500 1,000000 0,490000 0,750000\t",
+              "colorHigh": "\t0,991501 1,000000 0,490000 0,650000\t",
+              "colorSunLow": "\t0,991500 1,000000 0,490000 0,750000\t",
+              "colorSunHigh": "\t0,991501 1,000000 0,490000 0,650000\t",
+              "useEdgeFog": "\ttrue\t"
+            },
+            "forward": {
+              "heightFog": "\ttrue\t",
+              "nearLow": "\t-150,000000\t",
+              "farLow": "\t50,500000\t",
+              "nearHigh": "\t-50,000000\t",
+              "farHigh": "\t362,000000\t",
+              "altitudeLow": "\t-5,000000\t",
+              "altitudeMid": "\t50,000000\t",
+              "altitudeHigh": "\t1500,000000\t",
+              "skyAltitudeLow": "\t-10,000000\t",
+              "skyAltitudeMid": "\t50,000000\t",
+              "skyAltitudeHigh": "\t2000,000000\t",
+              "colorLow": "\t0,673000 0,670166 0,460332 0,000000\t",
+              "colorHigh": "\t0,630000 0,627338 0,430290 0,000000\t",
+              "useEdgeFog": "\ttrue\t"
+            },
+            "enable": "\ttrue\t"
+          }
+        }
+      }
+    },
+    "explicitRequestOnly": "\ttrue\t",
+    "mapActivities": {
+      "scenario": {
+        "possibility": "\t0,000000\t",
+        "period": "\t-1\t",
+        "name": "gasAttackScenario",
+        "trajectories": {
+          "warplane": [
+            {
+              "preset": "paris_gas_attack_rocket_flight_1",
+              "position": "\t0,000000 0,000000 0,000000\t",
+              "yaw": "\t0,000000\t",
+              "possibility": "\t1,000000\t",
+              "startTime": "\t9,000000 9,000000\t"
+            },
+            {
+              "preset": "paris_gas_attack_rocket_flight_2",
+              "position": "\t0,000000 0,000000 0,000000\t",
+              "yaw": "\t0,000000\t",
+              "possibility": "\t1,000000\t",
+              "startTime": "\t5,000000 5,000000\t"
+            },
+            {
+              "preset": "paris_gas_attack_rocket_flight_3",
+              "position": "\t0,000000 0,000000 0,000000\t",
+              "yaw": "\t0,000000\t",
+              "possibility": "\t1,000000\t",
+              "startTime": "\t4,000000 4,000000\t"
+            },
+            {
+              "preset": "paris_gas_attack_rocket_flight_4",
+              "position": "\t0,000000 0,000000 0,000000\t",
+              "yaw": "\t0,000000\t",
+              "possibility": "\t1,000000\t",
+              "startTime": "\t0,000000 0,000000\t"
+            },
+            {
+              "preset": "paris_gas_attack_rocket_explosion_1",
+              "position": "\t0,000000 0,000000 0,000000\t",
+              "yaw": "\t0,000000\t",
+              "possibility": "\t1,000000\t",
+              "startTime": "\t10,000000 10,000000\t"
+            },
+            {
+              "preset": "paris_gas_attack_rocket_explosion_2",
+              "position": "\t0,000000 0,000000 0,000000\t",
+              "yaw": "\t0,000000\t",
+              "possibility": "\t1,000000\t",
+              "startTime": "\t6,100000 6,100000\t"
+            },
+            {
+              "preset": "paris_gas_attack_rocket_explosion_3",
+              "position": "\t0,000000 0,000000 0,000000\t",
+              "yaw": "\t0,000000\t",
+              "possibility": "\t1,000000\t",
+              "startTime": "\t5,100000 5,100000\t"
+            },
+            {
+              "preset": "paris_gas_attack_rocket_explosion_4",
+              "position": "\t0,000000 0,000000 0,000000\t",
+              "yaw": "\t0,000000\t",
+              "possibility": "\t1,000000\t",
+              "startTime": "\t1,100000 1,100000\t"
+            }
+          ],
+          "explosion": [
+            {
+              "preset": "paris_gas_attack_rocket_explosion_sound_1",
+              "position": "-486 0 -431",
+              "possibility": "\t1,000000\t",
+              "startTime": "\t10,000000 10,000000\t"
+            },
+            {
+              "preset": "paris_gas_attack_rocket_explosion_sound_2",
+              "position": "501 0 363",
+              "possibility": "\t1,000000\t",
+              "startTime": "\t6,100000 6,100000\t"
+            },
+            {
+              "preset": "paris_gas_attack_rocket_explosion_sound_3",
+              "position": "496 0 -499",
+              "possibility": "\t1,000000\t",
+              "startTime": "\t5,100000 5,100000\t"
+            },
+            {
+              "preset": "paris_gas_attack_rocket_explosion_sound_4",
+              "position": "-517 0 363",
+              "possibility": "\t1,000000\t",
+              "startTime": "\t1,100000 1,100000\t"
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "name": "#arenas:112_eiffel_tower/name",
+    "description": "#arenas:112_eiffel_tower/description",
+    "geometry": "spaces/112_eiffel_tower",
+    "boundingBox": {
+      "bottomLeft": "-400.0 -400.0",
+      "upperRight": "400.0 400.0"
+    },
+    "roundLength": "\t900\t",
+    "minimap": "spaces/112_eiffel_tower/mmap.dds",
+    "vehicleCamouflageKind": "summer",
+    "maxPlayersInTeam": "\t15\t",
+    "loadingMusic": "/music/intro/euro_city",
+    "wwloadingMusic": "music_euro_city",
+    "ambientSound": "/wind/wind/wind_summer_01",
+    "wwambientSound": "ambient_wind_summer_01",
+    "umbraEnabled": "\t1\t",
+    "batchingEnabled": "\t0\t",
+    "water": {
+      "texScale": "\t0\t",
+      "freqX": "\t0\t",
+      "freqZ": "\t0\t"
+    },
+    "gameplayTypes": {
+      "fallout": {
+        "winPoints": "MULTI_TEAM_2",
+        "maxTeamsInArena": "\t8\t",
+        "squadTeamNumbers": "1 2 3 4",
+        "soloTeamNumbers": "5 6 7 8",
+        "flagSpawnPoint": [
+          {
+            "position": "\t5,844485 11,120210 38,925160\t",
+            "team": "\t0\t",
+            "flagType": "\t0\t"
+          },
+          {
+            "position": "\t-20,478050 11,344250 38,158370\t",
+            "team": "\t0\t",
+            "flagType": "\t0\t"
+          },
+          {
+            "position": "\t-7,601662 11,262240 38,331670\t",
+            "team": "\t0\t",
+            "flagType": "\t0\t"
+          }
+        ],
+        "flagAbsorptionPoint": [
+          {
+            "team": "\t1\t",
+            "position": "\t-368,260900 9,000035 -81,060350\t",
+            "radius": "\t15,000000\t",
+            "applyOverlay": "\tfalse\t",
+            "guid": "A90EB9DD.43F8FE17.DA858ABA.434D958F"
+          },
+          {
+            "team": "\t2\t",
+            "position": "\t342,017000 9,000036 -54,617880\t",
+            "radius": "\t15,000000\t",
+            "applyOverlay": "\tfalse\t",
+            "guid": "63A7C0D4.41992727.A987A0B6.B53DB145"
+          },
+          {
+            "team": "\t3\t",
+            "position": "\t-273,190700 1,000051 265,312900\t",
+            "radius": "\t15,000000\t",
+            "applyOverlay": "\tfalse\t",
+            "guid": "371BF19C.428035D5.CAA89E8F.4A5D27D2"
+          },
+          {
+            "team": "\t4\t",
+            "position": "\t243,987900 0,960985 307,115400\t",
+            "radius": "\t15,000000\t",
+            "applyOverlay": "\tfalse\t",
+            "guid": "EB8ECBAC.42C71FF9.5FF5C5AE.0B8458D4"
+          }
+        ],
+        "repairPoint": [
+          {
+            "cooldown": "\t180,000000\t",
+            "repairTime": "\t5,000000\t",
+            "radius": "\t10,000000\t",
+            "repairFlags": "\t127\t",
+            "position": "\t-5,255295 1,201999 205,580600\t",
+            "guid": "CA061300.4EC9C364.6F62469D.0440AE13"
+          },
+          {
+            "cooldown": "\t180,000000\t",
+            "repairTime": "\t5,000000\t",
+            "radius": "\t15,000000\t",
+            "repairFlags": "\t127\t",
+            "position": "\t-11,592250 12,001060 -72,820370\t",
+            "guid": "7F4223DD.47145EBC.298927AD.DA73548B"
+          }
+        ]
+      },
+      "fallout2": {
+        "winPoints": "MULTI_TEAM_TDM",
+        "maxPlayersInTeam": "\t3\t",
+        "maxTeamsInArena": "\t4\t",
+        "squadTeamNumbers": "1 2 3 4",
+        "flagSpawnPoint": [
+          {
+            "position": "\t5,844485 11,120210 38,925160\t",
+            "team": "\t0\t",
+            "flagType": "\t0\t"
+          },
+          {
+            "position": "\t-20,478050 11,344250 38,158370\t",
+            "team": "\t0\t",
+            "flagType": "\t0\t"
+          },
+          {
+            "position": "\t-7,601662 11,262240 38,331670\t",
+            "team": "\t0\t",
+            "flagType": "\t0\t"
+          }
+        ],
+        "flagAbsorptionPoint": [
+          {
+            "team": "\t1\t",
+            "position": "\t-368,260900 9,000035 -81,060350\t",
+            "radius": "\t15,000000\t",
+            "applyOverlay": "\tfalse\t",
+            "guid": "A90EB9DD.43F8FE17.DA858ABA.434D958F"
+          },
+          {
+            "team": "\t2\t",
+            "position": "\t342,017000 9,000036 -54,617880\t",
+            "radius": "\t15,000000\t",
+            "applyOverlay": "\tfalse\t",
+            "guid": "63A7C0D4.41992727.A987A0B6.B53DB145"
+          },
+          {
+            "team": "\t3\t",
+            "position": "\t-273,190700 1,000051 265,312900\t",
+            "radius": "\t15,000000\t",
+            "applyOverlay": "\tfalse\t",
+            "guid": "371BF19C.428035D5.CAA89E8F.4A5D27D2"
+          },
+          {
+            "team": "\t4\t",
+            "position": "\t243,987900 0,960985 307,115400\t",
+            "radius": "\t15,000000\t",
+            "applyOverlay": "\tfalse\t",
+            "guid": "EB8ECBAC.42C71FF9.5FF5C5AE.0B8458D4"
+          }
+        ],
+        "repairPoint": [
+          {
+            "cooldown": "\t180,000000\t",
+            "repairTime": "\t5,000000\t",
+            "radius": "\t10,000000\t",
+            "repairFlags": "\t127\t",
+            "position": "\t-5,255295 1,201999 205,580600\t",
+            "guid": "CA061300.4EC9C364.6F62469D.0440AE13"
+          },
+          {
+            "cooldown": "\t180,000000\t",
+            "repairTime": "\t5,000000\t",
+            "radius": "\t15,000000\t",
+            "repairFlags": "\t127\t",
+            "position": "\t-11,592250 12,001060 -72,820370\t",
+            "guid": "7F4223DD.47145EBC.298927AD.DA73548B"
+          }
+        ]
+      },
+      "fallout3": {
+        "winPoints": "MULTI_TEAM_FFA",
+        "maxPlayersInTeam": "\t1\t",
+        "maxTeamsInArena": "\t12\t",
+        "soloTeamNumbers": "1 2 3 4 5 6 7 8 9 10 11 12",
+        "repairPoint": {
+          "cooldown": "\t180,000000\t",
+          "repairTime": "\t5,000000\t",
+          "radius": "\t15,000000\t",
+          "repairFlags": "\t127\t",
+          "position": "\t-6,659760 11,295900 27,962880\t",
+          "guid": "73631263.4D56FDC7.19F90B87.9BEE715E"
+        }
+      },
+      "fallout5": {
+        "winPoints": "ONE_FLAG_15x15",
+        "maxPlayersInTeam": "\t15\t",
+        "teamSpawnPoints": {
+          "team1": {
+            "position": "-353 -50"
+          },
+          "team2": {
+            "position": "329 -9"
+          }
+        },
+        "flagSpawnPoint": {
+          "position": "\t-5,512535 11,335780 31,980770\t",
+          "team": "\t0\t",
+          "flagType": "\t0\t"
+        },
+        "flagAbsorptionPoint": [
+          {
+            "team": "\t1\t",
+            "position": "\t211,198300 0,960108 354,780300\t",
+            "radius": "\t15,000000\t",
+            "applyOverlay": "\tfalse\t",
+            "guid": "D618521A.47FA8419.4A96D4AC.1BCFB7C1"
+          },
+          {
+            "team": "\t1\t",
+            "position": "\t303,564200 9,000049 -339,438000\t",
+            "radius": "\t15,000000\t",
+            "applyOverlay": "\tfalse\t",
+            "guid": "5A35C630.4DF31F84.CC898C96.C9F9C6C9"
+          },
+          {
+            "team": "\t2\t",
+            "position": "\t-232,606300 0,960047 342,776900\t",
+            "radius": "\t15,000000\t",
+            "applyOverlay": "\tfalse\t",
+            "guid": "83DBBACC.47BE440A.5C79FCBC.DF4BF9EB"
+          },
+          {
+            "team": "\t2\t",
+            "position": "\t-279,521800 8,999986 -339,151600\t",
+            "radius": "\t15,000000\t",
+            "applyOverlay": "\tfalse\t",
+            "guid": "1C3B1B1E.47601B96.573761AF.BCAAA47A"
+          }
+        ],
+        "repairPoint": [
+          {
+            "cooldown": "\t120,000000\t",
+            "repairTime": "\t5,000000\t",
+            "radius": "\t10,000000\t",
+            "repairFlags": "\t127\t",
+            "position": "\t-4,652695 0,844580 210,786000\t",
+            "guid": "15266A1D.4534E1A4.17ACD0AF.F4CB04F4"
+          },
+          {
+            "cooldown": "\t120,000000\t",
+            "repairTime": "\t5,000000\t",
+            "radius": "\t10,000000\t",
+            "repairFlags": "\t127\t",
+            "position": "\t-10,319240 9,175064 -118,331600\t",
+            "guid": "00A7A91E.41893417.249EEA8A.F313CDA1"
+          }
+        ]
+      },
+      "fallout6": {
+        "winPoints": "MANY_FLAGS_15x15",
+        "maxPlayersInTeam": "\t15\t",
+        "teamSpawnPoints": {
+          "team1": {
+            "position": "-353 -50"
+          },
+          "team2": {
+            "position": "329 -9"
+          }
+        },
+        "flagSpawnPoint": [
+          {
+            "position": "\t246,418700 8,045587 75,843350\t",
+            "team": "\t0\t",
+            "flagType": "\t0\t"
+          },
+          {
+            "position": "\t236,442300 9,000053 -90,600310\t",
+            "team": "\t0\t",
+            "flagType": "\t0\t"
+          },
+          {
+            "position": "\t-257,143300 9,000051 47,005340\t",
+            "team": "\t0\t",
+            "flagType": "\t0\t"
+          },
+          {
+            "position": "\t-254,249100 8,994067 -137,994300\t",
+            "team": "\t0\t",
+            "flagType": "\t0\t"
+          }
+        ],
+        "flagAbsorptionPoint": [
+          {
+            "team": "\t1\t",
+            "position": "\t211,198300 0,960108 354,780300\t",
+            "radius": "\t15,000000\t",
+            "applyOverlay": "\tfalse\t",
+            "guid": "D618521A.47FA8419.4A96D4AC.1BCFB7C1"
+          },
+          {
+            "team": "\t1\t",
+            "position": "\t243,501700 8,999998 -352,779300\t",
+            "radius": "\t15,000000\t",
+            "applyOverlay": "\tfalse\t",
+            "guid": "504CCEA5.4C4FBAC6.68A0719B.B7AFDDBF"
+          },
+          {
+            "team": "\t2\t",
+            "position": "\t-232,606300 0,960047 342,776900\t",
+            "radius": "\t15,000000\t",
+            "applyOverlay": "\tfalse\t",
+            "guid": "83DBBACC.47BE440A.5C79FCBC.DF4BF9EB"
+          },
+          {
+            "team": "\t2\t",
+            "position": "\t-220,221600 8,999994 -356,771900\t",
+            "radius": "\t15,000000\t",
+            "applyOverlay": "\tfalse\t",
+            "guid": "9654CE98.4E98BC63.4EEFA6AC.67EB0C7B"
+          }
+        ],
+        "repairPoint": [
+          {
+            "cooldown": "\t120,000000\t",
+            "repairTime": "\t5,000000\t",
+            "radius": "\t10,000000\t",
+            "repairFlags": "\t127\t",
+            "position": "\t-4,652695 0,844580 210,786000\t",
+            "guid": "15266A1D.4534E1A4.17ACD0AF.F4CB04F4"
+          },
+          {
+            "cooldown": "\t120,000000\t",
+            "repairTime": "\t5,000000\t",
+            "radius": "\t10,000000\t",
+            "repairFlags": "\t127\t",
+            "position": "\t-10,319240 9,175064 -118,331600\t",
+            "guid": "00A7A91E.41893417.249EEA8A.F313CDA1"
+          }
+        ]
+      }
+    },
+    "roadMap": "",
+    "gasAttack": {
+      "gameplaySettings": {
+        "attackLength": "\t180\t",
+        "preparationPeriod": "\t10,000000\t",
+        "compressionTime": "\t110,000000\t",
+        "position": "\t-9,356003 18,000030 -59,720950\t",
+        "startRadius": "\t580,000000\t",
+        "endRadius": "\t85,000000\t"
+      },
+      "visualSettings": {
+        "cloudModel": "particles/mesh_particles/funnel_death/gas_ring_dark.model",
+        "cloudClimbTime": "\t15\t",
+        "cloudStartHeight": "\t-50\t",
+        "cloudEndHeight": "\t65\t",
+        "cameraProximityDist": "\t30\t",
+        "windSpeed": "0 -1",
+        "windGustiness": "\t2\t",
+        "mapActivities": "gasAttackScenario",
+        "centerFogSettings": {
+          "Fog": {
+            "version": "\t1,000000\t",
+            "innerBB": "\t-50,000000 -50,000000 50,000000 50,000000\t",
+            "outerBB": "\t-500,000000 -500,000000 500,000000 727,000000\t",
+            "deferred": {
+              "heightFog": "\ttrue\t",
+              "nearLow": "\t200,000000\t",
+              "farLow": "\t500,000000\t",
+              "nearHigh": "\t500,000000\t",
+              "farHigh": "\t1000,000000\t",
+              "altitudeLow": "\t-6,000000\t",
+              "altitudeMid": "\t30,000000\t",
+              "altitudeHigh": "\t1000,000000\t",
+              "skyAltitudeLow": "\t-10,000000\t",
+              "skyAltitudeMid": "\t50,000000\t",
+              "skyAltitudeHigh": "\t2000,000000\t",
+              "exponent": "\t0,650000\t",
+              "sunAngle": "\t35,000000\t",
+              "sunExponent": "\t0,200000\t",
+              "colorLow": "\t0,991500 1,000000 0,490000 0,350000\t",
+              "colorHigh": "\t0,991501 1,000000 0,490000 0,300000\t",
+              "colorSunLow": "\t0,991500 1,000000 0,490000 0,350000\t",
+              "colorSunHigh": "\t0,991501 1,000000 0,490000 0,300000\t",
+              "useEdgeFog": "\ttrue\t"
+            },
+            "forward": {
+              "heightFog": "\ttrue\t",
+              "nearLow": "\t200,000000\t",
+              "farLow": "\t500,000000\t",
+              "nearHigh": "\t500,000000\t",
+              "farHigh": "\t1000,000000\t",
+              "altitudeLow": "\t-6,000000\t",
+              "altitudeMid": "\t40,000000\t",
+              "altitudeHigh": "\t1000,000000\t",
+              "skyAltitudeLow": "\t-10,000000\t",
+              "skyAltitudeMid": "\t60,000000\t",
+              "skyAltitudeHigh": "\t2000,000000\t",
+              "colorLow": "\t0,703000 0,698492 0,494912 0,000000\t",
+              "colorHigh": "\t0,680000 0,675700 0,481439 0,000000\t",
+              "useEdgeFog": "\ttrue\t"
+            },
+            "enable": "\ttrue\t"
+          }
+        },
+        "edgeFogSettings": {
+          "Fog": {
+            "version": "\t1,000000\t",
+            "innerBB": "\t-50,000000 -50,000000 50,000000 50,000000\t",
+            "outerBB": "\t-500,000000 -500,000000 500,000000 727,000000\t",
+            "deferred": {
+              "heightFog": "\ttrue\t",
+              "nearLow": "\t-150,000000\t",
+              "farLow": "\t50,000000\t",
+              "nearHigh": "\t-50,000000\t",
+              "farHigh": "\t350,000000\t",
+              "altitudeLow": "\t-6,000000\t",
+              "altitudeMid": "\t30,000000\t",
+              "altitudeHigh": "\t1500,000000\t",
+              "skyAltitudeLow": "\t-10,000000\t",
+              "skyAltitudeMid": "\t50,000000\t",
+              "skyAltitudeHigh": "\t10000,000000\t",
+              "exponent": "\t0,650000\t",
+              "sunAngle": "\t35,000000\t",
+              "sunExponent": "\t0,200000\t",
+              "colorLow": "\t0,991500 1,000000 0,490000 0,350000\t",
+              "colorHigh": "\t0,991501 1,000000 0,490000 0,300000\t",
+              "colorSunLow": "\t0,991500 1,000000 0,490000 0,350000\t",
+              "colorSunHigh": "\t0,991501 1,000000 0,490000 0,300000\t",
+              "useEdgeFog": "\ttrue\t"
+            },
+            "forward": {
+              "heightFog": "\ttrue\t",
+              "nearLow": "\t-150,000000\t",
+              "farLow": "\t50,000000\t",
+              "nearHigh": "\t-50,000000\t",
+              "farHigh": "\t290,000000\t",
+              "altitudeLow": "\t2,000000\t",
+              "altitudeMid": "\t35,000000\t",
+              "altitudeHigh": "\t1500,000000\t",
+              "skyAltitudeLow": "\t-10,000000\t",
+              "skyAltitudeMid": "\t50,000000\t",
+              "skyAltitudeHigh": "\t10000,000000\t",
+              "colorLow": "\t0,703000 0,698492 0,494912 0,000000\t",
+              "colorHigh": "\t0,680000 0,675700 0,481439 0,000000\t",
+              "useEdgeFog": "\ttrue\t"
+            },
+            "enable": "\ttrue\t"
+          }
+        },
+        "soundSettings": {
+          "wwalarm": "fallout_gaz_alarm",
+          "alarm": "/GUI/fallout/fallout_gaz_alarm",
+          "wwproximity": "fallout_gaz_sphere_warning",
+          "proximity": "/GUI/fallout/fallout_gaz_sphere_warning"
+        }
+      }
+    },
+    "mapActivities": {
+      "scenario": [
+        {
+          "possibility": "\t1,000000\t",
+          "period": "\t0,000000\t",
+          "visibilityMask": "\t6144\t",
+          "trajectories": {
+            "warplane": [
+              {
+                "preset": "eiffel_tower_FAU_1",
+                "position": "\t0,000000 0,000000 0,000000\t",
+                "yaw": "\t0,000000\t",
+                "possibility": "\t1,000000\t",
+                "startTime": "\t9,000000 9,000000\t"
+              },
+              {
+                "preset": "eiffel_tower_FAU_2",
+                "position": "\t0,000000 0,000000 0,000000\t",
+                "yaw": "\t0,000000\t",
+                "possibility": "\t1,000000\t",
+                "startTime": "\t5,000000 5,000000\t"
+              },
+              {
+                "preset": "eiffel_tower_FAU_3",
+                "position": "\t0,000000 0,000000 0,000000\t",
+                "yaw": "\t0,000000\t",
+                "possibility": "\t1,000000\t",
+                "startTime": "\t4,000000 4,000000\t"
+              },
+              {
+                "preset": "eiffel_tower_FAU_4",
+                "position": "\t0,000000 0,000000 0,000000\t",
+                "yaw": "\t0,000000\t",
+                "possibility": "\t1,000000\t",
+                "startTime": "\t0,000000 0,000000\t"
+              },
+              {
+                "preset": "eiffel_tower_FAU_explosion_1",
+                "position": "\t0,000000 0,000000 0,000000\t",
+                "yaw": "\t0,000000\t",
+                "possibility": "\t1,000000\t",
+                "startTime": "\t10,000000 10,000000\t"
+              },
+              {
+                "preset": "eiffel_tower_FAU_explosion_2",
+                "position": "\t0,000000 0,000000 0,000000\t",
+                "yaw": "\t0,000000\t",
+                "possibility": "\t1,000000\t",
+                "startTime": "\t6,100000 6,100000\t"
+              },
+              {
+                "preset": "eiffel_tower_FAU_explosion_3",
+                "position": "\t0,000000 0,000000 0,000000\t",
+                "yaw": "\t0,000000\t",
+                "possibility": "\t1,000000\t",
+                "startTime": "\t5,000000 5,000000\t"
+              },
+              {
+                "preset": "eiffel_tower_FAU_explosion_4",
+                "position": "\t0,000000 0,000000 0,000000\t",
+                "yaw": "\t0,000000\t",
+                "possibility": "\t1,000000\t",
+                "startTime": "\t0,900000 0,900000\t"
+              }
+            ],
+            "explosion": [
+              {
+                "preset": "eiffel_tower_FAU_explosion_sound_1",
+                "position": "\t47,038900 1,279982 307,607100\t",
+                "possibility": "\t1,000000\t",
+                "startTime": "\t10,000000 10,000000\t"
+              },
+              {
+                "preset": "eiffel_tower_FAU_explosion_sound_2",
+                "position": "\t-124,361700 0,509002 596,711300\t",
+                "possibility": "\t1,000000\t",
+                "startTime": "\t6,100000 6,100000\t"
+              },
+              {
+                "preset": "eiffel_tower_FAU_explosion_sound_3",
+                "position": "\t9,979972 2,957673 218,622400\t",
+                "possibility": "\t1,000000\t",
+                "startTime": "\t5,000000 5,000000\t"
+              },
+              {
+                "preset": "eiffel_tower_FAU_explosion_sound_4",
+                "position": "\t34,951160 7,099438 -345,613600\t",
+                "possibility": "\t1,000000\t",
+                "startTime": "\t0,900000 0,900000\t"
+              }
+            ]
+          },
+          "startTime": "\t-30,000000 -30,000000\t"
+        },
+        {
+          "possibility": "\t0,000000\t",
+          "period": "\t-1\t",
+          "name": "gasAttackScenario",
+          "trajectories": {
+            "warplane": [
+              {
+                "preset": "eifeltower_gas_attack_rocket_flight_1",
+                "position": "\t0,000000 0,000000 0,000000\t",
+                "yaw": "\t0,000000\t",
+                "possibility": "\t1,000000\t",
+                "startTime": "\t9,000000 9,000000\t"
+              },
+              {
+                "preset": "eifeltower_gas_attack_rocket_flight_2",
+                "position": "\t0,000000 0,000000 0,000000\t",
+                "yaw": "\t0,000000\t",
+                "possibility": "\t1,000000\t",
+                "startTime": "\t5,000000 5,000000\t"
+              },
+              {
+                "preset": "eifeltower_gas_attack_rocket_flight_3",
+                "position": "\t0,000000 0,000000 0,000000\t",
+                "yaw": "\t0,000000\t",
+                "possibility": "\t1,000000\t",
+                "startTime": "\t4,000000 4,000000\t"
+              },
+              {
+                "preset": "eifeltower_gas_attack_rocket_flight_4",
+                "position": "\t0,000000 0,000000 0,000000\t",
+                "yaw": "\t0,000000\t",
+                "possibility": "\t1,000000\t",
+                "startTime": "\t0,000000 0,000000\t"
+              },
+              {
+                "preset": "eifeltower_gas_attack_rocket_explosion_1",
+                "position": "\t0,000000 0,000000 0,000000\t",
+                "yaw": "\t0,000000\t",
+                "possibility": "\t1,000000\t",
+                "startTime": "\t10,000000 10,000000\t"
+              },
+              {
+                "preset": "eifeltower_gas_attack_rocket_explosion_2",
+                "position": "\t0,000000 0,000000 0,000000\t",
+                "yaw": "\t0,000000\t",
+                "possibility": "\t1,000000\t",
+                "startTime": "\t6,100000 6,100000\t"
+              },
+              {
+                "preset": "eifeltower_gas_attack_rocket_explosion_3",
+                "position": "\t0,000000 0,000000 0,000000\t",
+                "yaw": "\t0,000000\t",
+                "possibility": "\t1,000000\t",
+                "startTime": "\t5,000000 5,000000\t"
+              },
+              {
+                "preset": "eifeltower_gas_attack_rocket_explosion_4",
+                "position": "\t0,000000 0,000000 0,000000\t",
+                "yaw": "\t0,000000\t",
+                "possibility": "\t1,000000\t",
+                "startTime": "\t0,900000 0,900000\t"
+              }
+            ],
+            "explosion": [
+              {
+                "preset": "eifeltower_gas_attack_rocket_explosion_sound_1",
+                "position": "397 0 579",
+                "possibility": "\t1,000000\t",
+                "startTime": "\t10,000000 10,000000\t"
+              },
+              {
+                "preset": "eifeltower_gas_attack_rocket_explosion_sound_2",
+                "position": "-410 0 -389",
+                "possibility": "\t1,000000\t",
+                "startTime": "\t6,100000 6,100000\t"
+              },
+              {
+                "preset": "eifeltower_gas_attack_rocket_explosion_sound_3",
+                "position": "-409 0 579",
+                "possibility": "\t1,000000\t",
+                "startTime": "\t5,000000 5,000000\t"
+              },
+              {
+                "preset": "eifeltower_gas_attack_rocket_explosion_sound_4",
+                "position": "412 0 -369",
+                "possibility": "\t1,000000\t",
+                "startTime": "\t0,900000 0,900000\t"
+              }
+            ]
+          }
+        }
+      ]
+    },
     "explicitRequestOnly": "\ttrue\t"
   },
   {
@@ -1640,7 +2707,9 @@
     "umbraEnabled": "\t1\t",
     "batchingEnabled": "\t0\t",
     "loadingMusic": "/music/intro/rus_village",
+    "wwloadingMusic": "music_rus_vilage",
     "ambientSound": "/wind/wind/wind_autumn_01",
+    "wwambientSound": "ambient_wind_autumn_01",
     "water": {
       "texScale": "\t0\t",
       "freqX": "\t0\t",
@@ -1691,6 +2760,26 @@
           "team2": ""
         }
       }
+    },
+    "mapActivities": {
+      "warplane": [
+        {
+          "preset": "murovanka_lightning_01",
+          "position": "\t0,000000 0,000000 0,000000\t",
+          "yaw": "\t0,000000\t",
+          "possibility": "\t1,000000\t",
+          "startTime": "\t0,000000 0,000000\t",
+          "period": "\t100,000000\t"
+        },
+        {
+          "preset": "murovanka_lightning_02",
+          "position": "\t0,000000 0,000000 0,000000\t",
+          "yaw": "\t0,000000\t",
+          "possibility": "\t1,000000\t",
+          "startTime": "\t35,000000 35,000000\t",
+          "period": "\t80,000000\t"
+        }
+      ]
     }
   },
   {
@@ -1709,7 +2798,9 @@
     "umbraEnabled": "\t1\t",
     "batchingEnabled": "\t0\t",
     "loadingMusic": "/music/intro/Intro_Himmelsdorf",
+    "wwloadingMusic": "music_himmelsdorf",
     "ambientSound": "/wind/wind/wind_winter_01",
+    "wwambientSound": "ambient_wind_winter_01",
     "water": {
       "texScale": "\t0\t",
       "freqX": "\t0\t",
@@ -1776,7 +2867,9 @@
     "vehicleCamouflageKind": "summer",
     "umbraEnabled": "\t1\t",
     "loadingMusic": "/music/intro/euro_city",
+    "wwloadingMusic": "music_euro_city",
     "ambientSound": "/wind/wind/wind_autumn_01",
+    "wwambientSound": "ambient_wind_autumn_01",
     "water": {
       "texScale": "\t0\t",
       "freqX": "\t0\t",
@@ -1904,7 +2997,9 @@
     "vehicleCamouflageKind": "summer",
     "maxPlayersInTeam": "\t15\t",
     "loadingMusic": "/music/intro/Intro_Himmelsdorf",
+    "wwloadingMusic": "music_himmelsdorf",
     "ambientSound": "/wind/wind/wind_autumn_01",
+    "wwambientSound": "ambient_wind_autumn_01",
     "water": {
       "texScale": "\t0\t",
       "freqX": "\t0\t",
@@ -1938,7 +3033,9 @@
     "umbraEnabled": "\t1\t",
     "batchingEnabled": "\t0\t",
     "loadingMusic": "/music/intro/euro_village",
+    "wwloadingMusic": "music_euro_vilage",
     "ambientSound": "/wind/wind/wind_autumn_01",
+    "wwambientSound": "ambient_wind_autumn_01",
     "gameplayTypes": {
       "ctf": {
         "teamBasePositions": {
@@ -2091,7 +3188,9 @@
     "umbraEnabled": "\t1\t",
     "batchingEnabled": "\t0\t",
     "loadingMusic": "/music/intro/euro_village",
+    "wwloadingMusic": "music_euro_vilage",
     "ambientSound": "/wind/wind/wind_summer_01",
+    "wwambientSound": "ambient_wind_summer_01",
     "water": {
       "texScale": "\t0\t",
       "freqX": "\t0\t",
@@ -2125,7 +3224,9 @@
     "defaultGroundEffect": "\tNone\t",
     "umbraEnabled": "\t1\t",
     "loadingMusic": "/music/intro/euro_village",
+    "wwloadingMusic": "music_euro_vilage",
     "ambientSound": "/wind/wind/wind_summer_01",
+    "wwambientSound": "ambient_wind_summer_01",
     "water": {
       "texScale": "\t0\t",
       "freqX": "\t0\t",
@@ -2159,7 +3260,9 @@
     "batchingEnabled": "\t0\t",
     "maxPlayersInTeam": "\t15\t",
     "loadingMusic": "/music/intro/euro_city",
+    "wwloadingMusic": "music_euro_city",
     "ambientSound": "/wind/wind/wind_spring_01",
+    "wwambientSound": "ambient_wind_spring_01",
     "gameplayTypes": {
       "ctf": {
         "teamBasePositions": {
@@ -2186,7 +3289,9 @@
     "vehicleCamouflageKind": "desert",
     "maxPlayersInTeam": "\t15\t",
     "loadingMusic": "/music/intro/rus_village",
+    "wwloadingMusic": "music_rus_vilage",
     "ambientSound": "/wind/wind/wind_autumn_01",
+    "wwambientSound": "ambient_wind_desert_01",
     "umbraEnabled": "\t1\t",
     "batchingEnabled": "\t0\t",
     "water": {
@@ -2282,7 +3387,9 @@
     "umbraEnabled": "\t1\t",
     "batchingEnabled": "\t0\t",
     "loadingMusic": "/music/intro/desert",
+    "wwloadingMusic": "music_desert",
     "ambientSound": "/wind/wind/wind_desert_01",
+    "wwambientSound": "ambient_wind_desert_01",
     "water": {
       "texScale": "\t0\t",
       "freqX": "\t0\t",
@@ -2329,7 +3436,9 @@
     "vehicleCamouflageKind": "desert",
     "umbraEnabled": "\t1\t",
     "loadingMusic": "/music/intro/euro_village",
+    "wwloadingMusic": "music_euro_vilage",
     "ambientSound": "/wind/wind/wind_desert_01",
+    "wwambientSound": "ambient_wind_desert_01",
     "water": {
       "texScale": "\t0\t",
       "freqX": "\t0\t",
@@ -2382,7 +3491,9 @@
     "vehicleCamouflageKind": "summer",
     "umbraEnabled": "\t1\t",
     "loadingMusic": "/music/intro/euro_village",
+    "wwloadingMusic": "music_euro_vilage",
     "ambientSound": "/wind/wind/wind_autumn_01",
+    "wwambientSound": "ambient_wind_autumn_01",
     "water": {
       "texScale": "\t0\t",
       "freqX": "\t0\t",
@@ -2414,6 +3525,7 @@
     "vehicleCamouflageKind": "summer",
     "maxPlayersInTeam": "\t15\t",
     "loadingMusic": "/music/intro/euro_city",
+    "wwloadingMusic": "music_euro_city",
     "ambientSound": "/wind/wind/wind_autumn_01",
     "wwambientSound": "ambient_wind_autumn_01",
     "water": {
@@ -2462,7 +3574,9 @@
     "vehicleCamouflageKind": "summer",
     "umbraEnabled": "\t1\t",
     "loadingMusic": "/music/intro/rus_village",
+    "wwloadingMusic": "music_rus_vilage",
     "ambientSound": "/wind/wind/wind_summer_01",
+    "wwambientSound": "ambient_wind_summer_01",
     "gameplayTypes": {
       "ctf": {
         "teamBasePositions": {
@@ -2523,7 +3637,9 @@
     "vehicleCamouflageKind": "summer",
     "umbraEnabled": "\t1\t",
     "loadingMusic": "/music/intro/euro_village",
+    "wwloadingMusic": "music_euro_vilage",
     "ambientSound": "/wind/wind/wind_autumn_01",
+    "wwambientSound": "ambient_wind_autumn_01",
     "water": {
       "texScale": "\t0\t",
       "freqX": "\t0\t",
@@ -2540,6 +3656,26 @@
           }
         }
       }
+    },
+    "mapActivities": {
+      "warplane": [
+        {
+          "preset": "fishing_bay_lightning_01",
+          "position": "\t0,000000 0,000000 0,000000\t",
+          "yaw": "\t0,000000\t",
+          "possibility": "\t1,000000\t",
+          "startTime": "\t0,000000 0,000000\t",
+          "period": "\t100,000000\t"
+        },
+        {
+          "preset": "fishing_bay_lightning_02",
+          "position": "\t0,000000 0,000000 0,000000\t",
+          "yaw": "\t0,000000\t",
+          "possibility": "\t1,000000\t",
+          "startTime": "\t45,000000 45,000000\t",
+          "period": "\t90,000000\t"
+        }
+      ]
     }
   },
   {
@@ -2556,7 +3692,9 @@
     "batchingEnabled": "\t0\t",
     "umbraEnabled": "\t1\t",
     "loadingMusic": "/music/intro/Intro_kavkaz",
+    "wwloadingMusic": "music_kavkaz",
     "ambientSound": "/wind/wind/wind_autumn_01",
+    "wwambientSound": "ambient_wind_autumn_01",
     "water": {
       "texScale": "\t0\t",
       "freqX": "\t0\t",
@@ -2588,7 +3726,9 @@
     "vehicleCamouflageKind": "winter",
     "umbraEnabled": "\t1\t",
     "loadingMusic": "/music/intro/euro_village",
+    "wwloadingMusic": "music_euro_vilage",
     "ambientSound": "/wind/wind/wind_winter_01",
+    "wwambientSound": "ambient_wind_winter_01",
     "water": {
       "texScale": "\t0\t",
       "freqX": "\t0\t",
@@ -2639,7 +3779,9 @@
     "vehicleCamouflageKind": "summer",
     "umbraEnabled": "\t1\t",
     "loadingMusic": "/music/intro/rus_village",
+    "wwloadingMusic": "music_rus_vilage",
     "ambientSound": "/wind/wind/wind_autumn_01",
+    "wwambientSound": "ambient_wind_autumn_01",
     "water": {
       "texScale": "\t0\t",
       "freqX": "\t0\t",
@@ -2729,7 +3871,9 @@
     "vehicleCamouflageKind": "summer",
     "maxPlayersInTeam": "\t15\t",
     "loadingMusic": "\t/music/intro/America\t",
+    "wwloadingMusic": "music_america",
     "ambientSound": "/wind/wind/wind_summer_01",
+    "wwambientSound": "ambient_wind_summer_01",
     "water": {
       "texScale": "\t0\t",
       "freqX": "\t0\t",
@@ -2761,7 +3905,9 @@
     "vehicleCamouflageKind": "summer",
     "maxPlayersInTeam": "\t15\t",
     "loadingMusic": "\t/music/intro/America\t",
+    "wwloadingMusic": "music_america",
     "ambientSound": "/wind/wind/wind_autumn_01",
+    "wwambientSound": "ambient_wind_autumn_01",
     "water": {
       "texScale": "\t0\t",
       "freqX": "\t0\t",
@@ -2796,7 +3942,9 @@
     "batchingEnabled": "\t0\t",
     "defaultGroundEffect": "\tNone\t",
     "loadingMusic": "\t/music/intro/America\t",
+    "wwloadingMusic": "music_america",
     "ambientSound": "/wind/wind/wind_summer_01",
+    "wwambientSound": "ambient_wind_summer_01",
     "water": {
       "texScale": "\t0\t",
       "freqX": "\t0\t",
@@ -2887,7 +4035,9 @@
     "vehicleCamouflageKind": "summer",
     "umbraEnabled": "\t1\t",
     "loadingMusic": "/music/intro/rus_village",
+    "wwloadingMusic": "music_rus_vilage",
     "ambientSound": "/wind/wind/wind_autumn_01",
+    "wwambientSound": "ambient_wind_autumn_01",
     "gameplayTypes": {
       "ctf": {
         "teamBasePositions": {
@@ -2914,7 +4064,9 @@
     "vehicleCamouflageKind": "summer",
     "umbraEnabled": "\t1\t",
     "loadingMusic": "/music/intro/euro_village",
+    "wwloadingMusic": "music_rus_vilage",
     "ambientSound": "/wind/wind/wind_summer_01",
+    "wwambientSound": "ambient_wind_summer_01",
     "water": {
       "texScale": "\t0\t",
       "freqX": "\t0\t",
@@ -2947,7 +4099,9 @@
     "vehicleCamouflageKind": "summer",
     "umbraEnabled": "\t1\t",
     "loadingMusic": "/music/intro/euro_village",
+    "wwloadingMusic": "music_euro_vilage",
     "ambientSound": "/wind/wind/wind_autumn_01",
+    "wwambientSound": "ambient_wind_autumn_01",
     "water": {
       "texScale": "\t0\t",
       "freqX": "\t0\t",
@@ -3006,7 +4160,9 @@
     "vehicleCamouflageKind": "winter",
     "umbraEnabled": "\t1\t",
     "loadingMusic": "/music/intro/euro_village",
+    "wwloadingMusic": "music_euro_vilage",
     "ambientSound": "/wind/wind/wind_winter_01",
+    "wwambientSound": "ambient_wind_winter_01",
     "water": {
       "texScale": "\t0\t",
       "freqX": "\t0\t",
@@ -3089,11 +4245,41 @@
       "groupName": "/combat_atmosphere/historical_weapons"
     },
     "loadingMusic": "\t/music/intro/kharkov\t",
+    "wwloadingMusic": "music_kharkov",
     "ambientSound": "/wind/wind/wind_winter_01",
+    "wwambientSound": "ambient_wind_winter_01",
     "water": {
       "texScale": "\t0\t",
       "freqX": "\t0\t",
       "freqZ": "\t0\t"
+    },
+    "mapActivities": {
+      "warplane": [
+        {
+          "preset": "kharkiv_lightning_01",
+          "position": "\t0,000000 0,000000 0,000000\t",
+          "yaw": "\t0,000000\t",
+          "possibility": "\t1,000000\t",
+          "startTime": "\t0,000000 0,000000\t",
+          "period": "\t100,000000\t"
+        },
+        {
+          "preset": "kharkiv_lightning_02",
+          "position": "\t0,000000 0,000000 0,000000\t",
+          "yaw": "\t0,000000\t",
+          "possibility": "\t1,000000\t",
+          "startTime": "\t35,000000 35,000000\t",
+          "period": "\t80,000000\t"
+        },
+        {
+          "preset": "kharkiv_lightning_03",
+          "position": "\t0,000000 0,000000 0,000000\t",
+          "yaw": "\t0,000000\t",
+          "possibility": "\t1,000000\t",
+          "startTime": "\t55,000000 55,000000\t",
+          "period": "\t95,000000\t"
+        }
+      ]
     }
   },
   {
@@ -3112,7 +4298,9 @@
     "batchingEnabled": "\t0\t",
     "defaultGroundEffect": "\tNone\t",
     "loadingMusic": "/music/intro/Intro_Himmelsdorf",
+    "wwloadingMusic": "music_himmelsdorf",
     "ambientSound": "/wind/wind/wind_winter_01",
+    "wwambientSound": "ambient_wind_winter_01",
     "water": {
       "texScale": "\t0\t",
       "freqX": "\t0\t",
@@ -3179,7 +4367,9 @@
     "vehicleCamouflageKind": "winter",
     "defaultGroundEffect": "\tNone\t",
     "loadingMusic": "/music/intro/Intro_Himmelsdorf",
+    "wwloadingMusic": "music_himmelsdorf",
     "ambientSound": "/wind/wind/wind_winter_02",
+    "wwambientSound": "ambient_wind_winter_02",
     "umbraEnabled": "\t1\t",
     "batchingEnabled": "\t0\t",
     "gameplayTypes": {
@@ -3289,7 +4479,9 @@
     "vehicleCamouflageKind": "summer",
     "umbraEnabled": "\t1\t",
     "loadingMusic": "/music/intro/Stalingrad",
+    "wwloadingMusic": "music_stalingrad",
     "ambientSound": "/wind/wind/wind_autumn_01",
+    "wwambientSound": "ambient_wind_autumn_01",
     "water": {
       "texScale": "\t0\t",
       "freqX": "\t0\t",
@@ -3415,6 +4607,7 @@
     "vehicleCamouflageKind": "summer",
     "umbraEnabled": "\t1\t",
     "loadingMusic": "/music/intro/rus_city",
+    "wwloadingMusic": "music_rus_city",
     "ambientSound": "/wind/wind/wind_desert_01",
     "wwambientSound": "ambient_wind_desert_01",
     "water": {
@@ -3442,22 +4635,22 @@
         }
       },
       "assault2": {
-        "winnerIfTimeout": "\t2\t",
-        "winnerIfExtermination": "\t2\t",
+        "winnerIfTimeout": "\t1\t",
+        "winnerIfExtermination": "\t1\t",
         "teamSpawnPoints": {
           "team1": {
-            "position": "315.682 -121.161"
+            "position": "-315.682 121.161"
           },
           "team2": {
-            "position": "-315.682 121.161"
+            "position": "315.682 -121.161"
           }
         },
         "teamBasePositions": {
-          "team1": "",
-          "team2": {
+          "team1": {
             "position1": "\t53,463490 292,177200\t",
             "position2": "\t-0,086563 -0,066666\t"
-          }
+          },
+          "team2": ""
         }
       },
       "fallout": {
@@ -3836,6 +5029,210 @@
           }
         ]
       }
+    },
+    "gasAttack": {
+      "gameplaySettings": {
+        "attackLength": "\t180\t",
+        "preparationPeriod": "\t10,000000\t",
+        "compressionTime": "\t110,000000\t",
+        "position": "\t-0,000046 25,000000 0,000000\t",
+        "startRadius": "\t570,000000\t",
+        "endRadius": "\t85,000000\t"
+      },
+      "visualSettings": {
+        "cloudModel": "particles/mesh_particles/funnel_death/gas_ring_light.model",
+        "cloudClimbTime": "\t15\t",
+        "cloudStartHeight": "\t-50\t",
+        "cloudEndHeight": "\t60\t",
+        "cameraProximityDist": "\t30\t",
+        "windSpeed": "0 -1",
+        "windGustiness": "\t2\t",
+        "postEffect": "",
+        "mapActivities": "gasAttackScenario",
+        "centerFogSettings": {
+          "Fog": {
+            "version": "\t1,000000\t",
+            "innerBB": "\t-50,000000 -50,000000 50,000000 50,000000\t",
+            "outerBB": "\t-500,000000 -500,000000 500,000000 727,000000\t",
+            "deferred": {
+              "heightFog": "\ttrue\t",
+              "nearLow": "\t200,000000\t",
+              "farLow": "\t500,000000\t",
+              "nearHigh": "\t500,000000\t",
+              "farHigh": "\t1000,000000\t",
+              "altitudeLow": "\t-6,000000\t",
+              "altitudeMid": "\t50,000000\t",
+              "altitudeHigh": "\t1500,000000\t",
+              "skyAltitudeLow": "\t-10,000000\t",
+              "skyAltitudeMid": "\t50,000000\t",
+              "skyAltitudeHigh": "\t10000,000000\t",
+              "exponent": "\t0,650000\t",
+              "sunAngle": "\t35,000000\t",
+              "sunExponent": "\t0,200000\t",
+              "colorLow": "\t0,957500 1,000000 0,490000 0,850000\t",
+              "colorHigh": "\t0,957500 1,000000 0,490000 0,800000\t",
+              "colorSunLow": "\t0,957500 1,000000 0,490000 0,850000\t",
+              "colorSunHigh": "\t0,957500 1,000000 0,490000 0,800000\t",
+              "useEdgeFog": "\ttrue\t"
+            },
+            "forward": {
+              "heightFog": "\ttrue\t",
+              "nearLow": "\t200,000000\t",
+              "farLow": "\t500,000000\t",
+              "nearHigh": "\t500,000000\t",
+              "farHigh": "\t1000,000000\t",
+              "altitudeLow": "\t-6,000000\t",
+              "altitudeMid": "\t40,000000\t",
+              "altitudeHigh": "\t1000,000000\t",
+              "skyAltitudeLow": "\t-10,000000\t",
+              "skyAltitudeMid": "\t60,000000\t",
+              "skyAltitudeHigh": "\t2000,000000\t",
+              "colorLow": "\t0,639470 0,653000 0,459712 0,000000\t",
+              "colorHigh": "\t0,616902 0,630000 0,442890 0,000000\t",
+              "useEdgeFog": "\ttrue\t"
+            },
+            "enable": "\ttrue\t"
+          }
+        },
+        "edgeFogSettings": {
+          "Fog": {
+            "version": "\t1,000000\t",
+            "innerBB": "\t-50,000000 -50,000000 50,000000 50,000000\t",
+            "outerBB": "\t-600,000000 -600,000000 600,000000 600,000000\t",
+            "deferred": {
+              "heightFog": "\ttrue\t",
+              "nearLow": "\t-150,000000\t",
+              "farLow": "\t50,000000\t",
+              "nearHigh": "\t-50,000000\t",
+              "farHigh": "\t350,000000\t",
+              "altitudeLow": "\t-6,000000\t",
+              "altitudeMid": "\t50,000000\t",
+              "altitudeHigh": "\t1500,000000\t",
+              "skyAltitudeLow": "\t-10,000000\t",
+              "skyAltitudeMid": "\t50,000000\t",
+              "skyAltitudeHigh": "\t10000,000000\t",
+              "exponent": "\t0,650000\t",
+              "sunAngle": "\t35,000000\t",
+              "sunExponent": "\t0,200000\t",
+              "colorLow": "\t0,957500 1,000000 0,490000 0,850000\t",
+              "colorHigh": "\t0,957500 1,000000 0,490000 0,800000\t",
+              "colorSunLow": "\t0,957500 1,000000 0,490000 0,850000\t",
+              "colorSunHigh": "\t0,957500 1,000000 0,490000 0,800000\t",
+              "useEdgeFog": "\ttrue\t"
+            },
+            "forward": {
+              "heightFog": "\ttrue\t",
+              "nearLow": "\t-150,000000\t",
+              "farLow": "\t50,000000\t",
+              "nearHigh": "\t-50,000000\t",
+              "farHigh": "\t332,000000\t",
+              "altitudeLow": "\t-2,000000\t",
+              "altitudeMid": "\t50,000000\t",
+              "altitudeHigh": "\t1500,000000\t",
+              "skyAltitudeLow": "\t-10,000000\t",
+              "skyAltitudeMid": "\t50,000000\t",
+              "skyAltitudeHigh": "\t10000,000000\t",
+              "colorLow": "\t0,639470 0,653000 0,459712 0,000000\t",
+              "colorHigh": "\t0,616902 0,630000 0,442890 0,000000\t",
+              "useEdgeFog": "\ttrue\t"
+            },
+            "enable": "\ttrue\t"
+          }
+        }
+      }
+    },
+    "mapActivities": {
+      "scenario": {
+        "possibility": "\t0,000000\t",
+        "period": "\t-1\t",
+        "name": "gasAttackScenario",
+        "trajectories": {
+          "warplane": [
+            {
+              "preset": "lostcity_gas_attack_rocket_flight_1",
+              "position": "\t0,000000 0,000000 0,000000\t",
+              "yaw": "\t0,000000\t",
+              "possibility": "\t1,000000\t",
+              "startTime": "\t9,000000 9,000000\t"
+            },
+            {
+              "preset": "lostcity_gas_attack_rocket_flight_2",
+              "position": "\t0,000000 0,000000 0,000000\t",
+              "yaw": "\t0,000000\t",
+              "possibility": "\t1,000000\t",
+              "startTime": "\t5,000000 5,000000\t"
+            },
+            {
+              "preset": "lostcity_gas_attack_rocket_flight_3",
+              "position": "\t0,000000 0,000000 0,000000\t",
+              "yaw": "\t0,000000\t",
+              "possibility": "\t1,000000\t",
+              "startTime": "\t4,000000 4,000000\t"
+            },
+            {
+              "preset": "lostcity_gas_attack_rocket_flight_4",
+              "position": "\t0,000000 0,000000 0,000000\t",
+              "yaw": "\t0,000000\t",
+              "possibility": "\t1,000000\t",
+              "startTime": "\t0,000000 0,000000\t"
+            },
+            {
+              "preset": "lostcity_gas_attack_rocket_explosion_1",
+              "position": "\t0,000000 0,000000 0,000000\t",
+              "yaw": "\t0,000000\t",
+              "possibility": "\t1,000000\t",
+              "startTime": "\t9,900000 9,900000\t"
+            },
+            {
+              "preset": "lostcity_gas_attack_rocket_explosion_2",
+              "position": "\t0,000000 0,000000 0,000000\t",
+              "yaw": "\t0,000000\t",
+              "possibility": "\t1,000000\t",
+              "startTime": "\t5,900000 5,900000\t"
+            },
+            {
+              "preset": "lostcity_gas_attack_rocket_explosion_3",
+              "position": "\t0,000000 0,000000 0,000000\t",
+              "yaw": "\t0,000000\t",
+              "possibility": "\t1,000000\t",
+              "startTime": "\t5,000000 5,000000\t"
+            },
+            {
+              "preset": "lostcity_gas_attack_rocket_explosion_4",
+              "position": "\t0,000000 0,000000 0,000000\t",
+              "yaw": "\t0,000000\t",
+              "possibility": "\t1,000000\t",
+              "startTime": "\t1,000000 1,000000\t"
+            }
+          ],
+          "explosion": [
+            {
+              "preset": "lostcity_gas_attack_rocket_explosion_sound_1",
+              "position": "409 0 329",
+              "possibility": "\t1,000000\t",
+              "startTime": "\t9,900000 9,900000\t"
+            },
+            {
+              "preset": "lostcity_gas_attack_rocket_explosion_sound_2",
+              "position": "-413 0 -354",
+              "possibility": "\t1,000000\t",
+              "startTime": "\t5,900000 5,900000\t"
+            },
+            {
+              "preset": "lostcity_gas_attack_rocket_explosion_sound_3",
+              "position": "-333 0 363",
+              "possibility": "\t1,000000\t",
+              "startTime": "\t5,000000 5,000000\t"
+            },
+            {
+              "preset": "lostcity_gas_attack_rocket_explosion_sound_4",
+              "position": "350 0 -402",
+              "possibility": "\t1,000000\t",
+              "startTime": "\t1,000000 1,000000\t"
+            }
+          ]
+        }
+      }
     }
   },
   {
@@ -3853,7 +5250,9 @@
     "batchingEnabled": "\t0\t",
     "defaultGroundEffect": "ground",
     "loadingMusic": "/music/intro/rus_village",
+    "wwloadingMusic": "music_rus_vilage",
     "ambientSound": "/wind/wind/wind_autumn_01",
+    "wwambientSound": "ambient_wind_autumn_01",
     "water": {
       "texScale": "\t0\t",
       "freqX": "\t0\t",
@@ -3861,15 +5260,15 @@
     },
     "gameplayTypes": {
       "ctf": {
+        "artilleryPreparationChance": "0.7",
         "teamBasePositions": {
           "team1": {
-            "position1": "-100.000 448.300110"
+            "position1": "\t-125,100000 448,300100\t"
           },
           "team2": {
-            "position1": "-100.000 -447.000000"
+            "position1": "\t51,599980 -447,000000\t"
           }
-        },
-        "artilleryPreparationChance": "0.7"
+        }
       },
       "domination": {
         "teamSpawnPoints": {

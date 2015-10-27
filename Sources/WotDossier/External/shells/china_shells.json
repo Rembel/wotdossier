@@ -122,6 +122,21 @@
       "devices": "\t50\t"
     }
   },
+  "_37mm_Odr_mle._1935_bot": {
+    "id": "\t81\t",
+    "userString": "#china_vehicles:_37mm_Odr_mle._1935_bot",
+    "icon": "ap",
+    "price": "\t0\t",
+    "notInShop": "\ttrue\t",
+    "kind": "ARMOR_PIERCING",
+    "caliber": "\t37\t",
+    "isTracer": "\ttrue\t",
+    "effects": "smallArmorPiercing",
+    "damage": {
+      "armor": "\t5\t",
+      "devices": "\t3\t"
+    }
+  },
   "_37mm_OE_mle._1916": {
     "id": "\t12\t",
     "userString": "#china_vehicles:_37mm_OE_mle._1916",

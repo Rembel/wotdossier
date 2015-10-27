@@ -32,7 +32,7 @@ namespace WotDossier.Domain.Server
         public string defender_clan_name { get; set; }
         public int attacker_clan_id { get; set; }
         public string defender_clan_tag { get; set; }
-        public StrongholBattleType battle_type { get; set; }
+        public ClanBattleType battle_type { get; set; }
         public int defender_clan_id { get; set; }
         public int battle_creation_date { get; set; }
         public string attack_direction { get; set; }

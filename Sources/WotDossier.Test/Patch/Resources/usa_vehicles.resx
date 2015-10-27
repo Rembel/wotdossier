@@ -121,7 +121,7 @@
     <value>M56 Scorpion</value>
   </data>
   <data name="A101_M56_descr" xml:space="preserve">
-    <value>САУ М56 разрабатывалась как лёгкая противотанковая установка для воздушно-десантных частей, которую можно было перевозить транспортными самолётами, планерами и десантировать на парашютах. Серийно выпускалась в 1953–1959 гг. Широкого распространения не получила и вскоре была заменена лёгким танком Sheridan. Ограничено использовалась во время боевых действий во Вьетнаме для артподдержки.</value>
+    <value>The M56 SPG was intended to support airborne units as a light tank destroyer that could be transported by cargo planes or inserted by parachute or glider. The vehicle was mass produced from 1953 through 1959, but it was not popular and was soon replaced by the Sheridan light tank. The Scorpion was occasionally used to provide artillery support in Vietnam.</value>
   </data>
   <data name="A101_M56_short" xml:space="preserve">
     <value>Scorpion</value>
@@ -130,7 +130,7 @@
     <value>T28 Concept</value>
   </data>
   <data name="A102_T28_concept_descr" xml:space="preserve">
-    <value>Разработка тяжёлого танка прорыва началась в сентябре 1943 года. Департаментом вооружений планировалось использовать узлы и агрегаты танка М6, электромеханическую трансмиссию и 105-мм пушку Т5 в частично вращающейся башне с лобовым бронированием 203 мм. Танк предназначался для прорыва укреплений немецкого Западного вала. Проект был отклонён Сухопутными силами Армии США на стадии эскизного проектирования. В ходе дальнейших работ был модифицирован в тяжёлый танк прорыва Т95.</value>
+    <value>The development of this heavy breakthrough tank began in September 1943. It was planned to utilize certain components of the M6 tank as well as the electromechanical transmission and 100-mm T5 gun, mounted in a turret of limited traverse with 203-mm armor protection. The vehicle was intended to assault the fortifications of the German "Siegfried Line" (known as the "Westwall" to the Germans). The U.S. land forces rejected the project during the design phase. The vehicle was later modified into the T95 heavy breakthrough tank.</value>
   </data>
   <data name="A102_T28_concept_short" xml:space="preserve">
     <value>T28 HTC</value>
@@ -139,7 +139,7 @@
     <value>M4A3E8 Fury</value>
   </data>
   <data name="A104_M4A3E8A_descr" xml:space="preserve">
-    <value>M4A3E8 Fury — танк сержанта Вардэдди из кинофильма «Ярость».</value>
+    <value>M4A3E8 Fury—sergeant Wardaddy's tank from the movie Fury.</value>
   </data>
   <data name="A104_M4A3E8A_short" xml:space="preserve">
     <value>Fury</value>
@@ -148,16 +148,46 @@
     <value>M48A2/T54E2/T123E6</value>
   </data>
   <data name="A106_M48A2_120_descr" xml:space="preserve">
-    <value>Представляет собой вариант танка M48A2 — одной из модификаций средних танков M48. Оснащён башней T54E2 с установленным в неё 120-мм орудием T123E6. Данный опытный образец в 1958 году использовался в сравнительных испытаниях для выбора вооружения нового среднего танка США — XM60.</value>
+    <value>A variant of the M48A2 tank with the T54E2 turret and 120-mm T123E6 gun. In 1958, the prototype underwent comparative trials aimed at choosing the armament for the new U.S. XM60 medium tank.</value>
   </data>
   <data name="A106_M48A2_120_short" xml:space="preserve">
     <value>M48/T54E2</value>
+  </data>
+  <data name="A107_T1_HMC" xml:space="preserve">
+    <value>T1 HMC</value>
+  </data>
+  <data name="A107_T1_HMC_descr" xml:space="preserve">
+    <value>The T1 Howitzer Motor Carriage was created in the fall of 1930 on the T2 chassis. The design incorporated components of the T1 Cunningham. Due to the Great Depression, all work on the project was discontinued at the prototype stage.</value>
+  </data>
+  <data name="A108_T18_HMC" xml:space="preserve">
+    <value>T18 HMC</value>
+  </data>
+  <data name="A108_T18_HMC_descr" xml:space="preserve">
+    <value>A proposed 75 mm howitzer on the chassis of the M3 light tank. Developed by the Firestone Tire and Rubber Company in the fall of 1941. Two prototypes were ordered after the project was approved. The first vehicle was produced in May and underwent trials in June 1942 on the Aberdeen Proving Ground. The project was discontinued in favor of more promising designs.</value>
+  </data>
+  <data name="A109_T56_GMC" xml:space="preserve">
+    <value>T56 GMC</value>
+  </data>
+  <data name="A109_T56_GMC_descr" xml:space="preserve">
+    <value>Development of a 3 inch self-propelled gun on the M3A3 Stuart chassis started in September 1942. Trials on the Aberdeen Proving Ground in November demonstrated that the gun was too heavy for the light tank chassis. Never entered mass production.</value>
+  </data>
+  <data name="A27_T82" xml:space="preserve">
+    <value>T82 HMC</value>
+  </data>
+  <data name="A27_T82_descr" xml:space="preserve">
+    <value>SPG on the M5A1 chassis designed for jungle warfare. The vehicle featured a 105 mm light howitzer mounted in an open-topped cabin. Development started in November 1943. In August 1944, two prototypes underwent trials on the Aberdeen Proving Ground. On June 21, 1945, the project was discontinued due to the lack of interest in vehicles of this type.</value>
+  </data>
+  <data name="A46_T3" xml:space="preserve">
+    <value>T3 HMC</value>
+  </data>
+  <data name="A46_T3_descr" xml:space="preserve">
+    <value>Light SPG for infantry and tank support. Developed in 1938 on the M1A3 chassis. Only one prototype was built. The trials demonstrated a number of technical and functional problems, and the vehicle never saw service.</value>
   </data>
   <data name="A78_M4_Improved" xml:space="preserve">
     <value>M4 Improved</value>
   </data>
   <data name="A78_M4_Improved_descr" xml:space="preserve">
-    <value>Проект танка М4 с наклонным расположением бронелистов корпуса и башни был разработан компанией Detroit Arsenal в августе 1942 года. Реализация данного проекта позволила бы существенно улучшить показатели защищённости танка Sherman без увеличения веса и ухудшения характеристик машины. Танк существовал только в эскизах.</value>
+    <value>A variant of the M4 medium tank with angled hull and turret armor. It was developed by the Detroit Arsenal in August 1942. The changes were intended to improve the tank’s protection without increasing weight or degrading other technical characteristics. Existed only in blueprints.</value>
   </data>
   <data name="A78_M4_Improved_short" xml:space="preserve">
     <value>M4 Improved</value>
@@ -203,7 +233,10 @@
 AOI-1490</value>
   </data>
   <data name="Alarm_flags" xml:space="preserve">
-    <value>«Сигнальные флажки»</value>
+    <value>Signal Flags</value>
+  </data>
+  <data name="Alarm_flags_bot" xml:space="preserve">
+    <value>Signal Flags</value>
   </data>
   <data name="American_LFF_Corporation_V12" xml:space="preserve">
     <value>American LaFrance 312A V-12</value>
@@ -235,6 +268,36 @@ AOI-1490</value>
   </data>
   <data name="Chassis_A106_M48A2_120" xml:space="preserve">
     <value>M48A2/T54E2/T123E6</value>
+  </data>
+  <data name="Chassis_A107_T1_HMC" xml:space="preserve">
+    <value>T1 HMC</value>
+  </data>
+  <data name="Chassis_A107_T1_HMC_2" xml:space="preserve">
+    <value>T1 HMC modified</value>
+  </data>
+  <data name="Chassis_A108_T18_HMC" xml:space="preserve">
+    <value>T18 HMC</value>
+  </data>
+  <data name="Chassis_A108_T18_HMC_2" xml:space="preserve">
+    <value>T18 HMC modified</value>
+  </data>
+  <data name="Chassis_A109_T56_GMC" xml:space="preserve">
+    <value>T56 GMC</value>
+  </data>
+  <data name="Chassis_A109_T56_GMC_2" xml:space="preserve">
+    <value>T57 GMC</value>
+  </data>
+  <data name="Chassis_A27_T82" xml:space="preserve">
+    <value>T82 Pilot No. 1</value>
+  </data>
+  <data name="Chassis_A27_T82_2" xml:space="preserve">
+    <value>T82 Pilot No. 2</value>
+  </data>
+  <data name="Chassis_A46_T3" xml:space="preserve">
+    <value>T3 HMC</value>
+  </data>
+  <data name="Chassis_A46_T3_2" xml:space="preserve">
+    <value>T3 HMC improved</value>
   </data>
   <data name="Chassis_M103" xml:space="preserve">
     <value>T97E1</value>
@@ -410,9 +473,6 @@ AOI-1490</value>
   <data name="Chassis_T57_58" xml:space="preserve">
     <value>T97</value>
   </data>
-  <data name="Chassis_T57_58_fallout" xml:space="preserve">
-    <value>T97</value>
-  </data>
   <data name="Chassis_T69" xml:space="preserve">
     <value>T84E1</value>
   </data>
@@ -427,12 +487,6 @@ AOI-1490</value>
   </data>
   <data name="Chassis_T7_Combat_Car" xml:space="preserve">
     <value>T7 Combat Car</value>
-  </data>
-  <data name="Chassis_T82_1" xml:space="preserve">
-    <value>T82T55E2</value>
-  </data>
-  <data name="Chassis_T82_2" xml:space="preserve">
-    <value>T82T55E4</value>
   </data>
   <data name="Chassis_T92" xml:space="preserve">
     <value>T92 T80E1</value>
@@ -647,14 +701,23 @@ T-10204</value>
   <data name="Cunningham_D1" xml:space="preserve">
     <value>Cunningham D1</value>
   </data>
+  <data name="Cunningham_D1_bot" xml:space="preserve">
+    <value>Cunningham D1</value>
+  </data>
   <data name="Cunningham_D2" xml:space="preserve">
     <value>Cunningham D2</value>
   </data>
   <data name="Cunningham_E1" xml:space="preserve">
     <value>Cunningham E1</value>
   </data>
+  <data name="Cunningham_E1_bot" xml:space="preserve">
+    <value>Cunningham E1</value>
+  </data>
   <data name="Cunningham_E2" xml:space="preserve">
     <value>Cunningham E2</value>
+  </data>
+  <data name="Cunningham_bot" xml:space="preserve">
+    <value>Cunningham V-type</value>
   </data>
   <data name="Cunningham_type_3" xml:space="preserve">
     <value>Cunningham V8</value>
@@ -751,7 +814,16 @@ T-1020-4</value>
   <data name="Hercules_HXE" xml:space="preserve">
     <value>Hercules HXE</value>
   </data>
+  <data name="LaSalle_V8_75" xml:space="preserve">
+    <value>LaSalle V8 75</value>
+  </data>
+  <data name="LaSalle_V8_89" xml:space="preserve">
+    <value>LaSalle V8 89</value>
+  </data>
   <data name="Liberty" xml:space="preserve">
+    <value>Liberty</value>
+  </data>
+  <data name="Liberty_bot" xml:space="preserve">
     <value>Liberty</value>
   </data>
   <data name="Licoming_0-435t" xml:space="preserve">
@@ -761,13 +833,13 @@ T-1020-4</value>
     <value>M103</value>
   </data>
   <data name="M103_descr" xml:space="preserve">
-    <value>Разработка танка началась в 1948 году. В 1952 году в связи с Корейской войной был выдан заказ на производство 300 машин. Танк был стандартизирован как M103.</value>
+    <value>The development started in 1948. In 1952 the order was placed for production of 300 vehicles to fight in the Korean War. The tank was designated as M103.</value>
   </data>
   <data name="M10_Wolverine" xml:space="preserve">
     <value>M10 Wolverine</value>
   </data>
   <data name="M10_Wolverine_descr" xml:space="preserve">
-    <value>Самая массовая ПТ-САУ армии США. С сентября 1942 по январь 1943 было выпущено 6406 машин. Более трети машин было поставлено союзникам по ленд-лизу.</value>
+    <value>The most widely produced American tank destroyer, with a total of 6,406 vehicles manufactured from September 1942 through January 1943. More than a third of all Wolverines were supplied to Allied nations under Lend-Lease.</value>
   </data>
   <data name="M10_Wolverine_short" xml:space="preserve">
     <value>Wolverine</value>
@@ -776,13 +848,13 @@ T-1020-4</value>
     <value>M12</value>
   </data>
   <data name="M12_descr" xml:space="preserve">
-    <value>Разработана в Рок-Айлендском арсенале. Было выпущено 100 САУ, получивших у американских солдат прозвище King Kong. М12 сыграли важную роль во время боев на «Линии Зигфрида».</value>
+    <value>The M12 was developed by the Rock Island Arsenal, with a total of 100 vehicles manufactured. American soldiers dubbed the vehicle King Kong. The M12 fought well in battles on the Siegfried Line.</value>
   </data>
   <data name="M18_Hellcat" xml:space="preserve">
     <value>M18 Hellcat</value>
   </data>
   <data name="M18_Hellcat_descr" xml:space="preserve">
-    <value>Разработка машины началась в 1942 году. Первые образцы были созданы в апреле 1943 года компанией General Motors. Одна из немногих американских ПТ-САУ, построенных на специальном шасси, а не на базе танка. Стала самой скоростной бронированной машиной этого класса времён Второй мировой войны. Всего с июля 1943 по октябрь 1944 года было выпущено 2507 ПТ-САУ этого типа.</value>
+    <value>Development started in 1942. In April 1943 the General Motors company produced the first prototypes. One of a few American tank destroyers manufactured on its original chassis, not on a tank chassis. The tank destroyer became the fastest armored vehicle, of this type, of World War II. A total of 2,507 vehicles were produced from July 1943 through October 1944.</value>
   </data>
   <data name="M18_Hellcat_short" xml:space="preserve">
     <value>Hellcat</value>
@@ -791,7 +863,7 @@ T-1020-4</value>
     <value>M22 Locust</value>
   </data>
   <data name="M22_Locust_descr" xml:space="preserve">
-    <value>Танк разрабатывался как авиадесантный. Однако во время Второй мировой войны американцы не использовали его по прямому назначению, поскольку в ВВС США не было транспортного самолёта подходящей грузоподъёмности.</value>
+    <value>Initially designed for airborne operations, the vehicle was never used as such by the U.S.A. during World War II. In the absence of a good air delivery system, the Ordnance Department became less enthusiastic about any further development.</value>
   </data>
   <data name="M22_Locust_short" xml:space="preserve">
     <value>Locust</value>
@@ -803,7 +875,7 @@ T-1020-4</value>
     <value>M24 Chaffee</value>
   </data>
   <data name="M24_Chaffee_descr" xml:space="preserve">
-    <value>Танк создавался с целью замены танка M3 Stuart. Был принят на вооружение в сентябре 1943 г. Выпускался на предприятиях «Мэсси Харрис» и «Дженерал Моторс» до июля 1945 г. Всего был выпущен 4731 танк.</value>
+    <value>The vehicle was intended as a replacement for the M3 Stuart. The M24 entered service in September 1943. They were produced at Massey-Harris and General Motors factories until July 1945, with a total of 4,731 vehicles manufactured.</value>
   </data>
   <data name="M24_Chaffee_short" xml:space="preserve">
     <value>Chaffee</value>
@@ -824,7 +896,7 @@ T-1020-4</value>
     <value>M2 Light Tank</value>
   </data>
   <data name="M2_lt_descr" xml:space="preserve">
-    <value>Работа над машиной была начата в декабре 1938 года. За основу была взята модель М2А3. Основным отличием стала установка новой двухместной башни с более мощным вооружением. Всего с мая 1940 по март 1941 года было выпущено 365 танков. В апреле 1942 года было дополнительно произведено 10 машин, которые использовались в основном в учебных целях. Часть танков была передана по ленд-лизу Великобритании, некоторые танки вошли в состав корпуса морской пехоты США и приняли участие в боевых действиях в Тихоокеанском регионе.</value>
+    <value>Development of the vehicle based on the M2A3 model was started in December 1938. The tank featured a new two-man turret with more powerful armament. A total of 365 vehicles were manufactured from May 1940 through March 1941. In April 1942, ten additional tanks were produced for training purposes. Some vehicles were supplied to the U.K. under Lend-Lease, others were deployed with the U.S. Marine Corps and saw combat in the Pacific Theater.</value>
   </data>
   <data name="M2_lt_short" xml:space="preserve">
     <value>M2 Light</value>
@@ -833,7 +905,7 @@ T-1020-4</value>
     <value>M2 Medium Tank</value>
   </data>
   <data name="M2_med_descr" xml:space="preserve">
-    <value>Единственный американский средний танк, принятый на вооружение в межвоенный период. С 1939 по 1941 год было изготовлено 146 машин двух модификаций. В боевых действиях не использовался.</value>
+    <value>The only medium tank to be adopted by the US Army during the interwar period. The vehicle was equipped with a 37 mm gun and six 7.62 mm machineguns, four of which were mounted on rotating fire units. The two non-rotating machineguns were placed on the front of the hull. Despite unimpressive combat characteristics, the M2A1 became a milestone for American tank development from the time of its inception by virtue of being easily adaptable for mass production. In 1940, 94 vehicles were produced.</value>
   </data>
   <data name="M2_med_short" xml:space="preserve">
     <value>M2 Medium</value>
@@ -842,7 +914,7 @@ T-1020-4</value>
     <value>M36 Jackson</value>
   </data>
   <data name="M36_Slagger_descr" xml:space="preserve">
-    <value>Наиболее мощная САУ армии США. Создана посредством переделки САУ М10А1 и М10. С ноября 1943 по сентябрь 1945 года было изготовлено 2324 машины.</value>
+    <value>The most powerful American tank destroyer. The M36 was developed on the chassis of the M10A1 and M10, with a total of 2,324 vehicles manufactured from November 1943 through September 1945.</value>
   </data>
   <data name="M36_Slagger_short" xml:space="preserve">
     <value>Jackson</value>
@@ -854,13 +926,13 @@ T-1020-4</value>
     <value>M37D1</value>
   </data>
   <data name="M37_descr" xml:space="preserve">
-    <value>Разработана в 1945 году на базе танка M24. Всего было произведено 150 машин. Во Второй мировой войне не использовалась. Впервые была применена в Корейской войне.</value>
+    <value>Developed in 1945 on the basis of the M24, with a total of 150 vehicles manufactured. The tank was never used in combat during World War II, but it did see action during the Korean War.</value>
   </data>
   <data name="M3_Grant" xml:space="preserve">
     <value>M3 Lee</value>
   </data>
   <data name="M3_Grant_descr" xml:space="preserve">
-    <value>Американский средний танк периода Второй мировой войны. Был назван в честь генерала-конфедерата Гражданской войны в США Р. Э. Ли. Также широко известен под его британским названием M3 Grant, в честь генерала федеральных войск У. С. Гранта в той же войне. M3 был создан в 1940 году на основе танка M2 и производился серийно с июня 1941 по декабрь 1942 года. Всего в различных вариантах было выпущено 6258 M3.</value>
+    <value>A WWII-era U.S. medium tank. The vehicle was named after the Confederate General of the U.S. Civil War, R. Lee. Also, widely recognized under its U.K. designation, M3 Grant, named after the General of the federal troops W. Grant. M3 was created in 1940 on the basis of the M2 tank, and saw mass production from June 1941 through December 1942. A total of 6,258 M3 tanks of various modifications were produced.</value>
   </data>
   <data name="M3_S" xml:space="preserve">
     <value>M3 S</value>
@@ -869,13 +941,13 @@ T-1020-4</value>
     <value>M3 Stuart</value>
   </data>
   <data name="M3_Stuart_descr" xml:space="preserve">
-    <value>Самый известный лёгкий танк Второй мировой войны. С 1941 по сентябрь 1943 года было выпущено 13859 машин. Использовался на всех фронтах.</value>
+    <value>Developed in 1938 through 1941 on the basis of the M2. Mass-produced from 1941. More than 13,000 vehicles in various versions were built, from the M3 to the M3A3, all of which were supplied to almost every allied nation under Lend-Lease. The M3 tanks were designated Stuart I by the British, while the M3A1 version received the designation Stuart III. The M3 first saw action in the battle at Sidi Rezegh.</value>
   </data>
   <data name="M40M43" xml:space="preserve">
     <value>M40/M43</value>
   </data>
   <data name="M40M43_descr" xml:space="preserve">
-    <value>САУ Long Tom и созданная на её базе М43 стали самыми мощными САУ союзников. М40 использовалась в боях за Кёльн. Обе машины активно применялись в Корейской войне.</value>
+    <value>The Long Tom and its successor, the M43, became the most powerful Allied SPGs. The M40 fought in the battle for Cologne in 1945. Both vehicles were used during the Korean War.</value>
   </data>
   <data name="M41" xml:space="preserve">
     <value>M41 HMC</value>
@@ -884,13 +956,13 @@ T-1020-4</value>
     <value>M41 Walker Bulldog</value>
   </data>
   <data name="M41_Bulldog_descr" xml:space="preserve">
-    <value>Являлся дальнейшим развитием опытного танка Т37. К испытаниям прототипов приступили в 1949, а в 1950 был подписан контракт на серийное производство. Танк выпускался компанией Cadillac Motor Car Division, отделением концерна General Motors.</value>
+    <value>A further development of the T37 experimental tank. Underwent trials in 1949. In 1950, the contract for mass production was signed. The tank was produced by the Cadillac Motor Car Division, a division of General Motors.</value>
   </data>
   <data name="M41_Bulldog_short" xml:space="preserve">
     <value>M41 Bulldog</value>
   </data>
   <data name="M41_descr" xml:space="preserve">
-    <value>Лёгкая САУ на шасси танка М24. Применялась в боевых действиях в Корее против китайских и северокорейских войск. Состояла на вооружении армии США вплоть до середины 1950-х годов, а также поставлялась во Францию. По разным данным, было произведено 85–250 машин.</value>
+    <value>Light SPG on the M24 chassis. The vehicle was used in Korea against Chinese and North Korean forces. The SPG saw service in the U.S. Army until the mid 1950s; some vehicles were supplied to France. According to various sources, about 85–250 SPGs were manufactured.</value>
   </data>
   <data name="M44" xml:space="preserve">
     <value>M5</value>
@@ -899,7 +971,7 @@ T-1020-4</value>
     <value>M46 Patton</value>
   </data>
   <data name="M46_Patton_descr" xml:space="preserve">
-    <value>Разработан в 1948–1949 гг. Являлся детальной модернизацией М26. Серийно производился в 1949–1951 гг. Всего было выпущено 1168 танков двух основных модификаций. Активно применялся в Корейской войне.</value>
+    <value>Developed in 1948 and 1949, the M46 Patton was a modernized and improved version of the M26 Pershing. A total of 1,168 M46 tanks, in two basic variants, were manufactured between 1949 and 1951. Pattons saw wide use in the Korean War.</value>
   </data>
   <data name="M46_Patton_short" xml:space="preserve">
     <value>M46 Patton</value>
@@ -911,7 +983,7 @@ T-1020-4</value>
     <value>M48A1 Patton</value>
   </data>
   <data name="M48A1_descr" xml:space="preserve">
-    <value>Наиболее удачный американский средний танк первого послевоенного поколения. Разработка началась в 1950 году. Принят на вооружение в апреле 1953 года. С 1952 по 1959 год было выпущено 11 703 танка различных модификаций.</value>
+    <value>The most successful American medium tank in the immediate post-war period. Development started in 1950. In April 1953, the vehicle entered service. A total of 11,703 vehicles of different variants were produced from 1952 through 1959.</value>
   </data>
   <data name="M48A1_short" xml:space="preserve">
     <value>M48 Patton</value>
@@ -920,7 +992,7 @@ T-1020-4</value>
     <value>M4A2E4 Sherman</value>
   </data>
   <data name="M4A2E4_descr" xml:space="preserve">
-    <value>Экспериментальный танк с торсионной подвеской. Работы были начаты в марте 1943 года. К июлю было изготовлено два танка, которые прошли испытания. Серийно не выпускался. На вооружении не состоял.</value>
+    <value>Work on this experimental vehicle started in March 1943. Two prototypes were built by July. The vehicle passed trials, but was never mass-produced or used in action.</value>
   </data>
   <data name="M4A2E4_short" xml:space="preserve">
     <value>M4A2E4</value>
@@ -929,7 +1001,7 @@ T-1020-4</value>
     <value>M4A3E8 Sherman</value>
   </data>
   <data name="M4A3E8_Sherman_descr" xml:space="preserve">
-    <value>Другое название — М4А3(76)W HVSS. В конце августа 1944 года на машины начала устанавливаться новая тележка ходовой части. Массовое поступление этих танков в войска началось в конце марта 1945 года. Всего было выпущено 4542 танка М4А3(76)W с обоими типами ходовой.</value>
+    <value>Also known as M4А3(76)W HVSS. At the end of August 1944, a new bogie suspension was designed. The vehicle variant was mass-produced and saw battle beginning in late March 1945, with a total of 4542 vehicles of both suspension types manufactured.</value>
   </data>
   <data name="M4A3E8_Sherman_short" xml:space="preserve">
     <value>M4A3E8</value>
@@ -938,7 +1010,7 @@ T-1020-4</value>
     <value>M4 Sherman</value>
   </data>
   <data name="M4_Sherman_descr" xml:space="preserve">
-    <value>Первая серийная модификация танка Sherman — самого массового американского танка. Всего было выпущено 49234 машины. Боевое крещение танк принял в Северной Африке.</value>
+    <value>The first production version of the Sherman, the most common American tank, with an amazing total of 49,234 vehicles manufactured. The Sherman first saw combat in North Africa.</value>
   </data>
   <data name="M4_Sherman_short" xml:space="preserve">
     <value>M4</value>
@@ -947,13 +1019,13 @@ T-1020-4</value>
     <value>M53/M55</value>
   </data>
   <data name="M53_55_descr" xml:space="preserve">
-    <value>САУ на видоизменённом шасси среднего танка М47. Прототип был готов в 1952 году. В 1956 году САУ приняли на вооружение, М55 поступила в сухопутные войска, а М53 — в корпус морской пехоты.</value>
+    <value>SPG on a modified chassis of the M47 medium tank. The prototype was produced in 1952, and in 1956 the SPG entered service in two variants: the M55 for the Army and the M53 for the Marines.</value>
   </data>
   <data name="M5_Stuart" xml:space="preserve">
     <value>M5 Stuart</value>
   </data>
   <data name="M5_Stuart_descr" xml:space="preserve">
-    <value>Выпускался с апреля 1942 года. Являлся улучшенной модификацией М3. К июню 1944 г. было выпущено 8884 машины двух модификаций. Использовался на всех фронтах.</value>
+    <value>A further modification of the M3 Stuart, the M5 entered production in April 1942. By June 1944 a total of 8,884 vehicles in two variants had been produced. The tank was used in all theaters of war.</value>
   </data>
   <data name="M5_Stuart_short" xml:space="preserve">
     <value>M5 Stuart</value>
@@ -965,7 +1037,7 @@ T-1020-4</value>
     <value>M60</value>
   </data>
   <data name="M60_descr" xml:space="preserve">
-    <value>M60 являлся глубокой модернизацией танка М48. Прототип разрабатывался с 1957 года, а в 1959 году корпорация Chrysler получила первый заказ на производство новой машины. Всего был выпущен 15221 танк четырёх основных модификаций.</value>
+    <value>The M60 was a deep modernization of the M48 tank. Development of the prototype was started in 1957, and in 1959 the order for production of the first tank was placed with Chrysler.</value>
   </data>
   <data name="M62T80" xml:space="preserve">
     <value>T23E3</value>
@@ -974,7 +1046,7 @@ T-1020-4</value>
     <value>M6A2E1</value>
   </data>
   <data name="M6A2E1_descr" xml:space="preserve">
-    <value>Танк являлся дальнейшим развитием тяжёлых танков Т1 и М6. Разработанная в августе 1944 года машина оснащалась новой башней увеличенных габаритов и 105-мм орудием. Серийно не выпускался.</value>
+    <value>The M6A2E1 was a further development of the T1 and M6 heavy tanks. Developed in August 1944, the vehicle had a larger turret and the 105-mm gun. Never saw mass production.</value>
   </data>
   <data name="M6D1" xml:space="preserve">
     <value>M6D1</value>
@@ -983,7 +1055,7 @@ T-1020-4</value>
     <value>M6D2</value>
   </data>
   <data name="M6_descr" xml:space="preserve">
-    <value>Разрабатывался в 1940–1942 гг. С ноября 1942 по февраль 1944 года было выпущено 40 машин. В боевых действиях танки этого типа не использовались.</value>
+    <value>Developed from 1940 through 1942, with a total of 40 vehicles manufactured from November 1942 through February 1944. It never saw action.</value>
   </data>
   <data name="M7" xml:space="preserve">
     <value>M5A1</value>
@@ -995,13 +1067,13 @@ T-1020-4</value>
     <value>M7 Priest</value>
   </data>
   <data name="M7_Priest_descr" xml:space="preserve">
-    <value>Выпускалась на шасси танков М3 и М4 с апреля 1942 по март 1945 года. Всего было выпущено 4316 машин. Впервые САУ была использована в сражении у Эль-Аламейна.</value>
+    <value>Manufactured on the suspension of the M3 and M4 tanks from April 1942 through March 1945, with a total of 4,316 vehicles produced. The M7 Priest first saw combat at El Alamein.</value>
   </data>
   <data name="M7_med" xml:space="preserve">
     <value>M7</value>
   </data>
   <data name="M7_med_descr" xml:space="preserve">
-    <value>Разработка началась весной 1941 года. После проектных работ в январе 1942 года начался выпуск опытных машин. К январю 1943 года они прошли испытания. Серийно не выпускался.</value>
+    <value>Development started in 1941. Initially, the vehicle was developed as a light tank; however, as the model gradually received extra armor and armaments, it was reclassified as a medium tank. Production of the M7 started by the fall of 1942. However, since the M7 was inferior to the mass-produced M4 Sherman in all parameters except speed and dimensions, the production was stopped. A total of 7 vehicles were produced.</value>
   </data>
   <data name="M7_med_short" xml:space="preserve">
     <value>M7</value>
@@ -1010,7 +1082,7 @@ T-1020-4</value>
     <value>M8A1</value>
   </data>
   <data name="M8A1_descr" xml:space="preserve">
-    <value>М8 разрабатывалась как САУ поддержки пехоты на базе танка М5. С сентября 1943 по январь 1944 года было выпущено 1778 машин. Вариант с изменённой башней и более мощным вооружением, получивший обозначение М8А1, серийно не выпускался.</value>
+    <value>The vehicle was intended as a self-propelled infantry support gun on the basis of the M5 tank. The M8A1 variant featured a modified turret and upgraded armament. From September 1943 through January 1944 a total of 1778 vehicles were manufactured.</value>
   </data>
   <data name="M8A1_short" xml:space="preserve">
     <value>M8A1</value>
@@ -1019,7 +1091,7 @@ T-1020-4</value>
     <value>MTLS-1G14</value>
   </data>
   <data name="MTLS-1G14_descr" xml:space="preserve">
-    <value>Разработан по заказу Голландской Ост-Индии. В 1941–1942 гг. было изготовлено 125 машин. Заказчиком были востребованы только 20 штук. В боях не использовался.</value>
+    <value>Developed at the request of the Dutch East Indies, with a total of 125 vehicles manufactured from 1941 through 1942. Only 20 of them were ordered, and they never saw action.</value>
   </data>
   <data name="MTLS_D1" xml:space="preserve">
     <value>MTLS D1</value>
@@ -1046,7 +1118,7 @@ T-1020-4</value>
     <value>M26 Pershing</value>
   </data>
   <data name="Pershing_descr" xml:space="preserve">
-    <value>Американский средний танк 1944–1969 годов. Назван в честь генерала Джона Першинга, возглавлявшего американский экспедиционный корпус во время Первой мировой войны. В 1944–1946 годах в американской армии M26 временно классифицировался как тяжёлый. С февраля 1945 года танки Pershing принимали участие во Второй мировой войне; в 1950–1951 годах участвовали в Корейской войне.</value>
+    <value>American medium tank, named in honor of General John Pershing, who led the American Expeditionary Force during World War I. In 1944–1946 in the U.S. Army, the M26 was temporarily classified as heavy tank. Starting in February 1945 these vehicles took part in World War II; in 1950–1951 the vehicle saw combat in the Korean War.</value>
   </data>
   <data name="Pershing_short" xml:space="preserve">
     <value>Pershing</value>
@@ -1067,7 +1139,7 @@ T-1020-4</value>
     <value>Ram II</value>
   </data>
   <data name="Ram-II_descr" xml:space="preserve">
-    <value>Разработан на базе танка М3. Выпускался в Канаде с 1942 до лета 1943 года. Из 1849 машин ни одна не использовалась в боевых действиях. Использовался только в учебных целях.</value>
+    <value>Developed on the basis of the M3 and produced in Canada from 1942 through the summer of 1943. None of the 1,849 vehicles were ever used in action, although some were used for training purposes.</value>
   </data>
   <data name="Ram_II_D1" xml:space="preserve">
     <value>Ram II D1</value>
@@ -1077,6 +1149,9 @@ T-1020-4</value>
   </data>
   <data name="SCR_200A" xml:space="preserve">
     <value>SCR 193</value>
+  </data>
+  <data name="SCR_200_bot" xml:space="preserve">
+    <value>SCR 200</value>
   </data>
   <data name="SCR_210" xml:space="preserve">
     <value>SCR 210</value>
@@ -1118,7 +1193,7 @@ T-1020-4</value>
     <value>M4A3E2 Sherman Jumbo</value>
   </data>
   <data name="Sherman_Jumbo_descr" xml:space="preserve">
-    <value>Штурмовой тяжелобронированный вариант M4A3(75)W. От обычного M4A3 Jumbo отличался дополнительными броневыми плитами толщиной 38 мм, усиленной крышкой трансмиссионного отсека, а также новой башней с усиленным бронированием, разработанной на основе башни T23.</value>
+    <value>The heavy-armored assault variant of the M4A3(75)W. The vehicle featured additional 38-mm armor plates, enhanced transmission compartment hatch, and a new turret with enhanced armor that was developed on the basis of the T23 turret.</value>
   </data>
   <data name="Sherman_Jumbo_short" xml:space="preserve">
     <value>M4A3E2</value>
@@ -1133,7 +1208,7 @@ T-1020-4</value>
     <value>T110E3</value>
   </data>
   <data name="T110E3_descr" xml:space="preserve">
-    <value>В 1954 году в Детройте была проведена конференция по вопросу будущих тяжёлых танков. На ней было представлено несколько аванпроектов новых машин. На базе одного из проектов (TS-31) компания Chrysler Corporation предложила разработать новый тяжёлый танк. Основным условием проекта было создать машину, которая могла бы свободно пройти по Бернскому национальному туннелю. После проработки нескольких вариантов конструкции работы над танком были прекращены.</value>
+    <value>In 1954, a conference on future heavy tanks was held in Detroit. Alongside other advanced projects, the Chrysler Corporation suggested a new tank on the basis of the TS-31 project. The main goal was to make the tank fit the Bern national tunnel. Several variants were considered,  but the project was canceled.</value>
   </data>
   <data name="T110E3_short" xml:space="preserve">
     <value>T110E3</value>
@@ -1142,13 +1217,13 @@ T-1020-4</value>
     <value>T110E4</value>
   </data>
   <data name="T110E4_descr" xml:space="preserve">
-    <value>В 1954 году в Детройте была проведена конференция по вопросу будущих тяжёлых танков. На ней было представлено несколько аванпроектов новых машин. На базе одного из проектов (TS-31) компания Chrysler Corporation предложила разработать новый тяжёлый танк. Основным условием проекта было создать машину, которая могла бы свободно пройти по Бернскому национальному туннелю. После проработки нескольких вариантов конструкции работы над танком были прекращены.</value>
+    <value>In 1954, a conference on future heavy tanks was held in Detroit. Alongside other advanced projects, the Chrysler Corporation suggested a new tank on the basis of the TS-31 project. The main goal was to make the tank fit the Bern national tunnel. Several variants were considered,  but the project was canceled.</value>
   </data>
   <data name="T110E4_short" xml:space="preserve">
     <value>T110E4</value>
   </data>
   <data name="T110_descr" xml:space="preserve">
-    <value>Разрабатывался с 1952 года как тяжёлый танк с более мощным, чем у Т-43 (М103), вооружением. На танк накладывались существенные ограничения по габаритам, так как машина должна была проходить через туннели Бернских Альп. После проработки различных компоновочных решений работы над машиной были свёрнуты. Не было построено ни одного экземпляра.</value>
+    <value>Developed from 1952 as a heavy tank with more powerful armament, compared to the T-43 (M103). Restrictions were placed on the vehicle sizing as the tank was supposed to pass through the narrow tunnels of the Bernese Alps. Several designs were considered, but the project was canceled. No vehicles were ever manufactured.</value>
   </data>
   <data name="T119" xml:space="preserve">
     <value>T119</value>
@@ -1163,7 +1238,7 @@ T-1020-4</value>
     <value>T14</value>
   </data>
   <data name="T14_descr" xml:space="preserve">
-    <value>Разрабатывался с мая 1942 по май 1943 года. По итогам испытаний было принято решение о серийном выпуске, но впоследствии оно было отменено, и танк остался экспериментальной машиной. Было выпущено два прототипа.</value>
+    <value>Developed between May 1942 and May 1943. Two prototypes were manufactured and tested. However, mass production was canceled, and T14 never became more than an experimental vehicle.</value>
   </data>
   <data name="T16E2" xml:space="preserve">
     <value>T16E2</value>
@@ -1175,7 +1250,7 @@ T-1020-4</value>
     <value>T18T47</value>
   </data>
   <data name="T18_descr" xml:space="preserve">
-    <value>Работы над САУ начались в октябре 1941 года. Машина разрабатывалась на базе лёгкого танка М3. Весной 1942 года опытный экземпляр прошёл испытания. Серийно не выпускалась. На вооружении не состояла.</value>
+    <value>Development of this self-propelled gun on the basis of the M3 light tank started in October 1941. The first prototype passed trials in the spring of 1942, but the vehicle never saw mass production.</value>
   </data>
   <data name="T1D5" xml:space="preserve">
     <value>T1D5</value>
@@ -1186,8 +1261,17 @@ T-1020-4</value>
   <data name="T1_Cunningham" xml:space="preserve">
     <value>T1 Cunningham</value>
   </data>
+  <data name="T1_Cunningham_bot" xml:space="preserve">
+    <value>T1 Cunningham</value>
+  </data>
+  <data name="T1_Cunningham_bot_descr" xml:space="preserve">
+    <value>Prototypes were developed by James Cunningham, Son &amp; Company (Rochester, NY) from 1927 through 1928. Various modifications of the vehicle were tested until 1934. However, the tank never saw mass production.</value>
+  </data>
+  <data name="T1_Cunningham_bot_short" xml:space="preserve">
+    <value>T1</value>
+  </data>
   <data name="T1_Cunningham_descr" xml:space="preserve">
-    <value>Разработка и выпуск опытных образцов танков T1 велась компанией James Cunningham, Son &amp; Company (Rochester, NY) с 1927 по 1928 год. Испытания различных модификаций Т1 проводились до 1934 года. Серийно не выпускался.</value>
+    <value>Prototypes were developed by James Cunningham, Son &amp; Company (Rochester, NY) from 1927 through 1928. Various modifications of the vehicle were tested until 1934. However, the tank never saw mass production.</value>
   </data>
   <data name="T1_Cunningham_short" xml:space="preserve">
     <value>T1</value>
@@ -1196,7 +1280,7 @@ T-1020-4</value>
     <value>T1E6</value>
   </data>
   <data name="T1_E6_descr" xml:space="preserve">
-    <value>Опытные модификации Т1Е4 — Т1Е6 значительно отличались от предыдущих. Разработка новых модификаций велась под влиянием британского танка Vickers E. Первая модификация была выпущена компанией Cunningham в 1931 г. После испытаний в 1932 году был подготовлен улучшенный вариант, однако предпочтение было отдано экспериментальному танку Т2.</value>
+    <value>Experimental vehicles T1E4 through T1E6 were heavily influenced by the British Vickers E. The first prototype was manufactured by the Cunningham corporation in 1931. After trials in 1932, an upgraded variant was built. However, a different experimental tank, the T2, was preferred.</value>
   </data>
   <data name="T1_E6_short" xml:space="preserve">
     <value>T1E6</value>
@@ -1205,7 +1289,7 @@ T-1020-4</value>
     <value>T1 Heavy Tank</value>
   </data>
   <data name="T1_hvy_descr" xml:space="preserve">
-    <value>Работы над танком были начаты весной 1940 года. В сентябре 1940 г. и декабре 1941 г. опытные машины прошли испытания. Серийно не выпускался. На основе данного танка был разработан танк М6.</value>
+    <value>Development of the tank started in the spring of 1940. In September 1940 and December 1941, prototypes underwent trials. The tank was never mass-produced. Later, it became a prototype for the M6.</value>
   </data>
   <data name="T1_hvy_short" xml:space="preserve">
     <value>T1 Heavy</value>
@@ -1220,13 +1304,13 @@ T-1020-4</value>
     <value>T20D2</value>
   </data>
   <data name="T20_descr" xml:space="preserve">
-    <value>Первая машина из серии американских средних танков 1942–1943 гг., создававшихся с целью замены танка M4 Sherman. Первый опытный образец был готов в мае 1943 года. Испытывался до 1944 года, но в серию запущен не был. В процессе создания машины были испытаны различные технические решения. В дальнейшем на основе машины были созданы танки Т22 и Т23, послужившие базой для создания Т25 и Т26, а на основе последних был создан танк М26 Pershing.</value>
+    <value>The first in a series of 1942–1943 U.S. medium tank designs intended as replacements for the M4 Sherman. The first prototype was produced in May 1943, and trials went on until 1944. The vehicle was not approved for mass production, but subsequent prototypes, the T22 and T23, were created on the basis of this development. They, in turn, served as precursors of the T25 and T26. Eventually, the M26 Pershing emerged on their basis and was adopted for service.</value>
   </data>
   <data name="T21" xml:space="preserve">
     <value>T21</value>
   </data>
   <data name="T21_descr" xml:space="preserve">
-    <value>Облегчённая версия среднего танка Т20 с использованием удлинённого шасси танка М7. Работы над проектом велись в первой половине 1943 года. От Т20 танк отличался уменьшенным бронированием и более лёгким вооружением. Серийно не выпускался, на вооружении не состоял.</value>
+    <value>A lightweight version of the T20 medium tank with the M7 elongated chassis. The vehicle was developed in the first half of 1943. Unlike the T20 tank, the T21 featured reduced armor and lightened armament. The vehicle never entered mass production nor saw service.</value>
   </data>
   <data name="T23" xml:space="preserve">
     <value>T23</value>
@@ -1238,19 +1322,19 @@ T-1020-4</value>
     <value>T23E3</value>
   </data>
   <data name="T23E3_descr" xml:space="preserve">
-    <value>Работы над танком начались в апреле 1943 года. Опытный образец был построен в августе 1944 года. Отличался от своего предшественника Т23 установкой индивидуальной торсионной подвески. На вооружении не состоял и серийно не выпускался.</value>
+    <value>Development started in April 1943. The prototype was manufactured in August 1944. Unlike its predecessor T23, this variant featured a torsion-bar suspension. The vehicle never entered mass production nor saw service.</value>
   </data>
   <data name="T23T80" xml:space="preserve">
     <value>T23T80</value>
   </data>
   <data name="T23_descr" xml:space="preserve">
-    <value>Экспериментальный средний танк. Разрабатывался с конца 1942 до лета 1944 года. Серийно не выпускался. В боевых действиях не использовался.</value>
+    <value>Experimental medium tank. Developed from the end of 1942 through the summer of 1944. The vehicle was never mass-produced, nor saw combat.</value>
   </data>
   <data name="T25_2" xml:space="preserve">
     <value>T25/2</value>
   </data>
   <data name="T25_2_descr" xml:space="preserve">
-    <value>ПT-САУ на базе танка T23. Разработка началась в 1943 году. В связи с тем, что танк T23 не был принят на вооружение, разработка САУ на его базе была прекращена на стадии эскизного проектирования.</value>
+    <value>Tank destroyer based on the T23. Development started in 1943. Since the T23 was not adopted for service, work on the tank destroyer was discontinued. Existed only in blueprints.</value>
   </data>
   <data name="T25_2_short" xml:space="preserve">
     <value>T25/2</value>
@@ -1259,7 +1343,7 @@ T-1020-4</value>
     <value>T25 AT</value>
   </data>
   <data name="T25_AT_descr" xml:space="preserve">
-    <value>Машина проектировалась на базе танка Т23, однако работы были остановлены на стадии предэскизного планирования.</value>
+    <value>The T25 was developed on the basis of the T23 medium tank, but was never manufactured.</value>
   </data>
   <data name="T25_AT_short" xml:space="preserve">
     <value>T25 AT</value>
@@ -1268,7 +1352,7 @@ T-1020-4</value>
     <value>T26E4 SuperPershing</value>
   </data>
   <data name="T26_E4_SuperPershing_descr" xml:space="preserve">
-    <value>В январе 1945 г. в целях повышения огневой мощи на Т26Е1 было установлено новое 90-мм длинноствольное орудие. Опытный образец получил обозначение Т26Е4. В ходе испытаний были выявлены проблемы с длиной ствола орудия и раздельным заряжанием, в результате чего работы над танком были прекращены в январе 1947 года. В боевых действиях не использовался. Всего было выпущено 25 машин этого типа.</value>
+    <value>To increase firepower, a new long-barrelled 90-mm gun was mounted on the T26E1 in January 1945. The prototype was designated the T26E4. Development was discontinued in January 1947 due to problems with the gun and the loading mechanism. A total of 25 vehicles had been built by that time, but never entered service.</value>
   </data>
   <data name="T26_E4_SuperPershing_short" xml:space="preserve">
     <value>T26E4</value>
@@ -1280,13 +1364,13 @@ T-1020-4</value>
     <value>T28 Prototype</value>
   </data>
   <data name="T28_Prototype_descr" xml:space="preserve">
-    <value>ПТ-САУ с вращающейся башенной установкой. Являлась ранним вариантом тяжёлой самоходной установки, предназначенной для преодоления немецких укреплений на «Линии Зигфрида».</value>
+    <value>Tank destroyer with a rotating gun turret. It was an early modification of a heavy SPG and was intended to fight at the Siegfried Line.</value>
   </data>
   <data name="T28_Prototype_short" xml:space="preserve">
     <value>T28 Prot.</value>
   </data>
   <data name="T28_descr" xml:space="preserve">
-    <value>В марте 1944 года армия США выдала заказ на постройку пяти прототипов тяжёлых танков, получивших обозначение Т28. В результате была изготовлена САУ Т95.</value>
+    <value>In March 1944, the U.S. Army placed an order for five prototypes of heavy vehicles designated T28. As a result, the T95 SPG was built.</value>
   </data>
   <data name="T28_short" xml:space="preserve">
     <value>T28</value>
@@ -1295,7 +1379,7 @@ T-1020-4</value>
     <value>T29</value>
   </data>
   <data name="T29_descr" xml:space="preserve">
-    <value>Опытный тяжёлый танк. Работа над машиной началась в сентябре 1944 года. Сборка и испытания опытных образцов продолжались до октября 1947 г. Серийно не выпускался.</value>
+    <value>Development of this experimental heavy tank started in September 1944. The construction and trials of the prototypes continued until October 1947. However, the T29 did not enter mass production.</value>
   </data>
   <data name="T2D1" xml:space="preserve">
     <value>T2D1</value>
@@ -1303,10 +1387,16 @@ T-1020-4</value>
   <data name="T2E1" xml:space="preserve">
     <value>T2E1</value>
   </data>
+  <data name="T2E1_bot" xml:space="preserve">
+    <value>T2E1</value>
+  </data>
   <data name="T2E4" xml:space="preserve">
     <value>T2E4</value>
   </data>
   <data name="T2T1" xml:space="preserve">
+    <value>T2T1</value>
+  </data>
+  <data name="T2T1_bot" xml:space="preserve">
     <value>T2T1</value>
   </data>
   <data name="T2T2" xml:space="preserve">
@@ -1316,7 +1406,7 @@ T-1020-4</value>
     <value>T2 Light Tank</value>
   </data>
   <data name="T2_lt_descr" xml:space="preserve">
-    <value>Прототип танка М2 с подвеской Виккерса. После испытаний в 1934 году был направлен на доработку, так как подвеска не обеспечивала достаточную плавность хода. Серийно не выпускался.</value>
+    <value>The M2 prototype with Vickers suspension. After trials in 1934, the tank was sent for redesign, as the performance of the suspension was not sufficient. The tank never saw mass production.</value>
   </data>
   <data name="T2_lt_short" xml:space="preserve">
     <value>T2 Light</value>
@@ -1324,8 +1414,17 @@ T-1020-4</value>
   <data name="T2_med" xml:space="preserve">
     <value>T2 Medium Tank</value>
   </data>
+  <data name="T2_med_bot" xml:space="preserve">
+    <value>T2 Medium Tank</value>
+  </data>
+  <data name="T2_med_bot_descr" xml:space="preserve">
+    <value>Experimental medium tank. Developed from 1930 through 1932. However, this model never saw mass production.</value>
+  </data>
+  <data name="T2_med_bot_short" xml:space="preserve">
+    <value>T2 Medium</value>
+  </data>
   <data name="T2_med_descr" xml:space="preserve">
-    <value>Экспериментальный средний танк. Работы над машиной велись в 1930–1932 гг. Серийно не выпускался.</value>
+    <value>Experimental medium tank. Developed from 1930 to 1932. However, this model never saw mass production.</value>
   </data>
   <data name="T2_med_short" xml:space="preserve">
     <value>T2 Medium</value>
@@ -1337,13 +1436,13 @@ T-1020-4</value>
     <value>T30D1</value>
   </data>
   <data name="T30_descr" xml:space="preserve">
-    <value>Дальнейшее развитие танка Т29. Разрабатывался параллельно с ним. Опытные машины испытывались до 1948 года. Серийно не выпускался.</value>
+    <value>The T30D1 was closely related to the T29. Both tanks were developed at the same time. The prototypes underwent trials until 1948. Never saw mass production.</value>
   </data>
   <data name="T32" xml:space="preserve">
     <value>T32</value>
   </data>
   <data name="T32_descr" xml:space="preserve">
-    <value>Экспериментальный американский тяжёлый танк периода Второй мировой войны. Разрабатывался на базе танков М26 Pershing и Т29. Опытные образцы были построены в 1946 году. В связи с окончанием Второй мировой войны Т32 не был принят на вооружение и серийно не производился.</value>
+    <value>An experimental World War II American heavy tank. Developed on the basis of the M26 Pershing and T29 tanks. Prototypes were built in 1946; however, the T32 never entered mass production.</value>
   </data>
   <data name="T34T7" xml:space="preserve">
     <value>T34T7</value>
@@ -1352,15 +1451,13 @@ T-1020-4</value>
     <value>T34</value>
   </data>
   <data name="T34_hvy_descr" xml:space="preserve">
-    <value>В 1945 году два прототипа Т30 были снабжены 120-мм пушками и переклассифицированы в тяжёлый танк Т34. Серийно не выпускался. На вооружении не состоял.</value>
+    <value>Developed in 1945 as a modernization of the T30 heavy tank. The vehicle was equipped with the 120 mm T53 gun and the new Continental AV-1790 engine. Because of the decline in heavy tank development after the end of World War II, the T34 never entered service. The prototypes were used in field trials.</value>
   </data>
   <data name="T37" xml:space="preserve">
     <value>T37</value>
   </data>
   <data name="T37_descr" xml:space="preserve">
-    <value>Лёгкий танк Т37 разрабатывался Detroit Arsenal
-во второй половине 40-х годов с целью замены М24 Chaffee. Было заказано три опытных образца.
-В дальнейшем некоторые технические решения использовались при разработке танков Т41 и М41.</value>
+    <value>The light tank T37 was developed by Detroit Arsenal in the late 1940s to replace the М24 Chaffee. An order was placed for three prototypes. Later, some technical innovations were applied in the development of the T41 and M41 tanks.</value>
   </data>
   <data name="T37_short" xml:space="preserve">
     <value>T37</value>
@@ -1369,7 +1466,7 @@ T-1020-4</value>
     <value>T40</value>
   </data>
   <data name="T40_descr" xml:space="preserve">
-    <value>Экспериментальная противотанковая САУ, разработанная весной 1942 года на базе танка М3. Серийно не выпускалась. На вооружении не состояла.</value>
+    <value>Experimental tank destroyer developed on the basis of the M3 tank in the spring of 1942. The vehicle never entered mass production, nor saw service.</value>
   </data>
   <data name="T41" xml:space="preserve">
     <value>T41</value>
@@ -1384,8 +1481,7 @@ T-1020-4</value>
     <value>T49</value>
   </data>
   <data name="T49_descr" xml:space="preserve">
-    <value>Вариант лёгкого танка М41 с увеличенной башней, вооружённый 90-мм пушкой. Поступил на испытания
-5 мая 1954 года. Испытания закончились успешно, однако серийное производство танка развёрнуто не было из-за его невостребованности.</value>
+    <value>A variant of the M41 light tank with an enlarged turret and 90-mm gun. Trials started on May 5, 1954. The trials were a success, but the tank never saw mass production due to lack of interest from the military authorities.</value>
   </data>
   <data name="T51D1" xml:space="preserve">
     <value>T51D1</value>
@@ -1394,7 +1490,7 @@ T-1020-4</value>
     <value>T54E1</value>
   </data>
   <data name="T54E1_descr" xml:space="preserve">
-    <value>Средний танк с качающейся башней и автоматом заряжания. Разрабатывался в середине 50-х гг. на базе танка М48. Было построено два опытных образца. В ходе испытаний выявилась ненадёжность автомата заряжания, и в 1957 году все работы были свёрнуты.</value>
+    <value>A medium tank with an oscillating turret and automatic loading. Developed on the basis of the M48 tank in mid-50s. Two prototypes were built. However, during trials automatic loading proved faulty and the development was discontinued in 1957.</value>
   </data>
   <data name="T57" xml:space="preserve">
     <value>T57</value>
@@ -1403,34 +1499,25 @@ T-1020-4</value>
     <value>T57 Heavy Tank</value>
   </data>
   <data name="T57_58_descr" xml:space="preserve">
-    <value>Проект тяжёлого танка с качающейся башней и автоматом заряжания. Разрабатывался с 1951 года. К 1957 году были изготовлены опытные башни под 120-мм и 155-мм орудия, однако программа создания таких машин была признана бесперспективной, и все работы были свёрнуты.</value>
-  </data>
-  <data name="T57_58_fallout" xml:space="preserve">
-    <value>T57 Heavy Tank (П)</value>
-  </data>
-  <data name="T57_58_fallout_descr" xml:space="preserve">
-    <value>Проект тяжёлого танка с качающейся башней и автоматом заряжания. Разрабатывался с 1951 года. К 1957 году были изготовлены опытные башни под 120-мм и 155-мм орудия, однако программа создания таких машин была признана бесперспективной, и все работы были свёрнуты.</value>
-  </data>
-  <data name="T57_58_fallout_short" xml:space="preserve">
-    <value>T57 Heavy (П)</value>
+    <value>A project of a heavy tank with an oscillating turret and automatic loading. Developed from 1951. Experimental turrets for 120-mm and 155-mm guns were manufactured by 1957. However, the project was deemed unsuccessful and the development was discontinued.</value>
   </data>
   <data name="T57_58_short" xml:space="preserve">
     <value>T57 Heavy</value>
   </data>
   <data name="T57_descr" xml:space="preserve">
-    <value>Экспериментальная САУ на базе танка М3А3. Разрабатывалась и испытывалась осенью 1942 года. Серийно не выпускалась.</value>
+    <value>Experimental SPG designed on the basis of the M3A3. The T57 was developed and tested in the fall of 1942, but was never mass-produced.</value>
   </data>
   <data name="T67" xml:space="preserve">
     <value>T67</value>
   </data>
   <data name="T67_descr" xml:space="preserve">
-    <value>Разработка T67 началась весной 1942 г. После испытаний было решено заменить орудие 57 мм на 75 мм. Машина прошла испытания осенью 1942 года, но на вооружение принята не была.</value>
+    <value>Development started in the spring of 1942. After undergoing trials, the decision was made to replace the 57-mm gun with a 75-mm gun. The vehicle passed trials in the fall of 1942 but never saw service.</value>
   </data>
   <data name="T69" xml:space="preserve">
     <value>T69</value>
   </data>
   <data name="T69_descr" xml:space="preserve">
-    <value>Средний танк с качающейся башней и автоматом заряжания. Разрабатывался на базе опытного среднего танка Т42 в середине 50-х гг. Серийно не выпускался.</value>
+    <value>A medium tank with an oscillating turret and automatic loading. Developed on the basis of experimental medium tank T42 in mid-50s. The vehicle never entered mass production.</value>
   </data>
   <data name="T69_short" xml:space="preserve">
     <value>T69</value>
@@ -1439,7 +1526,7 @@ T-1020-4</value>
     <value>T71</value>
   </data>
   <data name="T71_descr" xml:space="preserve">
-    <value>Экспериментальный авиатранспортабельный лёгкий танк с качающейся башней и автоматом заряжания. Разрабатывался в 1952–1953 гг. компанией Detroit Arsenal как замена М41. Из-за слабости вооружения работы ограничились созданием деревянного макета.</value>
+    <value>Experimental airborne light tank with an oscillating turret and automatic loading. Developed by Detroit Arsenal from 1952 through 1953 as a replacement for M41. The armament was deemed ineffective, and the development was stopped after one wooden prototype had been built.</value>
   </data>
   <data name="T72" xml:space="preserve">
     <value>T72</value>
@@ -1451,7 +1538,7 @@ T-1020-4</value>
     <value>T7 Combat Car</value>
   </data>
   <data name="T7_Combat_Car_descr" xml:space="preserve">
-    <value>Лёгкая колёсно-гусеничная машина с пулемётным вооружением разрабатывалась для американской кавалерии. В апреле 1937 года к испытаниям был подготовлен первый прототип. Испытания машины продолжились до 1939 года. В дальнейшем кавалерия США отказалась от Т7, сделав выбор в пользу чисто гусеничных боевых машин.</value>
+    <value>Light wheeled caterpillar vehicle with machineguns, developed for the U.S. cavalry. The trials of the first prototype started in April 1937 and continued until 1939. However, the T7 was discontinued in favor of track-type vehicles.</value>
   </data>
   <data name="T7_Combat_Car_short" xml:space="preserve">
     <value>T7 Car</value>
@@ -1461,15 +1548,6 @@ T-1020-4</value>
   </data>
   <data name="T80E3A" xml:space="preserve">
     <value>T80E3A</value>
-  </data>
-  <data name="T82" xml:space="preserve">
-    <value>T82</value>
-  </data>
-  <data name="T82T47" xml:space="preserve">
-    <value>T82T47</value>
-  </data>
-  <data name="T82_descr" xml:space="preserve">
-    <value>Разработка машины началась в декабре 1943 года. Испытания опытного экземпляра начались в августе 1944 года. Серийно не выпускался. На вооружении не состоял.</value>
   </data>
   <data name="T84E1" xml:space="preserve">
     <value>T84E1</value>
@@ -1496,7 +1574,7 @@ T-1020-4</value>
     <value>T92</value>
   </data>
   <data name="T92_descr" xml:space="preserve">
-    <value>Работы над Т92 начались в начале 1945 года. При проектировании использовались узлы и агрегаты танка М26. В марте прошли испытания машины в Абердине. Серийно не выпускалась.</value>
+    <value>Development of the T92 started at the beginning of 1945. The vehicle was to share many components with the M26. A prototype underwent trials at Aberdeen Proving Ground, but the T92 never entered mass production.</value>
   </data>
   <data name="T95" xml:space="preserve">
     <value>T95</value>
@@ -1505,7 +1583,7 @@ T-1020-4</value>
     <value>T95E2</value>
   </data>
   <data name="T95_E2_descr" xml:space="preserve">
-    <value>Разработка началась в сентябре 1954 года. По многим узлам и агрегатам новый средний танк был унифицирован с опытным тяжёлым танком Т96. Всего было выпущено девять машин, из которых пять были оснащены 90-мм орудием, а четыре планировалось оснастить башней танка Т96 и его 105-мм орудием. Однако из-за неготовности башен Т96 было решено временно оснастить два танка башнями серийных М48А2 с нарезным орудием М41. Эти машины были выпущены в мае – июле 1957 года и получили обозначение T95E2.</value>
+    <value>Development began in September 1954, with many components similar to an experimental prototype, the T96. A total of nine prototypes were manufactured, five of which had the 90-mm gun. Four of the vehicles were planned to have the turret of the T96 tank as well as its 105-mm gun. However, because the turrets of the T96 were not ready at that point, two of the new vehicles received turrets from the mass-produced M48A2 tank, equipped with the M41 rifled gun. These prototypes, designated T95E2, were manufactured from May through July 1957.</value>
   </data>
   <data name="T95_E2_short" xml:space="preserve">
     <value>T95E2</value>
@@ -1514,10 +1592,10 @@ T-1020-4</value>
     <value>T95E6</value>
   </data>
   <data name="T95_E6_descr" xml:space="preserve">
-    <value>По мнению некоторых американских военных, вооружение машин экспериментальной серии T95 оказалось недостаточным. Для увеличения огневой мощи планировалось установить башню от опытного тяжёлого танка Т96 на уже готовый корпус, а также заменить 105-мм на 120-мм орудие. Однако многочисленные неудачи разработчиков привели к закрытию всего проекта 7 июля 1960 года. Был построен только макет.</value>
+    <value>Some military analysts deemed the experimental tanks of the T95 series to be undergunned. In order to increase the tank's firepower, a new, heavier turret, designated T96, was to be mounted on the hull. This would allow replacement of the 105-mm gun with a 120-mm gun. However, development proved unsuccessful, and the project was canceled on July 7th, 1960. Only one dummy vehicle was built.</value>
   </data>
   <data name="T95_descr" xml:space="preserve">
-    <value>Разработка машины была начата в 1943 году. Планировалось выпустить 25 машин в течение года. Было выпущено два экземпляра, которые прошли испытания. В боевых действиях не использовалась.</value>
+    <value>Development of this vehicle started in 1943, with 25 vehicles planned for production within a year. Two prototypes passed trials, but never saw action.</value>
   </data>
   <data name="T99E2" xml:space="preserve">
     <value>T99E2</value>
@@ -1539,6 +1617,21 @@ T-1020-4</value>
   </data>
   <data name="Turret_1_A106_M48A2_120" xml:space="preserve">
     <value>M48A2/T54E2/T123E6</value>
+  </data>
+  <data name="Turret_1_A107_T1_HMC" xml:space="preserve">
+    <value>T1 HMC</value>
+  </data>
+  <data name="Turret_1_A108_T18_HMC" xml:space="preserve">
+    <value>T18 HMC</value>
+  </data>
+  <data name="Turret_1_A109_T56_GMC" xml:space="preserve">
+    <value>T56 GMC</value>
+  </data>
+  <data name="Turret_1_A27_T82" xml:space="preserve">
+    <value>T82 HMC</value>
+  </data>
+  <data name="Turret_1_A46_T3" xml:space="preserve">
+    <value>T3 HMC</value>
   </data>
   <data name="Turret_1_M103" xml:space="preserve">
     <value>M89</value>
@@ -1639,9 +1732,6 @@ T-1020-4</value>
   <data name="Turret_1_T57_58" xml:space="preserve">
     <value>T169</value>
   </data>
-  <data name="Turret_1_T57_58_fallout" xml:space="preserve">
-    <value>T169</value>
-  </data>
   <data name="Turret_1_T69" xml:space="preserve">
     <value>T178</value>
   </data>
@@ -1665,6 +1755,15 @@ T-1020-4</value>
   </data>
   <data name="Turret_2_A100_T49" xml:space="preserve">
     <value>XM551 test bed</value>
+  </data>
+  <data name="Turret_2_A109_T56_GMC" xml:space="preserve">
+    <value>T56 GMC</value>
+  </data>
+  <data name="Turret_2_A27_T82" xml:space="preserve">
+    <value>T82 HMC</value>
+  </data>
+  <data name="Turret_2_A46_T3" xml:space="preserve">
+    <value>T3 HMC</value>
   </data>
   <data name="Turret_2_M103" xml:space="preserve">
     <value>T140</value>
@@ -1710,6 +1809,9 @@ T-1020-4</value>
   </data>
   <data name="Turret_2_T49" xml:space="preserve">
     <value>T67</value>
+  </data>
+  <data name="Turret_3_A46_T3" xml:space="preserve">
+    <value>T3 HMC</value>
   </data>
   <data name="Twin_Cadillac_42series" xml:space="preserve">
     <value>Twin Cadillac, Series 42</value>
@@ -1922,7 +2024,7 @@ M781C9GC1</value>
     <value>AP-T M358</value>
   </data>
   <data name="_120mm_AP-T_M358_fallout" xml:space="preserve">
-    <value>AP-T M358 (П)</value>
+    <value>AP-T M358 (D)</value>
   </data>
   <data name="_120mm_APCR_T62" xml:space="preserve">
     <value>APCR T62</value>
@@ -1948,9 +2050,6 @@ M781C9GC1</value>
   <data name="_120mm_Gun_T179" xml:space="preserve">
     <value>120 mm Gun T179</value>
   </data>
-  <data name="_120mm_Gun_T179_fallout" xml:space="preserve">
-    <value>120 mm Gun T179</value>
-  </data>
   <data name="_120mm_Gun_T53A1" xml:space="preserve">
     <value>120 mm Gun T53A1</value>
   </data>
@@ -1961,13 +2060,13 @@ M781C9GC1</value>
     <value>HEAT-T M469</value>
   </data>
   <data name="_120mm_HEAT-T_M469_fallout" xml:space="preserve">
-    <value>HEAT-T M469 (П)</value>
+    <value>HEAT-T M469 (D)</value>
   </data>
   <data name="_120mm_HE_Shot" xml:space="preserve">
     <value>HE Shell</value>
   </data>
   <data name="_120mm_HE_Shot_fallout" xml:space="preserve">
-    <value>HE Shell (П)</value>
+    <value>HE Shell (D)</value>
   </data>
   <data name="_152mm_Gun_Launcher_M81" xml:space="preserve">
     <value>152 mm Gun-Launcher XM81 (conventional)</value>
@@ -2099,6 +2198,9 @@ automatic cannon</value>
   <data name="_37mm_AP1937" xml:space="preserve">
     <value>AP 1937</value>
   </data>
+  <data name="_37mm_AP1937_bot" xml:space="preserve">
+    <value>AP 1937</value>
+  </data>
   <data name="_37mm_APCBC1935" xml:space="preserve">
     <value>APCBC 1935</value>
   </data>
@@ -2121,6 +2223,9 @@ automatic cannon</value>
     <value>37 mm Browning</value>
   </data>
   <data name="_37mm_Gun_M1916" xml:space="preserve">
+    <value>37 mm Gun M1916</value>
+  </data>
+  <data name="_37mm_Gun_M1916_bot" xml:space="preserve">
     <value>37 mm Gun M1916</value>
   </data>
   <data name="_37mm_HE1916" xml:space="preserve">
@@ -2155,6 +2260,12 @@ automatic cannon</value>
   </data>
   <data name="_37mm_semiautomatic_gun_M1924A1_short" xml:space="preserve">
     <value>37 mm M1924A1</value>
+  </data>
+  <data name="_37mm_semiautomatic_gun_M1924_bot" xml:space="preserve">
+    <value>37 mm Semiautomatic Gun M1924</value>
+  </data>
+  <data name="_37mm_semiautomatic_gun_M1924_bot_short" xml:space="preserve">
+    <value>37 mm M1924</value>
   </data>
   <data name="_37mm_semiautomatic_gun_M1924_short" xml:space="preserve">
     <value>37 mm M1924</value>
@@ -2207,6 +2318,9 @@ automatic cannon</value>
   <data name="_75mm_Howitzer_M1A1" xml:space="preserve">
     <value>75 mm AT Howitzer M1A1</value>
   </data>
+  <data name="_75mm_Howitzer_M1A1_SPG" xml:space="preserve">
+    <value>75 mm Howitzer M1A1</value>
+  </data>
   <data name="_75mm_Howitzer_M3" xml:space="preserve">
     <value>75 mm Howitzer M3</value>
   </data>
@@ -2221,6 +2335,9 @@ automatic cannon</value>
   </data>
   <data name="_75mm_M72" xml:space="preserve">
     <value>T45</value>
+  </data>
+  <data name="_75mm_Pack_Howitzer_M1" xml:space="preserve">
+    <value>75 mm Pack Howitzer M1</value>
   </data>
   <data name="_75mm_Pzgr.40L" xml:space="preserve">
     <value>Pzgr.40L (captured)</value>
@@ -2239,6 +2356,9 @@ automatic cannon</value>
   </data>
   <data name="_76mm_AP_M79" xml:space="preserve">
     <value>AP M62</value>
+  </data>
+  <data name="_76mm_AP_M79_149" xml:space="preserve">
+    <value>AP M79</value>
   </data>
   <data name="_76mm_AT_Gun_M1918" xml:space="preserve">
     <value>3-inch AT Gun M1918</value>
@@ -2305,6 +2425,9 @@ automatic cannon</value>
   </data>
   <data name="_76mm_HVAP_M93" xml:space="preserve">
     <value>HVAP M93</value>
+  </data>
+  <data name="_76mm_HVAP_T4" xml:space="preserve">
+    <value>HVAP T4</value>
   </data>
   <data name="_76mm_M42A1" xml:space="preserve">
     <value>HE M42A1(M7)</value>
@@ -2388,7 +2511,7 @@ automatic cannon</value>
     <value>M44</value>
   </data>
   <data name="_M44_descr" xml:space="preserve">
-    <value>155-мм САУ на шасси лёгкого танка М41. Разрабатывалась в 1947–1951 гг. В процессе эксплуатации был выявлен ряд недостатков. После появления в начале 60-х гг. более совершенных САУ этого класса, M44 была снята с вооружения. Всего в 1953–1954 гг., по разным сведениям, было выпущено от 250 до 600 машин этого типа.</value>
+    <value>A 155-mm SPG on the chassis of the M41 light tank. Developed from 1947 through 1951. Multiple faults were revealed after the vehicle entered service, and the M44 was withdrawn from mass production in favor of other SPGs. According to different sources, between 250 and 600 were manufactured from 1953 through 1954.</value>
   </data>
   <data name="chassisE1" xml:space="preserve">
     <value>Stuart E1</value>

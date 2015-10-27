@@ -33,5 +33,10 @@ namespace WotDossier.Domain
         public string LocalizedMapName { get; set; }
 
         public MapConfig Config { get; set; }
+
+        public override string ToString()
+        {
+            return MapNameId;
+        }
     }
 }

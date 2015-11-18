@@ -4415,9 +4415,9 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<row><td>PROGMSG_IIS_ROLLBACKVROOTS</td><td>##IDS_PROGMSG_IIS_ROLLBACKVROOTS##</td><td/></row>
 		<row><td>PROGMSG_IIS_ROLLBACKWEBSERVICEEXTENSIONS</td><td>##IDS_PROGMSG_IIS_ROLLBACKWEBSERVICEEXTENSIONS##</td><td/></row>
 		<row><td>PROGRAMFILETOLAUNCHATEND</td><td>[INSTALLDIR]WotDossier.Primary output</td><td/></row>
-		<row><td>ProductCode</td><td>{4AF7218F-B104-48DC-A652-638928133CE2}</td><td/></row>
+		<row><td>ProductCode</td><td>{DDF883BE-A3E9-435B-B409-102161E10C53}</td><td/></row>
 		<row><td>ProductName</td><td>WotDossier</td><td/></row>
-		<row><td>ProductVersion</td><td>4.7</td><td/></row>
+		<row><td>ProductVersion</td><td>4.8</td><td/></row>
 		<row><td>ProgressType0</td><td>install</td><td/></row>
 		<row><td>ProgressType1</td><td>Installing</td><td/></row>
 		<row><td>ProgressType2</td><td>installed</td><td/></row>
@@ -4709,7 +4709,7 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<col def="s72">ActionProperty</col>
 		<col def="S72">ISDisplayName</col>
 		<row><td>{00000000-0000-0000-0000-000000000000}</td><td>***ALL_VERSIONS***</td><td></td><td></td><td>2</td><td/><td>ISFOUNDNEWERPRODUCTVERSION</td><td>ISPreventDowngrade</td></row>
-		<row><td>{B748D921-664A-4EC7-B21A-377641E1F1AC}</td><td></td><td>4.7</td><td></td><td>772</td><td/><td>ISACTIONPROP1</td><td>Update</td></row>
+		<row><td>{B748D921-664A-4EC7-B21A-377641E1F1AC}</td><td></td><td>4.8</td><td></td><td>772</td><td/><td>ISACTIONPROP1</td><td>Update</td></row>
 	</table>
 
 	<table name="Verb">

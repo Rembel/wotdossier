@@ -9,6 +9,7 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Reflection;
+using System.Resources;
 using System.Text;
 using System.Xml;
 using Ionic.Zip;
@@ -312,6 +313,8 @@ namespace WotDossier.Test
 
             StringBuilder codegen = new StringBuilder();
 
+            Dictionary<string, string> resources = new Dictionary<string, string>();
+
             foreach (var xml in strings)
             {
                 BigWorldXmlReader reader = new BigWorldXmlReader();
@@ -348,13 +351,21 @@ namespace WotDossier.Test
                         tankDescription["tier"] = tank.Value["level"].Value<int>();
                         tankDescription["premium"] = Dictionaries.Instance.Tanks.ContainsKey(uniqueId) ? Dictionaries.Instance.Tanks[uniqueId].Premium :
                         tank.Value["notInShop"] == null ? 0 : 1;
-                        tankDescription["title"] = GetString(tank.Value["userString"].Value<string>().Split(':')[1]);
+                        var key = tank.Value["userString"].Value<string>().Split(':')[1];
+                        var value = GetString(key);
+                        tankDescription["title"] = value;
                         var titleShort = tank.Value["shortUserString"];
                         if (titleShort != null)
                         {
                             tankDescription["title_short"] = GetString(titleShort.Value<string>().Split(':')[1]);
                         }
                         var icon = tank.Key.Replace("-", "_").ToLower();
+
+                        if (countryid == 0)
+                        {
+                            resources.Add(icon, value);
+                        }
+
                         tankDescription["icon"] = icon;
                         tankDescription["icon_orig"] = tank.Key;
 
@@ -389,6 +400,14 @@ namespace WotDossier.Test
                         tanks.Add(tankDescription);
                     }
                     result.AddRange(tanks);
+                }
+            }
+
+            using (ResXResourceWriter writer = new ResXResourceWriter(@"D:\Projects\wotdossier\Sources\WotDossier.Test\Patch\Resources\ussr_vehicles_out.resx"))
+            {
+                foreach (var resource in resources)
+                {
+                    writer.AddResource(resource.Key, resource.Value);
                 }
             }
 

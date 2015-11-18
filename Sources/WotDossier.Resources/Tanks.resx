@@ -145,19 +145,16 @@
     <value>Churchill III</value>
   </data>
   <data name="gaz_74b" xml:space="preserve">
-    <value>SU-85B</value>
+    <value>GAZ-74b</value>
   </data>
   <data name="is" xml:space="preserve">
     <value>IS</value>
-  </data>
-  <data name="is8" xml:space="preserve">
-    <value>IS-8</value>
   </data>
   <data name="isu_152" xml:space="preserve">
     <value>ISU-152</value>
   </data>
   <data name="isu_152_igr" xml:space="preserve">
-    <value>ISU-152 IGR</value>
+    <value>ISU-152</value>
   </data>
   <data name="is_7" xml:space="preserve">
     <value>IS-7</value>
@@ -166,19 +163,16 @@
     <value>(R) IS-7</value>
   </data>
   <data name="is_7_igr" xml:space="preserve">
-    <value>IS-7 IGR</value>
+    <value>IS-7</value>
   </data>
   <data name="kv" xml:space="preserve">
     <value>KV</value>
-  </data>
-  <data name="kv1" xml:space="preserve">
-    <value>KV-1</value>
   </data>
   <data name="kv2" xml:space="preserve">
     <value>KV-2</value>
   </data>
   <data name="kv2_igr" xml:space="preserve">
-    <value>KV-2 IGR</value>
+    <value>KV-2</value>
   </data>
   <data name="kv4" xml:space="preserve">
     <value>KV-4</value>
@@ -189,12 +183,6 @@
   <data name="kv_1s" xml:space="preserve">
     <value>KV-1S</value>
   </data>
-  <data name="kv_220" xml:space="preserve">
-    <value>KV-220 Beta-Test</value>
-  </data>
-  <data name="kv_220_action" xml:space="preserve">
-    <value>KV-220</value>
-  </data>
   <data name="kv_3" xml:space="preserve">
     <value>KV-3</value>
   </data>
@@ -202,7 +190,7 @@
     <value>KV-5</value>
   </data>
   <data name="kv_5_igr" xml:space="preserve">
-    <value>KV-5 IGR</value>
+    <value>KV-5</value>
   </data>
   <data name="ltp" xml:space="preserve">
     <value>LTP</value>
@@ -214,6 +202,9 @@
     <value>Matilda IV</value>
   </data>
   <data name="ms_1" xml:space="preserve">
+    <value>MS-1</value>
+  </data>
+  <data name="ms_1_bot" xml:space="preserve">
     <value>MS-1</value>
   </data>
   <data name="mt25" xml:space="preserve">
@@ -228,20 +219,11 @@
   <data name="object268" xml:space="preserve">
     <value>Object 268</value>
   </data>
-  <data name="object268_fallout" xml:space="preserve">
-    <value>(R) Object 268</value>
-  </data>
   <data name="object416" xml:space="preserve">
     <value>Object 416</value>
   </data>
   <data name="object_140" xml:space="preserve">
     <value>Object 140</value>
-  </data>
-  <data name="object_140_fallout" xml:space="preserve">
-    <value>(R) Object 140</value>
-  </data>
-  <data name="object_212" xml:space="preserve">
-    <value>212A</value>
   </data>
   <data name="object_261" xml:space="preserve">
     <value>Object 261</value>
@@ -256,10 +238,7 @@
     <value>Object 907A</value>
   </data>
   <data name="observer" xml:space="preserve">
-    <value>Observer</value>
-  </data>
-  <data name="r00_t_50_2" xml:space="preserve">
-    <value>T-50-2</value>
+    <value>Spectator</value>
   </data>
   <data name="r02_su_85" xml:space="preserve">
     <value>SU-85</value>
@@ -283,7 +262,7 @@
     <value>KV-85</value>
   </data>
   <data name="r106_kv85_igr" xml:space="preserve">
-    <value>KV-85 IGR</value>
+    <value>KV-85</value>
   </data>
   <data name="r107_ltb" xml:space="preserve">
     <value>LTTB</value>
@@ -301,7 +280,7 @@
     <value>ISU-130</value>
   </data>
   <data name="r112_t54_45" xml:space="preserve">
-    <value>T-54 first prototyp</value>
+    <value>T-54 first prototype</value>
   </data>
   <data name="r113_object_730" xml:space="preserve">
     <value>IS-5 (Object 730)</value>
@@ -325,22 +304,43 @@
     <value>Object 777 Version II</value>
   </data>
   <data name="r120_t22sr_a22" xml:space="preserve">
-    <value>T-22 sr.</value>
+    <value>T-22 medium</value>
+  </data>
+  <data name="r121_kv4_ktt" xml:space="preserve">
+    <value>KV-4 KTTS</value>
+  </data>
+  <data name="r122_t44_100" xml:space="preserve">
+    <value>T-44-100</value>
   </data>
   <data name="r19_is_3" xml:space="preserve">
     <value>IS-3</value>
   </data>
   <data name="r19_is_3_igr" xml:space="preserve">
-    <value>IS-3 IGR</value>
+    <value>IS-3</value>
   </data>
   <data name="r24_su_76" xml:space="preserve">
     <value>SU-76M</value>
+  </data>
+  <data name="r38_kv_220" xml:space="preserve">
+    <value>KV-220-2 Beta Test</value>
+  </data>
+  <data name="r38_kv_220_action" xml:space="preserve">
+    <value>KV-220-2</value>
+  </data>
+  <data name="r51_object_212" xml:space="preserve">
+    <value>212A</value>
   </data>
   <data name="r53_object_704" xml:space="preserve">
     <value>Object 704</value>
   </data>
   <data name="r71_is_2b" xml:space="preserve">
     <value>IS-2</value>
+  </data>
+  <data name="r80_kv1" xml:space="preserve">
+    <value>KV-1</value>
+  </data>
+  <data name="r81_is8" xml:space="preserve">
+    <value>T-10</value>
   </data>
   <data name="r87_t62a" xml:space="preserve">
     <value>T-62A</value>
@@ -350,9 +350,6 @@
   </data>
   <data name="r90_is_4m" xml:space="preserve">
     <value>IS-4</value>
-  </data>
-  <data name="String1" xml:space="preserve">
-    <value />
   </data>
   <data name="st_i" xml:space="preserve">
     <value>ST-I</value>
@@ -367,7 +364,7 @@
     <value>SU-122-44</value>
   </data>
   <data name="su122_54" xml:space="preserve">
-    <value>SU-122-5</value>
+    <value>SU-122-54</value>
   </data>
   <data name="su14_1" xml:space="preserve">
     <value>SU-14-1</value>
@@ -382,13 +379,13 @@
     <value>SU-101</value>
   </data>
   <data name="su_14" xml:space="preserve">
-    <value>SU-14</value>
+    <value>SU-14-2</value>
   </data>
   <data name="su_152" xml:space="preserve">
     <value>SU-152</value>
   </data>
   <data name="su_152_igr" xml:space="preserve">
-    <value>SU-152 IGR</value>
+    <value>SU-152</value>
   </data>
   <data name="su_18" xml:space="preserve">
     <value>SU-18</value>
@@ -417,9 +414,6 @@
   <data name="t44_85" xml:space="preserve">
     <value>T-44-85</value>
   </data>
-  <data name="t62a_sport" xml:space="preserve">
-    <value>T-62A SPORT</value>
-  </data>
   <data name="t80" xml:space="preserve">
     <value>T-80</value>
   </data>
@@ -430,6 +424,9 @@
     <value>T-127</value>
   </data>
   <data name="t_26" xml:space="preserve">
+    <value>T-26</value>
+  </data>
+  <data name="t_26_bot" xml:space="preserve">
     <value>T-26</value>
   </data>
   <data name="t_34_85" xml:space="preserve">
@@ -445,7 +442,7 @@
     <value>T-44</value>
   </data>
   <data name="t_44_igr" xml:space="preserve">
-    <value>T-44 IGR</value>
+    <value>T-44</value>
   </data>
   <data name="t_46" xml:space="preserve">
     <value>T-46</value>
@@ -469,6 +466,6 @@
     <value>Valentine II</value>
   </data>
   <data name="valentine_ll_igr" xml:space="preserve">
-    <value>Valentine II IGR</value>
+    <value>Valentine II</value>
   </data>
 </root>

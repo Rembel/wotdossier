@@ -1333,7 +1333,7 @@
           }
         },
         "flagSpawnPoint": {
-          "position": "-27.009117 24.426579 13.036039",
+          "position": "\t-27,009120 24,426580 13,036040\t",
           "team": "\t0\t",
           "flagType": "\t0\t"
         },
@@ -1436,8 +1436,6 @@
       "freqZ": "\t0\t"
     },
     "gameplayTypes": {
-      "ctf": "",
-      "domination": "",
       "fallout": {
         "winPoints": "MULTI_TEAM_2",
         "maxPlayersInTeam": "\t3\t",
@@ -2693,6 +2691,126 @@
     "explicitRequestOnly": "\ttrue\t"
   },
   {
+    "name": "#arenas:114_czech/name",
+    "description": "#arenas:114_czech/description",
+    "geometry": "spaces/114_czech",
+    "boundingBox": {
+      "bottomLeft": "\t-400,000000 -400,000000\t",
+      "upperRight": "\t400,000000 400,000000\t"
+    },
+    "roundLength": "\t900\t",
+    "minimap": "spaces/114_czech/mmap.dds",
+    "vehicleCamouflageKind": "summer",
+    "maxPlayersInTeam": "\t15\t",
+    "loadingMusic": "/music/intro/euro_city",
+    "wwloadingMusic": "music_euro_city",
+    "ambientSound": "/wind/wind/wind_summer_01",
+    "wwambientSound": "ambient_wind_summer_01",
+    "umbraEnabled": "\t1\t",
+    "batchingEnabled": "\t0\t",
+    "water": {
+      "texScale": "\t0\t",
+      "freqX": "\t0\t",
+      "freqZ": "\t0\t"
+    },
+    "gameplayTypes": {
+      "ctf": {
+        "teamBasePositions": {
+          "team1": {
+            "position1": "\t-1,631470 339,893000\t"
+          },
+          "team2": {
+            "position1": "\t-10,210920 -345,489000\t"
+          }
+        }
+      },
+      "fallout6": {
+        "winPoints": "MANY_FLAGS_10x10",
+        "maxPlayersInTeam": "\t10\t",
+        "teamSpawnPoints": {
+          "team1": {
+            "position": "0 356"
+          },
+          "team2": {
+            "position": "0 -356"
+          }
+        },
+        "flagSpawnPoint": [
+          {
+            "position": "\t24,921940 13,146010 278,404800\t",
+            "team": "\t0\t",
+            "flagType": "\t0\t"
+          },
+          {
+            "position": "\t25,030400 13,039020 -290,289800\t",
+            "team": "\t0\t",
+            "flagType": "\t0\t"
+          },
+          {
+            "position": "\t-57,157860 12,773550 277,592500\t",
+            "team": "\t0\t",
+            "flagType": "\t0\t"
+          },
+          {
+            "position": "\t-57,013870 13,037360 -291,087200\t",
+            "team": "\t0\t",
+            "flagType": "\t0\t"
+          }
+        ],
+        "flagAbsorptionPoint": [
+          {
+            "team": "\t1\t",
+            "position": "\t351,831000 12,976900 -254,458600\t",
+            "radius": "\t15,000000\t",
+            "applyOverlay": "\tfalse\t",
+            "guid": "3A64AB42.432D02CB.AAE7C4B1.9B0BC7C1"
+          },
+          {
+            "team": "\t1\t",
+            "position": "\t-305,815600 3,780262 -242,629100\t",
+            "radius": "\t15,000000\t",
+            "applyOverlay": "\tfalse\t",
+            "guid": "381A148D.4B42176B.2DB3EB91.54B049A0"
+          },
+          {
+            "team": "\t2\t",
+            "position": "\t347,217100 16,866980 257,362500\t",
+            "radius": "\t15,000000\t",
+            "applyOverlay": "\tfalse\t",
+            "guid": "BB2869DE.40D9CB5B.3BCD1293.BC5BF4A2"
+          },
+          {
+            "team": "\t2\t",
+            "position": "\t-274,557300 5,893362 258,251700\t",
+            "radius": "\t15,000000\t",
+            "applyOverlay": "\tfalse\t",
+            "guid": "B5B7EB0F.4C6FA0A0.CBDB24BE.EA6462CF"
+          }
+        ],
+        "repairPoint": [
+          {
+            "cooldown": "\t180,000000\t",
+            "repairTime": "\t5,000000\t",
+            "radius": "\t10,000000\t",
+            "repairFlags": "\t127\t",
+            "position": "\t317,022500 13,615770 -7,075882\t",
+            "guid": "CC3DAB28.4A6298DA.81C5FAB5.9CA203E1"
+          },
+          {
+            "cooldown": "\t180,000000\t",
+            "repairTime": "\t5,000000\t",
+            "radius": "\t10,000000\t",
+            "repairFlags": "\t127\t",
+            "position": "\t-183,523100 5,001052 -9,374870\t",
+            "guid": "33A53B7C.43E5690E.20E651A5.DE05D5A3"
+          }
+        ]
+      }
+    },
+    "roadMap": "",
+    "mapActivities": ""
+  },
+  {
     "name": "#arenas:11_murovanka/name",
     "description": "#arenas:11_murovanka/description",
     "geometry": "spaces/11_murovanka",
@@ -3601,7 +3719,7 @@
           "team1": "",
           "team2": ""
         },
-        "controlPoint": "\t372,661400 253,000000\t"
+        "controlPoint": "386.097 213.892"
       },
       "assault2": {
         "winnerIfTimeout": "\t1\t",

@@ -694,7 +694,7 @@
     <value>Comet</value>
   </data>
   <data name="GB22_Comet_descr" xml:space="preserve">
-    <value>A further development of the Cromwell cruiser tank, this British tank saw service in World War II. A total of 1,186 vehicles were manufactured from September 1944 through late 1945.</value>
+    <value>A further development of the Cromwell cruiser tank, this British tank saw service in World War II. A total of 1,186 vehicles were manufactured from September 1944 through to late 1945.</value>
   </data>
   <data name="GB22_Comet_short" xml:space="preserve">
     <value>Comet</value>
@@ -730,7 +730,7 @@
     <value>Birch Gun</value>
   </data>
   <data name="GB26_Birch_Gun_descr" xml:space="preserve">
-    <value>The first SPG originally designed in Great Britain. Development started in 1923. The prototype was built on the basis of the Vickers Medium Mark II in 1925. A few prototypes were manufactured, and underwent trials starting in 1925. The project was canceled in 1928 due to lack of interest by the British government.</value>
+    <value>In the 1920s, British engineers explored the idea of an SPG on a tank chassis. Development of the vehicle started in 1923 at the Royal Arsenal, Woolwich. It was based on the Vickers Medium Mark II, the chassis of which could carry the required modules. A total of seven prototypes were manufactured and joined the Experimental Mechanised Force established on May 1, 1927. Later, the unit was disbanded, along with the SPG program.</value>
   </data>
   <data name="GB26_Birch_Gun_short" xml:space="preserve">
     <value>Birch Gun</value>
@@ -790,7 +790,7 @@
     <value>Sentinel AC I</value>
   </data>
   <data name="GB33_Sentinel_AC_I_descr" xml:space="preserve">
-    <value>Australian tank developed in 1941 on the basis of the U.S. M3 medium tank. Equipped with a 2-pounder gun mounted in a rotating turret. The tank featured a full-cast hull and turret, a low profile and three Cadillac "75" engines. A total of 65 vehicles were manufactured during the war, but production was cancelled due to economic reasons. Never saw service.</value>
+    <value>Developed in 1941 under the program for Australian cruiser tanks. There were plans to produce 2,000 vehicles, but from 1942 through 1943, only 65 vehicles, with serial numbers from 8001 to 8065, were manufactured. In July 1943, it was decided to stop development and cancel the program. The vehicles never saw combat and were used only for training purposes. In 1946, the tanks were removed from service.</value>
   </data>
   <data name="GB33_Sentinel_AC_I_short" xml:space="preserve">
     <value>Sentinel I</value>
@@ -889,7 +889,7 @@
     <value>Cruiser Mk. III</value>
   </data>
   <data name="GB58_Cruiser_Mk_III_descr" xml:space="preserve">
-    <value>The vehicle was developed by extensively upgrading two prototype М1931 Christie tanks that the British Army had purchased in 1936. The vehicle was intended as a fast, lightly-armored breakthrough tank. The modified design was deemed successful and became the basis for other cruiser tanks. Sixty-five vehicles of that type were built. They saw combat in France and North Africa in 1940–1941.</value>
+    <value>The vehicle was developed on the basis of the M1931 Christie tanks, purchased by the British Army in 1936. The vehicle was intended to be a fast, lightly-armored breakthrough tank. The modified design was deemed successful and became the basis for other cruiser tanks. A total of 65 vehicles were built. They saw combat in France and North Africa in 1940–1941.</value>
   </data>
   <data name="GB58_Cruiser_Mk_III_short" xml:space="preserve">
     <value>Cruiser III</value>
@@ -898,7 +898,7 @@
     <value>Cruiser Mk. IV</value>
   </data>
   <data name="GB59_Cruiser_Mk_IV_descr" xml:space="preserve">
-    <value>An upgraded version of the cruiser tank Mk. III. The tank featured armor enhanced by the additional screens. The Cruiser Mk. IV fought in France in 1940 and in the early stages of the North African Campaign. Vehicles of this type last saw action in the winter of 1941–1942. A total of 655 tanks were mass-produced.</value>
+    <value>An upgraded version of the cruiser tank Mk. III. The tank featured armor enhanced by the additional screens. The Cruiser Mk. IV fought in France in 1940 and in the early stages of the North African Campaign. This vehicle last saw action in the winter of 1941–1942. A total of 655 tanks were mass-produced.</value>
   </data>
   <data name="GB59_Cruiser_Mk_IV_short" xml:space="preserve">
     <value>Cruiser IV</value>
@@ -931,7 +931,7 @@
     <value>Cruiser Mk. II</value>
   </data>
   <data name="GB69_Cruiser_Mk_III_descr" xml:space="preserve">
-    <value>The A10 Cruiser Mk. II was a further development of the A9 modification. The A10 had enhanced armor and had no machinegun turrets. A prototype was built in July 1937 and was adopted for service as a heavy cruiser tank. A total of 175 vehicles were ordered in 1938–1939, which were manufactured by September 1940. The vehicles saw combat in France (1940), in Greece (1941) and North Africa (1941).</value>
+    <value>The A10 Cruiser Mk. II was a further development of the A9 modification. The A10 had enhanced armor and no machinegun turrets. A prototype was built in July 1937 and adopted for service as a heavy cruiser tank. A total of 175 vehicles were ordered between 1938–1939, which were manufactured by September 1940. The vehicles saw combat in France (1940), Greece (1941) and North Africa (1941).</value>
   </data>
   <data name="GB69_Cruiser_Mk_II_short" xml:space="preserve">
     <value>Cruiser II</value>
@@ -958,7 +958,7 @@
     <value>AT 15A</value>
   </data>
   <data name="GB71_AT_15A_descr" xml:space="preserve">
-    <value>Assault tank conceived for breakthrough attacks on enemy fortifications. The design project was ready on October 5, 1943. No prototypes were built. However, the project became the basis for a heavy assault tank, the A39 Tortoise.</value>
+    <value>Assault tank conceived for breakthrough attacks on enemy fortifications. The design project was ready on October 5, 1943. No prototypes were built. However, the project became the basis for the A39 Tortoise heavy assault tank.</value>
   </data>
   <data name="GB72_AT15" xml:space="preserve">
     <value>AT 15</value>
@@ -1066,7 +1066,7 @@
     <value>Centurion Action X</value>
   </data>
   <data name="GB86_Centurion_Action_X_descr" xml:space="preserve">
-    <value>The Action X turret was planned to be used for the Centurion tanks of later variants. One prototype of the turret was mounted on the chassis of the Centurion Mark 7, and one more prototype was used for ballistic trials. The vehicle never entered mass production or saw service.</value>
+    <value>The Action X turret was planned to be used for later variants of the Centurion tank. One prototype of the turret was mounted on the chassis of the Centurion Mark 7, and another was used for ballistic trials. The vehicles with the Action X turret never entered mass production or saw service.</value>
   </data>
   <data name="GB86_Centurion_Action_X_short" xml:space="preserve">
     <value>Centurion AX</value>

@@ -947,6 +947,7 @@
     "userString": "#france_vehicles:_105mm_APCR_OFL_E1_fallout",
     "icon": "ap_cr",
     "price": "\t81\t",
+    "notInShop": "\ttrue\t",
     "kind": "ARMOR_PIERCING_CR",
     "caliber": "\t105\t",
     "isTracer": "\ttrue\t",
@@ -964,6 +965,7 @@
       "#text": "\t1\t",
       "gold": ""
     },
+    "notInShop": "\ttrue\t",
     "kind": "HOLLOW_CHARGE",
     "caliber": "\t105\t",
     "isTracer": "\ttrue\t",
@@ -979,6 +981,7 @@
     "userString": "#france_vehicles:_105mm_HE_OE_F1_fallout",
     "icon": "he",
     "price": "\t72\t",
+    "notInShop": "\ttrue\t",
     "kind": "HIGH_EXPLOSIVE",
     "caliber": "\t105\t",
     "explosionRadius": "1.91",

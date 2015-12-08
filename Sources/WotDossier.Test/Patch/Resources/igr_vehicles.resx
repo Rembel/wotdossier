@@ -148,7 +148,7 @@
     <value>AMX AC mle. 48</value>
   </data>
   <data name="AMX_AC_Mle1948_IGR_descr" xml:space="preserve">
-    <value>A draft project of a tank destroyer on the basis of the AMX 50. Developed in 1948. The vehicle featured rotating fire unit on the rear. Existed only in blueprints.</value>
+    <value>A draft project of a heavy tank destroyer, developed in 1947–1948 under the influence of the Jagdpanther. The vehicle was to feature a 120 mm gun as the main armament. The distinctive feature of the vehicle was three 20 mm MG 151/20 machineguns, mounted on top of the fighting compartment and rear. Existed only in blueprints.</value>
   </data>
   <data name="AMX_AC_Mle1948_IGR_short" xml:space="preserve">
     <value>AMX AC 48</value>
@@ -768,7 +768,7 @@ Ausf. G</value>
     <value>SU-152</value>
   </data>
   <data name="SU-152_IGR_descr" xml:space="preserve">
-    <value>A heavy self-propelled gun on the hull of the KV-1S tank, with a total of 671 vehicles built from February through December 1943.</value>
+    <value>Development of a tank destroyer on the basis of the KV-1S heavy tank began on January 4, 1943. The vehicle received the designation KV-14 (Object 236). A prototype underwent field trials at the beginning of February 1943 and entered service on February 14, 1943. In April, the KV-14 was renamed SU-152. By December 1943, 670 vehicles were manufactured. Thanks to its ability to successfully combat german Tiger I and Panther tanks, the SU-152 was dubbed "Hunter" by the troops.</value>
   </data>
   <data name="SU-152_mod_1944_IGR" xml:space="preserve">
     <value>SU-152M</value>
@@ -819,7 +819,7 @@ Ausf. G</value>
     <value>T29</value>
   </data>
   <data name="T29_IGR_descr" xml:space="preserve">
-    <value>Development of this experimental heavy tank started in September 1944. The construction and trials of the prototypes continued until October 1947. However, the T29 did not enter mass production.</value>
+    <value>Development of this experimental heavy tank started in 1944. The prototype was built in 1947. The vehicle featured the 105 mm T5E1 gun. After the war, the mass production of heavy tanks was deemed unreasonable, and only a few prototypes of this vehicle were built.</value>
   </data>
   <data name="T34_hvy_IGR" xml:space="preserve">
     <value>T34</value>

@@ -157,7 +157,7 @@
     <value>AMX 12 t</value>
   </data>
   <data name="AMX_12t_descr" xml:space="preserve">
-    <value>This design of a light high-speed tank was developed in 1946. However, it became the basis for the well-known AMX 13. Existed only in blueprints.</value>
+    <value>This design of a light high-speed tank was developed in 1946. The vehicle was never actually produced, but became the basis for the well-known AMX 13.</value>
   </data>
   <data name="AMX_12t_short" xml:space="preserve">
     <value>AMX 12 t</value>
@@ -229,7 +229,7 @@
     <value>AMX 50 B</value>
   </data>
   <data name="AMX_50_68t_descr" xml:space="preserve">
-    <value>Developed starting in 1951 by DEFA, the state weapons design bureau. By 1958, the AMX 50 B received a number of improvements, including a low-profile cast hull and torsion-bar suspension. A new oscillating turret with a 120-mm gun was also mounted on the vehicle. Despite the fact that the Maybach engine power provided just 1000 hp, the specialists from the German Gruppe M company were looking for a solution that would allow the vehicle to reach the speed up to 65 km/h. Only one finished prototype of this variant was built.</value>
+    <value>Developed starting in 1951 by DEFA, the state weapons design bureau. By 1958, the AMX 50 B received a number of improvements, including a low-profile cast hull and torsion-bar suspension. A new oscillating turret with a 120-mm gun was also mounted on the vehicle. Despite the fact that the Maybach engine power provided just 1,000 h.p., specialists from the German Gruppe M company were looking for a solution that would allow the vehicle to reach a speed of up to 65 km/h. Only one finished prototype of this variant was built.</value>
   </data>
   <data name="AMX_50_68t_fallout" xml:space="preserve">
     <value>(R) AMX 50 B</value>
@@ -256,7 +256,7 @@
     <value>AMX AC mle. 48</value>
   </data>
   <data name="AMX_AC_Mle1948_descr" xml:space="preserve">
-    <value>A draft project of a tank destroyer on the basis of the AMX 50. Developed in 1948. The vehicle featured rotating fire unit on the rear. Existed only in blueprints.</value>
+    <value>A draft project of a heavy tank destroyer, developed in 1947–1948 under the influence of the Jagdpanther. The vehicle was to feature a 120 mm gun as the main armament. The distinctive feature of the vehicle was three 20 mm MG 151/20 machineguns, mounted on top of the fighting compartment and rear. Existed only in blueprints.</value>
   </data>
   <data name="AMX_AC_Mle1948_short" xml:space="preserve">
     <value>AMX AC 48</value>

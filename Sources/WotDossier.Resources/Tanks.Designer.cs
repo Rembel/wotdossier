@@ -232,33 +232,6 @@ namespace WotDossier.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to KV-3.
-        /// </summary>
-        public static string kv_3 {
-            get {
-                return ResourceManager.GetString("kv_3", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to KV-5.
-        /// </summary>
-        public static string kv_5 {
-            get {
-                return ResourceManager.GetString("kv_5", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to KV-5.
-        /// </summary>
-        public static string kv_5_igr {
-            get {
-                return ResourceManager.GetString("kv_5_igr", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to KV-2.
         /// </summary>
         public static string kv2 {
@@ -282,15 +255,6 @@ namespace WotDossier.Resources {
         public static string kv4 {
             get {
                 return ResourceManager.GetString("kv4", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to LTP.
-        /// </summary>
-        public static string ltp {
-            get {
-                return ResourceManager.GetString("ltp", resourceCulture);
             }
         }
         
@@ -574,7 +538,7 @@ namespace WotDossier.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to IS-3 auto.
+        ///   Looks up a localized string similar to IS-3A.
         /// </summary>
         public static string r115_is_3_auto {
             get {
@@ -646,6 +610,33 @@ namespace WotDossier.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to SU-18.
+        /// </summary>
+        public static string r16_su_18 {
+            get {
+                return ResourceManager.GetString("r16_su_18", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to SU-152.
+        /// </summary>
+        public static string r18_su_152 {
+            get {
+                return ResourceManager.GetString("r18_su_152", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to SU-152.
+        /// </summary>
+        public static string r18_su_152_igr {
+            get {
+                return ResourceManager.GetString("r18_su_152_igr", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to IS-3.
         /// </summary>
         public static string r19_is_3 {
@@ -691,6 +682,15 @@ namespace WotDossier.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to KV-3.
+        /// </summary>
+        public static string r39_kv_3 {
+            get {
+                return ResourceManager.GetString("r39_kv_3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to 212A.
         /// </summary>
         public static string r51_object_212 {
@@ -705,6 +705,24 @@ namespace WotDossier.Resources {
         public static string r53_object_704 {
             get {
                 return ResourceManager.GetString("r53_object_704", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to KV-5.
+        /// </summary>
+        public static string r54_kv_5 {
+            get {
+                return ResourceManager.GetString("r54_kv_5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to KV-5.
+        /// </summary>
+        public static string r54_kv_5_igr {
+            get {
+                return ResourceManager.GetString("r54_kv_5_igr", resourceCulture);
             }
         }
         
@@ -732,6 +750,15 @@ namespace WotDossier.Resources {
         public static string r81_is8 {
             get {
                 return ResourceManager.GetString("r81_is8", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to LTP.
+        /// </summary>
+        public static string r86_ltp {
+            get {
+                return ResourceManager.GetString("r86_ltp", resourceCulture);
             }
         }
         
@@ -804,33 +831,6 @@ namespace WotDossier.Resources {
         public static string su_14 {
             get {
                 return ResourceManager.GetString("su_14", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to SU-152.
-        /// </summary>
-        public static string su_152 {
-            get {
-                return ResourceManager.GetString("su_152", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to SU-152.
-        /// </summary>
-        public static string su_152_igr {
-            get {
-                return ResourceManager.GetString("su_152_igr", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to SU-18.
-        /// </summary>
-        public static string su_18 {
-            get {
-                return ResourceManager.GetString("su_18", resourceCulture);
             }
         }
         

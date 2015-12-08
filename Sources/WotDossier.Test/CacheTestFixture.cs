@@ -73,7 +73,7 @@ namespace WotDossier.Test
         [Test]
         public void NoobMeterPerformanceRatingAlgorithmTest()
         {
-            Version version = new Version("0.9.3");
+            Version version = Dictionaries.VersionRelease;
 
             string cacheFolder = string.Format(@"\CacheFiles\{0}\", version.ToString(3));
 
@@ -91,7 +91,7 @@ namespace WotDossier.Test
         [Test]
         public void InternalCacheLoaderTest()
         {
-            Version version = new Version("0.9.3");
+            Version version = Dictionaries.VersionRelease;
 
             string cacheFolder = string.Format(@"\CacheFiles\{0}\", version.ToString(3));
 
@@ -103,7 +103,7 @@ namespace WotDossier.Test
         [Test]
         public void CacheFileTest()
         {
-            Version version = new Version("0.9.3");
+            Version version = new Version("0.9.13.0");
             const BattleMode battleMode = BattleMode.RandomCompany;
 
             //trick

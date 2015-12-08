@@ -183,18 +183,6 @@
   <data name="kv_1s" xml:space="preserve">
     <value>KV-1S</value>
   </data>
-  <data name="kv_3" xml:space="preserve">
-    <value>KV-3</value>
-  </data>
-  <data name="kv_5" xml:space="preserve">
-    <value>KV-5</value>
-  </data>
-  <data name="kv_5_igr" xml:space="preserve">
-    <value>KV-5</value>
-  </data>
-  <data name="ltp" xml:space="preserve">
-    <value>LTP</value>
-  </data>
   <data name="m3_stuart_ll" xml:space="preserve">
     <value>M3 Light</value>
   </data>
@@ -289,7 +277,7 @@
     <value>Object 244</value>
   </data>
   <data name="r115_is_3_auto" xml:space="preserve">
-    <value>IS-3 auto</value>
+    <value>IS-3A</value>
   </data>
   <data name="r116_isu122c_berlin" xml:space="preserve">
     <value>ISU-122S</value>
@@ -312,6 +300,15 @@
   <data name="r122_t44_100" xml:space="preserve">
     <value>T-44-100</value>
   </data>
+  <data name="r16_su_18" xml:space="preserve">
+    <value>SU-18</value>
+  </data>
+  <data name="r18_su_152" xml:space="preserve">
+    <value>SU-152</value>
+  </data>
+  <data name="r18_su_152_igr" xml:space="preserve">
+    <value>SU-152</value>
+  </data>
   <data name="r19_is_3" xml:space="preserve">
     <value>IS-3</value>
   </data>
@@ -327,11 +324,20 @@
   <data name="r38_kv_220_action" xml:space="preserve">
     <value>KV-220-2</value>
   </data>
+  <data name="r39_kv_3" xml:space="preserve">
+    <value>KV-3</value>
+  </data>
   <data name="r51_object_212" xml:space="preserve">
     <value>212A</value>
   </data>
   <data name="r53_object_704" xml:space="preserve">
     <value>Object 704</value>
+  </data>
+  <data name="r54_kv_5" xml:space="preserve">
+    <value>KV-5</value>
+  </data>
+  <data name="r54_kv_5_igr" xml:space="preserve">
+    <value>KV-5</value>
   </data>
   <data name="r71_is_2b" xml:space="preserve">
     <value>IS-2</value>
@@ -341,6 +347,9 @@
   </data>
   <data name="r81_is8" xml:space="preserve">
     <value>T-10</value>
+  </data>
+  <data name="r86_ltp" xml:space="preserve">
+    <value>LTP</value>
   </data>
   <data name="r87_t62a" xml:space="preserve">
     <value>T-62A</value>
@@ -380,15 +389,6 @@
   </data>
   <data name="su_14" xml:space="preserve">
     <value>SU-14-2</value>
-  </data>
-  <data name="su_152" xml:space="preserve">
-    <value>SU-152</value>
-  </data>
-  <data name="su_152_igr" xml:space="preserve">
-    <value>SU-152</value>
-  </data>
-  <data name="su_18" xml:space="preserve">
-    <value>SU-18</value>
   </data>
   <data name="su_26" xml:space="preserve">
     <value>SU-26</value>

@@ -382,7 +382,7 @@
     <value>Object 244</value>
   </data>
   <data name="Chassis_R115_IS-3_auto" xml:space="preserve">
-    <value>IS-3 auto</value>
+    <value>IS-3A</value>
   </data>
   <data name="Chassis_R116_ISU122C_Berlin" xml:space="preserve">
     <value>ISU-122S</value>
@@ -662,7 +662,7 @@ W-670</value>
     <value>KV-220-2</value>
   </data>
   <data name="KV-220_descr" xml:space="preserve">
-    <value>Development of KV-220 on the basis of the KV heavy tank started in the summer of 1940. Prototype was built on December 5. Unlike other KV modifications, the tank featured an elongated hull, additional support roller, enhanced armor (100 mm), and a new turret with the 85 mm F-30 gun. In the fall of 1941, the production of the KV-1 was discontinued. The vehicle received the mass-produced KV turret and was sent to the front.</value>
+    <value>Development of KV-220 on the basis of the KV heavy tank started in the summer of 1940. A prototype was built on December 5. Unlike other KV modifications, the tank featured an elongated hull, additional support roller, enhanced armor (100 mm), and a new turret with the 85 mm F-30 gun. In the fall of 1941, production of the KV-1 was discontinued. The vehicle received the mass-produced KV turret and was sent to the frontlines.</value>
   </data>
   <data name="KV-220_mod" xml:space="preserve">
     <value>T-220</value>
@@ -677,7 +677,7 @@ W-670</value>
     <value>KV-3</value>
   </data>
   <data name="KV-3_descr" xml:space="preserve">
-    <value>Initially designed as a replacement for the KV-1. The hull and suspension had been developed at the outbreak of World War II, but the KV-3 was never mass-produced.</value>
+    <value>Developed on the basis of the KV heavy tank, the vehicle initially had very few differences from the mass-produced model. It underwent field trials in January–February 1941. Eventually, several crucial changes were made to the design, greatly boosting the combat characteristics of the vehicle. By July 22, 1941, chassis and engine development was completed. According to some sources, in the fall of 1941, the vehicle was equipped with a serial KV turret and sent to the front.</value>
   </data>
   <data name="KV-3bis" xml:space="preserve">
     <value>KV-3 Bis</value>
@@ -686,7 +686,7 @@ W-670</value>
     <value>KV-5</value>
   </data>
   <data name="KV-5_descr" xml:space="preserve">
-    <value>Development was started in June 1941 at the Leningrad Kirov Plant and completed by August, but the German invasion prevented development from progressing to the prototype stage. The KV-5 was expected to share some components with the KV-1. A new turret was designed, incorporating the 107-mm ZIS-6 gun. Early plans called for a new 1,200 hp diesel engine, but later adjustments, recognizing wartime disruptions, replaced this with two V-2K engines.</value>
+    <value>Development began in June 1941 at the Leningrad Kirov Plant and was completed by August, but plans were interrupted due to the complicated situation on the front. The KV-5 was to utilize some components of the KV-1. A new turret was designed, incorporating the 107-mm ZIS-6 gun. Two roadwheels and a single support roller were to be added on each side. A new 1,200 h.p. diesel engine was being developed for the vehicle, however it was not completed in time and was replaced with two V-2K engines.</value>
   </data>
   <data name="KV1" xml:space="preserve">
     <value>KV-1</value>
@@ -869,7 +869,7 @@ W-670</value>
     <value>212A</value>
   </data>
   <data name="Object_212_descr" xml:space="preserve">
-    <value>Technical requirements for the 212A self-propelled gun were developed in August 1940. The Special Design Bureau No. 2 of the Leningrad Kirov Plant started development based on the KV-220. Blueprints for the vehicle were ready by February 24, 1941, but a prototype was never manufactured. By the end of 1941, development was passed on to the UHMP (Ural Heavy Machinery Plant), but a prototype was never built.</value>
+    <value>Technical requirements for the 212A self-propelled gun were developed in August 1940. The Special Design Bureau No. 2 of the Leningrad Kirov Plant started development based on the KV-220. Blueprints for the vehicle were ready by February 24, 1941, but a prototype was never manufactured. By August of 1941, development was passed on to the UHMP (Ural Heavy Machinery Plant), but a prototype was never built.</value>
   </data>
   <data name="Object_212_short" xml:space="preserve">
     <value>212A</value>
@@ -1016,13 +1016,13 @@ W-670</value>
     <value>Obj. 244</value>
   </data>
   <data name="R115_IS-3_auto" xml:space="preserve">
-    <value>IS-3 auto</value>
+    <value>IS-3A</value>
   </data>
   <data name="R115_IS-3_auto_descr" xml:space="preserve">
     <value>In 1956–1957, the Military Armored Forces Academy developed a speculative design for a new loading system on the IS-3 and T-10 heavy tanks. The IS-3 variant featured a double-row ammo rack with an automatic loading system. The crew was reduced to three members: commander, gunner, and driver. The turret was redesigned in order to accommodate the loading mechanism. The vehicle existed only in blueprints.</value>
   </data>
   <data name="R115_IS-3_auto_short" xml:space="preserve">
-    <value>IS-3 auto.</value>
+    <value>IS-3A</value>
   </data>
   <data name="R116_ISU122C_Berlin" xml:space="preserve">
     <value>ISU-122S</value>
@@ -1169,7 +1169,7 @@ W-670</value>
     <value>SU-152</value>
   </data>
   <data name="SU-152_descr" xml:space="preserve">
-    <value>A heavy self-propelled gun on the hull of the KV-1S tank, with a total of 671 vehicles built from February through December 1943.</value>
+    <value>Development of a tank destroyer on the basis of the KV-1S heavy tank began on January 4, 1943. The vehicle received the designation KV-14 (Object 236). A prototype underwent field trials at the beginning of February 1943 and entered service on February 14, 1943. In April, the KV-14 was renamed SU-152. By December 1943, 670 vehicles were manufactured. Thanks to its ability to successfully combat german Tiger I and Panther tanks, the SU-152 was dubbed "Hunter" by the troops.</value>
   </data>
   <data name="SU-152_mod_1943" xml:space="preserve">
     <value>SU-152</value>
@@ -1184,7 +1184,7 @@ W-670</value>
     <value>SU-18 Bis</value>
   </data>
   <data name="SU-18_descr" xml:space="preserve">
-    <value>Self-propelled gun on the basis of the MS chassis. This model existed only in blueprints, with no prototypes developed. Never entered mass production.</value>
+    <value>Self-propelled gun on the basis of the MS-1 chassis. This model only existed in blueprints, with no prototypes developed. Never entered mass production.</value>
   </data>
   <data name="SU-26" xml:space="preserve">
     <value>SU-26</value>
@@ -1673,7 +1673,7 @@ W-670</value>
     <value>Object 244</value>
   </data>
   <data name="Turret_1_R115_IS-3_auto" xml:space="preserve">
-    <value>IS-3 auto</value>
+    <value>IS-3A</value>
   </data>
   <data name="Turret_1_R116_ISU122C_Berlin" xml:space="preserve">
     <value>ISU-122S</value>
@@ -1701,6 +1701,9 @@ W-670</value>
   </data>
   <data name="Turret_1_ST_I" xml:space="preserve">
     <value>Object 701-1</value>
+  </data>
+  <data name="Turret_1_SU-101" xml:space="preserve">
+    <value>SU-101</value>
   </data>
   <data name="Turret_1_SU100M1" xml:space="preserve">
     <value>SU-100M1</value>
@@ -2078,7 +2081,7 @@ W-670</value>
     <value>107 mm ZiS-24</value>
   </data>
   <data name="_107mm_ZiS-24_A" xml:space="preserve">
-    <value>107 mm ZiS-24</value>
+    <value>107 mm M-75</value>
   </data>
   <data name="_107mm_ZiS-6" xml:space="preserve">
     <value>107 mm ZiS-6</value>
@@ -2768,16 +2771,16 @@ W-670</value>
     <value>UOF-365K</value>
   </data>
   <data name="_85mm_ZiS_S-53" xml:space="preserve">
-    <value>85 mm S-53</value>
+    <value>85 mm ZiS-S-53</value>
   </data>
   <data name="_85mm_ZiS_S-53A" xml:space="preserve">
-    <value>85 mm S-53</value>
+    <value>85 mm ZiS-S-53</value>
   </data>
   <data name="_85mm_ZiS_S-53_44" xml:space="preserve">
-    <value>85 mm ZIS-S-53</value>
+    <value>85 mm ZIS-S-53 (367)</value>
   </data>
   <data name="_85mm_ZiS_S-53_B" xml:space="preserve">
-    <value>85 mm S-53</value>
+    <value>85 mm ZiS-S-53</value>
   </data>
   <data name="_9R" xml:space="preserve">
     <value>9R</value>

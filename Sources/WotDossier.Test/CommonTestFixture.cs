@@ -34,6 +34,8 @@ namespace WotDossier.Test
     [TestFixture]
     public class CommonTestFixture : TestFixtureBase
     {
+        private string clientPath = @"I:\World_of_Tanks_CT";
+
         [Test]
         public void MultipleUploadTest()
         {
@@ -178,6 +180,10 @@ namespace WotDossier.Test
                 {
                     Console.WriteLine("Image resource not found: {0}", tank.Value.Icon.IconId);
                 }
+                else
+                {
+                    File.Copy(Environment.CurrentDirectory + "\\..\\..\\..\\WotDossier.Resources\\" + key.Replace("/", "\\"), string.Format(@"d:\1\{0}.png", tank.Value.Icon.IconId));
+                }
             }
         }
 
@@ -307,6 +313,17 @@ namespace WotDossier.Test
         [Test]
         public void ImportTanksXmlTest()
         {
+            CopyGameTextResources();
+
+            Console.WriteLine("Copy tanks definitions");
+
+            var destination = Path.Combine(Environment.CurrentDirectory, @"Patch\Tanks");
+            var source = Path.Combine(clientPath, @"res\scripts\item_defs\vehicles");
+
+            Directory.CreateDirectory(destination);
+
+            DirectoryCopy(source, destination, true);
+
             var strings = Directory.GetFiles(Path.Combine(Environment.CurrentDirectory, @"Patch\Tanks"), "list.xml", SearchOption.AllDirectories);
 
             List<JObject> result = new List<JObject>();
@@ -508,6 +525,8 @@ namespace WotDossier.Test
                     return 5;
                 case Country.Japan:
                     return 6;
+                case Country.Czech:
+                    return 7;
             }
             return -1;
         }
@@ -589,53 +608,8 @@ namespace WotDossier.Test
         [Test]
         public void UpdateToPatch()
         {
-            string clientPath = @"I:\World_of_Tanks_CT";
             string destination;
             string source;
-
-            Console.WriteLine("Copy resources");
-
-            destination = Path.Combine(Environment.CurrentDirectory, @"Patch\Resources");
-            source = Path.Combine(clientPath, @"res\text\lc_messages");
-
-            Directory.CreateDirectory(destination);
-
-            var strings = Directory.GetFiles(source, "*_vehicles.mo");
-
-            foreach (var resourceFile in strings)
-            {
-                FileInfo info = new FileInfo(resourceFile);
-                info.CopyTo(Path.Combine(destination, info.Name), true);
-            }
-
-            string result;
-            using (var proc = new Process())
-            {
-                proc.StartInfo.CreateNoWindow = true;
-                proc.StartInfo.UseShellExecute = false;
-                proc.StartInfo.RedirectStandardOutput = true;
-                proc.StartInfo.FileName = Path.Combine(destination, "convert.bat");
-
-                proc.StartInfo.WorkingDirectory = destination;
-
-                proc.Start();
-
-                result = proc.StandardOutput.ReadToEnd();
-
-                Console.WriteLine(result);
-
-                //write log
-                proc.WaitForExit();
-            }
-
-            Console.WriteLine("Copy tanks definitions");
-
-            destination = Path.Combine(Environment.CurrentDirectory, @"Patch\Tanks");
-            source = Path.Combine(clientPath, @"res\scripts\item_defs\vehicles");
-
-            Directory.CreateDirectory(destination);
-
-            DirectoryCopy(source, destination, true);
 
             ImportTanksXmlTest();
 
@@ -683,6 +657,46 @@ namespace WotDossier.Test
             }
 
 
+        }
+
+        private void CopyGameTextResources()
+        {
+            string destination;
+            string source;
+            Console.WriteLine("Copy resources");
+
+            destination = Path.Combine(Environment.CurrentDirectory, @"Patch\Resources");
+            source = Path.Combine(clientPath, @"res\text\lc_messages");
+
+            Directory.CreateDirectory(destination);
+
+            var strings = Directory.GetFiles(source, "*_vehicles.mo");
+
+            foreach (var resourceFile in strings)
+            {
+                FileInfo info = new FileInfo(resourceFile);
+                info.CopyTo(Path.Combine(destination, info.Name), true);
+            }
+
+            string result;
+            using (var proc = new Process())
+            {
+                proc.StartInfo.CreateNoWindow = true;
+                proc.StartInfo.UseShellExecute = false;
+                proc.StartInfo.RedirectStandardOutput = true;
+                proc.StartInfo.FileName = Path.Combine(destination, "convert.bat");
+
+                proc.StartInfo.WorkingDirectory = destination;
+
+                proc.Start();
+
+                result = proc.StandardOutput.ReadToEnd();
+
+                Console.WriteLine(result);
+
+                //write log
+                proc.WaitForExit();
+            }
         }
 
         private static void DirectoryCopy(string sourceDirName, string destDirName, bool copySubDirs, bool overwrite = true)

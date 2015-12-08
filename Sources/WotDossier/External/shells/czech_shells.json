@@ -1,4 +1,357 @@
 {
+  "_37mm_Prurazny_vz_18": {
+    "id": "\t4\t",
+    "userString": "#czech_vehicles:_37mm_Prurazny_vz_18",
+    "icon": "ap",
+    "price": "\t0\t",
+    "kind": "ARMOR_PIERCING",
+    "caliber": "\t37\t",
+    "isTracer": "\ttrue\t",
+    "effects": "smallArmorPiercing",
+    "damage": {
+      "armor": "\t40\t",
+      "devices": "\t50\t"
+    }
+  },
+  "_37mm_Prurazny_vz_28": {
+    "id": "\t5\t",
+    "userString": "#czech_vehicles:_37mm_Prurazny_vz_28",
+    "icon": "ap",
+    "price": {
+      "#text": "\t2\t",
+      "gold": ""
+    },
+    "kind": "ARMOR_PIERCING",
+    "caliber": "\t37\t",
+    "isTracer": "\ttrue\t",
+    "effects": "smallArmorPiercing",
+    "damage": {
+      "armor": "\t40\t",
+      "devices": "\t50\t"
+    }
+  },
+  "_37mm_Narazovy_vz_28": {
+    "id": "\t6\t",
+    "userString": "#czech_vehicles:_37mm_Narazovy_vz_28",
+    "icon": "he",
+    "price": "\t8\t",
+    "kind": "HIGH_EXPLOSIVE",
+    "caliber": "\t37\t",
+    "explosionRadius": "0.31",
+    "isTracer": "\ttrue\t",
+    "effects": "smallHighExplosive",
+    "damage": {
+      "armor": "\t45\t",
+      "devices": "\t50\t"
+    }
+  },
+  "_37mm_Prurazny_vz_34": {
+    "id": "\t7\t",
+    "userString": "#czech_vehicles:_37mm_Prurazny_vz_34",
+    "icon": "ap",
+    "price": "\t14\t",
+    "kind": "ARMOR_PIERCING",
+    "caliber": "\t37\t",
+    "isTracer": "\ttrue\t",
+    "effects": "smallArmorPiercing",
+    "damage": {
+      "armor": "\t40\t",
+      "devices": "\t50\t"
+    }
+  },
+  "_37mm_Prurazny_vz_37": {
+    "id": "\t9\t",
+    "userString": "#czech_vehicles:_37mm_Prurazny_vz_37",
+    "icon": "ap",
+    "price": "\t16\t",
+    "kind": "ARMOR_PIERCING",
+    "caliber": "\t37\t",
+    "isTracer": "\ttrue\t",
+    "effects": "smallArmorPiercing",
+    "damage": {
+      "armor": "\t40\t",
+      "devices": "\t50\t"
+    }
+  },
+  "_37mm_Prurazny_vz_47": {
+    "id": "\t14\t",
+    "userString": "#czech_vehicles:_37mm_Prurazny_vz_47",
+    "icon": "ap",
+    "price": "\t26\t",
+    "kind": "ARMOR_PIERCING",
+    "caliber": "\t37\t",
+    "isTracer": "\ttrue\t",
+    "effects": "smallArmorPiercing",
+    "damage": {
+      "armor": "\t40\t",
+      "devices": "\t50\t"
+    }
+  },
+  "_37mm_Prurazny_vz_40_s_oc_jadrem": {
+    "id": "\t8\t",
+    "userString": "#czech_vehicles:_37mm_Prurazny_vz_40_s_oc_jadrem",
+    "icon": "ap_cr",
+    "price": {
+      "#text": "\t2\t",
+      "gold": ""
+    },
+    "kind": "ARMOR_PIERCING_CR",
+    "caliber": "\t37\t",
+    "isTracer": "\ttrue\t",
+    "effects": "smallAPCR",
+    "damage": {
+      "armor": "\t40\t",
+      "devices": "\t50\t"
+    }
+  },
+  "_37mm_Prurazny_vz_40_s_wolf_jadrem": {
+    "id": "\t10\t",
+    "userString": "#czech_vehicles:_37mm_Prurazny_vz_40_s_wolf_jadrem",
+    "icon": "ap_cr",
+    "price": {
+      "#text": "\t2\t",
+      "gold": ""
+    },
+    "kind": "ARMOR_PIERCING_CR",
+    "caliber": "\t37\t",
+    "isTracer": "\ttrue\t",
+    "effects": "smallAPCR",
+    "damage": {
+      "armor": "\t40\t",
+      "devices": "\t50\t"
+    }
+  },
+  "_37mm_Prurazny_vz_47_s_wolf_jadrem": {
+    "id": "\t15\t",
+    "userString": "#czech_vehicles:_37mm_Prurazny_vz_47_s_wolf_jadrem",
+    "icon": "ap_cr",
+    "price": {
+      "#text": "\t3\t",
+      "gold": ""
+    },
+    "kind": "ARMOR_PIERCING_CR",
+    "caliber": "\t37\t",
+    "isTracer": "\ttrue\t",
+    "effects": "smallAPCR",
+    "damage": {
+      "armor": "\t40\t",
+      "devices": "\t50\t"
+    }
+  },
+  "_37mm_Narazovy_vz_34": {
+    "id": "\t17\t",
+    "userString": "#czech_vehicles:_37mm_Narazovy_vz_34",
+    "icon": "he",
+    "price": "\t9\t",
+    "kind": "HIGH_EXPLOSIVE",
+    "caliber": "\t37\t",
+    "explosionRadius": "0.31",
+    "isTracer": "\ttrue\t",
+    "effects": "smallHighExplosive",
+    "damage": {
+      "armor": "\t45\t",
+      "devices": "\t50\t"
+    }
+  },
+  "_37mm_Narazovy_vz_47": {
+    "id": "\t16\t",
+    "userString": "#czech_vehicles:_37mm_Narazovy_vz_47",
+    "icon": "he",
+    "price": "\t10\t",
+    "kind": "HIGH_EXPLOSIVE",
+    "caliber": "\t37\t",
+    "explosionRadius": "0.31",
+    "isTracer": "\ttrue\t",
+    "effects": "smallHighExplosive",
+    "damage": {
+      "armor": "\t45\t",
+      "devices": "\t50\t"
+    }
+  },
+  "_47mm_Prurazny": {
+    "id": "\t11\t",
+    "userString": "#czech_vehicles:_47mm_Prurazny",
+    "icon": "ap",
+    "price": "\t15\t",
+    "kind": "ARMOR_PIERCING",
+    "caliber": "\t47\t",
+    "isTracer": "\ttrue\t",
+    "effects": "smallArmorPiercing",
+    "damage": {
+      "armor": "\t50\t",
+      "devices": "\t64\t"
+    }
+  },
+  "_47mm_Prurazny_s_oc_jadrem": {
+    "id": "\t12\t",
+    "userString": "#czech_vehicles:_47mm_Prurazny_s_oc_jadrem",
+    "icon": "ap_cr",
+    "price": {
+      "#text": "\t2\t",
+      "gold": ""
+    },
+    "kind": "ARMOR_PIERCING_CR",
+    "caliber": "\t47\t",
+    "isTracer": "\ttrue\t",
+    "effects": "smallAPCR",
+    "damage": {
+      "armor": "\t50\t",
+      "devices": "\t64\t"
+    }
+  },
+  "_47mm_Narazovy": {
+    "id": "\t13\t",
+    "userString": "#czech_vehicles:_47mm_Narazovy",
+    "icon": "he",
+    "price": "\t12\t",
+    "kind": "HIGH_EXPLOSIVE",
+    "caliber": "\t47\t",
+    "explosionRadius": "0.47",
+    "isTracer": "\ttrue\t",
+    "effects": "smallHighExplosive",
+    "damage": {
+      "armor": "\t65\t",
+      "devices": "\t64\t"
+    }
+  },
+  "_47mm_Prurazny_vz_36": {
+    "id": "\t18\t",
+    "userString": "#czech_vehicles:_47mm_Prurazny_vz_36",
+    "icon": "ap",
+    "price": "\t30\t",
+    "kind": "ARMOR_PIERCING",
+    "caliber": "\t47\t",
+    "isTracer": "\ttrue\t",
+    "effects": "smallArmorPiercing",
+    "damage": {
+      "armor": "\t60\t",
+      "devices": "\t64\t"
+    }
+  },
+  "_47mm_Prurazny_vz_40_s_wolf_jadrem": {
+    "id": "\t19\t",
+    "userString": "#czech_vehicles:_47mm_Prurazny_vz_40_s_wolf_jadrem",
+    "icon": "ap_cr",
+    "price": {
+      "#text": "\t4\t",
+      "gold": ""
+    },
+    "kind": "ARMOR_PIERCING_CR",
+    "caliber": "\t47\t",
+    "isTracer": "\ttrue\t",
+    "effects": "smallAPCR",
+    "damage": {
+      "armor": "\t60\t",
+      "devices": "\t64\t"
+    }
+  },
+  "_47mm_Narazovy_vz_36": {
+    "id": "\t20\t",
+    "userString": "#czech_vehicles:_47mm_Narazovy_vz_36",
+    "icon": "he",
+    "price": "\t16\t",
+    "kind": "HIGH_EXPLOSIVE",
+    "caliber": "\t47\t",
+    "explosionRadius": "0.47",
+    "isTracer": "\ttrue\t",
+    "effects": "smallHighExplosive",
+    "damage": {
+      "armor": "\t75\t",
+      "devices": "\t64\t"
+    }
+  },
+  "_75mm_Prurazny_vz_42": {
+    "id": "\t21\t",
+    "userString": "#czech_vehicles:_75mm_Prurazny_vz_42",
+    "icon": "ap",
+    "price": "\t94\t",
+    "kind": "ARMOR_PIERCING",
+    "caliber": "\t75\t",
+    "isTracer": "\ttrue\t",
+    "effects": "mediumArmorPiercing",
+    "damage": {
+      "armor": "\t110\t",
+      "devices": "\t100\t"
+    }
+  },
+  "_75mm_Prurazny_vz_42_s_wolf_jadrem": {
+    "id": "\t22\t",
+    "userString": "#czech_vehicles:_75mm_Prurazny_vz_42_s_wolf_jadrem",
+    "icon": "ap_cr",
+    "price": {
+      "#text": "\t7\t",
+      "gold": ""
+    },
+    "kind": "ARMOR_PIERCING_CR",
+    "caliber": "\t75\t",
+    "isTracer": "\ttrue\t",
+    "effects": "mediumAPCR",
+    "damage": {
+      "armor": "\t110\t",
+      "devices": "\t100\t"
+    }
+  },
+  "_75mm_Narazovy_vz_42": {
+    "id": "\t23\t",
+    "userString": "#czech_vehicles:_75mm_Narazovy_vz_42",
+    "icon": "he",
+    "price": "\t65\t",
+    "kind": "HIGH_EXPLOSIVE",
+    "caliber": "\t75\t",
+    "explosionRadius": "1.06",
+    "isTracer": "\ttrue\t",
+    "effects": "mediumHighExplosive",
+    "damage": {
+      "armor": "\t175\t",
+      "devices": "\t100\t"
+    }
+  },
+  "_85mm_vz_44_Protipancerovy": {
+    "id": "\t24\t",
+    "userString": "#czech_vehicles:_85mm_vz_44_Protipancerovy",
+    "icon": "ap",
+    "price": "\t130\t",
+    "kind": "ARMOR_PIERCING",
+    "caliber": "\t85\t",
+    "isTracer": "\ttrue\t",
+    "effects": "mainArmorPiercing",
+    "damage": {
+      "armor": "\t160\t",
+      "devices": "\t115\t"
+    }
+  },
+  "_85mm_vz_44_Protipancerovy_jadrovy": {
+    "id": "\t25\t",
+    "userString": "#czech_vehicles:_85mm_vz_44_Protipancerovy_jadrovy",
+    "icon": "ap_cr",
+    "price": {
+      "#text": "\t7\t",
+      "gold": ""
+    },
+    "kind": "ARMOR_PIERCING_CR",
+    "caliber": "\t85\t",
+    "isTracer": "\ttrue\t",
+    "effects": "\tmainAPCR\t",
+    "damage": {
+      "armor": "\t160\t",
+      "devices": "\t115\t"
+    }
+  },
+  "_85mm_vz_44_Narazovy": {
+    "id": "\t26\t",
+    "userString": "#czech_vehicles:_85mm_vz_44_Narazovy",
+    "icon": "he",
+    "price": "\t120\t",
+    "kind": "HIGH_EXPLOSIVE",
+    "caliber": "\t85\t",
+    "explosionRadius": "1.32",
+    "isTracer": "\ttrue\t",
+    "effects": "mainHighExplosive",
+    "damage": {
+      "armor": "\t280\t",
+      "devices": "\t115\t"
+    }
+  },
   "_88mm_AP_Vz_39N_OPG": {
     "id": "\t1\t",
     "userString": "#czech_vehicles:_88mm_AP_Vz_39N_OPG",
@@ -44,6 +397,238 @@
     "damage": {
       "armor": "\t270\t",
       "devices": "\t119\t"
+    }
+  },
+  "_88mm_vz_41N_OPG": {
+    "id": "\t30\t",
+    "userString": "#czech_vehicles:_88mm_vz_41N_OPG",
+    "icon": "ap",
+    "price": "\t340\t",
+    "kind": "ARMOR_PIERCING",
+    "caliber": "\t88\t",
+    "isTracer": "\ttrue\t",
+    "effects": "mainArmorPiercing",
+    "damage": {
+      "armor": "\t240\t",
+      "devices": "\t119\t"
+    }
+  },
+  "_88mm_vz_42N_OPG": {
+    "id": "\t31\t",
+    "userString": "#czech_vehicles:_88mm_vz_42N_OPG",
+    "icon": "ap_cr",
+    "price": {
+      "#text": "\t11\t",
+      "gold": ""
+    },
+    "kind": "ARMOR_PIERCING_CR",
+    "caliber": "\t88\t",
+    "isTracer": "\ttrue\t",
+    "effects": "\tmainAPCR\t",
+    "damage": {
+      "armor": "\t240\t",
+      "devices": "\t119\t"
+    }
+  },
+  "_88mm_Narazovy": {
+    "id": "\t32\t",
+    "userString": "#czech_vehicles:_88mm_Narazovy",
+    "icon": "he",
+    "price": "\t185\t",
+    "kind": "HIGH_EXPLOSIVE",
+    "caliber": "\t88\t",
+    "explosionRadius": "1.4",
+    "isTracer": "\ttrue\t",
+    "effects": "mainHighExplosive",
+    "damage": {
+      "armor": "\t295\t",
+      "devices": "\t119\t"
+    }
+  },
+  "_100mm_JPSv": {
+    "id": "\t27\t",
+    "userString": "#czech_vehicles:_100mm_JPSv",
+    "icon": "ap",
+    "price": "\t305\t",
+    "kind": "ARMOR_PIERCING",
+    "caliber": "\t100\t",
+    "isTracer": "\ttrue\t",
+    "effects": "mainArmorPiercing",
+    "damage": {
+      "armor": "\t250\t",
+      "devices": "\t135\t"
+    }
+  },
+  "_100mm_JPrSv": {
+    "id": "\t28\t",
+    "userString": "#czech_vehicles:_100mm_JPrSv",
+    "icon": "hc",
+    "price": {
+      "#text": "\t12\t",
+      "gold": ""
+    },
+    "kind": "HOLLOW_CHARGE",
+    "caliber": "\t100\t",
+    "isTracer": "\ttrue\t",
+    "effects": "largeHollowCharge",
+    "damage": {
+      "armor": "\t250\t",
+      "devices": "\t135\t"
+    },
+    "piercingPowerLossFactorByDistance": "0.05"
+  },
+  "_100mm_JOF": {
+    "id": "\t29\t",
+    "userString": "#czech_vehicles:_100mm_JOF",
+    "icon": "he",
+    "price": "\t215\t",
+    "kind": "HIGH_EXPLOSIVE",
+    "caliber": "\t100\t",
+    "explosionRadius": "1.76",
+    "isTracer": "\ttrue\t",
+    "effects": "mainHighExplosive",
+    "damage": {
+      "armor": "\t330\t",
+      "devices": "\t135\t"
+    }
+  },
+  "_100mm_Prurazny_vz_49": {
+    "id": "\t36\t",
+    "userString": "#czech_vehicles:_100mm_Prurazny_vz_49",
+    "icon": "ap",
+    "price": "\t890\t",
+    "kind": "ARMOR_PIERCING",
+    "caliber": "\t100\t",
+    "isTracer": "\ttrue\t",
+    "effects": "mainArmorPiercing",
+    "damage": {
+      "armor": "\t320\t",
+      "devices": "\t135\t"
+    }
+  },
+  "_100mm_Prurazny_vz_49_s_oc_jadrem": {
+    "id": "\t37\t",
+    "userString": "#czech_vehicles:_100mm_Prurazny_vz_49_s_oc_jadrem",
+    "icon": "ap_cr",
+    "price": {
+      "#text": "\t12\t",
+      "gold": ""
+    },
+    "kind": "ARMOR_PIERCING_CR",
+    "caliber": "\t100\t",
+    "isTracer": "\ttrue\t",
+    "effects": "\tmainAPCR\t",
+    "damage": {
+      "armor": "\t320\t",
+      "devices": "\t135\t"
+    }
+  },
+  "_100mm_Narazovy_vz_49": {
+    "id": "\t38\t",
+    "userString": "#czech_vehicles:_100mm_Narazovy_vz_49",
+    "icon": "he",
+    "price": "\t455\t",
+    "kind": "HIGH_EXPLOSIVE",
+    "caliber": "\t100\t",
+    "explosionRadius": "1.76",
+    "isTracer": "\ttrue\t",
+    "effects": "mainHighExplosive",
+    "damage": {
+      "armor": "\t420\t",
+      "devices": "\t135\t"
+    }
+  },
+  "_100mm_Prurazny_vz_50": {
+    "id": "\t39\t",
+    "userString": "#czech_vehicles:_100mm_Prurazny_vz_50",
+    "icon": "ap_cr",
+    "price": "\t1110\t",
+    "kind": "ARMOR_PIERCING_CR",
+    "caliber": "\t100\t",
+    "isTracer": "\ttrue\t",
+    "effects": "\tmainAPCR\t",
+    "damage": {
+      "armor": "\t320\t",
+      "devices": "\t135\t"
+    }
+  },
+  "_100mm_Prupalny_vz_50": {
+    "id": "\t40\t",
+    "userString": "#czech_vehicles:_100mm_Prupalny_vz_50",
+    "icon": "hc",
+    "price": {
+      "#text": "\t12\t",
+      "gold": ""
+    },
+    "kind": "HOLLOW_CHARGE",
+    "caliber": "\t100\t",
+    "isTracer": "\ttrue\t",
+    "effects": "largeHollowCharge",
+    "damage": {
+      "armor": "\t320\t",
+      "devices": "\t135\t"
+    },
+    "piercingPowerLossFactorByDistance": "0.05"
+  },
+  "_100mm_Narazovy_vz_50": {
+    "id": "\t41\t",
+    "userString": "#czech_vehicles:_100mm_Narazovy_vz_50",
+    "icon": "he",
+    "price": "\t620\t",
+    "kind": "HIGH_EXPLOSIVE",
+    "caliber": "\t100\t",
+    "explosionRadius": "1.76",
+    "isTracer": "\ttrue\t",
+    "effects": "mainHighExplosive",
+    "damage": {
+      "armor": "\t420\t",
+      "devices": "\t135\t"
+    }
+  },
+  "_105mm_vz_39N_OPG": {
+    "id": "\t33\t",
+    "userString": "#czech_vehicles:_105mm_vz_39N_OPG",
+    "icon": "ap",
+    "price": "\t560\t",
+    "kind": "ARMOR_PIERCING",
+    "caliber": "\t105\t",
+    "isTracer": "\ttrue\t",
+    "effects": "mainArmorPiercing",
+    "damage": {
+      "armor": "\t320\t",
+      "devices": "\t150\t"
+    }
+  },
+  "_105mm_vz_42N_OPG": {
+    "id": "\t34\t",
+    "userString": "#czech_vehicles:_105mm_vz_42N_OPG",
+    "icon": "ap_cr",
+    "price": {
+      "#text": "\t12\t",
+      "gold": ""
+    },
+    "kind": "ARMOR_PIERCING_CR",
+    "caliber": "\t105\t",
+    "isTracer": "\ttrue\t",
+    "effects": "\tmainAPCR\t",
+    "damage": {
+      "armor": "\t320\t",
+      "devices": "\t150\t"
+    }
+  },
+  "_105mm_Narazovy": {
+    "id": "\t35\t",
+    "userString": "#czech_vehicles:_105mm_Narazovy",
+    "icon": "he",
+    "price": "\t420\t",
+    "kind": "HIGH_EXPLOSIVE",
+    "caliber": "\t105\t",
+    "explosionRadius": "1.91",
+    "isTracer": "\ttrue\t",
+    "effects": "mainHighExplosive",
+    "damage": {
+      "armor": "\t420\t",
+      "devices": "\t150\t"
     }
   }
 }

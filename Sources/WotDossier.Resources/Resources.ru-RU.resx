@@ -3586,4 +3586,16 @@
   <data name="Column_Header_Defender" xml:space="preserve">
     <value>Защитник</value>
   </data>
+  <data name="Map_105_germany" xml:space="preserve">
+    <value>Берлин</value>
+  </data>
+  <data name="Map_111_paris" xml:space="preserve">
+    <value>Париж</value>
+  </data>
+  <data name="Map_114_czech" xml:space="preserve">
+    <value>Промзона</value>
+  </data>
+  <data name="Map_101_dday" xml:space="preserve">
+    <value>Оверлорд</value>
+  </data>
 </root>

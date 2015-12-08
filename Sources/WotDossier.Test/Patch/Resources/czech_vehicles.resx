@@ -118,25 +118,475 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Chassis_Cz01_Skoda_T40" xml:space="preserve">
-    <value>Škoda T 40</value>
+    <value>Skoda T 40</value>
+  </data>
+  <data name="Chassis_Cz02_TVP_T50" xml:space="preserve">
+    <value>Škoda T 50 (1949)</value>
+  </data>
+  <data name="Chassis_Cz02_TVP_T50_2" xml:space="preserve">
+    <value>Škoda T 50 (1950)</value>
+  </data>
+  <data name="Chassis_Cz03_LT_vz35" xml:space="preserve">
+    <value>LT vz. 35</value>
+  </data>
+  <data name="Chassis_Cz03_LT_vz35_2" xml:space="preserve">
+    <value>T-11</value>
+  </data>
+  <data name="Chassis_Cz04_T50_51" xml:space="preserve">
+    <value>TVP T 50/51</value>
+  </data>
+  <data name="Chassis_Cz05_T34_100" xml:space="preserve">
+    <value>T-34/85</value>
+  </data>
+  <data name="Chassis_Cz05_T34_100_2" xml:space="preserve">
+    <value>Konštrukta T-34/100</value>
+  </data>
+  <data name="Chassis_Cz06_Kolohousenka" xml:space="preserve">
+    <value>Kolohousenka KH-50</value>
+  </data>
+  <data name="Chassis_Cz07_TVP_46" xml:space="preserve">
+    <value>TVP VTU Koncept</value>
+  </data>
+  <data name="Chassis_Cz07_TVP_46_2" xml:space="preserve">
+    <value>T 40</value>
+  </data>
+  <data name="Chassis_Cz08_T_25" xml:space="preserve">
+    <value>T 25 první model</value>
+  </data>
+  <data name="Chassis_Cz08_T_25_2" xml:space="preserve">
+    <value>T 25 druhý model</value>
+  </data>
+  <data name="Chassis_Cz09_T_24" xml:space="preserve">
+    <value>T 24 první model</value>
+  </data>
+  <data name="Chassis_Cz09_T_24_2" xml:space="preserve">
+    <value>T 24 druhý model</value>
+  </data>
+  <data name="Chassis_Cz10_LT_vz38" xml:space="preserve">
+    <value>LT vz. 38</value>
+  </data>
+  <data name="Chassis_Cz10_LT_vz38_2" xml:space="preserve">
+    <value>Pz.Kpfw. 38 (t) Ausf. G</value>
+  </data>
+  <data name="Chassis_Cz11_V_8_H" xml:space="preserve">
+    <value>ST vz. 39</value>
+  </data>
+  <data name="Chassis_Cz11_V_8_H_2" xml:space="preserve">
+    <value>V-8-H-Sv</value>
   </data>
   <data name="Cz01_Skoda_T40" xml:space="preserve">
-    <value>Škoda T 40</value>
+    <value>Skoda T 40</value>
   </data>
   <data name="Cz01_Skoda_T40_descr" xml:space="preserve">
     <value>Development of the T 40 tank was suggested by the Škoda company under the TVP (general purpose tank) program. The vehicle design was developed; however, a prototype was never built.</value>
   </data>
   <data name="Cz01_Skoda_T40_short" xml:space="preserve">
-    <value>Škoda T 40</value>
+    <value>Skoda T 40</value>
+  </data>
+  <data name="Cz02_TVP_T50" xml:space="preserve">
+    <value>Škoda T 50</value>
+  </data>
+  <data name="Cz02_TVP_T50_descr" xml:space="preserve">
+    <value>A further development of the post-war concept for the Czechoslovakian general purpose tank. The Škoda project, developed in 1947, allowed for mounting a more powerful 100 mm gun, based on the Soviet D-10T gun. No prototypes were manufactured.</value>
+  </data>
+  <data name="Cz02_TVP_T50_short" xml:space="preserve">
+    <value>Škoda T 50</value>
+  </data>
+  <data name="Cz03_LT_vz35" xml:space="preserve">
+    <value>LT vz. 35</value>
+  </data>
+  <data name="Cz03_LT_vz35_descr" xml:space="preserve">
+    <value>Developed by the Škoda company. The vehicle saw service in the Czechoslovakian army as an infantry support vehicle. From 1936 through 1937, 298 vehicles were manufactured.</value>
+  </data>
+  <data name="Cz03_LT_vz35_short" xml:space="preserve">
+    <value>LT vz. 35</value>
+  </data>
+  <data name="Cz04_T50_51" xml:space="preserve">
+    <value>TVP T 50/51</value>
+  </data>
+  <data name="Cz04_T50_51_descr" xml:space="preserve">
+    <value>A joint project by Škoda and ČKD. Discussions to determine the tank’s characteristics started on January 14, 1950, but the project was discontinued on March 4, 1950 by the Czechoslovakian Ministry of Defense. No prototypes were manufactured. Existed only in blueprints.</value>
+  </data>
+  <data name="Cz04_T50_51_short" xml:space="preserve">
+    <value>TVP T 50/51</value>
+  </data>
+  <data name="Cz05_T34_100" xml:space="preserve">
+    <value>Konštrukta T-34/100</value>
+  </data>
+  <data name="Cz05_T34_100_descr" xml:space="preserve">
+    <value>Development project of the Soviet T-34-85 tank, proposed in April 1954. The Czechoslovakian variant of the vehicle was to receive a 100 mm gun and an enlarged turret. Production was planned to start in 1955; however, the work never started.</value>
+  </data>
+  <data name="Cz05_T34_100_short" xml:space="preserve">
+    <value>T-34/100</value>
+  </data>
+  <data name="Cz06_Kolohousenka" xml:space="preserve">
+    <value>Kolohousenka</value>
+  </data>
+  <data name="Cz06_Kolohousenka_descr" xml:space="preserve">
+    <value>One of the first representatives of Czechoslovakian armored vehicles. This light wheeled caterpillar tank was developed in the late 1920s based on the suspension of the Hanomag WD-50 tractor. The vehicle never saw service because it was deemed obsolete at the end of its development. Several vehicles, of three modifications, were manufactured; three of them were supplied to Italy and the U.S.S.R. One of the manufactured vehicles was used for training purposes until 1935.</value>
+  </data>
+  <data name="Cz06_Kolohousenka_short" xml:space="preserve">
+    <value>K-housenka</value>
+  </data>
+  <data name="Cz07_TVP_46" xml:space="preserve">
+    <value>TVP VTU Koncept</value>
+  </data>
+  <data name="Cz07_TVP_46_descr" xml:space="preserve">
+    <value>A medium tank project, proposed by the Škoda company as part of the general purpose vehicle concept developed in Czechoslovakia. No prototypes were manufactured.</value>
+  </data>
+  <data name="Cz07_TVP_46_short" xml:space="preserve">
+    <value>TVP VTU</value>
+  </data>
+  <data name="Cz08_T_25" xml:space="preserve">
+    <value>Škoda T 25</value>
+  </data>
+  <data name="Cz08_T_25_descr" xml:space="preserve">
+    <value>A further development of the medium T-24 tank, this vehicle was developed for the German Army in 1942. The project was deemed outdated. No prototypes were manufactured.</value>
+  </data>
+  <data name="Cz08_T_25_short" xml:space="preserve">
+    <value>Škoda T 25</value>
+  </data>
+  <data name="Cz09_T_24" xml:space="preserve">
+    <value>Škoda T 24</value>
+  </data>
+  <data name="Cz09_T_24_descr" xml:space="preserve">
+    <value>Developed in occupied Czechoslovakia for the Wehrmacht in 1941. The project featured sloped armor plates and enhanced armament based on the Soviet Т-34. The project was deemed outdated. No prototypes were manufactured.</value>
+  </data>
+  <data name="Cz09_T_24_short" xml:space="preserve">
+    <value>Škoda T 24</value>
+  </data>
+  <data name="Cz10_LT_vz38" xml:space="preserve">
+    <value>LT vz. 38</value>
+  </data>
+  <data name="Cz10_LT_vz38_descr" xml:space="preserve">
+    <value>Developed by the ČKD design group in 1938, this light tank saw service in the Wehrmacht under the designation Pz.Kpfw. 38 (t). It is considered to be the best Czechoslovakian vehicle: a total of 1,400 tanks of eight modifications were produced.</value>
+  </data>
+  <data name="Cz10_LT_vz38_short" xml:space="preserve">
+    <value>LT vz. 38</value>
+  </data>
+  <data name="Cz11_V_8_H" xml:space="preserve">
+    <value>ST vz. 39</value>
+  </data>
+  <data name="Cz11_V_8_H_descr" xml:space="preserve">
+    <value>Developed at the end of the 1930s as a further development of the LT vz. 35. Two prototypes were manufactured. However, the trials revealed multiple faults, and the vehicle never entered mass production.</value>
+  </data>
+  <data name="Cz11_V_8_H_short" xml:space="preserve">
+    <value>ST vz. 39</value>
   </data>
   <data name="Fu7A" xml:space="preserve">
-    <value>Fu 7 SE 20 U</value>
+    <value>Radiostanice Fu 7 upravená</value>
+  </data>
+  <data name="Hanomag_WD_50PS" xml:space="preserve">
+    <value>Hanomag WD-50PS</value>
+  </data>
+  <data name="Praga_AXK" xml:space="preserve">
+    <value>Praga AXK</value>
+  </data>
+  <data name="Praga_NR" xml:space="preserve">
+    <value>Praga NR</value>
+  </data>
+  <data name="Praga_TNHPS" xml:space="preserve">
+    <value>Praga TNHPS</value>
+  </data>
+  <data name="Praga_TNHPS_II" xml:space="preserve">
+    <value>Praga TNHPS/II</value>
+  </data>
+  <data name="Praga_TNHPS_dvojkarb" xml:space="preserve">
+    <value>Praga TNHPS (dvojkarb.)</value>
+  </data>
+  <data name="Praga_V_8_H" xml:space="preserve">
+    <value>Praga V-8-H</value>
+  </data>
+  <data name="Praga_V_8_H_Sv" xml:space="preserve">
+    <value>Praga V-8-H-Sv</value>
+  </data>
+  <data name="Radiostanice_9R" xml:space="preserve">
+    <value>Radiostanice 9R</value>
+  </data>
+  <data name="Radiostanice_9RM" xml:space="preserve">
+    <value>Radiostanice 9RM</value>
+  </data>
+  <data name="Radiostanice_Fu_12" xml:space="preserve">
+    <value>Radiostanice Fu 12</value>
+  </data>
+  <data name="Radiostanice_Fu_7" xml:space="preserve">
+    <value>Radiostanice Fu 7</value>
+  </data>
+  <data name="Radiostanice_RM_31T" xml:space="preserve">
+    <value>Radiostanice RM-31T</value>
+  </data>
+  <data name="Radiostanice_RM_31T_A" xml:space="preserve">
+    <value>Radiostanice RM-31T</value>
+  </data>
+  <data name="Radiostanice_R_113" xml:space="preserve">
+    <value>Radiostanice R-113</value>
+  </data>
+  <data name="Radiostanice_vz_29" xml:space="preserve">
+    <value>Radiostanice vz. 29</value>
+  </data>
+  <data name="Radiostanice_vz_35" xml:space="preserve">
+    <value>Radiostanice vz. 35</value>
+  </data>
+  <data name="Radiostanice_vz_37" xml:space="preserve">
+    <value>Radiostanice vz. 37</value>
   </data>
   <data name="Skoda_16_ADH_140" xml:space="preserve">
     <value>Škoda 16 ADH 140</value>
   </data>
+  <data name="Skoda_16_ADH_140_A" xml:space="preserve">
+    <value>Škoda 16 ADH 140</value>
+  </data>
+  <data name="Skoda_16_AH_145" xml:space="preserve">
+    <value>Škoda 16 AH 145</value>
+  </data>
+  <data name="Skoda_AHK" xml:space="preserve">
+    <value>Škoda AHK</value>
+  </data>
+  <data name="Skoda_T_11_0" xml:space="preserve">
+    <value>Škoda T-11/0</value>
+  </data>
+  <data name="Skoda_T_11_2" xml:space="preserve">
+    <value>Škoda T-11/2</value>
+  </data>
+  <data name="Skoda_V12_16_2_liter" xml:space="preserve">
+    <value>Škoda V12 16.2 liter</value>
+  </data>
+  <data name="Skoda_V12_19_8_liter_450" xml:space="preserve">
+    <value>Škoda V12 19.8 liter (450)</value>
+  </data>
+  <data name="Skoda_V12_19_8_liter_500" xml:space="preserve">
+    <value>Škoda V12 19.8 liter (500)</value>
+  </data>
+  <data name="Skoda_V16_diesel_600" xml:space="preserve">
+    <value>Škoda 16 cylinder diesel (600)</value>
+  </data>
+  <data name="Skoda_V16_diesel_660" xml:space="preserve">
+    <value>Škoda 16 cylinder diesel (660)</value>
+  </data>
   <data name="Turret_1_Cz01_Skoda_T40" xml:space="preserve">
-    <value>Škoda T 40</value>
+    <value>Skoda T 40</value>
+  </data>
+  <data name="Turret_1_Cz02_TVP_T50" xml:space="preserve">
+    <value>Škoda T 50 (1949)</value>
+  </data>
+  <data name="Turret_1_Cz03_LT_vz35" xml:space="preserve">
+    <value>LT vz. 35</value>
+  </data>
+  <data name="Turret_1_Cz04_T50_51" xml:space="preserve">
+    <value>TVP T 50/51</value>
+  </data>
+  <data name="Turret_1_Cz05_T34_100" xml:space="preserve">
+    <value>Konštrukta T-34/100 varianta II</value>
+  </data>
+  <data name="Turret_1_Cz06_Kolohousenka" xml:space="preserve">
+    <value>Kolohousenka KH-70</value>
+  </data>
+  <data name="Turret_1_Cz07_TVP_46" xml:space="preserve">
+    <value>TVP VTU Koncept</value>
+  </data>
+  <data name="Turret_1_Cz08_T_25" xml:space="preserve">
+    <value>T 25 první model</value>
+  </data>
+  <data name="Turret_1_Cz09_T_24" xml:space="preserve">
+    <value>T 24 první model</value>
+  </data>
+  <data name="Turret_1_Cz10_LT_vz38" xml:space="preserve">
+    <value>LT vz. 38</value>
+  </data>
+  <data name="Turret_1_Cz11_V_8_H" xml:space="preserve">
+    <value>ST vz. 39</value>
+  </data>
+  <data name="Turret_2_Cz02_TVP_T50" xml:space="preserve">
+    <value>Škoda T 50 (1950)</value>
+  </data>
+  <data name="Turret_2_Cz03_LT_vz35" xml:space="preserve">
+    <value>T-11</value>
+  </data>
+  <data name="Turret_2_Cz05_T34_100" xml:space="preserve">
+    <value>Konštrukta T-34/100 varianta I</value>
+  </data>
+  <data name="Turret_2_Cz07_TVP_46" xml:space="preserve">
+    <value>T 40</value>
+  </data>
+  <data name="Turret_2_Cz08_T_25" xml:space="preserve">
+    <value>T 25 druhý model</value>
+  </data>
+  <data name="Turret_2_Cz09_T_24" xml:space="preserve">
+    <value>T 24 druhý model</value>
+  </data>
+  <data name="Turret_2_Cz10_LT_vz38" xml:space="preserve">
+    <value>Pz.Kpfw. 38 (t) Ausf. G</value>
+  </data>
+  <data name="Turret_2_Cz11_V_8_H" xml:space="preserve">
+    <value>V-8-H-Sv</value>
+  </data>
+  <data name="V_2_34" xml:space="preserve">
+    <value>V-2-34</value>
+  </data>
+  <data name="V_2_34M" xml:space="preserve">
+    <value>V-2-34M</value>
+  </data>
+  <data name="_100mm_A20" xml:space="preserve">
+    <value>100 mm A20</value>
+  </data>
+  <data name="_100mm_AK1" xml:space="preserve">
+    <value>100 mm AK1</value>
+  </data>
+  <data name="_100mm_JOF" xml:space="preserve">
+    <value>JOF</value>
+  </data>
+  <data name="_100mm_JPSv" xml:space="preserve">
+    <value>JPSv</value>
+  </data>
+  <data name="_100mm_JPrSv" xml:space="preserve">
+    <value>JPrSv</value>
+  </data>
+  <data name="_100mm_Narazovy_vz_49" xml:space="preserve">
+    <value>Nárazový vz. 49</value>
+  </data>
+  <data name="_100mm_Narazovy_vz_50" xml:space="preserve">
+    <value>Nárazový vz. 50</value>
+  </data>
+  <data name="_100mm_Prupalny_vz_50" xml:space="preserve">
+    <value>Průpalný vz. 50</value>
+  </data>
+  <data name="_100mm_Prurazny_vz_49" xml:space="preserve">
+    <value>Průrazný vz. 49</value>
+  </data>
+  <data name="_100mm_Prurazny_vz_49_s_oc_jadrem" xml:space="preserve">
+    <value>Průrazný vz. 49 (s jádrem)</value>
+  </data>
+  <data name="_100mm_Prurazny_vz_50" xml:space="preserve">
+    <value>Průrazný vz. 50</value>
+  </data>
+  <data name="_100mm_R11" xml:space="preserve">
+    <value>100 mm R11</value>
+  </data>
+  <data name="_100mm_vz_44S" xml:space="preserve">
+    <value>100 mm vz. 44S</value>
+  </data>
+  <data name="_105mm_Narazovy" xml:space="preserve">
+    <value>Nárazový</value>
+  </data>
+  <data name="_105mm_vz_39N" xml:space="preserve">
+    <value>10,5 cm vz. 39N</value>
+  </data>
+  <data name="_105mm_vz_39N_OPG" xml:space="preserve">
+    <value>Vz. 39N OPG</value>
+  </data>
+  <data name="_105mm_vz_42N_OPG" xml:space="preserve">
+    <value>Vz. 42N OPG</value>
+  </data>
+  <data name="_37mm_Narazovy_vz_28" xml:space="preserve">
+    <value>Nárazový vz. 28</value>
+  </data>
+  <data name="_37mm_Narazovy_vz_34" xml:space="preserve">
+    <value>Nárazový vz. 34</value>
+  </data>
+  <data name="_37mm_Narazovy_vz_47" xml:space="preserve">
+    <value>Nárazový vz. 47</value>
+  </data>
+  <data name="_37mm_Pechotni_delo_Skoda_L_27" xml:space="preserve">
+    <value>37 mm Pěchotní dělo Škoda L/27</value>
+  </data>
+  <data name="_37mm_Prurazny_vz_18" xml:space="preserve">
+    <value>Průrazný vz. 18</value>
+  </data>
+  <data name="_37mm_Prurazny_vz_28" xml:space="preserve">
+    <value>Průrazný vz. 28</value>
+  </data>
+  <data name="_37mm_Prurazny_vz_34" xml:space="preserve">
+    <value>Průrazný vz. 34</value>
+  </data>
+  <data name="_37mm_Prurazny_vz_37" xml:space="preserve">
+    <value>Průrazný vz. 37</value>
+  </data>
+  <data name="_37mm_Prurazny_vz_40_s_oc_jadrem" xml:space="preserve">
+    <value>Průrazný vz. 40 (s oc. jádrem)</value>
+  </data>
+  <data name="_37mm_Prurazny_vz_40_s_wolf_jadrem" xml:space="preserve">
+    <value>Průrazný vz. 40 (s wolf. jádrem)</value>
+  </data>
+  <data name="_37mm_Prurazny_vz_47" xml:space="preserve">
+    <value>Průrazný vz. 47</value>
+  </data>
+  <data name="_37mm_Prurazny_vz_47_s_wolf_jadrem" xml:space="preserve">
+    <value>Průrazný vz. 47 (s wolf. jádrem)</value>
+  </data>
+  <data name="_37mm_Skoda_A23" xml:space="preserve">
+    <value>37 mm Škoda A23</value>
+  </data>
+  <data name="_37mm_Skoda_A3" xml:space="preserve">
+    <value>37 mm Škoda A3</value>
+  </data>
+  <data name="_37mm_Skoda_A7" xml:space="preserve">
+    <value>37 mm Škoda A7</value>
+  </data>
+  <data name="_37mm_Skoda_A8" xml:space="preserve">
+    <value>37 mm Škoda A8</value>
+  </data>
+  <data name="_47mm_Narazovy" xml:space="preserve">
+    <value>Nárazový</value>
+  </data>
+  <data name="_47mm_Narazovy_vz_36" xml:space="preserve">
+    <value>Nárazový vz. 36</value>
+  </data>
+  <data name="_47mm_Prurazny" xml:space="preserve">
+    <value>Průrazný</value>
+  </data>
+  <data name="_47mm_Prurazny_s_oc_jadrem" xml:space="preserve">
+    <value>Průrazný (s oc. jádrem)</value>
+  </data>
+  <data name="_47mm_Prurazny_vz_36" xml:space="preserve">
+    <value>Průrazný vz. 36</value>
+  </data>
+  <data name="_47mm_Prurazny_vz_40_s_wolf_jadrem" xml:space="preserve">
+    <value>Průrazný vz. 40 (s wolf. jádrem)</value>
+  </data>
+  <data name="_47mm_Rychlopalne_delo_Vickers_L_20" xml:space="preserve">
+    <value>47 mm Rychlopalné dělo Vickers L/20</value>
+  </data>
+  <data name="_47mm_Skoda_A11" xml:space="preserve">
+    <value>47 mm Škoda A11</value>
+  </data>
+  <data name="_47mm_Skoda_A11_vylepseny" xml:space="preserve">
+    <value>47 mm Škoda A11 vylepšený</value>
+  </data>
+  <data name="_47mm_Skoda_A9" xml:space="preserve">
+    <value>47 mm Škoda A9</value>
+  </data>
+  <data name="_75mm_Narazovy_vz_42" xml:space="preserve">
+    <value>Nárazový vz. 42</value>
+  </data>
+  <data name="_75mm_Prurazny_vz_42" xml:space="preserve">
+    <value>Průrazný vz. 42</value>
+  </data>
+  <data name="_75mm_Prurazny_vz_42_s_wolf_jadrem" xml:space="preserve">
+    <value>Průrazný vz. 42 (s wolf. jádrem)</value>
+  </data>
+  <data name="_75mm_Skoda_A13" xml:space="preserve">
+    <value>75 mm Škoda A13</value>
+  </data>
+  <data name="_75mm_Skoda_A18" xml:space="preserve">
+    <value>75 mm Škoda A18</value>
+  </data>
+  <data name="_75mm_Skoda_A18_s_automatickym_nabijenim" xml:space="preserve">
+    <value>75 mm Škoda A18 (s automatickým nabíjením)</value>
+  </data>
+  <data name="_75mm_Skoda_A18_s_automatickym_nabijenim_short" xml:space="preserve">
+    <value>75 mm Škoda A18 (auto)</value>
+  </data>
+  <data name="_85mm_vz_44S" xml:space="preserve">
+    <value>85 mm vz. 44S</value>
+  </data>
+  <data name="_85mm_vz_44_Narazovy" xml:space="preserve">
+    <value>Vz. 44 Nárazový</value>
+  </data>
+  <data name="_85mm_vz_44_Protipancerovy" xml:space="preserve">
+    <value>Vz. 44 Protipancéřový</value>
+  </data>
+  <data name="_85mm_vz_44_Protipancerovy_jadrovy" xml:space="preserve">
+    <value>Vz. 44 Protipancéřový jádrový</value>
   </data>
   <data name="_88mm_AP_Vz_39N_OPG" xml:space="preserve">
     <value>Vz. 39N OPG</value>
@@ -147,7 +597,22 @@
   <data name="_88mm_HE_narazovy" xml:space="preserve">
     <value>Nárazový</value>
   </data>
+  <data name="_88mm_Narazovy" xml:space="preserve">
+    <value>Nárazový</value>
+  </data>
+  <data name="_88mm_Vz_37N" xml:space="preserve">
+    <value>8,8 cm vz. 37N</value>
+  </data>
   <data name="_88mm_Vz_37N_A" xml:space="preserve">
     <value>8,8 cm Vz. 37N</value>
+  </data>
+  <data name="_88mm_vz_41N" xml:space="preserve">
+    <value>8,8 cm vz. 41N</value>
+  </data>
+  <data name="_88mm_vz_41N_OPG" xml:space="preserve">
+    <value>Vz. 41N OPG</value>
+  </data>
+  <data name="_88mm_vz_42N_OPG" xml:space="preserve">
+    <value>Vz. 42N OPG</value>
   </data>
 </root>

@@ -280,6 +280,9 @@
   <data name="Chassis_G119_Panzer58" xml:space="preserve">
     <value>Panzer 58</value>
   </data>
+  <data name="Chassis_G119_Pz58_Mutz" xml:space="preserve">
+    <value>Panzer 58 Mutz</value>
+  </data>
   <data name="Chassis_G58_VK4502P" xml:space="preserve">
     <value>VK 45.02(P) Ausf. B</value>
   </data>
@@ -474,10 +477,10 @@ verstärkteketten</value>
     <value>Pz.Sfl. für 12.8 cm K. 40</value>
   </data>
   <data name="Chassis_T-15" xml:space="preserve">
-    <value>T-15</value>
+    <value>Pz.Kpfw. T 15</value>
   </data>
   <data name="Chassis_T-25" xml:space="preserve">
-    <value>T-25</value>
+    <value>Pz.Kpfw. T 25</value>
   </data>
   <data name="Chassis_VK2001DB" xml:space="preserve">
     <value>VK 20.01 (III)</value>
@@ -852,6 +855,15 @@ verstärkteketten</value>
   </data>
   <data name="G119_Panzer58_short" xml:space="preserve">
     <value>Pz. 58</value>
+  </data>
+  <data name="G119_Pz58_Mutz" xml:space="preserve">
+    <value>Panzer 58 Mutz</value>
+  </data>
+  <data name="G119_Pz58_Mutz_descr" xml:space="preserve">
+    <value>Developed in 1953 in Switzerland, the first prototype of this tank featured a 90 mm gun. A second prototype with a British 20-pounder gun was built later. In the end, a series of 10 vehicles, featuring 105 mm guns, were produced and remained in service until 1964. After this, the vehicles were used as a basis for the Panzer 61. The only Panzer 58 that survives today features a 20-pounder gun and is currently located in the tank museum in Thun, Bern.</value>
+  </data>
+  <data name="G119_Pz58_Mutz_short" xml:space="preserve">
+    <value>Pz. 58 Mutz</value>
   </data>
   <data name="G20_Marder_II" xml:space="preserve">
     <value>Marder II</value>
@@ -1524,7 +1536,7 @@ Typ 180/2</value>
     <value>Praga Ausf. IV</value>
   </data>
   <data name="Praga_C9" xml:space="preserve">
-    <value>Praga C9</value>
+    <value>Škoda V12 19.8 liter 450</value>
   </data>
   <data name="Praga_EPA" xml:space="preserve">
     <value>Praga EPA</value>
@@ -1766,7 +1778,7 @@ Ausf. L</value>
     <value>Pz.Kpfw. II Luchs</value>
   </data>
   <data name="PzII_Luchs_descr" xml:space="preserve">
-    <value>Produced from September 1943 through January 1944, with a total of 100 vehicles completed. Another four vehicles were converted from the prototypes. This vehicle remained in service until the end of the war.</value>
+    <value>As compared to the Pz.Kpfw. II Ausf. C, the vehicle featured a new hull and turret, as well as a chassis with a staggered arrangement of roadwheels. The reconnaissance tank had strong characteristics, but only 131 vehicles of the L modification were built, after manufacture proved to be too expensive.</value>
   </data>
   <data name="PzII_Luchs_short" xml:space="preserve">
     <value>Luchs</value>
@@ -2192,22 +2204,22 @@ verstärkteketten</value>
     <value>Leichttraktor</value>
   </data>
   <data name="T-15" xml:space="preserve">
-    <value>T-15</value>
+    <value>Pz.Kpfw. T 15</value>
   </data>
   <data name="T-15_descr" xml:space="preserve">
     <value>This experimental light tank was developed at the Škoda factory in 1941–1943, with a total of five prototypes manufactured. The vehicle was never mass-produced, nor saw service.</value>
   </data>
   <data name="T-15_short" xml:space="preserve">
-    <value>T-15</value>
+    <value>Pz.Kpfw. T 15</value>
   </data>
   <data name="T-25" xml:space="preserve">
-    <value>T-25</value>
+    <value>Pz.Kpfw. T 25</value>
   </data>
   <data name="T-25_descr" xml:space="preserve">
     <value>The vehicle was developed by the Škoda company under the Panzer Development Program initiated by the Heer (German Army land forces). The T-25 existed only in blueprints.</value>
   </data>
   <data name="T-25_short" xml:space="preserve">
-    <value>T-25</value>
+    <value>Pz.Kpfw. T 25</value>
   </data>
   <data name="T_Bison" xml:space="preserve">
     <value>Sturmpanzer I Bison</value>
@@ -2308,6 +2320,9 @@ Ausf. E</value>
   <data name="Turret_1_G119_Panzer58" xml:space="preserve">
     <value>Panzer 58</value>
   </data>
+  <data name="Turret_1_G119_Pz58_Mutz" xml:space="preserve">
+    <value>Panzer 58 Mutz</value>
+  </data>
   <data name="Turret_1_G58_VK4502P" xml:space="preserve">
     <value>VK 45.02 (P) Ausf. B</value>
   </data>
@@ -2407,10 +2422,10 @@ Turm Nr. 1</value>
     <value>Pz.Sfl. V</value>
   </data>
   <data name="Turret_1_T-15" xml:space="preserve">
-    <value>T-15</value>
+    <value>Pz.Kpfw. T 15</value>
   </data>
   <data name="Turret_1_T-25" xml:space="preserve">
-    <value>T-25</value>
+    <value>Pz.Kpfw. T 25</value>
   </data>
   <data name="Turret_1_VK2001DB" xml:space="preserve">
     <value>VK 20.01 (D)</value>

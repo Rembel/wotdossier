@@ -183,6 +183,16 @@
   <data name="A46_T3_descr" xml:space="preserve">
     <value>Light SPG for infantry and tank support. Developed in 1938 on the M1A3 chassis. Only one prototype was built. The trials demonstrated a number of technical and functional problems, and the vehicle never saw service.</value>
   </data>
+  <data name="A63_M46_Patton_KR" xml:space="preserve">
+    <value>M46 Patton KR</value>
+  </data>
+  <data name="A63_M46_Patton_KR_descr" xml:space="preserve">
+    <value>The first M46 tanks that landed in Korea belonged to the 6th Medium Tank Battalion. The vehicles, known as “Ripper Pattons”, were later allocated to the 8th Army and used by infantry forces as support vehicles. However, in 1950 and 1951, the M46 also saw action in several tank battles. By June 1951, the front line had stabilized and the mobile stage of combat action had finished, so the army started to use the vehicles in an artillery role.
+Along with other U.S. tanks that fought in Korea, M46 tanks were painted with "Tiger Face" markings.</value>
+  </data>
+  <data name="A63_M46_Patton_KR_short" xml:space="preserve">
+    <value>M46 KR</value>
+  </data>
   <data name="A78_M4_Improved" xml:space="preserve">
     <value>M4 Improved</value>
   </data>
@@ -361,6 +371,9 @@ AOI-1490</value>
   </data>
   <data name="Chassis_M46_Patton_2" xml:space="preserve">
     <value>M46T81</value>
+  </data>
+  <data name="Chassis_M46_Patton_KR" xml:space="preserve">
+    <value>M46 Patton KR</value>
   </data>
   <data name="Chassis_M48A1" xml:space="preserve">
     <value>T97E2</value>
@@ -556,11 +569,11 @@ AOSI-895-5</value>
     <value>Continental AV-1790-1</value>
   </data>
   <data name="Continental_AV-1790-1M2" xml:space="preserve">
-    <value>Continental AV-1790-5A</value>
+    <value>Continental AV-1790-5B</value>
   </data>
   <data name="Continental_AV-1790-1M2_short" xml:space="preserve">
     <value>Continental
-AV-1790-5A</value>
+AV-1790-5B</value>
   </data>
   <data name="Continental_AV-1790-1_short" xml:space="preserve">
     <value>Continental
@@ -621,6 +634,13 @@ AVDS-1790-2</value>
   <data name="Continental_AVI-1790-8_short" xml:space="preserve">
     <value>Continental
 AVI-1790-8</value>
+  </data>
+  <data name="Continental_AV_1790_5A" xml:space="preserve">
+    <value>Continental AV-1790-5A</value>
+  </data>
+  <data name="Continental_AV_1790_5A_short" xml:space="preserve">
+    <value>Continental
+AV-1790-5A</value>
   </data>
   <data name="Continental_AV_1790_5C" xml:space="preserve">
     <value>Continental AV-1790-5C</value>
@@ -932,7 +952,7 @@ T-1020-4</value>
     <value>M3 Lee</value>
   </data>
   <data name="M3_Grant_descr" xml:space="preserve">
-    <value>A WWII-era U.S. medium tank. The vehicle was named after the Confederate General of the U.S. Civil War, R. Lee. Also, widely recognized under its U.K. designation, M3 Grant, named after the General of the federal troops W. Grant. M3 was created in 1940 on the basis of the M2 tank, and saw mass production from June 1941 through December 1942. A total of 6,258 M3 tanks of various modifications were produced.</value>
+    <value>A WWII-era U.S. medium tank. The vehicle was named after the Confederate General of the U.S. Civil War, R. Lee. Also, widely recognized under its U.K. designation, M3 Grant, named after the General of the federal troops U. Grant. M3 was created in 1940 on the basis of the M2 tank, and saw mass production from June 1941 through December 1942. A total of 6,258 M3 tanks of various modifications were produced.</value>
   </data>
   <data name="M3_S" xml:space="preserve">
     <value>M3 S</value>
@@ -1379,7 +1399,7 @@ T-1020-4</value>
     <value>T29</value>
   </data>
   <data name="T29_descr" xml:space="preserve">
-    <value>Development of this experimental heavy tank started in September 1944. The construction and trials of the prototypes continued until October 1947. However, the T29 did not enter mass production.</value>
+    <value>Development of this experimental heavy tank started in 1944. The prototype was built in 1947. The vehicle featured the 105 mm T5E1 gun. After the war, the mass production of heavy tanks was deemed unreasonable, and only a few prototypes of this vehicle were built.</value>
   </data>
   <data name="T2D1" xml:space="preserve">
     <value>T2D1</value>
@@ -1436,7 +1456,7 @@ T-1020-4</value>
     <value>T30D1</value>
   </data>
   <data name="T30_descr" xml:space="preserve">
-    <value>The T30D1 was closely related to the T29. Both tanks were developed at the same time. The prototypes underwent trials until 1948. Never saw mass production.</value>
+    <value>Experimental heavy tank. The vehicle was an early version of the T29 with enhanced armament. Two prototypes were built in 1945–1947 and underwent trials at the Aberdeen Proving Ground in 1948. Never entered mass production or saw service.</value>
   </data>
   <data name="T32" xml:space="preserve">
     <value>T32</value>
@@ -1490,7 +1510,7 @@ T-1020-4</value>
     <value>T54E1</value>
   </data>
   <data name="T54E1_descr" xml:space="preserve">
-    <value>A medium tank with an oscillating turret and automatic loading. Developed on the basis of the M48 tank in mid-50s. Two prototypes were built. However, during trials automatic loading proved faulty and the development was discontinued in 1957.</value>
+    <value>A medium tank with an oscillating turret and automatic loading. Developed on the basis of the M48 tank in the mid-50s. Two prototypes were built. However, during trials automatic loading proved faulty and the development was discontinued in 1957.</value>
   </data>
   <data name="T57" xml:space="preserve">
     <value>T57</value>
@@ -1499,7 +1519,7 @@ T-1020-4</value>
     <value>T57 Heavy Tank</value>
   </data>
   <data name="T57_58_descr" xml:space="preserve">
-    <value>A project of a heavy tank with an oscillating turret and automatic loading. Developed from 1951. Experimental turrets for 120-mm and 155-mm guns were manufactured by 1957. However, the project was deemed unsuccessful and the development was discontinued.</value>
+    <value>A project of a heavy tank with an oscillating turret and automatic loading. Developed from 1951. Experimental turrets for 120 mm and 155 mm guns were manufactured by 1957. However, the project was deemed unsuccessful and development was discontinued.</value>
   </data>
   <data name="T57_58_short" xml:space="preserve">
     <value>T57 Heavy</value>
@@ -1666,6 +1686,9 @@ T-1020-4</value>
   <data name="Turret_1_M46_Patton" xml:space="preserve">
     <value>M46M73</value>
   </data>
+  <data name="Turret_1_M46_Patton_KR" xml:space="preserve">
+    <value>M46 Patton KR</value>
+  </data>
   <data name="Turret_1_M48A1" xml:space="preserve">
     <value>M87</value>
   </data>
@@ -1782,6 +1805,9 @@ T-1020-4</value>
   </data>
   <data name="Turret_2_M41_Bulldog" xml:space="preserve">
     <value>M41A1</value>
+  </data>
+  <data name="Turret_2_M44" xml:space="preserve">
+    <value>M44</value>
   </data>
   <data name="Turret_2_M46_Patton" xml:space="preserve">
     <value>M46T119</value>
@@ -2450,6 +2476,9 @@ automatic cannon</value>
   <data name="_90mm_AP_M77" xml:space="preserve">
     <value>AP M77</value>
   </data>
+  <data name="_90mm_AP_T33" xml:space="preserve">
+    <value>AP T33</value>
+  </data>
   <data name="_90mm_AT_Gun_M3" xml:space="preserve">
     <value>90 mm AT Gun M3</value>
   </data>
@@ -2461,6 +2490,9 @@ automatic cannon</value>
   </data>
   <data name="_90mm_Gun_M36" xml:space="preserve">
     <value>90 mm Gun M36</value>
+  </data>
+  <data name="_90mm_Gun_M3A1" xml:space="preserve">
+    <value>90 mm Gun M3A1</value>
   </data>
   <data name="_90mm_Gun_M41" xml:space="preserve">
     <value>90 mm Gun M41</value>

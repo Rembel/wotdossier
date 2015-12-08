@@ -151,7 +151,7 @@
     <value>WZ-111</value>
   </data>
   <data name="Ch03_WZ-111_descr" xml:space="preserve">
-    <value>Influenced by the Soviet tank T-10 model, this heavy tank was prototyped in the early 1960s on the basis of the Soviet IS-2 and IS-3. The trials revealed multiple faults, and the development of the vehicle was discontinued in 1964.</value>
+    <value>Development of the heavy tank prototype on the basis of the Soviet IS-2 and IS-3 began in the early 1960s under the influence of the T-10. The vehicle was supposed to modernize the armored forces of the PLA. The trials revealed multiple faults, and the development of the vehicle was discontinued in 1964.</value>
   </data>
   <data name="Ch04_T34_1" xml:space="preserve">
     <value>T-34-1</value>
@@ -196,7 +196,7 @@
     <value>Type 2597 Chi-Ha</value>
   </data>
   <data name="Ch08_Type97_Chi_Ha_descr" xml:space="preserve">
-    <value>Developed by Mitsubishi from 1935 to 1937. The vehicle was mass-produced from 1938 through 1942, the last two years alongside an upgraded Shinhoto Chi-Ha, with a total of 2,880 vehicles of both types manufactured. The Chi-Ha and Shinhoto Chi-Ha tanks were widely used by Japanese forces in China, and after Japan capitulation these vehicles were used by both the PLA and Kuomintang forces in the Civil War of 1946.</value>
+    <value>Developed by Mitsubishi from 1935 through 1937. The vehicle was mass-produced from 1938 through 1942, alongside an upgraded Shinhoto Chi-Ha for the last two years, with a total of 1,220 vehicles of both types manufactured. The Chi-Ha and Shinhoto Chi-Ha tanks were widely used by Japanese forces in China, and after Japan capitulation, these vehicles were used by both the PLA and Kuomintang forces in the Civil War of 1946.</value>
   </data>
   <data name="Ch08_Type97_Chi_Ha_short" xml:space="preserve">
     <value>Chi-Ha</value>
@@ -244,7 +244,7 @@
     <value>WZ-131</value>
   </data>
   <data name="Ch16_WZ_131_descr" xml:space="preserve">
-    <value>In 1957, development began of a lightweight version of the Type 59 tank. The new tank was designed to fight in the mountainous and boggy terrain of South China. The first prototype was built in 1962. Later the vehicle underwent modernization.</value>
+    <value>Development of a lightweight version of the Type 59 tank started in 1957. The new tank was designed to fight in the mountainous and boggy terrain of South China. The first prototype was built in 1962. Later, the vehicle underwent several stages of modernization.</value>
   </data>
   <data name="Ch17_WZ131_1_WZ132" xml:space="preserve">
     <value>WZ-132</value>

@@ -5133,6 +5133,15 @@ namespace WotDossier.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Overlord.
+        /// </summary>
+        public static string Map_101_dday {
+            get {
+                return ResourceManager.GetString("Map_101_dday", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Tank Rally.
         /// </summary>
         public static string Map_102_deathtrack {
@@ -5151,6 +5160,15 @@ namespace WotDossier.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Berlin.
+        /// </summary>
+        public static string Map_105_germany {
+            get {
+                return ResourceManager.GetString("Map_105_germany", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Winter Showdown.
         /// </summary>
         public static string Map_109_battlecity_ny {
@@ -5165,6 +5183,24 @@ namespace WotDossier.Resources {
         public static string Map_11_murovanka {
             get {
                 return ResourceManager.GetString("Map_11_murovanka", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Paris.
+        /// </summary>
+        public static string Map_111_paris {
+            get {
+                return ResourceManager.GetString("Map_111_paris", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Pilsen.
+        /// </summary>
+        public static string Map_114_czech {
+            get {
+                return ResourceManager.GetString("Map_114_czech", resourceCulture);
             }
         }
         

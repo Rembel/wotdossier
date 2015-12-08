@@ -346,7 +346,7 @@
     <value>Type 95 Ha-Go</value>
   </data>
   <data name="Ha_Go_descr" xml:space="preserve">
-    <value>Japanese light tank also known as the Type 95. Developed from 1933 through 1935. A total of 2,378 vehicles were mass-produced from 1936 through 1943.</value>
+    <value>Japanese light tank also known as the Type 95. Developed from 1933 through 1935 as a cavalry support vehicle. However, the tank was often used to support infantry. The first prototype was built by Mitsubishi. The vehicle entered mass production in 1936, and a total of 2,378 vehicles were manufactured through 1943.</value>
   </data>
   <data name="Ha_Go_short" xml:space="preserve">
     <value>Ha-Go</value>
@@ -472,7 +472,7 @@
     <value>Ke-Ni Otsu</value>
   </data>
   <data name="Ke_Ni_descr" xml:space="preserve">
-    <value>A further Ha-Go modification developed by Hino Jidosha Kogyo. Despite the improved dynamic charcteristics,  the tank did not replace the Ha-Go. A total of about 100 tanks were manufactured by Mitsubishi and Hino.</value>
+    <value>A further modification of the Ha-Go developed by Hino Jidosha Kogyo. Despite the improved dynamic characteristics, the tank did not replace the Ha-Go. About 100 tanks were manufactured by Mitsubishi and Hino.</value>
   </data>
   <data name="Ke_Ni_short" xml:space="preserve">
     <value>Ke-Ni</value>

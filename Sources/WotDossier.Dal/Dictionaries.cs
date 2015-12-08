@@ -29,12 +29,13 @@ namespace WotDossier.Dal
         private Dictionary<int, RatingExpectancy> _ratingExpectations;
 
         public static readonly Version VersionAll = new Version("100.0.0.0");
-        public static readonly Version VersionRelease = new Version("0.9.12.0");
-        public static readonly Version VersionTest = new Version("0.9.13.0");
+        public static readonly Version VersionRelease = new Version("0.9.13.0");
+        public static readonly Version VersionTest = new Version("0.9.14.0");
 
         private static readonly List<Version> _versions = new List<Version>
         {
                 VersionRelease,
+                new Version("0.9.12.0"),
                 new Version("0.9.10.0"),
                 new Version("0.9.9.0"),
                 new Version("0.9.8.0"),
@@ -585,173 +586,263 @@ namespace WotDossier.Dal
             }
             else if (iconId == "france_amx_12t")
             {
-                //10.0 replay tank name changed to f15_amx_12t
+                //0.9.12 replay tank name changed to f15_amx_12t
                 return _tanks[40025];
             }
             else if (iconId == "france_amx_ac_mle1946")
             {
-                //10.0 replay tank name changed to f35_amx_ac_mle1946
+                //0.9.12 replay tank name changed to f35_amx_ac_mle1946
                 return _tanks[40042];
             }
             else if (iconId == "germany_pzii")
             {
-                //10.0 replay tank name changed to g06_pzii
+                //0.9.12 replay tank name changed to g06_pzii
                 return _tanks[10008];
             }
             else if (iconId == "germany_bison_i")
             {
-                //10.0 replay tank name changed to g11_bison_i
+                //0.9.12 replay tank name changed to g11_bison_i
                 return _tanks[10011];
             }
             else if (iconId == "germany_pzvib_tiger_ii")
             {
-                //10.0 replay tank name changed to g16_pzvib_tiger_ii
+                //0.9.12 replay tank name changed to g16_pzvib_tiger_ii
                 return _tanks[10020];
             }
             else if (iconId == "germany_grille")
             {
-                //10.0 replay tank name changed to g23_grille
+                //0.9.12 replay tank name changed to g23_grille
                 return _tanks[10022];
             }
             else if (iconId == "germany_wespe")
             {
-                //10.0 replay tank name changed to g19_wespe
+                //0.9.12 replay tank name changed to g19_wespe
                 return _tanks[10023];
             }
             else if (iconId == "germany_pz38_na")
             {
-                //10.0 replay tank name changed to g52_pz38_na
+                //0.9.12 replay tank name changed to g52_pz38_na
                 return _tanks[10032];
             }
             else if (iconId == "germany_marder_iii")
             {
-                //10.0 replay tank name changed to g39_marder_iii
+                //0.9.12 replay tank name changed to g39_marder_iii
                 return _tanks[10044];
             }
             else if (iconId == "germany_jagdpantherii")
             {
-                //10.0 replay tank name changed to g71_jagdpantherii
+                //0.9.12 replay tank name changed to g71_jagdpantherii
                 return _tanks[10045];
             }
             else if (iconId == "germany_pz_ii_ausfg")
             {
-                //10.0 replay tank name changed to g82_pz_ii_ausfg
+                //0.9.12 replay tank name changed to g82_pz_ii_ausfg
                 return _tanks[10051];
             }
             else if (iconId == "germany_vk2001db")
             {
-                //10.0 replay tank name changed to g86_vk2001db
+                //0.9.12 replay tank name changed to g86_vk2001db
                 return _tanks[10053];
             }
             else if (iconId == "germany_gw_mk_vie")
             {
-                //10.0 replay tank name changed to g93_gw_mk_vie
+                //0.9.12 replay tank name changed to g93_gw_mk_vie
                 return _tanks[10059];
             }
             else if (iconId == "germany_s35_captured")
             {
-                //10.0 replay tank name changed to g34_s35_captured
+                //0.9.12 replay tank name changed to g34_s35_captured
                 return _tanks[10203];
             }
             else if (iconId == "germany_jagdtiger_sdkfz_185")
             {
-                //10.0 replay tank name changed to g65_jagdtiger_sdkfz_185
+                //0.9.12 replay tank name changed to g65_jagdtiger_sdkfz_185
                 return _tanks[10216];
             }
             else if (iconId == "germany_pzvib_tiger_ii_training")
             {
-                //10.0 replay tank name changed to g16_pzvib_tiger_ii_training
+                //0.9.12 replay tank name changed to g16_pzvib_tiger_ii_training
                 return _tanks[10227];
             }
             else if (iconId == "germany_jagdtiger_sdkfz_185_igr")
             {
-                //10.0 replay tank name changed to g65_jagdtiger_sdkfz_185_igr
+                //0.9.12 replay tank name changed to g65_jagdtiger_sdkfz_185_igr
                 return _tanks[10151];
             }
             else if (iconId == "germany_pzvib_tiger_ii_igr")
             {
-                //10.0 replay tank name changed to g16_pzvib_tiger_ii_igr
+                //0.9.12 replay tank name changed to g16_pzvib_tiger_ii_igr
                 return _tanks[10153];
             }
             else if (iconId == "uk_gb25_loyd_carrier")
             {
-                //10.0 replay tank name changed to gb25_loyd_gun_carriage
+                //0.9.12 replay tank name changed to gb25_loyd_gun_carriage
                 return _tanks[50041];
             }
             else if (iconId == "uk_gb70_fv4202_105")
             {
-                //10.0 replay tank name changed to gb86_centurion_action_x
+                //0.9.12 replay tank name changed to gb86_centurion_action_x
                 return _tanks[50028];
             }
             else if (iconId == "usa_m3_stuart")
             {
-                //10.0 replay tank name changed to a03_m3_stuart
+                //0.9.12 replay tank name changed to a03_m3_stuart
                 return _tanks[20001];
             }
             else if (iconId == "usa_t34_hvy")
             {
-                //10.0 replay tank name changed to a13_t34_hvy
+                //0.9.12 replay tank name changed to a13_t34_hvy
                 return _tanks[20011];
             }
             else if (iconId == "usa_m2_med")
             {
-                //10.0 replay tank name changed to a25_m2_med
+                //0.9.12 replay tank name changed to a25_m2_med
                 return _tanks[20019];
             }
             else if (iconId == "usa_m7_med")
             {
-                //10.0 replay tank name changed to a23_m7_med
+                //0.9.12 replay tank name changed to a23_m7_med
                 return _tanks[20021];
             }
             else if (iconId == "usa_t2_med")
             {
-                //10.0 replay tank name changed to a24_t2_med
+                //0.9.12 replay tank name changed to a24_t2_med
                 return _tanks[20022];
             }
             else if (iconId == "usa_t82")
             {
-                //10.0 replay tank name changed to a109_t56_gmc
+                //0.9.12 replay tank name changed to a109_t56_gmc
                 return _tanks[20025];
             }
             else if (iconId == "usa_t18")
             {
-                //10.0 replay tank name changed to a46_t3
+                //0.9.12 replay tank name changed to a46_t3
                 return _tanks[20024];
             }
             else if (iconId == "usa_t57")
             {
-                //10.0 replay tank name changed to a107_t1_hmc
+                //0.9.12 replay tank name changed to a107_t1_hmc
                 return _tanks[20008];
             }
             else if (iconId == "usa_t34_hvy_igr")
             {
-                //10.0 replay tank name changed to a13_t34_hvy_igr
+                //0.9.12 replay tank name changed to a13_t34_hvy_igr
                 return _tanks[20153];
             }
             else if (iconId == "ussr_object_212")
             {
-                //10.0 replay tank name changed to r51_object_212
+                //0.9.12 replay tank name changed to r51_object_212
                 return _tanks[33];
             }
             else if (iconId == "ussr_is8")
             {
-                //10.0 replay tank name changed to r81_is8
+                //0.9.12 replay tank name changed to r81_is8
                 return _tanks[45];
             }
             else if (iconId == "ussr_kv1")
             {
-                //10.0 replay tank name changed to r80_kv1
+                //0.9.12 replay tank name changed to r80_kv1
                 return _tanks[46];
             }
             else if (iconId == "ussr_kv_220")
             {
-                //10.0 replay tank name changed to r38_kv_220
+                //0.9.12 replay tank name changed to r38_kv_220
                 return _tanks[200];
             }
             else if (iconId == "ussr_kv_220_action")
             {
-                //10.0 replay tank name changed to r38_kv_220_action
+                //0.9.12 replay tank name changed to r38_kv_220_action
                 return _tanks[211];
+            }
+            else if (iconId == "france_amx_ac_mle1948")
+            {
+                //0.9.13 replay tank name changed to f36_amx_ac_mle1948
+                return _tanks[40047];
+            }
+            else if (iconId == "france_amx_ac_mle1948_igr")
+            {
+                //0.9.13 replay tank name changed to f36_amx_ac_mle1948_igr
+                return _tanks[40151];
+            }
+            else if (iconId == "germany_pzii_luchs")
+            {
+                //0.9.13 replay tank name changed to g25_pzii_luchs
+                return _tanks[10024];
+            }
+            else if (iconId == "japan_ha_go")
+            {
+                //0.9.13 replay tank name changed to j03_ha_go
+                return _tanks[60003];
+            }
+            else if (iconId == "japan_ke_ni")
+            {
+                //0.9.13 replay tank name changed to j04_ke_ni
+                return _tanks[60009];
+            }
+            else if (iconId == "usa_t30")
+            {
+                //0.9.13 replay tank name changed to a14_t30
+                return _tanks[20010];
+            }
+            else if (iconId == "usa_m7_priest")
+            {
+                //0.9.13 replay tank name changed to a16_m7_priest
+                return _tanks[20014];
+            }
+            else if (iconId == "usa_t29")
+            {
+                //0.9.13 replay tank name changed to a11_t29
+                return _tanks[20015];
+            }
+            else if (iconId == "usa_t54e1")
+            {
+                //0.9.13 replay tank name changed to a89_t54e1
+                return _tanks[20060];
+            }
+            else if (iconId == "usa_t95_e6")
+            {
+                //0.9.13 replay tank name changed to a95_t95_e6
+                return _tanks[20218];
+            }
+            else if (iconId == "usa_t29_igr")
+            {
+                //0.9.13 replay tank name changed to a11_t29_igr
+                return _tanks[20157];
+            }
+            else if (iconId == "ussr_su_152")
+            {
+                //0.9.13 replay tank name changed to r18_su_152
+                return _tanks[9];
+            }
+            else if (iconId == "ussr_su_18")
+            {
+                //0.9.13 replay tank name changed to r16_su_18
+                return _tanks[15];
+            }
+            else if (iconId == "ussr_kv_3")
+            {
+                //0.9.13 replay tank name changed to r39_kv_3
+                return _tanks[23];
+            }
+            else if (iconId == "ussr_kv_5")
+            {
+                //0.9.13 replay tank name changed to r54_kv_5
+                return _tanks[208];
+            }
+            else if (iconId == "ussr_ltp")
+            {
+                //0.9.13 replay tank name changed to r86_ltp
+                return _tanks[221];
+            }
+            else if (iconId == "ussr_su_152_igr")
+            {
+                //0.9.13 replay tank name changed to r18_su_152_igr
+                return _tanks[156];
+            }
+            else if (iconId == "ussr_kv_5_igr")
+            {
+                //0.9.13 replay tank name changed to r54_kv_5_igr
+                return _tanks[157];
             }
             return tankDescription ?? TankDescription.Unknown(playerVehicle);
         }

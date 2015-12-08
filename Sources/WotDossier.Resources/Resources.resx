@@ -3497,4 +3497,16 @@ Date: {Date:dd.MM.yyyy}</value>
   <data name="Column_Header_Defender" xml:space="preserve">
     <value>Defender</value>
   </data>
+  <data name="Map_105_germany" xml:space="preserve">
+    <value>Berlin</value>
+  </data>
+  <data name="Map_111_paris" xml:space="preserve">
+    <value>Paris</value>
+  </data>
+  <data name="Map_114_czech" xml:space="preserve">
+    <value>Pilsen</value>
+  </data>
+  <data name="Map_101_dday" xml:space="preserve">
+    <value>Overlord</value>
+  </data>
 </root>

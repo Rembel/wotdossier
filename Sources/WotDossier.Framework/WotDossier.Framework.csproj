@@ -107,6 +107,7 @@
     <Compile Include="Applications\DispatcherHelper.cs" />
     <Compile Include="Applications\EventToCommand.cs" />
     <Compile Include="Applications\IView.cs" />
+    <Compile Include="Applications\ListItem.cs" />
     <Compile Include="Applications\PropertyChangedEventListener.cs" />
     <Compile Include="Applications\Services\FileDialogResult.cs" />
     <Compile Include="Applications\Services\FileDialogServiceExtensions.cs" />

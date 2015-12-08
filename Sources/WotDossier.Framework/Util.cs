@@ -41,7 +41,7 @@ namespace WotDossier.Framework
             SaveRTBAsPNG(rtb, filename);
         }
 
-        private static void SaveRTBAsPNG(RenderTargetBitmap bmp, string filename)
+        public static void SaveRTBAsPNG(RenderTargetBitmap bmp, string filename)
         {
             var enc = new PngBitmapEncoder();
             enc.Frames.Add(BitmapFrame.Create(bmp));

@@ -492,7 +492,7 @@ namespace WotDossier.Applications.ViewModel
         {
             try
             {
-                CultureHelper.SetUiCulture();
+                CultureHelper.SetUiCulture(SettingsReader.Get().Language);
 
                 foreach (var replayFolder in replayFolders)
                 {

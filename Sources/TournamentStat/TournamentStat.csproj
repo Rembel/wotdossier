@@ -1,0 +1,1066 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{24515E95-C3BA-4855-AA3B-A9A36B847CDD}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TournamentStat</RootNamespace>
+    <AssemblyName>TournamentStat</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>app_icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Common.Logging">
+      <HintPath>..\packages\Common.Logging.2.1.2\lib\net40\Common.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Common.Logging.Log4Net1211, Version=2.1.2.0, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Common.Logging.Log4Net1211.2.1.2\lib\net40\Common.Logging.Log4Net1211.dll</HintPath>
+    </Reference>
+    <Reference Include="De.TorstenMandelkow.MetroChart">
+      <HintPath>..\..\References\De.TorstenMandelkow.MetroChart.dll</HintPath>
+    </Reference>
+    <Reference Include="Iesi.Collections, Version=4.0.0.0, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Iesi.Collections.4.0.1.4000\lib\net40\Iesi.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\packages\log4net.2.0.0\lib\net40-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate, Version=4.0.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\NHibernate.4.0.3.4000\lib\net40\NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationFramework.Aero" />
+    <Reference Include="SimpleInjector, Version=2.8.0.0, Culture=neutral, PublicKeyToken=984cb50dea722e99, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\SimpleInjector.2.8.0\lib\net40-client\SimpleInjector.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Interactivity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\References\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="..\WotDossier\Controls\TankFilterPanel.xaml.cs">
+      <Link>Controls\TankFilterPanel.xaml.cs</Link>
+    </Compile>
+    <Compile Include="Tabs\TankStatTab.xaml.cs">
+      <DependentUpon>TankStatTab.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\SeriesStatTab.xaml.cs">
+      <DependentUpon>SeriesStatTab.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SettingsWindow.xaml.cs">
+      <DependentUpon>SettingsWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TournamentNominationWindow.xaml.cs">
+      <DependentUpon>TournamentNominationWindow.xaml</DependentUpon>
+    </Compile>
+    <Page Include="..\WotDossier\Controls\Achievements.xaml">
+      <Link>Controls\Achievements.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Controls\ClanView.xaml">
+      <Link>Controls\ClanView.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Controls\LinkStatisticRow.xaml">
+      <Link>Controls\LinkStatisticRow.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Controls\MedalAchievement.xaml">
+      <Link>Controls\MedalAchievement.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Controls\MedalTooltip.xaml">
+      <Link>Controls\MedalTooltip.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Controls\ReplaysFilterPanelNew.xaml">
+      <Link>Controls\ReplaysFilterPanelNew.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Controls\StatisticRow.xaml">
+      <Link>Controls\StatisticRow.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Controls\StatisticView.xaml">
+      <Link>Controls\StatisticView.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Controls\TankFilterPanel.xaml">
+      <Link>Controls\TankFilterPanel.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Controls\TextWithImage.xaml">
+      <Link>Controls\TextWithImage.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Styles\Black\Brushes.xaml">
+      <Link>Styles\Black\Brushes.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Styles\Black\Button.xaml">
+      <Link>Styles\Black\Button.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Styles\Black\CheckBox.xaml">
+      <Link>Styles\Black\CheckBox.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Styles\Black\ComboBox.xaml">
+      <Link>Styles\Black\ComboBox.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Styles\Black\ContextMenu.xaml">
+      <Link>Styles\Black\ContextMenu.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Styles\Black\DataGrid.xaml">
+      <Link>Styles\Black\DataGrid.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Styles\Black\DataGridHeaderTemplates.xaml">
+      <Link>Styles\Black\DataGridHeaderTemplates.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Styles\Black\Expander.xaml">
+      <Link>Styles\Black\Expander.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Styles\Black\ExplicitStyles.xaml">
+      <Link>Styles\Black\ExplicitStyles.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Styles\Black\GroupBox.xaml">
+      <Link>Styles\Black\GroupBox.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Styles\Black\Hyperlink.xaml">
+      <Link>Styles\Black\Hyperlink.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Styles\Black\ImplicitStyles.xaml">
+      <Link>Styles\Black\ImplicitStyles.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Styles\Black\ListBox.xaml">
+      <Link>Styles\Black\ListBox.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Styles\Black\Menu.xaml">
+      <Link>Styles\Black\Menu.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Styles\Black\MenuResourceDictionary.xaml">
+      <Link>Styles\Black\MenuResourceDictionary.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Styles\Black\ProgressBar.xaml">
+      <Link>Styles\Black\ProgressBar.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Styles\Black\RadioButton.xaml">
+      <Link>Styles\Black\RadioButton.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Styles\Black\ScrollBar.xaml">
+      <Link>Styles\Black\ScrollBar.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Styles\Black\SpecialStyle.xaml">
+      <Link>Styles\Black\SpecialStyle.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Styles\Black\StatusBar.xaml">
+      <Link>Styles\Black\StatusBar.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Styles\Black\TabControl.xaml">
+      <Link>Styles\Black\TabControl.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Styles\Black\TextBox.xaml">
+      <Link>Styles\Black\TextBox.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Styles\Black\ToggleButton.xaml">
+      <Link>Styles\Black\ToggleButton.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Styles\Black\ToolBar.xaml">
+      <Link>Styles\Black\ToolBar.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Styles\Black\ToolTip.xaml">
+      <Link>Styles\Black\ToolTip.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Styles\Black\Window.xaml">
+      <Link>Styles\Black\Window.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Styles\CommonStyle.xaml">
+      <Link>Styles\CommonStyle.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Styles\Fonts.xaml">
+      <Link>Styles\Fonts.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Styles\Silver\BrushesSilver.xaml">
+      <Link>Styles\Silver\BrushesSilver.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Styles\Silver\ButtonSilver.xaml">
+      <Link>Styles\Silver\ButtonSilver.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Styles\Silver\CheckBoxSilver.xaml">
+      <Link>Styles\Silver\CheckBoxSilver.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Styles\Silver\ComboBoxSilver.xaml">
+      <Link>Styles\Silver\ComboBoxSilver.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Styles\Silver\ContextMenuSilver.xaml">
+      <Link>Styles\Silver\ContextMenuSilver.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Styles\Silver\DataGridHeaderTemplatesSilver.xaml">
+      <Link>Styles\Silver\DataGridHeaderTemplatesSilver.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Styles\Silver\DataGridSilver.xaml">
+      <Link>Styles\Silver\DataGridSilver.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Styles\Silver\ExpanderSilver.xaml">
+      <Link>Styles\Silver\ExpanderSilver.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Styles\Silver\ExplicitStylesSilver.xaml">
+      <Link>Styles\Silver\ExplicitStylesSilver.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Styles\Silver\GroupBoxSilver.xaml">
+      <Link>Styles\Silver\GroupBoxSilver.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Styles\Silver\HyperlinkSilver.xaml">
+      <Link>Styles\Silver\HyperlinkSilver.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Styles\Silver\ImplicitStylesSilver.xaml">
+      <Link>Styles\Silver\ImplicitStylesSilver.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Styles\Silver\ListBoxSilver.xaml">
+      <Link>Styles\Silver\ListBoxSilver.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Styles\Silver\MenuResourceDictionarySilver.xaml">
+      <Link>Styles\Silver\MenuResourceDictionarySilver.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Styles\Silver\MenuSilver.xaml">
+      <Link>Styles\Silver\MenuSilver.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Styles\Silver\ProgressBarSilver.xaml">
+      <Link>Styles\Silver\ProgressBarSilver.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Styles\Silver\RadioButtonSilver.xaml">
+      <Link>Styles\Silver\RadioButtonSilver.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Styles\Silver\ScrollBarSilver.xaml">
+      <Link>Styles\Silver\ScrollBarSilver.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Styles\Silver\SpecialStyleSilver.xaml">
+      <Link>Styles\Silver\SpecialStyleSilver.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Styles\Silver\StatusBarSilver.xaml">
+      <Link>Styles\Silver\StatusBarSilver.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Styles\Silver\TabControlSilver.xaml">
+      <Link>Styles\Silver\TabControlSilver.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Styles\Silver\TextBoxSilver.xaml">
+      <Link>Styles\Silver\TextBoxSilver.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Styles\Silver\ToggleButtonSilver.xaml">
+      <Link>Styles\Silver\ToggleButtonSilver.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Styles\Silver\ToolBarSilver.xaml">
+      <Link>Styles\Silver\ToolBarSilver.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Styles\Silver\ToolTipSilver.xaml">
+      <Link>Styles\Silver\ToolTipSilver.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Styles\Silver\WindowSilver.xaml">
+      <Link>Styles\Silver\WindowSilver.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Tabs\Charts\BattlesCountChartsTab.xaml">
+      <Link>Tabs\Charts\BattlesCountChartsTab.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Tabs\Charts\EffectivityChartsTab.xaml">
+      <Link>Tabs\Charts\EffectivityChartsTab.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Tabs\Charts\ReplaysStatTab.xaml">
+      <Link>Tabs\Charts\ReplaysStatTab.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Tabs\Charts\WinPercentChartsTab.xaml">
+      <Link>Tabs\Charts\WinPercentChartsTab.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Tabs\ReplaysTab.xaml">
+      <Link>Tabs\ReplaysTab.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Tabs\Replay\CommandResults.xaml">
+      <Link>Tabs\Replay\CommandResults.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Tabs\Replay\DetailedResults.xaml">
+      <Link>Tabs\Replay\DetailedResults.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Tabs\Replay\Equipment.xaml">
+      <Link>Tabs\Replay\Equipment.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Tabs\Replay\PersonalResults.xaml">
+      <Link>Tabs\Replay\PersonalResults.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Tabs\Replay\TeamMemberResult.xaml">
+      <Link>Tabs\Replay\TeamMemberResult.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Tabs\Replay\Viewer.xaml">
+      <Link>Tabs\Replay\Viewer.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Tabs\ServerBattlesTab.xaml">
+      <Link>Tabs\ServerBattlesTab.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Views\AboutWindow.xaml">
+      <Link>Views\AboutWindow.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Views\AddReplayFolderWindow.xaml">
+      <Link>Views\AddReplayFolderWindow.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Views\ClanWindow.xaml">
+      <Link>Views\ClanWindow.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Views\PlayerStatisticWindow.xaml">
+      <Link>Views\PlayerStatisticWindow.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Views\ReplayViewerSettingsWindow.xaml">
+      <Link>Views\ReplayViewerSettingsWindow.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Views\ReplayWindow.xaml">
+      <Link>Views\ReplayWindow.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Views\UploadReplayWindow.xaml">
+      <Link>Views\UploadReplayWindow.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Tabs\TankStatTab.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Tabs\SeriesStatTab.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="..\WotDossier\Controls\Achievements.xaml.cs">
+      <Link>Controls\Achievements.xaml.cs</Link>
+      <DependentUpon>Achievements.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\WotDossier\Controls\ClanView.xaml.cs">
+      <Link>Controls\ClanView.xaml.cs</Link>
+      <DependentUpon>ClanView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\WotDossier\Controls\LinkStatisticRow.xaml.cs">
+      <Link>Controls\LinkStatisticRow.xaml.cs</Link>
+      <DependentUpon>LinkStatisticRow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="..\WotDossier\Controls\MedalAchievement.xaml.cs">
+      <Link>Controls\MedalAchievement.xaml.cs</Link>
+      <DependentUpon>MedalAchievement.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="..\WotDossier\Controls\MedalTooltip.xaml.cs">
+      <Link>Controls\MedalTooltip.xaml.cs</Link>
+      <DependentUpon>MedalTooltip.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="..\WotDossier\Controls\ReplaysFilterPanelNew.xaml.cs">
+      <Link>Controls\ReplaysFilterPanelNew.xaml.cs</Link>
+      <DependentUpon>ReplaysFilterPanelNew.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="..\WotDossier\Controls\StatisticRow.xaml.cs">
+      <Link>Controls\StatisticRow.xaml.cs</Link>
+      <DependentUpon>StatisticRow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="..\WotDossier\Controls\StatisticView.xaml.cs">
+      <Link>Controls\StatisticView.xaml.cs</Link>
+      <DependentUpon>StatisticView.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="..\WotDossier\Controls\TextWithImage.xaml.cs">
+      <Link>Controls\TextWithImage.xaml.cs</Link>
+      <DependentUpon>TextWithImage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="..\WotDossier\Converters\BoolToVisibilityConverter.cs">
+      <Link>Converters\BoolToVisibilityConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\WotDossier\Converters\Color\AliveToColorConverter.cs">
+      <Link>Converters\Color\AliveToColorConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\WotDossier\Converters\Color\DeltaToColorConverter.cs">
+      <Link>Converters\Color\DeltaToColorConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\WotDossier\Converters\Color\FragsToColorConverter.cs">
+      <Link>Converters\Color\FragsToColorConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\WotDossier\Converters\Color\SpottedToColorConverter.cs">
+      <Link>Converters\Color\SpottedToColorConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\WotDossier\Converters\ConsumableCountToOpacityConverter.cs">
+      <Link>Converters\ConsumableCountToOpacityConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\WotDossier\Converters\DamageRatingToTooltipConverter.cs">
+      <Link>Converters\DamageRatingToTooltipConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\WotDossier\Converters\EnumToTextConverter.cs">
+      <Link>Converters\EnumToTextConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\WotDossier\Converters\Formater\DateFormater.cs">
+      <Link>Converters\Formater\DateFormater.cs</Link>
+    </Compile>
+    <Compile Include="..\WotDossier\Converters\Formater\NumberFormatConverter.cs">
+      <Link>Converters\Formater\NumberFormatConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\WotDossier\Converters\Formater\PercentFormater.cs">
+      <Link>Converters\Formater\PercentFormater.cs</Link>
+    </Compile>
+    <Compile Include="..\WotDossier\Converters\Formater\ValueDeltaPercentFormater.cs">
+      <Link>Converters\Formater\ValueDeltaPercentFormater.cs</Link>
+    </Compile>
+    <Compile Include="..\WotDossier\Converters\Formater\ValueNearestPercentFormater.cs">
+      <Link>Converters\Formater\ValueNearestPercentFormater.cs</Link>
+    </Compile>
+    <Compile Include="..\WotDossier\Converters\Formater\ValuePercentFormater.cs">
+      <Link>Converters\Formater\ValuePercentFormater.cs</Link>
+    </Compile>
+    <Compile Include="..\WotDossier\Converters\Image\AppLogoToImageConverter.cs">
+      <Link>Converters\AppLogoToImageConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\WotDossier\Converters\Image\ClanImageUrlToSourceConverter.cs">
+      <Link>Converters\Image\ClanImageUrlToSourceConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\WotDossier\Converters\Image\CountryIdToImageConverter.cs">
+      <Link>Converters\Image\CountryIdToImageConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\WotDossier\Converters\Image\CritDetailsToImageConverter.cs">
+      <Link>Converters\Image\CritDetailsToImageConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\WotDossier\Converters\Image\DamageRatingToImageConverter.cs">
+      <Link>Converters\Image\DamageRatingToImageConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\WotDossier\Converters\Image\ImageSourceConverter.cs">
+      <Link>Converters\Image\ImageSourceConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\WotDossier\Converters\Image\MapImageElementToIconConverter.cs">
+      <Link>Converters\Image\MapImageElementToIconConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\WotDossier\Converters\Image\MapNameToImageConverter.cs">
+      <Link>Converters\Image\MapNameToImageConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\WotDossier\Converters\Image\MapToMinimapImageConverter.cs">
+      <Link>Converters\Image\MapToMinimapImageConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\WotDossier\Converters\Image\MarkOfMasteryToImageConverter.cs">
+      <Link>Converters\Image\MarkOfMasteryToImageConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\WotDossier\Converters\Image\MedalToImageConverter.cs">
+      <Link>Converters\Image\MedalToImageConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\WotDossier\Converters\Image\ReplayIconConverter.cs">
+      <Link>Converters\Image\ReplayIconConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\WotDossier\Converters\Image\ShellDescriptionToImageConverter.cs">
+      <Link>Converters\Image\ShellDescriptionToImageConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\WotDossier\Converters\Image\TankIconToImageConverter.cs">
+      <Link>Converters\Image\TankIconToImageConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\WotDossier\Converters\IntToVisibilityConverter.cs">
+      <Link>Converters\IntToVisibilityConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\WotDossier\Converters\MarkOfMasteryToTooltipConverter.cs">
+      <Link>Converters\MarkOfMasteryToTooltipConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\WotDossier\Converters\MedalsCountToOpacityConverter.cs">
+      <Link>Converters\MedalsCountToOpacityConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\WotDossier\Converters\ObjectToCollapseConverter.cs">
+      <Link>Converters\ObjectToCollapseConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\WotDossier\Converters\ObjectToVisibilityConverter.cs">
+      <Link>Converters\ObjectToVisibilityConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\WotDossier\Converters\PremiumToOpacityConverter.cs">
+      <Link>Converters\PremiumToOpacityConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\WotDossier\Converters\Ratings\EffRangeBrushes.cs">
+      <Link>Converters\Ratings\EffRangeBrushes.cs</Link>
+    </Compile>
+    <Compile Include="..\WotDossier\Converters\Ratings\PointsToPalleteConverter.cs">
+      <Link>Converters\Ratings\PointsToPalleteConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\WotDossier\Converters\Ratings\RatingsManager.cs">
+      <Link>Converters\Ratings\RatingsManager.cs</Link>
+    </Compile>
+    <Compile Include="..\WotDossier\Converters\Ratings\RatingToColorConverter.cs">
+      <Link>Converters\Ratings\RatingToColorConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\WotDossier\Converters\ResourceFormatConverter.cs">
+      <Link>Converters\ResourceFormatConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\WotDossier\Converters\ResxTextConverter.cs">
+      <Link>Converters\ResxTextConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\WotDossier\Converters\SubtractValueConverter.cs">
+      <Link>Converters\SubtractValueConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\WotDossier\MinimizeToTray.cs">
+      <Link>MinimizeToTray.cs</Link>
+    </Compile>
+    <Compile Include="..\WotDossier\NativeMethods.cs">
+      <Link>NativeMethods.cs</Link>
+    </Compile>
+    <Compile Include="..\WotDossier\Styles\FooterDataGridBlack.cs">
+      <Link>Styles\FooterDataGridBlack.cs</Link>
+    </Compile>
+    <Compile Include="..\WotDossier\Styles\FooterDataGridGeneric.cs">
+      <Link>Styles\FooterDataGridGeneric.cs</Link>
+    </Compile>
+    <Compile Include="..\WotDossier\Styles\FooterDataGridSilver.cs">
+      <Link>Styles\FooterDataGridSilver.cs</Link>
+    </Compile>
+    <Compile Include="..\WotDossier\Tabs\ReplaysTab.xaml.cs">
+      <Link>Tabs\ReplaysTab.xaml.cs</Link>
+      <DependentUpon>ReplaysTab.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\WotDossier\Tabs\Replay\CommandResults.xaml.cs">
+      <Link>Tabs\Replay\CommandResults.xaml.cs</Link>
+      <DependentUpon>CommandResults.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\WotDossier\Tabs\Replay\DetailedResults.xaml.cs">
+      <Link>Tabs\Replay\DetailedResults.xaml.cs</Link>
+      <DependentUpon>DetailedResults.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\WotDossier\Tabs\Replay\Equipment.xaml.cs">
+      <Link>Tabs\Replay\Equipment.xaml.cs</Link>
+      <DependentUpon>Equipment.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="..\WotDossier\Tabs\Replay\MapGridPainter.cs">
+      <Link>Tabs\Replay\MapGridPainter.cs</Link>
+    </Compile>
+    <Compile Include="..\WotDossier\Tabs\Replay\PersonalResults.xaml.cs">
+      <Link>Tabs\Replay\PersonalResults.xaml.cs</Link>
+      <DependentUpon>PersonalResults.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\WotDossier\Tabs\Replay\TeamMemberResult.xaml.cs">
+      <Link>Tabs\Replay\TeamMemberResult.xaml.cs</Link>
+      <DependentUpon>TeamMemberResult.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\WotDossier\Tabs\Replay\Viewer.xaml.cs">
+      <Link>Tabs\Replay\Viewer.xaml.cs</Link>
+      <DependentUpon>Viewer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\WotDossier\Tabs\ServerBattlesTab.xaml.cs">
+      <Link>Tabs\ServerBattlesTab.xaml.cs</Link>
+      <DependentUpon>ServerBattlesTab.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\WotDossier\UI\MedalSearchItemTemplateSelector.cs">
+      <Link>UI\MedalSearchItemTemplateSelector.cs</Link>
+    </Compile>
+    <Compile Include="..\WotDossier\Views\AboutWindow.xaml.cs">
+      <Link>Views\AboutWindow.xaml.cs</Link>
+      <DependentUpon>AboutWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="..\WotDossier\Views\AddReplayFolderWindow.xaml.cs">
+      <Link>Views\AddReplayFolderWindow.xaml.cs</Link>
+      <DependentUpon>AddReplayFolderWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="..\WotDossier\Views\ClanWindow.xaml.cs">
+      <Link>Views\ClanWindow.xaml.cs</Link>
+      <DependentUpon>ClanWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="..\WotDossier\Views\PlayerStatisticWindow.xaml.cs">
+      <Link>Views\PlayerStatisticWindow.xaml.cs</Link>
+      <DependentUpon>PlayerStatisticWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="..\WotDossier\Views\ReplayViewerSettingsWindow.xaml.cs">
+      <Link>Views\ReplayViewerSettingsWindow.xaml.cs</Link>
+      <DependentUpon>ReplayViewerSettingsWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="..\WotDossier\Views\ReplayWindow.xaml.cs">
+      <Link>Views\ReplayWindow.xaml.cs</Link>
+      <DependentUpon>ReplayWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="..\WotDossier\Views\UploadReplayWindow.xaml.cs">
+      <Link>Views\UploadReplayWindow.xaml.cs</Link>
+      <DependentUpon>UploadReplayWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="Views\SettingsWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\TournamentNominationWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Resource Include="app_icon.ico" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <Content Include="..\WotDossier\app.manifest">
+      <Link>app.manifest</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <EmbeddedResource Include="..\WotDossier\Data\init.s3db">
+      <Link>Data\init.s3db</Link>
+    </EmbeddedResource>
+    <Content Include="..\WotDossier\External\library.zip">
+      <Link>External\library.zip</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\WotDossier\External\maps.json">
+      <Link>External\maps.json</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\WotDossier\External\tanks.json">
+      <Link>External\tanks.json</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\WotDossier\External\wotdc2j.exe">
+      <Link>External\wotdc2j.exe</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\WotDossier\External\_hashlib.pyd">
+      <Link>External\_hashlib.pyd</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\WotDossier\External\consumables.json">
+      <Link>External\consumables.json</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\WotDossier\External\optional_devices.json">
+      <Link>External\optional_devices.json</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="..\WotDossier\External\maps_description.json">
+      <Link>External\maps_description.json</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\WotDossier\External\shells\china_shells.json">
+      <Link>External\shells\china_shells.json</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\WotDossier\External\shells\france_shells.json">
+      <Link>External\shells\france_shells.json</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\WotDossier\External\shells\germany_shells.json">
+      <Link>External\shells\germany_shells.json</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\WotDossier\External\shells\japan_shells.json">
+      <Link>External\shells\japan_shells.json</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\WotDossier\External\shells\uk_shells.json">
+      <Link>External\shells\uk_shells.json</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\WotDossier\External\shells\usa_shells.json">
+      <Link>External\shells\usa_shells.json</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\WotDossier\External\shells\ussr_shells.json">
+      <Link>External\shells\ussr_shells.json</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <Content Include="..\WotDossier\External\structures_10.json">
+      <Link>External\structures_10.json</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\WotDossier\External\structures_17.json">
+      <Link>External\structures_17.json</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\WotDossier\External\structures_18.json">
+      <Link>External\structures_18.json</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\WotDossier\External\structures_20.json">
+      <Link>External\structures_20.json</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\WotDossier\External\structures_22.json">
+      <Link>External\structures_22.json</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\WotDossier\External\structures_24.json">
+      <Link>External\structures_24.json</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\WotDossier\External\structures_26.json">
+      <Link>External\structures_26.json</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\WotDossier\External\structures_27.json">
+      <Link>External\structures_27.json</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\WotDossier\External\structures_28.json">
+      <Link>External\structures_28.json</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\WotDossier\External\structures_29.json">
+      <Link>External\structures_29.json</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\WotDossier\External\structures_65.json">
+      <Link>External\structures_65.json</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\WotDossier\External\structures_69.json">
+      <Link>External\structures_69.json</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\WotDossier\External\structures_77.json">
+      <Link>External\structures_77.json</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\WotDossier\External\structures_81.json">
+      <Link>External\structures_81.json</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\WotDossier\External\structures_85.json">
+      <Link>External\structures_85.json</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\WotDossier\External\structures_87.json">
+      <Link>External\structures_87.json</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\WotDossier\External\structures_88.json">
+      <Link>External\structures_88.json</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\WotDossier\External\structures_89.json">
+      <Link>External\structures_89.json</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\WotDossier\External\structures_92.json">
+      <Link>External\structures_92.json</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\WotDossier\External\structures_94.json">
+      <Link>External\structures_94.json</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="..\WotDossier\External\tanks_expectations.json">
+      <Link>External\tanks_expectations.json</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TournamentStat.Applications\TournamentStat.Applications.csproj">
+      <Project>{723973c8-e27a-422d-a178-73058bb42059}</Project>
+      <Name>TournamentStat.Applications</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WotDossier.Applications\WotDossier.Applications.csproj">
+      <Project>{be01e7c1-5ee5-4eb6-ac4d-79ecbd42b75c}</Project>
+      <Name>WotDossier.Applications</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WotDossier.Common\WotDossier.Common.csproj">
+      <Project>{1268b707-a866-4723-89c7-2e9bd92e6aa6}</Project>
+      <Name>WotDossier.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WotDossier.Dal\WotDossier.Dal.csproj">
+      <Project>{fc09ce1a-0c77-488d-8169-3d825d998e2c}</Project>
+      <Name>WotDossier.Dal</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WotDossier.Domain\WotDossier.Domain.csproj">
+      <Project>{bef5308c-9e64-4369-b012-81600fdd97a3}</Project>
+      <Name>WotDossier.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WotDossier.Framework\WotDossier.Framework.csproj">
+      <Project>{27b67dfe-0bf1-4435-b036-e4c083eaea03}</Project>
+      <Name>WotDossier.Framework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WotDossier.Resources\WotDossier.Resources.csproj">
+      <Project>{7cd82f33-099e-4c8f-b30a-7aacac5b37e1}</Project>
+      <Name>WotDossier.Resources</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WotDossier.Update\WotDossier.Update.csproj">
+      <Project>{d7399aab-a6ee-420e-839f-a6c07b6602f8}</Project>
+      <Name>WotDossier.Update</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="..\WotDossier\Data\Medals.xml">
+      <Link>Data\Medals.xml</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\WotDossier\External\python27.dll">
+      <Link>External\python27.dll</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\WotDossier\External\wotrp2j.exe">
+      <Link>External\wotrp2j.exe</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <EmbeddedResource Include="..\WotDossier\Data\ReplaysCatalog.xml">
+      <Link>Data\ReplaysCatalog.xml</Link>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="..\Configs\Log4Net.xml">
+      <Link>Config\Log4Net.xml</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

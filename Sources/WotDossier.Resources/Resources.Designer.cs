@@ -9136,6 +9136,51 @@ namespace WotDossier.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Damage.
+        /// </summary>
+        public static string TournamentCriterion_Damage {
+            get {
+                return ResourceManager.GetString("TournamentCriterion_Damage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Damage + Potential Damage Received.
+        /// </summary>
+        public static string TournamentCriterion_DamageWithArmor {
+            get {
+                return ResourceManager.GetString("TournamentCriterion_DamageWithArmor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Damage + Assited Damage.
+        /// </summary>
+        public static string TournamentCriterion_DamageWithAssist {
+            get {
+                return ResourceManager.GetString("TournamentCriterion_DamageWithAssist", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Frags.
+        /// </summary>
+        public static string TournamentCriterion_Frags {
+            get {
+                return ResourceManager.GetString("TournamentCriterion_Frags", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Win Percent.
+        /// </summary>
+        public static string TournamentCriterion_WinPercent {
+            get {
+                return ResourceManager.GetString("TournamentCriterion_WinPercent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to {0:0.00} km.
         /// </summary>
         public static string Traveled_Format {

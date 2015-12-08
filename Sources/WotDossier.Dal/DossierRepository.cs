@@ -43,9 +43,9 @@ namespace WotDossier.Dal
         /// Gets the player statistic.
         /// </summary>
         /// <typeparam name="T"></typeparam>
-        /// <param name="playerId">The player identifier.</param>
+        /// <param name="accountId">The unique wot identifier.</param>
         /// <returns></returns>
-        public IEnumerable<T> GetPlayerStatistic<T>(int playerId) where T : StatisticEntity
+        public IEnumerable<T> GetPlayerStatistic<T>(int accountId) where T : StatisticEntity
         {
             _dataProvider.OpenSession();
             _dataProvider.BeginTransaction();
@@ -56,7 +56,7 @@ namespace WotDossier.Dal
             {
                 list = _dataProvider.QueryOver(() => statistic)
                                     .Inner.JoinAlias(x => x.PlayerIdObject, () => player)
-                                    .Where(x => player.PlayerId == playerId).List<T>();
+                                    .Where(x => player.PlayerId == accountId).List<T>();
                 _dataProvider.CommitTransaction();
             }
             catch (Exception e)
@@ -77,9 +77,9 @@ namespace WotDossier.Dal
         /// <typeparam name="T"></typeparam>
         /// <param name="newSnapshot">The new snapshot.</param>
         /// <param name="serverStatistic">The server statistic.</param>
-        /// <param name="playerId">The player identifier.</param>
+        /// <param name="accountId">The unique wot identifier.</param>
         /// <returns></returns>
-        public PlayerEntity UpdatePlayerStatistic<T>(IStatisticAdapter<T> newSnapshot, ServerStatWrapper serverStatistic, int playerId) where T : StatisticEntity, new()
+        public PlayerEntity UpdatePlayerStatistic<T>(IStatisticAdapter<T> newSnapshot, ServerStatWrapper serverStatistic, int accountId) where T : StatisticEntity, new()
         {
             _dataProvider.OpenSession();
             _dataProvider.BeginTransaction();
@@ -87,9 +87,9 @@ namespace WotDossier.Dal
 
             try
             {
-                playerEntity = GetPlayerInternal(playerId) ??
+                playerEntity = GetPlayerByAccountId(accountId) ??
                                //recreate payer record in case db was deleted but exists user configured in application setting 
-                               GetOrCreatePlayerInternal(serverStatistic.Player.dataField.nickname, serverStatistic.Player.dataField.account_id, 
+                               CreatePlayer(serverStatistic.Player.dataField.nickname, serverStatistic.Player.dataField.account_id, 
                                Utils.UnixDateToDateTime((long)serverStatistic.Player.dataField.created_at), serverStatistic.Player.server);
 
                 T currentSnapshot = _dataProvider.QueryOver<T>().Where(x => x.PlayerId == playerEntity.Id)
@@ -147,23 +147,23 @@ namespace WotDossier.Dal
         /// Get the or create player.
         /// </summary>
         /// <param name="name">The name.</param>
-        /// <param name="id">The identifier.</param>
+        /// <param name="accountId">The unique wot identifier.</param>
         /// <param name="creaded">Creaded at.</param>
         /// <param name="server">The server.</param>
         /// <returns></returns>
-        public PlayerEntity GetOrCreatePlayer(string name, int id, DateTime creaded, string server)
+        public PlayerEntity GetOrCreatePlayer(string name, int accountId, DateTime creaded, string server)
         {
             _dataProvider.OpenSession();
             _dataProvider.BeginTransaction();
             PlayerEntity playerEntity = _dataProvider.QueryOver<PlayerEntity>()
-                                        .Where(x => x.PlayerId == id)
+                                        .Where(x => x.PlayerId == accountId)
                                         .Take(1)
                                         .SingleOrDefault<PlayerEntity>();
 
             if (playerEntity == null)
             {
                 playerEntity = new PlayerEntity();
-                playerEntity.PlayerId = id;
+                playerEntity.PlayerId = accountId;
                 playerEntity.Creaded = creaded;
             }
          
@@ -185,7 +185,7 @@ namespace WotDossier.Dal
         /// <param name="creaded">Creaded at.</param>
         /// <param name="server">The server.</param>
         /// <returns></returns>
-        private PlayerEntity GetOrCreatePlayerInternal(string name, int id, DateTime creaded, string server)
+        private PlayerEntity CreatePlayer(string name, int id, DateTime creaded, string server)
         {
             PlayerEntity playerEntity = new PlayerEntity();
             playerEntity.Name = name;
@@ -197,23 +197,35 @@ namespace WotDossier.Dal
             return playerEntity;
         }
 
-        private PlayerEntity GetPlayerInternal(int id)
+        private PlayerEntity GetPlayerByAccountId(int accountId)
         {
             return _dataProvider.QueryOver<PlayerEntity>()
-                .Where(x => x.PlayerId == id)
+                .Where(x => x.PlayerId == accountId)
                 .Take(1)
                 .SingleOrDefault<PlayerEntity>();
+        }
+
+        public PlayerEntity GetPlayerById(int id)
+        {
+            _dataProvider.OpenSession();
+            var playerEntity = _dataProvider.QueryOver<PlayerEntity>()
+                .Where(x => x.Id == id)
+                .Take(1)
+                .SingleOrDefault<PlayerEntity>();
+            _dataProvider.ClearCache();
+            _dataProvider.CloseSession();
+            return playerEntity;
         }
 
         /// <summary>
         /// Gets the player.
         /// </summary>
-        /// <param name="id">The identifier.</param>
+        /// <param name="accountId">The unique wot identifier.</param>
         /// <returns></returns>
-        public PlayerEntity GetPlayer(int id)
+        public PlayerEntity GetPlayer(int accountId)
         {
             _dataProvider.OpenSession();
-            PlayerEntity player = GetPlayerInternal(id);
+            PlayerEntity player = GetPlayerByAccountId(accountId);
             _dataProvider.ClearCache();
             _dataProvider.CloseSession();
             return player;
@@ -223,16 +235,16 @@ namespace WotDossier.Dal
         /// Updates the tank statistic.
         /// </summary>
         /// <typeparam name="T"></typeparam>
-        /// <param name="playerId">The player identifier.</param>
+        /// <param name="accountId">The unique wot identifier.</param>
         /// <param name="tanks">The tanks.</param>
         /// <param name="predicate">The predicate.</param>
         /// <returns></returns>
-        public PlayerEntity UpdateTankStatistic<T>(int playerId, List<TankJson> tanks, Func<TankJson, StatisticJson> predicate) where T : TankStatisticEntityBase, new ()
+        public PlayerEntity UpdateTankStatistic<T>(int accountId, List<TankJson> tanks, Func<TankJson, StatisticJson> predicate) where T : TankStatisticEntityBase, new ()
         {
             _dataProvider.OpenSession();
             _dataProvider.BeginTransaction();
 
-            PlayerEntity playerEntity = GetPlayerInternal(playerId);
+            PlayerEntity playerEntity = GetPlayerByAccountId(accountId);
 
             try
             {
@@ -521,6 +533,33 @@ namespace WotDossier.Dal
             catch (Exception e)
             {
                 Log.Error("Error on favorite players save", e);
+            }
+        }
+
+        public void DeletePlayerData(int playerId)
+        {
+            _dataProvider.OpenSession();
+
+            try
+            {
+                var query = DataProvider.CreateQuery("delete from TankStatisticEntity where TankId in (select Id from TankEntity where PlayerId = :id)");
+                query.SetParameter("id", playerId);
+                query.ExecuteUpdate();
+
+                query = DataProvider.CreateQuery("delete from PlayerStatisticEntity where PlayerId = :id");
+                query.SetParameter("id", playerId);
+                query.ExecuteUpdate();
+
+                _dataProvider.CommitTransaction();
+            }
+            catch (Exception e)
+            {
+                Log.Error(e);
+                _dataProvider.RollbackTransaction();
+            }
+            finally
+            {
+                _dataProvider.CloseSession();
             }
         }
     }

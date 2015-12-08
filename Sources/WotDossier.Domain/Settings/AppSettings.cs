@@ -8,16 +8,14 @@ namespace WotDossier.Domain
     /// <summary>
     /// Application settings
     /// </summary>
-    public class AppSettings
+    public class AppSettings : AppSettingsBase
     {
-        private string _language = "ru-RU";
         private string _replaysUploadServerPath = "http://wotreplays.ru/site/upload";
         private bool _checkForUpdates = true;
 
         private TankFilterSettings _tankFilterSettings = new TankFilterSettings();
         private PeriodSettings _periodSettings = new PeriodSettings();
-        private string _server = "ru";
-        
+
         /// <summary>
         /// Gets or sets the name of the player.
         /// </summary>
@@ -33,46 +31,6 @@ namespace WotDossier.Domain
         /// The player id.
         /// </value>
         public int PlayerId { get; set; }
-
-        /// <summary>
-        /// Gets or sets the server.
-        /// </summary>
-        /// <value>
-        /// The server.
-        /// </value>
-        public string Server
-        {
-            get { return _server; }
-            set { _server = value; }
-        }
-
-        /// <summary>
-        /// Gets or sets the path to wot exe.
-        /// </summary>
-        /// <value>
-        /// The path to wot exe.
-        /// </value>
-        //public string PathToWotExe { get; set; }
-
-        /// <summary>
-        /// Gets or sets the replays folder path.
-        /// </summary>
-        /// <value>
-        /// The replays folder path.
-        /// </value>
-        //public string ReplaysFolderPath { get; set; }
-
-        /// <summary>
-        /// Gets or sets the language.
-        /// </summary>
-        /// <value>
-        /// The language.
-        /// </value>
-        public string Language
-        {
-            get { return _language; }
-            set { _language = value; }
-        }
 
         /// <summary>
         /// Gets or sets the replays upload server path.
@@ -137,16 +95,6 @@ namespace WotDossier.Domain
         /// <c>true</c> if [automatic load statistic]; otherwise, <c>false</c>.
         /// </value>
         public bool AutoLoadStatistic { get; set; }
-
-        private DossierTheme _theme = DossierTheme.Black;
-        /// <summary>
-        /// Gets or sets the theme.
-        /// </summary>
-        public DossierTheme Theme
-        {
-            get { return _theme; }
-            set { _theme = value; }
-        }
 
         private bool _showExtendedReplaysData = true;
         /// <summary>

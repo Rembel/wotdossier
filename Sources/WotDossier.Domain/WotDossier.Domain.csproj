@@ -171,6 +171,7 @@
     <Compile Include="Server\Vehicle.cs" />
     <Compile Include="Server\VehicleMarkOfMastery.cs" />
     <Compile Include="Settings\AppSettings.cs" />
+    <Compile Include="Settings\AppSettingsBase.cs" />
     <Compile Include="Settings\DossierTheme.cs" />
     <Compile Include="Settings\PeriodSettings.cs" />
     <Compile Include="Settings\ReplayPlayer.cs" />

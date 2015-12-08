@@ -24,6 +24,9 @@ namespace WotDossier.Applications.ViewModel.Statistic
         {
         }
 
+        public int PlayerId { get; set; }
+        public string PlayerName { get; set; }
+
         #region Statistic
 
         public int BattlesCount { get; set; }
@@ -45,6 +48,13 @@ namespace WotDossier.Applications.ViewModel.Statistic
 
         public int MarkOfMastery { get; set; }
         public TimeSpan PlayTime { get; set; }
+
+        public int DamageAssistedTrack { get; set; }
+        public int DamageAssistedRadio { get; set; }
+
+        public int BattlesCount90 { get; set; }
+        public int PotentialDamageReceived { get; set; }
+        public int DamageBlockedByArmor { get; set; }
 
         public double Tier { get; set; }
 
@@ -74,6 +84,14 @@ namespace WotDossier.Applications.ViewModel.Statistic
                     return DamageDealt / (double)DamageTaken;
                 }
                 return 0;
+            }
+        }
+
+        public int DamageAssisted
+        {
+            get
+            {
+                return DamageAssistedTrack + DamageAssistedRadio;
             }
         }
 

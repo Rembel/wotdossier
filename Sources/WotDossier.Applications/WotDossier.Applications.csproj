@@ -167,13 +167,13 @@
     <Compile Include="ViewModel\Replay\MapStat.cs" />
     <Compile Include="ViewModel\Replay\ReplayMapViewModel.cs" />
     <Compile Include="ViewModel\Replay\TotalReplayFile.cs" />
+    <Compile Include="ViewModel\Replay\Viewer\MapElementContext.cs" />
     <Compile Include="ViewModel\Replay\Viewer\MapGrid.cs" />
     <Compile Include="ViewModel\Replay\Viewer\ReplayViewer.cs" />
     <Compile Include="ViewModel\Reporter.cs" />
     <Compile Include="ViewModel\Rows\FortSortiesTankStatisticRowViewModel.cs" />
     <Compile Include="ViewModel\Rows\FortBattlesTankStatisticRowViewModel.cs" />
     <Compile Include="ViewModel\Rows\HistoricalBattlesTankStatisticRowViewModel.cs" />
-    <Compile Include="ViewModel\ListItem.cs" />
     <Compile Include="ViewModel\ReplaysViewModel.cs" />
     <Compile Include="ViewModel\Replay\AddReplayFolderViewModel.cs" />
     <Compile Include="ViewModel\Replay\BattleStatus.cs" />

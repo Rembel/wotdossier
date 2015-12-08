@@ -10,6 +10,7 @@ using Newtonsoft.Json.Linq;
 using WotDossier.Domain;
 using System.Linq;
 using WotDossier.Domain.Server;
+using WotDossier.Domain.Settings;
 using Player = WotDossier.Domain.Server.Player;
 using Vehicle = WotDossier.Domain.Server.Vehicle;
 
@@ -95,7 +96,7 @@ namespace WotDossier.Dal
         /// <param name="fields">The profile fields.</param>
         /// <returns></returns>
         /// <exception cref="PlayerInfoLoadException"></exception>
-        public Player LoadPlayerStat(int playerId, AppSettings settings, PlayerStatLoadOptions options, string[] fields = null)
+        public Player LoadPlayerStat(int playerId, AppSettingsBase settings, PlayerStatLoadOptions options, string[] fields = null)
         {
             if (settings == null || string.IsNullOrEmpty(settings.Server))
             {
@@ -213,7 +214,7 @@ namespace WotDossier.Dal
         /// <param name="playerId">The player identifier.</param>
         /// <param name="settings">The settings.</param>
         /// <returns></returns>
-        private List<Vehicle> GetPlayerTanks(int playerId, AppSettings settings)
+        private List<Vehicle> GetPlayerTanks(int playerId, AppSettingsBase settings)
         {
             JObject response = null;
             try
@@ -266,7 +267,7 @@ namespace WotDossier.Dal
         /// <param name="playerId">The player identifier.</param>
         /// <param name="settings">The settings.</param>
         /// <returns></returns>
-        private List<VehicleAchievements> GetPlayerTanksAchievements(int playerId, AppSettings settings)
+        private List<VehicleAchievements> GetPlayerTanksAchievements(int playerId, AppSettingsBase settings)
         {
             JObject response = null;
             try
@@ -291,7 +292,7 @@ namespace WotDossier.Dal
             return new List<VehicleAchievements>();
         }
 
-        private Ratings GetPlayerRatings(int playerId, AppSettings settings)
+        private Ratings GetPlayerRatings(int playerId, AppSettingsBase settings)
         {
             JObject response = null;
             try
@@ -316,7 +317,7 @@ namespace WotDossier.Dal
             return null;
         }
 
-        private Achievements GetPlayerAchievements(int playerId, AppSettings settings)
+        private Achievements GetPlayerAchievements(int playerId, AppSettingsBase settings)
         {
             JObject response = null;
             try
@@ -411,7 +412,7 @@ namespace WotDossier.Dal
         /// <returns>
         /// First found player
         /// </returns>
-        public PlayerSearchJson SearchPlayer(string playerName, AppSettings settings)
+        public PlayerSearchJson SearchPlayer(string playerName, AppSettingsBase settings)
         {
             List<PlayerSearchJson> list = SearchPlayer(playerName, 1, settings);
             if (list != null)
@@ -430,7 +431,7 @@ namespace WotDossier.Dal
         /// <returns>
         /// Found players
         /// </returns>
-        public List<PlayerSearchJson> SearchPlayer(string playerName, int limit, AppSettings settings)
+        public List<PlayerSearchJson> SearchPlayer(string playerName, int limit, AppSettingsBase settings)
         {
             JObject response = null;
             try
@@ -606,7 +607,7 @@ namespace WotDossier.Dal
         /// <param name="settings">The app settings.</param>
         /// <returns></returns>
         /// <exception cref="ApiRequestException">Api request exception</exception>
-        public T Request<T>(string method, Dictionary<string, object> parameters, AppSettings settings)
+        public T Request<T>(string method, Dictionary<string, object> parameters, AppSettingsBase settings)
         {
             try
             {

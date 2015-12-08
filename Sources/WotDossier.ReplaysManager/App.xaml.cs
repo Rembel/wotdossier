@@ -57,7 +57,7 @@ namespace WotDossier.ReplaysManager
                 manager.InitDatabase();
 
                 //set app lang
-                CultureHelper.SetUiCulture();
+                CultureHelper.SetUiCulture(SettingsReader.Get().Language);
 
                 // Registrations here
                 CompositionContainerFactory.Instance.RegisterSingle<ReplaysManagerController, ReplaysManagerController>();

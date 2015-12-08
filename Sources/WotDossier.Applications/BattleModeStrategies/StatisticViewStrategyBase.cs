@@ -119,9 +119,16 @@ namespace WotDossier.Applications.BattleModeStrategies
         /// <returns></returns>
         protected List<ITankStatisticRow> GetTanksStatistic<T>(int playerId) where T : TankStatisticEntityBase
         {
+            var playerEntity = DossierRepository.GetPlayerById(playerId);
             IEnumerable<T> entities = DossierRepository.GetTanksStatistic<T>(playerId);
 
-            return entities.GroupBy(x => x.TankId).Select(x => ToTankStatisticRow(x, Predicate)).OrderByDescending(x => x.Tier).ThenBy(x => x.Tank).Where(x => x.BattlesCount > 0).ToList();
+            return entities.GroupBy(x => x.TankId).Select(x =>
+            {
+                var row = ToTankStatisticRow(x, Predicate);
+                row.PlayerId = playerId;
+                row.PlayerName = playerEntity.Name;
+                return row;
+            }).OrderByDescending(x => x.Tier).ThenBy(x => x.Tank).Where(x => x.BattlesCount > 0).ToList();
         }
 
         /// <summary>

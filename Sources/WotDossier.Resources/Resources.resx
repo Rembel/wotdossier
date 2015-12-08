@@ -3497,4 +3497,19 @@ Date: {Date:dd.MM.yyyy}</value>
   <data name="Column_Header_Defender" xml:space="preserve">
     <value>Defender</value>
   </data>
+  <data name="TournamentCriterion_Damage" xml:space="preserve">
+    <value>Damage</value>
+  </data>
+  <data name="TournamentCriterion_DamageWithArmor" xml:space="preserve">
+    <value>Damage + Potential Damage Received</value>
+  </data>
+  <data name="TournamentCriterion_DamageWithAssist" xml:space="preserve">
+    <value>Damage + Assited Damage</value>
+  </data>
+  <data name="TournamentCriterion_Frags" xml:space="preserve">
+    <value>Frags</value>
+  </data>
+  <data name="TournamentCriterion_WinPercent" xml:space="preserve">
+    <value>Win Percent</value>
+  </data>
 </root>

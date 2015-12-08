@@ -6,9 +6,9 @@ namespace WotDossier.Applications
 {
     public class CultureHelper
     {
-        public static void SetUiCulture()
+        public static void SetUiCulture(string language)
         {
-            var culture = new CultureInfo(SettingsReader.Get().Language);
+            var culture = new CultureInfo(language);
             ConfigureNumberFormat(culture);
             Thread.CurrentThread.CurrentCulture = culture;
             Thread.CurrentThread.CurrentUICulture = culture;

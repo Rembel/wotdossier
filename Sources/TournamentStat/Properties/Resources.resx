@@ -114,4 +114,31 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="MenuItem_Export" xml:space="preserve">
+    <value>Export</value>
+  </data>
+  <data name="Settings_Nominations" xml:space="preserve">
+    <value>Nominations</value>
+  </data>
+  <data name="TabHeader_Stat" xml:space="preserve">
+    <value>Stat</value>
+  </data>
+  <data name="TabHeader_Nominations" xml:space="preserve">
+    <value>Nominations</value>
+  </data>
+  <data name="Window_Title_NominationSettings" xml:space="preserve">
+    <value>Nomination settings</value>
+  </data>
+  <data name="NominationContextMenu_AddNomination" xml:space="preserve">
+    <value>Add Nomination</value>
+  </data>
+  <data name="AddNomination_EditNomination" xml:space="preserve">
+    <value>Edit Nomination</value>
+  </data>
+  <data name="Label_WinCriterion" xml:space="preserve">
+    <value>Win Criterion</value>
+  </data>
+  <data name="Label_Name" xml:space="preserve">
+    <value>Name</value>
+  </data>
 </root>

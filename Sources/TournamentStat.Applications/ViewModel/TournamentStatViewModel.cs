@@ -1,11 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Windows.Input;
 using TournamentStat.Applications.Annotations;
+using WotDossier.Applications.ViewModel;
 using WotDossier.Applications.ViewModel.Rows;
 using WotDossier.Dal;
+using WotDossier.Domain;
 using WotDossier.Framework;
 using WotDossier.Framework.Forms.Commands;
 
@@ -57,9 +60,20 @@ namespace TournamentStat.Applications.ViewModel
             dossierRepository.DeletePlayerData(row.PlayerId);
         }
 
-        private void OnRowDoubleClick(object obj)
+        private void OnRowDoubleClick(object rowData)
         {
-            throw  new NotImplementedException("OnRowDoubleClick");
+            ITankStatisticRow tankStatisticRowViewModel = rowData as ITankStatisticRow;
+
+            //NRE if row of type TotalTankStatisticRowViewModel
+            if (tankStatisticRowViewModel != null && !(tankStatisticRowViewModel is TotalTankStatisticRowViewModel))
+            {
+                TankStatisticViewModel viewModel = CompositionContainerFactory.Instance.GetExport<TankStatisticViewModel>();
+                if (viewModel != null)
+                {
+                    viewModel.TankStatistic = tankStatisticRowViewModel;
+                    viewModel.Show();
+                }
+            }
         }
 
         [NotifyPropertyChangedInvocator]

@@ -62,6 +62,18 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\NHibernate.4.0.3.4000\lib\net40\NHibernate.dll</HintPath>
     </Reference>
+    <Reference Include="OxyPlot, Version=2015.1.871.0, Culture=neutral, PublicKeyToken=638079a8f0bd61e9, processorArchitecture=MSIL">
+      <HintPath>..\packages\OxyPlot.Core.2015.1.871-alpha\lib\net45\OxyPlot.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="OxyPlot.Wpf, Version=2015.1.871.0, Culture=neutral, PublicKeyToken=75e952ba404cdbb0, processorArchitecture=MSIL">
+      <HintPath>..\packages\OxyPlot.Wpf.2015.1.871-alpha\lib\net45\OxyPlot.Wpf.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="OxyPlot.Xps, Version=2015.1.871.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\OxyPlot.Wpf.2015.1.871-alpha\lib\net45\OxyPlot.Xps.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="PresentationFramework.Aero" />
     <Reference Include="SimpleInjector, Version=2.8.0.0, Culture=neutral, PublicKeyToken=984cb50dea722e99, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -93,8 +105,20 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="..\WotDossier\Controls\LineChartControl.xaml.cs">
+      <Link>Controls\LineChartControl.xaml.cs</Link>
+    </Compile>
+    <Compile Include="..\WotDossier\Controls\PeriodTab.xaml.cs">
+      <Link>Controls\PeriodTab.xaml.cs</Link>
+    </Compile>
     <Compile Include="..\WotDossier\Controls\TankFilterPanel.xaml.cs">
       <Link>Controls\TankFilterPanel.xaml.cs</Link>
+    </Compile>
+    <Compile Include="..\WotDossier\Converters\BattleModeToVisibilityConverter.cs">
+      <Link>Converters\BattleModeToVisibilityConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\WotDossier\Views\TankStatisticWindow.xaml.cs">
+      <Link>Views\TankStatisticWindow.xaml.cs</Link>
     </Compile>
     <Compile Include="Tabs\TankStatTab.xaml.cs">
       <DependentUpon>TankStatTab.xaml</DependentUpon>
@@ -118,6 +142,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="..\WotDossier\Controls\LineChartControl.xaml">
+      <Link>Controls\LineChartControl.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="..\WotDossier\Controls\LinkStatisticRow.xaml">
       <Link>Controls\LinkStatisticRow.xaml</Link>
       <Generator>MSBuild:Compile</Generator>
@@ -130,6 +159,11 @@
     </Page>
     <Page Include="..\WotDossier\Controls\MedalTooltip.xaml">
       <Link>Controls\MedalTooltip.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Controls\PeriodTab.xaml">
+      <Link>Controls\PeriodTab.xaml</Link>
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -518,6 +552,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="..\WotDossier\Views\TankStatisticWindow.xaml">
+      <Link>Views\TankStatisticWindow.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="..\WotDossier\Views\UploadReplayWindow.xaml">
       <Link>Views\UploadReplayWindow.xaml</Link>
       <Generator>MSBuild:Compile</Generator>
@@ -820,9 +859,10 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <EmbeddedResource Include="Properties\Resources.ru-RU.resx" />
     <Resource Include="app_icon.ico" />
     <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <Content Include="..\WotDossier\app.manifest">

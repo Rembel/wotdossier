@@ -3586,4 +3586,19 @@
   <data name="Column_Header_Defender" xml:space="preserve">
     <value>Защитник</value>
   </data>
+  <data name="TournamentCriterion_Damage" xml:space="preserve">
+    <value>Урон</value>
+  </data>
+  <data name="TournamentCriterion_DamageWithArmor" xml:space="preserve">
+    <value>Урон+Броня</value>
+  </data>
+  <data name="TournamentCriterion_DamageWithAssist" xml:space="preserve">
+    <value>Урон+Засвет</value>
+  </data>
+  <data name="TournamentCriterion_Frags" xml:space="preserve">
+    <value>Фраги</value>
+  </data>
+  <data name="TournamentCriterion_WinPercent" xml:space="preserve">
+    <value>Процент побед</value>
+  </data>
 </root>

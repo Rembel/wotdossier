@@ -73,6 +73,7 @@ namespace TournamentStat
                 CompositionContainerFactory.Instance.Register<ReplayViewerSettingsViewModel, ReplayViewerSettingsViewModel>();
                 CompositionContainerFactory.Instance.Register<PlayerServerStatisticViewModel, PlayerServerStatisticViewModel>();
                 CompositionContainerFactory.Instance.Register<ClanViewModel, ClanViewModel>();
+                CompositionContainerFactory.Instance.Register<TankStatisticViewModel, TankStatisticViewModel>();
 
                 CompositionContainerFactory.Instance.RegisterSingle<IDataProvider, DataProvider>();
                 CompositionContainerFactory.Instance.RegisterSingle<DossierRepository, DossierRepository>();
@@ -89,6 +90,7 @@ namespace TournamentStat
                 CompositionContainerFactory.Instance.Register<IReplayViewerSettingsView, ReplayViewerSettingsWindow>();
                 CompositionContainerFactory.Instance.Register<IPlayerServerStatisticView, PlayerServerStatisticWindow>();
                 CompositionContainerFactory.Instance.Register<IClanView, ClanWindow>();
+                CompositionContainerFactory.Instance.Register<ITankStatisticView, TankStatisticWindow>();
 
                 Controller = CompositionContainerFactory.Instance.GetExport<TournamentStatController>();
 

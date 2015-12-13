@@ -3,8 +3,8 @@ using System.ComponentModel;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using TournamentStat.Applications.Annotations;
+using TournamentStat.Applications.Logic;
 using WotDossier.Applications.ViewModel.Rows;
-using WotDossier.Applications.ViewModel.Statistic;
 
 namespace TournamentStat.Applications.ViewModel
 {
@@ -31,47 +31,14 @@ namespace TournamentStat.Applications.ViewModel
             {
                 if (SelectedNomination != null)
                 {
-                    var nominationTanks = SelectedNomination.TournamentTanks.Select(x => x.TankUniqueId).ToList();
-                    var tankStatisticRows = _statisticRows.Where(x => nominationTanks.Contains(x.TankUniqueId));
-                    if (SelectedNomination.Criterion == TournamentCriterion.Damage)
-                    {
-                        return
-                            tankStatisticRows.OrderByDescending(
-                                x => ((StatisticViewModelBase) x).AvgDamageDealtForPeriod).ToList();
-                    }
-                    if (SelectedNomination.Criterion == TournamentCriterion.DamageWithAssist)
-                    {
-                        return
-                            tankStatisticRows.OrderByDescending(
-                                x =>
-                                    ((TankStatisticRowViewModelBase) x).AvgDamageAssistedForPeriod +
-                                    ((TankStatisticRowViewModelBase) x).AvgDamageDealtForPeriod).ToList();
-                    }
-                    if (SelectedNomination.Criterion == TournamentCriterion.WinPercent)
-                    {
-                        return
-                            tankStatisticRows.OrderByDescending(
-                                x => ((TankStatisticRowViewModelBase) x).WinsPercentForPeriod).ToList();
-                    }
-                    if (SelectedNomination.Criterion == TournamentCriterion.Frags)
-                    {
-                        return
-                            tankStatisticRows.OrderByDescending(
-                                x => ((TankStatisticRowViewModelBase) x).AvgFragsForPeriod).ToList();
-                    }
-                    if (SelectedNomination.Criterion == TournamentCriterion.DamageWithArmor)
-                    {
-                        return
-                            tankStatisticRows.OrderByDescending(
-                                x =>
-                                    ((TankStatisticRowViewModelBase) x).AvgDamageDealtForPeriod +
-                                    ((TankStatisticRowViewModelBase) x).AvgPotentialDamageReceivedForPeriod).ToList();
-                    }
-
-                    return _statisticRows;
+                    return NominationHelper.GetNominationResults(SelectedNomination, _statisticRows);
                 }
                 return null;
             }
+        }
+
+        public TournamentTankResultsViewModel()
+        {
         }
 
         public TournamentTankResultsViewModel(List<TournamentNomination> nominations, List<ITankStatisticRow> statisticRows)

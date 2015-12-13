@@ -4,7 +4,8 @@
         xmlns:converters="clr-namespace:WotDossier.Converters"
         xmlns:viewModel="clr-namespace:TournamentStat.Applications.ViewModel;assembly=TournamentStat.Applications"
         xmlns:controls="clr-namespace:WotDossier.Controls"
-        Title="Nomination configure" Height="550" Width="750" WindowStartupLocation="CenterOwner" Icon="pack://application:,,,/WotDossier.Resources;component/Images/window_settings.png"
+        xmlns:Properties="clr-namespace:TournamentStat.Properties"
+        Title="{x:Static Properties:Resources.Window_Title_NominationSettings}" Height="550" Width="750" WindowStartupLocation="CenterOwner" Icon="pack://application:,,,/WotDossier.Resources;component/Images/window_settings.png"
         Style="{StaticResource office2007SilverWindow}" Background="{StaticResource PanelBackground}">
     <Window.Resources>
         <DataTemplate x:Key="TournamentTankRowTemplate" DataType="viewModel:TournamentTank">
@@ -39,9 +40,9 @@
             <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="Auto"></RowDefinition>
         </Grid.RowDefinitions>
-        <TextBlock Margin="6 3 6 3" Grid.Column="0" Text="Name" VerticalAlignment="Center" />
+        <TextBlock Margin="6 3 6 3" Grid.Column="0" Text="{x:Static Properties:Resources.Label_Name}" VerticalAlignment="Center" />
         <TextBox Margin="6 3 6 3" Grid.Column="1" Text="{Binding Nomination, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
-        <TextBlock Margin="6 3 6 3" Grid.Row="1" Grid.Column="0" Text="Win Criterion" VerticalAlignment="Center" />
+        <TextBlock Margin="6 3 6 3" Grid.Row="1" Grid.Column="0" Text="{x:Static Properties:Resources.Label_WinCriterion}" VerticalAlignment="Center" />
         <ComboBox Margin="6,3,6,3" Grid.Row="1" Grid.Column="1" Width="200" ItemsSource="{Binding Criterions}" DisplayMemberPath="Value" SelectedValuePath="Id" 
                   SelectedValue="{Binding Criterion, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left"/>
         <controls:TankFilterPanel Margin="6 3 6 3" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" DataContext="{Binding TankFilter}" />

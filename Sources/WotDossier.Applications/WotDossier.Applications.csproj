@@ -32,6 +32,15 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'TournamentStat|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\TournamentStat\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="AutoMapper, Version=2.2.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -167,13 +176,13 @@
     <Compile Include="ViewModel\Replay\MapStat.cs" />
     <Compile Include="ViewModel\Replay\ReplayMapViewModel.cs" />
     <Compile Include="ViewModel\Replay\TotalReplayFile.cs" />
+    <Compile Include="ViewModel\Replay\Viewer\MapElementContext.cs" />
     <Compile Include="ViewModel\Replay\Viewer\MapGrid.cs" />
     <Compile Include="ViewModel\Replay\Viewer\ReplayViewer.cs" />
     <Compile Include="ViewModel\Reporter.cs" />
     <Compile Include="ViewModel\Rows\FortSortiesTankStatisticRowViewModel.cs" />
     <Compile Include="ViewModel\Rows\FortBattlesTankStatisticRowViewModel.cs" />
     <Compile Include="ViewModel\Rows\HistoricalBattlesTankStatisticRowViewModel.cs" />
-    <Compile Include="ViewModel\ListItem.cs" />
     <Compile Include="ViewModel\ReplaysViewModel.cs" />
     <Compile Include="ViewModel\Replay\AddReplayFolderViewModel.cs" />
     <Compile Include="ViewModel\Replay\BattleStatus.cs" />

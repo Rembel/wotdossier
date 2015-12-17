@@ -32,6 +32,15 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'TournamentStat|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\TournamentStat\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -171,6 +180,7 @@
     <Compile Include="Server\Vehicle.cs" />
     <Compile Include="Server\VehicleMarkOfMastery.cs" />
     <Compile Include="Settings\AppSettings.cs" />
+    <Compile Include="Settings\AppSettingsBase.cs" />
     <Compile Include="Settings\DossierTheme.cs" />
     <Compile Include="Settings\PeriodSettings.cs" />
     <Compile Include="Settings\ReplayPlayer.cs" />

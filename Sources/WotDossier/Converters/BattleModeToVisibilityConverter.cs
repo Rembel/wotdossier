@@ -34,10 +34,10 @@ namespace WotDossier.Converters
         /// </returns>
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            var battleMode = (BattleMode)value;
+            var battleMode = (Enum)value;
             if (parameter != null)
             {
-                return battleMode == (BattleMode) parameter ? Visibility.Visible : Visibility.Collapsed;
+                return battleMode.Equals(parameter) ? Visibility.Visible : Visibility.Collapsed;
             }
             return Visibility.Visible;
         }

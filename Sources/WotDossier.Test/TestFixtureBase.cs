@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.Composition;
 using System.IO;
 using System.Reflection;
@@ -64,7 +65,13 @@ namespace WotDossier.Test
                 _resourceManagers.Add(resourceManager);
             }
 
-            CultureHelper.SetUiCulture();
+            CultureHelper.SetUiCulture(SettingsReader.Get().Language);
+
+            if (!UriParser.IsKnownScheme("pack"))
+            {
+                // the pack:// scheme is not yet registered. This scheme is registered when you create the Application object.
+                new System.Windows.Application();
+            }
         }
 
         [SetUp]

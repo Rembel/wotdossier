@@ -63,6 +63,15 @@
     <CodeAnalysisRuleDirectories>;C:\Program Files\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
     <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'TournamentStat|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\TournamentStat\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Common.Logging">
       <HintPath>..\packages\Common.Logging.2.1.2\lib\net40\Common.Logging.dll</HintPath>
@@ -107,6 +116,7 @@
     <Compile Include="Applications\DispatcherHelper.cs" />
     <Compile Include="Applications\EventToCommand.cs" />
     <Compile Include="Applications\IView.cs" />
+    <Compile Include="Applications\ListItem.cs" />
     <Compile Include="Applications\PropertyChangedEventListener.cs" />
     <Compile Include="Applications\Services\FileDialogResult.cs" />
     <Compile Include="Applications\Services\FileDialogServiceExtensions.cs" />

@@ -558,7 +558,7 @@ namespace WotDossier.Applications.ViewModel
                     viewModel.TankStatistic = tankStatisticRowViewModel;
                     AppSettings appSettings = SettingsReader.Get();
 
-                    ITankStatisticRow temp = tankStatisticRowViewModel.GetPreviousStatistic();
+                    ITankStatisticRow temp = tankStatisticRowViewModel.PreviousStatistic;
 
                     // configure LastNBattles stat for tank
                     if (appSettings.PeriodSettings.Period == StatisticPeriod.LastNBattles)
@@ -636,7 +636,7 @@ namespace WotDossier.Applications.ViewModel
                     try
                     {
                         //set thread culture
-                        CultureHelper.SetUiCulture();
+                        CultureHelper.SetUiCulture(SettingsReader.Get().Language);
 
                         ServerStatWrapper serverStatistic = LoadPlayerServerStatistic(settings);
                         

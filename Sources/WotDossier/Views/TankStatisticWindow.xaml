@@ -73,7 +73,7 @@
                     </ScrollViewer>
                 </TabItem>
                 <!--Charts-->
-                <TabItem TabIndex="0" Header="{x:Static resources:Resources.Tab_Header_Chart}" DataContext="{Binding ChartView}">
+                <TabItem TabIndex="0" Header="{x:Static resources:Resources.Tab_Header_Chart}" DataContext="{Binding ChartView}" Visibility="{Binding ChartView, Converter={x:Static converters:ObjectToVisibilityConverter.Default}}">
                     <TabControl HorizontalAlignment="Center" Margin="0,50,0,50" SnapsToDevicePixels="True">
                         <TabControl.Resources>
                             <Style TargetType="TabPanel">

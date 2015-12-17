@@ -176,7 +176,7 @@ namespace WotDossier.Applications.ViewModel.Replay
 
                 var map = Dictionaries.Instance.Maps[replay.datablock_1.mapName];
 
-                _mapGrid = new MapGrid(map, replay.datablock_1.gameplayID, Team, 300, 300);
+                _mapGrid = new MapGrid(new MapElementContext(map, replay.datablock_1.gameplayID, Team, 300, 300));
             }
         }
 

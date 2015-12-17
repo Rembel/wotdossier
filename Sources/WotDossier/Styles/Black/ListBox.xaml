@@ -7,6 +7,7 @@
 
     <Style x:Key="office2007SilverListBoxItem" TargetType="{x:Type ListBoxItem}">
         <Setter Property="Padding" Value="0" />
+        <Setter Property="Foreground" Value="Black" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate  TargetType="{x:Type ListBoxItem}">
@@ -24,15 +25,15 @@
         <Style.Triggers>
             <Trigger Property="IsMouseOver" Value="true">
                 <Setter Property="Background" Value="#3295A6D4" />
-                <Setter Property="Foreground" Value="White" />
+                <Setter Property="Foreground" Value="Black" />
             </Trigger>
             <Trigger Property="IsSelected" Value="true">
                 <Setter Property="Background" Value="#3295A6D4" />
-                <Setter Property="Foreground" Value="White" />
+                <Setter Property="Foreground" Value="Black" />
             </Trigger>
-            <DataTrigger Binding="{Binding Path=HideFlag}" Value="true">
+            <!--<DataTrigger Binding="{Binding Path=HideFlag}" Value="true">
                 <Setter Property="Foreground" Value="Gray"></Setter>
-            </DataTrigger>
+            </DataTrigger>-->
         </Style.Triggers>
     </Style>
 

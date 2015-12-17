@@ -743,5 +743,73 @@ namespace WotDossier.Test
             var appSettings = SettingsReader.Get();
             WotApiClient.Instance.GetClanMemberInfo(3016489, appSettings);
         }
+/*
+        [Test]
+        public void GenMapsImagesWithBases()
+        {
+            foreach (var map in Dictionaries.Instance.Maps)
+            {
+                var mapDescription = map.Value;
+                var outFileName = mapDescription.LocalizedMapName + ".png";
+
+                var replayMap = new ReplayMap
+                {
+                    Gameplay = Gameplay.ctf,
+                    MapId = mapDescription.MapId,
+                    MapName = mapDescription.MapName,
+                    MapNameId = mapDescription.MapNameId,
+                    Team = 1
+                };
+
+                var mapImage = (BitmapImage)MapToMinimapImageConverter.Default.Convert(replayMap, null, null, CultureInfo.InvariantCulture);
+
+                MapElementContext elementContext = new MapElementContext(mapDescription, replayMap.Gameplay.ToString(), 1, 300, 300);
+
+                var mapImageElements = elementContext.GetMapImageElements();
+
+                Bitmap bitmap = new Bitmap(Convert.ToInt32(300), Convert.ToInt32(300), System.Drawing.Imaging.PixelFormat.Format32bppArgb);
+                Graphics mainImage = Graphics.FromImage(bitmap);
+
+                mainImage.DrawImage(GetImage(mapImage),  new Point(0, 0));
+
+                foreach (var mapImageElement in mapImageElements)
+                {
+                    var baseImage = (BitmapImage)MapImageElementToIconConverter.Default.Convert(mapImageElement, null, null, CultureInfo.InvariantCulture);
+
+                    mainImage.DrawImage(GetImage(baseImage), new Point((int) mapImageElement.X, (int) mapImageElement.Y));
+                }
+
+                bitmap.Save(outFileName, ImageFormat.Png);
+            }
+        }
+
+        private Graphics ToGraphics(BitmapImage bitmapImage)
+        {
+            var image = GetImage(bitmapImage);
+
+            return Graphics.FromImage(image);
+        }
+
+        private static Image GetImage(BitmapImage bitmapImage)
+        {
+            BitmapEncoder encoder = new PngBitmapEncoder();
+            encoder.Frames.Add(BitmapFrame.Create(bitmapImage));
+
+            MemoryStream stream = new MemoryStream();
+            encoder.Save(stream);
+            stream.Position = 0;
+
+            var image = System.Drawing.Image.FromStream(stream);
+            return image;
+        }
+
+        private class ReplayMap : IReplayMap
+        {
+            public Gameplay Gameplay { get; set; }
+            public string MapName { get; set; }
+            public int MapId { get; set; }
+            public string MapNameId { get; set; }
+            public int Team { get; set; }
+        }*/
     }
 }

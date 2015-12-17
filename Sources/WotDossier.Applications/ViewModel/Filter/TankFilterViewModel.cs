@@ -308,36 +308,39 @@ namespace WotDossier.Applications.ViewModel.Filter
 
         public List<T> Filter<T>(List<T> tanks) where T : ITankFilterable
         {
-            return tanks.Where(x =>
-                                   (x.Tier < 2 && Level1Selected
-                                    || x.Tier == 2 && Level2Selected
-                                    || x.Tier == 3 && Level3Selected
-                                    || x.Tier == 4 && Level4Selected
-                                    || x.Tier == 5 && Level5Selected
-                                    || x.Tier == 6 && Level6Selected
-                                    || x.Tier == 7 && Level7Selected
-                                    || x.Tier == 8 && Level8Selected
-                                    || x.Tier == 9 && Level9Selected
-                                    || x.Tier == 10 && Level10Selected)
-                                   &&
-                                   (x.Type == (int)TankType.LT && LTSelected
-                                    || x.Type == (int)TankType.MT && MTSelected
-                                    || x.Type == (int)TankType.HT && HTSelected
-                                    || x.Type == (int)TankType.TD && TDSelected
-                                    || x.Type == (int)TankType.SPG && SPGSelected
-                                    || x.Type == (int)TankType.Unknown)
-                                   &&
-                                   (x.CountryId == (int)Country.Ussr && USSRSelected
-                                    || x.CountryId == (int)Country.Germany && GermanySelected
-                                    || x.CountryId == (int)Country.China && ChinaSelected
-                                    || x.CountryId == (int)Country.France && FranceSelected
-                                    || x.CountryId == (int)Country.Usa && USSelected
-                                    || x.CountryId == (int)Country.Japan && JPSelected
-                                    || x.CountryId == (int)Country.Czech && CZSelected
-                                    || x.CountryId == (int)Country.Uk && UKSelected)
-                                   && (x.IsFavorite || !IsFavorite)
-                                   && (x.IsPremium || !IsPremium)
-                ).ToList();
+            return tanks.Where(x => FilterCondition(x)).ToList();
+        }
+
+        public virtual bool FilterCondition<T>(T x) where T : ITankFilterable
+        {
+            return (x.Tier < 2 && Level1Selected
+                    || x.Tier == 2 && Level2Selected
+                    || x.Tier == 3 && Level3Selected
+                    || x.Tier == 4 && Level4Selected
+                    || x.Tier == 5 && Level5Selected
+                    || x.Tier == 6 && Level6Selected
+                    || x.Tier == 7 && Level7Selected
+                    || x.Tier == 8 && Level8Selected
+                    || x.Tier == 9 && Level9Selected
+                    || x.Tier == 10 && Level10Selected)
+                   &&
+                   (x.Type == (int)TankType.LT && LTSelected
+                    || x.Type == (int)TankType.MT && MTSelected
+                    || x.Type == (int)TankType.HT && HTSelected
+                    || x.Type == (int)TankType.TD && TDSelected
+                    || x.Type == (int)TankType.SPG && SPGSelected
+                    || x.Type == (int)TankType.Unknown)
+                   &&
+                   (x.CountryId == (int)Country.Ussr && USSRSelected
+                    || x.CountryId == (int)Country.Germany && GermanySelected
+                    || x.CountryId == (int)Country.China && ChinaSelected
+                    || x.CountryId == (int)Country.France && FranceSelected
+                    || x.CountryId == (int)Country.Usa && USSelected
+                    || x.CountryId == (int)Country.Japan && JPSelected
+                    || x.CountryId == (int)Country.Czech && CZSelected
+                    || x.CountryId == (int)Country.Uk && UKSelected)
+                   && (x.IsFavorite || !IsFavorite)
+                   && (x.IsPremium || !IsPremium);
         }
 
         /// <summary>

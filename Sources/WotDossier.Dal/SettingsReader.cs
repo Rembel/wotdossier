@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Text;
+using Newtonsoft.Json;
 using WotDossier.Common;
 using WotDossier.Domain;
 
@@ -26,13 +27,33 @@ namespace WotDossier.Dal
                 using (StreamReader reader = new StreamReader(stream))
                 {
                     var readToEnd = reader.ReadToEnd();
-                    return XmlSerializer.LoadObjectFromXml<AppSettings>(readToEnd);
+                    return Deserialize<AppSettings>(readToEnd);
                 }
             }
             
             //create settings file if not exists
             AppSettings settingsDto = new AppSettings();
             settingsDto.DossierCachePath = Folder.GetDefaultDossierCacheFolder();
+            Save(settingsDto);
+            return settingsDto;
+        }
+
+        public static T Get<T>() where T : class, new()
+        {
+            var filePath = GetFilePath();
+
+            if (File.Exists(filePath))
+            {
+                FileStream stream = File.Open(filePath, FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
+                using (StreamReader reader = new StreamReader(stream))
+                {
+                    var readToEnd = reader.ReadToEnd();
+                    return Deserialize<T>(readToEnd);
+                }
+            }
+
+            //create settings file if not exists
+            T settingsDto = new T();
             Save(settingsDto);
             return settingsDto;
         }
@@ -50,7 +71,7 @@ namespace WotDossier.Dal
         /// Saves the specified settings.
         /// </summary>
         /// <param name="settings">The settings.</param>
-        public static void Save(AppSettings settings)
+        public static void Save(object settings)
         {
             var filePath = GetFilePath();
 
@@ -59,10 +80,27 @@ namespace WotDossier.Dal
                 using (FileStream stream = File.Open(filePath, FileMode.Create, FileAccess.ReadWrite, FileShare.Read))
                 {
                     StreamWriter writer = new StreamWriter(stream, Encoding.UTF8);
-                    string xml = XmlSerializer.StoreObjectInXml(settings);
+                    string xml = Serialize(settings);
                     writer.Write(xml);
                     writer.Flush();
                 }
+            }
+        }
+
+        private static string Serialize(object settings)
+        {
+            return JsonConvert.SerializeObject(settings, Formatting.Indented);
+        }
+
+        private static T Deserialize<T>(string serializedObject) where T : class
+        {
+            try
+            {
+                return JsonConvert.DeserializeObject<T>(serializedObject);
+            }
+            catch (Exception e)
+            {
+                return XmlSerializer.LoadObjectFromXml<T>(serializedObject);
             }
         }
     }

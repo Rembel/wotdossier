@@ -123,8 +123,6 @@ namespace WotDossier.Applications.ViewModel.Rows
         #endregion
 
         public int OriginalXP { get; set; }
-        public int DamageAssistedTrack { get; set; }
-        public int DamageAssistedRadio { get; set; }
         public double Mileage { get; set; }
         public int ShotsReceived { get; set; }
         public int NoDamageShotsReceived { get; set; }
@@ -135,10 +133,7 @@ namespace WotDossier.Applications.ViewModel.Rows
         public int XpBefore88 { get; set; }
         public int BattlesCountBefore88 { get; set; }
         public int BattlesCount88 { get; set; }
-        public int BattlesCount90 { get; set; }
-        public int PotentialDamageReceived { get; set; }
-        public int DamageBlockedByArmor { get; set; }
-
+        
         private StatisticViewModelBase TypedPrevStatistic
         {
             get { return (StatisticViewModelBase)PrevStatisticSlice.Statistic; }
@@ -154,17 +149,9 @@ namespace WotDossier.Applications.ViewModel.Rows
             SetPreviousStatistic(((PeriodStatisticViewModel)model).ToStatisticSlice());
         }
 
-        public ITankStatisticRow GetPreviousStatistic()
+        public ITankStatisticRow PreviousStatistic
         {
-            return (ITankStatisticRow) TypedPrevStatistic;
-        }
-
-        public int DamageAssisted
-        {
-            get
-            {
-                return DamageAssistedTrack + DamageAssistedRadio;
-            }
+            get { return (ITankStatisticRow) TypedPrevStatistic; }
         }
 
         public double AvgDamageAssistedTrack
@@ -234,6 +221,40 @@ namespace WotDossier.Applications.ViewModel.Rows
                 if (BattlesCount90 > 0)
                 {
                     return DamageBlockedByArmor / (double)BattlesCount90;
+                }
+                return 0;
+            }
+        }
+
+        public int DamageAssistedDelta
+        {
+            get { return DamageAssisted - TypedPrevStatistic.DamageAssisted; }
+        }
+
+        public double AvgDamageAssistedForPeriod
+        {
+            get
+            {
+                if (BattlesCountDelta > 0)
+                {
+                    return DamageAssistedDelta / (double)BattlesCountDelta;
+                }
+                return 0;
+            }
+        }
+
+        public int PotentialDamageReceivedDelta
+        {
+            get { return PotentialDamageReceived - TypedPrevStatistic.PotentialDamageReceived; }
+        }
+
+        public double AvgPotentialDamageReceivedForPeriod
+        {
+            get
+            {
+                if (BattlesCountDelta > 0)
+                {
+                    return PotentialDamageReceivedDelta / (double)BattlesCountDelta;
                 }
                 return 0;
             }

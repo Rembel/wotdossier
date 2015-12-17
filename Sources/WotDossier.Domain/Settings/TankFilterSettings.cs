@@ -23,6 +23,7 @@
             HTSelected = true;
             TDSelected = true;
             SPGSelected = true;
+            Level1Selected = true;
             Level2Selected = true;
             Level3Selected = true;
             Level4Selected = true;

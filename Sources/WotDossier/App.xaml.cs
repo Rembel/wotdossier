@@ -62,7 +62,7 @@ namespace WotDossier
             //config.Save();
 
             //set app lang
-            CultureHelper.SetUiCulture();
+            CultureHelper.SetUiCulture(SettingsReader.Get().Language);
 
             //TODO: Remove, hard hack
             //RestoreAutomapperDll();

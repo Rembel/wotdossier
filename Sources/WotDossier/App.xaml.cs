@@ -95,10 +95,17 @@ namespace WotDossier
 
                 DatabaseManager manager = new DatabaseManager();
                 manager.InitDatabase();
-                
-                // Registrations here
-                CompositionContainerFactory.Instance.RegisterSingle<ApplicationController, ApplicationController>();
+
+                CompositionContainerFactory.Instance.RegisterSingle<ISessionStorage, DesktopAppSessionStorage>();
+                CompositionContainerFactory.Instance.RegisterSingle<DataProvider, DataProvider>();
+                CompositionContainerFactory.Instance.RegisterSingle<DossierRepository, DossierRepository>();
+
+                CompositionContainerFactory.Instance.RegisterSingle<IShellView, MainWindow>();
+
                 CompositionContainerFactory.Instance.RegisterSingle<ShellViewModel, ShellViewModel>();
+                CompositionContainerFactory.Instance.RegisterSingle<ApplicationController, ApplicationController>();
+
+                // Registrations here
                 CompositionContainerFactory.Instance.Register<SettingsViewModel, SettingsViewModel>();
                 CompositionContainerFactory.Instance.Register<ClanSearchViewModel, ClanSearchViewModel>();
                 CompositionContainerFactory.Instance.Register<ClanViewModel, ClanViewModel>();
@@ -112,15 +119,11 @@ namespace WotDossier
                 CompositionContainerFactory.Instance.Register<ReplayViewModel, ReplayViewModel>();
                 CompositionContainerFactory.Instance.Register<ReplayViewerSettingsViewModel, ReplayViewerSettingsViewModel>();
 
-                CompositionContainerFactory.Instance.RegisterSingle<IDataProvider, DataProvider>();
-                CompositionContainerFactory.Instance.RegisterSingle<DossierRepository, DossierRepository>();
-                CompositionContainerFactory.Instance.RegisterSingle<ReplaysManager, ReplaysManager>();
-                CompositionContainerFactory.Instance.RegisterSingle<ISessionStorage, DesktopAppSessionStorage>();
+                CompositionContainerFactory.Instance.Register<ReplaysManager, ReplaysManager>();
 
                 CompositionContainerFactory.Instance.Register<IAddReplayFolderView, AddReplayFolderWindow>();
                 CompositionContainerFactory.Instance.Register<IClanView, ClanWindow>();
                 CompositionContainerFactory.Instance.Register<IAboutView, AboutWindow>();
-                CompositionContainerFactory.Instance.RegisterSingle<IShellView, MainWindow>();
                 CompositionContainerFactory.Instance.Register<IPlayerServerStatisticView, PlayerServerStatisticWindow>();
                 CompositionContainerFactory.Instance.Register<IReplayView, ReplayWindow>();
                 CompositionContainerFactory.Instance.Register<ISearchView, SearchWindow>();

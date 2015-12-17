@@ -60,6 +60,10 @@ namespace TournamentStat
                 //set app lang
                 CultureHelper.SetUiCulture(SettingsReader.Get<TournamentStatSettings>().Language);
 
+                CompositionContainerFactory.Instance.RegisterSingle<ISessionStorage, DesktopAppSessionStorage>();
+                CompositionContainerFactory.Instance.RegisterSingle<IDataProvider, DataProvider>();
+                CompositionContainerFactory.Instance.RegisterSingle<DossierRepository, DossierRepository>();
+
                 // Registrations here
                 CompositionContainerFactory.Instance.RegisterSingle<ReplaysManagerController, ReplaysManagerController>();
                 CompositionContainerFactory.Instance.RegisterSingle<Applications.ViewModel.ShellViewModel, Applications.ViewModel.ShellViewModel>();
@@ -75,11 +79,8 @@ namespace TournamentStat
                 CompositionContainerFactory.Instance.Register<ClanViewModel, ClanViewModel>();
                 CompositionContainerFactory.Instance.Register<TankStatisticViewModel, TankStatisticViewModel>();
 
-                CompositionContainerFactory.Instance.RegisterSingle<IDataProvider, DataProvider>();
-                CompositionContainerFactory.Instance.RegisterSingle<DossierRepository, DossierRepository>();
                 CompositionContainerFactory.Instance.Register<ReplaysManager, ReplaysManager>();
-                CompositionContainerFactory.Instance.Register<ISessionStorage, DesktopAppSessionStorage>();
-
+                
                 CompositionContainerFactory.Instance.Register<IAddReplayFolderView, AddReplayFolderWindow>();
                 CompositionContainerFactory.Instance.RegisterSingle<Applications.View.IShellView, Views.MainWindow>();
                 CompositionContainerFactory.Instance.Register<IReplayView, ReplayWindow>();

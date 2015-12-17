@@ -45,7 +45,7 @@ namespace WotDossier.Framework
             where TService : class
             where TImplementation : class, TService
         {
-            SimpleContainer.RegisterSingle<TService, TImplementation>();
+            SimpleContainer.RegisterSingleton<TService, TImplementation>();
         }
 
         //private CompositionContainer Container

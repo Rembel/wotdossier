@@ -59,6 +59,10 @@ namespace WotDossier.ReplaysManager
                 //set app lang
                 CultureHelper.SetUiCulture(SettingsReader.Get().Language);
 
+                CompositionContainerFactory.Instance.RegisterSingle<ISessionStorage, DesktopAppSessionStorage>();
+                CompositionContainerFactory.Instance.RegisterSingle<DataProvider, DataProvider>();
+                CompositionContainerFactory.Instance.RegisterSingle<DossierRepository, DossierRepository>();
+
                 // Registrations here
                 CompositionContainerFactory.Instance.RegisterSingle<ReplaysManagerController, ReplaysManagerController>();
                 CompositionContainerFactory.Instance.RegisterSingle<ReplayManagerShellViewModel, ReplayManagerShellViewModel>();
@@ -72,11 +76,8 @@ namespace WotDossier.ReplaysManager
                 CompositionContainerFactory.Instance.Register<PlayerServerStatisticViewModel, PlayerServerStatisticViewModel>();
                 CompositionContainerFactory.Instance.Register<ClanViewModel, ClanViewModel>();
 
-                CompositionContainerFactory.Instance.RegisterSingle<IDataProvider, DataProvider>();
-                CompositionContainerFactory.Instance.RegisterSingle<DossierRepository, DossierRepository>();
                 CompositionContainerFactory.Instance.Register<Applications.Logic.ReplaysManager, Applications.Logic.ReplaysManager>();
-                CompositionContainerFactory.Instance.Register<ISessionStorage, DesktopAppSessionStorage>();
-
+                
                 CompositionContainerFactory.Instance.Register<IAddReplayFolderView, AddReplayFolderWindow>();
                 CompositionContainerFactory.Instance.RegisterSingle<IShellView, MainWindow>();
                 CompositionContainerFactory.Instance.Register<IReplayView, ReplayWindow>();

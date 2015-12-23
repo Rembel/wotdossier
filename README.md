@@ -36,8 +36,9 @@ This app shows the contents of your locally cached WoT dossier data, which are u
 ### System requirements:
 
 * XP, vista 32/64, windows 7 32/64
-* Microsoft .NetFramework? 4.0 (http://www.microsoft.com/en-us/download/details.aspx?id=17718)
-* Microsoft Visual C++ 2008 Redistributable Package (x86) (http://www.microsoft.com/en-us/download/confirmation.aspx?id=29) 
+* Microsoft .NetFramework? 4.0 (http://www.microsoft.com/en-us/download/details.aspx?id=17718) or 4.5.2 http://download.microsoft.com/download/B/4/1/B4119C11-0423-477B-80EE-7A474314B347/NDP452-KB2901954-Web.exe
+* Microsoft Visual C++ 2008 Redistributable Package (x86)
+* XP hot fix https://googledrive.com/host/0B214mHv6250YcFpGQWN4TGQ5X1E/NDP40-KB2464222-x86.exe
 
 [History](history.md) 
 

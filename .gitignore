@@ -35,3 +35,4 @@ obj
 *.user
 *.suo
 /Sources/.vs/config
+/Sources/WotDossier.Web/node_modules

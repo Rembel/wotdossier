@@ -6,6 +6,20 @@ namespace WotDossier.Common.Extensions
 {
     public static class UriExtensions
     {
+        public static void Delete(this Uri uri)
+        {
+            try
+            {
+                var request = WebRequest.Create(uri);
+                request.Method = "DELETE";
+                request.GetResponse();
+            }
+            catch (Exception e)
+            {
+                
+            }
+        }
+
         public static string Get(this Uri uri)
         {
             string str = null;
@@ -27,6 +41,25 @@ namespace WotDossier.Common.Extensions
                 client.Dispose();
             }
             return str;
+        }
+
+        public static void Post(this Uri uri, string data)
+        {
+            string str = null;
+            var client = new WebClient();
+            client.Proxy.Credentials = CredentialCache.DefaultCredentials;
+            try
+            {
+                client.Headers[HttpRequestHeader.ContentType] = "application/json";
+                client.UploadStringAsync(uri, data);
+            }
+            catch (WebException)
+            {
+            }
+            finally
+            {
+                client.Dispose();
+            }
         }
     }
 }

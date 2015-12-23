@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Runtime.Serialization;
 
 namespace WotDossier.Domain.Entities
 {
@@ -7,51 +8,64 @@ namespace WotDossier.Domain.Entities
 	/// Object representation for table 'Tank'.
 	/// </summary>
 	[Serializable]
+    [DataContract]
 	public class TankEntity : EntityBase
 	{	
 		/// <summary>
 		/// Gets/Sets the field "TankId".
 		/// </summary>
-		public virtual int TankId	{get; set; }
+		[DataMember]
+        public virtual int TankId	{get; set; }
 		
 		/// <summary>
 		/// Gets/Sets the field "Name".
 		/// </summary>
-		public virtual string Name	{get; set; }
+        [DataMember]
+        public virtual string Name	{get; set; }
 		
 		/// <summary>
 		/// Gets/Sets the field "Tier".
 		/// </summary>
-		public virtual int Tier	{get; set; }
+        [DataMember]
+        public virtual int Tier	{get; set; }
 		
 		/// <summary>
 		/// Gets/Sets the field "CountryId".
 		/// </summary>
-		public virtual int CountryId	{get; set; }
+        [DataMember]
+        public virtual int CountryId	{get; set; }
 		
 		/// <summary>
 		/// Gets/Sets the field "Icon".
 		/// </summary>
-		public virtual string Icon	{get; set; }
+        [DataMember]
+        public virtual string Icon	{get; set; }
 		
 		/// <summary>
 		/// Gets/Sets the field "TankType".
 		/// </summary>
-		public virtual int TankType	{get; set; }
+        [DataMember]
+        public virtual int TankType	{get; set; }
 		
 		/// <summary>
 		/// Gets/Sets the field "IsPremium".
 		/// </summary>
-		public virtual Boolean IsPremium	{get; set; }
+        [DataMember]
+        public virtual Boolean IsPremium	{get; set; }
 		
 		/// <summary>
 		/// Gets/Sets the field "PlayerId".
 		/// </summary>
-		public virtual int PlayerId { get; set; }
+        [DataMember]
+        public virtual int PlayerId { get; set; }
+
+        [DataMember]
+        public virtual Guid PlayerUId { get; set; }
 
         /// <summary>
         /// Gets/Sets the field "IsFavorite".
         /// </summary>
+        [DataMember]
         public virtual bool IsFavorite { get; set; }
 		
 		/// <summary>

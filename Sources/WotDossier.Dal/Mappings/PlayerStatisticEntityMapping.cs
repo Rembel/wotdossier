@@ -37,6 +37,8 @@ namespace WotDossier.Dal.Mappings
             Map(v => v.RatingHitsPercentsValue, "Rating_HitsPercentsValue");
 
             Map(v => v.AchievementsId).ReadOnly();
+            Map(v => v.AchievementsUId);
+            Map(v => v.PlayerUId);
 		
 			References(v => v.PlayerIdObject).Column(Column(v => v.PlayerId)).ReadOnly();
             References(v => v.AchievementsIdObject).Column(Column(v => v.AchievementsId)).Insert().Update().Cascade.All().Fetch.Join();

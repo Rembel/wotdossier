@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Runtime.Serialization;
 
 namespace WotDossier.Domain.Entities
 {
@@ -7,29 +8,34 @@ namespace WotDossier.Domain.Entities
 	/// Object representation for table 'Player'.
 	/// </summary>
 	[Serializable]
+    [DataContract]
 	public class PlayerEntity : EntityBase
 	{	
 		/// <summary>
 		/// Gets/Sets the field "Name".
 		/// </summary>
-		public virtual string Name	{get; set; }
+		[DataMember]
+        public virtual string Name	{get; set; }
 
         /// <summary>
         /// Gets or sets the server.
         /// </summary>
+        [DataMember]
         public virtual string Server { get; set; }
 		
 		/// <summary>
 		/// Gets/Sets the field "Creaded".
 		/// </summary>
-		public virtual DateTime Creaded	{get; set; }
+        [DataMember]
+        public virtual DateTime Creaded	{get; set; }
 		
 		/// <summary>
 		/// Gets/Sets the field "PlayerId".
 		/// </summary>
-		public virtual int PlayerId	{get; set; }
-		
-		#region Collections
+        [DataMember]
+        public virtual int PlayerId	{get; set; }
+
+	    #region Collections
 		
 		private IList<TankEntity> _tankEntities;
 		/// <summary>

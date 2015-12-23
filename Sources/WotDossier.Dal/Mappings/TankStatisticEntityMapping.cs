@@ -15,6 +15,7 @@ namespace WotDossier.Dal.Mappings
 			Map(v => v.Updated);
             Map(v => v.Raw).CustomSqlType("BinaryBlob");
 			Map(v => v.TankId).ReadOnly();
+            Map(v => v.TankUId);
             Map(v => v.Version);
             Map(v => v.BattlesCount);
 		

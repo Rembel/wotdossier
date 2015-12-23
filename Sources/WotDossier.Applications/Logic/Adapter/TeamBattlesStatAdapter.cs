@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using WotDossier.Domain.Entities;
@@ -174,7 +175,8 @@ namespace WotDossier.Applications.Logic.Adapter
 
             if (entity.AchievementsIdObject == null)
             {
-                entity.AchievementsIdObject = new TeamBattlesAchievementsEntity();
+                entity.AchievementsIdObject = new TeamBattlesAchievementsEntity{UId = Guid.NewGuid()};
+                entity.AchievementsUId = entity.AchievementsIdObject.UId;
             }
 
             Mapper.Map<ITeamBattlesAchievements>(this, entity.AchievementsIdObject);

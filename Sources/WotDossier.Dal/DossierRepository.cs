@@ -45,7 +45,7 @@ namespace WotDossier.Dal
         /// <typeparam name="T"></typeparam>
         /// <param name="accountId">The unique wot identifier.</param>
         /// <returns></returns>
-        public IEnumerable<T> GetPlayerStatistic<T>(int accountId) where T : StatisticEntity
+        public IEnumerable<T> GetPlayerStatistic<T>(int accountId, int rev = 0) where T : StatisticEntity
         {
             _dataProvider.OpenSession();
             _dataProvider.BeginTransaction();
@@ -56,7 +56,7 @@ namespace WotDossier.Dal
             {
                 list = _dataProvider.QueryOver(() => statistic)
                                     .Inner.JoinAlias(x => x.PlayerIdObject, () => player)
-                                    .Where(x => player.PlayerId == accountId).List<T>();
+                                    .Where(x => player.PlayerId == accountId && statistic.Rev > rev).List<T>();
                 _dataProvider.CommitTransaction();
             }
             catch (Exception e)
@@ -103,8 +103,10 @@ namespace WotDossier.Dal
                     //create new record
                     if (IsNewSnapshotShouldBeAdded(currentSnapshot.Updated, newSnapshot.Updated))
                     {
-                        currentSnapshot = new T { PlayerId = playerEntity.Id };
+                        currentSnapshot = new T { PlayerId = playerEntity.Id, PlayerUId = playerEntity.UId.Value, UId = Guid.NewGuid()};
                     }
+
+                    UpdateRevision(playerEntity, currentSnapshot);
 
                     newSnapshot.Update(currentSnapshot);
                 }
@@ -129,6 +131,17 @@ namespace WotDossier.Dal
             }
 
             return playerEntity;
+        }
+
+        private void UpdateRevision(PlayerEntity playerEntity, StatisticEntity currentSnapshot)
+        {
+            playerEntity.Rev = GetRev();
+            currentSnapshot.Rev = playerEntity.Rev;
+        }
+
+        private static int GetRev()
+        {
+            return Int32.Parse(DateTime.Now.ToString("yyyyMMdd")) * 100;
         }
 
         private static bool IsNewSnapshotShouldBeAdded(DateTime currentSnapshotUpdated, DateTime newSnapshotUpdated)
@@ -265,14 +278,18 @@ namespace WotDossier.Dal
                         tankEntity.TankId = tankId;
                         tankEntity.Icon = tank.Description.Icon.IconId;
                         tankEntity.PlayerId = playerEntity.Id;
+                        tankEntity.PlayerUId = playerEntity.UId.Value;
                         tankEntity.IsPremium = tank.Common.premium == 1;
                         tankEntity.Name = tank.Common.tanktitle;
                         tankEntity.TankType = tank.Common.type;
                         tankEntity.Tier = tank.Common.tier;
+                        tankEntity.Rev = GetRev();
                         _dataProvider.Save(tankEntity);
 
                         T statisticEntity = new T();
+                        statisticEntity.Rev = GetRev();
                         statisticEntity.TankIdObject = tankEntity;
+                        statisticEntity.TankUId = tankEntity.UId;
                         Update(statisticEntity, tank, predicate);
                         _dataProvider.Save(statisticEntity);
                     }
@@ -297,7 +314,9 @@ namespace WotDossier.Dal
                         else
                         {
                             statisticEntity = new T();
+                            statisticEntity.Rev = GetRev();
                             statisticEntity.TankIdObject = tankEntity;
+                            statisticEntity.TankUId = tankEntity.UId;
                         }
 
                         if (currentSnapshotBattlesCount < predicate(tank).battlesCount)
@@ -306,7 +325,9 @@ namespace WotDossier.Dal
                             if (IsNewSnapshotShouldBeAdded(statisticEntity.Updated, updated))
                             {
                                 statisticEntity = new T();
+                                statisticEntity.Rev = GetRev();
                                 statisticEntity.TankIdObject = tankEntity;
+                                statisticEntity.TankUId = tankEntity.UId;
                             }
 
                             statisticEntity.Updated = updated;
@@ -317,8 +338,9 @@ namespace WotDossier.Dal
                         else if (currentSnapshotBattlesCount == 0 && predicate(tank).battlesCount == 0)
                         {
                             statisticEntity = new T();
+                            statisticEntity.Rev = GetRev();
                             statisticEntity.TankIdObject = tankEntity;
-
+                            statisticEntity.TankUId = tankEntity.UId;
                             statisticEntity.Updated = updated;
                             Update(statisticEntity, tank, predicate);
                             _dataProvider.Save(statisticEntity);
@@ -561,6 +583,14 @@ namespace WotDossier.Dal
             {
                 _dataProvider.CloseSession();
             }
+    }
+
+        public IList<TankEntity> GetTanks(PlayerEntity player, int rev)
+        {
+            _dataProvider.OpenSession();
+            IList<TankEntity> tanks = _dataProvider.QueryOver<TankEntity>().Where(x => x.Rev > rev && x.PlayerId == player.Id).List();
+            _dataProvider.CloseSession();
+            return tanks;
         }
     }
 }

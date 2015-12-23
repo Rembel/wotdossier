@@ -126,7 +126,7 @@ namespace WotDossier.Test
             foreach (var medal in Dictionaries.Instance.Medals)
             {
                 var localizedString = Resources.Resources.ResourceManager.GetString(medal.Value.NameResourceId);
-                Assert.IsNotNullOrEmpty(localizedString, "Resource not found: {0}", medal.Value.NameResourceId);
+                Assert.IsNotNull(localizedString, "Resource not found: {0}", medal.Value.NameResourceId);
 
                 string key = string.Format("images/medals/{0}.png", medal.Value.Icon).ToLowerInvariant();
                 Assert.IsTrue(dictionary.ContainsKey(key), "Image resource not found: {0}", medal.Value.Icon);
@@ -141,7 +141,7 @@ namespace WotDossier.Test
             foreach (var map in Dictionaries.Instance.Maps)
             {
                 var localizedString = Resources.Resources.ResourceManager.GetString("Map_" + map.Value.MapNameId);
-                Assert.IsNotNullOrEmpty(localizedString, "Resource not found: {0}", map.Value.MapNameId);
+                Assert.IsNotNull(localizedString, "Resource not found: {0}", map.Value.MapNameId);
 
                 var key = string.Format("images/maps/{0}.jpg", map.Value.MapNameId).ToLowerInvariant();
                 //Assert.IsTrue(dictionary.ContainsKey(key), "Image resource not found: {0}", map.Value.mapidname);

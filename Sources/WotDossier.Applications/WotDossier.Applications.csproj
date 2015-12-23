@@ -148,6 +148,7 @@
     <Compile Include="Logic\WotReplaysSiteResponse.cs" />
     <Compile Include="NativeMethods.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SyncManager.cs" />
     <Compile Include="ThemesManager.cs" />
     <Compile Include="Model\ClanMemberModel.cs" />
     <Compile Include="ViewModel\Chart\CommonChartsViewModel.cs" />

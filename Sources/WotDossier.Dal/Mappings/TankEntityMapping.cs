@@ -12,15 +12,16 @@ namespace WotDossier.Dal.Mappings
         /// </summary>
         public TankMapping()
         {
-			Map(v => v.TankId, "TankId");
-			Map(v => v.Name, "Name");
-			Map(v => v.Tier, "Tier");
-			Map(v => v.CountryId, "CountryId");
-			Map(v => v.Icon, "Icon");
-			Map(v => v.TankType, "TankType");
-			Map(v => v.IsPremium, "IsPremium");
-            Map(v => v.IsFavorite, "IsFavorite");
-            Map(v => v.PlayerId, "PlayerId").Insert();
+			Map(v => v.TankId);
+			Map(v => v.Name);
+			Map(v => v.Tier);
+			Map(v => v.CountryId);
+			Map(v => v.Icon);
+			Map(v => v.TankType);
+			Map(v => v.IsPremium);
+            Map(v => v.IsFavorite);
+            Map(v => v.PlayerId).Insert();
+            Map(v => v.PlayerUId);
 		
 			References(v => v.PlayerIdObject).Column(Column(v => v.PlayerId)).ReadOnly();
 

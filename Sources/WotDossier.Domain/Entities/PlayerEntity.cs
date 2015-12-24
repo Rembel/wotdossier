@@ -28,12 +28,12 @@ namespace WotDossier.Domain.Entities
 		/// </summary>
         [DataMember]
         public virtual DateTime Creaded	{get; set; }
-		
-		/// <summary>
-		/// Gets/Sets the field "PlayerId".
-		/// </summary>
+
+        /// <summary>
+        /// Gets/Sets the field "AccountId".
+        /// </summary>
         [DataMember]
-        public virtual int PlayerId	{get; set; }
+        public virtual int AccountId	{get; set; }
 
 	    #region Collections
 		

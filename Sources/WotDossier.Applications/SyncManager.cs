@@ -62,7 +62,7 @@ namespace WotDossier.Applications
             {
                 Player = player, 
                 Tanks = tanks,
-                RandomStatistic = _repository.GetPlayerStatistic<PlayerStatisticEntity>(player.PlayerId, rev),
+                RandomStatistic = _repository.GetPlayerStatistic<RandomBattlesStatisticEntity>(player.AccountId, rev),
                 //HistoricalStatistic = _repository.GetPlayerStatistic<HistoricalBattlesStatisticEntity>(player.PlayerId, rev),
                 //TeamStatistic = _repository.GetPlayerStatistic<TeamBattlesStatisticEntity>(player.PlayerId, rev)
             };

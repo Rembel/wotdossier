@@ -13,8 +13,8 @@ namespace WotDossier.Applications.BattleModeStrategies
 {
     public class ClanStatisticViewStrategy : StatisticViewStrategyBase
     {
-        private static PlayerStatisticEntity _currentSnapshot;
-        private static IEnumerable<TankStatisticEntity> _tanks;
+        private static RandomBattlesStatisticEntity _currentSnapshot;
+        private static IEnumerable<TankRandomBattlesStatisticEntity> _tanks;
 
         /// <summary>
         /// Predicate to get tank statistic
@@ -41,16 +41,16 @@ namespace WotDossier.Applications.BattleModeStrategies
         /// <returns></returns>
         public override PlayerStatisticViewModel GetPlayerStatistic(PlayerEntity player, List<TankJson> tanks, ServerStatWrapper playerData = null)
         {
-            List<PlayerStatisticEntity> statisticEntities = new List<PlayerStatisticEntity> { _currentSnapshot };
+            List<RandomBattlesStatisticEntity> statisticEntities = new List<RandomBattlesStatisticEntity> { _currentSnapshot };
 
-            PlayerStatisticEntity currentStatistic = statisticEntities.OrderByDescending(x => x.BattlesCount).First();
+            RandomBattlesStatisticEntity currentStatistic = statisticEntities.OrderByDescending(x => x.BattlesCount).First();
             List<StatisticSlice> oldStatisticEntities = statisticEntities.Where(x => x.Id != currentStatistic.Id)
                 .Select(entity => ToViewModel(entity).ToStatisticSlice()).ToList();
 
             PlayerStatisticViewModel currentStatisticViewModel = ToViewModel(currentStatistic, oldStatisticEntities);
             currentStatisticViewModel.Name = player.Name;
             currentStatisticViewModel.Created = player.Creaded;
-            currentStatisticViewModel.AccountId = player.PlayerId;
+            currentStatisticViewModel.AccountId = player.AccountId;
             var days = (DateTime.Now - player.Creaded).Days;
             currentStatisticViewModel.BattlesPerDay = currentStatisticViewModel.BattlesCount / (days == 0 ? 1 : days);
             currentStatisticViewModel.PlayTime = new TimeSpan(0, 0, 0, tanks.Sum(x => x.Common.battleLifeTime));
@@ -76,7 +76,7 @@ namespace WotDossier.Applications.BattleModeStrategies
         /// <returns></returns>
         protected override PlayerStatisticViewModel ToViewModel(StatisticEntity currentStatistic)
         {
-            return new ClanBattlesPlayerStatisticViewModel((PlayerStatisticEntity)currentStatistic);
+            return new ClanBattlesPlayerStatisticViewModel((RandomBattlesStatisticEntity)currentStatistic);
         }
 
         /// <summary>
@@ -87,7 +87,7 @@ namespace WotDossier.Applications.BattleModeStrategies
         /// <returns></returns>
         protected override PlayerStatisticViewModel ToViewModel(StatisticEntity currentStatistic, List<StatisticSlice> oldStatisticEntities)
         {
-            return new ClanBattlesPlayerStatisticViewModel((PlayerStatisticEntity)currentStatistic, oldStatisticEntities);
+            return new ClanBattlesPlayerStatisticViewModel((RandomBattlesStatisticEntity)currentStatistic, oldStatisticEntities);
         }
 
         /// <summary>
@@ -99,7 +99,7 @@ namespace WotDossier.Applications.BattleModeStrategies
         public override PlayerEntity UpdateTankStatistic(int playerId, List<TankJson> tanks)
         {
             _tanks = tanks.Select(x =>
-                new TankStatisticEntity
+                new TankRandomBattlesStatisticEntity
                 {
                     Updated = x.Common.lastBattleTimeR,
                     Version = x.Common.basedonversion,
@@ -143,7 +143,7 @@ namespace WotDossier.Applications.BattleModeStrategies
         {
             PlayerEntity playerEntity = DossierRepository.GetPlayer(playerId);
 
-            _currentSnapshot = new PlayerStatisticEntity { PlayerId = playerEntity.Id };
+            _currentSnapshot = new RandomBattlesStatisticEntity { PlayerId = playerEntity.Id };
 
             ClanBattlesStatAdapter newSnapshot = new ClanBattlesStatAdapter(tanks);
 

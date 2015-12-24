@@ -103,7 +103,7 @@ namespace WotDossier.Applications.ViewModel
 
         private StatisticViewModelBase GetPlayerViewModel(Player stat)
         {
-            PlayerStatisticEntity entity = new PlayerStatisticEntity();
+            RandomBattlesStatisticEntity entity = new RandomBattlesStatisticEntity();
             new RandomBattlesStatAdapter(stat).Update(entity);
             PlayerStatisticViewModel statistic = new RandomBattlesPlayerStatisticViewModel(entity);
             statistic.Name = stat.dataField.nickname;

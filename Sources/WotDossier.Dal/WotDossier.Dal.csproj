@@ -101,7 +101,10 @@
     <Compile Include="JsonCreationConverter.cs" />
     <Compile Include="MapConfigConverter.cs" />
     <Compile Include="Mappings\ClassMapBase.cs" />
+    <Compile Include="Mappings\TankEntityMapping.cs" />
+    <Compile Include="Mappings\RandomBattlesAchievementsEntityMapping.cs" />
     <Compile Include="Mappings\StatisticClassMapBase.cs" />
+    <Compile Include="Mappings\TankRandomBattlesStatisticEntityMapping.cs" />
     <Compile Include="Mappings\TankTeamBattleStatisticEntityMapping.cs" />
     <Compile Include="Mappings\TankHistoricalBattleStatisticEntityMapping.cs" />
     <Compile Include="Mappings\HistoricalBattlesStatisticEntityMapping.cs" />
@@ -109,13 +112,10 @@
     <Compile Include="Mappings\TeamBattlesAchievementsEntityMapping.cs" />
     <Compile Include="Mappings\TeamBattlesStatisticEntityMapping.cs" />
     <Compile Include="Mappings\DbVersionEntityMapping.cs" />
-    <Compile Include="Mappings\PlayerAchievementsEntityMapping.cs" />
     <Compile Include="Mappings\PlayerEntityMapping.cs" />
-    <Compile Include="Mappings\PlayerStatisticEntityMapping.cs" />
+    <Compile Include="Mappings\RandomBattlesStatisticMapping.cs" />
     <Compile Include="Mappings\ReplayEntityMapping.cs" />
     <Compile Include="Mappings\SubclassMapBase.cs" />
-    <Compile Include="Mappings\TankEntityMapping.cs" />
-    <Compile Include="Mappings\TankStatisticEntityMapping.cs" />
     <Compile Include="NHibernate\DataProvider.cs" />
     <Compile Include="NHibernate\ExSqlServerCeDriver.cs" />
     <Compile Include="NHibernate\ISessionStorage.cs" />

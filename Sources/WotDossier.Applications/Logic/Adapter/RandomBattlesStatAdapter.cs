@@ -11,7 +11,7 @@ using WotDossier.Domain.Tank;
 
 namespace WotDossier.Applications.Logic.Adapter
 {
-    public class RandomBattlesStatAdapter : AbstractStatisticAdapter<PlayerStatisticEntity>, IRandomBattlesAchievements
+    public class RandomBattlesStatAdapter : AbstractStatisticAdapter<RandomBattlesStatisticEntity>, IRandomBattlesAchievements
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="T:System.Object"/> class.
@@ -430,13 +430,13 @@ namespace WotDossier.Applications.Logic.Adapter
 
         #endregion
 
-        public override void Update(PlayerStatisticEntity entity)
+        public override void Update(RandomBattlesStatisticEntity entity)
         {
             base.Update(entity);
 
             if (entity.AchievementsIdObject == null)
             {
-                entity.AchievementsIdObject = new PlayerAchievementsEntity { UId = Guid.NewGuid() };
+                entity.AchievementsIdObject = new RandomBattlesAchievementsEntity { UId = Guid.NewGuid() };
                 entity.AchievementsUId = entity.AchievementsIdObject.UId;
             }
 

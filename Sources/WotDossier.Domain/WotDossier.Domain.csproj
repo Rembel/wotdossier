@@ -112,7 +112,7 @@
     <Compile Include="Interfaces\IStatisticSpecialAwards.cs" />
     <Compile Include="Interfaces\IStatisticXp.cs" />
     <Compile Include="Interfaces\ITeamBattlesAchievements.cs" />
-    <Compile Include="Entities\TankStatisticEntity.cs" />
+    <Compile Include="Entities\TankRandomBattlesStatisticEntity.cs" />
     <Compile Include="Entities\TankTeamBattleStatisticEntity.cs" />
     <Compile Include="Entities\TankHistoricalBattleStatisticEntity.cs" />
     <Compile Include="Entities\HistoricalBattlesAchievementsEntity.cs" />
@@ -121,7 +121,7 @@
     <Compile Include="Entities\TeamBattlesAchievementsEntity.cs" />
     <Compile Include="Entities\TeamBattlesStatisticEntity.cs" />
     <Compile Include="Entities\DbVersionEntity.cs" />
-    <Compile Include="Entities\PlayerAchievementsEntity.cs" />
+    <Compile Include="Entities\RandomBattlesAchievementsEntity.cs" />
     <Compile Include="Entities\ReplayEntity.cs" />
     <Compile Include="Entities\TankEntity.cs" />
     <Compile Include="Entities\TankStatisticEntityBase.cs" />
@@ -134,7 +134,7 @@
     <Compile Include="Common\CommonStatRow.cs" />
     <Compile Include="Entities\EntityBase.cs" />
     <Compile Include="Entities\PlayerEntity.cs" />
-    <Compile Include="Entities\PlayerStatisticEntity.cs" />
+    <Compile Include="Entities\RandomBattlesStatisticEntity.cs" />
     <Compile Include="MedalGroup.cs" />
     <Compile Include="Replay\AdvancedReplayData.cs" />
     <Compile Include="Replay\BattleResult98.cs" />

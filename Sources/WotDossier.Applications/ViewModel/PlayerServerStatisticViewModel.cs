@@ -137,7 +137,7 @@ namespace WotDossier.Applications.ViewModel
 
         public void Init(Player player)
         {
-            PlayerStatisticEntity entity = new PlayerStatisticEntity();
+            RandomBattlesStatisticEntity entity = new RandomBattlesStatisticEntity();
             RandomBattlesStatAdapter statAdapter = new RandomBattlesStatAdapter(player);
             statAdapter.Update(entity);
             PlayerStatisticViewModel statistic = new RandomBattlesPlayerStatisticViewModel(entity);

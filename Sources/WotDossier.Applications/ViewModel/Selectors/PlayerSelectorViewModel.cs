@@ -44,7 +44,7 @@ namespace WotDossier.Applications.ViewModel.Selectors
 
         public void InitPlayers()
         {
-            Players = _repository.GetPlayers().Select(x => new PlayerListItem(x.PlayerId, x.Name, x.Server)).ToList();
+            Players = _repository.GetPlayers().Select(x => new PlayerListItem(x.AccountId, x.Name, x.Server)).ToList();
 
             var appSettings = SettingsReader.Get();
             

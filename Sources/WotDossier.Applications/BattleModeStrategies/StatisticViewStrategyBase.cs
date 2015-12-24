@@ -63,7 +63,7 @@ namespace WotDossier.Applications.BattleModeStrategies
         protected PlayerStatisticViewModel GetPlayerStatistic<T>(PlayerEntity player, List<TankJson> tanks, ServerStatWrapper playerData = null)
             where T : StatisticEntity
         {
-            List<T> statisticEntities = DossierRepository.GetPlayerStatistic<T>(player.PlayerId).ToList();
+            List<T> statisticEntities = DossierRepository.GetPlayerStatistic<T>(player.AccountId).ToList();
 
             T currentStatistic = statisticEntities.OrderByDescending(x => x.BattlesCount).First();
             List<StatisticSlice> oldStatisticEntities = statisticEntities.Where(x => x.Id != currentStatistic.Id)
@@ -72,7 +72,7 @@ namespace WotDossier.Applications.BattleModeStrategies
             PlayerStatisticViewModel currentStatisticViewModel = ToViewModel(currentStatistic, oldStatisticEntities);
             currentStatisticViewModel.Name = player.Name;
             currentStatisticViewModel.Created = player.Creaded;
-            currentStatisticViewModel.AccountId = player.PlayerId;
+            currentStatisticViewModel.AccountId = player.AccountId;
             var days = (DateTime.Now - player.Creaded).Days;
             currentStatisticViewModel.BattlesPerDay = currentStatisticViewModel.BattlesCount / (days == 0 ? 1 : days);
             currentStatisticViewModel.PlayTime = new TimeSpan(0, 0, 0, tanks.Sum(x => x.Common.battleLifeTime));

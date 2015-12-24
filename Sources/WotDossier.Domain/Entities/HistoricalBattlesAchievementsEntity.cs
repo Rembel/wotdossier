@@ -23,7 +23,7 @@ namespace WotDossier.Domain.Entities
         private IList<HistoricalBattlesAchievementsEntity> _historicalBattlesAchievementsEntities;
 
         /// <summary>
-        ///     Gets/Sets the <see cref="PlayerStatisticEntity" /> collection.
+        ///     Gets/Sets the <see cref="RandomBattlesStatisticEntity" /> collection.
         /// </summary>
         public virtual IList<HistoricalBattlesAchievementsEntity> HistoricalBattlesAchievementsEntities
         {

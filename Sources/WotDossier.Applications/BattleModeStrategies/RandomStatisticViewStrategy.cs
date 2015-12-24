@@ -37,7 +37,7 @@ namespace WotDossier.Applications.BattleModeStrategies
         /// <returns></returns>
         public override PlayerStatisticViewModel GetPlayerStatistic(PlayerEntity player, List<TankJson> tanks, ServerStatWrapper playerData = null)
         {
-            return GetPlayerStatistic<PlayerStatisticEntity>(player, tanks, playerData);
+            return GetPlayerStatistic<RandomBattlesStatisticEntity>(player, tanks, playerData);
         }
 
         /// <summary>
@@ -58,7 +58,7 @@ namespace WotDossier.Applications.BattleModeStrategies
         /// <returns></returns>
         protected override PlayerStatisticViewModel ToViewModel(StatisticEntity currentStatistic)
         {
-            return new RandomBattlesPlayerStatisticViewModel((PlayerStatisticEntity)currentStatistic);
+            return new RandomBattlesPlayerStatisticViewModel((RandomBattlesStatisticEntity)currentStatistic);
         }
 
         /// <summary>
@@ -69,7 +69,7 @@ namespace WotDossier.Applications.BattleModeStrategies
         /// <returns></returns>
         protected override PlayerStatisticViewModel ToViewModel(StatisticEntity currentStatistic, List<StatisticSlice> oldStatisticEntities)
         {
-            return new RandomBattlesPlayerStatisticViewModel((PlayerStatisticEntity)currentStatistic, oldStatisticEntities);
+            return new RandomBattlesPlayerStatisticViewModel((RandomBattlesStatisticEntity)currentStatistic, oldStatisticEntities);
         }
 
         /// <summary>
@@ -80,7 +80,7 @@ namespace WotDossier.Applications.BattleModeStrategies
         /// <returns></returns>
         public override PlayerEntity UpdateTankStatistic(int playerId, List<TankJson> tanks)
         {
-            return UpdateTankStatistic<TankStatisticEntity>(playerId, tanks);
+            return UpdateTankStatistic<TankRandomBattlesStatisticEntity>(playerId, tanks);
         }
 
         /// <summary>
@@ -90,7 +90,7 @@ namespace WotDossier.Applications.BattleModeStrategies
         /// <returns></returns>
         public override List<ITankStatisticRow> GetTanksStatistic(int playerId)
         {
-            return GetTanksStatistic<TankStatisticEntity>(playerId);
+            return GetTanksStatistic<TankRandomBattlesStatisticEntity>(playerId);
         }
 
         /// <summary>

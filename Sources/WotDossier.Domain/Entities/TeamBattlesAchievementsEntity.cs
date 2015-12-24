@@ -82,7 +82,7 @@ namespace WotDossier.Domain.Entities
         private IList<TeamBattlesStatisticEntity> _teamBattlesStatisticEntities;
 
         /// <summary>
-        ///     Gets/Sets the <see cref="PlayerStatisticEntity" /> collection.
+        ///     Gets/Sets the <see cref="RandomBattlesStatisticEntity" /> collection.
         /// </summary>
         public virtual IList<TeamBattlesStatisticEntity> TeamBattlesStatisticEntities
         {

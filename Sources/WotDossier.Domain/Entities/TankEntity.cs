@@ -75,15 +75,15 @@ namespace WotDossier.Domain.Entities
 
 		#region Collections
 		
-		private IList<TankStatisticEntity> _tankStatisticEntities;
+		private IList<TankRandomBattlesStatisticEntity> _tankStatisticEntities;
 		/// <summary>
 		/// Gets/Sets the <see cref="TankStatisticEntity"/> collection.
 		/// </summary>
-        public virtual IList<TankStatisticEntity> TankStatisticEntities
+        public virtual IList<TankRandomBattlesStatisticEntity> TankStatisticEntities
         {
             get
             {
-                return _tankStatisticEntities ?? (_tankStatisticEntities = new List<TankStatisticEntity>());
+                return _tankStatisticEntities ?? (_tankStatisticEntities = new List<TankRandomBattlesStatisticEntity>());
             }
             set { _tankStatisticEntities = value; }
         }

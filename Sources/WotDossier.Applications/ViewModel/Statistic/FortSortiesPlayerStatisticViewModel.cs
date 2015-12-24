@@ -14,7 +14,7 @@ namespace WotDossier.Applications.ViewModel.Statistic
         /// Initializes a new instance of the <see cref="FortSortiesPlayerStatisticViewModel"/> class.
         /// </summary>
         /// <param name="stat">The stat.</param>
-        public FortSortiesPlayerStatisticViewModel(PlayerStatisticEntity stat)
+        public FortSortiesPlayerStatisticViewModel(RandomBattlesStatisticEntity stat)
             : this(stat, new List<StatisticSlice>())
         {
         }
@@ -24,7 +24,7 @@ namespace WotDossier.Applications.ViewModel.Statistic
         /// </summary>
         /// <param name="stat">The stat.</param>
         /// <param name="list">The list.</param>
-        public FortSortiesPlayerStatisticViewModel(PlayerStatisticEntity stat, List<StatisticSlice> list)
+        public FortSortiesPlayerStatisticViewModel(RandomBattlesStatisticEntity stat, List<StatisticSlice> list)
             : base(stat, list)
         {
             #region Achievements

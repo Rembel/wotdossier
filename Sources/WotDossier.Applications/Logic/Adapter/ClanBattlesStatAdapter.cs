@@ -7,7 +7,7 @@ using WotDossier.Domain.Tank;
 
 namespace WotDossier.Applications.Logic.Adapter
 {
-    public class ClanBattlesStatAdapter : AbstractStatisticAdapter<PlayerStatisticEntity>, IClanBattlesAchievements
+    public class ClanBattlesStatAdapter : AbstractStatisticAdapter<RandomBattlesStatisticEntity>, IClanBattlesAchievements
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="T:System.Object"/> class.
@@ -25,13 +25,13 @@ namespace WotDossier.Applications.Logic.Adapter
 
         #endregion
 
-        public override void Update(PlayerStatisticEntity entity)
+        public override void Update(RandomBattlesStatisticEntity entity)
         {
             base.Update(entity);
 
             if (entity.AchievementsIdObject == null)
             {
-                entity.AchievementsIdObject = new PlayerAchievementsEntity();
+                entity.AchievementsIdObject = new RandomBattlesAchievementsEntity();
             }
 
             Mapper.Map<IClanBattlesAchievements>(this, entity.AchievementsIdObject);

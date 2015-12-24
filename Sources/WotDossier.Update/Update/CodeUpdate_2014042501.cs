@@ -24,12 +24,12 @@ namespace WotDossier.Update.Update
         {
             string commandText = @"Select Id, Raw from TankStatistic";
             SQLiteCommand command = new SQLiteCommand(commandText, sqlCeConnection, transaction);
-            List<TankStatisticEntity> list = new List<TankStatisticEntity>();
+            List<TankRandomBattlesStatisticEntity> list = new List<TankRandomBattlesStatisticEntity>();
             using (SQLiteDataReader reader = command.ExecuteReader())
             {
                 while (reader.Read())
                 {
-                    TankStatisticEntity entity = new TankStatisticEntity();
+                    TankRandomBattlesStatisticEntity entity = new TankRandomBattlesStatisticEntity();
                     entity.Id = (int)(long) reader["Id"];
                     entity.Raw = (byte[]) reader["Raw"];
 
@@ -37,7 +37,7 @@ namespace WotDossier.Update.Update
                 }
             }
 
-            foreach (TankStatisticEntity entity in list)
+            foreach (TankRandomBattlesStatisticEntity entity in list)
             {
                 TankJson tank = CompressHelper.DecompressObject<TankJson>(entity.Raw);
                 commandText = @"Update TankStatistic set BattlesCount=@count, Version = @version where Id=@id";

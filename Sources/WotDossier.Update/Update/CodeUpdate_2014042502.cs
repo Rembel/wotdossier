@@ -21,11 +21,11 @@ namespace WotDossier.Update.Update
 
         public override void Execute(SQLiteConnection sqlCeConnection, SQLiteTransaction transaction)
         {
-            List<TankStatisticEntity> recordsToUpdate = GetTankStatisticRecordsToUpdate(sqlCeConnection, transaction);
+            List<TankRandomBattlesStatisticEntity> recordsToUpdate = GetTankStatisticRecordsToUpdate(sqlCeConnection, transaction);
             
-            List<TankStatisticEntity> backup = BackupRecordsActualData(sqlCeConnection, transaction, recordsToUpdate);
+            List<TankRandomBattlesStatisticEntity> backup = BackupRecordsActualData(sqlCeConnection, transaction, recordsToUpdate);
 
-            foreach (TankStatisticEntity entity in backup)
+            foreach (TankRandomBattlesStatisticEntity entity in backup)
             {
                 const string commandText = @"Delete from TankStatistic where TankId = @TankId and BattlesCount = @BattlesCount;
 Insert Into TankStatistic(TankId, Updated, Version, Raw, BattlesCount) values (@TankId, @Updated, @Version, @Raw, @BattlesCount);";
@@ -39,10 +39,10 @@ Insert Into TankStatistic(TankId, Updated, Version, Raw, BattlesCount) values (@
             }
         }
 
-        private static List<TankStatisticEntity> BackupRecordsActualData(SQLiteConnection sqlCeConnection, SQLiteTransaction transaction,
-            List<TankStatisticEntity> recordsToUpdate)
+        private static List<TankRandomBattlesStatisticEntity> BackupRecordsActualData(SQLiteConnection sqlCeConnection, SQLiteTransaction transaction,
+            List<TankRandomBattlesStatisticEntity> recordsToUpdate)
         {
-            List<TankStatisticEntity> backup = new List<TankStatisticEntity>();
+            List<TankRandomBattlesStatisticEntity> backup = new List<TankRandomBattlesStatisticEntity>();
 
             foreach (var statisticEntity in recordsToUpdate)
             {
@@ -54,7 +54,7 @@ Insert Into TankStatistic(TankId, Updated, Version, Raw, BattlesCount) values (@
                 {
                     while (reader.Read())
                     {
-                        TankStatisticEntity entity = new TankStatisticEntity();
+                        TankRandomBattlesStatisticEntity entity = new TankRandomBattlesStatisticEntity();
                         entity.TankId = (int) reader["TankId"];
                         entity.Updated = (DateTime) reader["Updated"];
                         entity.Version = (int) reader["Version"];
@@ -68,17 +68,17 @@ Insert Into TankStatistic(TankId, Updated, Version, Raw, BattlesCount) values (@
             return backup;
         }
 
-        private static List<TankStatisticEntity> GetTankStatisticRecordsToUpdate(SQLiteConnection sqlCeConnection, SQLiteTransaction transaction)
+        private static List<TankRandomBattlesStatisticEntity> GetTankStatisticRecordsToUpdate(SQLiteConnection sqlCeConnection, SQLiteTransaction transaction)
         {
             const string commandText = @"select TankStatistic.TankId, BattlesCount, count(1) as RecCount from TankStatistic
                                     group by TankStatistic.TankId, BattlesCount having RecCount > 1 order by TankStatistic.TankId";
             SQLiteCommand command = new SQLiteCommand(commandText, sqlCeConnection, transaction);
-            List<TankStatisticEntity> list = new List<TankStatisticEntity>();
+            List<TankRandomBattlesStatisticEntity> list = new List<TankRandomBattlesStatisticEntity>();
             using (SQLiteDataReader reader = command.ExecuteReader())
             {
                 while (reader.Read())
                 {
-                    TankStatisticEntity entity = new TankStatisticEntity();
+                    TankRandomBattlesStatisticEntity entity = new TankRandomBattlesStatisticEntity();
                     entity.TankId = (int) reader["TankId"];
                     entity.BattlesCount = (int) reader["BattlesCount"];
 

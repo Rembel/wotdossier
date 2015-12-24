@@ -169,6 +169,7 @@
     <EmbeddedResource Include="Scripts\2015021001.sql" />
     <EmbeddedResource Include="Scripts\2015111801.sql" />
     <EmbeddedResource Include="Scripts\2015122300.sql" />
+    <EmbeddedResource Include="Scripts\2015122400.sql" />
     <Content Include="x64\SQLite.Interop.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

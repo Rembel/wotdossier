@@ -17,7 +17,7 @@ namespace WotDossier.Domain.Entities
         }
         
         /// <summary>
-        /// Gets/Sets the <see cref="PlayerAchievementsEntity"/> object.
+        /// Gets/Sets the <see cref="RandomBattlesAchievementsEntity"/> object.
         /// </summary>
         public virtual HistoricalBattlesAchievementsEntity AchievementsIdObject { get; set; }
     }

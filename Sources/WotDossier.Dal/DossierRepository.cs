@@ -56,7 +56,7 @@ namespace WotDossier.Dal
             {
                 list = _dataProvider.QueryOver(() => statistic)
                                     .Inner.JoinAlias(x => x.PlayerIdObject, () => player)
-                                    .Where(x => player.PlayerId == accountId && statistic.Rev > rev).List<T>();
+                                    .Where(x => player.AccountId == accountId && statistic.Rev > rev).List<T>();
                 _dataProvider.CommitTransaction();
             }
             catch (Exception e)
@@ -169,14 +169,14 @@ namespace WotDossier.Dal
             _dataProvider.OpenSession();
             _dataProvider.BeginTransaction();
             PlayerEntity playerEntity = _dataProvider.QueryOver<PlayerEntity>()
-                                        .Where(x => x.PlayerId == accountId)
+                                        .Where(x => x.AccountId == accountId)
                                         .Take(1)
                                         .SingleOrDefault<PlayerEntity>();
 
             if (playerEntity == null)
             {
                 playerEntity = new PlayerEntity();
-                playerEntity.PlayerId = accountId;
+                playerEntity.AccountId = accountId;
                 playerEntity.Creaded = creaded;
             }
          
@@ -202,7 +202,7 @@ namespace WotDossier.Dal
         {
             PlayerEntity playerEntity = new PlayerEntity();
             playerEntity.Name = name;
-            playerEntity.PlayerId = id;
+            playerEntity.AccountId = id;
             playerEntity.Creaded = creaded;
             playerEntity.Server = server;
             _dataProvider.Save(playerEntity);
@@ -213,7 +213,7 @@ namespace WotDossier.Dal
         private PlayerEntity GetPlayerByAccountId(int accountId)
         {
             return _dataProvider.QueryOver<PlayerEntity>()
-                .Where(x => x.PlayerId == accountId)
+                .Where(x => x.AccountId == accountId)
                 .Take(1)
                 .SingleOrDefault<PlayerEntity>();
         }
@@ -428,7 +428,7 @@ namespace WotDossier.Dal
             {
                 PlayerEntity playerAlias = null;
                 TankEntity entity = _dataProvider.QueryOver<TankEntity>().Where(x => x.TankId == tankId && x.CountryId == countryId)
-                    .JoinAlias(x => x.PlayerIdObject, () => playerAlias).Where(x => playerAlias.PlayerId == playerId).SingleOrDefault<TankEntity>();
+                    .JoinAlias(x => x.PlayerIdObject, () => playerAlias).Where(x => playerAlias.AccountId == playerId).SingleOrDefault<TankEntity>();
 
                 if (entity != null)
                 {
@@ -564,11 +564,11 @@ namespace WotDossier.Dal
 
             try
             {
-                var query = DataProvider.CreateQuery("delete from TankStatisticEntity where TankId in (select Id from TankEntity where PlayerId = :id)");
+                var query = DataProvider.CreateQuery("delete from TankRandomBattlesStatisticEntity where TankId in (select Id from TankEntity where PlayerId = :id)");
                 query.SetParameter("id", playerId);
                 query.ExecuteUpdate();
 
-                query = DataProvider.CreateQuery("delete from PlayerStatisticEntity where PlayerId = :id");
+                query = DataProvider.CreateQuery("delete from RandomBattlesStatisticEntity where PlayerId = :id");
                 query.SetParameter("id", playerId);
                 query.ExecuteUpdate();
 

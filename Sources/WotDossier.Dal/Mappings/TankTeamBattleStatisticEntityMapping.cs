@@ -3,7 +3,7 @@ using WotDossier.Domain.Entities;
 namespace WotDossier.Dal.Mappings
 {
 	/// <summary>
-    /// Represents map class for <see cref="TankStatisticEntity"/>.
+    /// Represents map class for <see cref="TankRandomBattlesStatisticEntity"/>.
     /// </summary>
     public class TankTeamBattleStatisticEntityMapping : ClassMapBase<TankTeamBattleStatisticEntity>
     {

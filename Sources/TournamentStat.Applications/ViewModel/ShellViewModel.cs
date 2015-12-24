@@ -168,7 +168,7 @@ namespace TournamentStat.Applications.ViewModel
                             UpdateLocalDatabase(cacheFile, playerEntity);
 
                             if (settings.Players == null ||
-                                !settings.Players.Exists(x => x.PlayerId == playerEntity.PlayerId))
+                                !settings.Players.Exists(x => x.PlayerId == playerEntity.AccountId))
                             {
                                 var tournamentTanks = new List<TournamentTank>();
                                 string twitchUrl = null;
@@ -180,7 +180,7 @@ namespace TournamentStat.Applications.ViewModel
 
                                 settings.Players.Add(new TournamentPlayer
                                 {
-                                    PlayerId = playerEntity.PlayerId,
+                                    PlayerId = playerEntity.AccountId,
                                     PlayerName = playerEntity.Name,
                                     Tanks = tournamentTanks,
                                     TwitchUrl = twitchUrl,
@@ -261,9 +261,9 @@ namespace TournamentStat.Applications.ViewModel
 
             StatisticViewStrategyBase strategy = StatisticViewStrategyManager.Get(BattleMode.RandomCompany, _dossierRepository);
 
-            strategy.UpdatePlayerStatistic(player.PlayerId, tanksCache, null);
+            strategy.UpdatePlayerStatistic(player.AccountId, tanksCache, null);
 
-            strategy.UpdateTankStatistic(player.PlayerId, tanksCache);
+            strategy.UpdateTankStatistic(player.AccountId, tanksCache);
         }
 
         private string SelectCacheFile()

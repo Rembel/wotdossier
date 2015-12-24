@@ -25,7 +25,7 @@ namespace WotDossier.Dal.Mappings
 		
 			References(v => v.PlayerIdObject).Column(Column(v => v.PlayerId)).ReadOnly();
 
-			HasMany(v => v.TankStatisticEntities).KeyColumn(Column<TankStatisticEntity>(v => v.TankId)).Cascade.All().Inverse();
+			HasMany(v => v.TankStatisticEntities).KeyColumn(Column<TankRandomBattlesStatisticEntity>(v => v.TankId)).Cascade.All().Inverse();
         }
     }
 }

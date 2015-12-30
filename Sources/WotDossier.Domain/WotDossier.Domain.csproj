@@ -42,23 +42,20 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\net40\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.8.0.1\lib\net40\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BattleMode.cs" />
     <Compile Include="ClanBattleType.cs" />
+    <Compile Include="ClientStat.cs" />
     <Compile Include="Country.cs" />
     <Compile Include="Dossier\AppSpot\Amounts.cs" />
     <Compile Include="Dossier\AppSpot\Awards.cs" />
@@ -92,6 +89,7 @@
     <Compile Include="Dossier\TankV65\StatisticJson_2.cs" />
     <Compile Include="Dossier\TankV65\TotalJson.cs" />
     <Compile Include="Entities\FavoritePlayerEntity.cs" />
+    <Compile Include="Entities\IRevised.cs" />
     <Compile Include="GameplayDescription.cs" />
     <Compile Include="Interfaces\IFortAchievements.cs" />
     <Compile Include="Interfaces\IClanBattlesAchievements.cs" />
@@ -186,6 +184,7 @@
     <Compile Include="Settings\ReplayPlayer.cs" />
     <Compile Include="Settings\StatisticPeriod.cs" />
     <Compile Include="Settings\TankFilterSettings.cs" />
+    <Compile Include="Statistic.cs" />
     <Compile Include="TankType.cs" />
     <Compile Include="Dossier\TankV65\AchievementsJson.cs" />
     <Compile Include="Dossier\TankV65\StatisticJson.cs" />
@@ -223,13 +222,8 @@
     <Compile Include="Dossier\TankV29\TankJson.cs" />
     <Compile Include="Dossier\TankV29\StatisticJson.cs" />
     <Compile Include="Tank\TankDescription.cs" />
+    <Compile Include="DossierUtils.cs" />
     <Compile Include="VStat.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\WotDossier.Common\WotDossier.Common.csproj">
-      <Project>{1268b707-a866-4723-89c7-2e9bd92e6aa6}</Project>
-      <Name>WotDossier.Common</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

@@ -14,6 +14,7 @@ namespace WotDossier.Dal.Mappings
         /// </summary>
         public StatisticClassMapBase()
         {
+            Map(v => v.UId);
             Map(v => v.Updated);
             Map(v => v.Wins);
             Map(v => v.Losses);
@@ -38,6 +39,8 @@ namespace WotDossier.Dal.Mappings
             Map(v => v.RBR);
             Map(v => v.WN8Rating);
             Map(v => v.PerformanceRating);
+
+            Map(v => v.Rev);
         }
     }
 }

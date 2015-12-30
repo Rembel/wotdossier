@@ -9,10 +9,12 @@ namespace WotDossier.Dal.Mappings
     {
         public HistoricalBattlesAchievementsEntityMapping()
         {
+            Map(v => v.UId);
             Map(v => v.GuardsMan);
             Map(v => v.BothSidesWins);
             Map(v => v.MakerOfHistory);
             Map(v => v.WeakVehiclesWins);
+            Map(v => v.Rev);
         }
     }
 }

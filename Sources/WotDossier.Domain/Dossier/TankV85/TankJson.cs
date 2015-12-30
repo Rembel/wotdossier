@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using WotDossier.Common;
 using WotDossier.Domain.Dossier.TankV77;
 
 namespace WotDossier.Domain.Dossier.TankV85
@@ -205,7 +204,7 @@ namespace WotDossier.Domain.Dossier.TankV85
         {
             if (_uniqueId == -1)
             {
-                _uniqueId = Utils.ToUniqueId(Common.countryid, Common.tankid);
+                _uniqueId = DossierUtils.ToUniqueId(Common.countryid, Common.tankid);
             }
             return _uniqueId;
         }

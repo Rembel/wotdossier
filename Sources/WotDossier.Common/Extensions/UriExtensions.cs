@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 using System.IO;
 using System.Net;
 
@@ -50,7 +51,8 @@ namespace WotDossier.Common.Extensions
             client.Proxy.Credentials = CredentialCache.DefaultCredentials;
             try
             {
-                client.Headers[HttpRequestHeader.ContentType] = "application/json";
+                client.Headers[HttpRequestHeader.ContentType] = "application/json; charset=utf-8";
+                //client.Headers[HttpRequestHeader.ContentLength] = data.Length.ToString(CultureInfo.InvariantCulture);
                 client.UploadStringAsync(uri, data);
             }
             catch (WebException)

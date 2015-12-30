@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using Common.Logging;
 using Newtonsoft.Json;
 using WotDossier.Common.Extensions;
@@ -15,6 +14,8 @@ namespace WotDossier.Applications
     {
         protected static readonly ILog Log = LogManager.GetCurrentClassLogger();
 
+        public const string ApiBaseUrl = "http://localhost:5000/api/sync/";
+
         private readonly DossierRepository _repository;
 
 
@@ -25,11 +26,16 @@ namespace WotDossier.Applications
 
         public void Sync()
         {
+            if (!SupportedDbVersion())
+            {
+                return;
+            }
+
             AppSettings settings = SettingsReader.Get();
 
             if (settings.PlayerId > 0)
             {
-                new Uri(string.Format("http://localhost:8080/api/{0}/player/{1}", settings.Server, settings.PlayerId)).Delete();
+                ApiMethod($"player/{settings.Server}/{settings.PlayerId}").Delete();
 
                 try
                 {
@@ -38,7 +44,7 @@ namespace WotDossier.Applications
 
                     if (rev > playerEntity.Rev)
                     {
-                        UpdateLocalStatistic(playerEntity.Rev);
+            //            UpdateLocalStatistic(playerEntity.Rev);
                     }
                     else if(rev < playerEntity.Rev)
                     {
@@ -52,36 +58,66 @@ namespace WotDossier.Applications
             }
         }
 
+        private Uri ApiMethod(string method)
+        {
+            return new Uri(ApiBaseUrl + method);
+        }
+
+        private bool SupportedDbVersion()
+        {
+            try
+            {
+                var response = ApiMethod("dbversion").Get();
+                var serverDbVersion = JsonConvert.DeserializeObject<DbVersionEntity>(response);
+                var clientDbVersion = _repository.GetCurrentDbVersion();
+                return serverDbVersion.SchemaVersion.Equals(clientDbVersion.SchemaVersion, StringComparison.Ordinal);
+            }
+            catch (Exception e)
+            {
+                Log.Error("Sync. Error on check SupportedDbVersion", e);
+            }
+            return false;
+        }
+
         private void UpdateServerStatistic(PlayerEntity player, int rev)
         {
-            AppSettings settings = SettingsReader.Get();
-            IList<TankEntity> tanks = _repository.GetTanks(player, rev);
-            
-            //_repository.GetTanksStatistic<>(player, rev);
-            var data = new
+            var data = new ClientStat
             {
                 Player = player, 
-                Tanks = tanks,
+                Tanks = _repository.GetTanks(player, rev),
                 RandomStatistic = _repository.GetPlayerStatistic<RandomBattlesStatisticEntity>(player.AccountId, rev),
+                TankRandomStatistic = _repository.GetTanksStatistic<TankRandomBattlesStatisticEntity>(player.AccountId, rev),
                 //HistoricalStatistic = _repository.GetPlayerStatistic<HistoricalBattlesStatisticEntity>(player.PlayerId, rev),
                 //TeamStatistic = _repository.GetPlayerStatistic<TeamBattlesStatisticEntity>(player.PlayerId, rev)
             };
-            new Uri(string.Format("http://localhost:8080/api/statistic/{0}", rev)).Post(JsonConvert.SerializeObject(data));
+
+            var serializeObject = SerializeStatistic(data);
+            ApiMethod($"statistic").Post(serializeObject);
+        }
+
+        private static string SerializeStatistic(ClientStat data)
+        {
+            var compress = CompressHelper.Compress(JsonConvert.SerializeObject(data));
+            var base64String = Convert.ToBase64String(compress);
+            var serializeObject = JsonConvert.SerializeObject(new Statistic {CompressedData = base64String});
+            return serializeObject;
+
+            //ApiMethod($"statistic").Post(JsonConvert.SerializeObject(data));
         }
 
         private void UpdateLocalStatistic(int rev)
         {
             AppSettings settings = SettingsReader.Get();
-            string statistic = new Uri(string.Format("http://localhost:8080/api/statistic/{0}", rev)).Get();
+            string statistic = ApiMethod($"statistic/{rev}").Get();
         }
 
         private int GetServerDataVersion(int playerId, string server)
         {
-            string player = new Uri(string.Format("http://localhost:8080/api/{0}/player/{1}", server, playerId)).Get();
-            var list = JsonConvert.DeserializeObject<List<PlayerEntity>>(player);
-            if (list.Count > 0)
+            string player = ApiMethod($"player/{server}/{playerId}").Get();
+            if (!string.IsNullOrEmpty(player))
             {
-                return list.First().Rev;
+                var entity = JsonConvert.DeserializeObject<PlayerEntity>(player);
+                return entity.Rev;
             }
             return 0;
         }

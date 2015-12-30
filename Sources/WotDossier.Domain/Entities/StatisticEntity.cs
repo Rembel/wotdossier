@@ -10,7 +10,7 @@ namespace WotDossier.Domain.Entities
     /// </summary>
     [Serializable]
     [DataContract]
-    public abstract class StatisticEntity : EntityBase, IStatisticBase
+    public abstract class StatisticEntity : EntityBase, IStatisticBase, IRevised
     {
         /// <summary>
         ///     Gets/Sets the field "PlayerId".

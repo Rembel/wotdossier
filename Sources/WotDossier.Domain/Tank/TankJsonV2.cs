@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel;
-using WotDossier.Common;
 using WotDossier.Domain.Interfaces;
 
 namespace WotDossier.Domain.Tank
@@ -183,7 +182,7 @@ namespace WotDossier.Domain.Tank
         {
             if (_uniqueId == -1)
             {
-                _uniqueId = Utils.ToUniqueId(Common.countryid, Common.tankid);
+                _uniqueId = DossierUtils.ToUniqueId(Common.countryid, Common.tankid);
             }
             return _uniqueId;
         }

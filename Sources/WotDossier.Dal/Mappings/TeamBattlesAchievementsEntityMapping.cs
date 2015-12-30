@@ -12,7 +12,8 @@ namespace WotDossier.Dal.Mappings
         /// </summary>
         public TeamBattlesAchievementsEntityMapping()
         {
-			Map(v => v.WolfAmongSheep);
+            Map(v => v.UId);
+            Map(v => v.WolfAmongSheep);
 			Map(v => v.WolfAmongSheepMedal);
 			Map(v => v.GeniusForWar);
 			Map(v => v.GeniusForWarMedal);
@@ -40,6 +41,8 @@ namespace WotDossier.Dal.Mappings
             Map(v => v.Pyromaniac);
             Map(v => v.PyromaniacMedal);
             Map(v => v.NoMansLand);
+
+            Map(v => v.Rev);
         }
     }
 }

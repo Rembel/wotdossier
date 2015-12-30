@@ -1,4 +1,5 @@
 using System;
+using System.Runtime.Serialization;
 
 namespace WotDossier.Domain.Entities
 {
@@ -6,19 +7,20 @@ namespace WotDossier.Domain.Entities
 	/// Object representation for table 'DbVersion'.
 	/// </summary>
 	[Serializable]
-	public class DbVersionEntity : EntityBase
+    [DataContract]
+    public class DbVersionEntity : EntityBase
 	{	
 		/// <summary>
 		/// Gets/Sets the field "SchemaVersion".
 		/// </summary>
+		[DataMember]
 		public virtual string SchemaVersion	{get; set; }
-		
-		/// <summary>
-		/// Gets/Sets the field "Applied".
-		/// </summary>
-		public virtual DateTime Applied	{get; set; }
-		
-		
+
+        /// <summary>
+        /// Gets/Sets the field "Applied".
+        /// </summary>
+        [DataMember]
+        public virtual DateTime Applied	{get; set; }
 	}
 }
 

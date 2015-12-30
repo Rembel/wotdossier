@@ -1,5 +1,4 @@
 ﻿using System.Runtime.Serialization;
-using WotDossier.Common;
 
 namespace WotDossier.Domain.Tank
 {
@@ -18,7 +17,7 @@ namespace WotDossier.Domain.Tank
 
         public static TankDescription Unknown(int compDescr)
         {
-            return new TankDescription { Title = UNKNOWN, Icon = TankIcon.Empty, CompDescr = compDescr, CountryId = Utils.ToCountryId(compDescr), TankId = Utils.ToTankId(compDescr) };
+            return new TankDescription { Title = UNKNOWN, Icon = TankIcon.Empty, CompDescr = compDescr, CountryId = DossierUtils.ToCountryId(compDescr), TankId = DossierUtils.ToTankId(compDescr) };
         }
 
         public static TankDescription Unknown(int countryId, int tankId)
@@ -104,7 +103,7 @@ namespace WotDossier.Domain.Tank
         {
             if (_uniqueId == -1)
             {
-                _uniqueId = Utils.ToUniqueId(CountryId, TankId);
+                _uniqueId = DossierUtils.ToUniqueId(CountryId, TankId);
             }
             return _uniqueId;
         }

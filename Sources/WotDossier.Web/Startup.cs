@@ -9,6 +9,8 @@ using Microsoft.Data.Entity;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using Newtonsoft.Json;
+using WotDossier.Web.Middleware;
 using WotDossier.Web.Models;
 using WotDossier.Web.Services;
 
@@ -40,15 +42,19 @@ namespace WotDossier.Web
         {
             // Add framework services.
             services.AddEntityFramework()
-                .AddSqlServer()
-                .AddDbContext<ApplicationDbContext>(options =>
-                    options.UseSqlServer(Configuration["Data:DefaultConnection:ConnectionString"]));
+                .AddSqlServer().AddDbContext<ApplicationDbContext>(options =>
+                    options.UseSqlServer(Configuration["Data:DefaultConnection:ConnectionString"]))
+                .AddNpgsql().AddDbContext<dossierContext>(options =>
+                    options.UseNpgsql(Configuration["Data:PostgresqlConnection:ConnectionString"]));
 
             services.AddIdentity<ApplicationUser, IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultTokenProviders();
 
-            services.AddMvc();
+            services.AddMvc().AddJsonOptions(options =>
+             {
+                 options.SerializerSettings.PreserveReferencesHandling = PreserveReferencesHandling.All;
+             });
 
             // Add application services.
             services.AddTransient<IEmailSender, AuthMessageSender>();
@@ -89,6 +95,8 @@ namespace WotDossier.Web
             app.UseStaticFiles();
 
             app.UseIdentity();
+
+            app.UseRequestMiddleware();
 
             // To configure external authentication please see http://go.microsoft.com/fwlink/?LinkID=532715
 

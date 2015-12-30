@@ -12,7 +12,7 @@ namespace WotDossier.Dal.Mappings
         /// </summary>
         public TeamBattlesStatisticEntityMapping()
         {
-			Map(v => v.AchievementsId).ReadOnly();
+            Map(v => v.AchievementsId).ReadOnly();
 			Map(v => v.AchievementsUId);
             Map(v => v.PlayerUId);
 		

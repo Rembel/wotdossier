@@ -8,7 +8,7 @@ namespace WotDossier.Domain.Entities
     /// Object representation for table 'HistoricalBattlesAchievements'.
     /// </summary>
     [Serializable]
-    public class HistoricalBattlesAchievementsEntity : EntityBase, IHistoricalBattlesAchievements
+    public class HistoricalBattlesAchievementsEntity : EntityBase, IHistoricalBattlesAchievements, IRevised
     {
         public virtual int GuardsMan { get; set; }
 

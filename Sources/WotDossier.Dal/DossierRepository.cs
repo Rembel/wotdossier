@@ -106,8 +106,6 @@ namespace WotDossier.Dal
                         currentSnapshot = new T { PlayerId = playerEntity.Id, PlayerUId = playerEntity.UId.Value, UId = Guid.NewGuid()};
                     }
 
-                    UpdateRevision(playerEntity, currentSnapshot);
-
                     newSnapshot.Update(currentSnapshot);
                 }
 
@@ -115,6 +113,8 @@ namespace WotDossier.Dal
                 {
                     currentSnapshot.UpdateRatings(serverStatistic.Ratings);
                 }
+
+                RevisionProvider.SetParentContext(playerEntity);
 
                 _dataProvider.Save(currentSnapshot);
                 _dataProvider.CommitTransaction();
@@ -131,17 +131,6 @@ namespace WotDossier.Dal
             }
 
             return playerEntity;
-        }
-
-        private void UpdateRevision(PlayerEntity playerEntity, StatisticEntity currentSnapshot)
-        {
-            playerEntity.Rev = GetRev();
-            currentSnapshot.Rev = playerEntity.Rev;
-        }
-
-        private static int GetRev()
-        {
-            return Int32.Parse(DateTime.Now.ToString("yyyyMMdd")) * 100;
         }
 
         private static bool IsNewSnapshotShouldBeAdded(DateTime currentSnapshotUpdated, DateTime newSnapshotUpdated)
@@ -283,11 +272,9 @@ namespace WotDossier.Dal
                         tankEntity.Name = tank.Common.tanktitle;
                         tankEntity.TankType = tank.Common.type;
                         tankEntity.Tier = tank.Common.tier;
-                        tankEntity.Rev = GetRev();
                         _dataProvider.Save(tankEntity);
 
                         T statisticEntity = new T();
-                        statisticEntity.Rev = GetRev();
                         statisticEntity.TankIdObject = tankEntity;
                         statisticEntity.TankUId = tankEntity.UId;
                         Update(statisticEntity, tank, predicate);
@@ -314,7 +301,6 @@ namespace WotDossier.Dal
                         else
                         {
                             statisticEntity = new T();
-                            statisticEntity.Rev = GetRev();
                             statisticEntity.TankIdObject = tankEntity;
                             statisticEntity.TankUId = tankEntity.UId;
                         }
@@ -325,7 +311,6 @@ namespace WotDossier.Dal
                             if (IsNewSnapshotShouldBeAdded(statisticEntity.Updated, updated))
                             {
                                 statisticEntity = new T();
-                                statisticEntity.Rev = GetRev();
                                 statisticEntity.TankIdObject = tankEntity;
                                 statisticEntity.TankUId = tankEntity.UId;
                             }
@@ -338,7 +323,6 @@ namespace WotDossier.Dal
                         else if (currentSnapshotBattlesCount == 0 && predicate(tank).battlesCount == 0)
                         {
                             statisticEntity = new T();
-                            statisticEntity.Rev = GetRev();
                             statisticEntity.TankIdObject = tankEntity;
                             statisticEntity.TankUId = tankEntity.UId;
                             statisticEntity.Updated = updated;
@@ -379,13 +363,14 @@ namespace WotDossier.Dal
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="playerId">The player identifier.</param>
+        /// <param name="rev"></param>
         /// <returns></returns>
-        public IEnumerable<T> GetTanksStatistic<T>(int playerId) where T : TankStatisticEntityBase
+        public IEnumerable<T> GetTanksStatistic<T>(int playerId, int rev = 0) where T : TankStatisticEntityBase
         {
             _dataProvider.OpenSession();
             TankEntity tankAlias = null;
             IList<T> tankStatisticEntities = _dataProvider.QueryOver<T>()
-                .JoinAlias(x => x.TankIdObject, () => tankAlias).Where(x => tankAlias.PlayerId == playerId).List<T>();
+                .JoinAlias(x => x.TankIdObject, () => tankAlias).Where(x => tankAlias.PlayerId == playerId && x.Rev > rev).List<T>();
             _dataProvider.CloseSession();
             return tankStatisticEntities;
         }
@@ -583,7 +568,7 @@ namespace WotDossier.Dal
             {
                 _dataProvider.CloseSession();
             }
-    }
+        }
 
         public IList<TankEntity> GetTanks(PlayerEntity player, int rev)
         {
@@ -591,6 +576,14 @@ namespace WotDossier.Dal
             IList<TankEntity> tanks = _dataProvider.QueryOver<TankEntity>().Where(x => x.Rev > rev && x.PlayerId == player.Id).List();
             _dataProvider.CloseSession();
             return tanks;
+        }
+
+        public DbVersionEntity GetCurrentDbVersion()
+        {
+            _dataProvider.OpenSession();
+            DbVersionEntity entity = _dataProvider.QueryOver<DbVersionEntity>().Take(1).List().First();
+            _dataProvider.CloseSession();
+            return entity;
         }
     }
 }

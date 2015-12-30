@@ -1,5 +1,4 @@
 ﻿using System.Runtime.Serialization;
-using WotDossier.Common;
 
 namespace WotDossier.Domain.Replay
 {
@@ -33,7 +32,7 @@ namespace WotDossier.Domain.Replay
         {
             if (_uniqueId == -1)
             {
-                _uniqueId = Utils.ToUniqueId(countryid, tankid);
+                _uniqueId = DossierUtils.ToUniqueId(countryid, tankid);
             }
             return _uniqueId;
         }

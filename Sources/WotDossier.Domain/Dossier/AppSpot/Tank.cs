@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using WotDossier.Common;
 
 namespace WotDossier.Domain.Dossier.AppSpot
 {
@@ -32,7 +31,7 @@ namespace WotDossier.Domain.Dossier.AppSpot
         {
             if (_uniqueId == -1)
             {
-                _uniqueId = Utils.ToUniqueId(country, id);
+                _uniqueId = DossierUtils.ToUniqueId(country, id);
             }
             return _uniqueId;
         }

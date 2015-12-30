@@ -18,8 +18,6 @@ namespace WotDossier.Dal.Mappings
         {
             Table(typeof(T).Name.Replace("Entity", String.Empty));
             Id(v => v.Id).GeneratedBy.Identity();
-            Map(v => v.UId);
-            Map(v => v.Rev);
         }
 
         protected string Column(Expression<Func<T,object>> expression)

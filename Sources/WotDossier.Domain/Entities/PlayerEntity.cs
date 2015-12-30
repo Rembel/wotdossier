@@ -9,7 +9,7 @@ namespace WotDossier.Domain.Entities
 	/// </summary>
 	[Serializable]
     [DataContract]
-	public class PlayerEntity : EntityBase
+	public class PlayerEntity : EntityBase, IRevised
 	{	
 		/// <summary>
 		/// Gets/Sets the field "Name".

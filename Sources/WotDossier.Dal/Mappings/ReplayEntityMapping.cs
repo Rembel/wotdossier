@@ -9,10 +9,13 @@ namespace WotDossier.Dal.Mappings
     {
         public ReplayMapping()
         {
-			Map(v => v.ReplayId);
+            Map(v => v.UId);
+            Map(v => v.ReplayId);
 			Map(v => v.PlayerId);
 			Map(v => v.Link);
 			Map(v => v.Raw);
+
+            Map(v => v.Rev);
         }
     }
 }

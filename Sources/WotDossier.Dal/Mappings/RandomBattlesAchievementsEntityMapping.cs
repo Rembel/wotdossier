@@ -12,7 +12,8 @@ namespace WotDossier.Dal.Mappings
         /// </summary>
         public RandomBattlesAchievementsEntityMapping()
         {
-			Map(v => v.Warrior);
+            Map(v => v.UId);
+            Map(v => v.Warrior);
 			Map(v => v.Sniper);
 			Map(v => v.Sniper2);
 			Map(v => v.MainGun);
@@ -85,6 +86,8 @@ namespace WotDossier.Dal.Mappings
             Map(v => v.Bonecrusher);
             Map(v => v.Charmed);
             Map(v => v.Even);
+
+            Map(v => v.Rev);
         }
     }
 }

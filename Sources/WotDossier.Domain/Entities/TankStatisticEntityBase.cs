@@ -5,8 +5,8 @@ namespace WotDossier.Domain.Entities
     /// <summary>
 	/// Base Object representation for tables like 'TankStatistic'.
 	/// </summary>
-	public class TankStatisticEntityBase : EntityBase
-	{	
+	public class TankStatisticEntityBase : EntityBase, IRevised
+    {	
 		/// <summary>
 		/// Gets/Sets the field "Updated".
 		/// </summary>

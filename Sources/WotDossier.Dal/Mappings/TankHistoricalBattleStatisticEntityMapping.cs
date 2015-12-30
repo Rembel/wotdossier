@@ -12,13 +12,16 @@ namespace WotDossier.Dal.Mappings
         /// </summary>
         public TankHistoricalBattleStatisticEntityMapping()
         {
-			Map(v => v.Updated);
+            Map(v => v.UId);
+            Map(v => v.Updated);
             Map(v => v.Raw).CustomSqlType("BinaryBlob");
 			Map(v => v.TankId).ReadOnly();
             Map(v => v.Version);
             Map(v => v.BattlesCount);
-		
-			References(v => v.TankIdObject).Column(Column(v => v.TankId)).Insert();
+
+            Map(v => v.Rev);
+
+            References(v => v.TankIdObject).Column(Column(v => v.TankId)).Insert();
         }
     }
 }

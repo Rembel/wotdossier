@@ -10,7 +10,7 @@ namespace WotDossier.Domain.Entities
     [Serializable]
     [DataContract]
     public class RandomBattlesAchievementsEntity : EntityBase, IRandomBattlesAchievements, IClanBattlesAchievements,
-        IFortAchievements
+        IFortAchievements, IRevised
     {
         /// <summary>
         ///     Gets/Sets the field "Warrior".

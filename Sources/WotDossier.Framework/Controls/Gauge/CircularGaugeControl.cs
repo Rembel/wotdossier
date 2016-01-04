@@ -961,10 +961,9 @@ namespace WotDossier.Framework.Controls.Gauge
 
             if (pointer != null)
             {
-                double db1 = 0;
-                Double oldcurr_realworldunit = 0;
-                Double newcurr_realworldunit = 0;
-                Double realworldunit = (ScaleSweepAngle / (MaxValue - MinValue));
+                //Double oldcurr_realworldunit = 0;
+                //Double newcurr_realworldunit = 0;
+                //Double realworldunit = (ScaleSweepAngle / (MaxValue - MinValue));
                 //Resetting the old value to min value the very first time.
                 if (oldValue == 0 && !isInitialValueSet)
                 {

@@ -74,6 +74,8 @@ namespace WotDossier.Web
             {
                 entity.HasKey(e => e.uid);
 
+                entity.Property(e => e.playeruid).IsRequired();
+
                 entity.Property(e => e.uid).ValueGeneratedNever();
 
                 entity.Property(e => e.arsonist).HasDefaultValueSql("0");
@@ -202,6 +204,8 @@ namespace WotDossier.Web
                 entity.Property(e => e.battlescount).HasDefaultValueSql("0");
 
                 entity.Property(e => e.raw).IsRequired();
+
+                entity.Property(e => e.playeruid).IsRequired();
 
                 entity.Property(e => e.rev).HasDefaultValueSql("2015122300");
 

@@ -28,7 +28,7 @@ namespace WotDossier.Applications.ViewModel.Replay
     [Export(typeof (ReplayViewModel))]
     public class ReplayViewModel : ViewModel<IReplayView>
     {
-        private static readonly ILog _log = LogManager.GetCurrentClassLogger();
+        private static readonly ILog _log = LogManager.GetLogger<ReplayViewModel>();
 
         #region Fields and Properties
 

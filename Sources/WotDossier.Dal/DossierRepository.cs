@@ -12,6 +12,7 @@ using WotDossier.Domain.Server;
 using WotDossier.Domain.Tank;
 using System.Linq;
 using Newtonsoft.Json;
+using Player = WotDossier.Domain.Server.Player;
 
 namespace WotDossier.Dal
 {
@@ -21,7 +22,7 @@ namespace WotDossier.Dal
     [Export]
     public class DossierRepository
     {
-        protected static readonly ILog Log = LogManager.GetCurrentClassLogger();
+        protected static readonly ILog Log = LogManager.GetLogger<DossierRepository>();
 
         private DataProvider _dataProvider;
         public DataProvider DataProvider
@@ -79,7 +80,7 @@ namespace WotDossier.Dal
         /// <param name="serverStatistic">The server statistic.</param>
         /// <param name="accountId">The unique wot identifier.</param>
         /// <returns></returns>
-        public PlayerEntity UpdatePlayerStatistic<T>(IStatisticAdapter<T> newSnapshot, ServerStatWrapper serverStatistic, int accountId) where T : StatisticEntity, new()
+        public PlayerEntity UpdatePlayerStatistic<T>(IStatisticAdapter<T> newSnapshot, Player serverStatistic, int accountId) where T : StatisticEntity, new()
         {
             _dataProvider.OpenSession();
             _dataProvider.BeginTransaction();
@@ -89,8 +90,8 @@ namespace WotDossier.Dal
             {
                 playerEntity = GetPlayerByAccountId(accountId) ??
                                //recreate payer record in case db was deleted but exists user configured in application setting 
-                               CreatePlayer(serverStatistic.Player.dataField.nickname, serverStatistic.Player.dataField.account_id, 
-                               Utils.UnixDateToDateTime((long)serverStatistic.Player.dataField.created_at), serverStatistic.Player.server);
+                               CreatePlayer(serverStatistic.dataField.nickname, serverStatistic.dataField.account_id, 
+                               Utils.UnixDateToDateTime((long)serverStatistic.dataField.created_at), serverStatistic.server);
 
                 T currentSnapshot = _dataProvider.QueryOver<T>().Where(x => x.PlayerId == playerEntity.Id)
                                                .OrderBy(x => x.Updated)
@@ -103,15 +104,10 @@ namespace WotDossier.Dal
                     //create new record
                     if (IsNewSnapshotShouldBeAdded(currentSnapshot.Updated, newSnapshot.Updated))
                     {
-                        currentSnapshot = new T { PlayerId = playerEntity.Id, PlayerUId = playerEntity.UId.Value, UId = Guid.NewGuid()};
+                        currentSnapshot = new T { PlayerId = playerEntity.Id, PlayerUId = playerEntity.UId, UId = Guid.NewGuid()};
                     }
 
                     newSnapshot.Update(currentSnapshot);
-                }
-
-                if (serverStatistic != null && serverStatistic.Ratings != null)
-                {
-                    currentSnapshot.UpdateRatings(serverStatistic.Ratings);
                 }
 
                 RevisionProvider.SetParentContext(playerEntity);
@@ -267,7 +263,7 @@ namespace WotDossier.Dal
                         tankEntity.TankId = tankId;
                         tankEntity.Icon = tank.Description.Icon.IconId;
                         tankEntity.PlayerId = playerEntity.Id;
-                        tankEntity.PlayerUId = playerEntity.UId.Value;
+                        tankEntity.PlayerUId = playerEntity.UId;
                         tankEntity.IsPremium = tank.Common.premium == 1;
                         tankEntity.Name = tank.Common.tanktitle;
                         tankEntity.TankType = tank.Common.type;

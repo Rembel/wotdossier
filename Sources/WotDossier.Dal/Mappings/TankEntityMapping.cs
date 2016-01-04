@@ -12,6 +12,7 @@ namespace WotDossier.Dal.Mappings
         /// </summary>
         public TankMapping()
         {
+			Map(v => v.UId);
 			Map(v => v.TankId);
 			Map(v => v.Name);
 			Map(v => v.Tier);
@@ -22,6 +23,7 @@ namespace WotDossier.Dal.Mappings
             Map(v => v.IsFavorite);
             Map(v => v.PlayerId).Insert();
             Map(v => v.PlayerUId);
+            Map(v => v.Rev);
 		
 			References(v => v.PlayerIdObject).Column(Column(v => v.PlayerId)).ReadOnly();
 

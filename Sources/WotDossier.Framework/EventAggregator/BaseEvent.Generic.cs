@@ -6,7 +6,7 @@ namespace WotDossier.Framework.EventAggregator
 {
     public abstract class BaseEvent<TPayload> : BaseEvent
     {
-        protected static readonly ILog Log = LogManager.GetCurrentClassLogger();
+        protected static readonly ILog Log = LogManager.GetLogger<BaseEvent>();
 
         public virtual SubscriptionToken Subscribe(Action<TPayload> action)
         {

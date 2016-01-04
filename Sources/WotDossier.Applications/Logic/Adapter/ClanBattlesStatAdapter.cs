@@ -14,7 +14,7 @@ namespace WotDossier.Applications.Logic.Adapter
         /// </summary>
         public ClanBattlesStatAdapter(List<TankJson> tanks) : base(tanks, tank => tank.Clan)
         {
-            MedalRotmistrov = tanks.Sum(x => x.AchievementsClan.MedalRotmistrov);
+            MedalRotmistrov = tanks.Sum(x => x.AchievementsClan?.MedalRotmistrov ?? 0);
         }
 
         public List<ITankStatisticRow> Tanks { get; set; }

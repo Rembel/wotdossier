@@ -24,7 +24,7 @@ namespace WotDossier.Applications.Logic
 
         #endregion
 
-        private static readonly ILog _log = LogManager.GetCurrentClassLogger();
+        private static readonly ILog _log = LogManager.GetLogger<ReplayUploader>();
 
         /// <summary>
         /// Uploads the specified info.

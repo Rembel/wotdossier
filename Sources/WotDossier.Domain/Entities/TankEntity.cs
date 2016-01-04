@@ -9,7 +9,7 @@ namespace WotDossier.Domain.Entities
 	/// </summary>
 	[Serializable]
     [DataContract]
-	public class TankEntity : EntityBase
+	public class TankEntity : EntityBase, IRevised
 	{	
 		/// <summary>
 		/// Gets/Sets the field "TankId".

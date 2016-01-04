@@ -21,7 +21,7 @@ namespace WotDossier.ReplaysManager
     /// </summary>
     public partial class App : Application
     {
-        private static readonly ILog _log = LogManager.GetCurrentClassLogger();
+        private static readonly ILog _log = LogManager.GetLogger<App>();
 
         private ReplaysManagerController _controller;
 

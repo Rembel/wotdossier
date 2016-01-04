@@ -16,7 +16,7 @@ namespace WotDossier.Applications.ViewModel
     [Export(typeof (ClanSearchViewModel))]
     public class ClanSearchViewModel : ViewModel<ISearchView>
     {
-        private static readonly ILog _log = LogManager.GetCurrentClassLogger();
+        private static readonly ILog _log = LogManager.GetLogger<ClanSearchViewModel>();
         private List<SearchResultRowViewModel> _list;
 
         public DelegateCommand<object> RowDoubleClickCommand { get; set; }

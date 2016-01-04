@@ -20,7 +20,7 @@ namespace WotDossier.Update.Update
     {
         private const string USER_AGENT = "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:21.0) Gecko/20100101 Firefox/21.0";
         private const string ACCEPT_HEADER = "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8";
-        private static readonly ILog Logger = LogManager.GetCurrentClassLogger();
+        private static readonly ILog Logger = LogManager.GetLogger<AppUpdater>();
 
         /// <summary>
         ///     Checks for updates.

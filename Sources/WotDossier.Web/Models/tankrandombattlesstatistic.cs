@@ -11,7 +11,8 @@ namespace WotDossier.Web
         public byte[] raw { get; set; }
         public int rev { get; set; }
         public int tankid { get; set; }
-        public Guid? tankuid { get; set; }
+        public Guid tankuid { get; set; }
+        public Guid playeruid { get; set; }
         public DateTime updated { get; set; }
         public int version { get; set; }
 

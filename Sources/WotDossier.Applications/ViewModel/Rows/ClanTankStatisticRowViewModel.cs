@@ -17,7 +17,7 @@ namespace WotDossier.Applications.ViewModel.Rows
         {
             #region Achievements
 
-            Mapper.Map<IClanBattlesAchievements>(tank.AchievementsClan, this);
+            Mapper.Map<IClanBattlesAchievements>(tank.AchievementsClan ?? new AchievementsClan(), this);
 
             #endregion
         }

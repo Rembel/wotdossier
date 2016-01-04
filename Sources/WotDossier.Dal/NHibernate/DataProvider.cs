@@ -19,7 +19,7 @@ namespace WotDossier.Dal.NHibernate
     [Export]
     public class DataProvider: IDataProvider
     {
-        protected static readonly ILog Log = LogManager.GetCurrentClassLogger();
+        protected static readonly ILog Log = LogManager.GetLogger<DataProvider>();
 
         private ISessionFactory _factory;
         private readonly ISessionStorage _storage;

@@ -44,7 +44,7 @@ namespace WotDossier.Applications.ViewModel
     [Export(typeof(ShellViewModel))]
     public class ShellViewModel : ViewModel<IShellView>
     {
-        private static readonly ILog _log = LogManager.GetCurrentClassLogger();
+        private static readonly ILog _log = LogManager.GetLogger<ShellViewModel>();
 
         private static readonly string PropPeriodTabHeader = TypeHelper.GetPropertyName<ShellViewModel>(x => x.PeriodTabHeader);
         public static readonly string PropPlayerStatistic = TypeHelper<ShellViewModel>.PropertyName(v => v.PlayerStatistic);
@@ -638,7 +638,7 @@ namespace WotDossier.Applications.ViewModel
                         //set thread culture
                         CultureHelper.SetUiCulture(SettingsReader.Get().Language);
 
-                        ServerStatWrapper serverStatistic = LoadPlayerServerStatistic(settings);
+                        Player serverStatistic = LoadPlayerServerStatistic(settings);
                         
                         if (!string.IsNullOrEmpty(settings.PlayerName) && !string.IsNullOrEmpty(settings.Server))
                         {
@@ -719,7 +719,7 @@ namespace WotDossier.Applications.ViewModel
             EventAggregatorFactory.EventAggregator.GetEvent<ReplayManagerActivatedEvent>().Publish(EventArgs.Empty);
         }
 
-        private void UpdateLocalDatabase(ServerStatWrapper serverStatistic, FileInfo cacheFile)
+        private void UpdateLocalDatabase(Player serverStatistic, FileInfo cacheFile)
         {
             //convert dossier cache file to json
             string jsonFile = CacheFileHelper.BinaryCacheToJson(cacheFile);
@@ -734,14 +734,14 @@ namespace WotDossier.Applications.ViewModel
             strategy.UpdateTankStatistic(settings.PlayerId, tanksCache);
         }
 
-        private void InitClanData(ServerStatWrapper serverStatistic)
+        private void InitClanData(Player serverStatistic)
         {
             _log.Trace("InitClanData start");
-            if (serverStatistic != null && serverStatistic.Player != null && PlayerStatistic != null)
+            if (serverStatistic != null && PlayerStatistic != null)
             {
                 AppSettings settings = SettingsReader.Get();
 
-                ClanMemberInfo clanMember = WotApiClient.Instance.GetClanMemberInfo(serverStatistic.Player.dataField.account_id, settings);
+                ClanMemberInfo clanMember = WotApiClient.Instance.GetClanMemberInfo(serverStatistic.dataField.account_id, settings);
                 if (clanMember != null)
                 {
                     PlayerStatistic.Clan = new ClanModel(clanMember);
@@ -765,7 +765,7 @@ namespace WotDossier.Applications.ViewModel
             _log.Trace("InitLastUsedTankList end");
         }
 
-        private ServerStatWrapper LoadPlayerServerStatistic(AppSettings settings)
+        private Player LoadPlayerServerStatistic(AppSettings settings)
         {
             _log.Trace("LoadPlayerServerStatistic start");
             Player player = null;
@@ -782,7 +782,7 @@ namespace WotDossier.Applications.ViewModel
                 _log.Error(e);
             }
             _log.Trace("LoadPlayerServerStatistic end");
-            return new ServerStatWrapper(player);
+            return player;
         }
 
         #endregion

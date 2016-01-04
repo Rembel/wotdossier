@@ -201,7 +201,7 @@ namespace WotDossier.Applications.ViewModel.Chart
         {
             List<DateDataPoint> erPoints = statisticViewModels.Select(x => new DateDataPoint(x.BattlesCount, predicate(x), x.Updated)).Where(x => x.X > 0 & x.Y > 0).OrderBy(x => x.X).ToList();
             return InterpolatePoints(erPoints);
-            return erPoints;
+            //return erPoints;
         }
 
         /// <summary>

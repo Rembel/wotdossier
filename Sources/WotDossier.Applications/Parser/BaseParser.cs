@@ -15,7 +15,7 @@ namespace WotDossier.Applications.Parser
 {
     public class BaseParser
     {
-        protected static readonly ILog _log = LogManager.GetCurrentClassLogger();
+        protected static readonly ILog _log = LogManager.GetLogger<BaseParser>();
         private bool _abort = false;
 
         public void ReadReplayStream(Stream stream, Action<Packet> packetHandler)

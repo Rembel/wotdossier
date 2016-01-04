@@ -50,7 +50,7 @@ namespace WotDossier.Applications.BattleModeStrategies
         /// <param name="playerData">The player data.</param>
         /// <returns></returns>
         public abstract PlayerStatisticViewModel GetPlayerStatistic(PlayerEntity player, List<TankJson> tanks,
-            ServerStatWrapper playerData = null);
+            Player playerData = null);
 
         /// <summary>
         /// Gets the player statistic.
@@ -60,7 +60,7 @@ namespace WotDossier.Applications.BattleModeStrategies
         /// <param name="tanks">The tanks.</param>
         /// <param name="playerData">The player data.</param>
         /// <returns></returns>
-        protected PlayerStatisticViewModel GetPlayerStatistic<T>(PlayerEntity player, List<TankJson> tanks, ServerStatWrapper playerData = null)
+        protected PlayerStatisticViewModel GetPlayerStatistic<T>(PlayerEntity player, List<TankJson> tanks, Player playerData = null)
             where T : StatisticEntity
         {
             List<T> statisticEntities = DossierRepository.GetPlayerStatistic<T>(player.AccountId).ToList();
@@ -87,7 +87,7 @@ namespace WotDossier.Applications.BattleModeStrategies
         /// <param name="tanks">The tanks.</param>
         /// <param name="serverStatistic">The server statistic.</param>
         /// <returns></returns>
-        public abstract PlayerEntity UpdatePlayerStatistic(int playerId, List<TankJson> tanks, ServerStatWrapper serverStatistic);
+        public abstract PlayerEntity UpdatePlayerStatistic(int playerId, List<TankJson> tanks, Player serverStatistic);
 
         /// <summary>
         /// To the view model.

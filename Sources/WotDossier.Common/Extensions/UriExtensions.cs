@@ -46,7 +46,6 @@ namespace WotDossier.Common.Extensions
 
         public static void Post(this Uri uri, string data)
         {
-            string str = null;
             var client = new WebClient();
             client.Proxy.Credentials = CredentialCache.DefaultCredentials;
             try
@@ -54,6 +53,25 @@ namespace WotDossier.Common.Extensions
                 client.Headers[HttpRequestHeader.ContentType] = "application/json; charset=utf-8";
                 //client.Headers[HttpRequestHeader.ContentLength] = data.Length.ToString(CultureInfo.InvariantCulture);
                 client.UploadStringAsync(uri, data);
+            }
+            catch (WebException)
+            {
+            }
+            finally
+            {
+                client.Dispose();
+            }
+        }
+
+        public static void Post(this Uri uri, byte[] data)
+        {
+            var client = new WebClient();
+            client.Proxy.Credentials = CredentialCache.DefaultCredentials;
+            try
+            {
+                client.Headers[HttpRequestHeader.ContentType] = "application/octet-stream";
+                //client.Headers[HttpRequestHeader.ContentLength] = data.Length.ToString(CultureInfo.InvariantCulture);
+                client.UploadDataAsync(uri, data);
             }
             catch (WebException)
             {

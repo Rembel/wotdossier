@@ -12,7 +12,7 @@ namespace WotDossier.Converters
 {
     public class ClanImageUrlToSourceConverter : IValueConverter
     {
-        private static readonly ILog _log = LogManager.GetCurrentClassLogger();
+        private static readonly ILog _log = LogManager.GetLogger<ClanImageUrlToSourceConverter>();
 
         private static readonly ClanImageUrlToSourceConverter _defaultInstance = new ClanImageUrlToSourceConverter();
 

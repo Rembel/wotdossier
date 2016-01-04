@@ -6,7 +6,7 @@ namespace WotDossier.Test
 {
     public class CompositionContainerFactory
     {
-        protected static readonly ILog _log = LogManager.GetCurrentClassLogger();
+        protected static readonly ILog _log = LogManager.GetLogger<CompositionContainerFactory>();
         private CompositionContainer _container;
         private static readonly object _syncObject = new object();
         private static volatile CompositionContainerFactory _instance = new CompositionContainerFactory();

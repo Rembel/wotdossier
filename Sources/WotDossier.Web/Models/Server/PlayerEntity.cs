@@ -34,24 +34,6 @@ namespace WotDossier.Domain.Entities
         /// </summary>
         [DataMember]
         public virtual int AccountId	{get; set; }
-
-	    #region Collections
-		
-		private IList<TankEntity> _tankEntities;
-		/// <summary>
-		/// Gets/Sets the <see cref="TankEntity"/> collection.
-		/// </summary>
-        public virtual IList<TankEntity> TankEntities
-        {
-            get
-            {
-                return _tankEntities ?? (_tankEntities = new List<TankEntity>());
-            }
-            set { _tankEntities = value; }
-        }
-		
-		#endregion Collections
-		
 	}
 }
 

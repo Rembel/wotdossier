@@ -19,7 +19,7 @@ namespace WotDossier.Applications.Logic
     [Export]
     public class ReplaysManager
     {
-        private static readonly ILog _log = LogManager.GetCurrentClassLogger();
+        private static readonly ILog _log = LogManager.GetLogger<ReplaysManager>();
 
         private const string REPLAYS_CATALOG_FILE_PATH = @"Data\ReplaysCatalog.xml";
 

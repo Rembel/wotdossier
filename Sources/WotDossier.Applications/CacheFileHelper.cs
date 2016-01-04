@@ -19,7 +19,7 @@ namespace WotDossier.Applications
     {
         private const char SEPARATOR = ';';
 
-        private static readonly ILog _log = LogManager.GetCurrentClassLogger();
+        private static readonly ILog _log = LogManager.GetLogger("CacheFileHelper");
 
         #region Cache
 

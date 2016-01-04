@@ -20,7 +20,7 @@ namespace WotDossier.Applications.ViewModel.Replay
     public class UploadReplayViewModel : ViewModel<IUploadReplayView>
     {
         private readonly DossierRepository _repository;
-        private static readonly ILog _log = LogManager.GetCurrentClassLogger();
+        private static readonly ILog _log = LogManager.GetLogger<UploadReplayViewModel>();
 
         public DelegateCommand OnReplayUploadCommand { get; set; }
 

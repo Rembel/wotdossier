@@ -16,7 +16,7 @@ namespace WotDossier.Applications.ViewModel.Chart
     {
         #region [Properties and Fields]
 
-        private static readonly ILog _log = LogManager.GetCurrentClassLogger();
+        private static readonly ILog _log = LogManager.GetLogger<PlayerChartsViewModel>();
 
         private List<IDataPoint> _lastUsedTanksDataSource;
         private IEnumerable<ReplayFile> _replaysDataSource;

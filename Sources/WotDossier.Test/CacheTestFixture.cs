@@ -30,9 +30,8 @@ namespace WotDossier.Test
             DatabaseManager.DeleteDatabase();
             DatabaseManager.InitDatabase();
 
-            Player player1 = new Player();
-            player1.dataField = new PlayerData { account_id = 10800699, nickname = "_rembel__ru", created_at = 1349068892 };
-            ServerStatWrapper serverStatistic = new ServerStatWrapper(player1);
+            Player serverStatistic = new Player();
+            serverStatistic.dataField = new PlayerData { account_id = 10800699, nickname = "_rembel__ru", created_at = 1349068892 };
 
             foreach (Version version in Dictionaries.Instance.Versions)
             {
@@ -57,7 +56,7 @@ namespace WotDossier.Test
                             DossierRepository);
 
                         PlayerEntity player = strategy.UpdatePlayerStatistic(
-                            serverStatistic.Player.dataField.account_id, tanks, serverStatistic);
+                            serverStatistic.dataField.account_id, tanks, serverStatistic);
 
                         var playerStatisticViewModel = strategy.GetPlayerStatistic(player, tanks, serverStatistic);
                         Assert.IsNotNull(playerStatisticViewModel);
@@ -110,14 +109,13 @@ namespace WotDossier.Test
             DataProvider.RollbackTransaction();
             DataProvider.CloseSession();
 
-            Player player1 = new Player();
-            player1.dataField = new PlayerData
+            Player serverStatistic = new Player();
+            serverStatistic.dataField = new PlayerData
             {
                 account_id = 10800699,
                 nickname = "_rembel__ru",
                 created_at = 1349068892
             };
-            ServerStatWrapper serverStatistic = new ServerStatWrapper(player1);
             //reset DB
             DatabaseManager.DeleteDatabase();
             DatabaseManager.InitDatabase();
@@ -134,7 +132,7 @@ namespace WotDossier.Test
             }
             StatisticViewStrategyBase strategy = StatisticViewStrategyManager.Get(battleMode, DossierRepository);
 
-            PlayerEntity player = strategy.UpdatePlayerStatistic(serverStatistic.Player.dataField.account_id, tanks,
+            PlayerEntity player = strategy.UpdatePlayerStatistic(serverStatistic.dataField.account_id, tanks,
                 serverStatistic);
 
             var playerStatisticViewModel = strategy.GetPlayerStatistic(player, tanks, serverStatistic);

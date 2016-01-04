@@ -15,7 +15,7 @@ namespace WotDossier.Update.Update
     {
         private const string SQL_SCRIPT_EXTENSION = ".sql";
         private const string SQL_SCRIPT_EXTENSION_MASK = "*.sql";
-        private static readonly ILog Logger = LogManager.GetCurrentClassLogger();
+        private static readonly ILog Logger = LogManager.GetLogger<DatabaseManager>();
 
         public void Update()
         {

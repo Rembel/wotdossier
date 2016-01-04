@@ -39,7 +39,7 @@ namespace WotDossier.Applications.ViewModel
 {
     public class ReplaysViewModel : INotifyPropertyChanged
     {
-        private static readonly ILog _log = LogManager.GetCurrentClassLogger();
+        private static readonly ILog _log = LogManager.GetLogger<ReplaysViewModel>();
         public ReplaysFilterViewModel ReplayFilter { get; set; }
         public ReplaysManager ReplaysManager { get; set; }
         public DossierRepository DossierRepository { get; set; }

@@ -11,7 +11,7 @@ namespace WotDossier.Update.Update
     /// </summary>
     public class CodeUpdate_2015071301 : CodeUpdateBase
     {
-        private static readonly ILog _log = LogManager.GetCurrentClassLogger();
+        private static readonly ILog _log = LogManager.GetLogger<CodeUpdate_2015071301>();
 
         private long _version = 2015071301;
 

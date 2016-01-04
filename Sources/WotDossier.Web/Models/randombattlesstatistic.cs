@@ -25,7 +25,7 @@ namespace WotDossier.Web
         public int maxxp { get; set; }
         public double performancerating { get; set; }
         public int playerid { get; set; }
-        public Guid? playeruid { get; set; }
+        public Guid playeruid { get; set; }
         public double rbr { get; set; }
         public int rev { get; set; }
         public int spotted { get; set; }

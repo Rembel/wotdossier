@@ -166,9 +166,5 @@ namespace WotDossier.Domain.Entities
         /// </summary>
         [DataMember]
         public virtual int DroppedCapturePoints { get; set; }
-
-        public virtual void UpdateRatings(Ratings ratings)
-        {
-        }
     }
 }

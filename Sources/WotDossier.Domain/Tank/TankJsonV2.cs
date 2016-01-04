@@ -28,16 +28,10 @@ namespace WotDossier.Domain.Tank
             FortSorties = new StatisticJson()
         };
 
-        private AchievementsClan _achievementsClan = new AchievementsClan();
-
         /// <summary>
         /// Gets or sets the clan achievements.
         /// </summary>
-        public AchievementsClan AchievementsClan
-        {
-            get { return _achievementsClan; }
-            set { _achievementsClan = value; }
-        }
+        public AchievementsClan AchievementsClan { get; set; }
 
         /// <summary>
         /// Gets or sets the description.

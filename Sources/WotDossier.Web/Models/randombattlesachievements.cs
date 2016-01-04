@@ -11,6 +11,7 @@ namespace WotDossier.Web
         }
 
         public Guid uid { get; set; }
+        public Guid playeruid { get; set; }
         public int abrams { get; set; }
         public int arsonist { get; set; }
         public int billotte { get; set; }

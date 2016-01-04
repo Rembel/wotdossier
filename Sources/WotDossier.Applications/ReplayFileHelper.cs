@@ -18,7 +18,7 @@ namespace WotDossier.Applications
     {
 private const string REPLAY_DATABLOCK_2 = "datablock_2";
 
-        private static readonly ILog _log = LogManager.GetCurrentClassLogger();
+        private static readonly ILog _log = LogManager.GetLogger("ReplayFileHelper");
         private static readonly Version _jsonFormatedReplayMinVersion = new Version("0.8.11.0");
         private static readonly Version _prevMinVersion = new Version("0.9.8.0");
         

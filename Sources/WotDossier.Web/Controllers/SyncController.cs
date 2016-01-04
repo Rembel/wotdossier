@@ -1,15 +1,11 @@
 using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using Microsoft.AspNet.Http;
 using Microsoft.AspNet.Mvc;
-using Microsoft.Data.Entity;
 using Newtonsoft.Json;
+using ProtoBuf;
 using WotDossier.Dal;
 using WotDossier.Domain;
-using WotDossier.Web.Models;
-using WotDossier.Web.Services;
+using WotDossier.Web.Logic;
 
 namespace WotDossier.Web.Controllers
 {
@@ -17,11 +13,11 @@ namespace WotDossier.Web.Controllers
     [Route("api/Sync")]
     public class SyncController : Controller
     {
-        private dossierContext _context;
+        private readonly SyncManager _syncManager;
 
-        public SyncController(dossierContext context)
+        public SyncController(SyncManager syncManager)
         {
-            _context = context;
+            _syncManager = syncManager;
         }
 
         // GET: api/Sync
@@ -29,7 +25,7 @@ namespace WotDossier.Web.Controllers
         [Route("dbversion")]
         public IActionResult GetDbVersion()
         {
-            var dbversion = _context.dbversion.First();
+            var dbversion = _syncManager.GetDbVersion();
             return Ok(dbversion);
         }
 
@@ -42,37 +38,30 @@ namespace WotDossier.Web.Controllers
             {
                 var bodyStream = Request.Body;
 
-                using (var streamReader = new StreamReader(bodyStream))
+                using (var streamReader = new BinaryReader(bodyStream))
                 {
-                    var body = streamReader.ReadToEnd();
+                    //    var body = streamReader.ReadToEnd();
 
-                    statistic = JsonConvert.DeserializeObject<Statistic>(body);
-                }
+                    //    statistic = JsonConvert.DeserializeObject<Statistic>(body);
 
-                var stat = DeserializeStatistic(statistic);
-
-                var player = _context.player.FirstOrDefault(x => x.accountid == stat.Player.AccountId && x.server == stat.Player.Server);
-
-                if (player == null)
-                {
-                    _context.player.Add(new player
+                    const int bufferSize = 4096;
+                    using (var ms = new MemoryStream())
                     {
-                        id = stat.Player.Id,
-                        uid = stat.Player.UId.Value,
-                        accountid = stat.Player.AccountId,
-                        server = stat.Player.Server,
-                        creaded = stat.Player.Creaded,
-                        rev = stat.Player.Rev,
-                        name = stat.Player.Name
-                    });
+                        byte[] buffer = new byte[bufferSize];
+                        int count;
+                        while ((count = streamReader.Read(buffer, 0, buffer.Length)) != 0)
+                            ms.Write(buffer, 0, count);
+                        ms.Position = 0;
+                        var stat = Serializer.Deserialize<ClientStat>(ms);
 
-                }
-                else
-                {
-                    player.rev = stat.Player.Rev;
+                        _syncManager.ProcessStatistic(stat);
+                    }
                 }
 
-                _context.SaveChanges();
+                
+                //var stat = Serializer.Deserialize<ClientStat>(bodyStream);
+
+                //var stat = DeserializeStatistic(statistic);
 
                 return Ok();
             }
@@ -174,39 +163,41 @@ namespace WotDossier.Web.Controllers
         //    return CreatedAtRoute("GetApplicationUser", new { id = applicationUser.Id }, applicationUser);
         //}
 
-        // DELETE: api/Sync/5
+        // DELETE: api/Sync/player/ru/5
         [HttpDelete("player/{server}/{id}")]
-        public IActionResult DeleteStatistic(string server, int id)
+        public IActionResult DeletePlayer(string server, int id)
         {
-        //    if (!ModelState.IsValid)
-        //    {
-        //        return HttpBadRequest(ModelState);
-        //    }
-
-            player player = _context.player.FirstOrDefault(m => m.server == server && m.accountid == id);
+            var player = _syncManager.GetPlayer(server, id);
             if (player == null)
             {
                 return HttpNotFound();
             }
 
-            _context.player.Remove(player);
-            _context.SaveChanges();
+            _syncManager.DeletePlayer(player);
 
             return Ok();
+        }
+
+        // Get: api/Sync/player/ru/5
+        [HttpGet("player/{server}/{id}")]
+        public IActionResult GetPlayer(string server, int id)
+        {
+            var player = _syncManager.GetPlayer(server, id);
+            if (player == null)
+            {
+                return HttpNotFound();
+            }
+
+            return Ok(player);
         }
 
         protected override void Dispose(bool disposing)
         {
             if (disposing)
             {
-                _context.Dispose();
+                _syncManager.Dispose();
             }
             base.Dispose(disposing);
         }
-
-        //private bool ApplicationUserExists(string id)
-        //{
-        //    return _context.ApplicationUser.Count(e => e.Id == id) > 0;
-        //}
     }
 }

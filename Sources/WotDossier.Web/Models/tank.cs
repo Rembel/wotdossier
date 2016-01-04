@@ -20,7 +20,7 @@ namespace WotDossier.Web
         public bool ispremium { get; set; }
         public string name { get; set; }
         public int playerid { get; set; }
-        public Guid? playeruid { get; set; }
+        public Guid playeruid { get; set; }
         public int rev { get; set; }
         public int tankid { get; set; }
         public int tanktype { get; set; }

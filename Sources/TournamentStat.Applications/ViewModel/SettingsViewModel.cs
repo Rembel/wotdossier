@@ -21,7 +21,6 @@ namespace TournamentStat.Applications.ViewModel
             new ListItem<string>("ru-RU", WotDossier.Resources.Resources.Language_Russian),
             new ListItem<string>("en-US", WotDossier.Resources.Resources.Language_English),
         };
-        private bool _nameChanged;
         public DelegateCommand SaveCommand { get; set; }
         public ICommand AddNominationCommand { get; set; }
         public ICommand EditNominationCommand { get; set; }

@@ -46,7 +46,7 @@ namespace WotDossier.Test
             get { return _resourceManagers; }
         }
 
-        [TestFixtureSetUp]
+        [OneTimeSetUp]
         public void Init()
         {
             AssemblyExtensions.SetEntryAssembly(Assembly.LoadFrom("WotDossier.Test.dll"));

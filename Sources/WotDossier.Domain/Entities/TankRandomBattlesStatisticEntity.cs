@@ -1,4 +1,5 @@
 using System;
+using System.Runtime.Serialization;
 
 namespace WotDossier.Domain.Entities
 {
@@ -6,6 +7,7 @@ namespace WotDossier.Domain.Entities
     /// Object representation for table 'TankRandomBattlesStatistic'.
     /// </summary>
     [Serializable]
+    [DataContract]
     public class TankRandomBattlesStatisticEntity : TankStatisticEntityBase
     {
         

@@ -18,7 +18,7 @@ namespace WotDossier.Domain.Entities
         /// Unique	Identifier of an entity
         /// </summary>
         [DataMember]
-        public virtual Guid? UId { get; set; }
+        public virtual Guid UId { get; set; }
 
         /// <summary>
         /// 	Identifier of an entity

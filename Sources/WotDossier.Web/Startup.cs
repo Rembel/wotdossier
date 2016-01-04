@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
+using System.Runtime.Serialization;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Builder;
 using Microsoft.AspNet.Hosting;
@@ -10,6 +12,10 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
+using ProtoBuf.Meta;
+using WotDossier.Domain;
+using WotDossier.Domain.Entities;
+using WotDossier.Web.Logic;
 using WotDossier.Web.Middleware;
 using WotDossier.Web.Models;
 using WotDossier.Web.Services;
@@ -59,6 +65,7 @@ namespace WotDossier.Web
             // Add application services.
             services.AddTransient<IEmailSender, AuthMessageSender>();
             services.AddTransient<ISmsSender, AuthMessageSender>();
+            services.AddTransient<SyncManager, SyncManager>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -107,10 +114,41 @@ namespace WotDossier.Web
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
 
+            InitProtobuf();
+
             Console.Write("Hello world");
+        }
+
+        private static void InitProtobuf()
+        {
+            RuntimeTypeModel.Default.AllowParseableTypes = true;
+            RuntimeTypeModel.Default.AutoAddMissingTypes = true;
+
+            RuntimeTypeModel.Default.Add<ClientStat>();
+            RuntimeTypeModel.Default.Add<EntityBase>()
+                .AddSubType(100, RuntimeTypeModel.Default.Add<PlayerEntity>().Type)
+                .AddSubType(200, RuntimeTypeModel.Default.Add<TankEntity>().Type)
+                .AddSubType(300, RuntimeTypeModel.Default.Add<StatisticEntity>()
+                                    .AddSubType(400, RuntimeTypeModel.Default.Add<RandomBattlesStatisticEntity>().Type)
+                                 .Type)
+                .AddSubType(700, RuntimeTypeModel.Default.Add<RandomBattlesAchievementsEntity>().Type)
+                .AddSubType(500, RuntimeTypeModel.Default.Add<TankStatisticEntityBase>()
+                                    .AddSubType(600, RuntimeTypeModel.Default.Add<TankRandomBattlesStatisticEntity>().Type)
+                                 .Type);
         }
 
         // Entry point for the application.
         public static void Main(string[] args) => WebApplication.Run<Startup>(args);
+    }
+
+    public static class RuntimeTypeModelExt
+    {
+        public static MetaType Add<T>(this RuntimeTypeModel model)
+        {
+            var propertyInfos = typeof(T).GetProperties(BindingFlags.Public | BindingFlags.Instance)
+                .Where(prop => prop.IsDefined(typeof(DataMemberAttribute), false) && prop.CanWrite).Select(x => x.Name).ToArray();
+
+            return model.Add(typeof(T), true).Add(propertyInfos);
+        }
     }
 }

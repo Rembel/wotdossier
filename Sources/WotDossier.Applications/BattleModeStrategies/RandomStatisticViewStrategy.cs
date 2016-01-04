@@ -35,7 +35,7 @@ namespace WotDossier.Applications.BattleModeStrategies
         /// <param name="tanks">The tanks.</param>
         /// <param name="playerData">The player data.</param>
         /// <returns></returns>
-        public override PlayerStatisticViewModel GetPlayerStatistic(PlayerEntity player, List<TankJson> tanks, ServerStatWrapper playerData = null)
+        public override PlayerStatisticViewModel GetPlayerStatistic(PlayerEntity player, List<TankJson> tanks, Player playerData = null)
         {
             return GetPlayerStatistic<RandomBattlesStatisticEntity>(player, tanks, playerData);
         }
@@ -100,7 +100,7 @@ namespace WotDossier.Applications.BattleModeStrategies
         /// <param name="tanks">The tanks.</param>
         /// <param name="serverStatistic">The server statistic.</param>
         /// <returns></returns>
-        public override PlayerEntity UpdatePlayerStatistic(int playerId, List<TankJson> tanks, ServerStatWrapper serverStatistic)
+        public override PlayerEntity UpdatePlayerStatistic(int playerId, List<TankJson> tanks, Player serverStatistic)
         {
             return DossierRepository.UpdatePlayerStatistic(new RandomBattlesStatAdapter(tanks), serverStatistic, playerId);
         }

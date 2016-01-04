@@ -22,7 +22,7 @@ namespace WotDossier.Dal
     /// </summary>
     public class WotApiClient
     {
-        private static readonly ILog _log = LogManager.GetCurrentClassLogger();
+        private static readonly ILog _log = LogManager.GetLogger<WotApiClient>();
 
         private const string URL_API = @"https://api.worldoftanks.{0}/{1}";
         private const string CONTENT_TYPE = "application/x-www-form-urlencoded";

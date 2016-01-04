@@ -17,7 +17,7 @@ namespace WotDossier.Dal
     /// </summary>
     public class Dictionaries
     {
-        private static readonly ILog _log = LogManager.GetCurrentClassLogger();
+        private static readonly ILog _log = LogManager.GetLogger<Dictionaries>();
 
         private static readonly object _syncObject = new object();
         private static volatile Dictionaries _instance = new Dictionaries();

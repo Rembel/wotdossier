@@ -1,9 +1,7 @@
 using System;
 using System.IO;
 using Microsoft.AspNet.Mvc;
-using Newtonsoft.Json;
 using ProtoBuf;
-using WotDossier.Dal;
 using WotDossier.Domain;
 using WotDossier.Web.Logic;
 
@@ -32,7 +30,7 @@ namespace WotDossier.Web.Controllers
         // post: api/Sync/statistic
         [HttpPost]
         [Route("statistic")]
-        public IActionResult PostStatistic(Statistic statistic)
+        public IActionResult PostStatistic()
         {
             try
             {
@@ -40,10 +38,6 @@ namespace WotDossier.Web.Controllers
 
                 using (var streamReader = new BinaryReader(bodyStream))
                 {
-                    //    var body = streamReader.ReadToEnd();
-
-                    //    statistic = JsonConvert.DeserializeObject<Statistic>(body);
-
                     const int bufferSize = 4096;
                     using (var ms = new MemoryStream())
                     {
@@ -57,12 +51,6 @@ namespace WotDossier.Web.Controllers
                         _syncManager.ProcessStatistic(stat);
                     }
                 }
-
-                
-                //var stat = Serializer.Deserialize<ClientStat>(bodyStream);
-
-                //var stat = DeserializeStatistic(statistic);
-
                 return Ok();
             }
             catch (Exception e)
@@ -70,14 +58,6 @@ namespace WotDossier.Web.Controllers
                 Console.WriteLine(e);
                 return HttpBadRequest(e);
             }
-        }
-
-        private static ClientStat DeserializeStatistic(Statistic statistic)
-        {
-            byte[] bytes = Convert.FromBase64String(statistic.CompressedData);
-            string decompress = CompressHelper.Decompress(bytes);
-            ClientStat stat = JsonConvert.DeserializeObject<ClientStat>(decompress);
-            return stat;
         }
 
         //// GET: api/Sync/5

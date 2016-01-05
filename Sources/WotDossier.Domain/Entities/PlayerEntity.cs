@@ -1,5 +1,4 @@
 using System;
-using System.Collections.Generic;
 using System.Runtime.Serialization;
 
 namespace WotDossier.Domain.Entities
@@ -7,7 +6,6 @@ namespace WotDossier.Domain.Entities
 	/// <summary>
 	/// Object representation for table 'Player'.
 	/// </summary>
-	[Serializable]
     [DataContract]
 	public class PlayerEntity : EntityBase, IRevised
 	{	

@@ -183,7 +183,6 @@
     <Compile Include="Settings\ReplayPlayer.cs" />
     <Compile Include="Settings\StatisticPeriod.cs" />
     <Compile Include="Settings\TankFilterSettings.cs" />
-    <Compile Include="Statistic.cs" />
     <Compile Include="TankType.cs" />
     <Compile Include="Dossier\TankV65\AchievementsJson.cs" />
     <Compile Include="Dossier\TankV65\StatisticJson.cs" />

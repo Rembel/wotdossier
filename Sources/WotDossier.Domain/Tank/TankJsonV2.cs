@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.ComponentModel;
 using WotDossier.Domain.Interfaces;
 
 namespace WotDossier.Domain.Tank
@@ -19,7 +18,7 @@ namespace WotDossier.Domain.Tank
             Achievements = new AchievementsJson(),
             Common = new CommonJson(),
             Description = TankDescription.Unknown(),
-            Frags = new BindingList<FragsJson>(),
+            Frags = new List<FragsJson>(),
             Achievements7x7 = new Achievements7x7(),
             AchievementsHistorical = new AchievementsHistorical(),
             Historical = new StatisticJson(),

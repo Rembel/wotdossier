@@ -51,6 +51,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TournamentStat.Applications
 EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "WotDossier.Web", "WotDossier.Web\WotDossier.Web.xproj", "{666290B5-D2AE-4F53-91D2-03BD7DCE8D81}"
 EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "WotDossier.Web.Domain", "WotDossier.Domain\WotDossier.Web.Domain.xproj", "{4CF44DFA-5DCC-4E06-B41A-BB6C54A0425F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -463,6 +465,36 @@ Global
 		{666290B5-D2AE-4F53-91D2-03BD7DCE8D81}.TournamentStat|Mixed Platforms.Build.0 = Debug|Any CPU
 		{666290B5-D2AE-4F53-91D2-03BD7DCE8D81}.TournamentStat|x86.ActiveCfg = Debug|Any CPU
 		{666290B5-D2AE-4F53-91D2-03BD7DCE8D81}.TournamentStat|x86.Build.0 = Debug|Any CPU
+		{4CF44DFA-5DCC-4E06-B41A-BB6C54A0425F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4CF44DFA-5DCC-4E06-B41A-BB6C54A0425F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4CF44DFA-5DCC-4E06-B41A-BB6C54A0425F}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{4CF44DFA-5DCC-4E06-B41A-BB6C54A0425F}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{4CF44DFA-5DCC-4E06-B41A-BB6C54A0425F}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{4CF44DFA-5DCC-4E06-B41A-BB6C54A0425F}.Debug|x86.Build.0 = Debug|Any CPU
+		{4CF44DFA-5DCC-4E06-B41A-BB6C54A0425F}.Full|Any CPU.ActiveCfg = Debug|Any CPU
+		{4CF44DFA-5DCC-4E06-B41A-BB6C54A0425F}.Full|Any CPU.Build.0 = Debug|Any CPU
+		{4CF44DFA-5DCC-4E06-B41A-BB6C54A0425F}.Full|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{4CF44DFA-5DCC-4E06-B41A-BB6C54A0425F}.Full|Mixed Platforms.Build.0 = Debug|Any CPU
+		{4CF44DFA-5DCC-4E06-B41A-BB6C54A0425F}.Full|x86.ActiveCfg = Debug|Any CPU
+		{4CF44DFA-5DCC-4E06-B41A-BB6C54A0425F}.Full|x86.Build.0 = Debug|Any CPU
+		{4CF44DFA-5DCC-4E06-B41A-BB6C54A0425F}.Lite|Any CPU.ActiveCfg = Debug|Any CPU
+		{4CF44DFA-5DCC-4E06-B41A-BB6C54A0425F}.Lite|Any CPU.Build.0 = Debug|Any CPU
+		{4CF44DFA-5DCC-4E06-B41A-BB6C54A0425F}.Lite|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{4CF44DFA-5DCC-4E06-B41A-BB6C54A0425F}.Lite|Mixed Platforms.Build.0 = Debug|Any CPU
+		{4CF44DFA-5DCC-4E06-B41A-BB6C54A0425F}.Lite|x86.ActiveCfg = Debug|Any CPU
+		{4CF44DFA-5DCC-4E06-B41A-BB6C54A0425F}.Lite|x86.Build.0 = Debug|Any CPU
+		{4CF44DFA-5DCC-4E06-B41A-BB6C54A0425F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4CF44DFA-5DCC-4E06-B41A-BB6C54A0425F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4CF44DFA-5DCC-4E06-B41A-BB6C54A0425F}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{4CF44DFA-5DCC-4E06-B41A-BB6C54A0425F}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{4CF44DFA-5DCC-4E06-B41A-BB6C54A0425F}.Release|x86.ActiveCfg = Release|Any CPU
+		{4CF44DFA-5DCC-4E06-B41A-BB6C54A0425F}.Release|x86.Build.0 = Release|Any CPU
+		{4CF44DFA-5DCC-4E06-B41A-BB6C54A0425F}.TournamentStat|Any CPU.ActiveCfg = Debug|Any CPU
+		{4CF44DFA-5DCC-4E06-B41A-BB6C54A0425F}.TournamentStat|Any CPU.Build.0 = Debug|Any CPU
+		{4CF44DFA-5DCC-4E06-B41A-BB6C54A0425F}.TournamentStat|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{4CF44DFA-5DCC-4E06-B41A-BB6C54A0425F}.TournamentStat|Mixed Platforms.Build.0 = Debug|Any CPU
+		{4CF44DFA-5DCC-4E06-B41A-BB6C54A0425F}.TournamentStat|x86.ActiveCfg = Debug|Any CPU
+		{4CF44DFA-5DCC-4E06-B41A-BB6C54A0425F}.TournamentStat|x86.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

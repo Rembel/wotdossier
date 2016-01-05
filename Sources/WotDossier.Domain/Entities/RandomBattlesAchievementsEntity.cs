@@ -1,4 +1,3 @@
-using System;
 using System.Runtime.Serialization;
 using WotDossier.Domain.Interfaces;
 
@@ -7,7 +6,6 @@ namespace WotDossier.Domain.Entities
     /// <summary>
     ///     Object representation for table 'RandomBattlesAchievements'.
     /// </summary>
-    [Serializable]
     [DataContract]
     public class RandomBattlesAchievementsEntity : EntityBase, IRandomBattlesAchievements, IClanBattlesAchievements,
         IFortAchievements, IRevised

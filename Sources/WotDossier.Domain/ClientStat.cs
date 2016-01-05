@@ -7,6 +7,10 @@ namespace WotDossier.Domain
     [DataContract]
     public class ClientStat
     {
+        public ClientStat()
+        {
+        }
+
         [DataMember]
         public PlayerEntity Player { get; set; }
 
@@ -16,7 +20,7 @@ namespace WotDossier.Domain
         [DataMember]
         public IEnumerable<RandomBattlesStatisticEntity> RandomStatistic { get; set; }
 
-        [DataMember]
+        //[DataMember]
         public IEnumerable<TankRandomBattlesStatisticEntity> TankRandomStatistic { get; set; }
     }
 }

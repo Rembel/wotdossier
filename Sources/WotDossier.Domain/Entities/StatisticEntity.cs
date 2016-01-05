@@ -1,14 +1,12 @@
 using System;
 using System.Runtime.Serialization;
 using WotDossier.Domain.Interfaces;
-using WotDossier.Domain.Server;
 
 namespace WotDossier.Domain.Entities
 {
     /// <summary>
     ///     Base object representation for tables of type 'Statistic'.
     /// </summary>
-    [Serializable]
     [DataContract]
     public abstract class StatisticEntity : EntityBase, IStatisticBase, IRevised
     {

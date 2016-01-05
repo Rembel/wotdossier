@@ -1,11 +1,8 @@
-using System;
-
 namespace WotDossier.Domain.Entities
 {
 	/// <summary>
 	/// Object representation for table 'Replay'.
 	/// </summary>
-	[Serializable]
 	public class ReplayEntity : EntityBase
 	{	
 		/// <summary>

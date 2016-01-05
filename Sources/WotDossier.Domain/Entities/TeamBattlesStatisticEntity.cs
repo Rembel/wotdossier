@@ -1,11 +1,9 @@
-using System;
-
 namespace WotDossier.Domain.Entities
 {
     /// <summary>
     /// Object representation for table 'TeamBattlesStatistic'.
     /// </summary>
-    [Serializable]
+    
     public class TeamBattlesStatisticEntity : StatisticEntity
     {
         /// <summary>

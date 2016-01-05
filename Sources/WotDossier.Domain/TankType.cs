@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace WotDossier.Domain
+﻿namespace WotDossier.Domain
 {
     public enum TankType : int
     {

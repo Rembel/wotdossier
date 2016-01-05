@@ -1,13 +1,11 @@
-using System;
 using System.Runtime.Serialization;
-using WotDossier.Domain.Server;
 
 namespace WotDossier.Domain.Entities
 {
     /// <summary>
     ///     Object representation for table 'RandomBattlesStatistic'.
     /// </summary>
-    [Serializable]
+    
     [DataContract]
     public class RandomBattlesStatisticEntity : StatisticEntity
     {

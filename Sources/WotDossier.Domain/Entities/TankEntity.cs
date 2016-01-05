@@ -7,7 +7,6 @@ namespace WotDossier.Domain.Entities
 	/// <summary>
 	/// Object representation for table 'Tank'.
 	/// </summary>
-	[Serializable]
     [DataContract]
 	public class TankEntity : EntityBase, IRevised
 	{	

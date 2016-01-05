@@ -6,7 +6,6 @@ namespace WotDossier.Domain.Entities
 	/// <summary>
 	/// Object representation for table 'DbVersion'.
 	/// </summary>
-	[Serializable]
     [DataContract]
     public class DbVersionEntity : EntityBase
 	{	

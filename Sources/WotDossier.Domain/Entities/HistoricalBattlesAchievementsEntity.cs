@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using WotDossier.Domain.Interfaces;
 
@@ -7,7 +6,6 @@ namespace WotDossier.Domain.Entities
     /// <summary>
     /// Object representation for table 'HistoricalBattlesAchievements'.
     /// </summary>
-    [Serializable]
     public class HistoricalBattlesAchievementsEntity : EntityBase, IHistoricalBattlesAchievements, IRevised
     {
         public virtual int GuardsMan { get; set; }

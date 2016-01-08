@@ -58,7 +58,7 @@ namespace WotDossier.Applications.Logic.Adapter
             MaxDamage = tanks.Max(x => statPredicate(x).maxDamage);
             CapturePoints = tanks.Sum(x => statPredicate(x).capturePoints);
             DroppedCapturePoints = tanks.Sum(x => statPredicate(x).droppedCapturePoints);
-            MarkOfMastery = tanks.Count(x => x.Achievements.MarkOfMastery == (int)Domain.MarkOfMastery.Master);
+            MarkOfMastery = tanks.Count(x => (x.Achievements?.MarkOfMastery ?? 0) == (int)Domain.MarkOfMastery.Master);
             Updated = tanks.Max(x => x.Common.lastBattleTimeR);
             if (BattlesCount > 0)
             {

@@ -359,7 +359,7 @@ namespace WotDossier.Applications.ViewModel.Rows
             TankUniqueId = tank.UniqueId();
             Mileage = tank.Common.mileage / 1000;
             IsPremium = tank.Common.premium == 1;
-            TankFrags = tank.Frags;
+            TankFrags = tank.Frags ?? new List<FragsJson>();
 
             OriginalXP = Predicate(tank).originalXP;
             DamageAssistedTrack = Predicate(tank).damageAssistedTrack;

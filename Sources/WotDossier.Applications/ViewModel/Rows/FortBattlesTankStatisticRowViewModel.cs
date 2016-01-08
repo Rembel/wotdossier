@@ -17,14 +17,14 @@ namespace WotDossier.Applications.ViewModel.Rows
         {
             #region Achievements
 
-            Mapper.Map<IFortAchievements>(tank.FortAchievements, this);
+            Mapper.Map<IFortAchievements>(tank.FortAchievements ?? new AchievementsFort(), this);
 
             #endregion
         }
 
         public override Func<TankJson, StatisticJson> Predicate
         {
-            get { return tank => tank.FortBattles; }
+            get { return tank => tank.FortBattles ?? new StatisticJson(); }
         }
 
         /// <summary>

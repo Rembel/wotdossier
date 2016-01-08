@@ -10,6 +10,14 @@ namespace WotDossier.Dal
     /// </summary>
     public class CompressHelper
     {
+        private static readonly JsonSerializerSettings Settings = new JsonSerializerSettings()
+        {
+            Formatting = Formatting.None,
+            DefaultValueHandling = DefaultValueHandling.Ignore,
+            NullValueHandling = NullValueHandling.Ignore,
+            ReferenceLoopHandling = ReferenceLoopHandling.Ignore
+        };
+
         /// <summary>
         /// Compresses the specified value.
         /// </summary>
@@ -60,7 +68,8 @@ namespace WotDossier.Dal
         /// <returns></returns>
         public static byte[] CompressObject(object tank)
         {
-            return Compress(JsonConvert.SerializeObject(tank));
+            var serializedObject = JsonConvert.SerializeObject(tank, Settings);
+            return Compress(serializedObject);
         }
     }
 

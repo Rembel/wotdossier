@@ -35,11 +35,7 @@ namespace WotDossier.Domain.Tank
         /// <summary>
         /// Gets or sets the description.
         /// </summary>
-        public TankDescription Description
-        {
-            get { return _description; }
-            set { _description = value; }
-        }
+        public TankDescription Description { get; set; }
 
         /// <summary>
         /// Gets or sets the common stat.
@@ -51,62 +47,30 @@ namespace WotDossier.Domain.Tank
         /// </summary>
         public StatisticJson A15x15 { get; set; }
 
-        private StatisticJson _a7X7;
         /// <summary>
         /// Gets or sets the a7x7 stat.
         /// </summary>
-        public StatisticJson A7x7
-        {
-            get
-            {
-                if (_a7X7 == null)
-                {
-                    _a7X7 = new StatisticJson();
-                }
-                return _a7X7;
-            }
-            set { _a7X7 = value; }
-        }
+        public StatisticJson A7x7 { get; set; }
 
-        private StatisticJson _historical = new StatisticJson();
         /// <summary>
         /// Gets or sets the historical stat.
         /// </summary>
-        public StatisticJson Historical
-        {
-            get { return _historical; }
-            set { _historical = value; }
-        }
+        public StatisticJson Historical { get; set; }
 
-        private StatisticJson _fortBattles = new StatisticJson();
         /// <summary>
         /// Gets or sets the fort battles stat.
         /// </summary>
-        public StatisticJson FortBattles
-        {
-            get { return _fortBattles; }
-            set { _fortBattles = value; }
-        }
+        public StatisticJson FortBattles { get; set; }
 
-        private StatisticJson _fortSorties = new StatisticJson();
         /// <summary>
         /// Gets or sets the fort sorties.
         /// </summary>
-        public StatisticJson FortSorties
-        {
-            get { return _fortSorties; }
-            set { _fortSorties = value; }
-        }
+        public StatisticJson FortSorties { get; set; }
 
-        private AchievementsFort _fortAchievements = new AchievementsFort();
         /// <summary>
         /// Gets or sets the fort achievements.
         /// </summary>
-        public AchievementsFort FortAchievements
-        {
-            get { return _fortAchievements; }
-            set { _fortAchievements = value; }
-        }
+        public AchievementsFort FortAchievements { get; set; }
 
         /// <summary>
         /// Gets or sets the clan stat.
@@ -123,45 +87,25 @@ namespace WotDossier.Domain.Tank
         /// </summary>
         public AchievementsJson Achievements { get; set; }
 
-        private Achievements7x7 _achievements7X7 = new Achievements7x7();
         /// <summary>
         /// Gets or sets the achievements7x7.
         /// </summary>
-        public Achievements7x7 Achievements7x7
-        {
-            get { return _achievements7X7; }
-            set { _achievements7X7 = value; }
-        }
+        public Achievements7x7 Achievements7x7 { get; set; }
 
-        private AchievementsHistorical _achievementsHistorical = new AchievementsHistorical();
         /// <summary>
         /// Gets or sets the achievements historical.
         /// </summary>
-        public AchievementsHistorical AchievementsHistorical
-        {
-            get { return _achievementsHistorical; }
-            set { _achievementsHistorical = value; }
-        }
+        public AchievementsHistorical AchievementsHistorical { get; set; }
 
-        private IList<IList<string>> _fragsList = new List<IList<string>>();
         /// <summary>
         /// Gets or sets the frags list.
         /// </summary>
-        public IList<IList<string>> FragsList
-        {
-            get { return _fragsList; }
-            set { _fragsList = value; }
-        }
+        public IList<IList<string>> FragsList { get; set; }
 
-        private IEnumerable<FragsJson> _frags = new List<FragsJson>();
         /// <summary>
         /// Gets or sets the frags.
         /// </summary>
-        public IEnumerable<FragsJson> Frags
-        {
-            get { return _frags; }
-            set { _frags = value; }
-        }
+        public IEnumerable<FragsJson> Frags { get; set; }
 
         /// <summary>
         /// Gets or sets the raw.
@@ -169,7 +113,7 @@ namespace WotDossier.Domain.Tank
         public byte[] Raw { get; set; }
 
         private int _uniqueId = -1;
-        private TankDescription _description;
+        
 
         public int UniqueId()
         {

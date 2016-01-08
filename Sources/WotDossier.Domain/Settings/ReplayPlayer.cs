@@ -1,6 +1,5 @@
 ﻿using System;
 using System.ComponentModel;
-using System.Xml.Serialization;
 
 namespace WotDossier.Domain.Settings
 {
@@ -21,7 +20,7 @@ namespace WotDossier.Domain.Settings
             }
         }
 
-        [XmlIgnore]
+        //[XmlIgnore]
         public Version Version
         {
             get { return _version ?? new Version(StringVersion); }
@@ -33,7 +32,7 @@ namespace WotDossier.Domain.Settings
             }
         }
 
-        [XmlElement("Version")]
+        //[XmlElement("Version")]
         public string StringVersion
         {
             get

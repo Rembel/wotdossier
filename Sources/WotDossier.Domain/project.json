@@ -43,11 +43,5 @@
 	}
     }
   },
-  "dependencies": {
-    "Newtonsoft.Json": "8.0.1"
-  },
-  "exclude": ["Replay/*.cs", "Settings/*.cs", "GameplayDescription.cs", "MapConfig.cs", "Map.cs", "Interfaces/IMapDescription.cs", "Dossier"],
-  "runtimes": {
-    "win": {}
-  }
+  "exclude": ["Replay/*.cs", "Settings/*.cs", "GameplayDescription.cs", "MapConfig.cs", "Map.cs", "Interfaces/IMapDescription.cs", "Dossier"]
 }

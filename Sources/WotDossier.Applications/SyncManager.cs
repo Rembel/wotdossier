@@ -55,8 +55,8 @@ namespace WotDossier.Applications
                                     .AddSubType(400, RuntimeTypeModel.Default.Add<RandomBattlesStatisticEntity>().Type)
                                  .Type)
                 .AddSubType(700, RuntimeTypeModel.Default.Add<RandomBattlesAchievementsEntity>().Type)
-                //.AddSubType(500, RuntimeTypeModel.Default.Add<TankStatisticEntityBase>()
-                //                    .AddSubType(600, RuntimeTypeModel.Default.Add<TankRandomBattlesStatisticEntity>().Type).Type)
+                .AddSubType(500, RuntimeTypeModel.Default.Add<TankStatisticEntityBase>()
+                                    .AddSubType(600, RuntimeTypeModel.Default.Add<TankRandomBattlesStatisticEntity>().Type).Type)
                                     ;
         }
 

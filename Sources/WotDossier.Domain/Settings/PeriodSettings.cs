@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Xml.Serialization;
 
 namespace WotDossier.Domain
 {
@@ -51,7 +50,6 @@ namespace WotDossier.Domain
         /// <value>
         ///   <c>true</c> if <see cref="PrevDate"/> specified otherwise, <c>false</c>.
         /// </value>
-        [XmlIgnore]
         public bool PrevDateSpecified
         {
             get { return _prevDate != null; }

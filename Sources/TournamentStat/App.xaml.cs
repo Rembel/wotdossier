@@ -61,7 +61,7 @@ namespace TournamentStat
                 CultureHelper.SetUiCulture(SettingsReader.Get<TournamentStatSettings>().Language);
 
                 CompositionContainerFactory.Instance.RegisterSingle<ISessionStorage, DesktopAppSessionStorage>();
-                CompositionContainerFactory.Instance.RegisterSingle<IDataProvider, DataProvider>();
+                CompositionContainerFactory.Instance.RegisterSingle<DataProvider, DataProvider>();
                 CompositionContainerFactory.Instance.RegisterSingle<DossierRepository, DossierRepository>();
 
                 // Registrations here

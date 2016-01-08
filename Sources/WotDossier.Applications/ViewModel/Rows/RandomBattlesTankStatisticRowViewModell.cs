@@ -16,16 +16,19 @@ namespace WotDossier.Applications.ViewModel.Rows
         public RandomBattlesTankStatisticRowViewModel(TankJson tank, IEnumerable<StatisticSlice> list)
             : base(tank, list)
         {
+            Func<TankJson, AchievementsJson> achievementsPredicate = tankJson => tankJson.Achievements ?? new AchievementsJson();
+
             #region [ IStatisticFrags ]
-            BeastFrags = tank.Achievements.FragsBeast;
-            SinaiFrags = tank.Achievements.FragsSinai;
-            PattonFrags = tank.Achievements.FragsPatton;
-            MouseFrags = tank.Frags.Where(f => f.TankUniqueId == 10027).Sum(s => s.Count);
+            BeastFrags = achievementsPredicate(tank).FragsBeast;
+            SinaiFrags = achievementsPredicate(tank).FragsSinai;
+            PattonFrags = achievementsPredicate(tank).FragsPatton;
+            var fragsJsons = tank.Frags ?? new List<FragsJson>();
+            MouseFrags = fragsJsons.Where(f => f.TankUniqueId == 10027).Sum(s => s.Count);
             #endregion
 
             #region Achievements
 
-            Mapper.Map<IRandomBattlesAchievements>(tank.Achievements, this);
+            Mapper.Map<IRandomBattlesAchievements>(achievementsPredicate(tank), this);
 
             #endregion
         }

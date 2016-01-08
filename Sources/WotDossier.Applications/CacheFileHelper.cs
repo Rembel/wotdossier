@@ -195,7 +195,8 @@ namespace WotDossier.Applications
         {
             if (!Dictionaries.Instance.NotExistsedTanksList.Contains(tank.UniqueId()))
             {
-                tank.Frags = tank.FragsList.Select(
+                var fragsList = tank.FragsList ?? new List<IList<string>>();
+                tank.Frags = fragsList.Select(
                             x =>
                             {
                                 int countryId = Convert.ToInt32(x[0]);

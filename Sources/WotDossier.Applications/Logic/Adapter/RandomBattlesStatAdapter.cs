@@ -18,96 +18,100 @@ namespace WotDossier.Applications.Logic.Adapter
         /// </summary>
         public RandomBattlesStatAdapter(List<TankJson> tanks) : base(tanks, tank => tank.A15x15)
         {
-            #region [ BattleAwards ]
+            Func<TankJson, AchievementsJson> achievementsPredicate = tankJson => tankJson.Achievements ?? new AchievementsJson();
 
-            Warrior = tanks.Sum(x => x.Achievements.Warrior);
-            Invader = tanks.Sum(x => x.Achievements.Invader);
-            Sniper = tanks.Sum(x => x.Achievements.Sniper);
-            Sniper2 = tanks.Sum(x => x.Achievements.Sniper2);
-            MainGun = tanks.Sum(x => x.Achievements.MainGun);
-            Defender = tanks.Sum(x => x.Achievements.Defender);
-            SteelWall = tanks.Sum(x => x.Achievements.SteelWall);
-            Confederate = tanks.Sum(x => x.Achievements.Confederate);
-            Scout = tanks.Sum(x => x.Achievements.Scout);
-            PatrolDuty = tanks.Sum(x => x.Achievements.PatrolDuty);
-            BrothersInArms = tanks.Sum(x => x.Achievements.BrothersInArms);
-            CrucialContribution = tanks.Sum(x => x.Achievements.CrucialContribution);
-            IronMan = tanks.Sum(x => x.Achievements.IronMan);
-            LuckyDevil = tanks.Sum(x => x.Achievements.LuckyDevil);
-            Sturdy = tanks.Sum(x => x.Achievements.Sturdy);
+                #region [ BattleAwards ]
+
+            Warrior = tanks.Sum(x => achievementsPredicate(x).Warrior);
+            Invader = tanks.Sum(x => achievementsPredicate(x).Invader);
+            Sniper = tanks.Sum(x => achievementsPredicate(x).Sniper);
+            Sniper2 = tanks.Sum(x => achievementsPredicate(x).Sniper2);
+            MainGun = tanks.Sum(x => achievementsPredicate(x).MainGun);
+            Defender = tanks.Sum(x => achievementsPredicate(x).Defender);
+            SteelWall = tanks.Sum(x => achievementsPredicate(x).SteelWall);
+            Confederate = tanks.Sum(x => achievementsPredicate(x).Confederate);
+            Scout = tanks.Sum(x => achievementsPredicate(x).Scout);
+            PatrolDuty = tanks.Sum(x => achievementsPredicate(x).PatrolDuty);
+            BrothersInArms = tanks.Sum(x => achievementsPredicate(x).BrothersInArms);
+            CrucialContribution = tanks.Sum(x => achievementsPredicate(x).CrucialContribution);
+            IronMan = tanks.Sum(x => achievementsPredicate(x).IronMan);
+            LuckyDevil = tanks.Sum(x => achievementsPredicate(x).LuckyDevil);
+            Sturdy = tanks.Sum(x => achievementsPredicate(x).Sturdy);
 
             #endregion
 
             #region [ Epic ]
 
-            Boelter = tanks.Sum(x => x.Achievements.Boelter);
-            RadleyWalters = tanks.Sum(x => x.Achievements.RadleyWalters);
-            LafayettePool = tanks.Sum(x => x.Achievements.LafayettePool);
-            Orlik = tanks.Sum(x => x.Achievements.Orlik);
-            Oskin = tanks.Sum(x => x.Achievements.Oskin);
-            Lehvaslaiho = tanks.Sum(x => x.Achievements.Lehvaslaiho);
-            Nikolas = tanks.Sum(x => x.Achievements.Nikolas);
-            Halonen = tanks.Sum(x => x.Achievements.Halonen);
-            Burda = tanks.Sum(x => x.Achievements.Burda);
-            Pascucci = tanks.Sum(x => x.Achievements.Pascucci);
-            Dumitru = tanks.Sum(x => x.Achievements.Dumitru);
-            TamadaYoshio = tanks.Sum(x => x.Achievements.TamadaYoshio);
-            Billotte = tanks.Sum(x => x.Achievements.Billotte);
-            BrunoPietro = tanks.Sum(x => x.Achievements.BrunoPietro);
-            Tarczay = tanks.Sum(x => x.Achievements.Tarczay);
-            Kolobanov = tanks.Sum(x => x.Achievements.Kolobanov);
-            Fadin = tanks.Sum(x => x.Achievements.Fadin);
-            HeroesOfRassenay = tanks.Sum(x => x.Achievements.HeroesOfRassenay);
-            DeLanglade = tanks.Sum(x => x.Achievements.DeLanglade);
+            Boelter = tanks.Sum(x => achievementsPredicate(x).Boelter);
+            RadleyWalters = tanks.Sum(x => achievementsPredicate(x).RadleyWalters);
+            LafayettePool = tanks.Sum(x => achievementsPredicate(x).LafayettePool);
+            Orlik = tanks.Sum(x => achievementsPredicate(x).Orlik);
+            Oskin = tanks.Sum(x => achievementsPredicate(x).Oskin);
+            Lehvaslaiho = tanks.Sum(x => achievementsPredicate(x).Lehvaslaiho);
+            Nikolas = tanks.Sum(x => achievementsPredicate(x).Nikolas);
+            Halonen = tanks.Sum(x => achievementsPredicate(x).Halonen);
+            Burda = tanks.Sum(x => achievementsPredicate(x).Burda);
+            Pascucci = tanks.Sum(x => achievementsPredicate(x).Pascucci);
+            Dumitru = tanks.Sum(x => achievementsPredicate(x).Dumitru);
+            TamadaYoshio = tanks.Sum(x => achievementsPredicate(x).TamadaYoshio);
+            Billotte = tanks.Sum(x => achievementsPredicate(x).Billotte);
+            BrunoPietro = tanks.Sum(x => achievementsPredicate(x).BrunoPietro);
+            Tarczay = tanks.Sum(x => achievementsPredicate(x).Tarczay);
+            Kolobanov = tanks.Sum(x => achievementsPredicate(x).Kolobanov);
+            Fadin = tanks.Sum(x => achievementsPredicate(x).Fadin);
+            HeroesOfRassenay = tanks.Sum(x => achievementsPredicate(x).HeroesOfRassenay);
+            DeLanglade = tanks.Sum(x => achievementsPredicate(x).DeLanglade);
 
             #endregion
 
             #region [ Series ]
 
-            SharpshooterLongest = tanks.Max(x => x.Achievements.SharpshooterLongest);
-            MasterGunnerLongest = tanks.Max(x => x.Achievements.MasterGunnerLongest);
+            SharpshooterLongest = tanks.Max(x => achievementsPredicate(x).SharpshooterLongest);
+            MasterGunnerLongest = tanks.Max(x => achievementsPredicate(x).MasterGunnerLongest);
 
             #endregion
 
             #region [ SpecialAwards ]
 
-            Kamikaze = tanks.Sum(x => x.Achievements.Kamikaze);
-            Raider = tanks.Sum(x => x.Achievements.Raider);
-            Bombardier = tanks.Sum(x => x.Achievements.Bombardier);
-            Reaper = tanks.Max(x => x.Achievements.ReaperLongest);
-            Invincible = tanks.Max(x => x.Achievements.InvincibleLongest);
-            Survivor = tanks.Max(x => x.Achievements.SurvivorLongest);
+            Kamikaze = tanks.Sum(x => achievementsPredicate(x).Kamikaze);
+            Raider = tanks.Sum(x => achievementsPredicate(x).Raider);
+            Bombardier = tanks.Sum(x => achievementsPredicate(x).Bombardier);
+            Reaper = tanks.Max(x => achievementsPredicate(x).ReaperLongest);
+            Invincible = tanks.Max(x => achievementsPredicate(x).InvincibleLongest);
+            Survivor = tanks.Max(x => achievementsPredicate(x).SurvivorLongest);
             //count Maus frags
-            MouseTrap = tanks.Sum(x => x.Frags.Where(f => f.TankUniqueId == 10027).Sum(s => s.Count)) / 10;
-            Hunter = tanks.Sum(x => x.Achievements.FragsBeast) / 100;
-            Sinai = tanks.Sum(x => x.Achievements.FragsSinai) / 100;
-            PattonValley = tanks.Sum(x => x.Achievements.FragsPatton) / 100;
-            Huntsman = tanks.Sum(x => x.Achievements.Huntsman);
+            Func<TankJson, IEnumerable<FragsJson>> fragsPredicate = tankJson => tankJson.Frags ?? new List<FragsJson>();
+
+            MouseTrap = tanks.Sum(x => fragsPredicate(x).Where(f => f.TankUniqueId == 10027).Sum(s => s.Count)) / 10;
+            Hunter = tanks.Sum(x => achievementsPredicate(x).FragsBeast) / 100;
+            Sinai = tanks.Sum(x => achievementsPredicate(x).FragsSinai) / 100;
+            PattonValley = tanks.Sum(x => achievementsPredicate(x).FragsPatton) / 100;
+            Huntsman = tanks.Sum(x => achievementsPredicate(x).Huntsman);
 
             #endregion
 
-            MarksOnGun = tanks.Max(x => x.Achievements.MarksOnGun);
-            MovingAvgDamage = (int) tanks.Average(x => x.Achievements.MovingAvgDamage);
-            MedalMonolith = tanks.Sum(x => x.Achievements.MedalMonolith);
-            MedalAntiSpgFire = tanks.Sum(x => x.Achievements.MedalAntiSpgFire);
-            MedalGore = tanks.Sum(x => x.Achievements.MedalGore);
-            MedalCoolBlood = tanks.Sum(x => x.Achievements.MedalCoolBlood);
-            MedalStark = tanks.Sum(x => x.Achievements.MedalStark);
-            DamageRating = tanks.Max(x => x.Achievements.DamageRating);
+            MarksOnGun = tanks.Max(x => achievementsPredicate(x).MarksOnGun);
+            MovingAvgDamage = (int) tanks.Average(x => achievementsPredicate(x).MovingAvgDamage);
+            MedalMonolith = tanks.Sum(x => achievementsPredicate(x).MedalMonolith);
+            MedalAntiSpgFire = tanks.Sum(x => achievementsPredicate(x).MedalAntiSpgFire);
+            MedalGore = tanks.Sum(x => achievementsPredicate(x).MedalGore);
+            MedalCoolBlood = tanks.Sum(x => achievementsPredicate(x).MedalCoolBlood);
+            MedalStark = tanks.Sum(x => achievementsPredicate(x).MedalStark);
+            DamageRating = tanks.Max(x => achievementsPredicate(x).DamageRating);
 
-            Impenetrable = tanks.Sum(x => x.Achievements.Impenetrable);
-            MaxAimerSeries = tanks.Max(x => x.Achievements.MaxAimerSeries);
-            ShootToKill = tanks.Sum(x => x.Achievements.ShootToKill);
-            Fighter = tanks.Sum(x => x.Achievements.Fighter);
-            Duelist = tanks.Sum(x => x.Achievements.Duelist);
-            Demolition = tanks.Sum(x => x.Achievements.Demolition);
-            Arsonist = tanks.Sum(x => x.Achievements.Arsonist);
-            Bonecrusher = tanks.Sum(x => x.Achievements.Bonecrusher);
-            Charmed = tanks.Sum(x => x.Achievements.Charmed);
-            Even = tanks.Sum(x => x.Achievements.Even);
+            Impenetrable = tanks.Sum(x => achievementsPredicate(x).Impenetrable);
+            MaxAimerSeries = tanks.Max(x => achievementsPredicate(x).MaxAimerSeries);
+            ShootToKill = tanks.Sum(x => achievementsPredicate(x).ShootToKill);
+            Fighter = tanks.Sum(x => achievementsPredicate(x).Fighter);
+            Duelist = tanks.Sum(x => achievementsPredicate(x).Duelist);
+            Demolition = tanks.Sum(x => achievementsPredicate(x).Demolition);
+            Arsonist = tanks.Sum(x => achievementsPredicate(x).Arsonist);
+            Bonecrusher = tanks.Sum(x => achievementsPredicate(x).Bonecrusher);
+            Charmed = tanks.Sum(x => achievementsPredicate(x).Charmed);
+            Even = tanks.Sum(x => achievementsPredicate(x).Even);
 
-            MasterGunner = tanks.Sum(x => x.Achievements.MasterGunner);
-            Alaric = tanks.Sum(x => x.Achievements.Alaric);
+            MasterGunner = tanks.Sum(x => achievementsPredicate(x).MasterGunner);
+            Alaric = tanks.Sum(x => achievementsPredicate(x).Alaric);
         }
 
         public RandomBattlesStatAdapter(Player stat)

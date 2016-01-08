@@ -34,6 +34,7 @@ namespace WotDossier.Update.Update
                 transaction = BeginTransaction(connection);
                 Logger.Debug("Update. Dest transaction started");
 
+                bool needVacuum = false;
                 foreach (var dbUpdate in updates.OrderBy(x => x.Version))
                 {
                     //TODO transactions
@@ -41,10 +42,25 @@ namespace WotDossier.Update.Update
                     {
                         dbUpdate.Execute(connection, transaction);
                         UpdateDbVersion(dbUpdate.Version, connection, transaction);
+                        needVacuum = true;
                     }
                 }
 
                 transaction.Commit();
+
+                if (needVacuum)
+                {
+                    var commandText = @"VACUUM";
+                    var command = new SQLiteCommand(commandText, connection);
+                    try
+                    {
+                        command.ExecuteNonQuery();
+                    }
+                    catch (Exception e)
+                    {
+                        Logger.Error("Exception", e);
+                    }
+                }
             }
             catch (Exception e)
             {

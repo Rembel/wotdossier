@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("ITN")]
 [assembly: AssemblyProduct("WotDossier.Dal")]
-[assembly: AssemblyCopyright("Copyright © ITN 2014")]
+[assembly: AssemblyCopyright("Copyright © Rembel 2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

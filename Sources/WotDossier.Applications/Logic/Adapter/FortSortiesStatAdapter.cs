@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using WotDossier.Applications.ViewModel.Rows;
@@ -12,14 +13,17 @@ namespace WotDossier.Applications.Logic.Adapter
         /// <summary>
         /// Initializes a new instance of the <see cref="T:System.Object"/> class.
         /// </summary>
-        public FortSortiesStatAdapter(List<TankJson> tanks) : base(tanks, tank => tank.FortSorties)
+        public FortSortiesStatAdapter(List<TankJson> tanks) : base(tanks, tank => tank.FortSorties ?? new StatisticJson())
         {
-            Conqueror = tanks.Sum(x => x.FortAchievements.Conqueror);
-            FireAndSword = tanks.Sum(x => x.FortAchievements.FireAndSword);
-            Crusher = tanks.Sum(x => x.FortAchievements.Crusher);
-            CounterBlow = tanks.Sum(x => x.FortAchievements.CounterBlow);
-            SoldierOfFortune = tanks.Sum(x => x.FortAchievements.SoldierOfFortune);
-            Kampfer = tanks.Sum(x => x.FortAchievements.Kampfer);
+            var achievementsFort = new AchievementsFort();
+            Func<TankJson, AchievementsFort> fortAchievementsPredicate = tankJson => tankJson.FortAchievements ?? achievementsFort;
+
+            Conqueror = tanks.Sum(x => fortAchievementsPredicate(x).Conqueror);
+            FireAndSword = tanks.Sum(x => fortAchievementsPredicate(x).FireAndSword);
+            Crusher = tanks.Sum(x => fortAchievementsPredicate(x).Crusher);
+            CounterBlow = tanks.Sum(x => fortAchievementsPredicate(x).CounterBlow);
+            SoldierOfFortune = tanks.Sum(x => fortAchievementsPredicate(x).SoldierOfFortune);
+            Kampfer = tanks.Sum(x => fortAchievementsPredicate(x).Kampfer);
         }
 
         public List<ITankStatisticRow> Tanks { get; set; }

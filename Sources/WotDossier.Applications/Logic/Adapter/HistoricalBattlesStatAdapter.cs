@@ -13,14 +13,16 @@ namespace WotDossier.Applications.Logic.Adapter
         /// <summary>
         ///     Initializes a new instance of the <see cref="T:System.Object" /> class.
         /// </summary>
-        public HistoricalBattlesStatAdapter(List<TankJson> tanks) : base(tanks, tank => tank.Historical)
+        public HistoricalBattlesStatAdapter(List<TankJson> tanks) : base(tanks, tank => tank.Historical ?? new StatisticJson())
         {
+            Func<TankJson, AchievementsHistorical> achievementsHistoricalPredicate = tankJson => tankJson.AchievementsHistorical ?? new AchievementsHistorical();
+
             #region [ Awards ]
 
-            GuardsMan = tanks.Sum(x => x.AchievementsHistorical.GuardsMan);
-            MakerOfHistory = tanks.Sum(x => x.AchievementsHistorical.MakerOfHistory);
-            BothSidesWins = tanks.Sum(x => x.AchievementsHistorical.BothSidesWins);
-            WeakVehiclesWins = tanks.Sum(x => x.AchievementsHistorical.WeakVehiclesWins);
+            GuardsMan = tanks.Sum(x => achievementsHistoricalPredicate(x).GuardsMan);
+            MakerOfHistory = tanks.Sum(x => achievementsHistoricalPredicate(x).MakerOfHistory);
+            BothSidesWins = tanks.Sum(x => achievementsHistoricalPredicate(x).BothSidesWins);
+            WeakVehiclesWins = tanks.Sum(x => achievementsHistoricalPredicate(x).WeakVehiclesWins);
 
             #endregion
         }

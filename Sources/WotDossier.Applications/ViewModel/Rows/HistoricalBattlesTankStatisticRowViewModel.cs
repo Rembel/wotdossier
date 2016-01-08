@@ -17,7 +17,7 @@ namespace WotDossier.Applications.ViewModel.Rows
         {
             #region Achievements
 
-            Mapper.Map<IHistoricalBattlesAchievements>(tank.AchievementsHistorical, this);
+            Mapper.Map<IHistoricalBattlesAchievements>(tank.AchievementsHistorical ?? new AchievementsHistorical(), this);
 
             #endregion
 
@@ -25,7 +25,7 @@ namespace WotDossier.Applications.ViewModel.Rows
 
         public override Func<TankJson, StatisticJson> Predicate
         {
-            get { return tank => tank.Historical; }
+            get { return tank => tank.Historical ?? new StatisticJson(); }
         }
 
         /// <summary>

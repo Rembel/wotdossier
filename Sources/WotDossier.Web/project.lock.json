@@ -1,5 +1,5 @@
 {
-  "locked": false,
+  "locked": true,
   "version": 2,
   "targets": {
     "DNX,Version=v4.5.1": {
@@ -2190,7 +2190,6 @@
         "type": "project",
         "framework": ".NETFramework,Version=v4.5.1",
         "dependencies": {
-          "Newtonsoft.Json": "8.0.1",
           "System.Collections": "4.0.11-beta-23516",
           "System.Runtime": "4.0.21-beta-23516",
           "System.Xml.XmlSerializer": "4.0.11-beta-23516"
@@ -5057,7 +5056,6 @@
         "type": "project",
         "framework": "DNXCore,Version=v5.0",
         "dependencies": {
-          "Newtonsoft.Json": "8.0.1",
           "System.Runtime.Serialization.Primitives": "4.1.0-beta-23516",
           "System.Xml.XmlSerializer": "4.0.11-beta-23516"
         }
@@ -7269,7 +7267,6 @@
         "type": "project",
         "framework": ".NETFramework,Version=v4.5.1",
         "dependencies": {
-          "Newtonsoft.Json": "8.0.1",
           "System.Collections": "4.0.11-beta-23516",
           "System.Runtime": "4.0.21-beta-23516",
           "System.Xml.XmlSerializer": "4.0.11-beta-23516"
@@ -9487,7 +9484,6 @@
         "type": "project",
         "framework": ".NETFramework,Version=v4.5.1",
         "dependencies": {
-          "Newtonsoft.Json": "8.0.1",
           "System.Collections": "4.0.11-beta-23516",
           "System.Runtime": "4.0.21-beta-23516",
           "System.Xml.XmlSerializer": "4.0.11-beta-23516"
@@ -12950,7 +12946,6 @@
         "type": "project",
         "framework": "DNXCore,Version=v5.0",
         "dependencies": {
-          "Newtonsoft.Json": "8.0.1",
           "System.Runtime.Serialization.Primitives": "4.1.0-beta-23516",
           "System.Xml.XmlSerializer": "4.0.11-beta-23516"
         }
@@ -16407,7 +16402,6 @@
         "type": "project",
         "framework": "DNXCore,Version=v5.0",
         "dependencies": {
-          "Newtonsoft.Json": "8.0.1",
           "System.Runtime.Serialization.Primitives": "4.1.0-beta-23516",
           "System.Xml.XmlSerializer": "4.0.11-beta-23516"
         }

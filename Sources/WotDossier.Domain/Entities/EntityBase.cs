@@ -11,14 +11,13 @@ namespace WotDossier.Domain.Entities
     {
         protected EntityBase()
         {
-            UId = Guid.NewGuid();
         }
 
         /// <summary>
         /// Unique	Identifier of an entity
         /// </summary>
         [DataMember]
-        public virtual Guid UId { get; set; }
+        public virtual Guid UId { get; set; } = Guid.NewGuid();
 
         /// <summary>
         /// 	Identifier of an entity

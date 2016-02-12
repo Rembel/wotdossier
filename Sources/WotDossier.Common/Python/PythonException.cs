@@ -8,6 +8,7 @@ namespace WotDossier.Common.Python
     /// <summary>
     /// Exception thrown that represents a certain Python exception.
     /// </summary>
+    [Serializable]
     public class PythonException : Exception, ISerializable
     {
         public String _pyroTraceback { get; set; }

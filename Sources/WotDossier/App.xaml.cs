@@ -135,8 +135,8 @@ namespace WotDossier
                 CompositionContainerFactory.Instance.Register<IPlayersCompareView, PlayersCompareWindow>();
                 CompositionContainerFactory.Instance.Register<IReplayViewerSettingsView, ReplayViewerSettingsWindow>();
 
-                SyncManager syncManager = new SyncManager(CompositionContainerFactory.Instance.GetExport<DossierRepository>());
-                syncManager.Sync();
+                //SyncManager syncManager = new SyncManager(CompositionContainerFactory.Instance.GetExport<DossierRepository>());
+                //syncManager.Sync();
 
                 Controller = CompositionContainerFactory.Instance.GetExport<ApplicationController>();
 

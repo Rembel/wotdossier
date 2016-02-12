@@ -297,7 +297,7 @@ namespace WotDossier.Test
                     }
                     catch (Exception e)
                     {
-                        Console.WriteLine("Error on replay file read. Incorrect file format({0})", e, path);
+                        Console.WriteLine("Error on replay file read. Incorrect file format({0}):\n{1}", path, e);
                     }
                 }
             }

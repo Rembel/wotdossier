@@ -6,6 +6,7 @@ namespace WotDossier.Common.Python
     /// <summary>
     /// Exception thrown when something went wrong with pickling or unpickling.
     /// </summary>
+    [Serializable]
     public class PickleException : Exception, ISerializable
     {
         public PickleException()

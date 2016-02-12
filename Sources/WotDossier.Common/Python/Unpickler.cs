@@ -94,6 +94,8 @@ namespace WotDossier.Common.Python
             if (memo != null) memo.Clear();
             if (input != null) input.Close();
         }
+
+        [Serializable]
         private class StopException : Exception
         {
             public StopException(object value)

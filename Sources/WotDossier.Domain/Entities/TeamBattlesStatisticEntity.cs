@@ -11,13 +11,12 @@ namespace WotDossier.Domain.Entities
         /// </summary>
         public TeamBattlesStatisticEntity()
         {
-            AchievementsIdObject = new TeamBattlesAchievementsEntity();
         }
 
         /// <summary>
         /// Gets/Sets the <see cref="RandomBattlesAchievementsEntity"/> object.
         /// </summary>
-        public virtual TeamBattlesAchievementsEntity AchievementsIdObject { get; set; }
+        public virtual TeamBattlesAchievementsEntity AchievementsIdObject { get; set; } = new TeamBattlesAchievementsEntity();
     }
 }
 

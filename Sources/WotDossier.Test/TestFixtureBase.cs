@@ -46,10 +46,10 @@ namespace WotDossier.Test
             get { return _resourceManagers; }
         }
 
-        [OneTimeSetUp]
+        [TestFixtureSetUp]
         public void Init()
         {
-            AssemblyExtensions.SetEntryAssembly(Assembly.LoadFrom("WotDossier.Test.dll"));
+            AssemblyExtensions.SetEntryAssembly(Assembly.LoadFrom(Path.Combine(TestContext.CurrentContext.TestDirectory, "WotDossier.Test.dll")));
             CompositionContainerFactory.Instance.Container.SatisfyImportsOnce(this);
             _databaseManager = new DatabaseManager();
             _databaseManager.InitDatabase();

@@ -285,8 +285,8 @@
     "minimap": "spaces/04_himmelsdorf/mmap.dds",
     "vehicleCamouflageKind": "summer",
     "defaultGroundEffect": "\tNone\t",
-    "wwloadingMusic": "music_himmelsdorf",
     "loadingMusic": "/music/intro/Intro_Himmelsdorf",
+    "wwloadingMusic": "music_himmelsdorf",
     "ambientSound": "/wind/wind/wind_spring_01",
     "wwambientSound": "ambient_wind_spring_01",
     "umbraEnabled": "\t1\t",
@@ -727,8 +727,11 @@
     "minimap": "spaces/100_thepit/mmap.dds",
     "vehicleCamouflageKind": "summer",
     "maxPlayersInTeam": "\t15\t",
-    "loadingMusic": "/music/intro/rus_village",
-    "wwloadingMusic": "music_malinovka",
+    "loadingMusic": "/music/intro/rus_city",
+    "wwloadingMusic": [
+      "music_rus_city",
+      "music_malinovka"
+    ],
     "ambientSound": "/wind/wind/wind_summer_01",
     "wwambientSound": "ambient_wind_summer_01",
     "umbraEnabled": "\t1\t",
@@ -766,14 +769,14 @@
             "position1": "-34.68 100.709"
           }
         },
-        "battleScenario": {
+        "battleScenarios": {
           "level": [
             {
-              "#text": "\t1\t",
+              "id": "\t1\t",
               "scenario": "spaces/100_thepit/bot_scenarios_1_lv1.xml"
             },
             {
-              "#text": "\t2\t",
+              "id": "\t2\t",
               "scenario": "spaces/100_thepit/bot_scenarios_1_lv2.xml"
             }
           ]
@@ -1396,14 +1399,14 @@
             "position1": "\t-236,649100 329,674500\t"
           }
         },
-        "battleScenario": {
+        "battleScenarios": {
           "level": [
             {
-              "#text": "\t1\t",
+              "id": "\t1\t",
               "scenario": "spaces/10_hills/bot_scenarios_1_lv1.xml"
             },
             {
-              "#text": "\t2\t",
+              "id": "\t2\t",
               "scenario": "spaces/10_hills/bot_scenarios_1_lv2.xml"
             }
           ]
@@ -1860,55 +1863,98 @@
         "endRadius": "\t110,000000\t"
       },
       "visualSettings": {
-        "cloudModel": "particles/mesh_particles/funnel_death/gas_ring_light.model",
+        "cloudModel": "particles/mesh_particles/funnel_death/fire_storm.model",
         "cloudClimbTime": "\t15\t",
-        "cloudStartHeight": "\t-50\t",
-        "cloudEndHeight": "\t55\t",
-        "cameraProximityDist": "\t30\t",
+        "cloudStartHeight": "\t-150\t",
+        "cloudEndHeight": "\t25\t",
+        "cameraProximityDist": "\t20\t",
         "windSpeed": "0 -1",
         "windGustiness": "\t2\t",
+        "edgeToCenterAngle": "0.95",
+        "edgeToCenterAngleDelta": "0.40",
+        "edgeToCenterDistance": "75.0",
+        "centerSunIntensityDef": "\t4,500000\t",
+        "centerSunIntensityFwd": "\t0,560000\t",
+        "edgeSunIntensityDef": "\t2,250000\t",
+        "edgeSunIntensityFwd": "\t0,280000\t",
         "postEffect": "",
         "mapActivities": "gasAttackScenario",
+        "vehicleGAEffect": {
+          "stages": {
+            "fire": "1.0",
+            "noEmission": "4.0"
+          },
+          "effects": {
+            "pixie": {
+              "startKey": "\tfire\t",
+              "file": "particles/Tank/destruction/fire_storm_destruction.xml"
+            },
+            "stopEmission": {
+              "startKey": "noEmission"
+            }
+          }
+        },
+        "cameraGAEffect": {
+          "stages": {
+            "fire": "1.0",
+            "noEmission": "4.0"
+          },
+          "effects": {
+            "pixie": {
+              "startKey": "\tfire\t",
+              "file": "particles/Environment/weather/fire_storm.xml"
+            },
+            "stopEmission": {
+              "startKey": "noEmission"
+            }
+          }
+        },
+        "shimmerSettings": {
+          "windDir": "0.500 1.000 0.5 5.0",
+          "waveSpeed": "0.000 0.010 2.0 1.0",
+          "spreadFreq": "0.005 0.005 6.0 6.0",
+          "displacement": "system/maps/post_processing/distortion_3D.dds"
+        },
         "centerFogSettings": {
           "Fog": {
             "version": "\t1,000000\t",
             "innerBB": "\t-50,000000 -50,000000 50,000000 50,000000\t",
-            "outerBB": "\t-770,000000 -870,000000 770,000000 770,000000\t",
+            "outerBB": "\t-600,000000 -600,000000 600,000000 600,000000\t",
             "deferred": {
               "heightFog": "\ttrue\t",
-              "nearLow": "\t200,000000\t",
-              "farLow": "\t500,000000\t",
-              "nearHigh": "\t500,000000\t",
-              "farHigh": "\t1000,000000\t",
-              "altitudeLow": "\t-6,000000\t",
-              "altitudeMid": "\t50,000000\t",
-              "altitudeHigh": "\t1500,000000\t",
-              "skyAltitudeLow": "\t-10,000000\t",
-              "skyAltitudeMid": "\t50,000000\t",
-              "skyAltitudeHigh": "\t10000,000000\t",
-              "exponent": "\t0,650000\t",
+              "nearLow": "\t0,000000\t",
+              "farLow": "\t300,000000\t",
+              "nearHigh": "\t50,000000\t",
+              "farHigh": "\t600,000000\t",
+              "altitudeLow": "\t-300,000000\t",
+              "altitudeMid": "\t30,000000\t",
+              "altitudeHigh": "\t1000,000000\t",
+              "skyAltitudeLow": "\t-100,000000\t",
+              "skyAltitudeMid": "\t250,000000\t",
+              "skyAltitudeHigh": "\t3000,000000\t",
+              "exponent": "\t0,400000\t",
               "sunAngle": "\t35,000000\t",
-              "sunExponent": "\t0,200000\t",
-              "colorLow": "\t0,991500 1,000000 0,490000 0,750000\t",
-              "colorHigh": "\t0,991501 1,000000 0,490000 0,650000\t",
-              "colorSunLow": "\t0,991500 1,000000 0,490000 0,750000\t",
-              "colorSunHigh": "\t0,991501 1,000000 0,490000 0,650000\t",
+              "sunExponent": "\t0,500000\t",
+              "colorLow": "\t0,075000 0,010001 0,000000 4,000000\t",
+              "colorHigh": "\t0,020000 0,006140 0,000200 1,050000\t",
+              "colorSunLow": "\t0,075000 0,010001 0,000000 4,000000\t",
+              "colorSunHigh": "\t0,020000 0,006140 0,000200 1,050000\t",
               "useEdgeFog": "\ttrue\t"
             },
             "forward": {
               "heightFog": "\ttrue\t",
-              "nearLow": "\t200,000000\t",
-              "farLow": "\t500,000000\t",
-              "nearHigh": "\t500,000000\t",
-              "farHigh": "\t1000,000000\t",
-              "altitudeLow": "\t-6,000000\t",
-              "altitudeMid": "\t40,000000\t",
-              "altitudeHigh": "\t1000,000000\t",
-              "skyAltitudeLow": "\t-10,000000\t",
-              "skyAltitudeMid": "\t50,000000\t",
-              "skyAltitudeHigh": "\t2000,000000\t",
-              "colorLow": "\t0,673000 0,670166 0,460332 0,000000\t",
-              "colorHigh": "\t0,630000 0,627338 0,430290 0,000000\t",
+              "nearLow": "\t0,000000\t",
+              "farLow": "\t300,000000\t",
+              "nearHigh": "\t50,000000\t",
+              "farHigh": "\t600,000000\t",
+              "altitudeLow": "\t-300,000000\t",
+              "altitudeMid": "\t20,000000\t",
+              "altitudeHigh": "\t1500,000000\t",
+              "skyAltitudeLow": "\t-500,000000\t",
+              "skyAltitudeMid": "\t270,000000\t",
+              "skyAltitudeHigh": "\t600,000000\t",
+              "colorLow": "\t0,490000 0,168535 0,000000 4,000000\t",
+              "colorHigh": "\t0,044586 0,013688 0,000446 1,050000\t",
               "useEdgeFog": "\ttrue\t"
             },
             "enable": "\ttrue\t"
@@ -1918,50 +1964,101 @@
           "Fog": {
             "version": "\t1,000000\t",
             "innerBB": "\t-50,000000 -50,000000 50,000000 50,000000\t",
-            "outerBB": "\t-770,000000 -870,000000 770,000000 770,000000\t",
+            "outerBB": "\t-600,000000 -600,000000 600,000000 600,000000\t",
             "deferred": {
               "heightFog": "\ttrue\t",
-              "nearLow": "\t-150,000000\t",
-              "farLow": "\t50,000000\t",
-              "nearHigh": "\t-50,000000\t",
-              "farHigh": "\t350,000000\t",
-              "altitudeLow": "\t-6,000000\t",
-              "altitudeMid": "\t50,000000\t",
-              "altitudeHigh": "\t1500,000000\t",
-              "skyAltitudeLow": "\t-10,000000\t",
-              "skyAltitudeMid": "\t50,000000\t",
-              "skyAltitudeHigh": "\t10000,000000\t",
-              "exponent": "\t0,650000\t",
+              "nearLow": "\t-450,000000\t",
+              "farLow": "\t400,000000\t",
+              "nearHigh": "\t-350,000000\t",
+              "farHigh": "\t150,000000\t",
+              "altitudeLow": "\t-300,000000\t",
+              "altitudeMid": "\t30,000000\t",
+              "altitudeHigh": "\t1000,000000\t",
+              "skyAltitudeLow": "\t-100,000000\t",
+              "skyAltitudeMid": "\t250,000000\t",
+              "skyAltitudeHigh": "\t3000,000000\t",
+              "exponent": "\t0,400000\t",
               "sunAngle": "\t35,000000\t",
-              "sunExponent": "\t0,200000\t",
-              "colorLow": "\t0,991500 1,000000 0,490000 0,750000\t",
-              "colorHigh": "\t0,991501 1,000000 0,490000 0,650000\t",
-              "colorSunLow": "\t0,991500 1,000000 0,490000 0,750000\t",
-              "colorSunHigh": "\t0,991501 1,000000 0,490000 0,650000\t",
+              "sunExponent": "\t0,500000\t",
+              "colorLow": "\t0,135000 0,018001 0,000000 4,000000\t",
+              "colorHigh": "\t0,020000 0,006140 0,000200 1,050000\t",
+              "colorSunLow": "\t0,135000 0,018001 0,000000 4,000000\t",
+              "colorSunHigh": "\t0,020000 0,006140 0,000200 1,050000\t",
               "useEdgeFog": "\ttrue\t"
             },
             "forward": {
               "heightFog": "\ttrue\t",
-              "nearLow": "\t-150,000000\t",
-              "farLow": "\t50,500000\t",
-              "nearHigh": "\t-50,000000\t",
-              "farHigh": "\t362,000000\t",
-              "altitudeLow": "\t-5,000000\t",
-              "altitudeMid": "\t50,000000\t",
+              "nearLow": "\t-550,000000\t",
+              "farLow": "\t450,000000\t",
+              "nearHigh": "\t-350,000000\t",
+              "farHigh": "\t150,000000\t",
+              "altitudeLow": "\t-300,000000\t",
+              "altitudeMid": "\t20,000000\t",
               "altitudeHigh": "\t1500,000000\t",
-              "skyAltitudeLow": "\t-10,000000\t",
-              "skyAltitudeMid": "\t50,000000\t",
-              "skyAltitudeHigh": "\t2000,000000\t",
-              "colorLow": "\t0,673000 0,670166 0,460332 0,000000\t",
-              "colorHigh": "\t0,630000 0,627338 0,430290 0,000000\t",
+              "skyAltitudeLow": "\t-500,000000\t",
+              "skyAltitudeMid": "\t270,000000\t",
+              "skyAltitudeHigh": "\t600,000000\t",
+              "colorLow": "\t0,675159 0,232220 0,000000 4,000000\t",
+              "colorHigh": "\t0,044586 0,013688 0,000446 1,050000\t",
               "useEdgeFog": "\ttrue\t"
             },
             "enable": "\ttrue\t"
           }
+        },
+        "edgeToCenterFogSettings": {
+          "Fog": {
+            "version": "\t1,000000\t",
+            "innerBB": "\t-50,000000 -50,000000 50,000000 50,000000\t",
+            "outerBB": "\t-600,000000 -600,000000 600,000000 600,000000\t",
+            "deferred": {
+              "heightFog": "\ttrue\t",
+              "nearLow": "\t-200,000000\t",
+              "farLow": "\t300,000000\t",
+              "nearHigh": "\t-150,000000\t",
+              "farHigh": "\t600,000000\t",
+              "altitudeLow": "\t-300,000000\t",
+              "altitudeMid": "\t30,000000\t",
+              "altitudeHigh": "\t1000,000000\t",
+              "skyAltitudeLow": "\t-100,000000\t",
+              "skyAltitudeMid": "\t250,000000\t",
+              "skyAltitudeHigh": "\t3000,000000\t",
+              "exponent": "\t0,400000\t",
+              "sunAngle": "\t35,000000\t",
+              "sunExponent": "\t0,500000\t",
+              "colorLow": "\t0,135000 0,018001 0,000000 4,000000\t",
+              "colorHigh": "\t0,020000 0,006140 0,000200 1,050000\t",
+              "colorSunLow": "\t0,135000 0,018001 0,000000 4,000000\t",
+              "colorSunHigh": "\t0,020000 0,006140 0,000200 1,050000\t",
+              "useEdgeFog": "\ttrue\t"
+            },
+            "forward": {
+              "heightFog": "\ttrue\t",
+              "nearLow": "\t-200,000000\t",
+              "farLow": "\t300,000000\t",
+              "nearHigh": "\t-150,000000\t",
+              "farHigh": "\t600,000000\t",
+              "altitudeLow": "\t-300,000000\t",
+              "altitudeMid": "\t20,000000\t",
+              "altitudeHigh": "\t1500,000000\t",
+              "skyAltitudeLow": "\t-500,000000\t",
+              "skyAltitudeMid": "\t270,000000\t",
+              "skyAltitudeHigh": "\t600,000000\t",
+              "colorLow": "\t0,675159 0,232220 0,000000 4,000000\t",
+              "colorHigh": "\t0,044586 0,013688 0,000446 1,050000\t",
+              "useEdgeFog": "\ttrue\t"
+            },
+            "enable": "\ttrue\t"
+          }
+        },
+        "soundSettings": {
+          "wwalarm": "fallout_gaz_alarm",
+          "alarm": "/GUI/fallout/fallout_gaz_alarma",
+          "gascloud_close": "sauron_burn_close",
+          "gascloud_far": "sauron_burn_far",
+          "gascloud_inside": "sauron_inside_burn"
         }
       }
     },
-    "explicitRequestOnly": "\ttrue\t",
     "mapActivities": {
       "scenario": {
         "possibility": "\t0,000000\t",
@@ -1981,21 +2078,21 @@
               "position": "\t0,000000 0,000000 0,000000\t",
               "yaw": "\t0,000000\t",
               "possibility": "\t1,000000\t",
-              "startTime": "\t5,000000 5,000000\t"
+              "startTime": "\t9,000000 9,000000\t"
             },
             {
               "preset": "paris_gas_attack_rocket_flight_3",
               "position": "\t0,000000 0,000000 0,000000\t",
               "yaw": "\t0,000000\t",
               "possibility": "\t1,000000\t",
-              "startTime": "\t4,000000 4,000000\t"
+              "startTime": "\t8,000000 8,000000\t"
             },
             {
               "preset": "paris_gas_attack_rocket_flight_4",
               "position": "\t0,000000 0,000000 0,000000\t",
               "yaw": "\t0,000000\t",
               "possibility": "\t1,000000\t",
-              "startTime": "\t0,000000 0,000000\t"
+              "startTime": "\t7,000000 7,000000\t"
             },
             {
               "preset": "paris_gas_attack_rocket_explosion_1",
@@ -2009,21 +2106,49 @@
               "position": "\t0,000000 0,000000 0,000000\t",
               "yaw": "\t0,000000\t",
               "possibility": "\t1,000000\t",
-              "startTime": "\t6,100000 6,100000\t"
+              "startTime": "\t10,100000 10,100000\t"
             },
             {
               "preset": "paris_gas_attack_rocket_explosion_3",
               "position": "\t0,000000 0,000000 0,000000\t",
               "yaw": "\t0,000000\t",
               "possibility": "\t1,000000\t",
-              "startTime": "\t5,100000 5,100000\t"
+              "startTime": "\t9,100000 9,100000\t"
             },
             {
               "preset": "paris_gas_attack_rocket_explosion_4",
               "position": "\t0,000000 0,000000 0,000000\t",
               "yaw": "\t0,000000\t",
               "possibility": "\t1,000000\t",
-              "startTime": "\t1,100000 1,100000\t"
+              "startTime": "\t8,100000 8,100000\t"
+            },
+            {
+              "preset": "paris_fire_storm_1",
+              "position": "\t0,000000 0,000000 0,000000\t",
+              "yaw": "\t0,000000\t",
+              "possibility": "\t1,000000\t",
+              "startTime": "\t10,000000 10,000000\t"
+            },
+            {
+              "preset": "paris_fire_storm_2",
+              "position": "\t0,000000 0,000000 0,000000\t",
+              "yaw": "\t0,000000\t",
+              "possibility": "\t1,000000\t",
+              "startTime": "\t10,000000 10,000000\t"
+            },
+            {
+              "preset": "paris_fire_storm_3",
+              "position": "\t0,000000 0,000000 0,000000\t",
+              "yaw": "\t0,000000\t",
+              "possibility": "\t1,000000\t",
+              "startTime": "\t10,000000 10,000000\t"
+            },
+            {
+              "preset": "paris_fire_storm_4",
+              "position": "\t0,000000 0,000000 0,000000\t",
+              "yaw": "\t0,000000\t",
+              "possibility": "\t1,000000\t",
+              "startTime": "\t10,000000 10,000000\t"
             }
           ],
           "explosion": [
@@ -2037,24 +2162,25 @@
               "preset": "paris_gas_attack_rocket_explosion_sound_2",
               "position": "501 0 363",
               "possibility": "\t1,000000\t",
-              "startTime": "\t6,100000 6,100000\t"
+              "startTime": "\t10,100000 10,100000\t"
             },
             {
               "preset": "paris_gas_attack_rocket_explosion_sound_3",
               "position": "496 0 -499",
               "possibility": "\t1,000000\t",
-              "startTime": "\t5,100000 5,100000\t"
+              "startTime": "\t9,100000 9,100000\t"
             },
             {
               "preset": "paris_gas_attack_rocket_explosion_sound_4",
               "position": "-517 0 363",
               "possibility": "\t1,000000\t",
-              "startTime": "\t1,100000 1,100000\t"
+              "startTime": "\t8,100000 8,100000\t"
             }
           ]
         }
       }
-    }
+    },
+    "explicitRequestOnly": "\ttrue\t"
   },
   {
     "name": "#arenas:112_eiffel_tower/name",
@@ -2395,14 +2521,57 @@
         "endRadius": "\t85,000000\t"
       },
       "visualSettings": {
-        "cloudModel": "particles/mesh_particles/funnel_death/gas_ring_dark.model",
+        "cloudModel": "particles/mesh_particles/funnel_death/fire_storm_dark.model",
         "cloudClimbTime": "\t15\t",
-        "cloudStartHeight": "\t-50\t",
-        "cloudEndHeight": "\t65\t",
-        "cameraProximityDist": "\t30\t",
+        "cloudStartHeight": "\t-150\t",
+        "cloudEndHeight": "\t25\t",
+        "cameraProximityDist": "\t20\t",
         "windSpeed": "0 -1",
         "windGustiness": "\t2\t",
+        "edgeToCenterAngle": "0.95",
+        "edgeToCenterAngleDelta": "0.40",
+        "edgeToCenterDistance": "75.0",
+        "centerSunIntensityDef": "\t7,000000\t",
+        "centerSunIntensityFwd": "\t2,100000\t",
+        "edgeSunIntensityDef": "\t3,500000\t",
+        "edgeSunIntensityFwd": "\t1,050000\t",
         "mapActivities": "gasAttackScenario",
+        "vehicleGAEffect": {
+          "stages": {
+            "fire": "1.0",
+            "noEmission": "4.0"
+          },
+          "effects": {
+            "pixie": {
+              "startKey": "\tfire\t",
+              "file": "particles/Tank/destruction/fire_storm_destruction.xml"
+            },
+            "stopEmission": {
+              "startKey": "noEmission"
+            }
+          }
+        },
+        "cameraGAEffect": {
+          "stages": {
+            "fire": "1.0",
+            "noEmission": "4.0"
+          },
+          "effects": {
+            "pixie": {
+              "startKey": "\tfire\t",
+              "file": "particles/Environment/weather/fire_storm.xml"
+            },
+            "stopEmission": {
+              "startKey": "noEmission"
+            }
+          }
+        },
+        "shimmerSettings": {
+          "windDir": "0.500 1.000 0.5 5.0",
+          "waveSpeed": "0.000 0.010 2.0 1.0",
+          "spreadFreq": "0.005 0.005 6.0 6.0",
+          "displacement": "system/maps/post_processing/distortion_3D.dds"
+        },
         "centerFogSettings": {
           "Fog": {
             "version": "\t1,000000\t",
@@ -2410,39 +2579,39 @@
             "outerBB": "\t-500,000000 -500,000000 500,000000 727,000000\t",
             "deferred": {
               "heightFog": "\ttrue\t",
-              "nearLow": "\t200,000000\t",
-              "farLow": "\t500,000000\t",
-              "nearHigh": "\t500,000000\t",
-              "farHigh": "\t1000,000000\t",
-              "altitudeLow": "\t-6,000000\t",
-              "altitudeMid": "\t30,000000\t",
-              "altitudeHigh": "\t1000,000000\t",
-              "skyAltitudeLow": "\t-10,000000\t",
-              "skyAltitudeMid": "\t50,000000\t",
-              "skyAltitudeHigh": "\t2000,000000\t",
+              "nearLow": "\t0,000000\t",
+              "farLow": "\t300,000000\t",
+              "nearHigh": "\t50,000000\t",
+              "farHigh": "\t600,000000\t",
+              "altitudeLow": "\t-300,000000\t",
+              "altitudeMid": "\t45,000000\t",
+              "altitudeHigh": "\t1500,000000\t",
+              "skyAltitudeLow": "\t-100,000000\t",
+              "skyAltitudeMid": "\t250,000000\t",
+              "skyAltitudeHigh": "\t3000,000000\t",
               "exponent": "\t0,650000\t",
               "sunAngle": "\t35,000000\t",
-              "sunExponent": "\t0,200000\t",
-              "colorLow": "\t0,991500 1,000000 0,490000 0,350000\t",
-              "colorHigh": "\t0,991501 1,000000 0,490000 0,300000\t",
-              "colorSunLow": "\t0,991500 1,000000 0,490000 0,350000\t",
-              "colorSunHigh": "\t0,991501 1,000000 0,490000 0,300000\t",
+              "sunExponent": "\t0,500000\t",
+              "colorLow": "\t0,035000 0,004667 0,000000 4,000000\t",
+              "colorHigh": "\t0,020000 0,006140 0,000200 1,050000\t",
+              "colorSunLow": "\t0,035000 0,004667 0,000000 4,000000\t",
+              "colorSunHigh": "\t0,020000 0,006140 0,000200 1,050000\t",
               "useEdgeFog": "\ttrue\t"
             },
             "forward": {
               "heightFog": "\ttrue\t",
-              "nearLow": "\t200,000000\t",
-              "farLow": "\t500,000000\t",
-              "nearHigh": "\t500,000000\t",
-              "farHigh": "\t1000,000000\t",
-              "altitudeLow": "\t-6,000000\t",
-              "altitudeMid": "\t40,000000\t",
-              "altitudeHigh": "\t1000,000000\t",
-              "skyAltitudeLow": "\t-10,000000\t",
-              "skyAltitudeMid": "\t60,000000\t",
-              "skyAltitudeHigh": "\t2000,000000\t",
-              "colorLow": "\t0,703000 0,698492 0,494912 0,000000\t",
-              "colorHigh": "\t0,680000 0,675700 0,481439 0,000000\t",
+              "nearLow": "\t0,000000\t",
+              "farLow": "\t300,000000\t",
+              "nearHigh": "\t50,000000\t",
+              "farHigh": "\t600,000000\t",
+              "altitudeLow": "\t-300,000000\t",
+              "altitudeMid": "\t20,000000\t",
+              "altitudeHigh": "\t1500,000000\t",
+              "skyAltitudeLow": "\t-900,000000\t",
+              "skyAltitudeMid": "\t270,000000\t",
+              "skyAltitudeHigh": "\t600,000000\t",
+              "colorLow": "\t0,675159 0,232220 0,000000 4,000000\t",
+              "colorHigh": "\t0,070064 0,021510 0,000701 1,050000\t",
               "useEdgeFog": "\ttrue\t"
             },
             "enable": "\ttrue\t"
@@ -2455,39 +2624,84 @@
             "outerBB": "\t-500,000000 -500,000000 500,000000 727,000000\t",
             "deferred": {
               "heightFog": "\ttrue\t",
-              "nearLow": "\t-150,000000\t",
-              "farLow": "\t50,000000\t",
-              "nearHigh": "\t-50,000000\t",
-              "farHigh": "\t350,000000\t",
-              "altitudeLow": "\t-6,000000\t",
-              "altitudeMid": "\t30,000000\t",
+              "nearLow": "\t-350,000000\t",
+              "farLow": "\t400,000000\t",
+              "nearHigh": "\t-250,000000\t",
+              "farHigh": "\t150,000000\t",
+              "altitudeLow": "\t-300,000000\t",
+              "altitudeMid": "\t45,000000\t",
               "altitudeHigh": "\t1500,000000\t",
-              "skyAltitudeLow": "\t-10,000000\t",
-              "skyAltitudeMid": "\t50,000000\t",
-              "skyAltitudeHigh": "\t10000,000000\t",
-              "exponent": "\t0,650000\t",
+              "skyAltitudeLow": "\t-100,000000\t",
+              "skyAltitudeMid": "\t250,000000\t",
+              "skyAltitudeHigh": "\t3000,000000\t",
+              "exponent": "\t0,400000\t",
               "sunAngle": "\t35,000000\t",
-              "sunExponent": "\t0,200000\t",
-              "colorLow": "\t0,991500 1,000000 0,490000 0,350000\t",
-              "colorHigh": "\t0,991501 1,000000 0,490000 0,300000\t",
-              "colorSunLow": "\t0,991500 1,000000 0,490000 0,350000\t",
-              "colorSunHigh": "\t0,991501 1,000000 0,490000 0,300000\t",
+              "sunExponent": "\t0,500000\t",
+              "colorLow": "\t0,035000 0,004667 0,000000 4,000000\t",
+              "colorHigh": "\t0,020000 0,006140 0,000200 1,050000\t",
+              "colorSunLow": "\t0,035000 0,004667 0,000000 4,000000\t",
+              "colorSunHigh": "\t0,020000 0,006140 0,000200 1,050000\t",
               "useEdgeFog": "\ttrue\t"
             },
             "forward": {
               "heightFog": "\ttrue\t",
-              "nearLow": "\t-150,000000\t",
-              "farLow": "\t50,000000\t",
-              "nearHigh": "\t-50,000000\t",
-              "farHigh": "\t290,000000\t",
-              "altitudeLow": "\t2,000000\t",
-              "altitudeMid": "\t35,000000\t",
+              "nearLow": "\t-550,000000\t",
+              "farLow": "\t350,000000\t",
+              "nearHigh": "\t-350,000000\t",
+              "farHigh": "\t100,000000\t",
+              "altitudeLow": "\t-300,000000\t",
+              "altitudeMid": "\t20,000000\t",
               "altitudeHigh": "\t1500,000000\t",
-              "skyAltitudeLow": "\t-10,000000\t",
-              "skyAltitudeMid": "\t50,000000\t",
-              "skyAltitudeHigh": "\t10000,000000\t",
-              "colorLow": "\t0,703000 0,698492 0,494912 0,000000\t",
-              "colorHigh": "\t0,680000 0,675700 0,481439 0,000000\t",
+              "skyAltitudeLow": "\t-900,000000\t",
+              "skyAltitudeMid": "\t270,000000\t",
+              "skyAltitudeHigh": "\t600,000000\t",
+              "colorLow": "\t0,675159 0,232220 0,000000 4,000000\t",
+              "colorHigh": "\t0,070064 0,021510 0,000701 1,050000\t",
+              "useEdgeFog": "\ttrue\t"
+            },
+            "enable": "\ttrue\t"
+          }
+        },
+        "edgeToCenterFogSettings": {
+          "Fog": {
+            "version": "\t1,000000\t",
+            "innerBB": "\t-50,000000 -50,000000 50,000000 50,000000\t",
+            "outerBB": "\t-500,000000 -500,000000 500,000000 727,000000\t",
+            "deferred": {
+              "heightFog": "\ttrue\t",
+              "nearLow": "\t-200,000000\t",
+              "farLow": "\t300,000000\t",
+              "nearHigh": "\t-150,000000\t",
+              "farHigh": "\t600,000000\t",
+              "altitudeLow": "\t-300,000000\t",
+              "altitudeMid": "\t45,000000\t",
+              "altitudeHigh": "\t1500,000000\t",
+              "skyAltitudeLow": "\t-100,000000\t",
+              "skyAltitudeMid": "\t250,000000\t",
+              "skyAltitudeHigh": "\t3000,000000\t",
+              "exponent": "\t0,650000\t",
+              "sunAngle": "\t35,000000\t",
+              "sunExponent": "\t0,500000\t",
+              "colorLow": "\t0,035000 0,004667 0,000000 4,000000\t",
+              "colorHigh": "\t0,020000 0,006140 0,000200 1,050000\t",
+              "colorSunLow": "\t0,035000 0,004667 0,000000 4,000000\t",
+              "colorSunHigh": "\t0,020000 0,006140 0,000200 1,050000\t",
+              "useEdgeFog": "\ttrue\t"
+            },
+            "forward": {
+              "heightFog": "\ttrue\t",
+              "nearLow": "\t-200,000000\t",
+              "farLow": "\t300,000000\t",
+              "nearHigh": "\t-150,000000\t",
+              "farHigh": "\t600,000000\t",
+              "altitudeLow": "\t-300,000000\t",
+              "altitudeMid": "\t20,000000\t",
+              "altitudeHigh": "\t1500,000000\t",
+              "skyAltitudeLow": "\t-900,000000\t",
+              "skyAltitudeMid": "\t270,000000\t",
+              "skyAltitudeHigh": "\t600,000000\t",
+              "colorLow": "\t0,675159 0,232220 0,000000 4,000000\t",
+              "colorHigh": "\t0,070064 0,021510 0,000701 1,050000\t",
               "useEdgeFog": "\ttrue\t"
             },
             "enable": "\ttrue\t"
@@ -2497,165 +2711,104 @@
           "wwalarm": "fallout_gaz_alarm",
           "alarm": "/GUI/fallout/fallout_gaz_alarm",
           "wwproximity": "fallout_gaz_sphere_warning",
-          "proximity": "/GUI/fallout/fallout_gaz_sphere_warning"
+          "proximity": "/GUI/fallout/fallout_gaz_sphere_warning",
+          "gascloud_close": "sauron_burn_close",
+          "gascloud_far": "sauron_burn_far",
+          "gascloud_inside": "sauron_inside_burn"
         }
       }
     },
+    "explicitRequestOnly": "\ttrue\t",
     "mapActivities": {
-      "scenario": [
-        {
-          "possibility": "\t1,000000\t",
-          "period": "\t0,000000\t",
-          "visibilityMask": "\t6144\t",
+      "scenario": {
+        "possibility": "\t0,000000\t",
+        "period": "\t-1\t",
+        "name": "gasAttackScenario",
           "trajectories": {
             "warplane": [
               {
-                "preset": "eiffel_tower_FAU_1",
+              "preset": "eifeltower_gas_attack_rocket_flight_1",
                 "position": "\t0,000000 0,000000 0,000000\t",
                 "yaw": "\t0,000000\t",
                 "possibility": "\t1,000000\t",
                 "startTime": "\t9,000000 9,000000\t"
               },
               {
-                "preset": "eiffel_tower_FAU_2",
+              "preset": "eifeltower_gas_attack_rocket_flight_2",
                 "position": "\t0,000000 0,000000 0,000000\t",
                 "yaw": "\t0,000000\t",
                 "possibility": "\t1,000000\t",
-                "startTime": "\t5,000000 5,000000\t"
+              "startTime": "\t9,000000 9,000000\t"
               },
               {
-                "preset": "eiffel_tower_FAU_3",
+              "preset": "eifeltower_gas_attack_rocket_flight_3",
                 "position": "\t0,000000 0,000000 0,000000\t",
                 "yaw": "\t0,000000\t",
                 "possibility": "\t1,000000\t",
-                "startTime": "\t4,000000 4,000000\t"
+              "startTime": "\t8,000000 8,000000\t"
               },
               {
-                "preset": "eiffel_tower_FAU_4",
+              "preset": "eifeltower_gas_attack_rocket_flight_4",
                 "position": "\t0,000000 0,000000 0,000000\t",
                 "yaw": "\t0,000000\t",
                 "possibility": "\t1,000000\t",
-                "startTime": "\t0,000000 0,000000\t"
+              "startTime": "\t7,000000 7,000000\t"
               },
               {
-                "preset": "eiffel_tower_FAU_explosion_1",
+              "preset": "eifeltower_gas_attack_rocket_explosion_1",
                 "position": "\t0,000000 0,000000 0,000000\t",
                 "yaw": "\t0,000000\t",
                 "possibility": "\t1,000000\t",
                 "startTime": "\t10,000000 10,000000\t"
               },
               {
-                "preset": "eiffel_tower_FAU_explosion_2",
+              "preset": "eifeltower_gas_attack_rocket_explosion_2",
                 "position": "\t0,000000 0,000000 0,000000\t",
                 "yaw": "\t0,000000\t",
                 "possibility": "\t1,000000\t",
-                "startTime": "\t6,100000 6,100000\t"
+              "startTime": "\t10,100000 10,100000\t"
               },
               {
-                "preset": "eiffel_tower_FAU_explosion_3",
-                "position": "\t0,000000 0,000000 0,000000\t",
-                "yaw": "\t0,000000\t",
-                "possibility": "\t1,000000\t",
-                "startTime": "\t5,000000 5,000000\t"
-              },
-              {
-                "preset": "eiffel_tower_FAU_explosion_4",
-                "position": "\t0,000000 0,000000 0,000000\t",
-                "yaw": "\t0,000000\t",
-                "possibility": "\t1,000000\t",
-                "startTime": "\t0,900000 0,900000\t"
-              }
-            ],
-            "explosion": [
-              {
-                "preset": "eiffel_tower_FAU_explosion_sound_1",
-                "position": "\t47,038900 1,279982 307,607100\t",
-                "possibility": "\t1,000000\t",
-                "startTime": "\t10,000000 10,000000\t"
-              },
-              {
-                "preset": "eiffel_tower_FAU_explosion_sound_2",
-                "position": "\t-124,361700 0,509002 596,711300\t",
-                "possibility": "\t1,000000\t",
-                "startTime": "\t6,100000 6,100000\t"
-              },
-              {
-                "preset": "eiffel_tower_FAU_explosion_sound_3",
-                "position": "\t9,979972 2,957673 218,622400\t",
-                "possibility": "\t1,000000\t",
-                "startTime": "\t5,000000 5,000000\t"
-              },
-              {
-                "preset": "eiffel_tower_FAU_explosion_sound_4",
-                "position": "\t34,951160 7,099438 -345,613600\t",
-                "possibility": "\t1,000000\t",
-                "startTime": "\t0,900000 0,900000\t"
-              }
-            ]
-          },
-          "startTime": "\t-30,000000 -30,000000\t"
-        },
-        {
-          "possibility": "\t0,000000\t",
-          "period": "\t-1\t",
-          "name": "gasAttackScenario",
-          "trajectories": {
-            "warplane": [
-              {
-                "preset": "eifeltower_gas_attack_rocket_flight_1",
+              "preset": "eifeltower_gas_attack_rocket_explosion_3",
                 "position": "\t0,000000 0,000000 0,000000\t",
                 "yaw": "\t0,000000\t",
                 "possibility": "\t1,000000\t",
                 "startTime": "\t9,000000 9,000000\t"
               },
               {
-                "preset": "eifeltower_gas_attack_rocket_flight_2",
+              "preset": "eifeltower_gas_attack_rocket_explosion_4",
                 "position": "\t0,000000 0,000000 0,000000\t",
                 "yaw": "\t0,000000\t",
                 "possibility": "\t1,000000\t",
-                "startTime": "\t5,000000 5,000000\t"
+              "startTime": "\t8,900000 8,900000\t"
               },
               {
-                "preset": "eifeltower_gas_attack_rocket_flight_3",
+              "preset": "eifeltower_fire_storm_1",
                 "position": "\t0,000000 0,000000 0,000000\t",
                 "yaw": "\t0,000000\t",
                 "possibility": "\t1,000000\t",
-                "startTime": "\t4,000000 4,000000\t"
+              "startTime": "\t10,000000 10,000000\t"
               },
               {
-                "preset": "eifeltower_gas_attack_rocket_flight_4",
+              "preset": "eifeltower_fire_storm_2",
                 "position": "\t0,000000 0,000000 0,000000\t",
                 "yaw": "\t0,000000\t",
                 "possibility": "\t1,000000\t",
-                "startTime": "\t0,000000 0,000000\t"
+              "startTime": "\t10,000000 10,000000\t"
               },
               {
-                "preset": "eifeltower_gas_attack_rocket_explosion_1",
+              "preset": "eifeltower_fire_storm_3",
                 "position": "\t0,000000 0,000000 0,000000\t",
                 "yaw": "\t0,000000\t",
                 "possibility": "\t1,000000\t",
                 "startTime": "\t10,000000 10,000000\t"
               },
               {
-                "preset": "eifeltower_gas_attack_rocket_explosion_2",
+              "preset": "eifeltower_fire_storm_4",
                 "position": "\t0,000000 0,000000 0,000000\t",
                 "yaw": "\t0,000000\t",
                 "possibility": "\t1,000000\t",
-                "startTime": "\t6,100000 6,100000\t"
-              },
-              {
-                "preset": "eifeltower_gas_attack_rocket_explosion_3",
-                "position": "\t0,000000 0,000000 0,000000\t",
-                "yaw": "\t0,000000\t",
-                "possibility": "\t1,000000\t",
-                "startTime": "\t5,000000 5,000000\t"
-              },
-              {
-                "preset": "eifeltower_gas_attack_rocket_explosion_4",
-                "position": "\t0,000000 0,000000 0,000000\t",
-                "yaw": "\t0,000000\t",
-                "possibility": "\t1,000000\t",
-                "startTime": "\t0,900000 0,900000\t"
+              "startTime": "\t10,000000 10,000000\t"
               }
             ],
             "explosion": [
@@ -2669,26 +2822,24 @@
                 "preset": "eifeltower_gas_attack_rocket_explosion_sound_2",
                 "position": "-410 0 -389",
                 "possibility": "\t1,000000\t",
-                "startTime": "\t6,100000 6,100000\t"
+              "startTime": "\t10,100000 10,100000\t"
               },
               {
                 "preset": "eifeltower_gas_attack_rocket_explosion_sound_3",
                 "position": "-409 0 579",
                 "possibility": "\t1,000000\t",
-                "startTime": "\t5,000000 5,000000\t"
+              "startTime": "\t9,000000 9,000000\t"
               },
               {
                 "preset": "eifeltower_gas_attack_rocket_explosion_sound_4",
                 "position": "412 0 -369",
                 "possibility": "\t1,000000\t",
-                "startTime": "\t0,900000 0,900000\t"
+              "startTime": "\t8,900000 8,900000\t"
               }
             ]
           }
         }
-      ]
-    },
-    "explicitRequestOnly": "\ttrue\t"
+    }
   },
   {
     "name": "#arenas:114_czech/name",
@@ -4271,8 +4422,8 @@
     "geometry": "spaces/73_asia_korea",
     "roundLength": "\t900\t",
     "boundingBox": {
-      "bottomLeft": "-500.0 -500.0",
-      "upperRight": "500.0 500.0"
+      "bottomLeft": "\t-500,000000 -500,000000\t",
+      "upperRight": "\t500,000000 500,000000\t"
     },
     "minimap": "spaces/73_asia_korea/mmap.dds",
     "vehicleCamouflageKind": "winter",
@@ -4290,29 +4441,16 @@
       "ctf": {
         "teamBasePositions": {
           "team1": {
-            "position1": "\t271,299900 252,732500\t"
+            "position1": "\t270,641600 264,472300\t"
           },
           "team2": {
-            "position1": "\t-270,591000 -298,516700\t"
+            "position1": "\t-279,217400 -299,489300\t"
           }
         }
-      },
-      "domination": {
-        "teamSpawnPoints": {
-          "team1": {
-            "position": "215.372 99.746"
-          },
-          "team2": {
-            "position": "-294.259 44.441"
           }
         },
-        "teamBasePositions": {
-          "team1": "",
-          "team2": ""
-        },
-        "controlPoint": "\t16,409660 -269,409400\t"
-      }
-    }
+    "roadMap": "",
+    "mapActivities": ""
   },
   {
     "name": "#arenas:83_kharkiv/name",
@@ -4487,7 +4625,7 @@
     "loadingMusic": "/music/intro/Intro_Himmelsdorf",
     "wwloadingMusic": "music_himmelsdorf",
     "ambientSound": "/wind/wind/wind_winter_02",
-    "wwambientSound": "ambient_wind_winter_02",
+    "wwambientSound": "ambient_wind_winter_01",
     "umbraEnabled": "\t1\t",
     "batchingEnabled": "\t0\t",
     "gameplayTypes": {
@@ -4529,7 +4667,7 @@
         },
         "teamBasePositions": {
           "team1": {
-            "position1": "\t-216,614000 11,042590\t",
+            "position1": "\t-214,140100 18,499990\t",
             "position2": "\t103,041000 335,699000\t"
           },
           "team2": ""
@@ -5158,55 +5296,98 @@
         "endRadius": "\t85,000000\t"
       },
       "visualSettings": {
-        "cloudModel": "particles/mesh_particles/funnel_death/gas_ring_light.model",
+        "cloudModel": "particles/mesh_particles/funnel_death/fire_storm.model",
         "cloudClimbTime": "\t15\t",
-        "cloudStartHeight": "\t-50\t",
-        "cloudEndHeight": "\t60\t",
-        "cameraProximityDist": "\t30\t",
+        "cloudStartHeight": "\t-150\t",
+        "cloudEndHeight": "\t25\t",
+        "cameraProximityDist": "\t20\t",
         "windSpeed": "0 -1",
         "windGustiness": "\t2\t",
+        "edgeToCenterAngle": "0.95",
+        "edgeToCenterAngleDelta": "0.40",
+        "edgeToCenterDistance": "75.0",
+        "centerSunIntensityDef": "\t5,485000\t",
+        "centerSunIntensityFwd": "\t0,700000\t",
+        "edgeSunIntensityDef": "\t2,742500\t",
+        "edgeSunIntensityFwd": "\t0,350000\t",
         "postEffect": "",
         "mapActivities": "gasAttackScenario",
+        "vehicleGAEffect": {
+          "stages": {
+            "fire": "1.0",
+            "noEmission": "4.0"
+          },
+          "effects": {
+            "pixie": {
+              "startKey": "\tfire\t",
+              "file": "particles/Tank/destruction/fire_storm_destruction.xml"
+            },
+            "stopEmission": {
+              "startKey": "noEmission"
+            }
+          }
+        },
+        "cameraGAEffect": {
+          "stages": {
+            "fire": "1.0",
+            "noEmission": "4.0"
+          },
+          "effects": {
+            "pixie": {
+              "startKey": "\tfire\t",
+              "file": "particles/Environment/weather/fire_storm.xml"
+            },
+            "stopEmission": {
+              "startKey": "noEmission"
+            }
+          }
+        },
+        "shimmerSettings": {
+          "windDir": "0.500 1.000 0.5 5.0",
+          "waveSpeed": "0.000 0.010 2.0 1.0",
+          "spreadFreq": "0.005 0.005 6.0 6.0",
+          "displacement": "system/maps/post_processing/distortion_3D.dds"
+        },
         "centerFogSettings": {
           "Fog": {
             "version": "\t1,000000\t",
             "innerBB": "\t-50,000000 -50,000000 50,000000 50,000000\t",
-            "outerBB": "\t-500,000000 -500,000000 500,000000 727,000000\t",
+            "outerBB": "\t-600,000000 -600,000000 600,000000 600,000000\t",
             "deferred": {
               "heightFog": "\ttrue\t",
-              "nearLow": "\t200,000000\t",
-              "farLow": "\t500,000000\t",
-              "nearHigh": "\t500,000000\t",
-              "farHigh": "\t1000,000000\t",
-              "altitudeLow": "\t-6,000000\t",
-              "altitudeMid": "\t50,000000\t",
-              "altitudeHigh": "\t1500,000000\t",
-              "skyAltitudeLow": "\t-10,000000\t",
-              "skyAltitudeMid": "\t50,000000\t",
-              "skyAltitudeHigh": "\t10000,000000\t",
-              "exponent": "\t0,650000\t",
+              "nearLow": "\t0,000000\t",
+              "farLow": "\t300,000000\t",
+              "nearHigh": "\t50,000000\t",
+              "farHigh": "\t600,000000\t",
+              "altitudeLow": "\t-300,000000\t",
+              "altitudeMid": "\t30,000000\t",
+              "altitudeHigh": "\t1000,000000\t",
+              "skyAltitudeLow": "\t-200,000000\t",
+              "skyAltitudeMid": "\t250,000000\t",
+              "skyAltitudeHigh": "\t3000,000000\t",
+              "exponent": "\t0,400000\t",
               "sunAngle": "\t35,000000\t",
-              "sunExponent": "\t0,200000\t",
-              "colorLow": "\t0,957500 1,000000 0,490000 0,850000\t",
-              "colorHigh": "\t0,957500 1,000000 0,490000 0,800000\t",
-              "colorSunLow": "\t0,957500 1,000000 0,490000 0,850000\t",
-              "colorSunHigh": "\t0,957500 1,000000 0,490000 0,800000\t",
+              "sunExponent": "\t0,500000\t",
+              "colorLow": "\t0,075000 0,010001 0,000000 4,000000\t",
+              "colorHigh": "\t0,020000 0,006140 0,000200 1,050000\t",
+              "colorSunLow": "\t0,075000 0,010001 0,000000 4,000000\t",
+              "colorSunHigh": "\t0,020000 0,006140 0,000200 1,050000\t",
               "useEdgeFog": "\ttrue\t"
             },
             "forward": {
               "heightFog": "\ttrue\t",
-              "nearLow": "\t200,000000\t",
-              "farLow": "\t500,000000\t",
-              "nearHigh": "\t500,000000\t",
-              "farHigh": "\t1000,000000\t",
-              "altitudeLow": "\t-6,000000\t",
-              "altitudeMid": "\t40,000000\t",
-              "altitudeHigh": "\t1000,000000\t",
-              "skyAltitudeLow": "\t-10,000000\t",
-              "skyAltitudeMid": "\t60,000000\t",
-              "skyAltitudeHigh": "\t2000,000000\t",
-              "colorLow": "\t0,639470 0,653000 0,459712 0,000000\t",
-              "colorHigh": "\t0,616902 0,630000 0,442890 0,000000\t",
+              "nearLow": "\t0,000000\t",
+              "farLow": "\t300,000000\t",
+              "nearHigh": "\t50,000000\t",
+              "farHigh": "\t600,000000\t",
+              "altitudeLow": "\t-300,000000\t",
+              "altitudeMid": "\t20,000000\t",
+              "altitudeHigh": "\t1500,000000\t",
+              "skyAltitudeLow": "\t-600,000000\t",
+              "skyAltitudeMid": "\t270,000000\t",
+              "skyAltitudeHigh": "\t600,000000\t",
+              "colorLow": "\t0,490000 0,168535 0,000000 4,000000\t",
+              "colorHigh": "\t0,044586 0,013688 0,000446 1,050000\t",
               "useEdgeFog": "\ttrue\t"
             },
             "enable": "\ttrue\t"
@@ -5219,43 +5400,95 @@
             "outerBB": "\t-600,000000 -600,000000 600,000000 600,000000\t",
             "deferred": {
               "heightFog": "\ttrue\t",
-              "nearLow": "\t-150,000000\t",
-              "farLow": "\t50,000000\t",
-              "nearHigh": "\t-50,000000\t",
-              "farHigh": "\t350,000000\t",
-              "altitudeLow": "\t-6,000000\t",
-              "altitudeMid": "\t50,000000\t",
-              "altitudeHigh": "\t1500,000000\t",
-              "skyAltitudeLow": "\t-10,000000\t",
-              "skyAltitudeMid": "\t50,000000\t",
-              "skyAltitudeHigh": "\t10000,000000\t",
-              "exponent": "\t0,650000\t",
+              "nearLow": "\t-450,000000\t",
+              "farLow": "\t400,000000\t",
+              "nearHigh": "\t-350,000000\t",
+              "farHigh": "\t150,000000\t",
+              "altitudeLow": "\t-300,000000\t",
+              "altitudeMid": "\t30,000000\t",
+              "altitudeHigh": "\t1000,000000\t",
+              "skyAltitudeLow": "\t-200,000000\t",
+              "skyAltitudeMid": "\t250,000000\t",
+              "skyAltitudeHigh": "\t3000,000000\t",
+              "exponent": "\t0,400000\t",
               "sunAngle": "\t35,000000\t",
-              "sunExponent": "\t0,200000\t",
-              "colorLow": "\t0,957500 1,000000 0,490000 0,850000\t",
-              "colorHigh": "\t0,957500 1,000000 0,490000 0,800000\t",
-              "colorSunLow": "\t0,957500 1,000000 0,490000 0,850000\t",
-              "colorSunHigh": "\t0,957500 1,000000 0,490000 0,800000\t",
+              "sunExponent": "\t0,500000\t",
+              "colorLow": "\t0,135000 0,018001 0,000000 4,000000\t",
+              "colorHigh": "\t0,020000 0,006140 0,000200 1,050000\t",
+              "colorSunLow": "\t0,135000 0,018001 0,000000 4,000000\t",
+              "colorSunHigh": "\t0,020000 0,006140 0,000200 1,050000\t",
               "useEdgeFog": "\ttrue\t"
             },
             "forward": {
               "heightFog": "\ttrue\t",
-              "nearLow": "\t-150,000000\t",
-              "farLow": "\t50,000000\t",
-              "nearHigh": "\t-50,000000\t",
-              "farHigh": "\t332,000000\t",
-              "altitudeLow": "\t-2,000000\t",
-              "altitudeMid": "\t50,000000\t",
+              "nearLow": "\t-550,000000\t",
+              "farLow": "\t450,000000\t",
+              "nearHigh": "\t-350,000000\t",
+              "farHigh": "\t150,000000\t",
+              "altitudeLow": "\t-300,000000\t",
+              "altitudeMid": "\t20,000000\t",
               "altitudeHigh": "\t1500,000000\t",
-              "skyAltitudeLow": "\t-10,000000\t",
-              "skyAltitudeMid": "\t50,000000\t",
-              "skyAltitudeHigh": "\t10000,000000\t",
-              "colorLow": "\t0,639470 0,653000 0,459712 0,000000\t",
-              "colorHigh": "\t0,616902 0,630000 0,442890 0,000000\t",
+              "skyAltitudeLow": "\t-600,000000\t",
+              "skyAltitudeMid": "\t270,000000\t",
+              "skyAltitudeHigh": "\t600,000000\t",
+              "colorLow": "\t0,675159 0,232220 0,000000 4,000000\t",
+              "colorHigh": "\t0,044586 0,013688 0,000446 1,050000\t",
               "useEdgeFog": "\ttrue\t"
             },
             "enable": "\ttrue\t"
           }
+        },
+        "edgeToCenterFogSettings": {
+          "Fog": {
+            "version": "\t1,000000\t",
+            "innerBB": "\t-50,000000 -50,000000 50,000000 50,000000\t",
+            "outerBB": "\t-600,000000 -600,000000 600,000000 600,000000\t",
+            "deferred": {
+              "heightFog": "\ttrue\t",
+              "nearLow": "\t-200,000000\t",
+              "farLow": "\t300,000000\t",
+              "nearHigh": "\t-150,000000\t",
+              "farHigh": "\t600,000000\t",
+              "altitudeLow": "\t-300,000000\t",
+              "altitudeMid": "\t30,000000\t",
+              "altitudeHigh": "\t1000,000000\t",
+              "skyAltitudeLow": "\t-200,000000\t",
+              "skyAltitudeMid": "\t250,000000\t",
+              "skyAltitudeHigh": "\t3000,000000\t",
+              "exponent": "\t0,400000\t",
+              "sunAngle": "\t35,000000\t",
+              "sunExponent": "\t0,500000\t",
+              "colorLow": "\t0,135000 0,018001 0,000000 4,000000\t",
+              "colorHigh": "\t0,020000 0,006140 0,000200 1,050000\t",
+              "colorSunLow": "\t0,135000 0,018001 0,000000 4,000000\t",
+              "colorSunHigh": "\t0,020000 0,006140 0,000200 1,050000\t",
+              "useEdgeFog": "\ttrue\t"
+            },
+            "forward": {
+              "heightFog": "\ttrue\t",
+              "nearLow": "\t-200,000000\t",
+              "farLow": "\t300,000000\t",
+              "nearHigh": "\t-150,000000\t",
+              "farHigh": "\t600,000000\t",
+              "altitudeLow": "\t-300,000000\t",
+              "altitudeMid": "\t20,000000\t",
+              "altitudeHigh": "\t1500,000000\t",
+              "skyAltitudeLow": "\t-600,000000\t",
+              "skyAltitudeMid": "\t270,000000\t",
+              "skyAltitudeHigh": "\t600,000000\t",
+              "colorLow": "\t0,675159 0,232220 0,000000 4,000000\t",
+              "colorHigh": "\t0,044586 0,013688 0,000446 1,050000\t",
+              "useEdgeFog": "\ttrue\t"
+            },
+            "enable": "\ttrue\t"
+          }
+        },
+        "soundSettings": {
+          "wwalarm": "fallout_gaz_alarm",
+          "alarm": "/GUI/fallout/fallout_gaz_alarma",
+          "gascloud_close": "sauron_burn_close",
+          "gascloud_far": "sauron_burn_far",
+          "gascloud_inside": "sauron_inside_burn"
         }
       }
     },
@@ -5278,21 +5511,21 @@
               "position": "\t0,000000 0,000000 0,000000\t",
               "yaw": "\t0,000000\t",
               "possibility": "\t1,000000\t",
-              "startTime": "\t5,000000 5,000000\t"
+              "startTime": "\t9,000000 9,000000\t"
             },
             {
               "preset": "lostcity_gas_attack_rocket_flight_3",
               "position": "\t0,000000 0,000000 0,000000\t",
               "yaw": "\t0,000000\t",
               "possibility": "\t1,000000\t",
-              "startTime": "\t4,000000 4,000000\t"
+              "startTime": "\t8,000000 8,000000\t"
             },
             {
               "preset": "lostcity_gas_attack_rocket_flight_4",
               "position": "\t0,000000 0,000000 0,000000\t",
               "yaw": "\t0,000000\t",
               "possibility": "\t1,000000\t",
-              "startTime": "\t0,000000 0,000000\t"
+              "startTime": "\t7,000000 7,000000\t"
             },
             {
               "preset": "lostcity_gas_attack_rocket_explosion_1",
@@ -5306,21 +5539,49 @@
               "position": "\t0,000000 0,000000 0,000000\t",
               "yaw": "\t0,000000\t",
               "possibility": "\t1,000000\t",
-              "startTime": "\t5,900000 5,900000\t"
+              "startTime": "\t9,900000 9,900000\t"
             },
             {
               "preset": "lostcity_gas_attack_rocket_explosion_3",
               "position": "\t0,000000 0,000000 0,000000\t",
               "yaw": "\t0,000000\t",
               "possibility": "\t1,000000\t",
-              "startTime": "\t5,000000 5,000000\t"
+              "startTime": "\t9,000000 9,000000\t"
             },
             {
               "preset": "lostcity_gas_attack_rocket_explosion_4",
               "position": "\t0,000000 0,000000 0,000000\t",
               "yaw": "\t0,000000\t",
               "possibility": "\t1,000000\t",
-              "startTime": "\t1,000000 1,000000\t"
+              "startTime": "\t8,000000 8,000000\t"
+            },
+            {
+              "preset": "lostcity_fire_storm_1",
+              "position": "\t0,000000 0,000000 0,000000\t",
+              "yaw": "\t0,000000\t",
+              "possibility": "\t1,000000\t",
+              "startTime": "\t10,000000 10,000000\t"
+            },
+            {
+              "preset": "lostcity_fire_storm_2",
+              "position": "\t0,000000 0,000000 0,000000\t",
+              "yaw": "\t0,000000\t",
+              "possibility": "\t1,000000\t",
+              "startTime": "\t10,000000 10,000000\t"
+            },
+            {
+              "preset": "lostcity_fire_storm_3",
+              "position": "\t0,000000 0,000000 0,000000\t",
+              "yaw": "\t0,000000\t",
+              "possibility": "\t1,000000\t",
+              "startTime": "\t10,000000 10,000000\t"
+            },
+            {
+              "preset": "lostcity_fire_storm_4",
+              "position": "\t0,000000 0,000000 0,000000\t",
+              "yaw": "\t0,000000\t",
+              "possibility": "\t1,000000\t",
+              "startTime": "\t10,000000 10,000000\t"
             }
           ],
           "explosion": [
@@ -5334,19 +5595,19 @@
               "preset": "lostcity_gas_attack_rocket_explosion_sound_2",
               "position": "-413 0 -354",
               "possibility": "\t1,000000\t",
-              "startTime": "\t5,900000 5,900000\t"
+              "startTime": "\t9,900000 9,900000\t"
             },
             {
               "preset": "lostcity_gas_attack_rocket_explosion_sound_3",
               "position": "-333 0 363",
               "possibility": "\t1,000000\t",
-              "startTime": "\t5,000000 5,000000\t"
+              "startTime": "\t9,000000 9,000000\t"
             },
             {
               "preset": "lostcity_gas_attack_rocket_explosion_sound_4",
               "position": "350 0 -402",
               "possibility": "\t1,000000\t",
-              "startTime": "\t1,000000 1,000000\t"
+              "startTime": "\t8,000000 8,000000\t"
             }
           ]
         }

@@ -1924,7 +1924,6 @@
     "userString": "#ussr_vehicles:_152mm_UBR551M_fallout",
     "icon": "ap",
     "price": "\t90\t",
-    "notInShop": "\ttrue\t",
     "kind": "ARMOR_PIERCING",
     "caliber": "\t152\t",
     "isTracer": "\ttrue\t",
@@ -1942,7 +1941,6 @@
       "#text": "\t1\t",
       "gold": ""
     },
-    "notInShop": "\ttrue\t",
     "kind": "HOLLOW_CHARGE",
     "caliber": "\t152\t",
     "isTracer": "\ttrue\t",
@@ -1958,7 +1956,6 @@
     "userString": "#ussr_vehicles:_152mm_53-OF-551M_fallout",
     "icon": "he",
     "price": "\t81\t",
-    "notInShop": "\ttrue\t",
     "kind": "HIGH_EXPLOSIVE",
     "caliber": "\t152\t",
     "explosionRadius": "3.66",
@@ -2075,6 +2072,12 @@
     "explosionRadius": "8.49",
     "isTracer": "\ttrue\t",
     "effects": "hugeHighExplosive",
+    "damage": {
+      "armor": "\t1850\t",
+      "devices": "\t270\t"
+    }
+  }
+}",
     "damage": {
       "armor": "\t1850\t",
       "devices": "\t270\t"

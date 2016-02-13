@@ -29,12 +29,13 @@ namespace WotDossier.Dal
         private Dictionary<int, RatingExpectancy> _ratingExpectations;
 
         public static readonly Version VersionAll = new Version("100.0.0.0");
-        public static readonly Version VersionRelease = new Version("0.9.13.0");
-        public static readonly Version VersionTest = new Version("0.9.14.0");
+        public static readonly Version VersionRelease = new Version("0.9.14.0");
+        public static readonly Version VersionTest = new Version("0.9.15.0");
 
         private static readonly List<Version> _versions = new List<Version>
         {
                 VersionRelease,
+                new Version("0.9.13.0"),
                 new Version("0.9.12.0"),
                 new Version("0.9.10.0"),
                 new Version("0.9.9.0"),
@@ -843,6 +844,146 @@ namespace WotDossier.Dal
             {
                 //0.9.13 replay tank name changed to r54_kv_5_igr
                 return _tanks[157];
+            }
+            else if (iconId == "france__105_lefh18b2")
+            {
+                //0.9.14 replay tank name changed to f28_105_lefh18b2
+                return _tanks[40008];
+            }
+            else if (iconId == "france_amx_50fosh_155")
+            {
+                //0.9.14 replay tank name changed to f64_amx_50fosh_155
+                return _tanks[40054];
+            }
+            else if (iconId == "france__105_lefh18b2_igr")
+            {
+                //0.9.14 replay tank name changed to f28_105_lefh18b2_igr
+                return _tanks[40154];
+            }
+            else if (iconId == "germany_vk3001h")
+            {
+                //0.9.14 replay tank name changed to g13_vk3001h
+                return _tanks[10010];
+            }
+            else if (iconId == "germany_g_tiger")
+            {
+                //0.9.14 replay tank name changed to g45_g_tiger
+                return _tanks[10034];
+            }
+            else if (iconId == "germany_nashorn")
+            {
+                //0.9.14 replay tank name changed to g40_nashorn
+                return _tanks[10046];
+            }
+            else if (iconId == "germany_t_25")
+            {
+                //0.9.14 replay tank name changed to g46_t_25
+                return _tanks[10213];
+            }
+            else if (iconId == "germany_e_25")
+            {
+                //0.9.14 replay tank name changed to g48_e_25
+                return _tanks[10217];
+            }
+            else if (iconId == "germany_vk7201")
+            {
+                //0.9.14 replay tank name changed to g92_vk7201
+                return _tanks[10229];
+            }
+            else if (iconId == "germany_e_25_igr")
+            {
+                //0.9.14 replay tank name changed to g48_e_25_igr
+                return _tanks[10156];
+            }
+            else if (iconId == "japan_chi_ni")
+            {
+                //0.9.14 replay tank name changed to j15_chi_ni
+                return _tanks[60001];
+            }
+            else if (iconId == "japan_chi_nu")
+            {
+                //0.9.14 replay tank name changed to j08_chi_nu
+                return _tanks[60005];
+            }
+            else if (iconId == "japan_chi_ha")
+            {
+                //0.9.14 replay tank name changed to j07_chi_ha
+                return _tanks[60008];
+            }
+            else if (iconId == "japan_ke_ho")
+            {
+                //0.9.14 replay tank name changed to j06_ke_ho
+                return _tanks[60011];
+            }
+            else if (iconId == "usa_m4_sherman")
+            {
+                //0.9.14 replay tank name changed to a05_m4_sherman
+                return _tanks[20004];
+            }
+            else if (iconId == "usa_t20")
+            {
+                //0.9.14 replay tank name changed to a07_t20
+                return _tanks[20006];
+            }
+            else if (iconId == "usa_t1_hvy")
+            {
+                //0.9.14 replay tank name changed to a09_t1_hvy
+                return _tanks[20013];
+            }
+            else if (iconId == "usa_t40")
+            {
+                //0.9.14 replay tank name changed to a29_t40
+                return _tanks[20030];
+            }
+            else if (iconId == "usa_t28_prototype")
+            {
+                //0.9.14 replay tank name changed to a68_t28_prototype
+                return _tanks[20044];
+            }
+            else if (iconId == "usa_m53_55")
+            {
+                //0.9.14 replay tank name changed to a88_m53_55
+                return _tanks[20063];
+            }
+            else if (iconId == "usa_m44")
+            {
+                //0.9.14 replay tank name changed to a87_m44
+                return _tanks[20064];
+            }
+            else if (iconId == "usa_m4_sherman_igr")
+            {
+                //0.9.14 replay tank name changed to a05_m4_sherman_igr
+                return _tanks[20158];
+            }
+            else if (iconId == "ussr_is")
+            {
+                //0.9.14 replay tank name changed to r01_is
+                return _tanks[2];
+            }
+            else if (iconId == "ussr_a_20")
+            {
+                //0.9.14 replay tank name changed to r12_a_20
+                return _tanks[8];
+            }
+            else if (iconId == "ussr_su_100")
+            {
+                //0.9.14 replay tank name changed to r17_su_100
+                return _tanks[14];
+            }
+            else if (iconId == "ussr_ms_1")
+            {
+                //0.9.14 replay tank name changed to r11_ms_1
+                return _tanks[13];
+            }
+            else if (iconId == "ussr_object252")
+            {
+                //0.9.14 replay tank name changed to r61_object252
+                return _tanks[36];
+            }
+            else if (iconId == "ussr_ms_1_bot")
+            {
+                //0.9.14 replay tank name changed to r11_ms_1_bot
+                return _tanks[160];
             }
             return tankDescription ?? TankDescription.Unknown(playerVehicle);
         }

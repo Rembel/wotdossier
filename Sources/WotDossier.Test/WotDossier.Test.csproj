@@ -93,8 +93,8 @@
       <HintPath>..\packages\NHibernate.4.0.4.4000\lib\net40\NHibernate.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="nunit.framework, Version=3.0.5813.39032, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
-      <HintPath>..\packages\NUnit.3.0.1\lib\net40\nunit.framework.dll</HintPath>
+    <Reference Include="nunit.framework, Version=2.6.4.14350, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
+      <HintPath>..\packages\NUnit.2.6.4\lib\nunit.framework.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="PresentationFramework" />
@@ -318,6 +318,15 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="CacheFiles\0.9.13\NRXWO2LOFVRXILTXN5ZGYZDPMZ2GC3TLOMXG4ZLUHIZDAMBRGU5V6UTFNVRGK3C7L5JFK===.dat">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Replays\0.9.14\20160212_2124_ussr-Object_140_83_kharkiv.wotreplay">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Replays\0.9.14\20160212_2132_ussr-Object_140_13_erlenberg.wotreplay">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Replays\0.9.14\20160212_2139_ussr-Object_140_14_siegfried_line.wotreplay">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="CacheFiles\0.9.1\NRXWO2LOGIWWG5BNOAYS453POJWGI33GORQW423TFZXGK5B2GIYDAMJVHNPVEZLNMJSWYX27KJKQ====.dat">

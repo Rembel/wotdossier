@@ -1006,52 +1006,6 @@
       "devices": "\t110\t"
     }
   },
-  "_25pdr_HE_Mk_1D": {
-    "id": "\t43\t",
-    "userString": "#gb_vehicles:_25pdr_HE_Mk_1D",
-    "icon": "he",
-    "price": "\t83\t",
-    "kind": "HIGH_EXPLOSIVE",
-    "caliber": "87.6",
-    "explosionRadius": "1.39",
-    "isTracer": "\ttrue\t",
-    "effects": "mainHighExplosive",
-    "damage": {
-      "armor": "\t280\t",
-      "devices": "\t115\t"
-    }
-  },
-  "_25pdr_AP_Mk_1T": {
-    "id": "\t44\t",
-    "userString": "#gb_vehicles:_25pdr_AP_Mk_1T",
-    "icon": "ap",
-    "price": "\t83\t",
-    "kind": "ARMOR_PIERCING",
-    "caliber": "87.6",
-    "isTracer": "\ttrue\t",
-    "effects": "mainArmorPiercing",
-    "damage": {
-      "armor": "\t180\t",
-      "devices": "\t115\t"
-    }
-  },
-  "_25pdr_AP_Mk_1T_SC": {
-    "id": "\t84\t",
-    "userString": "#gb_vehicles:_25pdr_AP_Mk_1T_SC",
-    "icon": "ap",
-    "price": {
-      "#text": "\t7\t",
-      "gold": ""
-    },
-    "kind": "ARMOR_PIERCING",
-    "caliber": "87.6",
-    "isTracer": "\ttrue\t",
-    "effects": "mainArmorPiercing",
-    "damage": {
-      "armor": "\t180\t",
-      "devices": "\t115\t"
-    }
-  },
   "_90mm_AP_M318": {
     "id": "\t119\t",
     "userString": "#gb_vehicles:_90mm_AP_M318",
@@ -1096,6 +1050,52 @@
     "damage": {
       "armor": "\t320\t",
       "devices": "\t122\t"
+    }
+  },
+  "_25pdr_HE_Mk_1D": {
+    "id": "\t43\t",
+    "userString": "#gb_vehicles:_25pdr_HE_Mk_1D",
+    "icon": "he",
+    "price": "\t83\t",
+    "kind": "HIGH_EXPLOSIVE",
+    "caliber": "87.6",
+    "explosionRadius": "1.39",
+    "isTracer": "\ttrue\t",
+    "effects": "mainHighExplosive",
+    "damage": {
+      "armor": "\t280\t",
+      "devices": "\t115\t"
+    }
+  },
+  "_25pdr_AP_Mk_1T": {
+    "id": "\t44\t",
+    "userString": "#gb_vehicles:_25pdr_AP_Mk_1T",
+    "icon": "ap",
+    "price": "\t83\t",
+    "kind": "ARMOR_PIERCING",
+    "caliber": "87.6",
+    "isTracer": "\ttrue\t",
+    "effects": "mainArmorPiercing",
+    "damage": {
+      "armor": "\t180\t",
+      "devices": "\t115\t"
+    }
+  },
+  "_25pdr_AP_Mk_1T_SC": {
+    "id": "\t84\t",
+    "userString": "#gb_vehicles:_25pdr_AP_Mk_1T_SC",
+    "icon": "ap",
+    "price": {
+      "#text": "\t7\t",
+      "gold": ""
+    },
+    "kind": "ARMOR_PIERCING",
+    "caliber": "87.6",
+    "isTracer": "\ttrue\t",
+    "effects": "mainArmorPiercing",
+    "damage": {
+      "armor": "\t180\t",
+      "devices": "\t115\t"
     }
   },
   "_3.7inch_AP": {
@@ -1367,21 +1367,6 @@
       "devices": "\t165\t"
     }
   },
-  "_120mm_HE_L1A1": {
-    "id": "\t59\t",
-    "userString": "#gb_vehicles:_120mm_HE_L1A1",
-    "icon": "he",
-    "price": "\t1200\t",
-    "kind": "HIGH_EXPLOSIVE",
-    "caliber": "\t120\t",
-    "explosionRadius": "2.42",
-    "isTracer": "\ttrue\t",
-    "effects": "largeHighExplosive",
-    "damage": {
-      "armor": "\t515\t",
-      "devices": "\t165\t"
-    }
-  },
   "_120mm_APDS_L15A4": {
     "id": "\t116\t",
     "userString": "#gb_vehicles:_120mm_APDS_L15A4",
@@ -1410,6 +1395,21 @@
     "effects": "largeAPCR",
     "damage": {
       "armor": "\t400\t",
+      "devices": "\t165\t"
+    }
+  },
+  "_120mm_HE_L1A1": {
+    "id": "\t59\t",
+    "userString": "#gb_vehicles:_120mm_HE_L1A1",
+    "icon": "he",
+    "price": "\t1200\t",
+    "kind": "HIGH_EXPLOSIVE",
+    "caliber": "\t120\t",
+    "explosionRadius": "2.42",
+    "isTracer": "\ttrue\t",
+    "effects": "largeHighExplosive",
+    "damage": {
+      "armor": "\t515\t",
       "devices": "\t165\t"
     }
   },

@@ -947,7 +947,6 @@
     "userString": "#france_vehicles:_105mm_APCR_OFL_E1_fallout",
     "icon": "ap_cr",
     "price": "\t81\t",
-    "notInShop": "\ttrue\t",
     "kind": "ARMOR_PIERCING_CR",
     "caliber": "\t105\t",
     "isTracer": "\ttrue\t",
@@ -965,7 +964,6 @@
       "#text": "\t1\t",
       "gold": ""
     },
-    "notInShop": "\ttrue\t",
     "kind": "HOLLOW_CHARGE",
     "caliber": "\t105\t",
     "isTracer": "\ttrue\t",
@@ -981,7 +979,6 @@
     "userString": "#france_vehicles:_105mm_HE_OE_F1_fallout",
     "icon": "he",
     "price": "\t72\t",
-    "notInShop": "\ttrue\t",
     "kind": "HIGH_EXPLOSIVE",
     "caliber": "\t105\t",
     "explosionRadius": "1.91",
@@ -1301,6 +1298,61 @@
     "effects": "hugeArmorPiercing",
     "damage": {
       "armor": "\t750\t",
+      "devices": "\t210\t"
+    }
+  },
+  "_155mm_HEAT_T267": {
+    "id": "\t79\t",
+    "userString": "#france_vehicles:_155mm_HEAT_T267",
+    "icon": "hc",
+    "price": {
+      "#text": "\t17\t",
+      "gold": ""
+    },
+    "kind": "HOLLOW_CHARGE",
+    "caliber": "\t155\t",
+    "isTracer": "\ttrue\t",
+    "effects": "\thugeHollowCharge\t",
+    "damage": {
+      "armor": "\t750\t",
+      "devices": "\t210\t"
+    },
+    "piercingPowerLossFactorByDistance": "0.05"
+  },
+  "_155mm_HE_T58": {
+    "id": "\t80\t",
+    "userString": "#france_vehicles:_155mm_HE_T58",
+    "icon": "he",
+    "price": "\t1090\t",
+    "kind": "HIGH_EXPLOSIVE",
+    "caliber": "\t155\t",
+    "explosionRadius": "3.78",
+    "isTracer": "\ttrue\t",
+    "effects": "hugeHighExplosive",
+    "damage": {
+      "armor": "\t1100\t",
+      "devices": "\t210\t"
+    }
+  },
+  "_M_107": {
+    "id": "\t77\t",
+    "userString": "#france_vehicles:_M_107",
+    "icon": "he_premium",
+    "price": {
+      "#text": "\t13\t",
+      "gold": ""
+    },
+    "kind": "HIGH_EXPLOSIVE",
+    "caliber": "\t155\t",
+    "explosionRadius": "5.16",
+    "isTracer": "\ttrue\t",
+    "effects": "hugeHighExplosive",
+    "damage": {
+      "armor": "\t950\t",
+      "devices": "\t210\t"
+    }
+  }
+}"\t750\t",
       "devices": "\t210\t"
     }
   },

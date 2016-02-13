@@ -462,20 +462,6 @@
     },
     "piercingPowerLossFactorByDistance": "0.05"
   },
-  "_76mm_AP_M79": {
-    "id": "\t17\t",
-    "userString": "#usa_vehicles:_76mm_AP_M79",
-    "icon": "ap",
-    "price": "\t96\t",
-    "kind": "ARMOR_PIERCING",
-    "caliber": "\t76\t",
-    "isTracer": "\ttrue\t",
-    "effects": "mediumArmorPiercing",
-    "damage": {
-      "armor": "\t115\t",
-      "devices": "\t105\t"
-    }
-  },
   "_76mm_AP_M79_149": {
     "id": "\t121\t",
     "userString": "#usa_vehicles:_76mm_AP_M79_149",
@@ -502,6 +488,20 @@
     "damage": {
       "armor": "\t110\t",
       "devices": "\t100\t"
+    }
+  },
+  "_76mm_AP_M79": {
+    "id": "\t17\t",
+    "userString": "#usa_vehicles:_76mm_AP_M79",
+    "icon": "ap",
+    "price": "\t96\t",
+    "kind": "ARMOR_PIERCING",
+    "caliber": "\t76\t",
+    "isTracer": "\ttrue\t",
+    "effects": "mediumArmorPiercing",
+    "damage": {
+      "armor": "\t115\t",
+      "devices": "\t105\t"
     }
   },
   "_76mm_M79": {
@@ -553,6 +553,21 @@
       "devices": "\t100\t"
     }
   },
+  "_76mm_HE_M42A1": {
+    "id": "\t19\t",
+    "userString": "#usa_vehicles:_76mm_HE_M42A1",
+    "icon": "he",
+    "price": "\t68\t",
+    "kind": "HIGH_EXPLOSIVE",
+    "caliber": "\t76\t",
+    "explosionRadius": "1.09",
+    "isTracer": "\ttrue\t",
+    "effects": "mediumHighExplosive",
+    "damage": {
+      "armor": "\t185\t",
+      "devices": "\t105\t"
+    }
+  },
   "_76mm_HVAP_T4": {
     "id": "\t122\t",
     "userString": "#usa_vehicles:_76mm_HVAP_T4",
@@ -567,21 +582,6 @@
     "effects": "mediumAPCR",
     "damage": {
       "armor": "\t115\t",
-      "devices": "\t105\t"
-    }
-  },
-  "_76mm_HE_M42A1": {
-    "id": "\t19\t",
-    "userString": "#usa_vehicles:_76mm_HE_M42A1",
-    "icon": "he",
-    "price": "\t68\t",
-    "kind": "HIGH_EXPLOSIVE",
-    "caliber": "\t76\t",
-    "explosionRadius": "1.09",
-    "isTracer": "\ttrue\t",
-    "effects": "mediumHighExplosive",
-    "damage": {
-      "armor": "\t185\t",
       "devices": "\t105\t"
     }
   },
@@ -699,20 +699,6 @@
   "_90mm_AP_M77": {
     "id": "\t23\t",
     "userString": "#usa_vehicles:_90mm_AP_M77",
-    "icon": "ap",
-    "price": "\t255\t",
-    "kind": "ARMOR_PIERCING",
-    "caliber": "\t90\t",
-    "isTracer": "\ttrue\t",
-    "effects": "mainArmorPiercing",
-    "damage": {
-      "armor": "\t240\t",
-      "devices": "\t122\t"
-    }
-  },
-  "_90mm_AP_T33": {
-    "id": "\t123\t",
-    "userString": "#usa_vehicles:_90mm_AP_T33",
     "icon": "ap",
     "price": "\t255\t",
     "kind": "ARMOR_PIERCING",
@@ -1200,7 +1186,6 @@
     "userString": "#usa_vehicles:_120mm_HE_Shot_fallout",
     "icon": "he",
     "price": "\t99\t",
-    "notInShop": "\ttrue\t",
     "kind": "HIGH_EXPLOSIVE",
     "caliber": "\t120\t",
     "explosionRadius": "2.42",
@@ -1230,7 +1215,6 @@
     "userString": "#usa_vehicles:_120mm_AP-T_M358_fallout",
     "icon": "ap",
     "price": "\t108\t",
-    "notInShop": "\ttrue\t",
     "kind": "ARMOR_PIERCING",
     "caliber": "\t120\t",
     "isTracer": "\ttrue\t",
@@ -1266,7 +1250,6 @@
       "#text": "\t1\t",
       "gold": ""
     },
-    "notInShop": "\ttrue\t",
     "kind": "HOLLOW_CHARGE",
     "caliber": "\t120\t",
     "isTracer": "\ttrue\t",
@@ -1402,21 +1385,6 @@
       "devices": "\t210\t"
     }
   },
-  "_155mm_HE_M101E1": {
-    "id": "\t87\t",
-    "userString": "#usa_vehicles:_155mm_HE_M101E1",
-    "icon": "he",
-    "price": "\t1120\t",
-    "kind": "HIGH_EXPLOSIVE",
-    "caliber": "\t155\t",
-    "explosionRadius": "3.78",
-    "isTracer": "\ttrue\t",
-    "effects": "hugeHighExplosive",
-    "damage": {
-      "armor": "\t1100\t",
-      "devices": "\t210\t"
-    }
-  },
   "_155mm_HE_M102": {
     "id": "\t36\t",
     "userString": "#usa_vehicles:_155mm_HE_M102",
@@ -1429,6 +1397,21 @@
     "effects": "hugeHighExplosive",
     "damage": {
       "armor": "\t700\t",
+      "devices": "\t210\t"
+    }
+  },
+  "_155mm_HE_M101E1": {
+    "id": "\t87\t",
+    "userString": "#usa_vehicles:_155mm_HE_M101E1",
+    "icon": "he",
+    "price": "\t1120\t",
+    "kind": "HIGH_EXPLOSIVE",
+    "caliber": "\t155\t",
+    "explosionRadius": "3.78",
+    "isTracer": "\ttrue\t",
+    "effects": "hugeHighExplosive",
+    "damage": {
+      "armor": "\t1100\t",
       "devices": "\t210\t"
     }
   },
@@ -1592,6 +1575,25 @@
     "effects": "hugeArmorPiercing",
     "damage": {
       "armor": "\t1800\t",
+      "devices": "\t320\t"
+    }
+  },
+  "_76mm_AP_M79training": {
+    "id": "\t96\t",
+    "userString": "#usa_vehicles:_76mm_AP_M79",
+    "icon": "ap",
+    "price": "\t88\t",
+    "notInShop": "\ttrue\t",
+    "kind": "ARMOR_PIERCING",
+    "caliber": "\t76\t",
+    "isTracer": "\ttrue\t",
+    "effects": "mediumArmorPiercing",
+    "damage": {
+      "armor": "\t115\t",
+      "devices": "\t105\t"
+    }
+  }
+}t1800\t",
       "devices": "\t320\t"
     }
   },

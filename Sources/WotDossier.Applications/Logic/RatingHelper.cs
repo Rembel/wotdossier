@@ -475,9 +475,19 @@ namespace WotDossier.Applications.Logic
         /// </summary>
         /// <param name="eff">The eff.</param>
         /// <returns></returns>
-        public static double Xeff(double eff)
+        public static double Xeff(double x)
         {
-            return eff < 400 ? 0 : Math.Max(Math.Min(eff * (eff * (eff * (eff * (eff * (0.000000000000000045254 * eff - 0.00000000000033131) + 0.00000000094164) - 0.0000013227) + 0.00095664) - 0.2598) + 13.23, 100), 0);
+            return x > 3650
+                ? 100
+                : Math.Max(0, Math.Min(100,
+                    x*(x*(x*(x*(x*(-x*
+                                   0.00000000000000000007656
+                                   + 0.0000000000000014848)
+                                - 0.0000000000099633)
+                             + 0.00000002858)
+                          - 0.00003836)
+                       + 0.0575)
+                    - 0.99));
         }
 
         /// <summary>

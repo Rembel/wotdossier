@@ -189,7 +189,14 @@ private const string REPLAY_DATABLOCK_2 = "datablock_2";
                             //read advanced data block
                             if (readAdvancedData)
                             {
-                                ReadAdvancedDataBlock(stream, replay);
+                                try
+                                {
+                                    ReadAdvancedDataBlock(stream, replay);
+                                }
+                                catch (Exception e)
+                                {
+                                    Console.WriteLine(e);
+                                }
                             }
                             return replay;
                         }
@@ -339,7 +346,11 @@ private const string REPLAY_DATABLOCK_2 = "datablock_2";
             {
                 return new Parser910();
             }
-            return new Parser912();
+            if (version < new Version("0.9.14.0"))
+            {
+                return new Parser912();
+            }
+            return new Parser914();
         }
 
 

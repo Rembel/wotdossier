@@ -3,7 +3,9 @@ using System.Windows;
 using System.Windows.Threading;
 using Common.Logging;
 using TournamentStat.Applications;
+using TournamentStat.Applications.View;
 using TournamentStat.Applications.ViewModel;
+using TournamentStat.Views;
 using WotDossier.Applications;
 using WotDossier.Applications.Logic;
 using WotDossier.Applications.View;
@@ -78,6 +80,7 @@ namespace TournamentStat
                 CompositionContainerFactory.Instance.Register<PlayerServerStatisticViewModel, PlayerServerStatisticViewModel>();
                 CompositionContainerFactory.Instance.Register<ClanViewModel, ClanViewModel>();
                 CompositionContainerFactory.Instance.Register<TankStatisticViewModel, TankStatisticViewModel>();
+                CompositionContainerFactory.Instance.Register<SeriesDataViewModel, SeriesDataViewModel>();
 
                 CompositionContainerFactory.Instance.Register<ReplaysManager, ReplaysManager>();
                 
@@ -92,6 +95,7 @@ namespace TournamentStat
                 CompositionContainerFactory.Instance.Register<IPlayerServerStatisticView, PlayerServerStatisticWindow>();
                 CompositionContainerFactory.Instance.Register<IClanView, ClanWindow>();
                 CompositionContainerFactory.Instance.Register<ITankStatisticView, TankStatisticWindow>();
+                CompositionContainerFactory.Instance.Register<ISeriesDataWindow, SeriesDataWindow>();
 
                 Controller = CompositionContainerFactory.Instance.GetExport<TournamentStatController>();
 

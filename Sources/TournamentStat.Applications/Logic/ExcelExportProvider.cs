@@ -362,7 +362,7 @@ namespace TournamentStat.Applications.Logic
                 excelWorksheet.Cells[row, column++].Value = participant.PlayerName;
 
                 excelWorksheet.Cells[row, column].Style.Font.Color.SetColor(Color.Blue);
-                var link = $"http://worldoftanks.ru/community/accounts/{participant.PlayerId}-{participant.PlayerName}/";
+                var link = $"http://worldoftanks.ru/community/accounts/{participant.AccountId}-{participant.PlayerName}/";
                 excelWorksheet.Cells[row, column].Hyperlink = new ExcelHyperLink(link);
                 excelWorksheet.Cells[row, column++].Value = link;
 

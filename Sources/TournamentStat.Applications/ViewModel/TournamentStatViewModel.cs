@@ -44,6 +44,7 @@ namespace TournamentStat.Applications.ViewModel
         }
 
         public ICommand DeleteSeriesCommand { get; set; }
+        public ICommand AddSeriesDataCommand { get; set; }
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -51,6 +52,16 @@ namespace TournamentStat.Applications.ViewModel
         {
             RowDoubleClickCommand = new DelegateCommand<object>(OnRowDoubleClick);
             DeleteSeriesCommand = new DelegateCommand<object>(OnDelete);
+            AddSeriesDataCommand = new DelegateCommand<object>(OnAddSeriesData);
+        }
+
+        private void OnAddSeriesData(object obj)
+        {
+            var row = ((TankStatisticRowViewModelBase)obj);
+            var viewModel = CompositionContainerFactory.Instance.GetExport<SeriesDataViewModel>();
+            viewModel.Series = row;
+            viewModel.Show();
+            OnPropertyChanged(nameof(Series));
         }
 
         private void OnDelete(object obj)

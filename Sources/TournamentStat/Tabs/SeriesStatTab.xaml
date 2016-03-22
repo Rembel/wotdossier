@@ -11,7 +11,10 @@
              d:DesignHeight="300" d:DesignWidth="300" d:DataContext="{d:DesignInstance Type=viewModel:TournamentStatViewModel, IsDesignTimeCreatable=True}">
     <UserControl.Resources>
         <ContextMenu x:Key="SerieContextMenu">
-            <MenuItem Header="DeleteSeries" InputGestureText="Ctrl+D"
+            <MenuItem Header="Set Series Data" InputGestureText="Ctrl+D"
+                              Command="{Binding Path=DataContext.AddSeriesDataCommand, RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}}" 
+                              CommandParameter="{Binding}"/>
+            <MenuItem Header="Delete Series" InputGestureText="Ctrl+D"
                               Command="{Binding Path=DataContext.DeleteSeriesCommand, RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}}" 
                               CommandParameter="{Binding}"/>
         </ContextMenu>
@@ -36,6 +39,10 @@
                 <!--<DataGridTextColumn Header="{x:Static resources:Resources.Column_Header_Tier}" ElementStyle="{StaticResource CTextBlock}" Binding="{Binding Tier, Converter={x:Static converters:NumberFormatConverter.Default}, ConverterParameter='0.##'}" />-->
                 <DataGridTemplateColumn Header="{x:Static resources:Resources.Column_Header_Icon}" CellStyle="{StaticResource DataGridCellCenterStyle}" CellTemplate="{StaticResource TankIconTemplate}"/>
                 <DataGridTextColumn Header="{x:Static resources:Resources.Column_Header_Tank}" Binding="{Binding Tank}" Width="1*" ElementStyle="{StaticResource RTextBlock}" />
+                <DataGridTextColumn Header="Twitch" Binding="{Binding TwitchUrl}" Width="1*" ElementStyle="{StaticResource RTextBlock}" />
+                <DataGridTextColumn Header="реплеи на ресурсе игрока" Binding="{Binding ReplaysUrlOwner}" Width="1*" ElementStyle="{StaticResource RTextBlock}" />
+                <DataGridTextColumn Header="реплеи на ресурсе организатора" Binding="{Binding ReplaysUrl}" Width="1*" ElementStyle="{StaticResource RTextBlock}" />
+                <DataGridTextColumn Header="Dossier" Binding="{Binding Dossier}" Width="1*" ElementStyle="{StaticResource RTextBlock}" />
                 <!--before-->
                 <DataGridTextColumn Header="{x:Static resources:Resources.Column_Battles_Battles}" Binding="{Binding PreviousStatistic.BattlesCount}" Width="1*" ElementStyle="{StaticResource RTextBlock}" />
                 <DataGridTextColumn Header="{x:Static resources:Resources.Column_Battles_Won}" Binding="{Binding PreviousStatistic.Wins}" Width="1*" ElementStyle="{StaticResource RTextBlock}" />

@@ -48,6 +48,7 @@ namespace TournamentStat.Applications.ViewModel
     public class TournamentPlayer
     {
         public int PlayerId { get; set; }
+        public int AccountId { get; set; }
 
         public string PlayerName { get; set; }
 
@@ -88,5 +89,10 @@ namespace TournamentStat.Applications.ViewModel
         public bool IsFavorite { get; set; }
         public bool IsSelected { get; set; }
         public TankIcon TankIcon { get; set; }
+
+        public string Dossier { get; set; }
+        public string ReplaysUrlOwner { get; set; }
+        public string ReplaysUrl { get; set; }
+        public int BattlesCount { get; set; }
     }
 }

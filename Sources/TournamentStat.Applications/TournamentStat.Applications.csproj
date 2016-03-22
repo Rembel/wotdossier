@@ -88,6 +88,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="TournamentStatController.cs" />
+    <Compile Include="ViewModel\SeriesDataViewModel.cs" />
     <Compile Include="ViewModel\TournamentNominationViewModel.cs" />
     <Compile Include="ViewModel\SettingsViewModel.cs" />
     <Compile Include="ViewModel\TournamentStatSettings.cs" />
@@ -96,6 +97,7 @@
     <Compile Include="ViewModel\TournamentTankFilterViewModel.cs" />
     <Compile Include="ViewModel\TournamentTankResultsViewModel.cs" />
     <Compile Include="View\ISettingsView.cs" />
+    <Compile Include="View\ISeriesDataWindow.cs" />
     <Compile Include="View\IShellView.cs" />
     <Compile Include="View\ITournamentNominationView.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">

@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel;
+using System.Windows;
 using System.Windows.Threading;
 
 namespace WotDossier.Framework.Applications
@@ -40,6 +41,8 @@ namespace WotDossier.Framework.Applications
         /// The dispatcher.
         /// </value>
         Dispatcher Dispatcher { get; }
+
+        WindowState WindowState { get; set; }
 
         /// <summary>
         /// Opens a view and returns without waiting for the newly opened view to close.

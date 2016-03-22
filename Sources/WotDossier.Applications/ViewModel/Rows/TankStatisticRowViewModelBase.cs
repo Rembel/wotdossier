@@ -439,5 +439,10 @@ namespace WotDossier.Applications.ViewModel.Rows
         {
             return Tank;
         }
+
+        public string Dossier { get; set; }
+        public string ReplaysUrlOwner { get; set; }
+        public string ReplaysUrl { get; set; }
+        public string TwitchUrl { get; set; }
     }
 }

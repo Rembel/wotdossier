@@ -143,6 +143,9 @@
     <Compile Include="Tabs\SeriesStatTab.xaml.cs">
       <DependentUpon>SeriesStatTab.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\SeriesDataWindow.xaml.cs">
+      <DependentUpon>SeriesDataWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\SettingsWindow.xaml.cs">
       <DependentUpon>SettingsWindow.xaml</DependentUpon>
     </Compile>
@@ -853,6 +856,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Views\SeriesDataWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\SettingsWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

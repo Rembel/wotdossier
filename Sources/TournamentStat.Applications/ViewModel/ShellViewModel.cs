@@ -168,10 +168,9 @@ namespace TournamentStat.Applications.ViewModel
                             UpdateLocalDatabase(cacheFile, playerEntity);
 
                             if (settings.Players == null ||
-                                !settings.Players.Exists(x => x.PlayerId == playerEntity.AccountId))
+                                !settings.Players.Exists(x => x.AccountId == playerEntity.AccountId))
                             {
                                 var tournamentTanks = new List<TournamentTank>();
-                                string twitchUrl = null;
 
                                 if (settings.Players == null)
                                 {
@@ -180,10 +179,10 @@ namespace TournamentStat.Applications.ViewModel
 
                                 settings.Players.Add(new TournamentPlayer
                                 {
-                                    PlayerId = playerEntity.AccountId,
+                                    PlayerId = playerEntity.Id,
+                                    AccountId = playerEntity.AccountId,
                                     PlayerName = playerEntity.Name,
                                     Tanks = tournamentTanks,
-                                    TwitchUrl = twitchUrl,
                                     StartDate = DateTime.Now
                                 });
                                 SettingsReader.Save(settings);
@@ -219,6 +218,8 @@ namespace TournamentStat.Applications.ViewModel
 
                 foreach (var playerEntity in playerEntities)
                 {
+                    var player = settings.Players.First(x => x.AccountId == playerEntity.AccountId);
+                    
                     var rows = strategy.GetTanksStatistic(playerEntity.Id);
                     List<ITankStatisticRow> tankStatisticRows =
                         rows.Where(x => tankIds.Contains(x.TankUniqueId)).SelectMany(x => x.GetAll()).ToList();
@@ -228,10 +229,16 @@ namespace TournamentStat.Applications.ViewModel
 
                     foreach (var tankSeries in groupByTankId)
                     {
-                        foreach (var series in tankSeries)
+                        foreach (TankStatisticRowViewModelBase series in tankSeries)
                         {
                             series.PlayerId = playerEntity.Id;
                             series.PlayerName = playerEntity.Name;
+                            series.TwitchUrl = player.TwitchUrl;
+
+                            var tournamentTank = player.Tanks.FirstOrDefault(x => x.BattlesCount == series.BattlesCount);
+                            series.Dossier = tournamentTank?.Dossier;
+                            series.ReplaysUrl = tournamentTank?.ReplaysUrl;
+                            series.ReplaysUrlOwner = tournamentTank?.ReplaysUrlOwner;
 
                             //find series
                             var endSeries = tankSeries.FirstOrDefault(
@@ -243,11 +250,14 @@ namespace TournamentStat.Applications.ViewModel
                         }
                     }
 
-                    allSeries.AddRange(
-                        tankStatisticRows.Where(x => x.BattlesCountDelta >= 100 && x.BattlesCountDelta < 105));
+                    var statisticRows = tankStatisticRows.Where(x => x.BattlesCountDelta >= 100 && x.BattlesCountDelta < 105);
+
+                    
+                    allSeries.AddRange(statisticRows);
                 }
 
                 TournamentStatistic.Series = allSeries;
+
                 TournamentStatistic.TournamentTankResults =
                     new TournamentTankResultsViewModel(settings.TournamentNominations, allSeries);
             }

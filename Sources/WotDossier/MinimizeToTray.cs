@@ -30,6 +30,7 @@ namespace WotDossier
         private class MinimizeToTrayInstance
         {
             private readonly Window _window;
+            private WindowState _windowState;
             private NotifyIcon _notifyIcon;
             private bool _balloonShown;
 
@@ -78,6 +79,10 @@ namespace WotDossier
                 var minimized = (_window.WindowState == WindowState.Minimized);
                 _window.ShowInTaskbar = !minimized;
                 _notifyIcon.Visible = minimized;
+                if (_window.WindowState != WindowState.Minimized)
+                {
+                    _windowState = _window.WindowState;
+                }
                 if (minimized && !_balloonShown)
                 {
                     // If this is the first time minimizing to the tray, show the user what happened
@@ -94,7 +99,7 @@ namespace WotDossier
             private void HandleNotifyIconOrBalloonClicked(object sender, EventArgs e)
             {
                 // Restore the Window
-                _window.WindowState = WindowState.Maximized;
+                _window.WindowState = _windowState;
 
                 // Get the window to the front.
                 _window.Topmost = true;

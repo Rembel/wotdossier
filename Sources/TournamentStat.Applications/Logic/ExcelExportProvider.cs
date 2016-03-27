@@ -269,8 +269,8 @@ namespace TournamentStat.Applications.Logic
                 excelWorksheet.Cells[row, column].Style.Fill.BackgroundColor.SetColor(GetWN8Color(tankStatistic.WN8RatingForPeriod));
                 excelWorksheet.Cells[row, column++].Value = tankStatistic.WN8RatingForPeriod;
 
-                excelWorksheet.Cells[row, column++].Value = null;//"реплеи на ресурсе игрока";
-                excelWorksheet.Cells[row, column++].Value = null;//"реплеи на ресурсе организатора";
+                excelWorksheet.Cells[row, column++].Value = tankStatistic.ReplaysUrlOwner;//"реплеи на ресурсе игрока";
+                excelWorksheet.Cells[row, column++].Value = tankStatistic.ReplaysUrl;//"реплеи на ресурсе организатора";
                 excelWorksheet.Cells[row, column++].Value = null;//"патч";
 
                 excelWorksheet.Cells[row, column++].Value = tankStatistic.PreviousStatistic.BattlesCount;

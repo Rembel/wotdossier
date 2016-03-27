@@ -855,6 +855,14 @@ namespace WotDossier.Applications.ViewModel
 
         private void ViewClosing(CancelEventArgs e)
         {
+            AppSettings appSettings = SettingsReader.Get();
+            var windowState = ViewTyped.WindowState;
+            if (windowState != WindowState.Minimized)
+            {
+                appSettings.WindowState = (int)windowState;
+            }
+            SettingsReader.Save(appSettings);
+
             if (!e.Cancel)
             {
                 e.Cancel = !IsCloseAllowed();
@@ -867,6 +875,7 @@ namespace WotDossier.Applications.ViewModel
         public virtual void Show()
         {
             ViewTyped.Loaded += OnWindowLoaded;
+            ViewTyped.WindowState = (WindowState) SettingsReader.Get().WindowState;
             ViewTyped.Show();
 
             Dispatcher.CurrentDispatcher.BeginInvoke(DispatcherPriority.Send, (SendOrPostCallback)delegate

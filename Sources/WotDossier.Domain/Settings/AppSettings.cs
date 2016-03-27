@@ -135,5 +135,6 @@ namespace WotDossier.Domain
 
         public String ColumnInfo { get; set; }
         public string DossierCachePath { get; set; }
+        public int WindowState { get; set; }
     }
 }

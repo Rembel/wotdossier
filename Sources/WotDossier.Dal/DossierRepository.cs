@@ -268,6 +268,7 @@ namespace WotDossier.Dal
                         tankEntity.Name = tank.Common.tanktitle;
                         tankEntity.TankType = tank.Common.type;
                         tankEntity.Tier = tank.Common.tier;
+                        tankEntity.UniqueId = tank.UniqueId();
                         _dataProvider.Save(tankEntity);
 
                         T statisticEntity = new T();
@@ -367,6 +368,23 @@ namespace WotDossier.Dal
             TankEntity tankAlias = null;
             IList<T> tankStatisticEntities = _dataProvider.QueryOver<T>()
                 .JoinAlias(x => x.TankIdObject, () => tankAlias).Where(x => tankAlias.PlayerId == playerId && x.Rev > rev).List<T>();
+            _dataProvider.CloseSession();
+            return tankStatisticEntities;
+        }
+
+        /// <summary>
+        /// Gets the tanks statistic.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="playerId">The player identifier.</param>
+        /// <param name="tanksUniqueIds"></param>
+        /// <returns></returns>
+        public IEnumerable<T> GetTanksStatistic<T>(int playerId, List<int> tanksUniqueIds) where T : TankStatisticEntityBase
+        {
+            _dataProvider.OpenSession();
+            TankEntity tankAlias = null;
+            IList<T> tankStatisticEntities = _dataProvider.QueryOver<T>()
+                .JoinAlias(x => x.TankIdObject, () => tankAlias).Where(x => tankAlias.PlayerId == playerId && tankAlias.UniqueId.IsIn(tanksUniqueIds)).List<T>();
             _dataProvider.CloseSession();
             return tankStatisticEntities;
         }

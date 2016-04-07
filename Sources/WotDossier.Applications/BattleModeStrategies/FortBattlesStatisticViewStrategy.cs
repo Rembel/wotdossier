@@ -117,6 +117,7 @@ namespace WotDossier.Applications.BattleModeStrategies
                         Name = x.Common.tanktitle,
                         TankType = x.Common.type,
                         Tier = x.Common.tier,
+                        UniqueId = x.UniqueId()
                     }
                 }).ToList();
             

@@ -2,23 +2,18 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
-using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Windows;
 using System.Windows.Input;
-using OfficeOpenXml;
-using OfficeOpenXml.Style;
 using Ookii.Dialogs.Wpf;
 using TournamentStat.Applications.Logic;
 using TournamentStat.Applications.View;
 using WotDossier.Applications;
-using WotDossier.Applications.BattleModeStrategies;
 using WotDossier.Applications.ViewModel.Rows;
 using WotDossier.Common;
 using WotDossier.Dal;
 using WotDossier.Domain;
-using WotDossier.Domain.Dossier.AppSpot;
 using WotDossier.Domain.Entities;
 using WotDossier.Domain.Server;
 using WotDossier.Framework;
@@ -26,6 +21,7 @@ using WotDossier.Framework.Applications;
 using WotDossier.Framework.EventAggregator;
 using WotDossier.Framework.Forms.Commands;
 using WotDossier.Resources;
+using TournamentStat.Applications.BattleModeStrategies;
 
 namespace TournamentStat.Applications.ViewModel
 {
@@ -211,8 +207,7 @@ namespace TournamentStat.Applications.ViewModel
                     settings.TournamentNominations.SelectMany(x => x.TournamentTanks.Select(t => t.TankUniqueId))
                         .ToList();
 
-                StatisticViewStrategyBase strategy = StatisticViewStrategyManager.Get(BattleMode.RandomCompany,
-                    _dossierRepository);
+                BattleModeStrategies.StatisticViewStrategyBase strategy = new RandomStatisticViewStrategy(_dossierRepository);
 
                 List<ITankStatisticRow> allSeries = new List<ITankStatisticRow>();
 
@@ -220,7 +215,7 @@ namespace TournamentStat.Applications.ViewModel
                 {
                     var player = settings.Players.First(x => x.AccountId == playerEntity.AccountId);
                     
-                    var rows = strategy.GetTanksStatistic(playerEntity.Id);
+                    var rows = strategy.GetTanksStatistic(playerEntity.Id, settings.TournamentNominations.SelectMany(x => x.TournamentTanks));
                     List<ITankStatisticRow> tankStatisticRows =
                         rows.Where(x => tankIds.Contains(x.TankUniqueId)).SelectMany(x => x.GetAll()).ToList();
 
@@ -269,7 +264,7 @@ namespace TournamentStat.Applications.ViewModel
             string jsonFile = CacheFileHelper.BinaryCacheToJson(cacheFile);
             var tanksCache = CacheFileHelper.ReadTanksCache(jsonFile);
 
-            StatisticViewStrategyBase strategy = StatisticViewStrategyManager.Get(BattleMode.RandomCompany, _dossierRepository);
+            StatisticViewStrategyBase strategy = new RandomStatisticViewStrategy(_dossierRepository);
 
             strategy.UpdatePlayerStatistic(player.AccountId, tanksCache, null);
 

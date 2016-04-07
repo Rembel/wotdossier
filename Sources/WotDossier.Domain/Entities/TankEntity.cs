@@ -62,6 +62,12 @@ namespace WotDossier.Domain.Entities
         public virtual Guid PlayerUId { get; set; }
 
         /// <summary>
+        /// Gets or sets the rev.
+        /// </summary>
+        [DataMember]
+        public virtual int UniqueId { get; set; }
+
+        /// <summary>
         /// Gets/Sets the field "IsFavorite".
         /// </summary>
         [DataMember]

@@ -24,6 +24,7 @@ namespace WotDossier.Dal.Mappings
             Map(v => v.PlayerId).Insert();
             Map(v => v.PlayerUId);
             Map(v => v.Rev);
+            Map(v => v.UniqueId);
 		
 			References(v => v.PlayerIdObject).Column(Column(v => v.PlayerId)).ReadOnly();
 

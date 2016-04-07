@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using Microsoft.VisualBasic.FileIO;
 
 namespace WotDossier.Applications.ViewModel.Replay
 {
@@ -71,7 +72,8 @@ namespace WotDossier.Applications.ViewModel.Replay
         {
             if (!string.IsNullOrEmpty(PhisicalPath) && File.Exists(PhisicalPath))
             {
-                NativeMethods.DeleteFileOperation(PhisicalPath);
+                FileSystem.DeleteFile(PhisicalPath, UIOption.OnlyErrorDialogs, RecycleOption.SendToRecycleBin);
+                //NativeMethods.DeleteFileOperation(PhisicalPath);
             }
         }
 

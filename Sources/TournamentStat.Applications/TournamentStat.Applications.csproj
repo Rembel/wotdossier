@@ -71,6 +71,8 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BattleModeStrategies\RandomStatisticViewStrategy.cs" />
+    <Compile Include="BattleModeStrategies\StatisticViewStrategyBase.cs" />
     <Compile Include="Logic\ExcelExportProvider.cs" />
     <Compile Include="Logic\NominationHelper.cs" />
     <Compile Include="Properties\Annotations.cs" />

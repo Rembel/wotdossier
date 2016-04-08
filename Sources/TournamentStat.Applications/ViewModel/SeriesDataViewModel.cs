@@ -31,12 +31,6 @@ namespace TournamentStat.Applications.ViewModel
             set { Series.ReplaysUrl = value; }
         }
 
-        public string TwitchUrl
-        {
-            get { return Series.TwitchUrl; }
-            set { Series.TwitchUrl = value; }
-        }
-
         /// <summary>
         /// Initializes a new instance of the <see cref="ViewModel&lt;TView&gt;" /> class and
         /// attaches itself as <c>DataContext</c> to the view.
@@ -66,8 +60,6 @@ namespace TournamentStat.Applications.ViewModel
             tournamentSerie.Dossier = Series.Dossier;
             tournamentSerie.ReplaysUrl = Series.ReplaysUrl;
             tournamentSerie.ReplaysUrlOwner = Series.ReplaysUrlOwner;
-
-            player.TwitchUrl = Series.TwitchUrl ?? player.TwitchUrl;
 
             SettingsReader.Save(settings);
 

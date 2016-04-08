@@ -1,6 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Linq;
+using System.Runtime.CompilerServices;
 using OfficeOpenXml;
+using TournamentStat.Applications.Annotations;
 using WotDossier.Domain;
 using WotDossier.Domain.Interfaces;
 using WotDossier.Domain.Settings;
@@ -45,19 +49,53 @@ namespace TournamentStat.Applications.ViewModel
         WinPercent
     }
 
-    public class TournamentPlayer
+    public class TournamentPlayer : INotifyPropertyChanged
     {
         public int PlayerId { get; set; }
         public int AccountId { get; set; }
 
         public string PlayerName { get; set; }
+        private string _mods;
 
-        public string TwitchUrl { get; set; }
+        public string Mods
+        {
+            get { return _mods; }
+            set
+            {
+                _mods = value;
+                OnPropertyChanged(nameof(Mods));
+            }
+        }
+
+        private string _twitchUrl;
+
+        public string TwitchUrl
+        {
+            get { return _twitchUrl; }
+            set
+            {
+                _twitchUrl = value;
+                OnPropertyChanged(nameof(TwitchUrl));
+            }
+        }
 
         public List<TournamentTank> Tanks { get; set; }
+
+        public string TanksList
+        {
+            get { return string.Join(", ", Tanks.Select(x => x.Tank)); }
+        }
+
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
         public string Modes { get; set; }
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        [NotifyPropertyChangedInvocator]
+        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
     }
 
     public class TournamentTank : ITankFilterable

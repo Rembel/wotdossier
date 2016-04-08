@@ -1,4 +1,5 @@
 ﻿using System.Windows;
+using System.Windows.Input;
 
 namespace TournamentStat.Views
 {
@@ -11,6 +12,15 @@ namespace TournamentStat.Views
         {
             InitializeComponent();
             Owner = Application.Current.MainWindow;
+            KeyDown += Window_KeyDown;
+        }
+
+        private void Window_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Escape)
+            {
+                Close();
+            }
         }
     }
 }

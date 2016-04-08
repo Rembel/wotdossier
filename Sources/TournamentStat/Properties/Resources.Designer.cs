@@ -61,11 +61,47 @@ namespace TournamentStat.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Delete Nomination.
+        /// </summary>
+        public static string AddNomination_DeleteNomination {
+            get {
+                return ResourceManager.GetString("AddNomination_DeleteNomination", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Edit Nomination.
         /// </summary>
         public static string AddNomination_EditNomination {
             get {
                 return ResourceManager.GetString("AddNomination_EditNomination", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Mods.
+        /// </summary>
+        public static string Column_Mods {
+            get {
+                return ResourceManager.GetString("Column_Mods", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tanks.
+        /// </summary>
+        public static string Column_Tanks {
+            get {
+                return ResourceManager.GetString("Column_Tanks", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Mods.
+        /// </summary>
+        public static string Label_Mods {
+            get {
+                return ResourceManager.GetString("Label_Mods", resourceCulture);
             }
         }
         
@@ -84,6 +120,24 @@ namespace TournamentStat.Properties {
         public static string Label_WinCriterion {
             get {
                 return ResourceManager.GetString("Label_WinCriterion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Delete Series.
+        /// </summary>
+        public static string MenuItem_DeleteSeries {
+            get {
+                return ResourceManager.GetString("MenuItem_DeleteSeries", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edit Series Data.
+        /// </summary>
+        public static string MenuItem_EditSeries {
+            get {
+                return ResourceManager.GetString("MenuItem_EditSeries", resourceCulture);
             }
         }
         
@@ -120,6 +174,15 @@ namespace TournamentStat.Properties {
         public static string TabHeader_Nominations {
             get {
                 return ResourceManager.GetString("TabHeader_Nominations", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Participants.
+        /// </summary>
+        public static string TabHeader_Participants {
+            get {
+                return ResourceManager.GetString("TabHeader_Participants", resourceCulture);
             }
         }
         

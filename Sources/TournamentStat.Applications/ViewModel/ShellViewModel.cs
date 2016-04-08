@@ -57,7 +57,7 @@ namespace TournamentStat.Applications.ViewModel
                 h => view.Closing += new CancelEventHandler(h), h => view.Closing -= new CancelEventHandler(h), this, (s, e) => s.ViewClosing(e));
 
             TournamentStatistic = new TournamentStatViewModel();
-            
+
             //ProgressView = new ProgressControlViewModel();
 
             //ChartView = new PlayerChartsViewModel();
@@ -213,45 +213,50 @@ namespace TournamentStat.Applications.ViewModel
 
                 foreach (var playerEntity in playerEntities)
                 {
-                    var player = settings.Players.First(x => x.AccountId == playerEntity.AccountId);
-                    
-                    var rows = strategy.GetTanksStatistic(playerEntity.Id, settings.TournamentNominations.SelectMany(x => x.TournamentTanks));
-                    List<ITankStatisticRow> tankStatisticRows =
-                        rows.Where(x => tankIds.Contains(x.TankUniqueId)).SelectMany(x => x.GetAll()).ToList();
+                    var player = settings.Players.FirstOrDefault(x => x.AccountId == playerEntity.AccountId);
 
-                    //if several series on one tank
-                    var groupByTankId = tankStatisticRows.GroupBy(x => x.TankUniqueId);
-
-                    foreach (var tankSeries in groupByTankId)
+                    if (player != null)
                     {
-                        foreach (TankStatisticRowViewModelBase series in tankSeries)
+                        var tankStatisticRows = strategy.GetTanksStatistic(playerEntity.Id,
+                            settings.TournamentNominations.SelectMany(x => x.TournamentTanks));
+
+                        //if several series on one tank
+                        var groupByTankId = tankStatisticRows.GroupBy(x => x.TankUniqueId);
+
+                        foreach (var tankSeries in groupByTankId)
                         {
-                            series.PlayerId = playerEntity.Id;
-                            series.PlayerName = playerEntity.Name;
-                            series.TwitchUrl = player.TwitchUrl;
+                            foreach (TankStatisticRowViewModelBase series in tankSeries)
+                            {
+                                series.PlayerId = playerEntity.Id;
+                                series.PlayerName = playerEntity.Name;
 
-                            var tournamentTank = player.Tanks.FirstOrDefault(x => x.BattlesCount == series.BattlesCount);
-                            series.Dossier = tournamentTank?.Dossier;
-                            series.ReplaysUrl = tournamentTank?.ReplaysUrl;
-                            series.ReplaysUrlOwner = tournamentTank?.ReplaysUrlOwner;
+                                var tournamentTank =
+                                    player.Tanks.FirstOrDefault(x => x.BattlesCount == series.BattlesCount);
+                                series.Dossier = tournamentTank?.Dossier;
+                                series.ReplaysUrl = tournamentTank?.ReplaysUrl;
+                                series.ReplaysUrlOwner = tournamentTank?.ReplaysUrlOwner;
 
-                            //find series
-                            var endSeries = tankSeries.FirstOrDefault(
-                                x =>
-                                    x.BattlesCount - series.BattlesCount >= 100 &&
-                                    x.BattlesCount - series.BattlesCount < 105);
-                            //set series start
-                            endSeries?.SetPreviousStatistic(series);
+                                //find series
+                                var endSeries = tankSeries.FirstOrDefault(
+                                    x =>
+                                        x.BattlesCount - series.BattlesCount >= 100 &&
+                                        x.BattlesCount - series.BattlesCount < 105);
+                                //set series start
+                                endSeries?.SetPreviousStatistic(series);
+                            }
                         }
+
+                        var statisticRows =
+                            tankStatisticRows.Where(x => x.BattlesCountDelta >= 100 && x.BattlesCountDelta < 105);
+
+
+                        allSeries.AddRange(statisticRows);
                     }
-
-                    var statisticRows = tankStatisticRows.Where(x => x.BattlesCountDelta >= 100 && x.BattlesCountDelta < 105);
-
-                    
-                    allSeries.AddRange(statisticRows);
                 }
 
                 TournamentStatistic.Series = allSeries;
+
+                TournamentStatistic.Participants = new ParticipantsViewModel(settings.Players);
 
                 TournamentStatistic.TournamentTankResults =
                     new TournamentTankResultsViewModel(settings.TournamentNominations, allSeries);

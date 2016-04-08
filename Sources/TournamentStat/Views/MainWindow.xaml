@@ -25,11 +25,15 @@
             <MenuItem Header="{x:Static resources:Resources.MenuItem_Header_About}" Command="{Binding AboutCommand}" />
         </Menu>
         <TabControl Grid.Row="1" Name="tcMain" Width="Auto" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-            <!--Replays-->
+            <!--participants-->
+            <TabItem TabIndex="1" Header="{x:Static Properties:Resources.TabHeader_Participants}">
+                <tabs:ParticipantsTab HorizontalAlignment="Stretch" DataContext="{Binding TournamentStatistic.Participants}" />
+            </TabItem>
+            <!--Statistic-->
             <TabItem TabIndex="1" Header="{x:Static Properties:Resources.TabHeader_Stat}">
                 <tabs:SeriesStatTab HorizontalAlignment="Stretch" DataContext="{Binding TournamentStatistic}" />
             </TabItem>
-            <!--Statistic-->
+            <!--Nominations-->
             <TabItem TabIndex="2" Header="{x:Static Properties:Resources.TabHeader_Nominations}">
                 <tabs:TankStatTab  DataContext="{Binding TournamentStatistic.TournamentTankResults}"/>
             </TabItem>

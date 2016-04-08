@@ -65,6 +65,7 @@ namespace TournamentStat.Applications.Logic
                 || nomination.Criterion == TournamentCriterion.DamageWithAssist)
             {
                 excelWorksheet.Cells[1, column++].Value = "урон";
+                excelWorksheet.Cells[1, column++].Value = "ПП";
             }
             if (nomination.Criterion == TournamentCriterion.DamageWithArmor)
             {
@@ -134,7 +135,9 @@ namespace TournamentStat.Applications.Logic
                     excelWorksheet.Cells[row, column++].Value = tankStatistic.AvgDamageDealtForPeriod +
                                                                 tankStatistic.AvgDamageAssistedForPeriod;
                 }
-                if (nomination.Criterion == TournamentCriterion.WinPercent)
+                if (nomination.Criterion == TournamentCriterion.WinPercent || nomination.Criterion == TournamentCriterion.Damage
+                    || nomination.Criterion == TournamentCriterion.DamageWithArmor
+                    || nomination.Criterion == TournamentCriterion.DamageWithAssist)
                 {
                     excelWorksheet.Cells[row, column].Style.Fill.PatternType = ExcelFillStyle.Solid;
                     excelWorksheet.Cells[row, column].Style.Fill.BackgroundColor.SetColor(Color.Green);

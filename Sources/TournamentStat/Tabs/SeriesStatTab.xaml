@@ -7,16 +7,17 @@
              xmlns:converters="clr-namespace:WotDossier.Converters"
              xmlns:dataGrid="clr-namespace:WotDossier.Framework.Controls.DataGrid;assembly=WotDossier.Framework"
              xmlns:viewModel="clr-namespace:TournamentStat.Applications.ViewModel;assembly=TournamentStat.Applications"
+             xmlns:Properties="clr-namespace:TournamentStat.Properties"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300" d:DataContext="{d:DesignInstance Type=viewModel:TournamentStatViewModel, IsDesignTimeCreatable=True}">
     <UserControl.Resources>
         <ContextMenu x:Key="SerieContextMenu">
-            <MenuItem Header="Set Series Data" InputGestureText="Ctrl+D"
+            <MenuItem Header="{x:Static Properties:Resources.MenuItem_EditSeries}" InputGestureText="Ctrl+D"
                               Command="{Binding Path=DataContext.AddSeriesDataCommand, RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}}" 
                               CommandParameter="{Binding}"/>
-            <MenuItem Header="Delete Series" InputGestureText="Ctrl+D"
+            <!--<MenuItem Header="{x:Static Properties:Resources.MenuItem_DeleteSeries}" InputGestureText="Ctrl+D"
                               Command="{Binding Path=DataContext.DeleteSeriesCommand, RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}}" 
-                              CommandParameter="{Binding}"/>
+                              CommandParameter="{Binding}"/>-->
         </ContextMenu>
         <Style x:Key="DataRowStyle" TargetType="{x:Type DataGridRow}" BasedOn="{StaticResource DataGridRowStyle}">
             <Setter Property="ContextMenu" Value="{StaticResource SerieContextMenu}" />
@@ -39,7 +40,6 @@
                 <!--<DataGridTextColumn Header="{x:Static resources:Resources.Column_Header_Tier}" ElementStyle="{StaticResource CTextBlock}" Binding="{Binding Tier, Converter={x:Static converters:NumberFormatConverter.Default}, ConverterParameter='0.##'}" />-->
                 <DataGridTemplateColumn Header="{x:Static resources:Resources.Column_Header_Icon}" CellStyle="{StaticResource DataGridCellCenterStyle}" CellTemplate="{StaticResource TankIconTemplate}"/>
                 <DataGridTextColumn Header="{x:Static resources:Resources.Column_Header_Tank}" Binding="{Binding Tank}" Width="1*" ElementStyle="{StaticResource RTextBlock}" />
-                <DataGridTextColumn Header="Twitch" Binding="{Binding TwitchUrl}" Width="1*" ElementStyle="{StaticResource RTextBlock}" />
                 <DataGridTextColumn Header="реплеи на ресурсе игрока" Binding="{Binding ReplaysUrlOwner}" Width="1*" ElementStyle="{StaticResource RTextBlock}" />
                 <DataGridTextColumn Header="реплеи на ресурсе организатора" Binding="{Binding ReplaysUrl}" Width="1*" ElementStyle="{StaticResource RTextBlock}" />
                 <DataGridTextColumn Header="Dossier" Binding="{Binding Dossier}" Width="1*" ElementStyle="{StaticResource RTextBlock}" />

@@ -1,0 +1,41 @@
+﻿<UserControl x:Class="TournamentStat.Tabs.ParticipantsTab"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:resources="clr-namespace:WotDossier.Resources;assembly=WotDossier.Resources"
+             xmlns:dataGrid="clr-namespace:WotDossier.Framework.Controls.DataGrid;assembly=WotDossier.Framework"
+             xmlns:viewModel="clr-namespace:TournamentStat.Applications.ViewModel;assembly=TournamentStat.Applications"
+             xmlns:Properties="clr-namespace:TournamentStat.Properties"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300" d:DataContext="{d:DesignInstance Type=viewModel:ParticipantsViewModel, IsDesignTimeCreatable=True}">
+    <UserControl.Resources>
+        <ContextMenu x:Key="SerieContextMenu">
+            <!--<MenuItem Header="Edit Player" InputGestureText="Ctrl+D"
+                              Command="{Binding Path=DataContext.EditPlayerDataCommand, RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}}" 
+                              CommandParameter="{Binding}"/>-->
+        </ContextMenu>
+        <Style x:Key="DataRowStyle" TargetType="{x:Type DataGridRow}" BasedOn="{StaticResource DataGridRowStyle}">
+            <Setter Property="ContextMenu" Value="{StaticResource SerieContextMenu}" />
+        </Style>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <dataGrid:FooterDataGrid RowStyle="{StaticResource DataRowStyle}" HorizontalAlignment="Stretch" Grid.Row="1" ItemsSource="{Binding Players}" VerticalAlignment="Stretch" Name="dgBattles" IsReadOnly="True" 
+                  AutoGenerateColumns="False" Style="{StaticResource TankDataGridStyle}">
+            <dataGrid:FooterDataGrid.InputBindings>
+                <KeyBinding Command="{Binding Path=RowDoubleClickCommand}" 
+                            Key="Enter" CommandParameter="{Binding Path=SelectedItem, RelativeSource={RelativeSource FindAncestor, AncestorType=DataGrid}}"/>
+            </dataGrid:FooterDataGrid.InputBindings>
+            <dataGrid:FooterDataGrid.Columns>
+                <DataGridTextColumn Header="{x:Static resources:Resources.Column_Replay_PlayerName}" Binding="{Binding PlayerName}" Width="Auto" ElementStyle="{StaticResource RTextBlock}" />
+                <DataGridTextColumn Header="Twitch" Binding="{Binding TwitchUrl}" Width="1*" ElementStyle="{StaticResource RTextBlock}" />
+                <DataGridTextColumn Header="{x:Static Properties:Resources.Column_Mods}" Binding="{Binding Mods}" Width="1*" ElementStyle="{StaticResource RTextBlock}" />
+                <DataGridTextColumn Header="{x:Static Properties:Resources.Column_Tanks}" Binding="{Binding TanksList}" Width="1*" ElementStyle="{StaticResource LTextBlock}" />
+            </dataGrid:FooterDataGrid.Columns>
+        </dataGrid:FooterDataGrid>
+    </Grid>
+</UserControl>

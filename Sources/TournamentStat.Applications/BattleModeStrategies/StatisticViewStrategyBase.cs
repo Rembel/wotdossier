@@ -126,13 +126,13 @@ namespace TournamentStat.Applications.BattleModeStrategies
             var playerEntity = DossierRepository.GetPlayerById(playerId);
             IEnumerable<T> entities = DossierRepository.GetTanksStatistic<T>(playerId, tanks.Select(x => x.TankUniqueId).ToList());
 
-            return entities.GroupBy(x => x.TankId).Select(x =>
+            return entities.Select(x =>
             {
                 var row = ToTankStatisticRow(x, Predicate);
                 row.PlayerId = playerId;
                 row.PlayerName = playerEntity.Name;
                 return row;
-            }).OrderByDescending(x => x.Tier).ThenBy(x => x.Tank).Where(x => x.BattlesCount > 0).ToList();
+            }).OrderByDescending(x => x.Tier).ThenBy(x => x.Tank).ToList();
         }
 
         /// <summary>
@@ -168,38 +168,13 @@ namespace TournamentStat.Applications.BattleModeStrategies
         /// <param name="groupedEntities">The tank statistic entities grouped by tankId.</param>
         /// <param name="predicate">Predicate to get tank statistic</param>
         /// <returns></returns>
-        protected ITankStatisticRow ToTankStatisticRow(IGrouping<int, TankStatisticEntityBase> groupedEntities, Func<TankJson, StatisticJson> predicate)
+        protected ITankStatisticRow ToTankStatisticRow(TankStatisticEntityBase lastStatisticEntity, Func<TankJson, StatisticJson> predicate)
         {
-            var lastStatisticEntity = groupedEntities.OrderByDescending(x => x.BattlesCount).First();
-            List<TankStatisticEntityBase> oldStatisticEntities = groupedEntities.Where(x => x.BattlesCount != lastStatisticEntity.BattlesCount).ToList();
 
             TankJson lastStatistic = UnZipObject(lastStatisticEntity.Raw);
-            var model = ToTankStatisticRow(lastStatistic, ToStatisticSlices(oldStatisticEntities));
-            model.IsFavorite = groupedEntities.First().TankIdObject.IsFavorite;
+            var model = ToTankStatisticRow(lastStatistic, new List<StatisticSlice>());
             return model;
         }
-
-        private List<StatisticSlice> ToStatisticSlices(List<TankStatisticEntityBase> slices)
-        {
-            var statisticSlices = slices.Select(
-                delegate(TankStatisticEntityBase x)
-                {
-                    return new StatisticSlice(x.Updated,
-                        new Lazy<PeriodStatisticViewModel>(
-                            () =>
-                                (PeriodStatisticViewModel)
-                                    ToTankStatisticRow(UnZipObject(x.Raw), new List<StatisticSlice>())));
-
-                }).ToList();
-
-            if (!statisticSlices.Any())
-            {
-                statisticSlices.Add(new StatisticSlice(DateTime.MinValue, (PeriodStatisticViewModel)ToTankStatisticRow( TankJson.Initial)));
-            }
-
-            return statisticSlices;
-        }
-
 
         /// <summary>
         /// Gets the master tanker list.

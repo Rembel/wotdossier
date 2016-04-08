@@ -11,6 +11,8 @@
                       Command="{Binding Path=AddNominationCommand}" />
             <MenuItem Header="{x:Static Properties:Resources.AddNomination_EditNomination}" DataContext="{Binding PlacementTarget.DataContext, RelativeSource={RelativeSource AncestorType=ContextMenu}}"
                       Command="{Binding Path=EditNominationCommand}" CommandParameter="{Binding SelectedNomination}"/>
+            <MenuItem Header="{x:Static Properties:Resources.AddNomination_DeleteNomination}" DataContext="{Binding PlacementTarget.DataContext, RelativeSource={RelativeSource AncestorType=ContextMenu}}"
+                      Command="{Binding Path=DeleteNominationCommand}" CommandParameter="{Binding SelectedNomination}"/>
         </ContextMenu>
     </Window.Resources>
     <Grid>
@@ -41,9 +43,9 @@
         <ComboBox Margin="6 3 6 3" Grid.Row="4" Grid.Column="1" HorizontalAlignment="Stretch" ItemsSource="{Binding Themes}" DisplayMemberPath="Value" SelectedValuePath="Id" SelectedValue="{Binding Theme}"/>
         <CheckBox Margin="6 3 6 3" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" Content="{x:Static resources:Resources.Settings_ShowEntendedReplaysData}" IsChecked="{Binding ShowExtendedReplaysData}"/>
         <TextBlock Margin="6 3 6 3" Grid.Row="7" Grid.Column="0" Text="{x:Static Properties:Resources.Settings_Nominations}" VerticalAlignment="Center"/>
-        <ListBox Margin="6 3 6 3" Grid.Row="7" Grid.Column="1" HorizontalAlignment="Stretch" ItemsSource="{Binding TournamentNominations}" VerticalAlignment="Stretch"
-                  ContextMenu="{StaticResource NominationContextMenu}" DisplayMemberPath="Nomination" SelectedItem="{Binding SelectedNomination}">
-        </ListBox>
+        <ListView Margin="6 3 6 3" Grid.Row="7" Grid.Column="1" HorizontalAlignment="Stretch" ItemsSource="{Binding TournamentNominations, UpdateSourceTrigger=PropertyChanged}" 
+                  VerticalAlignment="Stretch" ContextMenu="{StaticResource NominationContextMenu}" DisplayMemberPath="Nomination" SelectedItem="{Binding SelectedNomination}">
+        </ListView>
         <Button Margin="6 3 6 3" Grid.Row="10" Grid.Column="1" HorizontalAlignment="Right" Content="{x:Static resources:Resources.Settings_Save}" Command="{Binding SaveCommand}" ></Button>
     </Grid>
 </Window>

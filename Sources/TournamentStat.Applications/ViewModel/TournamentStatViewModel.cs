@@ -46,6 +46,18 @@ namespace TournamentStat.Applications.ViewModel
         public ICommand DeleteSeriesCommand { get; set; }
         public ICommand AddSeriesDataCommand { get; set; }
 
+        private ParticipantsViewModel _participants;
+
+        public ParticipantsViewModel Participants
+        {
+            get { return _participants; }
+            set
+            {
+                _participants = value;
+                OnPropertyChanged(nameof(Participants));
+            }
+        }
+
         public event PropertyChangedEventHandler PropertyChanged;
 
         public TournamentStatViewModel()

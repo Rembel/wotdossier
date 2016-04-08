@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Windows.Input;
 using TournamentStat.Applications.View;
@@ -24,6 +25,7 @@ namespace TournamentStat.Applications.ViewModel
         public DelegateCommand SaveCommand { get; set; }
         public ICommand AddNominationCommand { get; set; }
         public ICommand EditNominationCommand { get; set; }
+        public ICommand DeleteNominationCommand { get; set; }
 
         public TournamentStatSettings AppSettings
         {
@@ -74,14 +76,9 @@ namespace TournamentStat.Applications.ViewModel
             }
         }
 
-        public List<TournamentNomination> TournamentNominations
+        public ObservableCollection<TournamentNomination> TournamentNominations
         {
-            get { return _appSettings.TournamentNominations; }
-            set
-            {
-                _appSettings.TournamentNominations = value;
-                RaisePropertyChanged(nameof(TournamentNominations));
-            }
+            get { return new ObservableCollection<TournamentNomination>(_appSettings.TournamentNominations); }
         }
 
         public TournamentNomination SelectedNomination { get; set; }
@@ -97,6 +94,7 @@ namespace TournamentStat.Applications.ViewModel
             SaveCommand = new DelegateCommand(OnSave);
             AddNominationCommand = new DelegateCommand(OnAddNomination);
             EditNominationCommand = new DelegateCommand<object>(OnEditNomination, CanEditNomination);
+            DeleteNominationCommand = new DelegateCommand<object>(OnDeleteNomination, CanDeleteNomination);
 
 
             _appSettings = SettingsReader.Get<TournamentStatSettings>();
@@ -118,17 +116,28 @@ namespace TournamentStat.Applications.ViewModel
             }
         }
 
+        private void OnDeleteNomination(object item)
+        {
+            _appSettings.TournamentNominations.Remove((TournamentNomination)item);
+            RaisePropertyChanged(nameof(TournamentNominations));
+        }
+
         private void OnAddNomination()
         {
             var viewModel = CompositionContainerFactory.Instance.GetExport<TournamentNominationViewModel>();
             if (viewModel.Show() == true)
             {
-                TournamentNominations.Add(viewModel.TournamentNomination);
+                _appSettings.TournamentNominations.Add(viewModel.TournamentNomination);
                 RaisePropertyChanged(nameof(TournamentNominations));
             }
         }
 
         private bool CanEditNomination(object o)
+        {
+            return o != null;
+        }
+
+        private bool CanDeleteNomination(object o)
         {
             return o != null;
         }

@@ -440,9 +440,40 @@ namespace WotDossier.Applications.ViewModel.Rows
             return Tank;
         }
 
-        public string Dossier { get; set; }
-        public string ReplaysUrlOwner { get; set; }
-        public string ReplaysUrl { get; set; }
-        public string TwitchUrl { get; set; }
+        private string _dossier;
+
+        public string Dossier
+        {
+            get { return _dossier; }
+            set
+            {
+                _dossier = value;
+                OnPropertyChanged(nameof(Dossier));
+            }
+        }
+
+        private string _replaysUrlOwner;
+
+        public string ReplaysUrlOwner
+        {
+            get { return _replaysUrlOwner; }
+            set
+            {
+                _replaysUrlOwner = value;
+                OnPropertyChanged(nameof(ReplaysUrlOwner));
+            }
+        }
+
+        private string _replaysUrl;
+
+        public string ReplaysUrl
+        {
+            get { return _replaysUrl; }
+            set
+            {
+                _replaysUrl = value;
+                OnPropertyChanged(nameof(ReplaysUrl));
+            }
+        }
     }
 }

@@ -144,4 +144,25 @@
   <data name="Label_Name" xml:space="preserve">
     <value>Название</value>
   </data>
+  <data name="AddNomination_DeleteNomination" xml:space="preserve">
+    <value>Удалить номинацию</value>
+  </data>
+  <data name="TabHeader_Participants" xml:space="preserve">
+    <value>Участники</value>
+  </data>
+  <data name="Label_Mods" xml:space="preserve">
+    <value>Моды</value>
+  </data>
+  <data name="Column_Mods" xml:space="preserve">
+    <value>Моды</value>
+  </data>
+  <data name="Column_Tanks" xml:space="preserve">
+    <value>Танки</value>
+  </data>
+  <data name="MenuItem_EditSeries" xml:space="preserve">
+    <value>Редактировать серию</value>
+  </data>
+  <data name="MenuItem_DeleteSeries" xml:space="preserve">
+    <value>Удалить серию</value>
+  </data>
 </root>

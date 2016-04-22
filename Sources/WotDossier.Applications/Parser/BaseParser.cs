@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using Common.Logging;
+using Ionic.Zlib;
 using WotDossier.Common;
 using WotDossier.Common.Extensions;
 using WotDossier.Domain;
@@ -17,6 +18,26 @@ namespace WotDossier.Applications.Parser
     {
         protected static readonly ILog _log = LogManager.GetLogger<BaseParser>();
         private bool _abort = false;
+
+        protected virtual ulong PacketChat
+        {
+            get { return 0x1f; }
+        }
+
+        protected virtual ulong PacketUpdateEvent
+        {
+            get { return 0x08; }
+        }
+
+        protected virtual ulong UpdateEvent_Slot
+        {
+            get { return 0x09; }
+        }
+
+        protected virtual ulong UpdateEvent_Arena
+        {
+            get { return 0x1d; }
+        }
 
         public void ReadReplayStream(Stream stream, Action<Packet> packetHandler)
         {
@@ -45,7 +66,7 @@ namespace WotDossier.Applications.Parser
             ulong packetLength = stream.Read(4).ConvertLittleEndian();
             ulong packetType = stream.Read(4).ConvertLittleEndian();
             float time = stream.Read(4).ToSingle();
-            
+
             long position = stream.Position;
 
             bool endOfStream = packetType == new byte[] { 255, 255, 255, 255 }.ConvertLittleEndian() || stream.Position >= stream.Length;
@@ -53,7 +74,7 @@ namespace WotDossier.Applications.Parser
             byte[] payload = new byte[packetLength];
 
             Packet packet = null;
-            
+
             if (!endOfStream)
             {
                 stream.Read(payload, 0, (int)packetLength);
@@ -74,43 +95,43 @@ namespace WotDossier.Applications.Parser
                     _log.Trace("Process packet 0x00");
                     ProcessPacket_0x00(packet);
                 }
-
+                else
                 //player position
                 if (packet.StreamPacketType == 0x0a)
                 {
                     _log.Trace("Process packet 0x0a");
                     ProcessPacket_0x0a(packet);
                 }
-
+                else
                 //minimap click
                 if (packet.StreamPacketType == 0x21)
                 {
                     _log.Trace("Process packet 0x21");
                     ProcessPacket_0x21(packet);
                 }
-
+                else
                 //replay version
                 if (packet.StreamPacketType == 0x14)
                 {
                     _log.Trace("Process packet 0x14");
                     ProcessPacket_0x14(packet);
                 }
-
+                else
                 //in game updates
-                if (packet.StreamPacketType == 0x08)
+                if (packet.StreamPacketType == PacketUpdateEvent)
                 {
                     _log.Trace("Process packet 0x08");
                     ProcessPacket_0x08(packet);
                 }
-
+                else
                 if (packet.StreamPacketType == 0x07)
                 {
                     _log.Trace("Process packet 0x07");
                     ProcessPacket_0x07(packet);
                 }
-
+                else
                 //chat
-                if (packet.StreamPacketType == 0x1f)
+                if (packet.StreamPacketType == PacketChat)
                 {
                     _log.Trace("Process packet 0x1f");
                     ProcessPacket_0x1f(packet);
@@ -156,8 +177,8 @@ namespace WotDossier.Applications.Parser
             using (MemoryStream f = new MemoryStream(packet.Payload))
             {
                 int cellId = BitConverter.ToInt16(f.Read(2), 0);
-                int cellLeft = (int) Math.Floor(cellId/10.0);
-                int cellTop = cellId - (cellLeft*10);
+                int cellLeft = (int)Math.Floor(cellId / 10.0);
+                int cellTop = cellId - (cellLeft * 10);
 
                 data.cellId = cellId;
                 data.cellLeft = cellLeft;
@@ -254,12 +275,12 @@ namespace WotDossier.Applications.Parser
                 //read 8-12 - update length
                 packet.SubTypePayloadLength = stream.Read(4).ConvertLittleEndian();
 
-                if (packet.StreamSubType == 0x1d) //onArenaUpdate events
+                if (packet.StreamSubType == UpdateEvent_Arena) //onArenaUpdate events
                 {
                     ProcessPacket_0x08_0x1d(packet, stream);
                 }
 
-                if (packet.StreamSubType == 0x09) //onSlotUpdate events
+                if (packet.StreamSubType == UpdateEvent_Slot) //onSlotUpdate events
                 {
                     ProcessPacket_0x08_0x09(packet, stream);
                 }
@@ -292,7 +313,7 @@ namespace WotDossier.Applications.Parser
         /// </summary>
         /// <param name="packet">The packet.</param>
         /// <param name="stream">The stream.</param>
-        protected static void ProcessPacket_0x08_0x1d(Packet packet, MemoryStream stream)
+        protected virtual void ProcessPacket_0x08_0x1d(Packet packet, MemoryStream stream)
         {
             packet.Type = PacketType.ArenaUpdate;
 
@@ -418,7 +439,7 @@ namespace WotDossier.Applications.Parser
                 {
                     using (var updatePayloadStream = new MemoryStream(updatePayload))
                     {
-                        object [] update = (object[]) Unpickle.Load(updatePayloadStream);
+                        object[] update = (object[])Unpickle.Load(updatePayloadStream);
                         data.team = (int)update[0];
                         data.baseID = (int)update[1];
                         data.points = (int)update[2];
@@ -437,7 +458,7 @@ namespace WotDossier.Applications.Parser
                 {
                     using (var updatePayloadStream = new MemoryStream(updatePayload))
                     {
-                        object [] update = (object[]) Unpickle.Load(updatePayloadStream);
+                        object[] update = (object[])Unpickle.Load(updatePayloadStream);
                         data.period = update[0];
                         data.period_end = update[1];
                         data.period_length = Convert.ToInt32(update[2]);
@@ -487,13 +508,13 @@ namespace WotDossier.Applications.Parser
             packet.Data = data;
 
             ulong value = stream.Read(4).ConvertLittleEndian();
-            var item = new SlotItem((SlotType)(value & 15), (int) (value >> 4 & 15), (int) (value >> 8 & 65535));
+            var item = new SlotItem((SlotType)(value & 15), (int)(value >> 4 & 15), (int)(value >> 8 & 65535));
 
             ulong count = stream.Read(2).ConvertLittleEndian();
 
             ulong rest = stream.Read(3).ConvertLittleEndian();
 
-            data.Slot = new Slot(item, (int) count, (int) rest);
+            data.Slot = new Slot(item, (int)count, (int)rest);
         }
 
         /// <summary>
@@ -555,6 +576,16 @@ namespace WotDossier.Applications.Parser
                 };
             }
             return null;
+        }
+
+        /// <summary>
+        /// Decompresses the specified decrypted replay bytes.
+        /// </summary>
+        /// <param name="decryptedReplaysBytes">The decrypted replay bytes.</param>
+        /// <returns></returns>
+        protected static byte[] DecompressData(byte[] decryptedReplaysBytes)
+        {
+            return ZlibStream.UncompressBuffer(decryptedReplaysBytes);
         }
     }
 }

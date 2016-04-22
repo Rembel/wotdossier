@@ -376,7 +376,7 @@ namespace TournamentStat.Applications.Logic
                 }
                 excelWorksheet.Cells[row, column++].Value = participant.TwitchUrl;
 
-                excelWorksheet.Cells[row, column++].Value = participant.Modes;
+                excelWorksheet.Cells[row, column++].Value = participant.Mods;
                 excelWorksheet.Cells[row, column].Value = participant.StartDate;
                 excelWorksheet.Cells[row, column++].Style.Numberformat.Format = "[$-419]d mmm;@";
                 excelWorksheet.Cells[row, column++].Value = string.Join(", ",

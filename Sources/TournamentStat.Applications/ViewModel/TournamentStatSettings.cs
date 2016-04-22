@@ -88,7 +88,6 @@ namespace TournamentStat.Applications.ViewModel
 
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
-        public string Modes { get; set; }
         public event PropertyChangedEventHandler PropertyChanged;
 
         [NotifyPropertyChangedInvocator]

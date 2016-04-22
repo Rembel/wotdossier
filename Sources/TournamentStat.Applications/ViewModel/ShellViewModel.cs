@@ -6,6 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Windows;
 using System.Windows.Input;
+using Common.Logging;
 using Ookii.Dialogs.Wpf;
 using TournamentStat.Applications.Logic;
 using TournamentStat.Applications.View;
@@ -27,6 +28,8 @@ namespace TournamentStat.Applications.ViewModel
 {
     public class ShellViewModel : ViewModel<IShellView>
     {
+        private static readonly ILog _log = LogManager.GetLogger<ShellViewModel>();
+
         private readonly DossierRepository _dossierRepository;
 
         public ICommand LoadCommand { get; set; }
@@ -69,29 +72,38 @@ namespace TournamentStat.Applications.ViewModel
 
         private void OnExport()
         {
-            var settings = SettingsReader.Get<TournamentStatSettings>();
-
-            VistaSaveFileDialog dialog = new VistaSaveFileDialog();
-            dialog.FileName = settings.TournamentName + ".xlsx";
-            var result = dialog.ShowDialog();
-            if (result == true)
+            try
             {
-                var fileName = dialog.FileName;
-                if (File.Exists(fileName))
-                {
-                    File.Delete(fileName);
-                }
+                var settings = SettingsReader.Get<TournamentStatSettings>();
 
-                new ExcelExportProvider().Export(fileName, settings, TournamentStatistic.Series);
-
-                using (var proc = new Process())
+                VistaSaveFileDialog dialog = new VistaSaveFileDialog();
+                dialog.FileName = settings.TournamentName + ".xlsx";
+                var result = dialog.ShowDialog();
+                if (result == true)
                 {
-                    //proc.StartInfo.CreateNoWindow = true;
-                    //proc.StartInfo.UseShellExecute = false;
-                    //proc.StartInfo.RedirectStandardOutput = true;
-                    proc.StartInfo.FileName = fileName;
-                    proc.Start();
+                    var fileName = dialog.FileName;
+                    if (File.Exists(fileName))
+                    {
+                        File.Delete(fileName);
+                    }
+
+                    new ExcelExportProvider().Export(fileName, settings, TournamentStatistic.Series);
+
+                    using (var proc = new Process())
+                    {
+                        //proc.StartInfo.CreateNoWindow = true;
+                        //proc.StartInfo.UseShellExecute = false;
+                        //proc.StartInfo.RedirectStandardOutput = true;
+                        proc.StartInfo.FileName = fileName;
+                        proc.Start();
+                    }
                 }
+            }
+            catch (Exception e)
+            {
+                _log.Error("Error on data export", e);
+                MessageBox.Show("Error on data export", "Error",
+                    MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
         

@@ -166,6 +166,10 @@ namespace WotDossier.Applications.Parser
             }
         }
 
+        /// <summary>
+        /// Processes the minimap click.
+        /// </summary>
+        /// <param name="packet">The packet.</param>
         private void ProcessPacket_0x21(Packet packet)
         {
             packet.Type = PacketType.MinimapClick;

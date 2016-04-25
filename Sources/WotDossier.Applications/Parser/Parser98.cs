@@ -48,6 +48,11 @@ namespace WotDossier.Applications.Parser
                 var offset = 17;
                 stream.Seek(offset, SeekOrigin.Begin);
             }
+            else
+            {
+                stream.Seek(1, SeekOrigin.Current);
+                packet.SubTypePayloadLength = packet.SubTypePayloadLength - 1;
+            }
 
             //Read from your offset to the end of the packet, this will be the "update pickle". 
             byte[] updatePayload = stream.Read((int)(packet.SubTypePayloadLength));
@@ -158,7 +163,6 @@ namespace WotDossier.Applications.Parser
             {
                 try
                 {
-                    updatePayload = DecompressData(updatePayload);
                     using (var updatePayloadStream = new MemoryStream(updatePayload))
                     {
                         object[] update = (object[])Unpickle.Load(updatePayloadStream);

@@ -1,6 +1,6 @@
 {
   "locked": false,
-  "version": 1,
+  "version": 2,
   "targets": {
     ".NETFramework,Version=v4.0": {},
     ".NETFramework,Version=v4.0/win": {}
@@ -9,9 +9,9 @@
   "projectFileDependencyGroups": {
     "": [],
     ".NETFramework,Version=v4.0": [
-      "System.Runtime.Serialization >= 4.0.0.0",
-      "System.XML >= 4.0.0.0",
-      "WindowsBase >= 4.0.0.0"
+      "System.Runtime.Serialization >= 4.0.0",
+      "System.XML >= 4.0.0",
+      "WindowsBase >= 4.0.0"
     ]
   }
 }

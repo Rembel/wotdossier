@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Runtime.Serialization;
@@ -12,9 +13,12 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
+using NLog;
+using NLog.Config;
 using ProtoBuf.Meta;
 using WotDossier.Domain;
 using WotDossier.Domain.Entities;
+using WotDossier.Web.Logging;
 using WotDossier.Web.Logic;
 using WotDossier.Web.Middleware;
 using WotDossier.Web.Models;
@@ -71,8 +75,11 @@ namespace WotDossier.Web
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
-            loggerFactory.AddConsole(Configuration.GetSection("Logging"));
-            loggerFactory.AddDebug();
+            //loggerFactory.AddConsole(Configuration.GetSection("Logging"));
+            File.Create("config1.nlog");
+            var xmlLoggingConfiguration = new  XmlLoggingConfiguration("config.nlog");
+            loggerFactory.AddNLog(new LogFactory(xmlLoggingConfiguration));
+            //loggerFactory.AddDebug();
 
             if (env.IsDevelopment())
             {

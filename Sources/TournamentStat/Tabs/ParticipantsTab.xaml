@@ -33,7 +33,7 @@
             <dataGrid:FooterDataGrid.Columns>
                 <DataGridTextColumn Header="{x:Static resources:Resources.Column_Replay_PlayerName}" Binding="{Binding PlayerName}" Width="Auto" ElementStyle="{StaticResource RTextBlock}" />
                 <DataGridTextColumn Header="Twitch" Binding="{Binding TwitchUrl}" Width="1*" ElementStyle="{StaticResource RTextBlock}" />
-                <DataGridTextColumn Header="{x:Static Properties:Resources.Column_Mods}" Binding="{Binding Mods}" Width="1*" ElementStyle="{StaticResource RTextBlock}" />
+                <DataGridTextColumn Header="{x:Static Properties:Resources.Column_Mods}" Binding="{Binding Mods}" Width="1*" ElementStyle="{StaticResource LTextBlock}" />
                 <DataGridTextColumn Header="{x:Static Properties:Resources.Column_Tanks}" Binding="{Binding TanksList}" Width="1*" ElementStyle="{StaticResource LTextBlock}" />
             </dataGrid:FooterDataGrid.Columns>
         </dataGrid:FooterDataGrid>

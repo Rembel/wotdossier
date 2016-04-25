@@ -18,6 +18,12 @@ namespace TournamentStat.Applications.ViewModel
             set { Player.TwitchUrl = value; }
         }
 
+        public string Mods
+        {
+            get { return Player.Mods; }
+            set { Player.Mods = value; }
+        }
+
         /// <summary>
         /// Initializes a new instance of the <see cref="ViewModel&lt;TView&gt;" /> class and
         /// attaches itself as <c>DataContext</c> to the view.
@@ -36,6 +42,7 @@ namespace TournamentStat.Applications.ViewModel
             var player = settings.Players.First(x => x.PlayerId == Player.PlayerId);
 
             player.TwitchUrl = Player.TwitchUrl ?? player.TwitchUrl;
+            player.Mods = Player.Mods ?? player.Mods;
 
             SettingsReader.Save(settings);
 

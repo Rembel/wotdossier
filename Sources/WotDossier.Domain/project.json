@@ -24,10 +24,12 @@
     },
     "dnxcore50": {
       "dependencies": {
-        "System.Runtime.Serialization.Primitives": "4.1.0-beta-23516",
-	"System.Xml.XmlSerializer": "4.0.11-beta-23516"
+        "System.Xml.XmlSerializer": "4.0.11-beta-23516"
 	}
     }
   },
-  "exclude": ["Replay/*.cs", "Settings/*.cs", "GameplayDescription.cs", "MapConfig.cs", "Map.cs", "Interfaces/IMapDescription.cs", "Dossier"]
+  "exclude": [ "Replay/*.cs", "Settings/*.cs", "GameplayDescription.cs", "MapConfig.cs", "Map.cs", "Interfaces/IMapDescription.cs", "Dossier" ],
+  "dependencies": {
+    "System.Runtime.Serialization.Primitives": "4.1.0"
+  }
 }

@@ -21,6 +21,15 @@
           "lib/net45/_._": {}
         }
       },
+      "System.Runtime.Serialization.Primitives/4.1.0": {
+        "type": "package",
+        "compile": {
+          "ref/net45/_._": {}
+        },
+        "runtime": {
+          "lib/net45/_._": {}
+        }
+      },
       "System.Xml.XmlSerializer/4.0.11-beta-23516": {
         "type": "package",
         "compile": {
@@ -212,7 +221,7 @@
           "lib/DNXCore50/System.Runtime.InteropServices.dll": {}
         }
       },
-      "System.Runtime.Serialization.Primitives/4.1.0-beta-23516": {
+      "System.Runtime.Serialization.Primitives/4.1.0": {
         "type": "package",
         "dependencies": {
           "System.Resources.ResourceManager": "4.0.0",
@@ -370,6 +379,15 @@
           "lib/net45/_._": {}
         }
       },
+      "System.Runtime.Serialization.Primitives/4.1.0": {
+        "type": "package",
+        "compile": {
+          "ref/net45/_._": {}
+        },
+        "runtime": {
+          "lib/net45/_._": {}
+        }
+      },
       "System.Xml.XmlSerializer/4.0.11-beta-23516": {
         "type": "package",
         "compile": {
@@ -400,6 +418,15 @@
         }
       },
       "System.Runtime/4.0.21-beta-23516": {
+        "type": "package",
+        "compile": {
+          "ref/net45/_._": {}
+        },
+        "runtime": {
+          "lib/net45/_._": {}
+        }
+      },
+      "System.Runtime.Serialization.Primitives/4.1.0": {
         "type": "package",
         "compile": {
           "ref/net45/_._": {}
@@ -703,7 +730,7 @@
           "lib/DNXCore50/System.Runtime.InteropServices.dll": {}
         }
       },
-      "System.Runtime.Serialization.Primitives/4.1.0-beta-23516": {
+      "System.Runtime.Serialization.Primitives/4.1.0": {
         "type": "package",
         "dependencies": {
           "System.Resources.ResourceManager": "4.0.0",
@@ -1139,7 +1166,7 @@
           "lib/DNXCore50/System.Runtime.InteropServices.dll": {}
         }
       },
-      "System.Runtime.Serialization.Primitives/4.1.0-beta-23516": {
+      "System.Runtime.Serialization.Primitives/4.1.0": {
         "type": "package",
         "dependencies": {
           "System.Resources.ResourceManager": "4.0.0",
@@ -2118,15 +2145,17 @@
         "System.Runtime.InteropServices.nuspec"
       ]
     },
-    "System.Runtime.Serialization.Primitives/4.1.0-beta-23516": {
+    "System.Runtime.Serialization.Primitives/4.1.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "Dsl95PE2vyGIy9voclfTVKSqYD8O4PjsMS+TV0bM3N1xNraS2BBaChGk1stGmf04cn2/xA3cZyh80bkZL+v1/Q==",
+      "sha512": "2UBnpTwpEi5dzbNJ8KhbOZ7Te1XQNov9MrtJ+dcnqogjACPNzbOiGT2uU9XgZg+sdbPvr4VMvVjFwJ85uLLCuA==",
       "files": [
+        "dotnet_library_license.txt",
         "lib/dotnet5.4/System.Runtime.Serialization.Primitives.dll",
         "lib/MonoAndroid10/_._",
         "lib/MonoTouch10/_._",
         "lib/net45/_._",
+        "lib/net46/System.Runtime.Serialization.Primitives.dll",
         "lib/netcore50/System.Runtime.Serialization.Primitives.dll",
         "lib/win8/_._",
         "lib/wp80/_._",
@@ -2158,6 +2187,7 @@
         "ref/MonoAndroid10/_._",
         "ref/MonoTouch10/_._",
         "ref/net45/_._",
+        "ref/net46/System.Runtime.Serialization.Primitives.dll",
         "ref/netcore50/de/System.Runtime.Serialization.Primitives.xml",
         "ref/netcore50/es/System.Runtime.Serialization.Primitives.xml",
         "ref/netcore50/fr/System.Runtime.Serialization.Primitives.xml",
@@ -2174,9 +2204,11 @@
         "ref/wpa81/_._",
         "ref/xamarinios10/_._",
         "ref/xamarinmac20/_._",
-        "System.Runtime.Serialization.Primitives.4.1.0-beta-23516.nupkg",
-        "System.Runtime.Serialization.Primitives.4.1.0-beta-23516.nupkg.sha512",
-        "System.Runtime.Serialization.Primitives.nuspec"
+        "runtimes/win8-aot/lib/netcore50/System.Runtime.Serialization.Primitives.dll",
+        "System.Runtime.Serialization.Primitives.4.1.0.nupkg",
+        "System.Runtime.Serialization.Primitives.4.1.0.nupkg.sha512",
+        "System.Runtime.Serialization.Primitives.nuspec",
+        "ThirdPartyNotices.txt"
       ]
     },
     "System.Text.Encoding/4.0.10": {
@@ -2496,7 +2528,9 @@
     }
   },
   "projectFileDependencyGroups": {
-    "": [],
+    "": [
+      "System.Runtime.Serialization.Primitives >= 4.1.0"
+    ],
     ".NETFramework,Version=v4.5.1": [
       "System.Collections >= 4.0.11-beta-23516",
       "System.Runtime >= 4.0.21-beta-23516",
@@ -2506,7 +2540,6 @@
       "fx/WindowsBase >= 4.0.0"
     ],
     "DNXCore,Version=v5.0": [
-      "System.Runtime.Serialization.Primitives >= 4.1.0-beta-23516",
       "System.Xml.XmlSerializer >= 4.0.11-beta-23516"
     ]
   }

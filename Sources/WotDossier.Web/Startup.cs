@@ -75,7 +75,6 @@ namespace WotDossier.Web
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
-            File.Create("config1.nlog");
             var xmlLoggingConfiguration = new  XmlLoggingConfiguration("config.nlog");
             loggerFactory.AddNLog(new LogFactory(xmlLoggingConfiguration));
             

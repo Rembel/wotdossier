@@ -140,7 +140,7 @@ namespace WotDossier.Applications.Parser
                 }
             }
 
-            if (updateType == 0x08)
+            if (updateType == ARENA_UPDATE.BASE_POINTS)
             {
                 try
                 {
@@ -159,11 +159,13 @@ namespace WotDossier.Applications.Parser
                 }
             }
 
-            if (updateType == 0x03)
+            if (updateType == ARENA_UPDATE.PERIOD)
             {
                 try
                 {
-                    using (var updatePayloadStream = new MemoryStream(updatePayload))
+                    var decompressData = DecompressData(updatePayload);
+
+                    using (var updatePayloadStream = new MemoryStream(decompressData))
                     {
                         object[] update = (object[])Unpickle.Load(updatePayloadStream);
                         data.period = update[0];
@@ -178,7 +180,7 @@ namespace WotDossier.Applications.Parser
                 }
             }
 
-            if (updateType == 0x06)
+            if (updateType == ARENA_UPDATE.VEHICLE_KILLED)
             {
                 try
                 {
@@ -187,7 +189,7 @@ namespace WotDossier.Applications.Parser
                         object[] update = (object[])Unpickle.Load(updatePayloadStream);
                         data.destroyed = update[0];
                         data.destroyer = update[1];
-                        data.reason = update[2];
+                        data.reason = update[3];
                     }
                 }
                 catch (Exception e)

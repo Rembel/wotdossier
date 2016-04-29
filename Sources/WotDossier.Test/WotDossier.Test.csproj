@@ -425,6 +425,9 @@
     <None Include="Replays\0.9.7\20150319_2240_france-F72_AMX_30_35_steppes.wotreplay">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="Replays\0.9.8\20150526_1830_ussr-T62A_01_karelia.wotreplay">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="Replays\0.9.9\20150705_2126_ussr-Object263_11_murovanka.wotreplay">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -541,9 +544,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Replays\0.9.8\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>

@@ -19,6 +19,16 @@ namespace WotDossier.Applications.Parser
         protected static readonly ILog _log = LogManager.GetLogger<BaseParser>();
         private bool _abort = false;
 
+        protected virtual uint PacketPosition
+        {
+            get { return 0x0a; }
+        }
+
+        protected virtual uint PacketHealth
+        {
+            get { return 0x07; }
+        }
+
         protected virtual ulong PacketChat
         {
             get { return 0x1f; }
@@ -97,7 +107,7 @@ namespace WotDossier.Applications.Parser
                 }
                 else
                 //player position
-                if (packet.StreamPacketType == 0x0a)
+                if (packet.StreamPacketType == PacketPosition)
                 {
                     _log.Trace("Process packet 0x0a");
                     ProcessPacket_0x0a(packet);
@@ -124,7 +134,7 @@ namespace WotDossier.Applications.Parser
                     ProcessPacket_0x08(packet);
                 }
                 else
-                if (packet.StreamPacketType == 0x07)
+                if (packet.StreamPacketType == PacketHealth)
                 {
                     _log.Trace("Process packet 0x07");
                     ProcessPacket_0x07(packet);
@@ -208,7 +218,7 @@ namespace WotDossier.Applications.Parser
                 var pos2 = f.Read(4).ToSingle();
                 var pos3 = f.Read(4).ToSingle();
                 data.position = new[] { pos1, pos2, pos3 };
-
+                
                 f.Seek(36, SeekOrigin.Begin);
 
                 var hull1 = f.Read(4).ToSingle();

@@ -88,6 +88,7 @@
   <ItemGroup>
     <Compile Include="ApiRequestException.cs" />
     <Compile Include="AppConfigSettings.cs" />
+    <Compile Include="ClientVersionCompabilityHelper.cs" />
     <Compile Include="CountryHelper.cs" />
     <Compile Include="DataMapper.cs" />
     <Compile Include="Dictionaries.cs" />

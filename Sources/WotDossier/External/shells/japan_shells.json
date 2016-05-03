@@ -83,6 +83,7 @@
     "userString": "#japan_vehicles:_37mm_Odr_mle._1935",
     "icon": "ap",
     "price": "\t0\t",
+    "notInShop": "\ttrue\t",
     "kind": "ARMOR_PIERCING",
     "caliber": "\t37\t",
     "isTracer": "\ttrue\t",
@@ -100,6 +101,7 @@
       "#text": "\t2\t",
       "gold": ""
     },
+    "notInShop": "\ttrue\t",
     "kind": "ARMOR_PIERCING_CR",
     "caliber": "\t37\t",
     "isTracer": "\ttrue\t",
@@ -114,6 +116,7 @@
     "userString": "#japan_vehicles:_37mm_OE_mle._1916",
     "icon": "he",
     "price": "\t6\t",
+    "notInShop": "\ttrue\t",
     "kind": "HIGH_EXPLOSIVE",
     "caliber": "\t37\t",
     "explosionRadius": "0.31",
@@ -1092,12 +1095,6 @@
     "explosionRadius": "3.57",
     "isTracer": "\ttrue\t",
     "effects": "largeHighExplosive",
-    "damage": {
-      "armor": "\t910\t",
-      "devices": "\t203\t"
-    }
-  }
-}e",
     "damage": {
       "armor": "\t910\t",
       "devices": "\t203\t"

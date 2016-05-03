@@ -49,6 +49,7 @@
     "userString": "#ussr_vehicles:_23mm_BC-23",
     "icon": "ap",
     "price": "\t3\t",
+    "notInShop": "\ttrue\t",
     "kind": "ARMOR_PIERCING",
     "caliber": "\t23\t",
     "isTracer": "\ttrue\t",
@@ -66,6 +67,7 @@
       "#text": "\t1\t",
       "gold": ""
     },
+    "notInShop": "\ttrue\t",
     "kind": "ARMOR_PIERCING_CR",
     "caliber": "\t23\t",
     "isTracer": "\ttrue\t",
@@ -135,6 +137,21 @@
       "devices": "\t50\t"
     }
   },
+  "_37mm_UBR-160_bot": {
+    "id": "\t154\t",
+    "userString": "#ussr_vehicles:_37mm_UBR-160_bot",
+    "icon": "ap",
+    "price": "\t8\t",
+    "notInShop": "\ttrue\t",
+    "kind": "ARMOR_PIERCING",
+    "caliber": "\t37\t",
+    "isTracer": "\ttrue\t",
+    "effects": "smallArmorPiercing",
+    "damage": {
+      "armor": "\t18\t",
+      "devices": "\t15\t"
+    }
+  },
   "_37mm_UBR-160P": {
     "id": "\t5\t",
     "userString": "#ussr_vehicles:_37mm_UBR-160P",
@@ -179,36 +196,6 @@
     "damage": {
       "armor": "\t40\t",
       "devices": "\t50\t"
-    }
-  },
-  "_37mm_UBR-160_bot": {
-    "id": "\t154\t",
-    "userString": "#ussr_vehicles:_37mm_UBR-160_bot",
-    "icon": "ap",
-    "price": "\t8\t",
-    "notInShop": "\ttrue\t",
-    "kind": "ARMOR_PIERCING",
-    "caliber": "\t37\t",
-    "isTracer": "\ttrue\t",
-    "effects": "smallArmorPiercing",
-    "damage": {
-      "armor": "\t18\t",
-      "devices": "\t15\t"
-    }
-  },
-  "_37mm_UBRT1_bot": {
-    "id": "\t151\t",
-    "userString": "#ussr_vehicles:_37mm_UBRT1_bot",
-    "icon": "ap",
-    "price": "\t0\t",
-    "notInShop": "\ttrue\t",
-    "kind": "ARMOR_PIERCING",
-    "caliber": "\t37\t",
-    "isTracer": "\ttrue\t",
-    "effects": "smallArmorPiercing",
-    "damage": {
-      "armor": "\t5\t",
-      "devices": "\t3\t"
     }
   },
   "_37mm_UBR160PA": {
@@ -288,6 +275,21 @@
     "damage": {
       "armor": "\t36\t",
       "devices": "\t50\t"
+    }
+  },
+  "_37mm_UBRT1_bot": {
+    "id": "\t151\t",
+    "userString": "#ussr_vehicles:_37mm_UBRT1_bot",
+    "icon": "ap",
+    "price": "\t0\t",
+    "notInShop": "\ttrue\t",
+    "kind": "ARMOR_PIERCING",
+    "caliber": "\t37\t",
+    "isTracer": "\ttrue\t",
+    "effects": "smallArmorPiercing",
+    "damage": {
+      "armor": "\t5\t",
+      "devices": "\t3\t"
     }
   },
   "_2pdr_AP_Mk.1T": {
@@ -663,6 +665,23 @@
     "userString": "#ussr_vehicles:_76mm_UBR-354KA",
     "icon": "ap",
     "price": "\t30\t",
+    "kind": "ARMOR_PIERCING",
+    "caliber": "\t76\t",
+    "isTracer": "\ttrue\t",
+    "effects": "mediumArmorPiercing",
+    "damage": {
+      "armor": "\t110\t",
+      "devices": "\t105\t"
+    }
+  },
+  "_76mm_UBR-354KB": {
+    "id": "\t164\t",
+    "userString": "#ussr_vehicles:_76mm_UBR-354KB",
+    "icon": "ap",
+    "price": {
+      "#text": "\t6\t",
+      "gold": ""
+    },
     "kind": "ARMOR_PIERCING",
     "caliber": "\t76\t",
     "isTracer": "\ttrue\t",
@@ -1924,6 +1943,7 @@
     "userString": "#ussr_vehicles:_152mm_UBR551M_fallout",
     "icon": "ap",
     "price": "\t90\t",
+    "notInShop": "\ttrue\t",
     "kind": "ARMOR_PIERCING",
     "caliber": "\t152\t",
     "isTracer": "\ttrue\t",
@@ -1941,6 +1961,7 @@
       "#text": "\t1\t",
       "gold": ""
     },
+    "notInShop": "\ttrue\t",
     "kind": "HOLLOW_CHARGE",
     "caliber": "\t152\t",
     "isTracer": "\ttrue\t",
@@ -1956,6 +1977,7 @@
     "userString": "#ussr_vehicles:_152mm_53-OF-551M_fallout",
     "icon": "he",
     "price": "\t81\t",
+    "notInShop": "\ttrue\t",
     "kind": "HIGH_EXPLOSIVE",
     "caliber": "\t152\t",
     "explosionRadius": "3.66",
@@ -2072,12 +2094,6 @@
     "explosionRadius": "8.49",
     "isTracer": "\ttrue\t",
     "effects": "hugeHighExplosive",
-    "damage": {
-      "armor": "\t1850\t",
-      "devices": "\t270\t"
-    }
-  }
-}",
     "damage": {
       "armor": "\t1850\t",
       "devices": "\t270\t"

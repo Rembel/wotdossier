@@ -184,7 +184,7 @@
     <value>AMX 13 90</value>
   </data>
   <data name="AMX_13_90_descr" xml:space="preserve">
-    <value>Development was started in 1946. Mass production was launched in 1952. The first 2000 vehicles were equipped with the 75 mm gun. However, later versions had the 90 mm gun, giving much greater firepower.</value>
+    <value>In the early 1960s, the 75-mm gun with a muzzle velocity of 1000 m/s was deemed outdated. The vehicle received the new 90-mm F3 gun that used more powerful HEAT shells. This modernization did not require any significant changes to the turret or vehicle design. The first vehicles were manufactured in February, 1967. The existing vehicles underwent the gun modernization as well.</value>
   </data>
   <data name="AMX_13_90_short" xml:space="preserve">
     <value>AMX 13 90</value>
@@ -421,6 +421,9 @@ mle. 1917 G.P.F.</value>
     <value>Canon de 155 mm
 de 33 calibres</value>
   </data>
+  <data name="Canon_de_90mm_Vo_930_m_s" xml:space="preserve">
+    <value>Canon de 90 mm Vo 930 m/s</value>
+  </data>
   <data name="Chassis_105_leFH18B2" xml:space="preserve">
     <value>leFH18B2</value>
   </data>
@@ -570,6 +573,9 @@ de 33 calibres</value>
   </data>
   <data name="Chassis_Bat_Chatillon25t_2" xml:space="preserve">
     <value>Batignolles-Châtillon 25 t</value>
+  </data>
+  <data name="Chassis_Char_de_25t" xml:space="preserve">
+    <value>Batignolles-Châtillon 25 t AP</value>
   </data>
   <data name="Chassis_D1_2" xml:space="preserve">
     <value>D1</value>
@@ -787,7 +793,7 @@ de 33 calibres</value>
     <value>AMX Chasseur de chars</value>
   </data>
   <data name="F68_AMX_Chasseur_de_char_46_descr" xml:space="preserve">
-    <value>In 1946, the the AMX company presented this design for a new vehicle. The powerful engine and light weight would have made the vehicle highly mobile, and the 90-mm gun was equipped with a mechanical ammunition system for a high rate of fire. However, the large dimensions of the vehicle, its thin armor, and the complexity of the design made it unappealing, and the project never advanced to a prototype.</value>
+    <value>In 1946, the AMX company presented this design for a new vehicle. The powerful engine and light weight would have made the vehicle highly mobile, and the 90-mm gun was equipped with a mechanical ammunition system for a high rate of fire. However, the large dimensions of the vehicle, its thin armor, and the complexity of the design made it unappealing, and the project never advanced to a prototype.</value>
   </data>
   <data name="F68_AMX_Chasseur_de_char_46_short" xml:space="preserve">
     <value>AMX CDC</value>
@@ -836,6 +842,15 @@ de 33 calibres</value>
   </data>
   <data name="F74_AMX_M4_1949_short" xml:space="preserve">
     <value>AMX M4 49</value>
+  </data>
+  <data name="F75_Char_de_25t" xml:space="preserve">
+    <value>Bat.-Châtillon 25 t AP</value>
+  </data>
+  <data name="F75_Char_de_25t_descr" xml:space="preserve">
+    <value>In 1950–1951, engineers of the FAMH company (Compagnie des forges et aciéries de la marine et d'Homécourt) worked on the development of a medium tank with a 90-mm gun and a 25-ton rotating turret. Work was discontinued at the preliminary design stage. Later, all elements of the vehicle were incorporated in the Batignolles-Châtillon 25 t tank.</value>
+  </data>
+  <data name="F75_Char_de_25t_short" xml:space="preserve">
+    <value>B-C 25 t AP</value>
   </data>
   <data name="FCM36_20t" xml:space="preserve">
     <value>FCM 36</value>
@@ -996,6 +1011,13 @@ TRM P30</value>
   <data name="Maybach_HL_295_F_fallout" xml:space="preserve">
     <value>Maybach HL 295 F</value>
   </data>
+  <data name="Moteur_moderne_3M_27_1_01" xml:space="preserve">
+    <value>Moteur moderne 3M.27.1.01</value>
+  </data>
+  <data name="Moteur_moderne_3M_27_1_01_short" xml:space="preserve">
+    <value>Moteur moderne
+3M.27.1.01</value>
+  </data>
   <data name="Obusier_de_155mm_C_mle.1917" xml:space="preserve">
     <value>Obusier de 155 mm C mle. 1917</value>
   </data>
@@ -1137,10 +1159,10 @@ Naeder-FIEUX</value>
   <data name="SCR_508" xml:space="preserve">
     <value>SCR 508</value>
   </data>
-  <data name="SCR_528" xml:space="preserve">
-    <value>SCR 528F</value>
+  <data name="SCR_508_1" xml:space="preserve">
+    <value>SCR 508/1</value>
   </data>
-  <data name="SCR_528_fallout" xml:space="preserve">
+  <data name="SCR_528" xml:space="preserve">
     <value>SCR 528F</value>
   </data>
   <data name="SCR_619" xml:space="preserve">
@@ -1312,6 +1334,13 @@ Naeder-FIEUX</value>
     <value>Batignolles-Châtillon
 25 t</value>
   </data>
+  <data name="Turret_1_Char_de_25t" xml:space="preserve">
+    <value>Batignolles-Châtillon 25 t AP</value>
+  </data>
+  <data name="Turret_1_Char_de_25t_short" xml:space="preserve">
+    <value>Batignolles-Châtillon
+25 t AP</value>
+  </data>
   <data name="Turret_1_D1_2" xml:space="preserve">
     <value>D1 Berliet</value>
   </data>
@@ -1448,7 +1477,7 @@ Naeder-FIEUX</value>
     <value>105 leFH18B2</value>
   </data>
   <data name="_105_leFH18B2_descr" xml:space="preserve">
-    <value>In March 1941, the Rheinmetall-Borsig company ordered sixteen captured B1 Bis tanks to be converted into SPGs. Work did not start until the end of 1941 due to the lack of operational tanks. The vehicles entered service in 1942.</value>
+    <value>Heavy B1 tanks captured by the German army during the French Campaign underwent modification and were actively used by the Wehrmacht. Some vehicles were converted into SPGs, designated 10.5 cm leFH18/3 auf Geschützwagen B2 (f).</value>
   </data>
   <data name="_105_leFH18B2_short" xml:space="preserve">
     <value>leFH18B2</value>
@@ -1458,9 +1487,6 @@ Naeder-FIEUX</value>
   </data>
   <data name="_105mm_APCR_OFL_E1" xml:space="preserve">
     <value>OFL-105-57</value>
-  </data>
-  <data name="_105mm_APCR_OFL_E1_fallout" xml:space="preserve">
-    <value>OFL-105-57 (D)</value>
   </data>
   <data name="_105mm_CN_105_57" xml:space="preserve">
     <value>105 mm mle. 57 (D. 1504)</value>
@@ -1474,14 +1500,8 @@ Naeder-FIEUX</value>
   <data name="_105mm_HEAT_OCC_F1" xml:space="preserve">
     <value>OCC-105-57</value>
   </data>
-  <data name="_105mm_HEAT_OCC_F1_fallout" xml:space="preserve">
-    <value>OCC-105-57 (D)</value>
-  </data>
   <data name="_105mm_HE_OE_F1" xml:space="preserve">
     <value>OE-105-57</value>
-  </data>
-  <data name="_105mm_HE_OE_F1_fallout" xml:space="preserve">
-    <value>OE-105-57 (D)</value>
   </data>
   <data name="_105mm_OCC_105_D1504_L51" xml:space="preserve">
     <value>OFL-105 D1504 L/51</value>
@@ -1814,6 +1834,9 @@ mle. 1936</value>
   <data name="_76mm_Schneider" xml:space="preserve">
     <value>75 mm Blockhaus Schneider</value>
   </data>
+  <data name="_90mm_AP_americaine" xml:space="preserve">
+    <value>AP américain</value>
+  </data>
   <data name="_90mm_D914" xml:space="preserve">
     <value>90 mm D. 915</value>
   </data>
@@ -1822,6 +1845,12 @@ mle. 1936</value>
   </data>
   <data name="_90mm_FrtPrf1944" xml:space="preserve">
     <value>Frt.Prf. mle. 1944</value>
+  </data>
+  <data name="_90mm_HEAT_americaine" xml:space="preserve">
+    <value>HEAT américain</value>
+  </data>
+  <data name="_90mm_HE_americaine" xml:space="preserve">
+    <value>HE américain</value>
   </data>
   <data name="_90mm_OE_mle_1924" xml:space="preserve">
     <value>OE mle. 1924</value>

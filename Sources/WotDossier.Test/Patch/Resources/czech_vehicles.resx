@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Chassis_Cz01_Skoda_T40" xml:space="preserve">
-    <value>Skoda T 40</value>
+    <value>Škoda T 40</value>
   </data>
   <data name="Chassis_Cz02_TVP_T50" xml:space="preserve">
     <value>Škoda T 50 (1949)</value>
@@ -175,19 +175,19 @@
     <value>V-8-H-Sv</value>
   </data>
   <data name="Cz01_Skoda_T40" xml:space="preserve">
-    <value>Skoda T 40</value>
+    <value>Škoda T 40</value>
   </data>
   <data name="Cz01_Skoda_T40_descr" xml:space="preserve">
-    <value>Development of the T 40 tank was suggested by the Škoda company under the TVP (general purpose tank) program. The vehicle design was developed; however, a prototype was never built.</value>
+    <value>Development of the T 40 tank was suggested by the Škoda company under the TVP (general purpose tank) program in 1946. The vehicle design was developed; however, a prototype was never built.</value>
   </data>
   <data name="Cz01_Skoda_T40_short" xml:space="preserve">
-    <value>Skoda T 40</value>
+    <value>Škoda T 40</value>
   </data>
   <data name="Cz02_TVP_T50" xml:space="preserve">
     <value>Škoda T 50</value>
   </data>
   <data name="Cz02_TVP_T50_descr" xml:space="preserve">
-    <value>A further development of the post-war concept for the Czechoslovakian general purpose tank. The Škoda project, developed in 1947, allowed for mounting a more powerful 100 mm gun, based on the Soviet D-10T gun. No prototypes were manufactured.</value>
+    <value>A further development of the post-war concept for the Czechoslovakian general purpose tank. The project was developed by Škoda in 1947. In 1948, significant changes were introduced to the project. There were plans to mount a 100 mm gun. The project was discontinued after one full-size wooden prototype had been built.</value>
   </data>
   <data name="Cz02_TVP_T50_short" xml:space="preserve">
     <value>Škoda T 50</value>
@@ -196,7 +196,7 @@
     <value>LT vz. 35</value>
   </data>
   <data name="Cz03_LT_vz35_descr" xml:space="preserve">
-    <value>Developed by the Škoda company. The vehicle saw service in the Czechoslovakian army as an infantry support vehicle. From 1936 through 1937, 298 vehicles were manufactured.</value>
+    <value>Developed by the Škoda company. The vehicle saw service in the Czechoslovakian army as a cavalry and infantry support vehicle. From 1936 through 1937, 298 vehicles were manufactured.</value>
   </data>
   <data name="Cz03_LT_vz35_short" xml:space="preserve">
     <value>LT vz. 35</value>
@@ -223,7 +223,7 @@
     <value>Kolohousenka</value>
   </data>
   <data name="Cz06_Kolohousenka_descr" xml:space="preserve">
-    <value>One of the first representatives of Czechoslovakian armored vehicles. This light wheeled caterpillar tank was developed in the late 1920s based on the suspension of the Hanomag WD-50 tractor. The vehicle never saw service because it was deemed obsolete at the end of its development. Several vehicles, of three modifications, were manufactured; three of them were supplied to Italy and the U.S.S.R. One of the manufactured vehicles was used for training purposes until 1935.</value>
+    <value>The light wheeled caterpillar tank developed on the chassis of the Hanomag WD-50 tractor. The vehicle never saw service because it was deemed obsolete after the results of trials. Several vehicles, in three variations, were manufactured; three of them were supplied to Italy and the U.S.S.R. As of the time of the German occupation, the only vehicle left in Czechoslovakia was used as a monument.</value>
   </data>
   <data name="Cz06_Kolohousenka_short" xml:space="preserve">
     <value>K-housenka</value>
@@ -268,7 +268,7 @@
     <value>ST vz. 39</value>
   </data>
   <data name="Cz11_V_8_H_descr" xml:space="preserve">
-    <value>Developed at the end of the 1930s as a further development of the LT vz. 35. Two prototypes were manufactured. However, the trials revealed multiple faults, and the vehicle never entered mass production.</value>
+    <value>V-8-H was a further development of the PS-II-b medium tank and the P-II-b light infantry tank. The vehicle underwent trials from the summer of 1937 through the spring of 1938. In the fall of 1938, additional trials were held. After all faults were removed, the tank saw service under the designation ST vz.39. The vehicle never entered mass production.</value>
   </data>
   <data name="Cz11_V_8_H_short" xml:space="preserve">
     <value>ST vz. 39</value>
@@ -364,7 +364,7 @@
     <value>Škoda 16 cylinder diesel (660)</value>
   </data>
   <data name="Turret_1_Cz01_Skoda_T40" xml:space="preserve">
-    <value>Skoda T 40</value>
+    <value>Škoda T 40</value>
   </data>
   <data name="Turret_1_Cz02_TVP_T50" xml:space="preserve">
     <value>Škoda T 50 (1949)</value>
@@ -604,7 +604,7 @@
     <value>8,8 cm vz. 37N</value>
   </data>
   <data name="_88mm_Vz_37N_A" xml:space="preserve">
-    <value>8,8 cm Vz. 37N</value>
+    <value>8,8 cm vz. 37N</value>
   </data>
   <data name="_88mm_vz_41N" xml:space="preserve">
     <value>8,8 cm vz. 41N</value>

@@ -331,7 +331,10 @@
     <value>Tortoise Mk. 2</value>
   </data>
   <data name="Chassis_GB33_Sentinel_AC_I" xml:space="preserve">
-    <value>Sentinel AC I</value>
+    <value>AC 1 Sentinel</value>
+  </data>
+  <data name="Chassis_GB35_Sentinel_AC_IV" xml:space="preserve">
+    <value>AC 4 Experimental</value>
   </data>
   <data name="Chassis_GB39_Universal_CarrierQF2" xml:space="preserve">
     <value>Universal Carrier Mk. I</value>
@@ -703,7 +706,7 @@
     <value>Centurion Mk. I</value>
   </data>
   <data name="GB23_Centurion_descr" xml:space="preserve">
-    <value>Development of the Centurion started in 1943. Designed as a "universal tank" to replace existing infantry and cruiser tanks, it entered service in 1947. A total of 100 vehicles of this series were manufactured from 1945 through 1946.</value>
+    <value>Development of the Centurion started in 1943. The vehicle was designed as a "universal tank" to replace existing infantry and cruiser tanks. The Centurion was the first Britsh vehicle that featured sloped armor plates. The tank entered service in 1947. A total of 100 vehicles of this series were manufactured from 1945 through 1946.</value>
   </data>
   <data name="GB23_Centurion_short" xml:space="preserve">
     <value>Centurion I</value>
@@ -739,7 +742,7 @@
     <value>Sexton II</value>
   </data>
   <data name="GB27_Sexton_descr" xml:space="preserve">
-    <value>Modification of the Grizzly tank, mounting the British 25-pounder field howitzer. Mass production was launched at the Montreal Locomotive Works in Canada, with 2,150 vehicles manufactured from 1943 through 1945.</value>
+    <value>Modification of the Grizzly (M4A1 Sherman) tank, mounting the British 25-pounder field howitzer. Mass production was launched at the Montreal Locomotive Works in Canada, with 2,150 vehicles manufactured from 1943 through 1945.</value>
   </data>
   <data name="GB27_Sexton_short" xml:space="preserve">
     <value>Sexton II</value>
@@ -748,7 +751,7 @@
     <value>Bishop</value>
   </data>
   <data name="GB28_Bishop_descr" xml:space="preserve">
-    <value>Developed by Birmingham Railway Carriage &amp; Wagon in June 1941 on the basis of the Valentine II infantry support tank. From 1942 through 1943, a total of 149 SPGs were produced. Overall they were considered unsuccessful. From 1943 onward, they were relegated to use as training vehicles.</value>
+    <value>Developed on the basis of the Valentine tank. The standard turret was replaced by a stationary box-shaped cabin that featured a 25-pounder howitzer. Due to the low gun elevation angle (15 deg), the maximum firing range was only 5,800 m, which is only half as long as its firing range in the towed state. The SPG saw combat in North Africa, Sicily, and South Italy. According to various sources, a total of 80–100 vehicles were produced.</value>
   </data>
   <data name="GB28_Bishop_short" xml:space="preserve">
     <value>Bishop</value>
@@ -787,13 +790,22 @@
     <value>The development of this assault tank began in Great Britain in 1942. The design was finalized by February 1944, and an order was placed for 25 vehicles. However, by the fall of 1947 only five tanks had been manufactured.</value>
   </data>
   <data name="GB33_Sentinel_AC_I" xml:space="preserve">
-    <value>Sentinel AC I</value>
+    <value>AC 1 Sentinel</value>
   </data>
   <data name="GB33_Sentinel_AC_I_descr" xml:space="preserve">
     <value>Developed in 1941 under the program for Australian cruiser tanks. There were plans to produce 2,000 vehicles, but from 1942 through 1943, only 65 vehicles, with serial numbers from 8001 to 8065, were manufactured. In July 1943, it was decided to stop development and cancel the program. The vehicles never saw combat and were used only for training purposes. In 1946, the tanks were removed from service.</value>
   </data>
   <data name="GB33_Sentinel_AC_I_short" xml:space="preserve">
-    <value>Sentinel I</value>
+    <value>Sentinel</value>
+  </data>
+  <data name="GB35_Sentinel_AC_IV" xml:space="preserve">
+    <value>AC 4 Experimental</value>
+  </data>
+  <data name="GB35_Sentinel_AC_IV_descr" xml:space="preserve">
+    <value>The tank was developed in 1943. An order was placed for 400 vehicles. The prototype was created on the basis of the AC 1 tank with an enlarged superstructure, which allowed mounting a modified turret from the AC 3 tank with a 17-pounder gun. In July 1943, the work on the project was stopped at the final stage, as the program for creating the Australian cruiser tank was discontinued.</value>
+  </data>
+  <data name="GB35_Sentinel_AC_IV_short" xml:space="preserve">
+    <value>AC 4 Exp.</value>
   </data>
   <data name="GB39_Universal_CarrierQF2" xml:space="preserve">
     <value>Universal Carrier 2-pdr</value>
@@ -931,7 +943,7 @@
     <value>Cruiser Mk. II</value>
   </data>
   <data name="GB69_Cruiser_Mk_III_descr" xml:space="preserve">
-    <value>The A10 Cruiser Mk. II was a further development of the A9 modification. The A10 had enhanced armor and no machinegun turrets. A prototype was built in July 1937 and adopted for service as a heavy cruiser tank. A total of 175 vehicles were ordered between 1938–1939, which were manufactured by September 1940. The vehicles saw combat in France (1940), Greece (1941) and North Africa (1941).</value>
+    <value>The A10 Cruiser Mk. II was a further development of the A9 modification designed by John Carden. The A10 had enhanced armor and no machinegun turrets. A prototype was built in July 1937 and adopted for service as a heavy cruiser tank. A total of 175 vehicles were ordered between 1938–1939, which were manufactured by September 1940. The vehicles saw combat in France (1940), Greece (1941) and North Africa (1941).</value>
   </data>
   <data name="GB69_Cruiser_Mk_II_short" xml:space="preserve">
     <value>Cruiser II</value>
@@ -1242,9 +1254,6 @@
   <data name="Rolls_Royse_Meteor_MkIVC" xml:space="preserve">
     <value>Rolls-Royce Meteor Mk. IVC</value>
   </data>
-  <data name="Rolls_Royse_Meteor_MkIVD" xml:space="preserve">
-    <value>Rolls-Royce Meteor M120A</value>
-  </data>
   <data name="Rolls_Royse_Meteor_MkIV_B" xml:space="preserve">
     <value>Rolls-Royce Meteor Mk. IVB</value>
   </data>
@@ -1342,7 +1351,10 @@
     <value>Tortoise</value>
   </data>
   <data name="Turret_1_GB33_Sentinel_AC_I" xml:space="preserve">
-    <value>Sentinel AC I</value>
+    <value>AC 1 Sentinel</value>
+  </data>
+  <data name="Turret_1_GB35_Sentinel_AC_IV" xml:space="preserve">
+    <value>AC 4 Experimental</value>
   </data>
   <data name="Turret_1_GB39_Universal_CarrierQF2" xml:space="preserve">
     <value>Universal Carrier 2-pdr</value>

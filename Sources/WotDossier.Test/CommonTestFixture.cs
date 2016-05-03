@@ -372,7 +372,7 @@ namespace WotDossier.Test
             path = Path.Combine(path, "tanks.json");
 
             var stream = File.OpenWrite(path);
-            using (StreamWriter writer = new StreamWriter(stream))
+            using (StreamWriter writer = new StreamWriter(stream, Encoding.UTF8))
             {
                 writer.Write(tanksJson);
             }

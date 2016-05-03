@@ -4,6 +4,7 @@
     "userString": "#china_vehicles:_13.2mm_Balle_P.",
     "icon": "ap",
     "price": "\t1\t",
+    "notInShop": "\ttrue\t",
     "kind": "ARMOR_PIERCING",
     "caliber": "13.2",
     "isTracer": "\ttrue\t",
@@ -21,6 +22,7 @@
       "#text": "\t1\t",
       "gold": ""
     },
+    "notInShop": "\ttrue\t",
     "kind": "ARMOR_PIERCING_CR",
     "caliber": "13.2",
     "isTracer": "\ttrue\t",
@@ -1078,9 +1080,6 @@
       "armor": "\t490\t",
       "devices": "\t180\t"
     },
-    "piercingPowerLossFactorByDistance": "0.05"
-  }
-} },
     "piercingPowerLossFactorByDistance": "0.05"
   }
 }

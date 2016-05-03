@@ -123,6 +123,9 @@
   <data name="AN-GRC-7" xml:space="preserve">
     <value>AN/GRC-7</value>
   </data>
+  <data name="AN_GRC_8" xml:space="preserve">
+    <value>AN/GRC-8</value>
+  </data>
   <data name="APCNR" xml:space="preserve">
     <value>Pzgr. 41 HK</value>
   </data>
@@ -282,6 +285,15 @@
   </data>
   <data name="Chassis_G119_Pz58_Mutz" xml:space="preserve">
     <value>Panzer 58 Mutz</value>
+  </data>
+  <data name="Chassis_G120_M41_90" xml:space="preserve">
+    <value>leKpz M 41 90 mm</value>
+  </data>
+  <data name="Chassis_G120_M41_90_GrandFinal" xml:space="preserve">
+    <value>leKpz M 41 90 mm</value>
+  </data>
+  <data name="Chassis_G121_Grille_15_L63" xml:space="preserve">
+    <value>Grille 15</value>
   </data>
   <data name="Chassis_G58_VK4502P" xml:space="preserve">
     <value>VK 45.02(P) Ausf. B</value>
@@ -537,6 +549,13 @@ verstärkteketten</value>
   </data>
   <data name="Chassis_Waffentrager_IV_2" xml:space="preserve">
     <value>Waffenträger auf Pz. IV für 15 cm</value>
+  </data>
+  <data name="Continental_AOS-895-3" xml:space="preserve">
+    <value>Continental AOS-895-3</value>
+  </data>
+  <data name="Continental_AOS-895-3_short" xml:space="preserve">
+    <value>Continental
+AOS-895-3</value>
   </data>
   <data name="DW_II" xml:space="preserve">
     <value>Durchbruchswagen 2</value>
@@ -865,6 +884,33 @@ verstärkteketten</value>
   <data name="G119_Pz58_Mutz_short" xml:space="preserve">
     <value>Pz. 58 Mutz</value>
   </data>
+  <data name="G120_M41_90" xml:space="preserve">
+    <value>leKpz M 41 90 mm</value>
+  </data>
+  <data name="G120_M41_90_GrandFinal" xml:space="preserve">
+    <value>leKpz M 41 90 mm GF</value>
+  </data>
+  <data name="G120_M41_90_GrandFinal_descr" xml:space="preserve">
+    <value>German variant of the M41A1 Walker Bulldog U.S. light tank. The changes mainly related to the 76 mm M32 gun, which was re-bored to 90 mm and shortened by 425 mm.</value>
+  </data>
+  <data name="G120_M41_90_GrandFinal_short" xml:space="preserve">
+    <value>M 41 90 GF</value>
+  </data>
+  <data name="G120_M41_90_descr" xml:space="preserve">
+    <value>The German modification of the M41A1 Walker Bulldog U.S. light tank. Major changes were introduced to the 76 mm gun M32, which was reamed out to 90 mm and shortened by 425 mm.</value>
+  </data>
+  <data name="G120_M41_90_short" xml:space="preserve">
+    <value>M 41 90 mm</value>
+  </data>
+  <data name="G121_Grille_15_L63" xml:space="preserve">
+    <value>Grille 15</value>
+  </data>
+  <data name="G121_Grille_15_L63_descr" xml:space="preserve">
+    <value>In the summer of 1942, Waffenamt (the German Army Weapon Agency) concluded an agreement with the Krupp and Rheinmetall companies for designing a tank destroyer on the chassis of the Panther tank. It was planned to mount either the 128-mm K 43 gun or the 150-mm sFH 43 howitzer. The projects were designated Grille 12 and Grille 15, featured rear placement of the fighting compartment, and differed only in the artillery system type. Later, the Grille 15 received a 150-mm gun with a length of 63 calibers, which could penetrate 200 mm of armor at 4,000 meters. However, development was slow, and the Grille 15 remained only in blueprints.</value>
+  </data>
+  <data name="G121_Grille_15_L63_short" xml:space="preserve">
+    <value>Grille 15</value>
+  </data>
   <data name="G20_Marder_II" xml:space="preserve">
     <value>Marder II</value>
   </data>
@@ -923,7 +969,7 @@ verstärkteketten</value>
     <value>G.W. Tiger</value>
   </data>
   <data name="G_Tiger_descr" xml:space="preserve">
-    <value>The decision to build this heavy artillery system came in June 1942. In January 1943 a suspension based on that of the Tiger II was ordered. The first prototype underwent trials at the very end of the war. The vehicle never saw service.</value>
+    <value>Development of an SPG on the chassis of the Pz.Kpfw. VIB Tiger II started in 1942. The project called for designing a common self-propelled gun carriage for the 17 cm Kanone 72 gun and 21 cm Mörser 18/1 howitzer. The concept of the SPG allowed the use of artillery systems from both the carriage and the ground. Work on building an experimental prototype began in 1945.</value>
   </data>
   <data name="G_Tiger_short" xml:space="preserve">
     <value>G.W. Tiger</value>
@@ -1121,7 +1167,7 @@ verstärkteketten</value>
     <value>Krupp M311</value>
   </data>
   <data name="LT-40_turm" xml:space="preserve">
-    <value>LT vz. 40</value>
+    <value>Pz.Kpfw. 38 (t) Ausf. A</value>
   </data>
   <data name="Leichtertaktorketten" xml:space="preserve">
     <value>Leichttraktor</value>
@@ -1415,6 +1461,9 @@ HL 230 TRM P30</value>
     <value>Maybach HL 230
 TRM P45</value>
   </data>
+  <data name="Maybach_HL_234" xml:space="preserve">
+    <value>Maybach HL 234</value>
+  </data>
   <data name="Maybach_HL_234P30_Ausf_A" xml:space="preserve">
     <value>Maybach HL 230</value>
   </data>
@@ -1466,7 +1515,7 @@ TRM P45</value>
     <value>Nashorn</value>
   </data>
   <data name="Nashorn_descr" xml:space="preserve">
-    <value>Designated the Hornisse ("Hornet") until 1944. Produced on the same chassis as the Hummel heavy SPG. The vehicle first saw combat on the Eastern Front in the summer of 1943. A total of 494 vehicles were manufactured.</value>
+    <value>The official designation of the Nashorn ("Rhinoceros") tank destroyer was 8.8 cm PaK 43/1 auf Geschützwagen III/IV (Sf). The vehicle was designated the Hornisse ("Hornet") until 1944. Produced on the same chassis as the Hummel heavy SPG. The vehicle first saw combat on the Eastern Front in the summer of 1943. A total of 494 vehicles were manufactured.</value>
   </data>
   <data name="Nashorn_short" xml:space="preserve">
     <value>Nashorn</value>
@@ -1650,16 +1699,16 @@ verstärkteketten</value>
     <value>Pz.Kpfw. 38 (t)</value>
   </data>
   <data name="Pz38t_Ausf_G_turm" xml:space="preserve">
-    <value>Pz.Kpfw. 38 (t) Ausf. G</value>
+    <value>Pz.Kpfw. 38 (t) Ausf. E/F</value>
   </data>
   <data name="Pz38t_Standardketten" xml:space="preserve">
-    <value>Pz.Kpfw. 38 (t) Ausf. E</value>
+    <value>Pz.Kpfw. 38 (t) Ausf. A</value>
   </data>
   <data name="Pz38t_Vetstaerktketten" xml:space="preserve">
-    <value>Pz.Kpfw. 38 (t) Ausf. G</value>
+    <value>Pz.Kpfw. 38 (t) Ausf. E</value>
   </data>
   <data name="Pz38t_descr" xml:space="preserve">
-    <value>The tank was developed for the Czechoslovakian Army. However, it was mostly produced for the Panzerwaffe from 1939 through 1942, with a total of 1,411 vehicles manufactured.</value>
+    <value>Developed by the ČKD company for the Czechoslovakian Army in 1938. During the German occupation, the vehicle saw service in the Wehrmacht and was used in the Polish and French Campaigns, as well as on the Eastern Front. The tank saw combat on the front line until the middle of 1942. Approximately 1,400 vehicles in eight modifications (Ausf. A/B/C/D/E/F/S/G) were manufactured.</value>
   </data>
   <data name="Pz38t_short" xml:space="preserve">
     <value>Pz. 38 (t)</value>
@@ -1726,7 +1775,7 @@ Ausf. L</value>
     <value>Pz.Kpfw. III/IV</value>
   </data>
   <data name="PzIII_IV_descr" xml:space="preserve">
-    <value>The tank was intended to use parts and components of the PzKpfw III and PzKpfw IV vehicles. Existed only in blueprints.</value>
+    <value>The tank was intended to use parts and components of the Pz.Kpfw. III and Pz.Kpfw. IV vehicles. Existed only in blueprints.</value>
   </data>
   <data name="PzIII_IV_short" xml:space="preserve">
     <value>Pz. III/IV</value>
@@ -1853,7 +1902,7 @@ Ausf. F</value>
     <value>Pz.Kpfw. IV hydrostat.</value>
   </data>
   <data name="PzIV_Hydro_descr" xml:space="preserve">
-    <value>This experimental version of the PzKpfw IV Ausf. G, incorporating hydrostatic drive, began development in 1944. Trials were discontinued due to the unreliability of the transmission and the lack of spare parts.</value>
+    <value>This experimental version of the Pz.Kpfw. IV Ausf. G, incorporating hydrostatic drive, began development in 1944. Trials were discontinued due to the unreliability of the transmission and the lack of spare parts.</value>
   </data>
   <data name="PzIV_Hydro_short" xml:space="preserve">
     <value>Pz. IV hydr.</value>
@@ -2008,13 +2057,13 @@ Ausf. E</value>
     <value>Pz.Kpfw. V/IV Alpha</value>
   </data>
   <data name="PzV_PzIV_ausf_Alfa_descr" xml:space="preserve">
-    <value>Only one prototype was built. The PzKpfw IV turret was mounted as a stationary module on the Panther hull for testing.</value>
+    <value>Only one prototype was built. The Pz.Kpfw. IV turret was mounted as a stationary module on the Panther hull for testing.</value>
   </data>
   <data name="PzV_PzIV_ausf_Alfa_short" xml:space="preserve">
     <value>Pz. V/IV A</value>
   </data>
   <data name="PzV_PzIV_descr" xml:space="preserve">
-    <value>Only one prototype was built. The PzKpfw IV turret was mounted as a stationary module on the Panther hull for testing.</value>
+    <value>Only one prototype was built. The Pz.Kpfw. IV turret was mounted as a stationary module on the Panther hull for testing.</value>
   </data>
   <data name="PzV_PzIV_short" xml:space="preserve">
     <value>Pz. V/IV</value>
@@ -2121,9 +2170,6 @@ Ausf. E</value>
   <data name="SEM25_1" xml:space="preserve">
     <value>SEM 25A</value>
   </data>
-  <data name="SEM25_1_fallout" xml:space="preserve">
-    <value>SEM 25A</value>
-  </data>
   <data name="Scania_Vabis1664" xml:space="preserve">
     <value>Scania Vabis 1664</value>
   </data>
@@ -2210,7 +2256,7 @@ verstärkteketten</value>
     <value>This experimental light tank was developed at the Škoda factory in 1941–1943, with a total of five prototypes manufactured. The vehicle was never mass-produced, nor saw service.</value>
   </data>
   <data name="T-15_short" xml:space="preserve">
-    <value>Pz.Kpfw. T 15</value>
+    <value>Pz. T 15</value>
   </data>
   <data name="T-25" xml:space="preserve">
     <value>Pz.Kpfw. T 25</value>
@@ -2219,7 +2265,7 @@ verstärkteketten</value>
     <value>The vehicle was developed by the Škoda company under the Panzer Development Program initiated by the Heer (German Army land forces). The T-25 existed only in blueprints.</value>
   </data>
   <data name="T-25_short" xml:space="preserve">
-    <value>Pz.Kpfw. T 25</value>
+    <value>Pz. T 25</value>
   </data>
   <data name="T_Bison" xml:space="preserve">
     <value>Sturmpanzer I Bison</value>
@@ -2322,6 +2368,15 @@ Ausf. E</value>
   </data>
   <data name="Turret_1_G119_Pz58_Mutz" xml:space="preserve">
     <value>Panzer 58 Mutz</value>
+  </data>
+  <data name="Turret_1_G120_M41_90" xml:space="preserve">
+    <value>leKpz M 41 90 mm</value>
+  </data>
+  <data name="Turret_1_G120_M41_90_GrandFinal" xml:space="preserve">
+    <value>leKpz M 41 90 mm</value>
+  </data>
+  <data name="Turret_1_G121_Grille_15_L63" xml:space="preserve">
+    <value>Grille 15</value>
   </data>
   <data name="Turret_1_G58_VK4502P" xml:space="preserve">
     <value>VK 45.02 (P) Ausf. B</value>
@@ -2588,7 +2643,7 @@ Schwerer Turm</value>
 verstärkteketten</value>
   </data>
   <data name="VK3001H_descr" xml:space="preserve">
-    <value>Prototype based on the Henschel hull, with four chassis produced for this model from March through October 1941. The Krupp company manufactured 12 turrets for this vehicle.</value>
+    <value>An order for developing the vehicle was placed on September 9, 1939. Over the course of its development, Henschel engineers actively used elements of the D.W. II project. The first two prototypes were ready in March 1942; another two were built by October the same year. Hulls of the prototypes underwent trials at the plant proving ground. After the trials, two prototypes were converted into heavy tank destoyers. Six turrets manufactured by the Krupp company were placed at the Atlantic Wall.</value>
   </data>
   <data name="VK3001H_short" xml:space="preserve">
     <value>VK 30.01 H</value>
@@ -2617,7 +2672,7 @@ Krupp Turm</value>
 verstärkteketten</value>
   </data>
   <data name="VK3001P_descr" xml:space="preserve">
-    <value>Two prototypes were built on the Porsche chassis from 1940 to 1941, but the vehicle never entered mass production.</value>
+    <value>The Porsche company developed the concept of a new vehicle in 1939. On March 5, 1941, after numerous approvals, the company prepared blueprints and, in July 1941, produced the hull from mild steel. The hull and chassis (with detachable equipment for trenching) passed performance trials. One wooden prototype of the turret and one wooden prototype of the hull were manufactured. In 1942, the project was discontinued in favor of new heavy tanks.</value>
   </data>
   <data name="VK3001P_short" xml:space="preserve">
     <value>VK 30.01 P</value>
@@ -2663,7 +2718,7 @@ verstärkteketten</value>
     <value>VK 30.02 (M)</value>
   </data>
   <data name="VK3002M_descr" xml:space="preserve">
-    <value>A medium tank, developed by the MAN company and designed as a 30-ton tank. Simultaneously, the Daimler-Benz company developed a competing project. On 13 May, 1942, the two projects were submitted to the Ministry of Armaments and War Production. The MAN design was preferred, and the tank eventually entered service as the PzKpfw V Panther.</value>
+    <value>A medium tank, developed by the MAN company and designed as a 30-ton tank. Simultaneously, the Daimler-Benz company developed a competing project. On May 13, 1942, the two projects were submitted to the Ministry of Armaments and War Production. The MAN design was preferred, and the tank eventually entered service as the Pz.Kpfw. V Panther.</value>
   </data>
   <data name="VK3002M_short" xml:space="preserve">
     <value>VK 30.02 M</value>
@@ -2819,20 +2874,11 @@ verstärkteketten</value>
   <data name="_105mmGr_39H1A_K" xml:space="preserve">
     <value>Gr 39 H1A K</value>
   </data>
-  <data name="_105mm_APCR_M68M2_fallout" xml:space="preserve">
-    <value>APDS-T M392 (D)</value>
-  </data>
   <data name="_105mm_BK_L7A3_L51" xml:space="preserve">
     <value>10,5 cm Bordkanone L7A3</value>
   </data>
   <data name="_105mm_Gr19" xml:space="preserve">
     <value>Gr 19</value>
-  </data>
-  <data name="_105mm_HEAT-T_T384E4_fallout" xml:space="preserve">
-    <value>HEAT-T T384E4 (D)</value>
-  </data>
-  <data name="_105mm_HE_M68M2_fallout" xml:space="preserve">
-    <value>HEP-T M393 (D)</value>
   </data>
   <data name="_105mm_K18_L52" xml:space="preserve">
     <value>10,5 cm Pak L/52</value>
@@ -2862,9 +2908,6 @@ Ausf. K</value>
   </data>
   <data name="_105mm_KwK46_L70" xml:space="preserve">
     <value>10,5 cm Kw.K. L/70</value>
-  </data>
-  <data name="_105mm_KwK_L67" xml:space="preserve">
-    <value>10,5 cm Kw.K. L/67</value>
   </data>
   <data name="_105mm_L7A1" xml:space="preserve">
     <value>10,5 cm L7A1</value>
@@ -2992,11 +3035,20 @@ Ausf. K</value>
   <data name="_150mmGr_39H3A_G" xml:space="preserve">
     <value>Gr 39 H3A G</value>
   </data>
+  <data name="_150mm_Gr_HL" xml:space="preserve">
+    <value>Gr. HL</value>
+  </data>
   <data name="_150mm_KwK44_L38" xml:space="preserve">
     <value>15 cm Kw.K. L/38</value>
   </data>
+  <data name="_150mm_Pak_L63" xml:space="preserve">
+    <value>15 cm Pak L/63</value>
+  </data>
   <data name="_150mm_PzGr42" xml:space="preserve">
     <value>Pzgr 42</value>
+  </data>
+  <data name="_150mm_Pzgr" xml:space="preserve">
+    <value>Pzgr.</value>
   </data>
   <data name="_150mm_Rohr_L29_5" xml:space="preserve">
     <value>15 cm Pak L/29.5</value>
@@ -3024,6 +3076,9 @@ Ausf. K</value>
   </data>
   <data name="_150mm_Sprg_L.erz." xml:space="preserve">
     <value>Sprgr L erz.</value>
+  </data>
+  <data name="_150mm_Sprgr" xml:space="preserve">
+    <value>Sprgr.</value>
   </data>
   <data name="_150mm_sFH13_L17" xml:space="preserve">
     <value>15 cm s.F.H. 13 L/17</value>
@@ -3397,6 +3452,12 @@ Ausf. K</value>
   <data name="_88mm_Sprgr.Flak_41" xml:space="preserve">
     <value>Sprgr. Flak 41</value>
   </data>
+  <data name="_90_76mm_US_Kanone_M_32" xml:space="preserve">
+    <value>90/76 mm US-Kanone M 32</value>
+  </data>
+  <data name="_90mm_AP_T_33" xml:space="preserve">
+    <value>AP T 33</value>
+  </data>
   <data name="_90mm_D921_F1" xml:space="preserve">
     <value>90 mm D921 F1</value>
   </data>
@@ -3408,6 +3469,12 @@ Ausf. K</value>
   </data>
   <data name="_90mm_DM502" xml:space="preserve">
     <value>DM502</value>
+  </data>
+  <data name="_90mm_HEAT_T_108" xml:space="preserve">
+    <value>HEAT T 108</value>
+  </data>
+  <data name="_90mm_HEP_T_142" xml:space="preserve">
+    <value>HEP T 142</value>
   </data>
   <data name="_90mm_M431" xml:space="preserve">
     <value>M431</value>

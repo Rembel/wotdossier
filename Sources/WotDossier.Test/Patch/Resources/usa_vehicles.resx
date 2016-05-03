@@ -171,6 +171,24 @@
   <data name="A109_T56_GMC_descr" xml:space="preserve">
     <value>Development of a 3 inch self-propelled gun on the M3A3 Stuart chassis started in September 1942. Trials on the Aberdeen Proving Ground in November demonstrated that the gun was too heavy for the light tank chassis. Never entered mass production.</value>
   </data>
+  <data name="A111_T25_Pilot" xml:space="preserve">
+    <value>T25 Pilot Number 1</value>
+  </data>
+  <data name="A111_T25_Pilot_descr" xml:space="preserve">
+    <value>Developed by the United States Army Ordnance Corps on the basis of the mass-produced T23 tank with a 90-mm gun and reinforced armor. After the creation of two prototypes, 40 other vehicles were manufactured.</value>
+  </data>
+  <data name="A111_T25_Pilot_short" xml:space="preserve">
+    <value>T25 Pilot 1</value>
+  </data>
+  <data name="A112_T71E2" xml:space="preserve">
+    <value>T71 CMCD</value>
+  </data>
+  <data name="A112_T71E2_descr" xml:space="preserve">
+    <value>A project of an airborne light tank. Developed by the Cadillac company from 1952 through 1956 as a replacement for the M41. In 1956, due to insufficient funds, the project was discontinued in favor of the more promising Т92. No prototypes were built.</value>
+  </data>
+  <data name="A112_T71E2_short" xml:space="preserve">
+    <value>T71 CMCD</value>
+  </data>
   <data name="A27_T82" xml:space="preserve">
     <value>T82 HMC</value>
   </data>
@@ -230,9 +248,6 @@ Along with other U.S. tanks that fought in Korea, M46 tanks were painted with "T
     <value>AN/VRC-24</value>
   </data>
   <data name="AN_VRC-3" xml:space="preserve">
-    <value>AN/VRC-3</value>
-  </data>
-  <data name="AN_VRC-3_fallout" xml:space="preserve">
     <value>AN/VRC-3</value>
   </data>
   <data name="AOI-1490" xml:space="preserve">
@@ -296,6 +311,12 @@ AOI-1490</value>
   </data>
   <data name="Chassis_A109_T56_GMC_2" xml:space="preserve">
     <value>T57 GMC</value>
+  </data>
+  <data name="Chassis_A111_T25_Pilot" xml:space="preserve">
+    <value>T25 Pilot Number 1</value>
+  </data>
+  <data name="Chassis_A112_T71E2" xml:space="preserve">
+    <value>T71 CMCD</value>
   </data>
   <data name="Chassis_A27_T82" xml:space="preserve">
     <value>T82 Pilot No. 1</value>
@@ -533,6 +554,13 @@ AOI-405-5</value>
   <data name="Continental_AOI-628-1" xml:space="preserve">
     <value>Continental AOI-628-1</value>
   </data>
+  <data name="Continental_AOI-628-1_A" xml:space="preserve">
+    <value>Continental AOI-628-1</value>
+  </data>
+  <data name="Continental_AOI-628-1_A_short" xml:space="preserve">
+    <value>Continental
+AOI-628-1</value>
+  </data>
   <data name="Continental_AOI-628-1_short" xml:space="preserve">
     <value>Continental
 AOI-628-1</value>
@@ -644,13 +672,6 @@ AV-1790-5A</value>
   </data>
   <data name="Continental_AV_1790_5C" xml:space="preserve">
     <value>Continental AV-1790-5C</value>
-  </data>
-  <data name="Continental_AV_1790_5C_fallout" xml:space="preserve">
-    <value>Continental AV-1790-5C</value>
-  </data>
-  <data name="Continental_AV_1790_5C_fallout_short" xml:space="preserve">
-    <value>Continental
-AV-1790-5C</value>
   </data>
   <data name="Continental_AV_1790_5C_short" xml:space="preserve">
     <value>Continental
@@ -1057,7 +1078,7 @@ T-1020-4</value>
     <value>M60</value>
   </data>
   <data name="M60_descr" xml:space="preserve">
-    <value>The M60 was a deep modernization of the M48 tank. Development of the prototype was started in 1957, and in 1959 the order for production of the first tank was placed with Chrysler.</value>
+    <value>A deep modernization of the M48 tank. Development of the prototype was started in 1957, and in 1959 the order for production of the first tank was placed with Chrysler. A total of 15,000 vehicles of four modifications were manufactured.</value>
   </data>
   <data name="M62T80" xml:space="preserve">
     <value>T23E3</value>
@@ -1285,13 +1306,13 @@ T-1020-4</value>
     <value>T1 Cunningham</value>
   </data>
   <data name="T1_Cunningham_bot_descr" xml:space="preserve">
-    <value>Prototypes were developed by James Cunningham, Son &amp; Company (Rochester, NY) from 1927 through 1928. Various modifications of the vehicle were tested until 1934. However, the tank never saw mass production.</value>
+    <value>The experimental T1E1 light tank designed by the Cunningham company was a further development of the T1 tank. By April 1928, four vehicles were produced. After the vehicle underwent trials in November 1928, a decision was made to enhance the armor, which led to creating the subsequent modification designated the T1E2.</value>
   </data>
   <data name="T1_Cunningham_bot_short" xml:space="preserve">
     <value>T1</value>
   </data>
   <data name="T1_Cunningham_descr" xml:space="preserve">
-    <value>Prototypes were developed by James Cunningham, Son &amp; Company (Rochester, NY) from 1927 through 1928. Various modifications of the vehicle were tested until 1934. However, the tank never saw mass production.</value>
+    <value>The experimental T1E1 light tank designed by the Cunningham company was a further development of the T1 tank. By April 1928, four vehicles were produced. After the vehicle underwent trials in November 1928, a decision was made to enhance the armor, which led to creating the subsequent modification designated the T1E2.</value>
   </data>
   <data name="T1_Cunningham_short" xml:space="preserve">
     <value>T1</value>
@@ -1309,7 +1330,7 @@ T-1020-4</value>
     <value>T1 Heavy Tank</value>
   </data>
   <data name="T1_hvy_descr" xml:space="preserve">
-    <value>Development of the tank started in the spring of 1940. In September 1940 and December 1941, prototypes underwent trials. The tank was never mass-produced. Later, it became a prototype for the M6.</value>
+    <value>Development of the T1E2 started in the U.S.A. in May 1940. The vehicle was designed as a heavy tank. The distinctive features of the vehicle were a cast hull and hydromechanical transmission with a double-disc hydraulic converter. Later, the tank was designated M6. A total of 9 vehicles (1 of which was experimental) were produced. The tank never saw action.</value>
   </data>
   <data name="T1_hvy_short" xml:space="preserve">
     <value>T1 Heavy</value>
@@ -1384,7 +1405,7 @@ T-1020-4</value>
     <value>T28 Prototype</value>
   </data>
   <data name="T28_Prototype_descr" xml:space="preserve">
-    <value>Tank destroyer with a rotating gun turret. It was an early modification of a heavy SPG and was intended to fight at the Siegfried Line.</value>
+    <value>Early prototype of a heavy tank designed for breaking through fortifications of the German Siegfried Line. Existed only in blueprints, prepared under the program for developing heavy vehicles that was initiated in September 1943.</value>
   </data>
   <data name="T28_Prototype_short" xml:space="preserve">
     <value>T28 Prot.</value>
@@ -1531,7 +1552,7 @@ T-1020-4</value>
     <value>T67</value>
   </data>
   <data name="T67_descr" xml:space="preserve">
-    <value>Development started in the spring of 1942. After undergoing trials, the decision was made to replace the 57-mm gun with a 75-mm gun. The vehicle passed trials in the fall of 1942 but never saw service.</value>
+    <value>Development started in the spring of 1942. After trials in the fall of 1942, the decision was made to replace the 57-mm gun with a 75-mm gun. Two prototypes were manufactured. The vehicle saw neither mass production nor service.</value>
   </data>
   <data name="T69" xml:space="preserve">
     <value>T69</value>
@@ -1646,6 +1667,9 @@ T-1020-4</value>
   </data>
   <data name="Turret_1_A109_T56_GMC" xml:space="preserve">
     <value>T56 GMC</value>
+  </data>
+  <data name="Turret_1_A111_T25_Pilot" xml:space="preserve">
+    <value>T25 Pilot Number 1</value>
   </data>
   <data name="Turret_1_A27_T82" xml:space="preserve">
     <value>T82 HMC</value>
@@ -2049,9 +2073,6 @@ M781C9GC1</value>
   <data name="_120mm_AP-T_M358" xml:space="preserve">
     <value>AP-T M358</value>
   </data>
-  <data name="_120mm_AP-T_M358_fallout" xml:space="preserve">
-    <value>AP-T M358 (D)</value>
-  </data>
   <data name="_120mm_APCR_T62" xml:space="preserve">
     <value>APCR T62</value>
   </data>
@@ -2085,14 +2106,8 @@ M781C9GC1</value>
   <data name="_120mm_HEAT-T_M469" xml:space="preserve">
     <value>HEAT-T M469</value>
   </data>
-  <data name="_120mm_HEAT-T_M469_fallout" xml:space="preserve">
-    <value>HEAT-T M469 (D)</value>
-  </data>
   <data name="_120mm_HE_Shot" xml:space="preserve">
     <value>HE Shell</value>
-  </data>
-  <data name="_120mm_HE_Shot_fallout" xml:space="preserve">
-    <value>HE Shell (D)</value>
   </data>
   <data name="_152mm_Gun_Launcher_M81" xml:space="preserve">
     <value>152 mm Gun-Launcher XM81 (conventional)</value>
@@ -2422,6 +2437,9 @@ automatic cannon</value>
   <data name="_76mm_Gun_T185" xml:space="preserve">
     <value>76 mm Gun T185</value>
   </data>
+  <data name="_76mm_Gun_T185_A" xml:space="preserve">
+    <value>76 mm Gun T185</value>
+  </data>
   <data name="_76mm_Gun_T91" xml:space="preserve">
     <value>76 mm Gun T91</value>
   </data>
@@ -2518,6 +2536,9 @@ automatic cannon</value>
   <data name="_90mm_Gun_T178" xml:space="preserve">
     <value>90 mm Gun T178</value>
   </data>
+  <data name="_90mm_Gun_T7" xml:space="preserve">
+    <value>90 mm Gun T7</value>
+  </data>
   <data name="_90mm_HEAT_M348" xml:space="preserve">
     <value>HEAT-T M348</value>
   </data>
@@ -2543,7 +2564,7 @@ automatic cannon</value>
     <value>M44</value>
   </data>
   <data name="_M44_descr" xml:space="preserve">
-    <value>A 155-mm SPG on the chassis of the M41 light tank. Developed from 1947 through 1951. Multiple faults were revealed after the vehicle entered service, and the M44 was withdrawn from mass production in favor of other SPGs. According to different sources, between 250 and 600 were manufactured from 1953 through 1954.</value>
+    <value>A 155 mm SPG on the chassis of the M41 light tank. The vehicle saw action in the Korean War. In the early 1960s, improved SPGs of this type with rotating turrets were introduced, and the M44 was removed from service. According to different sources, between 250 and 600 vehicles were manufactured from 1953 through 1954.</value>
   </data>
   <data name="chassisE1" xml:space="preserve">
     <value>Stuart E1</value>

@@ -29,9 +29,7 @@
         }
       }
     },
-    "music": "/music/tutorial/battle_music",
     "wwmusic": "music_tutorial",
-    "loadingMusic": "/music/intro/rus_city",
     "wwloadingMusic": "music_rus_city",
     "water": {
       "texScale": "\t0\t",
@@ -54,9 +52,7 @@
     "minimap": "spaces/01_karelia/mmap.dds",
     "vehicleCamouflageKind": "summer",
     "maxPlayersInTeam": "\t15\t",
-    "loadingMusic": "/music/intro/rus_village",
     "wwloadingMusic": "music_rus_vilage",
-    "ambientSound": "/wind/wind/wind_autumn_01",
     "wwambientSound": "ambient_wind_autumn_01",
     "umbraEnabled": "\t1\t",
     "batchingEnabled": "\t0\t",
@@ -202,9 +198,7 @@
     "vehicleCamouflageKind": "summer",
     "umbraEnabled": "\t1\t",
     "batchingEnabled": "\t0\t",
-    "loadingMusic": "/music/intro/Intro_Malinovka",
     "wwloadingMusic": "music_malinovka",
-    "ambientSound": "/wind/wind/wind_autumn_01",
     "wwambientSound": "ambient_wind_autumn_01",
     "water": {
       "texScale": "\t0\t",
@@ -285,9 +279,7 @@
     "minimap": "spaces/04_himmelsdorf/mmap.dds",
     "vehicleCamouflageKind": "summer",
     "defaultGroundEffect": "\tNone\t",
-    "loadingMusic": "/music/intro/Intro_Himmelsdorf",
     "wwloadingMusic": "music_himmelsdorf",
-    "ambientSound": "/wind/wind/wind_spring_01",
     "wwambientSound": "ambient_wind_spring_01",
     "umbraEnabled": "\t1\t",
     "batchingEnabled": "\t0\t",
@@ -475,9 +467,7 @@
     "umbraEnabled": "\t1\t",
     "batchingEnabled": "\t0\t",
     "defaultGroundEffect": "ground",
-    "loadingMusic": "/music/intro/rus_village",
     "wwloadingMusic": "music_rus_vilage",
-    "ambientSound": "/wind/wind/wind_autumn_01",
     "wwambientSound": "ambient_wind_autumn_01",
     "water": {
       "texScale": "\t0\t",
@@ -551,9 +541,7 @@
     "defaultGroundEffect": "\tNone\t",
     "umbraEnabled": "\t1\t",
     "batchingEnabled": "\t0\t",
-    "loadingMusic": "/music/intro/rus_city",
     "wwloadingMusic": "music_rus_city",
-    "ambientSound": "/wind/wind/wind_autumn_01",
     "wwambientSound": "ambient_wind_autumn_01",
     "gameplayTypes": {
       "ctf": {
@@ -598,9 +586,7 @@
     "umbraEnabled": "\t1\t",
     "batchingEnabled": "\t0\t",
     "defaultGroundEffect": "\tNone\t",
-    "loadingMusic": "/music/intro/Intro_Himmelsdorf",
     "wwloadingMusic": "music_himmelsdorf",
-    "ambientSound": "/wind/wind/wind_spring_01",
     "wwambientSound": "ambient_wind_spring_01",
     "water": {
       "texScale": "\t0\t",
@@ -668,9 +654,7 @@
     "umbraEnabled": "\t1\t",
     "batchingEnabled": "\t0\t",
     "defaultGroundEffect": "\tNone\t",
-    "loadingMusic": "/music/intro/euro_city",
     "wwloadingMusic": "music_euro_city",
-    "ambientSound": "/wind/wind/wind_autumn_01",
     "wwambientSound": "ambient_wind_autumn_01",
     "gameplayTypes": {
       "ctf": {
@@ -727,12 +711,10 @@
     "minimap": "spaces/100_thepit/mmap.dds",
     "vehicleCamouflageKind": "summer",
     "maxPlayersInTeam": "\t15\t",
-    "loadingMusic": "/music/intro/rus_city",
     "wwloadingMusic": [
       "music_rus_city",
       "music_malinovka"
     ],
-    "ambientSound": "/wind/wind/wind_summer_01",
     "wwambientSound": "ambient_wind_summer_01",
     "umbraEnabled": "\t1\t",
     "batchingEnabled": "\t0\t",
@@ -773,11 +755,17 @@
           "level": [
             {
               "id": "\t1\t",
-              "scenario": "spaces/100_thepit/bot_scenarios_1_lv1.xml"
+              "scenario": [
+                "spaces/100_thepit/bot_scenarios_1_lv1.xml",
+                "spaces/100_thepit/bot_scenarios_2_lv1.xml"
+              ]
             },
             {
               "id": "\t2\t",
-              "scenario": "spaces/100_thepit/bot_scenarios_1_lv2.xml"
+              "scenario": [
+                "spaces/100_thepit/bot_scenarios_1_lv2.xml",
+                "spaces/100_thepit/bot_scenarios_2_lv2.xml"
+              ]
             }
           ]
         }
@@ -797,9 +785,7 @@
     "minimap": "spaces/101_dday/mmap.dds",
     "vehicleCamouflageKind": "summer",
     "maxPlayersInTeam": "\t15\t",
-    "loadingMusic": "/music/intro/euro_village",
     "wwloadingMusic": "music_euro_vilage",
-    "ambientSound": "/wind/wind/wind_summer_01",
     "wwambientSound": "ambient_wind_summer_01",
     "umbraEnabled": "\t1\t",
     "batchingEnabled": "\t0\t",
@@ -918,10 +904,16 @@
     "umbraEnabled": "\t1\t",
     "batchingEnabled": "\t0\t",
     "defaultGroundEffect": "\tNone\t",
-    "loadingMusic": "/music/intro/euro_city",
     "wwloadingMusic": "music_euro_city",
-    "ambientSound": "/wind/wind/wind_winter_01",
     "wwambientSound": "ambient_wind_winter_01",
+    "soundRemapping": {
+      "events": {
+        "event": {
+          "name": "ambient_nature_birds_crows",
+          "mod": "ambient_nature_birds_winter_crow"
+        }
+      }
+    },
     "gameplayTypes": {
       "ctf": {
         "teamBasePositions": {
@@ -977,9 +969,7 @@
     "minimap": "spaces/105_germany/mmap.dds",
     "vehicleCamouflageKind": "summer",
     "maxPlayersInTeam": "\t15\t",
-    "loadingMusic": "/music/intro/euro_city",
     "wwloadingMusic": "music_euro_city",
-    "ambientSound": "/wind/wind/wind_autumn_01",
     "wwambientSound": "ambient_wind_autumn_01",
     "umbraEnabled": "\t1\t",
     "batchingEnabled": "\t0\t",
@@ -1267,9 +1257,7 @@
     "defaultGroundEffect": "\tNone\t",
     "umbraEnabled": "\t1\t",
     "batchingEnabled": "\t0\t",
-    "loadingMusic": "/music/intro/euro_village",
     "wwloadingMusic": "music_rus_vilage",
-    "ambientSound": "/wind/wind/wind_summer_01",
     "wwambientSound": "ambient_wind_summer_01",
     "water": {
       "texScale": "\t0\t",
@@ -1403,11 +1391,17 @@
           "level": [
             {
               "id": "\t1\t",
-              "scenario": "spaces/10_hills/bot_scenarios_1_lv1.xml"
+              "scenario": [
+                "spaces/10_hills/bot_scenarios_1_lv1.xml",
+                "spaces/10_hills/bot_scenarios_2_lv1.xml"
+              ]
             },
             {
               "id": "\t2\t",
-              "scenario": "spaces/10_hills/bot_scenarios_1_lv2.xml"
+              "scenario": [
+                "spaces/10_hills/bot_scenarios_1_lv2.xml",
+                "spaces/10_hills/bot_scenarios_2_lv2.xml"
+              ]
             }
           ]
         }
@@ -1427,9 +1421,7 @@
     "minimap": "spaces/111_paris/mmap.dds",
     "vehicleCamouflageKind": "winter",
     "maxPlayersInTeam": "\t15\t",
-    "loadingMusic": "/music/intro/euro_city",
     "wwloadingMusic": "music_euro_city",
-    "ambientSound": "/wind/wind/wind_winter_01",
     "wwambientSound": "ambient_wind_winter_01",
     "umbraEnabled": "\t1\t",
     "batchingEnabled": "\t0\t",
@@ -1863,7 +1855,7 @@
         "endRadius": "\t110,000000\t"
       },
       "visualSettings": {
-        "cloudModel": "particles/mesh_particles/funnel_death/fire_storm.model",
+        "cloudModel": "particles/content_deferred/GFX_models/funnel_death/fire_storm.model",
         "cloudClimbTime": "\t15\t",
         "cloudStartHeight": "\t-150\t",
         "cloudEndHeight": "\t25\t",
@@ -2194,9 +2186,7 @@
     "minimap": "spaces/112_eiffel_tower/mmap.dds",
     "vehicleCamouflageKind": "summer",
     "maxPlayersInTeam": "\t15\t",
-    "loadingMusic": "/music/intro/euro_city",
     "wwloadingMusic": "music_euro_city",
-    "ambientSound": "/wind/wind/wind_summer_01",
     "wwambientSound": "ambient_wind_summer_01",
     "umbraEnabled": "\t1\t",
     "batchingEnabled": "\t0\t",
@@ -2209,6 +2199,7 @@
       "fallout": {
         "winPoints": "MULTI_TEAM_2",
         "maxTeamsInArena": "\t8\t",
+        "maxPlayersInTeam": "\t3\t",
         "squadTeamNumbers": "1 2 3 4",
         "soloTeamNumbers": "5 6 7 8",
         "flagSpawnPoint": [
@@ -2521,7 +2512,7 @@
         "endRadius": "\t85,000000\t"
       },
       "visualSettings": {
-        "cloudModel": "particles/mesh_particles/funnel_death/fire_storm_dark.model",
+        "cloudModel": "particles/content_deferred/GFX_models/funnel_death/fire_storm_dark.model",
         "cloudClimbTime": "\t15\t",
         "cloudStartHeight": "\t-150\t",
         "cloudEndHeight": "\t25\t",
@@ -2853,9 +2844,7 @@
     "minimap": "spaces/114_czech/mmap.dds",
     "vehicleCamouflageKind": "summer",
     "maxPlayersInTeam": "\t15\t",
-    "loadingMusic": "/music/intro/euro_city",
     "wwloadingMusic": "music_euro_city",
-    "ambientSound": "/wind/wind/wind_summer_01",
     "wwambientSound": "ambient_wind_summer_01",
     "umbraEnabled": "\t1\t",
     "batchingEnabled": "\t0\t",
@@ -2975,9 +2964,7 @@
     "defaultGroundEffect": "\tNone\t",
     "umbraEnabled": "\t1\t",
     "batchingEnabled": "\t0\t",
-    "loadingMusic": "/music/intro/rus_village",
     "wwloadingMusic": "music_rus_vilage",
-    "ambientSound": "/wind/wind/wind_autumn_01",
     "wwambientSound": "ambient_wind_autumn_01",
     "water": {
       "texScale": "\t0\t",
@@ -3066,9 +3053,7 @@
     "defaultGroundEffect": "\tNone\t",
     "umbraEnabled": "\t1\t",
     "batchingEnabled": "\t0\t",
-    "loadingMusic": "/music/intro/Intro_Himmelsdorf",
     "wwloadingMusic": "music_himmelsdorf",
-    "ambientSound": "/wind/wind/wind_winter_01",
     "wwambientSound": "ambient_wind_winter_01",
     "water": {
       "texScale": "\t0\t",
@@ -3135,9 +3120,7 @@
     "minimap": "spaces/14_siegfried_line/mmap.dds",
     "vehicleCamouflageKind": "summer",
     "umbraEnabled": "\t1\t",
-    "loadingMusic": "/music/intro/euro_city",
     "wwloadingMusic": "music_euro_city",
-    "ambientSound": "/wind/wind/wind_autumn_01",
     "wwambientSound": "ambient_wind_autumn_01",
     "water": {
       "texScale": "\t0\t",
@@ -3265,9 +3248,7 @@
     "minimap": "spaces/17_munchen/mmap.dds",
     "vehicleCamouflageKind": "summer",
     "maxPlayersInTeam": "\t15\t",
-    "loadingMusic": "/music/intro/Intro_Himmelsdorf",
     "wwloadingMusic": "music_himmelsdorf",
-    "ambientSound": "/wind/wind/wind_autumn_01",
     "wwambientSound": "ambient_wind_autumn_01",
     "water": {
       "texScale": "\t0\t",
@@ -3301,9 +3282,7 @@
     "vehicleCamouflageKind": "summer",
     "umbraEnabled": "\t1\t",
     "batchingEnabled": "\t0\t",
-    "loadingMusic": "/music/intro/euro_village",
     "wwloadingMusic": "music_euro_vilage",
-    "ambientSound": "/wind/wind/wind_autumn_01",
     "wwambientSound": "ambient_wind_autumn_01",
     "gameplayTypes": {
       "ctf": {
@@ -3456,9 +3435,7 @@
     "vehicleCamouflageKind": "summer",
     "umbraEnabled": "\t1\t",
     "batchingEnabled": "\t0\t",
-    "loadingMusic": "/music/intro/euro_village",
     "wwloadingMusic": "music_euro_vilage",
-    "ambientSound": "/wind/wind/wind_summer_01",
     "wwambientSound": "ambient_wind_summer_01",
     "water": {
       "texScale": "\t0\t",
@@ -3492,9 +3469,7 @@
     "vehicleCamouflageKind": "summer",
     "defaultGroundEffect": "\tNone\t",
     "umbraEnabled": "\t1\t",
-    "loadingMusic": "/music/intro/euro_village",
     "wwloadingMusic": "music_euro_vilage",
-    "ambientSound": "/wind/wind/wind_summer_01",
     "wwambientSound": "ambient_wind_summer_01",
     "water": {
       "texScale": "\t0\t",
@@ -3528,9 +3503,7 @@
     "umbraEnabled": "\t1\t",
     "batchingEnabled": "\t0\t",
     "maxPlayersInTeam": "\t15\t",
-    "loadingMusic": "/music/intro/euro_city",
     "wwloadingMusic": "music_euro_city",
-    "ambientSound": "/wind/wind/wind_spring_01",
     "wwambientSound": "ambient_wind_spring_01",
     "gameplayTypes": {
       "ctf": {
@@ -3557,9 +3530,7 @@
     "minimap": "spaces/28_desert/mmap.dds",
     "vehicleCamouflageKind": "desert",
     "maxPlayersInTeam": "\t15\t",
-    "loadingMusic": "/music/intro/rus_village",
     "wwloadingMusic": "music_rus_vilage",
-    "ambientSound": "/wind/wind/wind_autumn_01",
     "wwambientSound": "ambient_wind_desert_01",
     "umbraEnabled": "\t1\t",
     "batchingEnabled": "\t0\t",
@@ -3655,9 +3626,7 @@
     "maxPlayersInTeam": "\t15\t",
     "umbraEnabled": "\t1\t",
     "batchingEnabled": "\t0\t",
-    "loadingMusic": "/music/intro/desert",
     "wwloadingMusic": "music_desert",
-    "ambientSound": "/wind/wind/wind_desert_01",
     "wwambientSound": "ambient_wind_desert_01",
     "water": {
       "texScale": "\t0\t",
@@ -3704,9 +3673,7 @@
     "minimap": "spaces/31_airfield/mmap.dds",
     "vehicleCamouflageKind": "desert",
     "umbraEnabled": "\t1\t",
-    "loadingMusic": "/music/intro/euro_village",
     "wwloadingMusic": "music_euro_vilage",
-    "ambientSound": "/wind/wind/wind_desert_01",
     "wwambientSound": "ambient_wind_desert_01",
     "water": {
       "texScale": "\t0\t",
@@ -3724,9 +3691,6 @@
           }
         }
       }
-    },
-    "preloadSoundGroups": {
-      "groupName": "/objects/aircraft"
     },
     "mapActivities": {
       "warplane": [
@@ -3759,9 +3723,7 @@
     "minimap": "spaces/33_fjord/mmap.dds",
     "vehicleCamouflageKind": "summer",
     "umbraEnabled": "\t1\t",
-    "loadingMusic": "/music/intro/euro_village",
     "wwloadingMusic": "music_euro_vilage",
-    "ambientSound": "/wind/wind/wind_autumn_01",
     "wwambientSound": "ambient_wind_autumn_01",
     "water": {
       "texScale": "\t0\t",
@@ -3793,9 +3755,7 @@
     "minimap": "spaces/34_redshire/mmap.dds",
     "vehicleCamouflageKind": "summer",
     "maxPlayersInTeam": "\t15\t",
-    "loadingMusic": "/music/intro/euro_city",
     "wwloadingMusic": "music_euro_city",
-    "ambientSound": "/wind/wind/wind_autumn_01",
     "wwambientSound": "ambient_wind_autumn_01",
     "water": {
       "texScale": "\t0\t",
@@ -3842,9 +3802,7 @@
     "minimap": "spaces/35_steppes/mmap.dds",
     "vehicleCamouflageKind": "summer",
     "umbraEnabled": "\t1\t",
-    "loadingMusic": "/music/intro/rus_village",
     "wwloadingMusic": "music_rus_vilage",
-    "ambientSound": "/wind/wind/wind_summer_01",
     "wwambientSound": "ambient_wind_summer_01",
     "gameplayTypes": {
       "ctf": {
@@ -3905,9 +3863,7 @@
     "minimap": "spaces/36_fishing_bay/mmap.dds",
     "vehicleCamouflageKind": "summer",
     "umbraEnabled": "\t1\t",
-    "loadingMusic": "/music/intro/euro_village",
     "wwloadingMusic": "music_euro_vilage",
-    "ambientSound": "/wind/wind/wind_autumn_01",
     "wwambientSound": "ambient_wind_autumn_01",
     "water": {
       "texScale": "\t0\t",
@@ -3960,9 +3916,7 @@
     "vehicleCamouflageKind": "summer",
     "batchingEnabled": "\t0\t",
     "umbraEnabled": "\t1\t",
-    "loadingMusic": "/music/intro/Intro_kavkaz",
     "wwloadingMusic": "music_kavkaz",
-    "ambientSound": "/wind/wind/wind_autumn_01",
     "wwambientSound": "ambient_wind_autumn_01",
     "water": {
       "texScale": "\t0\t",
@@ -3994,9 +3948,7 @@
     "minimap": "spaces/38_mannerheim_line/mmap.dds",
     "vehicleCamouflageKind": "winter",
     "umbraEnabled": "\t1\t",
-    "loadingMusic": "/music/intro/euro_village",
     "wwloadingMusic": "music_euro_vilage",
-    "ambientSound": "/wind/wind/wind_winter_01",
     "wwambientSound": "ambient_wind_winter_01",
     "water": {
       "texScale": "\t0\t",
@@ -4139,9 +4091,7 @@
     "minimap": "spaces/44_north_america/mmap.dds",
     "vehicleCamouflageKind": "summer",
     "maxPlayersInTeam": "\t15\t",
-    "loadingMusic": "\t/music/intro/America\t",
     "wwloadingMusic": "music_america",
-    "ambientSound": "/wind/wind/wind_summer_01",
     "wwambientSound": "ambient_wind_summer_01",
     "water": {
       "texScale": "\t0\t",
@@ -4173,9 +4123,7 @@
     "minimap": "spaces/45_north_america/mmap.dds",
     "vehicleCamouflageKind": "summer",
     "maxPlayersInTeam": "\t15\t",
-    "loadingMusic": "\t/music/intro/America\t",
     "wwloadingMusic": "music_america",
-    "ambientSound": "/wind/wind/wind_autumn_01",
     "wwambientSound": "ambient_wind_autumn_01",
     "water": {
       "texScale": "\t0\t",
@@ -4210,9 +4158,7 @@
     "umbraEnabled": "\t1\t",
     "batchingEnabled": "\t0\t",
     "defaultGroundEffect": "\tNone\t",
-    "loadingMusic": "\t/music/intro/America\t",
     "wwloadingMusic": "music_america",
-    "ambientSound": "/wind/wind/wind_summer_01",
     "wwambientSound": "ambient_wind_summer_01",
     "water": {
       "texScale": "\t0\t",
@@ -4303,9 +4249,7 @@
     "minimap": "spaces/59_asia_great_wall/mmap.dds",
     "vehicleCamouflageKind": "summer",
     "umbraEnabled": "\t1\t",
-    "loadingMusic": "/music/intro/rus_village",
     "wwloadingMusic": "music_rus_vilage",
-    "ambientSound": "/wind/wind/wind_autumn_01",
     "wwambientSound": "ambient_wind_autumn_01",
     "gameplayTypes": {
       "ctf": {
@@ -4318,7 +4262,9 @@
           }
         }
       }
-    }
+    },
+    "mapActivities": "",
+    "roadMap": ""
   },
   {
     "name": "#arenas:60_asia_miao/name",
@@ -4367,9 +4313,7 @@
     "minimap": "spaces/63_tundra/mmap.dds",
     "vehicleCamouflageKind": "summer",
     "umbraEnabled": "\t1\t",
-    "loadingMusic": "/music/intro/euro_village",
     "wwloadingMusic": "music_euro_vilage",
-    "ambientSound": "/wind/wind/wind_autumn_01",
     "wwambientSound": "ambient_wind_autumn_01",
     "water": {
       "texScale": "\t0\t",
@@ -4428,9 +4372,7 @@
     "minimap": "spaces/73_asia_korea/mmap.dds",
     "vehicleCamouflageKind": "winter",
     "umbraEnabled": "\t1\t",
-    "loadingMusic": "/music/intro/euro_village",
     "wwloadingMusic": "music_euro_vilage",
-    "ambientSound": "/wind/wind/wind_winter_01",
     "wwambientSound": "ambient_wind_winter_01",
     "water": {
       "texScale": "\t0\t",
@@ -4497,12 +4439,7 @@
         }
       }
     },
-    "preloadSoundGroups": {
-      "groupName": "/combat_atmosphere/historical_weapons"
-    },
-    "loadingMusic": "\t/music/intro/kharkov\t",
     "wwloadingMusic": "music_kharkov",
-    "ambientSound": "/wind/wind/wind_winter_01",
     "wwambientSound": "ambient_wind_winter_01",
     "water": {
       "texScale": "\t0\t",
@@ -4553,9 +4490,7 @@
     "umbraEnabled": "\t1\t",
     "batchingEnabled": "\t0\t",
     "defaultGroundEffect": "\tNone\t",
-    "loadingMusic": "/music/intro/Intro_Himmelsdorf",
     "wwloadingMusic": "music_himmelsdorf",
-    "ambientSound": "/wind/wind/wind_winter_01",
     "wwambientSound": "ambient_wind_winter_01",
     "water": {
       "texScale": "\t0\t",
@@ -4622,9 +4557,7 @@
     "minimap": "spaces/86_himmelsdorf_winter/mmap.dds",
     "vehicleCamouflageKind": "winter",
     "defaultGroundEffect": "\tNone\t",
-    "loadingMusic": "/music/intro/Intro_Himmelsdorf",
     "wwloadingMusic": "music_himmelsdorf",
-    "ambientSound": "/wind/wind/wind_winter_02",
     "wwambientSound": "ambient_wind_winter_01",
     "umbraEnabled": "\t1\t",
     "batchingEnabled": "\t0\t",
@@ -4734,9 +4667,7 @@
     "minimap": "spaces/92_stalingrad/mmap.dds",
     "vehicleCamouflageKind": "summer",
     "umbraEnabled": "\t1\t",
-    "loadingMusic": "/music/intro/Stalingrad",
     "wwloadingMusic": "music_stalingrad",
-    "ambientSound": "/wind/wind/wind_autumn_01",
     "wwambientSound": "ambient_wind_autumn_01",
     "water": {
       "texScale": "\t0\t",
@@ -4862,9 +4793,7 @@
     "minimap": "spaces/95_lost_city/mmap.dds",
     "vehicleCamouflageKind": "summer",
     "umbraEnabled": "\t1\t",
-    "loadingMusic": "/music/intro/rus_city",
     "wwloadingMusic": "music_rus_city",
-    "ambientSound": "/wind/wind/wind_desert_01",
     "wwambientSound": "ambient_wind_desert_01",
     "water": {
       "texScale": "\t0\t",
@@ -5296,7 +5225,7 @@
         "endRadius": "\t85,000000\t"
       },
       "visualSettings": {
-        "cloudModel": "particles/mesh_particles/funnel_death/fire_storm.model",
+        "cloudModel": "particles/content_deferred/GFX_models/funnel_death/fire_storm.model",
         "cloudClimbTime": "\t15\t",
         "cloudStartHeight": "\t-150\t",
         "cloudEndHeight": "\t25\t",
@@ -5628,9 +5557,7 @@
     "umbraEnabled": "\t1\t",
     "batchingEnabled": "\t0\t",
     "defaultGroundEffect": "ground",
-    "loadingMusic": "/music/intro/rus_village",
     "wwloadingMusic": "music_rus_vilage",
-    "ambientSound": "/wind/wind/wind_autumn_01",
     "wwambientSound": "ambient_wind_autumn_01",
     "water": {
       "texScale": "\t0\t",
@@ -5671,14 +5598,6 @@
         "controlPoint": "\t171,058300 16,351450\t",
         "artilleryPreparationChance": "0.5"
       }
-    },
-    "preloadSoundGroups": {
-      "groupName": [
-        "/combat_atmosphere/combat_atmosphere",
-        "/plane/planes_with_automatic_weapons",
-        "/plane/crashes",
-        "/plane/planes"
-      ]
     },
     "mapActivities": {
       "scenario": [

@@ -130,7 +130,7 @@
     <value>AMX 13 90</value>
   </data>
   <data name="AMX_13_90_IGR_descr" xml:space="preserve">
-    <value>Development was started in 1946. Mass production was launched in 1952. The first 2000 vehicles were equipped with the 75 mm gun. However, later versions had the 90 mm gun, giving much greater firepower.</value>
+    <value>In the early 1960s, the 75-mm gun with a muzzle velocity of 1000 m/s was deemed outdated. The vehicle received the new 90-mm F3 gun that used more powerful HEAT shells. This modernization did not require any significant changes to the turret or vehicle design. First vehicles were manufactured in February, 1967. The existing vehicles underwent the gun modernization as well.</value>
   </data>
   <data name="AMX_13_90_IGR_short" xml:space="preserve">
     <value>AMX 13 90</value>
@@ -384,7 +384,7 @@ AV-1790-7B</value>
     <value>E 25</value>
   </data>
   <data name="E-25_IGR_descr" xml:space="preserve">
-    <value>The development of the E 25 was a part of the "E" program, supervised by the Waffenprüfamt 6 committee. The E 25 was developed by the Argus company (Karlsruhe, Germany) under the supervision of Dr. Herman Klaue. No prototypes were manufactured.</value>
+    <value>Development of the E 25 was a part of the "E" program, aimed at unifying the manufacture of the German armored forces. The program was supervised by the Waffenprüfamt 6 committee, directed by General Kniepkamp. The E 25 was developed by the Argus company (Karlsruhe, Germany). No prototypes were manufactured, the vehicle never underwent trials or saw service. However, according to some sources, by January 23, 1945, several hulls were produced and remained in Katowice waiting for trials.</value>
   </data>
   <data name="ELC_AMX_IGR" xml:space="preserve">
     <value>ELC AMX</value>
@@ -468,7 +468,7 @@ AV-1790-7B</value>
     <value>Centurion Mk. I</value>
   </data>
   <data name="GB23_Centurion_IGR_descr" xml:space="preserve">
-    <value>Development of the Centurion started in 1943. Designed as a "universal tank" to replace existing infantry and cruiser tanks, it entered service in 1947. A total of 100 vehicles of this series were manufactured from 1945 through 1946.</value>
+    <value>Development of the Centurion started in 1943. The vehicle was designed as a "universal tank" to replace existing infantry and cruiser tanks. The Centurion was the first Britsh vehicle that featured sloped armor plates. The tank entered service in 1947. A total of 100 vehicles of this series were manufactured from 1945 through 1946.</value>
   </data>
   <data name="GB23_Centurion_IGR_short" xml:space="preserve">
     <value>Centurion I</value>
@@ -768,7 +768,7 @@ Ausf. G</value>
     <value>SU-152</value>
   </data>
   <data name="SU-152_IGR_descr" xml:space="preserve">
-    <value>Development of a tank destroyer on the basis of the KV-1S heavy tank began on January 4, 1943. The vehicle received the designation KV-14 (Object 236). A prototype underwent field trials at the beginning of February 1943 and entered service on February 14, 1943. In April, the KV-14 was renamed SU-152. By December 1943, 670 vehicles were manufactured. Thanks to its ability to successfully combat german Tiger I and Panther tanks, the SU-152 was dubbed "Hunter" by the troops.</value>
+    <value>Development of a tank destroyer on the basis of the KV-1S heavy tank began on January 4, 1943. The vehicle received the designation KV-14 (Object 236). A prototype underwent field trials at the beginning of February 1943 and entered service on February 14, 1943. In April, the KV-14 was renamed SU-152. By December 1943, 670 vehicles were manufactured. Thanks to its ability to successfully combat German Tiger I and Panther tanks, the SU-152 was dubbed "Hunter" by the troops.</value>
   </data>
   <data name="SU-152_mod_1944_IGR" xml:space="preserve">
     <value>SU-152M</value>
@@ -837,7 +837,7 @@ Ausf. G</value>
     <value>T67</value>
   </data>
   <data name="T67_IGR_descr" xml:space="preserve">
-    <value>Development started in the spring of 1942. After undergoing trials, the decision was made to replace the 57-mm gun with a 75-mm gun. The vehicle passed trials in the fall of 1942 but never saw service.</value>
+    <value>Development started in the spring of 1942. After trials in the fall of 1942, the decision was made to replace the 57-mm gun with a 75-mm gun. Two prototypes were manufactured. The vehicle saw neither mass production nor service.</value>
   </data>
   <data name="T67_IGR_short" xml:space="preserve">
     <value>T67</value>
@@ -1047,7 +1047,7 @@ Ausf. E</value>
     <value>105 leFH18B2</value>
   </data>
   <data name="_105_leFH18B2_IGR_descr" xml:space="preserve">
-    <value>In March 1941, the Rheinmetall-Borsig company ordered sixteen captured B1 Bis tanks to be converted into SPGs. The work was started only at the end of 1941 due to the lack of operational tanks. The vehicles entered service in 1942.</value>
+    <value>Heavy B1 tanks captured by the German army during the French Campaign underwent modification and were actively used by the Wehrmacht. Some vehicles were converted into SPGs, designated 10.5 cm leFH18/3 auf Geschützwagen B2 (f).</value>
   </data>
   <data name="_105_leFH18B2_IGR_short" xml:space="preserve">
     <value>leFH18B2</value>

@@ -280,7 +280,7 @@
     <value>Type 97 Chi-Ha</value>
   </data>
   <data name="Chi_Ha_descr" xml:space="preserve">
-    <value>Developed by Mitsubishi from 1935 through 1937. The vehicle was mass-produced from 1938 through 1942, alongside an upgraded Shinhoto Chi-Ha from 1941 through 1942. A total of 2,880 vehicles of both types were manufactured. The Chi-Ha and the Shinhoto Chi-Ha tanks were widely used by Japanese forces in China, and after Japan capitulation these vehicles were used by both PLA and Kuomintang forces in the Chinese Civil War from 1946 through 1949.</value>
+    <value>Developed by Mitsubishi from 1935 through 1937. The vehicle was mass-produced from 1938 through 1942, alongside an upgraded Shinhoto Chi-Ha from 1941 through 1942. A total of 1,220 vehicles of both types were manufactured. The Chi-Ha and the Shinhoto Chi-Ha tanks were widely used by Japanese forces in China, the Pacific Theater, and the Kuril Islands. After the surrender of Japan, these vehicles were used by both PLA and Kuomintang forces in the Chinese Civil War from 1946 through 1949.</value>
   </data>
   <data name="Chi_Ha_short" xml:space="preserve">
     <value>Chi-Ha</value>
@@ -289,7 +289,7 @@
     <value>Type 1 Chi-He</value>
   </data>
   <data name="Chi_He_descr" xml:space="preserve">
-    <value>The Type 1 Chi-He medium tank was developed in 1941. The tank was a further development of the Type 97 Chi-Ha. However, due to the lack of steel, a total of 170 tanks were manufactured. Most of them were held for the defense of Japan and never saw combat.</value>
+    <value>The Type 1 Chi-He medium tank was a further development of the Type 97 Chi-Ha. It was developed in 1941, but due to the lack of steel, the production started in 1943 only. A total of 170 tanks were manufactured. Most of them were held for the defense of Japan and never saw combat.</value>
   </data>
   <data name="Chi_He_short" xml:space="preserve">
     <value>Chi-He</value>
@@ -316,7 +316,7 @@
     <value>Chi-Nu Kai</value>
   </data>
   <data name="Chi_Nu_descr" xml:space="preserve">
-    <value>The Type 3 Chi-Nu medium tank is a modification of the Тype 1 Chi-He with a new turret and gun. The tank was the most powerful among wartime Japanese mass-produced vehicles. However, only a total of 60 vehicles were manufactured due to shortages of components and materials.</value>
+    <value>The Type 3 Chi-Nu medium tank is a modification of the Тype 1 Chi-He with a new turret and gun. The tank was the most powerful among wartime Japanese mass-produced vehicles. However, only 60 vehicles were manufactured due to shortages of components and materials.</value>
   </data>
   <data name="Chi_Nu_short" xml:space="preserve">
     <value>Chi-Nu</value>

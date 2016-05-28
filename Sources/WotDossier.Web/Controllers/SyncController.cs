@@ -1,6 +1,6 @@
 using System;
 using System.IO;
-using Microsoft.AspNet.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using ProtoBuf;
 using WotDossier.Domain;
 using WotDossier.Web.Logic;
@@ -56,7 +56,7 @@ namespace WotDossier.Web.Controllers
             catch (Exception e)
             {
                 Console.WriteLine(e);
-                return HttpBadRequest(e);
+                return BadRequest(e);
             }
         }
 
@@ -150,7 +150,7 @@ namespace WotDossier.Web.Controllers
             var player = _syncManager.GetPlayer(server, id);
             if (player == null)
             {
-                return HttpNotFound();
+                return NotFound();
             }
 
             _syncManager.DeletePlayer(player);
@@ -165,7 +165,7 @@ namespace WotDossier.Web.Controllers
             var player = _syncManager.GetPlayer(server, id);
             if (player == null)
             {
-                return HttpNotFound();
+                return NotFound();
             }
 
             return Ok(player);

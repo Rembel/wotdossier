@@ -1,35 +1,19 @@
 {
   "version": "1.0.0-*",
-  "description": "WotDossier.Web.Domain Class Library",
-  "authors": [
-    "Pasha"
-  ],
-  "tags": [
-    ""
-  ],
-  "projectUrl": "",
-  "licenseUrl": "",
+
+  "dependencies": {
+    "NETStandard.Library": "1.5.0-rc2-24027",
+    "System.Runtime.Serialization.Primitives": "4.1.1-rc2-24027"
+  },
+
   "frameworks": {
-    "net451": {
-      "dependencies": {
-        "System.Collections": "4.0.11-beta-23516",
-        "System.Runtime": "4.0.21-beta-23516",
-        "System.Xml.XmlSerializer": "4.0.11-beta-23516"
-      },
-      "frameworkAssemblies": {
-        "System.Runtime.Serialization": "4.0.0.0",
-        "System.XML": "4.0.0.0",
-        "WindowsBase": "4.0.0.0"
-      }
-    },
-    "dnxcore50": {
-      "dependencies": {
-        "System.Xml.XmlSerializer": "4.0.11-beta-23516"
-	}
+    "netstandard1.4": {
+      "imports": "dnxcore50"
     }
   },
-  "exclude": [ "Replay/*.cs", "Settings/*.cs", "GameplayDescription.cs", "MapConfig.cs", "Map.cs", "Interfaces/IMapDescription.cs", "Dossier" ],
-  "dependencies": {
-    "System.Runtime.Serialization.Primitives": "4.1.0"
+  "buildOptions": {
+    "compile": {
+      "exclude": [ "Replay/*.cs", "Settings/*.cs", "GameplayDescription.cs", "MapConfig.cs", "Map.cs", "Interfaces/IMapDescription.cs", "Dossier" ]
+    }
   }
 }

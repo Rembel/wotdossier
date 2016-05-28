@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNet.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using WotDossier.Web.MiddleWare;
 
 namespace WotDossier.Web.Middleware

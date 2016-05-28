@@ -42,12 +42,7 @@ namespace WotDossier.Web.Logging
                 _logger = logger;
             }
 
-            public void Log(
-                LogLevel logLevel,
-                int eventId,
-                object state,
-                Exception exception,
-                Func<object, Exception, string> formatter)
+            public void Log<TState>(LogLevel logLevel, EventId eventId, TState state, Exception exception, System.Func<TState, System.Exception, string> formatter)
             {
                 var nLogLogLevel = GetLogLevel(logLevel);
                 var message = string.Empty;
@@ -57,7 +52,7 @@ namespace WotDossier.Web.Logging
                 }
                 else
                 {
-                    message = LogFormatter.Formatter(state, exception);
+                    message = formatter(state, exception);
                 }
                 if (!string.IsNullOrEmpty(message))
                 {
@@ -72,6 +67,16 @@ namespace WotDossier.Web.Logging
                 return _logger.IsEnabled(GetLogLevel(logLevel));
             }
 
+            public IDisposable BeginScope<TState>(TState state)
+            {
+                if (state == null)
+                {
+                    throw new ArgumentNullException(nameof(state));
+                }
+
+                return NestedDiagnosticsContext.Push(state.ToString());
+            }
+
             private global::NLog.LogLevel GetLogLevel(LogLevel logLevel)
             {
                 switch (logLevel)
@@ -84,16 +89,6 @@ namespace WotDossier.Web.Logging
                     case LogLevel.Critical: return global::NLog.LogLevel.Fatal;
                 }
                 return global::NLog.LogLevel.Debug;
-            }
-
-            public IDisposable BeginScopeImpl(object state)
-            {
-                if (state == null)
-                {
-                    throw new ArgumentNullException(nameof(state));
-                }
-
-                return NestedDiagnosticsContext.Push(state.ToString());
             }
         }
     }

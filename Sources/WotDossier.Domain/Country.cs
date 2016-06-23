@@ -13,7 +13,8 @@
         France = 4,
         Uk = 5,
         Japan = 6,
-        Czech = 7
+        Czech = 7,
+        Sweden = 8
     }
 
     /// <summary>

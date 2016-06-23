@@ -35,7 +35,7 @@ namespace WotDossier.Applications.Logic
             public const double WN8_P1 = 380;
             public const double WN8_P2 = 860;
             public const double WN8_P3 = 1420;
-            public const double WN8_P4 = 2100;
+            public const double WN8_P4 = 2105;
             public const double WN8_P5 = 2770;
             public const double WN8_P6 = 5000;
 

@@ -1527,56 +1527,6 @@
     },
     "piercingPowerLossFactorByDistance": "0.05"
   },
-  "_105mm_APCR_M68M2_fallout": {
-    "id": "\t138\t",
-    "userString": "#germany_vehicles:_105mm_APCR_M68M2_fallout",
-    "icon": "ap_cr",
-    "price": "\t90\t",
-    "notInShop": "\ttrue\t",
-    "kind": "ARMOR_PIERCING_CR",
-    "caliber": "\t105\t",
-    "isTracer": "\ttrue\t",
-    "effects": "\tmainAPCR\t",
-    "damage": {
-      "armor": "\t390\t",
-      "devices": "\t150\t"
-    }
-  },
-  "_105mm_HEAT-T_T384E4_fallout": {
-    "id": "\t139\t",
-    "userString": "#germany_vehicles:_105mm_HEAT-T_T384E4_fallout",
-    "icon": "hc",
-    "price": {
-      "#text": "\t1\t",
-      "gold": ""
-    },
-    "notInShop": "\ttrue\t",
-    "kind": "HOLLOW_CHARGE",
-    "caliber": "\t105\t",
-    "isTracer": "\ttrue\t",
-    "effects": "\tmainHollowCharge\t",
-    "damage": {
-      "armor": "\t390\t",
-      "devices": "\t150\t"
-    },
-    "piercingPowerLossFactorByDistance": "0.05"
-  },
-  "_105mm_HE_M68M2_fallout": {
-    "id": "\t140\t",
-    "userString": "#germany_vehicles:_105mm_HE_M68M2_fallout",
-    "icon": "he",
-    "price": "\t81\t",
-    "notInShop": "\ttrue\t",
-    "kind": "HIGH_EXPLOSIVE",
-    "caliber": "\t105\t",
-    "explosionRadius": "1.91",
-    "isTracer": "\ttrue\t",
-    "effects": "mainHighExplosive",
-    "damage": {
-      "armor": "\t480\t",
-      "devices": "\t150\t"
-    }
-  },
   "_128mm_Pzgr_N4": {
     "id": "\t112\t",
     "userString": "#germany_vehicles:_128mm_Pzgr_N4",

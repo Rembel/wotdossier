@@ -129,9 +129,6 @@
   <data name="AEC_Type_179" xml:space="preserve">
     <value>AEC Type 179</value>
   </data>
-  <data name="Alarm_flags" xml:space="preserve">
-    <value>Signal flags</value>
-  </data>
   <data name="Alarm_flags_bot" xml:space="preserve">
     <value>Signal Flags</value>
   </data>
@@ -155,9 +152,6 @@
   </data>
   <data name="Cadillac_75_x_3" xml:space="preserve">
     <value>Cadillac "75" x3</value>
-  </data>
-  <data name="Chassis_GB01_Medium_Mark_I" xml:space="preserve">
-    <value>Vickers Medium Mk. I</value>
   </data>
   <data name="Chassis_GB01_Medium_Mark_I_2" xml:space="preserve">
     <value>Vickers Medium Mk. IA*</value>
@@ -498,11 +492,18 @@
   <data name="Chassis_GB87_Chieftain_T95_turret" xml:space="preserve">
     <value>Chieftain/T95</value>
   </data>
+  <data name="Chassis_GB88_T95_Chieftain_turret" xml:space="preserve">
+    <value>T95/Chieftain</value>
+  </data>
   <data name="Chassis_Sexton_I" xml:space="preserve">
     <value>Sexton I</value>
   </data>
-  <data name="Chrysler_A57_multibank" xml:space="preserve">
-    <value>Chrysler A57 Multibank</value>
+  <data name="Continental_AOI-1195-5" xml:space="preserve">
+    <value>Continental AOI-1195-5</value>
+  </data>
+  <data name="Continental_AOI-1195-5_short" xml:space="preserve">
+    <value>Continental
+AOI-1195-5</value>
   </data>
   <data name="Continental_W-670-9A" xml:space="preserve">
     <value>Continental W-670-9A</value>
@@ -706,7 +707,7 @@
     <value>Centurion Mk. I</value>
   </data>
   <data name="GB23_Centurion_descr" xml:space="preserve">
-    <value>Development of the Centurion started in 1943. The vehicle was designed as a "universal tank" to replace existing infantry and cruiser tanks. The Centurion was the first Britsh vehicle that featured sloped armor plates. The tank entered service in 1947. A total of 100 vehicles of this series were manufactured from 1945 through 1946.</value>
+    <value>Development of the Centurion started in 1943. The vehicle was designed as a "universal tank" to replace existing infantry and cruiser tanks. The Centurion was the first British vehicle that featured sloped armor plates. The tank entered service in 1947. A total of 100 vehicles of this series were manufactured from 1945 through 1946.</value>
   </data>
   <data name="GB23_Centurion_short" xml:space="preserve">
     <value>Centurion I</value>
@@ -862,7 +863,7 @@
     <value>FV215b (183)</value>
   </data>
   <data name="GB48_FV215b_183_descr" xml:space="preserve">
-    <value>This proposed heavy self-propelled gun utilized components of the Mk.II Conqueror. The vehicle featured the gun in a rear-mounted rotating turret. The project was canceled shortly after a dummy vehicle was built.</value>
+    <value>Project for a heavy SPG based on the Conqueror Mk II tank with a 183 mm gun and rear placement of the traversable turret and fighting compartment. The vehicle was designed to counter Soviet heavy tanks at long range (up to 1,829 m) and should have been able to withstand return fire from 122 mm guns at a distance of up to 500 m. After the development of 193 mm Malkara anti-tank rockets—which were a cheaper and more efficient choice for countering the IS-series tanks—the vehicle lost its relevance. The project was canceled shortly after a dummy vehicle was built.</value>
   </data>
   <data name="GB48_FV215b_183_short" xml:space="preserve">
     <value>FV215b 183</value>
@@ -1009,7 +1010,7 @@
     <value>FV304</value>
   </data>
   <data name="GB77_FV304_descr" xml:space="preserve">
-    <value>Prototype light SPG developed by Vickers. Development started in 1947. However, the prototype was not manufactured until 1953. The design of the SPG was already obsolete by this time, and the project was canceled.</value>
+    <value>Prototype light SPG developed by Vickers. Development started in 1947. However, the prototype was not manufactured until 1950. The design of the SPG was already obsolete by this time, and the project was canceled.</value>
   </data>
   <data name="GB77_FV304_short" xml:space="preserve">
     <value>FV304</value>
@@ -1091,6 +1092,15 @@
   </data>
   <data name="GB87_Chieftain_T95_turret_short" xml:space="preserve">
     <value>Chieftain/T95</value>
+  </data>
+  <data name="GB88_T95_Chieftain_turret" xml:space="preserve">
+    <value>T95/Chieftain</value>
+  </data>
+  <data name="GB88_T95_Chieftain_turret_descr" xml:space="preserve">
+    <value>Development began in September 1954, with many components similar to an experimental prototype, the T96. During development, the vehicle's turret and gun were planned to be made interchangeable with the British FV4201 Chieftain tank through module swap. The project was canceled due to difficulties with training crews who needed to master two artillery fire-control systems.</value>
+  </data>
+  <data name="GB88_T95_Chieftain_turret_short" xml:space="preserve">
+    <value>T95/Chieftain</value>
   </data>
   <data name="GMC_6-71_Mk10" xml:space="preserve">
     <value>GMC 6004 6-71S</value>
@@ -1452,11 +1462,11 @@
   <data name="Turret_1_GB87_Chieftain_T95_turret" xml:space="preserve">
     <value>Chieftain/T95</value>
   </data>
+  <data name="Turret_1_GB88_T95_Chieftain_turret" xml:space="preserve">
+    <value>T95/Chieftain</value>
+  </data>
   <data name="Turret_1_Sexton_I" xml:space="preserve">
     <value>Sexton I</value>
-  </data>
-  <data name="Turret_2_GB01_Medium_Mark_I" xml:space="preserve">
-    <value>Vickers Medium Mk. IA*</value>
   </data>
   <data name="Turret_2_GB03_Cruiser_Mk_I" xml:space="preserve">
     <value>Cruiser Mk. III</value>

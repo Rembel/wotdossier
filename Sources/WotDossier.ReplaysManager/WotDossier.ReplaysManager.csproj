@@ -878,6 +878,10 @@
       <Link>External\shells\china_shells.json</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="..\WotDossier\External\shells\czech_shells.json">
+      <Link>External\shells\czech_shells.json</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="..\WotDossier\External\shells\france_shells.json">
       <Link>External\shells\france_shells.json</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -888,6 +892,10 @@
     </None>
     <None Include="..\WotDossier\External\shells\japan_shells.json">
       <Link>External\shells\japan_shells.json</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\WotDossier\External\shells\sweden_shells.json">
+      <Link>External\shells\sweden_shells.json</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="..\WotDossier\External\shells\uk_shells.json">

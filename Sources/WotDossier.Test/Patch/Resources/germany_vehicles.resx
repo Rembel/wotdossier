@@ -183,9 +183,6 @@
   <data name="Chassis_Auf_Panther" xml:space="preserve">
     <value>Aufkl. Panther</value>
   </data>
-  <data name="Chassis_Auf_Panther_2" xml:space="preserve">
-    <value>Aufkl. Panther verstärkteketten</value>
-  </data>
   <data name="Chassis_DW_II" xml:space="preserve">
     <value>D.W.</value>
   </data>
@@ -294,6 +291,9 @@
   </data>
   <data name="Chassis_G121_Grille_15_L63" xml:space="preserve">
     <value>Grille 15</value>
+  </data>
+  <data name="Chassis_G122_VK6501H" xml:space="preserve">
+    <value>VK 65.01 (H)</value>
   </data>
   <data name="Chassis_G58_VK4502P" xml:space="preserve">
     <value>VK 45.02(P) Ausf. B</value>
@@ -587,9 +587,6 @@ AOS-895-3</value>
   <data name="DickerMax_short" xml:space="preserve">
     <value>Dicker Max</value>
   </data>
-  <data name="Die_Signalfahnen" xml:space="preserve">
-    <value>Signal Flags</value>
-  </data>
   <data name="Die_Signalfahnen_bot" xml:space="preserve">
     <value>Signal Flags</value>
   </data>
@@ -729,7 +726,7 @@ AOS-895-3</value>
     <value>Großtraktor - Krupp</value>
   </data>
   <data name="G100_Gtraktor_Krupp_descr" xml:space="preserve">
-    <value>This experimental combat vehicle was developed by the Krupp company as a medium tank. By 1929, two prototypes were manufactured from non-armor steel. They underwent trials in the Soviet Union from 1930 through 1933. The trials revealed multiple faults, and the vehicle never saw service. However, the results of vehicle development were later used by German engineers.</value>
+    <value>An experimental medium tank, developed by the Krupp company. By 1929, two prototypes were manufactured from non-armored steel and underwent trials in the Soviet Union until 1933. The trials revealed multiple faults, and the vehicle never saw service. However, the results of vehicle development were later used by German engineers.</value>
   </data>
   <data name="G100_Gtraktor_Krupp_short" xml:space="preserve">
     <value>Gr.Tr.</value>
@@ -911,6 +908,15 @@ AOS-895-3</value>
   <data name="G121_Grille_15_L63_short" xml:space="preserve">
     <value>Grille 15</value>
   </data>
+  <data name="G122_VK6501H" xml:space="preserve">
+    <value>VK 65.01 (H)</value>
+  </data>
+  <data name="G122_VK6501H_descr" xml:space="preserve">
+    <value>January 19, 1939, the Panzer and Motorized Equipment Branch (WaPrüf 6) of the German Army Weapons Agency announced development of a 65-ton tank. The Henschel and Krupp companies received an order for production of pilot vehicles on September 1st, 1939. A wooden dummy was created by April 1940 and, according to various sources, one or two more prototypes in unarmored steel and with no turret were produced by mid-1941. In 1942, development was discontinued and the prototypes were destroyed.</value>
+  </data>
+  <data name="G122_VK6501H_short" xml:space="preserve">
+    <value>VK 65.01 (H)</value>
+  </data>
   <data name="G20_Marder_II" xml:space="preserve">
     <value>Marder II</value>
   </data>
@@ -951,7 +957,7 @@ AOS-895-3</value>
     <value>G.W. E 100</value>
   </data>
   <data name="G_E_descr" xml:space="preserve">
-    <value>Development of this heavy SPG on the E 100 chassis started at the end of 1943, but it was never completed. No prototypes were ever manufactured and the vehicle did not undergo any trials.</value>
+    <value>Project for a 210 mm mortar on the chassis of the E 100. The vehicle was never produced.</value>
   </data>
   <data name="G_E_short" xml:space="preserve">
     <value>G.W. E 100</value>
@@ -1011,7 +1017,7 @@ AOS-895-3</value>
     <value>Pz.Kpfw. 38H 735 (f)</value>
   </data>
   <data name="Hetzer" xml:space="preserve">
-    <value>Hetzer</value>
+    <value>Jagdpanzer 38(t) Hetzer</value>
   </data>
   <data name="Hetzer_0" xml:space="preserve">
     <value>Jagdpanzer 38 (t)</value>
@@ -1023,7 +1029,7 @@ AOS-895-3</value>
     <value>Jagdpanzer 38 (t) verstärkteketten</value>
   </data>
   <data name="Hetzer_descr" xml:space="preserve">
-    <value>A light, low-profile tank destroyer designed according to General Heinz Guderian's specifications. The Hetzer was produced from April 1944 to May 1945, with a total of 2,584 vehicles manufactured.</value>
+    <value>In 1943, the Wehrmacht were experiencing a dire shortage of StuG III tank destroyers because the joint U.S.A.-U.K. air raids caused considerable damage to the Alkett company's factory that produced these vehicles. December 1943, a decision was made to utilize the working capacities of the BMM company in Prague to start production of tank destroyers. Components of the Pz.Kpfw. 38(t) tank were widely used in the new vehicle. The first prototypes were produced in March 1944. More than 2,800 vehicles were built by May 1945.</value>
   </data>
   <data name="Hetzer_short" xml:space="preserve">
     <value>Hetzer</value>
@@ -1154,9 +1160,6 @@ AOS-895-3</value>
   <data name="Kdo_Funkstation_SE_407" xml:space="preserve">
     <value>Kdo. Funkstation SE 407</value>
   </data>
-  <data name="Krupp_M301" xml:space="preserve">
-    <value>Krupp M301</value>
-  </data>
   <data name="Krupp_M301_bot" xml:space="preserve">
     <value>Krupp M301</value>
   </data>
@@ -1168,9 +1171,6 @@ AOS-895-3</value>
   </data>
   <data name="LT-40_turm" xml:space="preserve">
     <value>Pz.Kpfw. 38 (t) Ausf. A</value>
-  </data>
-  <data name="Leichtertaktorketten" xml:space="preserve">
-    <value>Leichttraktor</value>
   </data>
   <data name="LeichtertaktorkettenB" xml:space="preserve">
     <value>Leichttraktor verstärkteketten</value>
@@ -1386,17 +1386,11 @@ verstärkteketten</value>
   <data name="Maybach_HL_174" xml:space="preserve">
     <value>Maybach HL 174</value>
   </data>
-  <data name="Maybach_HL_174_05" xml:space="preserve">
-    <value>Maybach HL 87</value>
-  </data>
   <data name="Maybach_HL_190" xml:space="preserve">
     <value>Maybach HL 190</value>
   </data>
   <data name="Maybach_HL_190_short" xml:space="preserve">
     <value>Maybach HL 190</value>
-  </data>
-  <data name="Maybach_HL_210P30" xml:space="preserve">
-    <value>Maybach HL 210 P30</value>
   </data>
   <data name="Maybach_HL_210P30A" xml:space="preserve">
     <value>Maybach HL 230 P30</value>
@@ -1435,6 +1429,9 @@ TRM P45</value>
     <value>Maybach HL 210
 TRM P45</value>
   </data>
+  <data name="Maybach_HL_224" xml:space="preserve">
+    <value>Maybach HL 224</value>
+  </data>
   <data name="Maybach_HL_230P30A" xml:space="preserve">
     <value>Maybach HL 230 P30</value>
   </data>
@@ -1469,15 +1466,6 @@ TRM P45</value>
   </data>
   <data name="Maybach_HL_234P30_Ausf_A_short" xml:space="preserve">
     <value>Maybach HL 230</value>
-  </data>
-  <data name="Maybach_HL_234P45" xml:space="preserve">
-    <value>Maybach HL 234</value>
-  </data>
-  <data name="Maybach_HL_234P50" xml:space="preserve">
-    <value>Maybach HL 295 Ausf. A</value>
-  </data>
-  <data name="Maybach_HL_234P50_short" xml:space="preserve">
-    <value>Maybach HL 295 (A)</value>
   </data>
   <data name="Maybach_HL_234P60" xml:space="preserve">
     <value>Maybach Neues Projekt</value>
@@ -1726,19 +1714,19 @@ verstärkteketten</value>
     <value>Pz.Kpfw. III/IV verstärkteketten</value>
   </data>
   <data name="PzIII_A" xml:space="preserve">
-    <value>Pz.Kpfw. III Ausf. A</value>
+    <value>Pz.Kpfw. III Ausf. E</value>
   </data>
   <data name="PzIII_A_descr" xml:space="preserve">
     <value>Produced in 1937, with a total of 10 vehicles manufactured. The project was canceled due to its weak suspension and inadequate armor.</value>
   </data>
   <data name="PzIII_A_short" xml:space="preserve">
-    <value>Pz. III A</value>
+    <value>Pz. III E</value>
   </data>
   <data name="PzIII_AusfJ" xml:space="preserve">
     <value>Pz.Kpfw. III</value>
   </data>
   <data name="PzIII_AusfJ_descr" xml:space="preserve">
-    <value>Used the "classic" chassis starting with the Ausführung E. Produced from December 1938 to February 1943, a total of 4,958 tanks and 321 command vehicles were manufactured.</value>
+    <value>Production of the F variant started in October 1939. Some of the new vehicles received a new 50 mm KwK 38 gun. This proved to be a successful decision, and in March 1941, production of the M variant with 50 mm-thick frontal armor and the 50 mm gun was launched. 1,067 vehicles received the improved KwK 39 gun with greater penetration power. However, installation of a 75 mm gun turn out to be unsuccessful and the L variant later received the same 50 mm gun as its predecessors. A total of 5,691 vehicles were produced, among which 1,969 were equipped with long-barrel guns and 2,391 with short-barrel 50 mm guns.</value>
   </data>
   <data name="PzIII_AusfJ_short" xml:space="preserve">
     <value>Pz. III</value>
@@ -1781,18 +1769,18 @@ Ausf. L</value>
     <value>Pz. III/IV</value>
   </data>
   <data name="PzIIIketten_Ausf_A" xml:space="preserve">
-    <value>Pz.Kpfw. III Ausf. A</value>
+    <value>Pz.Kpfw. III Ausf. D</value>
   </data>
   <data name="PzIIIketten_Ausf_A_short" xml:space="preserve">
     <value>Pz.Kpfw. III
-Ausf. A</value>
+Ausf. D</value>
   </data>
   <data name="PzIIIketten_Ausf_B" xml:space="preserve">
-    <value>Pz.Kpfw. III Ausf. B</value>
+    <value>Pz.Kpfw. III Ausf. E</value>
   </data>
   <data name="PzIIIketten_Ausf_B_short" xml:space="preserve">
     <value>Pz.Kpfw. III
-Ausf. B</value>
+Ausf. E</value>
   </data>
   <data name="PzIIIketten_Ausf_J" xml:space="preserve">
     <value>Pz.Kpfw. III Ausf. J</value>
@@ -2053,8 +2041,26 @@ Ausf. E</value>
   <data name="PzV_PzIV" xml:space="preserve">
     <value>Pz.Kpfw. V/IV</value>
   </data>
+  <data name="PzV_PzIV_CN" xml:space="preserve">
+    <value>Pz.Kpfw. V Berge-Panther</value>
+  </data>
+  <data name="PzV_PzIV_CN_descr" xml:space="preserve">
+    <value>Only one prototype was built. The Pz.Kpfw. IV turret was mounted as a stationary module on the Panther hull for testing.</value>
+  </data>
+  <data name="PzV_PzIV_CN_short" xml:space="preserve">
+    <value>Pz. V BP</value>
+  </data>
   <data name="PzV_PzIV_ausf_Alfa" xml:space="preserve">
     <value>Pz.Kpfw. V/IV Alpha</value>
+  </data>
+  <data name="PzV_PzIV_ausf_Alfa_CN" xml:space="preserve">
+    <value>Pz.Kpfw. V Berge-Panther Alpha</value>
+  </data>
+  <data name="PzV_PzIV_ausf_Alfa_CN_descr" xml:space="preserve">
+    <value>Only one prototype was built. The Pz.Kpfw. IV turret was mounted as a stationary module on the Panther hull for testing.</value>
+  </data>
+  <data name="PzV_PzIV_ausf_Alfa_CN_short" xml:space="preserve">
+    <value>Pz. V BP A</value>
   </data>
   <data name="PzV_PzIV_ausf_Alfa_descr" xml:space="preserve">
     <value>Only one prototype was built. The Pz.Kpfw. IV turret was mounted as a stationary module on the Panther hull for testing.</value>
@@ -2144,7 +2150,7 @@ Ausf. E</value>
     <value>Rhm.-Borsig Waffenträger</value>
   </data>
   <data name="RhB_Waffentrager_descr" xml:space="preserve">
-    <value>Developed by the Rheinmetall-Borsig company and designed as a special artillery carrier. The vehicle was designed to carry an artillery system as well as to fire from the chassis. The vehicle utilized the suspension of the Hetzer tank destroyer. Development continued from the end of 1942 through the middle of 1944. However, the project was discontinued in favor of the Ardelt project because of a complicated design, high cost, and excessive weight.</value>
+    <value>Developed by the Rheinmetall-Borsig company and designed as a special artillery carrier. The vehicle was designed to carry an artillery system as well as to fire from the chassis. The vehicle utilized the suspension of the Hetzer tank destroyer. Development continued from the end of 1942 through to the middle of 1944. However, the project was discontinued in favor of the Ardelt project because of a complicated design, high cost, and excessive weight.</value>
   </data>
   <data name="RhB_Waffentrager_short" xml:space="preserve">
     <value>Rhm.-B. WT</value>
@@ -2378,6 +2384,9 @@ Ausf. E</value>
   <data name="Turret_1_G121_Grille_15_L63" xml:space="preserve">
     <value>Grille 15</value>
   </data>
+  <data name="Turret_1_G122_VK6501H" xml:space="preserve">
+    <value>VK 65.01 (H) S.W.</value>
+  </data>
   <data name="Turret_1_G58_VK4502P" xml:space="preserve">
     <value>VK 45.02 (P) Ausf. B</value>
   </data>
@@ -2505,9 +2514,6 @@ Turm Nr. 1</value>
   </data>
   <data name="Turret_1_Waffentrager_IV" xml:space="preserve">
     <value>Waffenträger auf Pz. IV für 12.8 cm</value>
-  </data>
-  <data name="Turret_2_Auf_Panther" xml:space="preserve">
-    <value>VK 28.01 Ausf. C</value>
   </data>
   <data name="Turret_2_DW_II" xml:space="preserve">
     <value>VK 30.01 (H) 0-Serie</value>
@@ -2810,9 +2816,6 @@ verstärkteketten</value>
   </data>
   <data name="VK7201_short" xml:space="preserve">
     <value>VK 72.01 K</value>
-  </data>
-  <data name="Verbesserteturm" xml:space="preserve">
-    <value>L.K.A. 2</value>
   </data>
   <data name="W-55" xml:space="preserve">
     <value>W-55</value>
@@ -3260,9 +3263,6 @@ Ausf. K</value>
   <data name="_50mm_KwK_39_L60" xml:space="preserve">
     <value>5 cm Kw.K. 39 L/60</value>
   </data>
-  <data name="_50mm_PaK_39_L60" xml:space="preserve">
-    <value>5 cm Pak 38 L/60</value>
-  </data>
   <data name="_50mm_Pzgr39" xml:space="preserve">
     <value>Pzgr 39</value>
   </data>
@@ -3325,6 +3325,9 @@ Ausf. K</value>
   </data>
   <data name="_75mm_KwK_441_A" xml:space="preserve">
     <value>7,5 cm Kw.K. 44/1 L/70</value>
+  </data>
+  <data name="_75mm_KwK_L40" xml:space="preserve">
+    <value>7,5 cm Kw.K. L/40</value>
   </data>
   <data name="_75mm_KwK_L70" xml:space="preserve">
     <value>7,5 cm Kw.K. 42 L/70</value>
@@ -3526,11 +3529,5 @@ Ausf. K</value>
   </data>
   <data name="_Gr_38_HL_A" xml:space="preserve">
     <value>Gr 38 HL A</value>
-  </data>
-  <data name="artillery_shell" xml:space="preserve">
-    <value>Artillery shell</value>
-  </data>
-  <data name="bomber_shell" xml:space="preserve">
-    <value>Bomber shell</value>
   </data>
 </root>

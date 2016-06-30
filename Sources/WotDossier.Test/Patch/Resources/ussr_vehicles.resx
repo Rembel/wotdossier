@@ -166,13 +166,10 @@
     <value>AT-1</value>
   </data>
   <data name="AT-1_descr" xml:space="preserve">
-    <value>Experimental self-propelled gun on the T-26 basis. Several vehicles and eight armored hulls were built. Never saw mass production.</value>
+    <value>The AT-1 tank destroyer based on the T-26 light tank was developed by the construction bureau at the Experimental Design Mechanical Department of Factory No. 185 in Leningrad from 1935 through 1936. The vehicle was designed for anti-tank warfare. Two prototypes equipped with the 76.2 mm PS-3 tank guns were built, which underwent trials by 1936. This vehicle never saw mass production.</value>
   </data>
   <data name="AT-1bis" xml:space="preserve">
     <value>AT-1 Bis</value>
-  </data>
-  <data name="Alarm_flags" xml:space="preserve">
-    <value>Signal Flags</value>
   </data>
   <data name="Alarm_flags_bot" xml:space="preserve">
     <value>Signal Flags</value>
@@ -420,6 +417,9 @@
   <data name="Chassis_R128_KV4_Kreslavskiy" xml:space="preserve">
     <value>KV-4 by Kreslavskiy</value>
   </data>
+  <data name="Chassis_R129_Object_257" xml:space="preserve">
+    <value>Object 257</value>
+  </data>
   <data name="Chassis_R71_IS_2B" xml:space="preserve">
     <value>IS-2M</value>
   </data>
@@ -519,9 +519,6 @@
   <data name="Chassis_T_50_2_1" xml:space="preserve">
     <value>T-50-2</value>
   </data>
-  <data name="Chassis_T_50_2_2" xml:space="preserve">
-    <value>T-50-2M</value>
-  </data>
   <data name="Chassis_Tetrarch_LL" xml:space="preserve">
     <value>Tetrarch</value>
   </data>
@@ -558,9 +555,6 @@ W-670</value>
   </data>
   <data name="GAZ-34-BT" xml:space="preserve">
     <value>GAM-34-BT</value>
-  </data>
-  <data name="GAZ-74B" xml:space="preserve">
-    <value>SU-85A</value>
   </data>
   <data name="GAZ-74b" xml:space="preserve">
     <value>SU-85B</value>
@@ -667,9 +661,6 @@ W-670</value>
   <data name="KV-1s_descr" xml:space="preserve">
     <value>A further modification of the KV-1 heavy tank series developed in the summer of 1942. It passed into Red Army service on August 20, 1942. Compared to its predecessors, KV-1S had several design features which allowed for the tank’s weight to be reduced to 42.3 tons. Also, the KV-1S had increased top speed, maneuverability, and durability. However, the 76-mm ZIS-5 gun remained. This, coupled with reduced and inefficient armoring, made the new vehicle basically equal to the Т-34 in terms of battle performance. A total of 1,083 vehicles of this modification were manufactured. This tank was widely used on all fronts of the Great Patriotic War.</value>
   </data>
-  <data name="KV-2" xml:space="preserve">
-    <value>KV-2</value>
-  </data>
   <data name="KV-220" xml:space="preserve">
     <value>KV-220-2</value>
   </data>
@@ -733,9 +724,6 @@ W-670</value>
   <data name="KV_1" xml:space="preserve">
     <value>KV-1</value>
   </data>
-  <data name="KV_2" xml:space="preserve">
-    <value>KV-2</value>
-  </data>
   <data name="KV_descr" xml:space="preserve">
     <value>Developed by the Special Design Bureau No. 2 at the Kirov Plant in Leningrad in 1939. Produced from February 1940 through September 1942, with a total production of 2,769 KV-1 vehicles and 334 KV-2 vehicles.</value>
   </data>
@@ -747,9 +735,6 @@ W-670</value>
   </data>
   <data name="LTP_descr" xml:space="preserve">
     <value>A proposed light vehicle developed by Lieutenant Provornov in the summer of 1942. No prototypes were manufactured.</value>
-  </data>
-  <data name="M-17E" xml:space="preserve">
-    <value>M-17E</value>
   </data>
   <data name="M-17F" xml:space="preserve">
     <value>M-17T</value>
@@ -772,14 +757,8 @@ W-670</value>
   <data name="M-5-400F" xml:space="preserve">
     <value>M-5-400F</value>
   </data>
-  <data name="M-5-400F_Bis" xml:space="preserve">
-    <value>M-5-400F Bis</value>
-  </data>
   <data name="M-50T" xml:space="preserve">
     <value>M-50T</value>
-  </data>
-  <data name="M-50TD" xml:space="preserve">
-    <value>M-50TD</value>
   </data>
   <data name="M-50T_fallout" xml:space="preserve">
     <value>M-50T</value>
@@ -1115,7 +1094,7 @@ W-670</value>
     <value>T-45</value>
   </data>
   <data name="R125_T_45_descr" xml:space="preserve">
-    <value>The upgraded version of the T-60 tank. Unlike the original vehicle, the T-60 featured enhanced armor and a turret with a 45-mm gun of 1938, as well as a coaxial DT machinegun. The vehicle was deemed obsolete by June 1942 as compared to the T-70. The vehicle never saw mass production. However, one manufactured prototype was sent to the front.</value>
+    <value>The upgraded version of the T-60 tank. Unlike the original vehicle, the T-45 featured enhanced armor and a turret with a 45-mm gun of 1938, as well as a coaxial DT machinegun. The vehicle was deemed obsolete by June 1942 as compared to the T-70. The vehicle never saw mass production. However, one manufactured prototype was sent to the front.</value>
   </data>
   <data name="R125_T_45_short" xml:space="preserve">
     <value>T-45</value>
@@ -1146,6 +1125,15 @@ W-670</value>
   </data>
   <data name="R128_KV4_Kreslavskiy_short" xml:space="preserve">
     <value>KV-4 Kresl.</value>
+  </data>
+  <data name="R129_Object_257" xml:space="preserve">
+    <value>Object 257</value>
+  </data>
+  <data name="R129_Object_257_descr" xml:space="preserve">
+    <value>This project for a heavy tank was developed during the 1940s. The vehicle only existed in blueprints.</value>
+  </data>
+  <data name="R129_Object_257_short" xml:space="preserve">
+    <value>Obj. 257</value>
   </data>
   <data name="R53_Object_704" xml:space="preserve">
     <value>Object 704</value>
@@ -1310,13 +1298,13 @@ W-670</value>
     <value>SU-100M1</value>
   </data>
   <data name="SU100M1_descr" xml:space="preserve">
-    <value>Developed at the UHMP (Ural Heavy Machinery Plant) on the basis of the T-34-85. The fighting compartment was located in the rear. The vehicle superceded by the SU-100M-2, based on the basis of the T-44, and never manufactured.</value>
+    <value>Developed in 1944 at the Uralmash heavy machinery plant, this vehicle was based on the T-34-85 tank. Its engine compartment was placed in the front of the hull, while the fighting compartment was located in the rear, which provided additional protection for the crew and considerably reduced the under armor hull volume. Although the SU-100M1 project was never manufactured, it was an intermittent stage in the development of the SU-100 and SU-101, both of which existed in reality.</value>
   </data>
   <data name="SU100Y" xml:space="preserve">
     <value>SU-100Y</value>
   </data>
   <data name="SU100Y_descr" xml:space="preserve">
-    <value>Developed on the basis of the T-100 heavy tank. The vehicle was intended to neutralize enemy pillboxes and destroy enemy vehicles. The only prototype was manufactured in March 1940. The vehicle never entered mass production.</value>
+    <value>Developed on the basis of the T-100 heavy tank. The vehicle was intended to neutralize fortified emplacements and enemy vehicles, and was equipped with the improved B-13-S2 naval gun. The only prototype was manufactured in March 1940. The vehicle never entered mass production.</value>
   </data>
   <data name="SU122A" xml:space="preserve">
     <value>SU-122A</value>
@@ -1606,9 +1594,6 @@ W-670</value>
   <data name="TD-12" xml:space="preserve">
     <value>TD-12</value>
   </data>
-  <data name="TD-30" xml:space="preserve">
-    <value>M-50D</value>
-  </data>
   <data name="TDDG" xml:space="preserve">
     <value>DG</value>
   </data>
@@ -1768,6 +1753,9 @@ W-670</value>
   <data name="Turret_1_R128_KV4_Kreslavskiy" xml:space="preserve">
     <value>KV-4 by Kreslavskiy</value>
   </data>
+  <data name="Turret_1_R129_Object_257" xml:space="preserve">
+    <value>Object 257</value>
+  </data>
   <data name="Turret_1_R71_IS_2B" xml:space="preserve">
     <value>IS-122</value>
   </data>
@@ -1891,9 +1879,6 @@ W-670</value>
   <data name="Turret_2_T150" xml:space="preserve">
     <value>T-150-220</value>
   </data>
-  <data name="Turret_2_T_50_2" xml:space="preserve">
-    <value>T-50-2M</value>
-  </data>
   <data name="Turret_710_mod_5" xml:space="preserve">
     <value>IS-4M</value>
   </data>
@@ -1966,9 +1951,6 @@ W-670</value>
   <data name="V-2-54" xml:space="preserve">
     <value>V-2-54</value>
   </data>
-  <data name="V-2-54A" xml:space="preserve">
-    <value>V-2-54</value>
-  </data>
   <data name="V-2-54IS" xml:space="preserve">
     <value>V-2-54IS</value>
   </data>
@@ -2028,9 +2010,6 @@ W-670</value>
   </data>
   <data name="V-5F" xml:space="preserve">
     <value>V-5F</value>
-  </data>
-  <data name="V-5U" xml:space="preserve">
-    <value>V-5U</value>
   </data>
   <data name="V-7" xml:space="preserve">
     <value>V-7</value>
@@ -2166,9 +2145,6 @@ W-670</value>
   </data>
   <data name="_107mm_ZiS-6M" xml:space="preserve">
     <value>107 mm ZiS-6M</value>
-  </data>
-  <data name="_107mm_ZiS-6_S" xml:space="preserve">
-    <value>107 mm ZiS-6S</value>
   </data>
   <data name="_10R" xml:space="preserve">
     <value>10R</value>
@@ -2509,9 +2485,6 @@ W-670</value>
   <data name="_23mm_BC-23" xml:space="preserve">
     <value>BC-23</value>
   </data>
-  <data name="_23mm_PT-23TB" xml:space="preserve">
-    <value>23 mm PT-23TB</value>
-  </data>
   <data name="_23mm_UBR-23" xml:space="preserve">
     <value>UBR-23</value>
   </data>
@@ -2532,6 +2505,9 @@ W-670</value>
   </data>
   <data name="_2xV-16" xml:space="preserve">
     <value>2x V-16</value>
+  </data>
+  <data name="_2xV-16_1000" xml:space="preserve">
+    <value>2x V-16 (1000)</value>
   </data>
   <data name="_37mm_APC_M51_LL" xml:space="preserve">
     <value>M51</value>
@@ -2592,9 +2568,6 @@ W-670</value>
   </data>
   <data name="_37mm_ZiS-19" xml:space="preserve">
     <value>37 mm ZiS-19</value>
-  </data>
-  <data name="_37mm_ZiS-19_S" xml:space="preserve">
-    <value>37 mm ZiS-19S</value>
   </data>
   <data name="_37mm_automatic_SH-37" xml:space="preserve">
     <value>37 mm Automatic SH-37</value>

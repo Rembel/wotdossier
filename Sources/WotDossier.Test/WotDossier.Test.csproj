@@ -138,8 +138,13 @@
     <EmbeddedResource Include="Patch\Resources\germany_vehicles.resx" />
     <EmbeddedResource Include="Patch\Resources\igr_vehicles.resx" />
     <EmbeddedResource Include="Patch\Resources\japan_vehicles.resx" />
+    <EmbeddedResource Include="Patch\Resources\sweden_vehicles.resx" />
     <EmbeddedResource Include="Patch\Resources\usa_vehicles.resx" />
     <EmbeddedResource Include="Patch\Resources\ussr_vehicles.resx" />
+    <None Include="..\.tools\convert.bat">
+      <Link>Tools\convert.bat</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="..\WotDossier\App.config">
       <Link>App.config</Link>
     </None>
@@ -184,6 +189,10 @@
     </None>
     <None Include="..\WotDossier\External\shells\japan_shells.json">
       <Link>External\shells\japan_shells.json</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\WotDossier\External\shells\sweden_shells.json">
+      <Link>External\shells\sweden_shells.json</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="..\WotDossier\External\shells\uk_shells.json">
@@ -358,9 +367,6 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="packages.config" />
-    <None Include="Patch\Resources\convert.bat">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
     <None Include="Replays\0.8.10\20131208_0156_ussr-Object_140_53_japan.wotreplay">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -471,6 +477,30 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="..\.tools\libgcc_s_dw2-1.dll">
+      <Link>Tools\libgcc_s_dw2-1.dll</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\.tools\libgettextlib-0-18-3.dll">
+      <Link>Tools\libgettextlib-0-18-3.dll</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\.tools\libgettextsrc-0-18-3.dll">
+      <Link>Tools\libgettextsrc-0-18-3.dll</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\.tools\libiconv-2.dll">
+      <Link>Tools\libiconv-2.dll</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\.tools\msgunfmt.exe">
+      <Link>Tools\msgunfmt.exe</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\.tools\resgenEx.exe">
+      <Link>Tools\resgenEx.exe</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="..\Configs\Log4Net.xml">
       <Link>Config\Log4Net.xml</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

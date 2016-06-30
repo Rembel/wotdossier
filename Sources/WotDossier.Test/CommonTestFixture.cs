@@ -198,7 +198,7 @@ namespace WotDossier.Test
         [Test]
         public void ImportTanksComponentsXmlTest()
         {
-            var strings = Directory.GetFiles(Path.Combine(Environment.CurrentDirectory, @"Patch\Tanks"), "shells.xml",
+            var strings = Directory.GetFiles(Path.Combine(Environment.CurrentDirectory, @"Output\Patch\Tanks"), "shells.xml",
                 SearchOption.AllDirectories);
 
             List<JObject> result = new List<JObject>();
@@ -246,14 +246,14 @@ namespace WotDossier.Test
 
             Console.WriteLine("Copy tanks definitions");
 
-            var destination = Path.Combine(Environment.CurrentDirectory, @"Patch\Tanks");
+            var destination = Path.Combine(Environment.CurrentDirectory, @"Output\Patch\Tanks");
             var source = Path.Combine(clientPath, @"res\scripts\item_defs\vehicles");
 
             Directory.CreateDirectory(destination);
 
             DirectoryCopy(source, destination, true);
 
-            var strings = Directory.GetFiles(Path.Combine(Environment.CurrentDirectory, @"Patch\Tanks"), "list.xml", SearchOption.AllDirectories);
+            var strings = Directory.GetFiles(Path.Combine(Environment.CurrentDirectory, @"Output\Patch\Tanks"), "list.xml", SearchOption.AllDirectories);
 
             List<JObject> result = new List<JObject>();
 
@@ -326,10 +326,10 @@ namespace WotDossier.Test
                             {
                                 string f = @"else if (iconId == ""{0}_{1}"")
                                 {{
-                                    //0.9.10 replay tank name changed to {2}
-                                    return _tanks[{3}];
+                                    //{4} replay tank name changed to {2}
+                                    tankDescription = tankDescriptions[{3}];
                                 }}";
-                                codegen.AppendFormat(f, country.ToString().ToLower(), description.Icon.Icon, tankDescription["icon"], uniqueId);
+                                codegen.AppendFormat(f, country.ToString().ToLower(), description.Icon.Icon, tankDescription["icon"], uniqueId, Dictionaries.VersionRelease);
                                 codegen.AppendLine();
                             }
                         }
@@ -349,7 +349,7 @@ namespace WotDossier.Test
                 }
             }
 
-            using (ResXResourceWriter writer = new ResXResourceWriter(@"D:\Projects\wotdossier\Sources\WotDossier.Test\Patch\Resources\ussr_vehicles_out.resx"))
+            using (ResXResourceWriter writer = new ResXResourceWriter(Path.Combine(Environment.CurrentDirectory, @"Output\Patch\Resources\ussr_vehicles_out.resx")))
             {
                 foreach (var resource in resources)
                 {
@@ -419,7 +419,7 @@ namespace WotDossier.Test
 
         private JObject GetTankDefinition(int countryid, string tankName)
         {
-            var fileName = Path.Combine(Environment.CurrentDirectory, @"Patch\Tanks", ((Country)countryid).ToString(), tankName + ".xml");
+            var fileName = Path.Combine(Environment.CurrentDirectory, @"Output\Patch\Tanks", ((Country)countryid).ToString(), tankName + ".xml");
             if (File.Exists(fileName))
             {
                 var file = new FileInfo(fileName);
@@ -456,6 +456,8 @@ namespace WotDossier.Test
                     return 6;
                 case Country.Czech:
                     return 7;
+                case Country.Sweden:
+                    return 8;
             }
             return -1;
         }
@@ -463,7 +465,7 @@ namespace WotDossier.Test
         [Test]
         public void ImportMapsTest()
         {
-            string configsPath = Path.Combine(Environment.CurrentDirectory, @"Patch\Maps");
+            string configsPath = Path.Combine(Environment.CurrentDirectory, @"Output\Patch\Maps");
 
             if (!Directory.Exists(configsPath))
             {
@@ -544,7 +546,7 @@ namespace WotDossier.Test
 
             Console.WriteLine("Copy maps definitions");
 
-            destination = Path.Combine(Environment.CurrentDirectory, @"Patch\Maps");
+            destination = Path.Combine(Environment.CurrentDirectory, @"Output\Patch\Maps");
             source = Path.Combine(clientPath, @"res\scripts\arena_defs");
 
             Directory.CreateDirectory(destination);
@@ -557,7 +559,7 @@ namespace WotDossier.Test
             
             ImportTanksComponentsXmlTest();
 
-            destination = Path.Combine(Environment.CurrentDirectory, @"Patch\Images");
+            destination = Path.Combine(Environment.CurrentDirectory, @"Output\Patch\Images");
 
             string filepath = Path.Combine(clientPath, @"res\packages\gui.pkg");
             using (var zip = new ZipFile(filepath, Encoding.GetEncoding((int)CodePage.CyrillicDOS)))
@@ -594,7 +596,7 @@ namespace WotDossier.Test
             string source;
             Console.WriteLine("Copy resources");
 
-            destination = Path.Combine(Environment.CurrentDirectory, @"Patch\Resources");
+            destination = Path.Combine(Environment.CurrentDirectory, @"Output\Patch\Resources");
             source = Path.Combine(clientPath, @"res\text\lc_messages");
 
             Directory.CreateDirectory(destination);
@@ -613,7 +615,7 @@ namespace WotDossier.Test
                 proc.StartInfo.CreateNoWindow = true;
                 proc.StartInfo.UseShellExecute = false;
                 proc.StartInfo.RedirectStandardOutput = true;
-                proc.StartInfo.FileName = Path.Combine(destination, "convert.bat");
+                proc.StartInfo.FileName = Path.Combine(destination, Path.Combine(Environment.CurrentDirectory, @"Tools\convert.bat"));
 
                 proc.StartInfo.WorkingDirectory = destination;
 

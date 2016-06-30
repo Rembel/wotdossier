@@ -117,9 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Alarm_flags" xml:space="preserve">
-    <value>Signal Flags</value>
-  </data>
   <data name="Alarm_flags_bot" xml:space="preserve">
     <value>Signal Flags</value>
   </data>
@@ -246,9 +243,6 @@
   <data name="Chassis_Ke_Ni_B" xml:space="preserve">
     <value>Type 98 Ke-Ni Otsu</value>
   </data>
-  <data name="Chassis_NC27" xml:space="preserve">
-    <value>Renault NC-27</value>
-  </data>
   <data name="Chassis_NC27_2" xml:space="preserve">
     <value>Renault Otsu</value>
   </data>
@@ -289,7 +283,7 @@
     <value>Type 1 Chi-He</value>
   </data>
   <data name="Chi_He_descr" xml:space="preserve">
-    <value>The Type 1 Chi-He medium tank was a further development of the Type 97 Chi-Ha. It was developed in 1941, but due to the lack of steel, the production started in 1943 only. A total of 170 tanks were manufactured. Most of them were held for the defense of Japan and never saw combat.</value>
+    <value>The Type 1 Chi-He medium tank was a further development of the Type 97 Chi-Ha. It was developed in 1941, but due to the lack of steel, production did not start until 1943. A total of 170 tanks were manufactured. Most of them were held for the defense of Japan and never saw combat.</value>
   </data>
   <data name="Chi_He_short" xml:space="preserve">
     <value>Chi-He</value>
@@ -607,9 +601,6 @@ TRM P45</value>
   <data name="Turret_1_Ke_Ni_B" xml:space="preserve">
     <value>Type 98 Ke-Ni Otsu</value>
   </data>
-  <data name="Turret_1_NC27" xml:space="preserve">
-    <value>Renault Kou</value>
-  </data>
   <data name="Turret_1_NC27_bot" xml:space="preserve">
     <value>Renault Kou</value>
   </data>
@@ -775,15 +766,6 @@ TRM P45</value>
   <data name="_150mm_Howitzer_Type96" xml:space="preserve">
     <value>15 cm Howitzer Type 96</value>
   </data>
-  <data name="_20mm_AP" xml:space="preserve">
-    <value>20 mm AP</value>
-  </data>
-  <data name="_20mm_APCR" xml:space="preserve">
-    <value>20 mm APCR</value>
-  </data>
-  <data name="_20mm_Type97" xml:space="preserve">
-    <value>20 mm AT Rifle Type 97</value>
-  </data>
   <data name="_37mm_APHE_Ichi_Go" xml:space="preserve">
     <value>Ichi-Go</value>
   </data>
@@ -796,17 +778,11 @@ TRM P45</value>
   <data name="_37mm_APHE_Type94" xml:space="preserve">
     <value>Type 94</value>
   </data>
-  <data name="_37mm_APX_SA18" xml:space="preserve">
-    <value>37 mm APX SA18</value>
-  </data>
   <data name="_37mm_APX_SA18_bot" xml:space="preserve">
     <value>37 mm APX SA18</value>
   </data>
   <data name="_37mm_AP_Type4" xml:space="preserve">
     <value>Type 4</value>
-  </data>
-  <data name="_37mm_FrtPrf1935" xml:space="preserve">
-    <value>Frt.Prf. mle. 1935</value>
   </data>
   <data name="_37mm_HE_Type12" xml:space="preserve">
     <value>Type 12</value>
@@ -817,12 +793,6 @@ TRM P45</value>
   <data name="_37mm_HE_Type4_Kai" xml:space="preserve">
     <value>Type 4 Kai</value>
   </data>
-  <data name="_37mm_OE_mle._1916" xml:space="preserve">
-    <value>OE mle. 1916</value>
-  </data>
-  <data name="_37mm_Odr_mle._1935" xml:space="preserve">
-    <value>ODR mle. 1935</value>
-  </data>
   <data name="_37mm_Odr_mle._1935_bot" xml:space="preserve">
     <value>ODR mle. 1935</value>
   </data>
@@ -831,9 +801,6 @@ TRM P45</value>
   </data>
   <data name="_37mm_Type1" xml:space="preserve">
     <value>37 mm Gun Type 1</value>
-  </data>
-  <data name="_37mm_Type11" xml:space="preserve">
-    <value>37 mm Infantry Gun Type 11</value>
   </data>
   <data name="_37mm_Type_100" xml:space="preserve">
     <value>37 mm Gun Type 100</value>
@@ -888,9 +855,6 @@ TRM P45</value>
   </data>
   <data name="_57mm_HE_Type97" xml:space="preserve">
     <value>Type 90</value>
-  </data>
-  <data name="_62CV" xml:space="preserve">
-    <value>Renault L4</value>
   </data>
   <data name="_62CV_bot" xml:space="preserve">
     <value>Renault L4</value>

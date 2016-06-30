@@ -56,6 +56,17 @@ Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "WotDossier.Web.Domain", "Wo
 EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "WotDossier.Web", "WotDossier.Web\WotDossier.Web.xproj", "{6836EC1F-A407-4A97-896D-E3C9B143E2BE}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".tools", ".tools", "{3BA1A170-C59B-4522-A89E-9ECA2859F0DB}"
+	ProjectSection(SolutionItems) = preProject
+		.tools\convert.bat = .tools\convert.bat
+		.tools\libgcc_s_dw2-1.dll = .tools\libgcc_s_dw2-1.dll
+		.tools\libgettextlib-0-18-3.dll = .tools\libgettextlib-0-18-3.dll
+		.tools\libgettextsrc-0-18-3.dll = .tools\libgettextsrc-0-18-3.dll
+		.tools\libiconv-2.dll = .tools\libiconv-2.dll
+		.tools\msgunfmt.exe = .tools\msgunfmt.exe
+		.tools\resgenEx.exe = .tools\resgenEx.exe
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

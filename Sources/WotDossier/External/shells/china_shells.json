@@ -1,37 +1,4 @@
 {
-  "_13.2mm_Balle_P.": {
-    "id": "\t13\t",
-    "userString": "#china_vehicles:_13.2mm_Balle_P.",
-    "icon": "ap",
-    "price": "\t1\t",
-    "notInShop": "\ttrue\t",
-    "kind": "ARMOR_PIERCING",
-    "caliber": "13.2",
-    "isTracer": "\ttrue\t",
-    "effects": "autoArmorPiercing",
-    "damage": {
-      "armor": "\t8\t",
-      "devices": "\t18\t"
-    }
-  },
-  "_13.2mm_Balle_T.P.": {
-    "id": "\t14\t",
-    "userString": "#china_vehicles:_13.2mm_Balle_T.P.",
-    "icon": "ap_cr",
-    "price": {
-      "#text": "\t1\t",
-      "gold": ""
-    },
-    "notInShop": "\ttrue\t",
-    "kind": "ARMOR_PIERCING_CR",
-    "caliber": "13.2",
-    "isTracer": "\ttrue\t",
-    "effects": "\tautoAPCR\t",
-    "damage": {
-      "armor": "\t8\t",
-      "devices": "\t18\t"
-    }
-  },
   "_37mm_AP_M74": {
     "id": "\t43\t",
     "userString": "#china_vehicles:_37mm_AP_M74",

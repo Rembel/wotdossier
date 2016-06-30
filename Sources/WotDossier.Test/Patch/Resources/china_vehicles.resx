@@ -157,7 +157,7 @@
     <value>T-34-1</value>
   </data>
   <data name="Ch04_T34_1_descr" xml:space="preserve">
-    <value>In 1954 the Chinese government considered the possibility of launching production of the T-34-85 in China. At the same time, Chinese engineers proposed an alternative project: the T-34-1. While based on the T-34-85, the T-34-1's transmission compartment and suspension were to be rearranged, reducing overall weight and giving a lower hull. In 1954, several designs of the vehicle, with varying turrets and armament, were developed. However, a prototype was never built.</value>
+    <value>In 1954, the Chinese government considered the possibility of launching production of the T-34-85 in China. At the same time, Chinese engineers proposed an alternative project: the T-34-1. While based on the T-34-85, the T-34-1's transmission compartment and suspension were to be rearranged, reducing the overall weight and lowering the hull. In 1954, several designs of the vehicle, with varying turrets and armament, were developed. However, a prototype was never built.</value>
   </data>
   <data name="Ch05_T34_2" xml:space="preserve">
     <value>T-34-2</value>
@@ -262,7 +262,7 @@
     <value>121</value>
   </data>
   <data name="Ch19_121_descr" xml:space="preserve">
-    <value>Development began in 1962 on a new medium tank based on the Type 59. The new tank was expected to feature improvements in firepower and armor protection. However, the project was canceled shortly after. Some technical innovations were applied later, in the development of the Type 69 tank. All 121 tank prototypes were destroyed during Chinese nuclear weapon testing.</value>
+    <value>Development of a new medium tank based on the Type 59 began in 1962. The new tank was expected to feature improvements in firepower and armor protection. However, the project was canceled shortly after. Some technical innovations were applied later, in the development of the Type 69 tank. All 121 tank prototypes were destroyed during Chinese nuclear weapon testing.</value>
   </data>
   <data name="Ch20_Type58" xml:space="preserve">
     <value>Type 58</value>
@@ -280,7 +280,7 @@
     <value>113</value>
   </data>
   <data name="Ch22_113_descr" xml:space="preserve">
-    <value>Development on model 113 was started in 1963. The vehicle was conceived as an alternative to WZ-111 and used parts and components of medium tanks. However, the project was canceled due to the development of main battle tanks.</value>
+    <value>Development on model 113 was started in 1963. The vehicle was conceived as an alternative to the WZ-111 and used parts and components of medium tanks. However, the project was canceled due to the development of main battle tanks.</value>
   </data>
   <data name="Ch23_112" xml:space="preserve">
     <value>112</value>
@@ -335,9 +335,6 @@
   </data>
   <data name="Chassis_Ch05_T34_2_2" xml:space="preserve">
     <value>T-34-2 model 2</value>
-  </data>
-  <data name="Chassis_Ch06_Renault_NC31" xml:space="preserve">
-    <value>M24/25</value>
   </data>
   <data name="Chassis_Ch06_Renault_NC31_2" xml:space="preserve">
     <value>M26/27</value>
@@ -444,9 +441,6 @@
   <data name="ER_52" xml:space="preserve">
     <value>ER 52</value>
   </data>
-  <data name="Fanions_de_signaux" xml:space="preserve">
-    <value>Signal Flags</value>
-  </data>
   <data name="Fanions_de_signaux_bot" xml:space="preserve">
     <value>Signal Flags</value>
   </data>
@@ -479,9 +473,6 @@
   </data>
   <data name="Turret_1_Ch05_T34_2" xml:space="preserve">
     <value>T-34-2</value>
-  </data>
-  <data name="Turret_1_Ch06_Renault_NC31" xml:space="preserve">
-    <value>FT-17</value>
   </data>
   <data name="Turret_1_Ch06_Renault_NC31_bot" xml:space="preserve">
     <value>FT-17</value>
@@ -698,18 +689,6 @@
   </data>
   <data name="_122mm_Type_68" xml:space="preserve">
     <value>Sha bao-471</value>
-  </data>
-  <data name="_13.2mm_Balle_P." xml:space="preserve">
-    <value>Balle P.</value>
-  </data>
-  <data name="_13.2mm_Balle_T.P." xml:space="preserve">
-    <value>Balle T.P.</value>
-  </data>
-  <data name="_13.2mm_Hotchkiss_mle._1930" xml:space="preserve">
-    <value>13.2 mm Hotchkiss mle. 1930</value>
-  </data>
-  <data name="_13.2mm_Hotchkiss_mle._1930_short" xml:space="preserve">
-    <value>13.2 mm Hotchkiss</value>
   </data>
   <data name="_130mm_59-130T" xml:space="preserve">
     <value>130 mm 59-130T</value>
@@ -945,15 +924,6 @@
   </data>
   <data name="_9RM_shop" xml:space="preserve">
     <value>9RM</value>
-  </data>
-  <data name="_Marconi_SB4a" xml:space="preserve">
-    <value>Marconi SB-4a</value>
-  </data>
-  <data name="_Renault_62CV" xml:space="preserve">
-    <value>Renault 62CV</value>
-  </data>
-  <data name="_Renault_M26_27" xml:space="preserve">
-    <value>Renault M26/27</value>
   </data>
   <data name="_Renault_M26_27_bot" xml:space="preserve">
     <value>Renault M26/27</value>

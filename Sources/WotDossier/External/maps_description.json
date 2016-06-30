@@ -2833,6 +2833,42 @@
     }
   },
   {
+    "name": "#arenas:112_eiffel_tower_ctf/name",
+    "description": "#arenas:112_eiffel_tower_ctf/description",
+    "geometry": "spaces/112_eiffel_tower_ctf",
+    "boundingBox": {
+      "bottomLeft": "-400.0 -400.0",
+      "upperRight": "400.0 400.0"
+    },
+    "roundLength": "\t900\t",
+    "minimap": "spaces/112_eiffel_tower_ctf/mmap.dds",
+    "vehicleCamouflageKind": "summer",
+    "maxPlayersInTeam": "\t15\t",
+    "wwloadingMusic": "music_euro_city",
+    "wwambientSound": "ambient_wind_summer_01",
+    "umbraEnabled": "\t1\t",
+    "batchingEnabled": "\t0\t",
+    "water": {
+      "texScale": "\t0\t",
+      "freqX": "\t0\t",
+      "freqZ": "\t0\t"
+    },
+    "gameplayTypes": {
+      "ctf": {
+        "teamBasePositions": {
+          "team1": {
+            "position1": "\t-346,074400 -22,522880\t"
+          },
+          "team2": {
+            "position1": "\t341,269100 -19,863820\t"
+          }
+        }
+      }
+    },
+    "roadMap": "",
+    "mapActivities": ""
+  },
+  {
     "name": "#arenas:114_czech/name",
     "description": "#arenas:114_czech/description",
     "geometry": "spaces/114_czech",

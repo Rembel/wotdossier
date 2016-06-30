@@ -38,6 +38,9 @@ namespace WotDossier.Web
             {
                 // For more details on using the user secret store see http://go.microsoft.com/fwlink/?LinkID=532709
                 builder.AddUserSecrets();
+
+                // This will push telemetry data through Application Insights pipeline faster, allowing you to view results immediately.
+                builder.AddApplicationInsightsSettings(developerMode: true);
             }
 
             builder.AddEnvironmentVariables();
@@ -50,10 +53,14 @@ namespace WotDossier.Web
         public void ConfigureServices(IServiceCollection services)
         {
             // Add framework services.
-            services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")))
-                .AddEntityFrameworkNpgsql().AddDbContext<dossierContext>(options =>
-                    options.UseNpgsql(Configuration["Data:PostgresqlConnection:ConnectionString"]));
+            services.AddApplicationInsightsTelemetry(Configuration);
+
+            var postgreConnectionString = Configuration.GetConnectionString("PostgresqlConnection");
+            var defaultConnectionString = Configuration.GetConnectionString("DefaultConnection");
+            services
+                .AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(defaultConnectionString))
+                .AddEntityFrameworkNpgsql()
+                .AddDbContext<dossierContext>(options => options.UseNpgsql(postgreConnectionString));
 
             services.AddIdentity<ApplicationUser, IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>()
@@ -76,6 +83,8 @@ namespace WotDossier.Web
             var xmlLoggingConfiguration = new  XmlLoggingConfiguration("config.nlog");
             loggerFactory.AddNLog(new LogFactory(xmlLoggingConfiguration));
             
+app.UseApplicationInsightsRequestTelemetry();
+
             if (env.IsDevelopment())
             {
                 loggerFactory.AddConsole(Configuration.GetSection("Logging"));
@@ -89,6 +98,8 @@ namespace WotDossier.Web
             {
                 app.UseExceptionHandler("/Home/Error");
             }
+
+            app.UseApplicationInsightsExceptionTelemetry();
 
             app.UseStaticFiles();
 

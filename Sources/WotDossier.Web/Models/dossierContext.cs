@@ -4,6 +4,11 @@ namespace WotDossier.Web
 {
     public partial class dossierContext : DbContext
     {
+        public dossierContext(DbContextOptions<dossierContext> options)
+            : base(options)
+        {
+        }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<dbversion>(entity =>

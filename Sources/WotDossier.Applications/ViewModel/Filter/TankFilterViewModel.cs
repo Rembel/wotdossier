@@ -245,6 +245,16 @@ namespace WotDossier.Applications.ViewModel.Filter
             }
         }
 
+        public bool SESelected
+        {
+            get { return _filter.SESelected; }
+            set
+            {
+                _filter.SESelected = value;
+                OnPropertyChanged("SESelected");
+            }
+        }
+
         public bool IsPremium
         {
             get { return _filter.IsPremium; }
@@ -287,7 +297,7 @@ namespace WotDossier.Applications.ViewModel.Filter
                             Level6Selected =
                                 Level5Selected = Level4Selected = Level3Selected = Level2Selected = Level1Selected = true;
             TDSelected = MTSelected = LTSelected = HTSelected = SPGSelected = true;
-            USSRSelected = UKSelected = USSelected = GermanySelected = JPSelected = ChinaSelected = FranceSelected = CZSelected = true;
+            USSRSelected = UKSelected = USSelected = GermanySelected = JPSelected = ChinaSelected = FranceSelected = CZSelected = SESelected = true;
         }
 
         private void OnClear()
@@ -338,7 +348,8 @@ namespace WotDossier.Applications.ViewModel.Filter
                     || x.CountryId == (int)Country.Usa && USSelected
                     || x.CountryId == (int)Country.Japan && JPSelected
                     || x.CountryId == (int)Country.Czech && CZSelected
-                    || x.CountryId == (int)Country.Uk && UKSelected)
+                    || x.CountryId == (int)Country.Uk && UKSelected
+                    || x.CountryId == (int)Country.Sweden && SESelected)
                    && (x.IsFavorite || !IsFavorite)
                    && (x.IsPremium || !IsPremium);
         }

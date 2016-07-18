@@ -53,6 +53,7 @@ namespace WotDossier.Applications.ViewModel.Filter
         private bool _nationUkSelected = true;
         private bool _nationJpSelected = true;
         private bool _nationCzSelected = true;
+        private bool _nationSeSelected = true;
         private bool _isPremium;
         private bool _isFavorite;
         private ReplayFolder _selectedFolder;
@@ -301,6 +302,15 @@ namespace WotDossier.Applications.ViewModel.Filter
             {
                 _nationCzSelected = value;
                 OnPropertyChanged("NationCZSelected");
+            }
+        }
+        public bool NationSESelected
+        {
+            get { return _nationSeSelected; }
+            set
+            {
+                _nationSeSelected = value;
+                OnPropertyChanged("NationSESelected");
             }
         }
 
@@ -710,6 +720,7 @@ namespace WotDossier.Applications.ViewModel.Filter
                     || NationUSSelected && tank.CountryId == (int) Country.Usa
                     || NationJPSelected && tank.CountryId == (int) Country.Japan
                     || NationCZSelected && tank.CountryId == (int) Country.Czech
+                    || NationSESelected && tank.CountryId == (int) Country.Sweden
                     || NationUKSelected && tank.CountryId == (int) Country.Uk)
                    && (tank.Premium == 1 || !IsPremium);
         }
@@ -993,7 +1004,7 @@ namespace WotDossier.Applications.ViewModel.Filter
                                 Level5Selected = Level4Selected = Level3Selected = Level2Selected = Level1Selected = true;
             TankTypeTDSelected = TankTypeMTSelected = TankTypeLTSelected = TankTypeHTSelected = TankTypeSPGSelected = true;
             NationUSSRSelected =
-                NationUKSelected = NationUSSelected = NationGermanySelected = NationJPSelected = NationChinaSelected = NationFranceSelected = NationCZSelected = true;
+                NationUKSelected = NationUSSelected = NationGermanySelected = NationJPSelected = NationChinaSelected = NationFranceSelected = NationCZSelected = NationSESelected = true;
 
             SelectedBattleResult = BattleStatus.Unknown;
             //NOTE: single version selection mode. use Dictionaries.VersionAll as default value 
@@ -1017,7 +1028,7 @@ namespace WotDossier.Applications.ViewModel.Filter
                                 Level5Selected = Level4Selected = Level3Selected = Level2Selected = Level1Selected = false;
             TankTypeTDSelected = TankTypeMTSelected = TankTypeLTSelected = TankTypeHTSelected = TankTypeSPGSelected = false;
             NationUSSRSelected =
-                NationUKSelected = NationUSSelected = NationGermanySelected = NationJPSelected = NationChinaSelected = NationFranceSelected = NationCZSelected = false;
+                NationUKSelected = NationUSSelected = NationGermanySelected = NationJPSelected = NationChinaSelected = NationFranceSelected = NationCZSelected = NationSESelected = false;
 
             SelectedBattleResult = BattleStatus.Unknown;
             //NOTE: single version selection mode. use Dictionaries.VersionAll as default value 

@@ -3598,4 +3598,7 @@
   <data name="Map_101_dday" xml:space="preserve">
     <value>Оверлорд</value>
   </data>
+  <data name="Country_Sweden" xml:space="preserve">
+    <value>Швеция</value>
+  </data>
 </root>

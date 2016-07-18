@@ -3509,4 +3509,7 @@ Date: {Date:dd.MM.yyyy}</value>
   <data name="Map_101_dday" xml:space="preserve">
     <value>Overlord</value>
   </data>
+  <data name="Country_Sweden" xml:space="preserve">
+    <value>Sweden</value>
+  </data>
 </root>

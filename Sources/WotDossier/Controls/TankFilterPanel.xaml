@@ -150,6 +150,11 @@
                     <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/nations/czech.png"></Image>
                 </CheckBox.Content>
             </CheckBox>
+            <CheckBox Margin="6,3,6,3" ToolTip="{x:Static resources:Resources.Country_Sweden}" IsChecked="{Binding SESelected, Mode=TwoWay}">
+                <CheckBox.Content>
+                    <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/nations/sweden.png"></Image>
+                </CheckBox.Content>
+            </CheckBox>
         </StackPanel>
         <CheckBox Grid.Row="4" Margin="6,3,6,3" Content="{x:Static resources:Resources.TankFilterPanel_Premium}" IsChecked="{Binding IsPremium, Mode=TwoWay}" />
         <CheckBox Grid.Row="4" Grid.Column="1" Margin="6,3,6,3" Content="{x:Static resources:Resources.TankFilterPanel_Favorite}" IsChecked="{Binding IsFavorite, Mode=TwoWay}" />

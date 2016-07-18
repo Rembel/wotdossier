@@ -3,6 +3,20 @@
   "version": 2,
   "targets": {
     ".NETCoreApp,Version=v1.0": {
+      "BundlerMinifier.Core/2.1.258": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.NETCore.App": "1.0.0",
+          "NUglify": "1.5.1",
+          "Newtonsoft.Json": "9.0.1"
+        },
+        "compile": {
+          "lib/netcoreapp1.0/dotnet-bundle.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp1.0/dotnet-bundle.dll": {}
+        }
+      },
       "Libuv/1.9.0": {
         "type": "package",
         "dependencies": {
@@ -2405,6 +2419,19 @@
           "lib/netstandard1.0/NuGet.Versioning.dll": {}
         }
       },
+      "NUglify/1.5.1": {
+        "type": "package",
+        "dependencies": {
+          "NETStandard.Library": "1.6.0",
+          "System.Security.Cryptography.Algorithms": "4.2.0"
+        },
+        "compile": {
+          "lib/netstandard1.3/NUglify.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.3/NUglify.dll": {}
+        }
+      },
       "protobuf-net/2.1.0-alpha-1": {
         "type": "package",
         "dependencies": {
@@ -4642,6 +4669,18 @@
     }
   },
   "libraries": {
+    "BundlerMinifier.Core/2.1.258": {
+      "sha512": "dHTcSnKRM2Dvk1s2eCLU8U1WCxLlfk4y0GQlBUFaHaLt1NN1JhxJeDhhVo6jqKhHZsBaY7Cz04UYuKrKSwItZQ==",
+      "type": "package",
+      "path": "BundlerMinifier.Core/2.1.258",
+      "files": [
+        "BundlerMinifier.Core.2.1.258.nupkg.sha512",
+        "BundlerMinifier.Core.nuspec",
+        "lib/net452/dotnet-bundle.exe",
+        "lib/netcoreapp1.0/dotnet-bundle.dll",
+        "lib/netcoreapp1.0/dotnet-bundle.runtimeconfig.json"
+      ]
+    },
     "Libuv/1.9.0": {
       "sha512": "9Q7AaqtQhS8JDSIvRBt6ODSLWDBI4c8YxNxyCQemWebBFUtBbc6M5Vi5Gz1ZyIUlTW3rZK9bIr5gnVyv0z7a2Q==",
       "type": "package",
@@ -6557,6 +6596,21 @@
         "lib/net45/NuGet.Versioning.xml",
         "lib/netstandard1.0/NuGet.Versioning.dll",
         "lib/netstandard1.0/NuGet.Versioning.xml"
+      ]
+    },
+    "NUglify/1.5.1": {
+      "sha512": "iYV/OtSs+HgyE/RilY7UvGXYec6r0OJenWlPIdX/IivedVpSSdzxvPvUIyWpiV/6ad7VjantH0/6oaOhAZbaoQ==",
+      "type": "package",
+      "path": "NUglify/1.5.1",
+      "files": [
+        "NUglify.1.5.1.nupkg.sha512",
+        "NUglify.nuspec",
+        "lib/net35/NUglify.dll",
+        "lib/net35/NUglify.xml",
+        "lib/net40/NUglify.dll",
+        "lib/net40/NUglify.xml",
+        "lib/netstandard1.3/NUglify.dll",
+        "lib/netstandard1.3/NUglify.xml"
       ]
     },
     "protobuf-net/2.1.0-alpha-1": {
@@ -11415,6 +11469,7 @@
   },
   "projectFileDependencyGroups": {
     "": [
+      "BundlerMinifier.Core >= 2.1.258",
       "Microsoft.ApplicationInsights.AspNetCore >= 1.0.0",
       "Microsoft.AspNetCore.Authentication.Cookies >= 1.0.0",
       "Microsoft.AspNetCore.Diagnostics >= 1.0.0",
@@ -11455,20 +11510,6 @@
   },
   "tools": {
     ".NETCoreApp,Version=v1.0": {
-      "BundlerMinifier.Core/2.0.238": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.NETCore.App": "1.0.0",
-          "NUglify": "1.5.0",
-          "Newtonsoft.Json": "9.0.1"
-        },
-        "compile": {
-          "lib/netcoreapp1.0/dotnet-bundle.dll": {}
-        },
-        "runtime": {
-          "lib/netcoreapp1.0/dotnet-bundle.dll": {}
-        }
-      },
       "Microsoft.AspNetCore.Razor.Tools/1.0.0-preview2-final": {
         "type": "package",
         "dependencies": {
@@ -11556,7 +11597,6 @@
   },
   "projectFileToolGroups": {
     ".NETCoreApp,Version=v1.0": [
-      "BundlerMinifier.Core >= 2.0.238",
       "Microsoft.AspNetCore.Razor.Tools >= 1.0.0-preview2-final",
       "Microsoft.AspNetCore.Server.IISIntegration.Tools >= 1.0.0-preview2-final",
       "Microsoft.EntityFrameworkCore.Tools >= 1.0.0-preview2-final",

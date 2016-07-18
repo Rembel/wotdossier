@@ -115,8 +115,6 @@ app.UseApplicationInsightsRequestTelemetry();
             });
 
             InitProtobuf();
-
-            Console.Write("Hello world");
         }
 
         private static void InitProtobuf()

@@ -2142,7 +2142,7 @@
           "lib/netstandard1.3/NLog.dll": {}
         }
       },
-      "Npgsql/3.1.5": {
+      "Npgsql/3.1.6": {
         "type": "package",
         "dependencies": {
           "Microsoft.Win32.Primitives": "4.0.1",
@@ -2172,13 +2172,13 @@
           "System.Threading.Timer": "4.0.1"
         },
         "compile": {
-          "lib/netstandard1.3/npgsql.dll": {}
+          "lib/netstandard1.3/Npgsql.dll": {}
         },
         "runtime": {
-          "lib/netstandard1.3/npgsql.dll": {}
+          "lib/netstandard1.3/Npgsql.dll": {}
         }
       },
-      "Npgsql.EntityFrameworkCore.PostgreSQL/1.0.0": {
+      "Npgsql.EntityFrameworkCore.PostgreSQL/1.0.1": {
         "type": "package",
         "dependencies": {
           "Microsoft.EntityFrameworkCore": "1.0.0",
@@ -2194,10 +2194,11 @@
           "lib/netstandard1.3/Npgsql.EntityFrameworkCore.PostgreSQL.dll": {}
         }
       },
-      "Npgsql.EntityFrameworkCore.PostgreSQL.Design/1.0.0": {
+      "Npgsql.EntityFrameworkCore.PostgreSQL.Design/1.0.1": {
         "type": "package",
         "dependencies": {
           "Microsoft.EntityFrameworkCore": "1.0.0",
+          "Microsoft.EntityFrameworkCore.Design.Core": "1.0.0-preview2-final",
           "Microsoft.EntityFrameworkCore.Relational": "1.0.0",
           "Microsoft.EntityFrameworkCore.Relational.Design": "1.0.0",
           "Microsoft.Extensions.DependencyInjection": "1.0.0",
@@ -2432,25 +2433,23 @@
           "lib/netstandard1.3/NUglify.dll": {}
         }
       },
-      "protobuf-net/2.1.0-alpha-1": {
+      "protobuf-net/2.1.0": {
         "type": "package",
         "dependencies": {
-          "Microsoft.CSharp": "4.0.1-beta-23516",
-          "System.Diagnostics.Tools": "4.0.1-beta-23516",
-          "System.IO": "4.0.11-beta-23516",
-          "System.Reflection.Emit": "4.0.1-beta-23516",
-          "System.Reflection.Emit.ILGeneration": "4.0.1-beta-23516",
-          "System.Reflection.Emit.Lightweight": "4.0.1-beta-23516",
-          "System.Reflection.TypeExtensions": "4.1.0-beta-23516",
-          "System.Runtime.Serialization.Primitives": "4.0.11-beta-23409",
-          "System.Text.Encoding": "4.0.11-beta-23516",
-          "System.Xml.XmlSerializer": "4.0.11-beta-23516"
+          "Microsoft.CSharp": "4.0.1",
+          "NETStandard.Library": "1.6.0",
+          "System.Reflection.Emit": "4.0.1",
+          "System.Reflection.Emit.ILGeneration": "4.0.1",
+          "System.Reflection.Emit.Lightweight": "4.0.1",
+          "System.Reflection.TypeExtensions": "4.1.0",
+          "System.Runtime.Serialization.Primitives": "4.1.1",
+          "System.Xml.XmlSerializer": "4.0.11"
         },
         "compile": {
-          "lib/dotnet5.4/protobuf-net.dll": {}
+          "lib/netstandard1.5/protobuf-net.dll": {}
         },
         "runtime": {
-          "lib/dotnet5.4/protobuf-net.dll": {}
+          "lib/netstandard1.5/protobuf-net.dll": {}
         }
       },
       "Remotion.Linq/2.1.1": {
@@ -4607,15 +4606,32 @@
           "lib/netstandard1.3/System.Xml.XmlDocument.dll": {}
         }
       },
-      "System.Xml.XmlSerializer/4.0.11-beta-23516": {
+      "System.Xml.XmlSerializer/4.0.11": {
         "type": "package",
         "dependencies": {
-          "System.IO": "4.0.0",
-          "System.Runtime": "4.0.0",
-          "System.Xml.ReaderWriter": "4.0.10"
+          "System.Collections": "4.0.11",
+          "System.Globalization": "4.0.11",
+          "System.IO": "4.1.0",
+          "System.Linq": "4.1.0",
+          "System.Reflection": "4.1.0",
+          "System.Reflection.Emit": "4.0.1",
+          "System.Reflection.Emit.ILGeneration": "4.0.1",
+          "System.Reflection.Extensions": "4.0.1",
+          "System.Reflection.Primitives": "4.0.1",
+          "System.Reflection.TypeExtensions": "4.1.0",
+          "System.Resources.ResourceManager": "4.0.1",
+          "System.Runtime": "4.1.0",
+          "System.Runtime.Extensions": "4.1.0",
+          "System.Text.RegularExpressions": "4.1.0",
+          "System.Threading": "4.0.11",
+          "System.Xml.ReaderWriter": "4.0.11",
+          "System.Xml.XmlDocument": "4.0.1"
         },
         "compile": {
-          "ref/dotnet5.4/System.Xml.XmlSerializer.dll": {}
+          "ref/netstandard1.3/System.Xml.XmlSerializer.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.3/System.Xml.XmlSerializer.dll": {}
         }
       },
       "System.Xml.XPath/4.0.1": {
@@ -6377,38 +6393,38 @@
         "lib/wp80/NLog.dll"
       ]
     },
-    "Npgsql/3.1.5": {
-      "sha512": "goxdRti9awLXumRiZh7Z2Lu6DQ0v6tEz+aPNfp2OjuxKCGIZYr/KmJ/Q9X+wRyGkzi0nzAacWZC5YAd5xSW6PA==",
+    "Npgsql/3.1.6": {
+      "sha512": "XXdvYqLrLaYweZ5fKsmRmz1nZWp791XWvIo2bPX8bMybGLHcVZ+votGiYj/54dd8DzxnBTp/7dTxmoxm5KQS9g==",
       "type": "package",
-      "path": "Npgsql/3.1.5",
+      "path": "Npgsql/3.1.6",
       "files": [
-        "lib/net45/npgsql.dll",
-        "lib/net45/npgsql.xml",
-        "lib/net451/npgsql.dll",
-        "lib/net451/npgsql.xml",
-        "lib/netstandard1.3/npgsql.dll",
-        "lib/netstandard1.3/npgsql.xml",
-        "npgsql.3.1.5.nupkg.sha512",
-        "npgsql.nuspec"
+        "Npgsql.3.1.6.nupkg.sha512",
+        "Npgsql.nuspec",
+        "lib/net45/Npgsql.dll",
+        "lib/net45/Npgsql.xml",
+        "lib/net451/Npgsql.dll",
+        "lib/net451/Npgsql.xml",
+        "lib/netstandard1.3/Npgsql.dll",
+        "lib/netstandard1.3/Npgsql.xml"
       ]
     },
-    "Npgsql.EntityFrameworkCore.PostgreSQL/1.0.0": {
-      "sha512": "YtfaxJ2xnhbP3fPD7aXdOj6Zy0c5+ba0Jv+Yl/0cLvuYadVOh16UrTLS75RbV5OiTTXge0QCpB41iC8Cp4XHVw==",
+    "Npgsql.EntityFrameworkCore.PostgreSQL/1.0.1": {
+      "sha512": "PTRpXCaxSY2/+Z6s8e56v0xPy770MHfNWCZSm2aaczNIu7sn2d6qTX5QhIMWMcQUKDzLw8cPGrQsDipJ34cjWw==",
       "type": "package",
-      "path": "Npgsql.EntityFrameworkCore.PostgreSQL/1.0.0",
+      "path": "Npgsql.EntityFrameworkCore.PostgreSQL/1.0.1",
       "files": [
-        "Npgsql.EntityFrameworkCore.PostgreSQL.1.0.0.nupkg.sha512",
+        "Npgsql.EntityFrameworkCore.PostgreSQL.1.0.1.nupkg.sha512",
         "Npgsql.EntityFrameworkCore.PostgreSQL.nuspec",
         "lib/net451/Npgsql.EntityFrameworkCore.PostgreSQL.dll",
         "lib/netstandard1.3/Npgsql.EntityFrameworkCore.PostgreSQL.dll"
       ]
     },
-    "Npgsql.EntityFrameworkCore.PostgreSQL.Design/1.0.0": {
-      "sha512": "Rnjvoq9xqsGKopadfIZ/UDRRpYLxvVYhoA9jlZ8rOmw3jCW0n71+UVg8tOjjMwPo0p9Y5bjOEU6UC1oioR3urQ==",
+    "Npgsql.EntityFrameworkCore.PostgreSQL.Design/1.0.1": {
+      "sha512": "xYIj3HiGtqtaDQtzPyUHlZIM12cnpRfKLwqLIksTRd/3cfI2Xa8ie23CdRNwwSI+cqWmur7oYT9NAeGJu/Z7hQ==",
       "type": "package",
-      "path": "Npgsql.EntityFrameworkCore.PostgreSQL.Design/1.0.0",
+      "path": "Npgsql.EntityFrameworkCore.PostgreSQL.Design/1.0.1",
       "files": [
-        "Npgsql.EntityFrameworkCore.PostgreSQL.Design.1.0.0.nupkg.sha512",
+        "Npgsql.EntityFrameworkCore.PostgreSQL.Design.1.0.1.nupkg.sha512",
         "Npgsql.EntityFrameworkCore.PostgreSQL.Design.nuspec",
         "lib/net451/Npgsql.EntityFrameworkCore.PostgreSQL.Design.dll",
         "lib/netstandard1.3/Npgsql.EntityFrameworkCore.PostgreSQL.Design.dll"
@@ -6613,21 +6629,17 @@
         "lib/netstandard1.3/NUglify.xml"
       ]
     },
-    "protobuf-net/2.1.0-alpha-1": {
-      "sha512": "4eJbkmzlatW/DsszlP0cxOa3KdBmOTVkF7Tsm7fIQ4JVbDBypzMwGiEw10JjJF/R0t3tYshXBD6270PrwbUAzg==",
+    "protobuf-net/2.1.0": {
+      "sha512": "8ijiRUzGcB9SYo2ohIujk5s93MeaXF+/xd9WBGCgS1SqQyOC5gUTnCKIXZPlf8a6UROkK70McJloL4P19IvghQ==",
       "type": "package",
+      "path": "protobuf-net/2.1.0",
       "files": [
-        "lib/dnx451/protobuf-net.dll",
-        "lib/dnx451/protobuf-net.xml",
-        "lib/dotnet5.4/protobuf-net.dll",
-        "lib/dotnet5.4/protobuf-net.xml",
-        "lib/net30/protobuf-net.dll",
-        "lib/net30/protobuf-net.xml",
         "lib/net40/protobuf-net.dll",
-        "lib/net40/protobuf-net.xml",
         "lib/net45/protobuf-net.dll",
-        "lib/net45/protobuf-net.xml",
-        "protobuf-net.2.1.0-alpha-1.nupkg.sha512",
+        "lib/net451/protobuf-net.dll",
+        "lib/netstandard1.3/protobuf-net.dll",
+        "lib/netstandard1.5/protobuf-net.dll",
+        "protobuf-net.2.1.0.nupkg.sha512",
         "protobuf-net.nuspec"
       ]
     },
@@ -11332,44 +11344,30 @@
         "ref/xamarinwatchos10/_._"
       ]
     },
-    "System.Xml.XmlSerializer/4.0.11-beta-23516": {
-      "sha512": "UeGNnA//E/z78qyfaOjcKlcu25Cir08Z6kj1lBCAOgxRNenrXfb8+eGT3wPkYLvak+mJaCR6rtv4/hzqGam7+g==",
+    "System.Xml.XmlSerializer/4.0.11": {
+      "sha512": "FrazwwqfIXTfq23mfv4zH+BjqkSFNaNFBtjzu3I9NRmG8EELYyrv/fJnttCIwRMFRR/YKXF1hmsMmMEnl55HGw==",
       "type": "package",
+      "path": "System.Xml.XmlSerializer/4.0.11",
       "files": [
-        "System.Xml.XmlSerializer.4.0.11-beta-23516.nupkg.sha512",
+        "System.Xml.XmlSerializer.4.0.11.nupkg.sha512",
         "System.Xml.XmlSerializer.nuspec",
+        "ThirdPartyNotices.txt",
+        "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
         "lib/MonoTouch10/_._",
         "lib/net45/_._",
+        "lib/netcore50/System.Xml.XmlSerializer.dll",
+        "lib/netstandard1.3/System.Xml.XmlSerializer.dll",
+        "lib/portable-net45+win8+wp8+wpa81/_._",
         "lib/win8/_._",
         "lib/wp80/_._",
         "lib/wpa81/_._",
         "lib/xamarinios10/_._",
         "lib/xamarinmac20/_._",
+        "lib/xamarintvos10/_._",
+        "lib/xamarinwatchos10/_._",
         "ref/MonoAndroid10/_._",
         "ref/MonoTouch10/_._",
-        "ref/dotnet5.1/System.Xml.XmlSerializer.dll",
-        "ref/dotnet5.1/System.Xml.XmlSerializer.xml",
-        "ref/dotnet5.1/de/System.Xml.XmlSerializer.xml",
-        "ref/dotnet5.1/es/System.Xml.XmlSerializer.xml",
-        "ref/dotnet5.1/fr/System.Xml.XmlSerializer.xml",
-        "ref/dotnet5.1/it/System.Xml.XmlSerializer.xml",
-        "ref/dotnet5.1/ja/System.Xml.XmlSerializer.xml",
-        "ref/dotnet5.1/ko/System.Xml.XmlSerializer.xml",
-        "ref/dotnet5.1/ru/System.Xml.XmlSerializer.xml",
-        "ref/dotnet5.1/zh-hans/System.Xml.XmlSerializer.xml",
-        "ref/dotnet5.1/zh-hant/System.Xml.XmlSerializer.xml",
-        "ref/dotnet5.4/System.Xml.XmlSerializer.dll",
-        "ref/dotnet5.4/System.Xml.XmlSerializer.xml",
-        "ref/dotnet5.4/de/System.Xml.XmlSerializer.xml",
-        "ref/dotnet5.4/es/System.Xml.XmlSerializer.xml",
-        "ref/dotnet5.4/fr/System.Xml.XmlSerializer.xml",
-        "ref/dotnet5.4/it/System.Xml.XmlSerializer.xml",
-        "ref/dotnet5.4/ja/System.Xml.XmlSerializer.xml",
-        "ref/dotnet5.4/ko/System.Xml.XmlSerializer.xml",
-        "ref/dotnet5.4/ru/System.Xml.XmlSerializer.xml",
-        "ref/dotnet5.4/zh-hans/System.Xml.XmlSerializer.xml",
-        "ref/dotnet5.4/zh-hant/System.Xml.XmlSerializer.xml",
         "ref/net45/_._",
         "ref/netcore50/System.Xml.XmlSerializer.dll",
         "ref/netcore50/System.Xml.XmlSerializer.xml",
@@ -11382,12 +11380,37 @@
         "ref/netcore50/ru/System.Xml.XmlSerializer.xml",
         "ref/netcore50/zh-hans/System.Xml.XmlSerializer.xml",
         "ref/netcore50/zh-hant/System.Xml.XmlSerializer.xml",
+        "ref/netstandard1.0/System.Xml.XmlSerializer.dll",
+        "ref/netstandard1.0/System.Xml.XmlSerializer.xml",
+        "ref/netstandard1.0/de/System.Xml.XmlSerializer.xml",
+        "ref/netstandard1.0/es/System.Xml.XmlSerializer.xml",
+        "ref/netstandard1.0/fr/System.Xml.XmlSerializer.xml",
+        "ref/netstandard1.0/it/System.Xml.XmlSerializer.xml",
+        "ref/netstandard1.0/ja/System.Xml.XmlSerializer.xml",
+        "ref/netstandard1.0/ko/System.Xml.XmlSerializer.xml",
+        "ref/netstandard1.0/ru/System.Xml.XmlSerializer.xml",
+        "ref/netstandard1.0/zh-hans/System.Xml.XmlSerializer.xml",
+        "ref/netstandard1.0/zh-hant/System.Xml.XmlSerializer.xml",
+        "ref/netstandard1.3/System.Xml.XmlSerializer.dll",
+        "ref/netstandard1.3/System.Xml.XmlSerializer.xml",
+        "ref/netstandard1.3/de/System.Xml.XmlSerializer.xml",
+        "ref/netstandard1.3/es/System.Xml.XmlSerializer.xml",
+        "ref/netstandard1.3/fr/System.Xml.XmlSerializer.xml",
+        "ref/netstandard1.3/it/System.Xml.XmlSerializer.xml",
+        "ref/netstandard1.3/ja/System.Xml.XmlSerializer.xml",
+        "ref/netstandard1.3/ko/System.Xml.XmlSerializer.xml",
+        "ref/netstandard1.3/ru/System.Xml.XmlSerializer.xml",
+        "ref/netstandard1.3/zh-hans/System.Xml.XmlSerializer.xml",
+        "ref/netstandard1.3/zh-hant/System.Xml.XmlSerializer.xml",
+        "ref/portable-net45+win8+wp8+wpa81/_._",
         "ref/win8/_._",
         "ref/wp80/_._",
         "ref/wpa81/_._",
         "ref/xamarinios10/_._",
         "ref/xamarinmac20/_._",
-        "runtime.json"
+        "ref/xamarintvos10/_._",
+        "ref/xamarinwatchos10/_._",
+        "runtimes/aot/lib/netcore50/System.Xml.XmlSerializer.dll"
       ]
     },
     "System.Xml.XPath/4.0.1": {
@@ -11499,12 +11522,12 @@
       "Microsoft.VisualStudio.Web.CodeGeneration.Tools >= 1.0.0-preview2-final",
       "Microsoft.VisualStudio.Web.CodeGenerators.Mvc >= 1.0.0-preview2-final",
       "NLog >= 4.4.0-beta12",
-      "Npgsql >= 3.1.5",
-      "Npgsql.EntityFrameworkCore.PostgreSQL >= 1.0.0",
-      "Npgsql.EntityFrameworkCore.PostgreSQL.Design >= 1.0.0",
+      "Npgsql >= 3.1.6",
+      "Npgsql.EntityFrameworkCore.PostgreSQL >= 1.0.1",
+      "Npgsql.EntityFrameworkCore.PostgreSQL.Design >= 1.0.1",
       "System.Runtime.Serialization.Primitives >= 4.1.1",
       "WotDossier.Domain >= 1.0.0-*",
-      "protobuf-net >= 2.1.0-alpha-1"
+      "protobuf-net >= 2.1.0"
     ],
     ".NETCoreApp,Version=v1.0": []
   },

@@ -219,7 +219,7 @@ namespace WotDossier.Dal
         {
             {"ru", "worldoftanks.net"},
             {"eu", "worldoftanks.eu"},
-            {"us", "worldoftanks.com"},
+            {"com", "worldoftanks.com"},
             {"kr", "worldoftanks.kr"},
             {"asia", "worldoftanks.asia"},
         };

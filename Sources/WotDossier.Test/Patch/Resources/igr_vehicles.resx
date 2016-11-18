@@ -130,7 +130,7 @@
     <value>AMX 13 90</value>
   </data>
   <data name="AMX_13_90_IGR_descr" xml:space="preserve">
-    <value>In the early 1960s, the 75-mm gun with a muzzle velocity of 1,000 m/s was deemed outdated. The vehicle received the new 90-mm F3 gun that used more powerful HEAT shells. This modernization did not require any significant changes to the turret or vehicle design. First vehicles were manufactured in February, 1967. The existing vehicles underwent the gun modernization as well.</value>
+    <value>В начале 1960-х гг. 75-мм орудие с начальной скоростью снаряда 1000 м/с перестало отвечать требованиям того времени, поэтому его заменили на 90-мм орудие F3, использовавшее более мощные кумулятивные боеприпасы. Модернизация не повлекла существенных изменений в конструкции башни и танке в целом. Первые машины были выпущены в феврале 1967 года. Кроме того, 75-мм орудия заменялись на 90-мм орудия на уже выпущенных танках.</value>
   </data>
   <data name="AMX_13_90_IGR_short" xml:space="preserve">
     <value>AMX 13 90</value>
@@ -139,7 +139,7 @@
     <value>AMX 50 100</value>
   </data>
   <data name="AMX_50_100_IGR_descr" xml:space="preserve">
-    <value>Development of this heavy tank started in 1945, and was influenced by German wartime tank designs. In 1950 a prototype with an oscillating turret and the 100 mm gun was manufactured. The vehicle never entered mass production nor saw service.</value>
+    <value>Разработка тяжёлого танка началась в конце 1945 года. В ней активно использовались достижения немецкой танковой школы. В 1950 году появился образец с качающейся башней и 100-мм орудием. Серийно не выпускался, на вооружении не состоял.</value>
   </data>
   <data name="AMX_50_100_IGR_short" xml:space="preserve">
     <value>AMX 50 100</value>
@@ -148,7 +148,7 @@
     <value>AMX AC mle. 48</value>
   </data>
   <data name="AMX_AC_Mle1948_IGR_descr" xml:space="preserve">
-    <value>A draft project of a heavy tank destroyer, developed in 1947–1948 under the influence of the Jagdpanther. The vehicle was to feature a 120 mm gun as the main armament. The distinctive feature of the vehicle was three 20 mm MG 151/20 machineguns, mounted on top of the fighting compartment and rear. Existed only in blueprints.</value>
+    <value>Один из эскизных проектов тяжёлой ПТ-САУ, разработанный в 1947–1948 годах под влиянием Jagdpanther. В качестве основного вооружения планировалось установить 120-мм орудие. Отличительной особенностью машины являлись три 20-мм пулемёта MG 151/20, которые устанавливались на крышу боевого отделения и корму. Работы над машиной были прекращены на стадии эскизного проектирования.</value>
   </data>
   <data name="AMX_AC_Mle1948_IGR_short" xml:space="preserve">
     <value>AMX AC 48</value>
@@ -163,7 +163,7 @@
     <value>Bat.-Châtillon 25 t</value>
   </data>
   <data name="Bat_Chatillon25t_IGR_descr" xml:space="preserve">
-    <value>This experimental tank was a further development of the AMX 13. The tank underwent trials, but never entered mass production nor saw service. Two vehicles were manufactured.</value>
+    <value>Экспериментальный французский танк. Являлся дальнейшим развитием концепции АМХ 13. Прошёл испытания, но серийно не выпускался и на вооружении не состоял. Всего выпущено две машины.</value>
   </data>
   <data name="Bat_Chatillon25t_IGR_short" xml:space="preserve">
     <value>B-C 25 t</value>
@@ -178,19 +178,19 @@
     <value>110</value>
   </data>
   <data name="Ch11_110_IGR_descr" xml:space="preserve">
-    <value>From the mid-1940s to the 1950s, Soviet engineers attempted to modernize the IS-2 tank. The IS-2U variant, developed in November 1944, was conceived to have a reinforced frontal hull with a plate configuration resembling that of the IS-3. In the mid-1950s the design project was passed to China and became the basis of further Chinese tank development.</value>
+    <value>В середине 40-х — 50х гг. советскими конструкторами предпринимались неоднократные попытки модернизации танков ИС-2. Проект ИС-2У, разработанный в ноябре 1944 года, предусматривал изменение формы передней части корпуса танка по типу ИС-3 с утолщением броневых листов. В середине 50-х годов материалы по проекту ИС-2У были переданы в Китай. Этот проект считается началом китайского танкостроения.</value>
   </data>
   <data name="Ch17_WZ131_1_WZ132_IGR" xml:space="preserve">
     <value>WZ-132</value>
   </data>
   <data name="Ch17_WZ131_1_WZ132_IGR_descr" xml:space="preserve">
-    <value>The order for the WZ-132 tank was placed in 1964. The design was based on the WZ-131, but with the goal of enhancing firepower and armor protection. A few prototypes were built before the project was canceled in the late 1960s. All prototypes were destroyed during Chinese nuclear weapon testing.</value>
+    <value>Заказ на разработку нового танка WZ-132 был выдан в 1964 году. Разработка велась с учётом опыта эксплуатации танка WZ-131. В процессе проектирования основное внимание уделялось усилению огневой мощи и бронирования. До момента закрытия проекта в конце 60-х гг. было построено несколько прототипов. Все они были уничтожены в ходе испытаний китайского ядерного оружия.</value>
   </data>
   <data name="Ch19_121_IGR" xml:space="preserve">
     <value>121</value>
   </data>
   <data name="Ch19_121_IGR_descr" xml:space="preserve">
-    <value>Development of a new medium tank based on the Type 59 began in 1962. The new tank was expected to feature improvements in firepower and armor protection. However, the project was canceled shortly after. Some technical innovations were applied later, in the development of the Type 69 tank. All 121 tank prototypes were destroyed during Chinese nuclear weapon testing.</value>
+    <value>В 1962 году было принято решение о разработке нового среднего танка с учётом опыта эксплуатации танков Type 59. Основное внимание уделялось повышению защищённости, однако вскоре работы были приостановлены. Некоторые технические решения использовались впоследствии при разработке танка Type 69. Все построенные прототипы танка 121 были использованы в качестве мишеней при испытаниях китайского ядерного оружия.</value>
   </data>
   <data name="Chassis_105_leFH18B2_IGR" xml:space="preserve">
     <value>leFH18B2</value>
@@ -247,22 +247,22 @@
     <value>FV304 Mk. II</value>
   </data>
   <data name="Chassis_IS-3_IGR" xml:space="preserve">
-    <value>IS-3M</value>
+    <value>ИС-3М</value>
   </data>
   <data name="Chassis_IS-7_IGR" xml:space="preserve">
-    <value>IS-7</value>
+    <value>ИС-7</value>
   </data>
   <data name="Chassis_ISU-152_IGR" xml:space="preserve">
-    <value>ISU-152M</value>
+    <value>ИСУ-152М</value>
   </data>
   <data name="Chassis_JagdTiger_SdKfz_185_IGR" xml:space="preserve">
     <value>Jagdtiger 8,8</value>
   </data>
   <data name="Chassis_KV-5_IGR" xml:space="preserve">
-    <value>KV-5</value>
+    <value>КВ-5</value>
   </data>
   <data name="Chassis_KV2_IGR" xml:space="preserve">
-    <value>KV-2 mod. 1941</value>
+    <value>КВ-2 обр. 1941 г.</value>
   </data>
   <data name="Chassis_M48A1_IGR" xml:space="preserve">
     <value>T97E2</value>
@@ -284,7 +284,7 @@ verstärkteketten</value>
     <value>Pz.Kpfw. Tiger Ausf. E</value>
   </data>
   <data name="Chassis_R106_KV85_IGR" xml:space="preserve">
-    <value>KV-122</value>
+    <value>КВ-122</value>
   </data>
   <data name="Chassis_STA_1_IGR" xml:space="preserve">
     <value>STA-3</value>
@@ -302,7 +302,7 @@ verstärkteketten</value>
     <value>StuG III Ausf. G</value>
   </data>
   <data name="Chassis_T-44_IGR" xml:space="preserve">
-    <value>T-44M</value>
+    <value>Т-44М</value>
   </data>
   <data name="Chassis_T34_hvy_IGR" xml:space="preserve">
     <value>T80E3</value>
@@ -320,7 +320,8 @@ verstärkteketten</value>
     <value>Type 5 Chi-Ri</value>
   </data>
   <data name="Chi_Ri_IGR_descr" xml:space="preserve">
-    <value>A single prototype was manufactured at the beginning of 1945. The vehicle underwent trials and was recommended for service. However, Japan was defeated before mass production could begin. After the surrender, the prototype was confiscated by American occupation authorities and was shipped to the United States.</value>
+    <value>Единственный экземпляр разработан в начале 1945 года. Танк прошёл испытания и был рекомендован
+к принятию на вооружение. Однако до августа 1945 года серийное производство развернуть не удалось. После капитуляции единственный опытный образец был реквизирован американскими оккупационными властями и вывезен в США.</value>
   </data>
   <data name="Chi_Ri_IGR_short" xml:space="preserve">
     <value>Chi-Ri</value>
@@ -381,13 +382,13 @@ AV-1790-7B</value>
     <value>E 25</value>
   </data>
   <data name="E-25_IGR_descr" xml:space="preserve">
-    <value>Development of the E 25 was a part of the "E" program, aimed at unifying the manufacture of the German armored forces. The program was supervised by the Waffenprüfamt 6 committee, directed by General Kniepkamp. The E 25 was developed by the Argus company (Karlsruhe, Germany). No prototypes were manufactured, the vehicle never underwent trials or saw service. However, according to some sources, by January 23, 1945, several hulls were produced and remained in Katowice waiting for trials.</value>
+    <value>Машина была разработана в рамках программы «Е», призванной унифицировать производство танкового парка Германии. Курирование программы осуществляло Waffenprüfamt 6 под руководством генерала Книпкампа. Работа над Е-25 велась специалистами компании «Аргус» из г. Карлсруэ. Машина не была изготовлена в виде прототипа, не проходила испытания и не поступала на вооружение, хотя по некоторым данным к 23 января 1945 года было изготовлено несколько корпусов, которые находились в Катовице и были готовы к отправке на испытательный полигон.</value>
   </data>
   <data name="ELC_AMX_IGR" xml:space="preserve">
     <value>ELC AMX</value>
   </data>
   <data name="ELC_AMX_IGR_descr" xml:space="preserve">
-    <value>In 1956, the French Ministry of Defense launched the ELC (Engin Leger de Combat) project. The aim was to create a light tank for airborne transport. The ELС AMX prototype featured a low silhouette and a turret placement of both crew members. The vehicle never saw mass production, nor entered service.</value>
+    <value>В 1956 году Министерство обороны Франции инициировало программу ELC (Engin Leger de Combat). Целью программы было создание лёгкой авиатранспортабельной боевой машины. Прототип ELС AMX отличался уникальным низким силуэтом и расположением обоих членов экипажа в башне. Серийно машина не выпускалась. На вооружении не состояла.</value>
   </data>
   <data name="ELC_AMX_IGR_short" xml:space="preserve">
     <value>ELC AMX</value>
@@ -402,7 +403,7 @@ AV-1790-7B</value>
     <value>Ferdinand</value>
   </data>
   <data name="Ferdinand_IGR_descr" xml:space="preserve">
-    <value>Developed on the basis of the Porsche Tiger, with a total of 90 vehicles produced in April and May 1943. They first saw combat in the Battle of Kursk (Operation Citadel).</value>
+    <value>Машина создана на базе «Тигра» Порше. Всего в апреле — мае 1943 года было изготовлено 90 машин, которые впервые были использованы в Курской битве.</value>
   </data>
   <data name="Ferdinandturm_IGR" xml:space="preserve">
     <value>Ferdinand</value>
@@ -432,7 +433,7 @@ AV-1790-7B</value>
     <value>Churchill I</value>
   </data>
   <data name="GB08_Churchill_I_IGR_descr" xml:space="preserve">
-    <value>The A22 prototype was built by Vauxhall Motors in the fall of 1940. The vehicle first entered mass production in the summer of 1941. Early modifications had no track fenders, a different fan, and a 3-inch howitzer in the hull. A total of 300 Churchill I tanks were manufactured.</value>
+    <value>Прототип А22 был изготовлен компанией Vauxhall Motors осенью 1940 года. Первая партия серийных машин была выпущена летом 1941 года. Первые машины отличались от последующих модификаций отсутствием надгусеничных полок, формой вентилятора и наличием трёхдюймовой гаубицы в лобовом листе корпуса. Всего было выпущено 300 танков Churchill I.</value>
   </data>
   <data name="GB08_Churchill_I_IGR_short" xml:space="preserve">
     <value>Churchill I</value>
@@ -441,7 +442,7 @@ AV-1790-7B</value>
     <value>Caernarvon</value>
   </data>
   <data name="GB11_Caernarvon_IGR_descr" xml:space="preserve">
-    <value>Development of this infantry support tank started in 1944. The first prototype was ready for trials in 1952. A total of 21 tanks were manufactured but never entered service. Some of the vehicles were later converted into the Conqueror heavy tanks.</value>
+    <value>Разрабатывался с 1944 года в рамках создания нового танка поддержки пехоты. В 1952 году первый прототип прошёл испытания. На вооружении не состоял. Всего был выпущен 21 танк, некоторые из них в дальнейшем были переделаны в тяжёлые танки Conqueror.</value>
   </data>
   <data name="GB11_Caernarvon_IGR_short" xml:space="preserve">
     <value>Caernarvon</value>
@@ -450,13 +451,13 @@ AV-1790-7B</value>
     <value>FV215b</value>
   </data>
   <data name="GB13_FV215b_IGR_descr" xml:space="preserve">
-    <value>Proposed plan for a heavy tank on the basis of the Conqueror Mk. II. Unlike the production model, this modification featured rear placement of the fighting compartment. No prototypes were manufactured.</value>
+    <value>Аванпроект тяжёлого танка на базе Conqueror Mk. II. От серийной машины отличался задним расположением боевого отделения. Не было выпущено ни одного прототипа.</value>
   </data>
   <data name="GB21_Cromwell_IGR" xml:space="preserve">
     <value>Cromwell</value>
   </data>
   <data name="GB21_Cromwell_IGR_descr" xml:space="preserve">
-    <value>The Cromwell was developed in 1941–1942 by BRC&amp;W. A total of 1070 vehicles were mass-produced from late 1943 through 1945. They were extensively used by the British army in the Northwest Europe Campaign of 1944–1945.</value>
+    <value>Разработан в 1941–1942 годах компанией BRC&amp;W. Выпускался серийно с осени 1943 по 1945 год. Всего было выпущено 1070 танков всех модификаций. Активно использовался британскими войсками в северо-западной Европе в 1944–1945 годах.</value>
   </data>
   <data name="GB21_Cromwell_IGR_short" xml:space="preserve">
     <value>Cromwell</value>
@@ -465,7 +466,7 @@ AV-1790-7B</value>
     <value>Centurion Mk. I</value>
   </data>
   <data name="GB23_Centurion_IGR_descr" xml:space="preserve">
-    <value>Development of the Centurion started in 1943. The vehicle was designed as a "universal tank" to replace existing infantry and cruiser tanks. The Centurion was the first British vehicle that featured sloped armor plates. The tank entered service in 1947. A total of 100 vehicles of this series were manufactured from 1945 through 1946.</value>
+    <value>Разрабатывался с 1943 года в рамках концепции «универсального танка» для замены существующих крейсерских и пехотных танков. Первый британский танк с рациональными углами наклона броневых листов. Принят на вооружение в 1947 году. В 1945–1946 годах выпущено 100 машин модификации Mk.I.</value>
   </data>
   <data name="GB23_Centurion_IGR_short" xml:space="preserve">
     <value>Centurion I</value>
@@ -474,13 +475,13 @@ AV-1790-7B</value>
     <value>AT 15</value>
   </data>
   <data name="GB72_AT15_IGR_descr" xml:space="preserve">
-    <value>Assault tank conceived to break through fortified positions. The design project was ready by the fall of 1943, but no prototypes were manufactured. However, the project became the basis for the A39 Tortoise heavy assault tank.</value>
+    <value>Штурмовой танк, предназначенный для прорыва укреплённых районов противника. Проект был готов осенью 1943 года. Не было выпущено ни одного опытного образца, однако проект послужил основой для создания тяжёлого штурмового танка A39 Tortoise.</value>
   </data>
   <data name="GB77_FV304_IGR" xml:space="preserve">
     <value>FV304</value>
   </data>
   <data name="GB77_FV304_IGR_descr" xml:space="preserve">
-    <value>Prototype light SPG developed by Vickers. Development started in 1947. However, the prototype was not manufactured until 1950. The design of the SPG was already obsolete by this time, and the project was canceled.</value>
+    <value>Проект лёгкой САУ компании Vickers. Разработка машины началась в 1947 году, однако макет был изготовлен только к 1950 году. К этому времени концепция данной САУ устарела, и проект был закрыт в пользу САУ на базе танка Centurion.</value>
   </data>
   <data name="GB77_FV304_IGR_short" xml:space="preserve">
     <value>FV304</value>
@@ -489,22 +490,22 @@ AV-1790-7B</value>
     <value>Hispano-Suiza HS 110</value>
   </data>
   <data name="IS-3_IGR" xml:space="preserve">
-    <value>IS-3</value>
+    <value>ИС-3</value>
   </data>
   <data name="IS-3_IGR_descr" xml:space="preserve">
-    <value>Mass production of the vehicle started in May 1945. On September 7,1945, IS-3 tanks type took part in the Allied Victory Parade through Berlin. A total of 1170 vehicles were manufactured by the end of 1946, when production was canceled. From 1948 through the late 1950s, the tanks underwent a number of modernization refits.</value>
+    <value>Серийное производство началось в мае 1945 года. 7 сентября машины этого типа приняли участие в параде стран-участниц антигитлеровской коалиции в Берлине. До прекращения серийного выпуска в середине 1946 года было выпущено 1170 танков. С 1948 года до конца 50-х гг. машины проходили модернизацию.</value>
   </data>
   <data name="IS-7_IGR" xml:space="preserve">
-    <value>IS-7</value>
+    <value>ИС-7</value>
   </data>
   <data name="IS-7_IGR_descr" xml:space="preserve">
-    <value>Development of the IS-7 started in the spring of 1945. Prototypes successfully underwent trials in 1946 and 1947. However, the IS-7 never saw mass production.</value>
+    <value>Работа над танком началась весной 1945 года. Прототипы испытывались в 1946 и 1947 гг. В 1948 г. прошёл госиспытания. Серийно не выпускался.</value>
   </data>
   <data name="ISU-152_IGR" xml:space="preserve">
-    <value>ISU-152</value>
+    <value>ИСУ-152</value>
   </data>
   <data name="ISU-152_IGR_descr" xml:space="preserve">
-    <value>Developed on the basis of the IS tank. The ISU-152 was conceived as a replacement for the SU-152, which was based on the KV-1s chassis. A total of 4,635 vehicles were built from November 1943 through June 1945.</value>
+    <value>Разработана на базе танка ИС. Создавалась для замены СУ-152 в связи с прекращением производства КВ-1с. С ноября 1943 по июнь 1945 года было изготовлено 4635 машин.</value>
   </data>
   <data name="JAN-GRC-4Z_IGR" xml:space="preserve">
     <value>JAN/GRC-4Z</value>
@@ -513,31 +514,31 @@ AV-1790-7B</value>
     <value>8,8 cm Pak 43 Jagdtiger</value>
   </data>
   <data name="JagdTiger_SdKfz_185_IGR_descr" xml:space="preserve">
-    <value>In 1945, the production order for the Jagdtiger was increased, and the supply of compatible guns became insufficient. As a result, approximately 20 vehicles were equipped with the 8,8 cm PaK 43 L/71 gun.</value>
+    <value>В 1945 году заказ на выпуск Jagdtiger был увеличен, и возникла проблема нехватки устанавливаемых на него орудий. Было принято решение установить на некоторые машины (около 20 штук) орудие 8,8 cm PaK 43 L/71.</value>
   </data>
   <data name="JagdTiger_SdKfz_185_IGR_short" xml:space="preserve">
     <value>JgTig.8,8 cm</value>
   </data>
   <data name="KV-5_IGR" xml:space="preserve">
-    <value>KV-5</value>
+    <value>КВ-5</value>
   </data>
   <data name="KV-5_IGR_descr" xml:space="preserve">
-    <value>Development was started in June 1941 at the Leningrad Kirov Plant and completed by August, but the German invasion prevented development from progressing to the prototype stage. The KV-5 was expected to share some components with the KV-1. A new turret was designed, incorporating the 107-mm ZIS-6 gun. Early plans called for a new 1,200 hp diesel engine, but later adjustments, recognizing wartime disruptions, replaced this with two V-2K engines.</value>
+    <value>Проектирование началось в июне 1941 года на ЛКЗ. К августу проект был завершён, но из-за сложной обстановки на фронте опытный образец построен не был. В танке предусматривалось использование узлов КВ-1. Была спроектирована новая башня, в которую устанавливалась 107-мм пушка ЗИС-6. Для танка разрабатывался новый дизельный двигатель мощностью 1200 л.с., но к окончанию проектных работ он не был завершён, и его заменили на 2 В-2К.</value>
   </data>
   <data name="KV2_IGR" xml:space="preserve">
-    <value>KV-2</value>
+    <value>КВ-2</value>
   </data>
   <data name="KV2_IGR_descr" xml:space="preserve">
-    <value>Heavy assault tank. Developed on the basis of the KV-1 in January 1940, with a total of 334 vehicles manufactured from 1940 through 1941. The KV-2 tanks were used in action in 1941, with most of the vehicles lost the same year.</value>
+    <value>Тяжёлый штурмовой танк. Разработан на базе КВ-1 в январе 1940 года. В 1940–1941 гг. было выпущено 334 машины этого типа, которые активно использовались в боевых действиях 1941 года, и тогда же были практически все потеряны.</value>
   </data>
   <data name="M-50T_IGR" xml:space="preserve">
-    <value>M-50T</value>
+    <value>М-50Т</value>
   </data>
   <data name="M48A1_IGR" xml:space="preserve">
     <value>M48A1 Patton</value>
   </data>
   <data name="M48A1_IGR_descr" xml:space="preserve">
-    <value>The most successful American medium tank in the immediate post-war period. Development started in 1950. In April 1953, the vehicle entered service. A total of 11,703 vehicles of different variants were produced from 1952 through 1959.</value>
+    <value>Наиболее удачный американский средний танк первого послевоенного поколения. Разработка началась в 1950 году. Принят на вооружение в апреле 1953 года. С 1952 по 1959 год было выпущено 11703 танка различных модификаций.</value>
   </data>
   <data name="M48A1_IGR_short" xml:space="preserve">
     <value>M48 Patton</value>
@@ -546,13 +547,13 @@ AV-1790-7B</value>
     <value>M4 Sherman</value>
   </data>
   <data name="M4_Sherman_IGR_descr" xml:space="preserve">
-    <value>The first production version of the Sherman, the most common American tank, with an amazing total of 49,234 vehicles manufactured. The Sherman first saw combat in North Africa.</value>
+    <value>Первая серийная модификация танка Sherman — самого массового американского танка. Всего было выпущено 49234 машины. Боевое крещение танк принял в Северной Африке.</value>
   </data>
   <data name="M4_Sherman_IGR_short" xml:space="preserve">
     <value>M4</value>
   </data>
   <data name="M500_IGR" xml:space="preserve">
-    <value>M500</value>
+    <value>М500</value>
   </data>
   <data name="MB507_IGR" xml:space="preserve">
     <value>DB 603 A2</value>
@@ -561,7 +562,7 @@ AV-1790-7B</value>
     <value>Maus</value>
   </data>
   <data name="Maus_IGR_descr" xml:space="preserve">
-    <value>Developed from June 1942 through July 1944, with two prototypes produced, only one of which received a turret and armament.</value>
+    <value>Разрабатывался с июня 1942 по июль 1944 года. Было изготовлено два прототипа, из которых только один получил башню с вооружением.</value>
   </data>
   <data name="Maus_IGR_short" xml:space="preserve">
     <value>Maus</value>
@@ -615,7 +616,7 @@ TRM P45</value>
     <value>Panther II</value>
   </data>
   <data name="Panther_II_IGR_descr" xml:space="preserve">
-    <value>The vehicle was conceived in 1943. Two prototypes with the existing Panther I turrets were ordered in 1944. By 1945 only one of them had been built by the MAN company.</value>
+    <value>Планы создания машины появились уже в 1943 году. В 1944 г. были заказаны два прототипа с башнями от «Пантеры I». К 1945 году компанией MAN был изготовлен только один прототип.</value>
   </data>
   <data name="Panther_II_IGR_short" xml:space="preserve">
     <value>Panther II</value>
@@ -624,7 +625,7 @@ TRM P45</value>
     <value>M26 Pershing</value>
   </data>
   <data name="Pershing_IGR_descr" xml:space="preserve">
-    <value>The Pershing was developed to fight heavy tanks, and was itself initially classified as heavy. After World War II it was re-classified as medium. A few saw combat in the closing phase of World War II.</value>
+    <value>Разрабатывался для борьбы с тяжёлыми танками. Сначала был стандартизирован как тяжёлый, после войны переведен в средние. Использовался в Европе в рамках фронтовых испытаний.</value>
   </data>
   <data name="Pershing_IGR_short" xml:space="preserve">
     <value>Pershing</value>
@@ -657,7 +658,7 @@ Ausf. G</value>
     <value>Tiger II</value>
   </data>
   <data name="PzVIB_Tiger_II_IGR_descr" xml:space="preserve">
-    <value>Also known as the King or Royal Tiger. Produced from January 1944 through March 1945, with a total of 489 vehicles built.</value>
+    <value>Известен как «Королевский тигр». С января 1944 по март 1945 года было изготовлено 489 танков.</value>
   </data>
   <data name="PzVIB_Tiger_II_IGR_short" xml:space="preserve">
     <value>Tiger II</value>
@@ -666,7 +667,7 @@ Ausf. G</value>
     <value>Tiger I</value>
   </data>
   <data name="PzVI_IGR_descr" xml:space="preserve">
-    <value>Development of the Tiger I was started in 1937 by the Henschel company. Mass production began in 1942, with an eventual total of 1,354 vehicles manufactured. The tank first saw combat in the fighting for Leningrad, and Tigers were at the forefront of battles from Tunisia to Kursk. Although production was discontinued in the summer of 1944, the Tiger I continued to see action until the end of the war.</value>
+    <value>Разработка танка началась в 1937 году компанией Henschel. Выпускался серийно с 1942 года. Впервые использовался в боевых действиях под Ленинградом. Танк участвовал в боях в Тунисе, самое массовое применение было в ходе сражения на Курской Дуге. Несмотря на прекращение производства летом 1944 года, «Тигр I» использовался до конца войны. Всего было выпущено 1354 танка.</value>
   </data>
   <data name="PzVI_IGR_short" xml:space="preserve">
     <value>Tiger I</value>
@@ -675,19 +676,19 @@ Ausf. G</value>
     <value>Panther</value>
   </data>
   <data name="PzV_IGR_descr" xml:space="preserve">
-    <value>This famous tank was produced from January 1943 through April 1945, with a total of 5,796 vehicles built plus eight vehicles built on the F series chassis.</value>
+    <value>Этот знаменитый танк выпускался с января 1943 по апрель 1945 года. Всего было выпущено 5796 машин, не считая восьми шасси серии F.</value>
   </data>
   <data name="PzV_IGR_short" xml:space="preserve">
     <value>Panther</value>
   </data>
   <data name="R106_KV85_IGR" xml:space="preserve">
-    <value>KV-85</value>
+    <value>КВ-85</value>
   </data>
   <data name="R106_KV85_IGR_descr" xml:space="preserve">
-    <value>A further development of the KV-1S tank. Unlike the previous modification, the KV-85 had enhanced armament. The vehicle was developed in the spring of 1943 at the Chelyabinsk Kirov Plant. The tank entered service on August 8, 1943, and was mass produced until September, with a total of 148 vehicles manufactured. The KV-85 was used by the breakthrough armored regiments of the Red Army.</value>
+    <value>КВ-85 являлся дальнейшим развитием танка КВ-1С. По сравнению с предыдущей модификацией, КВ-85 имел более мощное вооружение. Разработка проводилась весной 1943 года на ЧКЗ. Танк был принят на вооружение 8 августа 1943 года и серийно производился до сентября этого же года. КВ-85 активно использовался частями Красной Армии в составе танковых полков прорыва. Всего было выпущено 148 машин этого типа.</value>
   </data>
   <data name="R113_IGR" xml:space="preserve">
-    <value>R-113</value>
+    <value>Р-113</value>
   </data>
   <data name="Renault_A_IGR" xml:space="preserve">
     <value>Renault 307</value>
@@ -732,7 +733,8 @@ Ausf. G</value>
     <value>STA-1</value>
   </data>
   <data name="STA_1_IGR_descr" xml:space="preserve">
-    <value>The first Japanese post-war tank was developed on the basis of U.S. vehicles. The STA-1 was developed, taking into consideration Japanese terrain, rail network specifications, and anthropometric data of Japanese tankers. Only one prototype was built, in December 1956.</value>
+    <value>Первый японский послевоенный танк разрабатывался
+на базе американских машин с учётом специфики японского рельефа, железнодорожной сети и антропометрических данных японских танкистов. Был выпущен один опытный образец в декабре 1956 года.</value>
   </data>
   <data name="STA_1_IGR_short" xml:space="preserve">
     <value>STA-1</value>
@@ -741,25 +743,29 @@ Ausf. G</value>
     <value>STB-1</value>
   </data>
   <data name="ST_B1_IGR_descr" xml:space="preserve">
-    <value>In the early 1960s, Mitsubishi started development of a new tank that complied with government requirements for armament and defense. The first two prototypes of the STB-1 were manufactured in September 1969 for trials. In 1970 the prototypes were shown to journalists and participated in a military parade.</value>
+    <value>В начале 60-х годов компания Mitsubishi начала разработку нового танка, отвечавшего всем требованиям к вооружению и защите. Первые два прототипа STB-1 были выпущены в сентябре 1969 года для ходовых испытаний. В 1970 году прототипы были продемонстрированы прессе и приняли участие
+в военном параде.</value>
   </data>
   <data name="ST_B1_IGR_short" xml:space="preserve">
     <value>STB-1</value>
   </data>
+  <data name="SU-152_01_IGR" xml:space="preserve">
+    <value>СУ-152</value>
+  </data>
   <data name="SU-152_IGR" xml:space="preserve">
-    <value>SU-152</value>
+    <value>СУ-152</value>
   </data>
   <data name="SU-152_IGR_descr" xml:space="preserve">
-    <value>Development of a tank destroyer on the basis of the KV-1S heavy tank began on January 4, 1943. The vehicle received the designation KV-14 (Object 236). A prototype underwent field trials at the beginning of February 1943 and entered service on February 14, 1943. In April, the KV-14 was renamed SU-152. By December 1943, 670 vehicles were manufactured. Thanks to its ability to successfully combat German Tiger I and Panther tanks, the SU-152 was dubbed "Hunter" by the troops.</value>
+    <value>Разработка ПТ-САУ на базе тяжёлого танка КВ-1С началась 4 января 1943 года. Машина получила обозначение КВ-14 (Объект 236). В начале февраля 1943 года опытный образец проходил полигонные испытания и был принят на вооружение 14 февраля 1943 года. В апреле КВ-14 был переименован в СУ-152. До декабря 1943 года было выпущено 670 машин данного типа. Благодаря способности успешно противостоять немецким танкам Tiger I и Panther, СУ-152 получила неофициальное название «Зверобой».</value>
   </data>
   <data name="SU-152_mod_1944_IGR" xml:space="preserve">
-    <value>SU-152M</value>
+    <value>СУ-152М</value>
   </data>
   <data name="S_35CA_IGR" xml:space="preserve">
     <value>S35 CA</value>
   </data>
   <data name="S_35CA_IGR_descr" xml:space="preserve">
-    <value>The design called for the conversion of tanks into tank destroyers by mounting a 17-pounder gun into an open-topped, lightly armored cabin.</value>
+    <value>В соответствии с эскизным проектом, предполагалось переоборудовать танки в ПТ-САУ путём установки 17-фунтового английского орудия в открытую сверху легкобронированную рубку.</value>
   </data>
   <data name="S_35CA_IGR_short" xml:space="preserve">
     <value>S35 CA</value>
@@ -768,7 +774,7 @@ Ausf. G</value>
     <value>M4A3E2 Sherman Jumbo</value>
   </data>
   <data name="Sherman_Jumbo_IGR_descr" xml:space="preserve">
-    <value>This variant of the Sherman featured much heavier armor. The M4A3E2 was initially intended as an infantry support tank. However, some were re-equipped with the M1A1 gun and served as tank hunters.</value>
+    <value>Штурмовой тяжелобронированный танк. Первоначально предназначался для поддержки пехоты. Однако несколько М4А3Е2 были переоснащены орудием М1А1 и использовались как танки-истребители.</value>
   </data>
   <data name="Sherman_Jumbo_IGR_short" xml:space="preserve">
     <value>M4A3E2</value>
@@ -780,31 +786,31 @@ Ausf. G</value>
     <value>StuG III Ausf. G</value>
   </data>
   <data name="StuG_40_AusfG_IGR_descr" xml:space="preserve">
-    <value>This vehicle first saw combat in France in 1940. It was produced, in several modifications, on the basis of the Pz. III tank until 1945. By 1944, 9,346 of these self-propelled guns destroyed about 20,000 enemy vehicles. Some vehicles were in operation until 1967 and were even deployed in the Six-Day War by some countries of the Arab world against Israel.</value>
+    <value>Боевой путь этой машины начался во Франции в 1940 году. Выпускалась на базе танка Pz. III в различных модификациях до 1945 года. К 1944 году на счету 9346 этих самоходных установок  было около 20 000 подбитых танков. Некоторые машины находились в эксплуатации до 1967 года и даже приняли участие в Шестидневной войне на стороне некоторых стран Арабского мира против Израиля.</value>
   </data>
   <data name="StuG_40_AusfG_IGR_short" xml:space="preserve">
     <value>StuG III G</value>
   </data>
   <data name="T-44_IGR" xml:space="preserve">
-    <value>T-44</value>
+    <value>Т-44</value>
   </data>
   <data name="T-44_IGR_descr" xml:space="preserve">
-    <value>Adopted in 1944, with a total of 965 vehicles produced by the end of the war. The T-44 remained in service until the end of the 1970s.</value>
+    <value>Принят на вооружение в 1944 году. До конца войны было выпущено 965 машин. Танк состоял на вооружении до конца 70-х годов.</value>
   </data>
   <data name="T136_IGR" xml:space="preserve">
     <value>T136</value>
   </data>
   <data name="T29_IGR" xml:space="preserve">
-    <value>T29</value>
+    <value>Т29</value>
   </data>
   <data name="T29_IGR_descr" xml:space="preserve">
-    <value>Development of this experimental heavy tank started in 1944. The prototype was built in 1947. The vehicle featured the 105 mm T5E1 gun. After the war, the mass production of heavy tanks was deemed unreasonable, and only a few prototypes of this vehicle were built.</value>
+    <value>Опытный тяжёлый танк. Работа над машиной началась в 1944 году. Прототип был построен в 1947 году. На танк устанавливалось 105-мм орудие T5E1. После окончания войны серийное производство тяжёлых танков стало нецелесообразным, поэтому было построено всего несколько опытных образцов данной машины.</value>
   </data>
   <data name="T34_hvy_IGR" xml:space="preserve">
     <value>T34</value>
   </data>
   <data name="T34_hvy_IGR_descr" xml:space="preserve">
-    <value>Developed in 1945 as a modernization of the T30 heavy tank. The vehicle was equipped with the 120 mm T53 gun and the new Continental AV-1790 engine. The end of World War II lowered interest in heavy tank development, so the T34 never entered service. The prototypes were used in field trials.</value>
+    <value>Разработан в 1945 году и являлся модернизированным вариантом тяжёлого танка Т30. Танк оснащался 120-мм орудием Т53 и новым двигателем Continental AV-1790. Окончание Второй Мировой войны снизило интерес к разработке тяжёлых танков, и Т34 не был принят на вооружение. Построенные опытные образцы впоследствии использовались для проведения испытаний.</value>
   </data>
   <data name="T42_IGR" xml:space="preserve">
     <value>T42</value>
@@ -813,13 +819,13 @@ Ausf. G</value>
     <value>T67</value>
   </data>
   <data name="T67_IGR_descr" xml:space="preserve">
-    <value>Development started in the spring of 1942. After trials in the fall of 1942, the decision was made to replace the 57-mm gun with a 75-mm gun. Two prototypes were manufactured. The vehicle saw neither mass production nor service.</value>
+    <value>Разработка началась весной 1942 года. Машина прошла испытания осенью 1942 года. После испытаний было решено заменить 57-мм орудие на 75-мм орудие. Было изготовлено два опытных экземпляра. Серийно не выпускалась, на вооружении не состояла.</value>
   </data>
   <data name="T69_IGR" xml:space="preserve">
     <value>T69</value>
   </data>
   <data name="T69_IGR_descr" xml:space="preserve">
-    <value>A medium tank with an oscillating turret and automatic loading. Developed on the basis of experimental medium tank T42 in mid-50s. The vehicle never entered mass production.</value>
+    <value>Средний танк с качающейся башней и автоматом заряжания. Разрабатывался на базе опытного среднего танка Т42 в середине 50-х гг. Серийно не выпускался.</value>
   </data>
   <data name="T69_IGR_short" xml:space="preserve">
     <value>T69</value>
@@ -828,7 +834,7 @@ Ausf. G</value>
     <value>T71</value>
   </data>
   <data name="T71_IGR_descr" xml:space="preserve">
-    <value>Experimental airborne light tank with an oscillating turret. Developed from 1952 through 1953 as a replacement for M41. The armament was deemed ineffective, and the development was discontinued. Only one wooden prototype was built.</value>
+    <value>Экспериментальный авиатранспортабельный лёгкий танк с качающейся башней. Разрабатывался в 1952–1953 гг. как замена М41. Из-за слабости вооружения работы ограничились созданием деревянного макета.</value>
   </data>
   <data name="T84E3_IGR" xml:space="preserve">
     <value>T84E3</value>
@@ -868,13 +874,13 @@ Ausf. G</value>
     <value>AT 15</value>
   </data>
   <data name="Turret_1_ISU-152_IGR" xml:space="preserve">
-    <value>ISU-152</value>
+    <value>ИСУ-152</value>
   </data>
   <data name="Turret_1_JagdTiger_SdKfz_185_IGR" xml:space="preserve">
     <value>8,8 cm Pak 43 Jagdtiger</value>
   </data>
   <data name="Turret_1_KV-5_IGR" xml:space="preserve">
-    <value>KV-5</value>
+    <value>КВ-5</value>
   </data>
   <data name="Turret_1_M48A1_IGR" xml:space="preserve">
     <value>M87</value>
@@ -922,10 +928,10 @@ Ausf. G</value>
     <value>FV304</value>
   </data>
   <data name="Turret_2_IS-3_IGR" xml:space="preserve">
-    <value>IS-3</value>
+    <value>ИС-3</value>
   </data>
   <data name="Turret_2_KV2_IGR" xml:space="preserve">
-    <value>MT-2</value>
+    <value>МТ-2</value>
   </data>
   <data name="Turret_2_Panther_II_IGR" xml:space="preserve">
     <value>Panther II Schmalturm</value>
@@ -948,7 +954,7 @@ Serienturm</value>
 Ausf. E</value>
   </data>
   <data name="Turret_2_R106_KV85_IGR" xml:space="preserve">
-    <value>KV-122 mod. 1944</value>
+    <value>КВ-122 обр. 1944 г.</value>
   </data>
   <data name="Turret_2_STA_1_IGR" xml:space="preserve">
     <value>STA-3</value>
@@ -957,37 +963,37 @@ Ausf. E</value>
     <value>M4A2E2D51080</value>
   </data>
   <data name="Turret_2_T-44_IGR" xml:space="preserve">
-    <value>T-44-100</value>
+    <value>Т-44-100</value>
   </data>
   <data name="Turret_2_T49_IGR" xml:space="preserve">
     <value>T67</value>
   </data>
   <data name="Turret_IS-7_IGR" xml:space="preserve">
-    <value>IS-7</value>
+    <value>ИС-7</value>
   </data>
   <data name="Turret_Valentine_LL_IGR" xml:space="preserve">
-    <value>Valentine II</value>
+    <value>Валентайн II</value>
   </data>
   <data name="V-2-54IS_IGR" xml:space="preserve">
-    <value>V-2-54IS</value>
+    <value>В-2-54ИС</value>
   </data>
   <data name="V-2IS_IGR" xml:space="preserve">
-    <value>V-2IS</value>
+    <value>В-2ИС</value>
   </data>
   <data name="V-54-6_IGR" xml:space="preserve">
-    <value>V-54-6</value>
+    <value>В-54-6</value>
   </data>
   <data name="V-5_IGR" xml:space="preserve">
-    <value>V-5</value>
+    <value>В-5</value>
   </data>
   <data name="ValentineMK_I_IGR" xml:space="preserve">
-    <value>Valentine</value>
+    <value>Валентайн</value>
   </data>
   <data name="Valentine_LL_IGR" xml:space="preserve">
-    <value>Valentine II</value>
+    <value>Валентайн II</value>
   </data>
   <data name="Valentine_LL_IGR_descr" xml:space="preserve">
-    <value>A British tank supplied to the U.S.S.R. under Lend-Lease. A total of 3,782 vehicles were sent to the Soviet Union, with some lost at sea during transport to Murmansk.</value>
+    <value>Английский танк, поступавший в СССР по ленд-лизу. Всего было поставлено 3782 танка, однако часть была потеряна при транспортировке морем в Мурманск.</value>
   </data>
   <data name="Vauxhall_Bedford_Twin_Six_IGR" xml:space="preserve">
     <value>Bedford Twin-Six</value>
@@ -1005,10 +1011,10 @@ Ausf. E</value>
     <value>100 mm 62-100T</value>
   </data>
   <data name="_100mm_LB-1_IGR" xml:space="preserve">
-    <value>100 mm LB-1</value>
+    <value>100 мм ЛБ-1</value>
   </data>
   <data name="_100mm_S34_IGR" xml:space="preserve">
-    <value>100 mm S-34</value>
+    <value>100 мм С-34</value>
   </data>
   <data name="_100mm_SA_47_IGR" xml:space="preserve">
     <value>100 mm SA47</value>
@@ -1017,7 +1023,7 @@ Ausf. E</value>
     <value>105 leFH18B2</value>
   </data>
   <data name="_105_leFH18B2_IGR_descr" xml:space="preserve">
-    <value>Heavy B1 tanks captured by the German army during the French Campaign underwent modification and were actively used by the Wehrmacht. Some vehicles were converted into SPGs, designated 10.5 cm leFH18/3 auf Geschützwagen B2 (f).</value>
+    <value>Тяжёлые танки серии B1, захваченные немецкой армией в ходе французской кампании, были модернизированы и активно использовались Вермахтом. Часть их была переоборудована в самоходные гаубицы, получившие обозначение 10.5 cm leFH18/3 auf Geschützwagen B2 (f).</value>
   </data>
   <data name="_105_leFH18B2_IGR_short" xml:space="preserve">
     <value>leFH18B2</value>
@@ -1041,16 +1047,16 @@ Ausf. E</value>
     <value>10,5 cm le.F.H. 18 L/28</value>
   </data>
   <data name="_107mm_ZiS-6M_IGR" xml:space="preserve">
-    <value>107 mm ZiS-6M</value>
+    <value>107 мм ЗиС-6М</value>
   </data>
   <data name="_10RK-26_IGR" xml:space="preserve">
-    <value>10RK-26</value>
+    <value>10РК-26</value>
   </data>
   <data name="_10RKM_IGR" xml:space="preserve">
-    <value>10RKM</value>
+    <value>10РКМ</value>
   </data>
   <data name="_10RK_IGR" xml:space="preserve">
-    <value>10RK</value>
+    <value>10РК</value>
   </data>
   <data name="_10WSc_IGR" xml:space="preserve">
     <value>10WSc</value>
@@ -1074,13 +1080,13 @@ Ausf. E</value>
     <value>122 mm 60-122TG</value>
   </data>
   <data name="_122mm_BL-9_IGR" xml:space="preserve">
-    <value>122 mm BL-9</value>
+    <value>122 мм БЛ-9</value>
   </data>
   <data name="_122mm_D-25C_mod1944_IGR" xml:space="preserve">
-    <value>122 mm D-25S mod. 1944</value>
+    <value>122 мм Д-25С обр. 1944 г.</value>
   </data>
   <data name="_122mm_D-25C_mod1944_IGR_short" xml:space="preserve">
-    <value>122 mm D-25S</value>
+    <value>122 мм Д-25С</value>
   </data>
   <data name="_128mm_KwK44_L55_IGR" xml:space="preserve">
     <value>12,8 cm Kw.K. 44 L/55</value>
@@ -1089,16 +1095,16 @@ Ausf. E</value>
     <value>12,8 cm Pak 44 L/55</value>
   </data>
   <data name="_12RT_IGR" xml:space="preserve">
-    <value>12RT</value>
+    <value>12РТ</value>
   </data>
   <data name="_130mm_S-70_IGR" xml:space="preserve">
-    <value>130 mm S-70</value>
+    <value>130 мм С-70</value>
   </data>
   <data name="_152mm_BL-10_IGR" xml:space="preserve">
-    <value>152 mm BL-10</value>
+    <value>152 мм БЛ-10</value>
   </data>
   <data name="_152mm_M-10_IGR" xml:space="preserve">
-    <value>152 mm M-10</value>
+    <value>152 мм М-10</value>
   </data>
   <data name="_20pdr_AT_Gun_Type_B_IGR" xml:space="preserve">
     <value>OQF 20-pdr AT Gun Type B Barrel</value>
@@ -1113,7 +1119,7 @@ Ausf. E</value>
     <value>Q.F. 4.5-in. Howitzer</value>
   </data>
   <data name="_45mm_20KL_IGR" xml:space="preserve">
-    <value>45 mm 20K(l)</value>
+    <value>45 мм 20К(л)</value>
   </data>
   <data name="_75mm_Gun_Type5_M1_auto_IGR" xml:space="preserve">
     <value>7.5 cm Autoloading Tank Gun Type 5</value>

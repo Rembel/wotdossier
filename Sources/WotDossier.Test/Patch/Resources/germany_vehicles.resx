@@ -142,7 +142,7 @@
     <value>Aufklärungspanzer Panther</value>
   </data>
   <data name="Auf_Panther_descr" xml:space="preserve">
-    <value>Planned heavy reconnaissance vehicle. The plans called for using the Panther hull in order to facilitate rapid mass production. The vehicle was to feature the Leopard turret with a gun not longer than the tank's hull, which was to ensure maneuverability in forested terrain. No prototypes were built.</value>
+    <value>Проект тяжёлой разведывательной машины. Планировалось использовать корпус «Пантеры», что облегчило бы запуск серийного производства. Предполагалось, что на машину будет установлена башня «Леопарда» с орудием, не выходящим за габариты танка, что обеспечило бы манёвренность в условиях лесистой местности. Не было построено ни одного прототипа.</value>
   </data>
   <data name="Auf_Panther_short" xml:space="preserve">
     <value>Aufkl.Panther</value>
@@ -151,7 +151,7 @@
     <value>Pz.Kpfw. B2 740 (f)</value>
   </data>
   <data name="B-1bis_captured_descr" xml:space="preserve">
-    <value>After modernization, part of a total of 365 vehicles were used by the German Army, but only on secondary fronts.</value>
+    <value>В ходе европейской кампании немецкие войска захватили 161 тяжёлый танк B1 bis, получивший обозначение Pz.Kpfw. B2 740 (f). Все трофейные машины прошли частичную модернизацию — было установлено немецкое радиооборудование и двустворчатый люк на командирской башенке. Часть танков с демонтированным вооружением использовалась в учебных целях, а 16 машин были переоборудованы в самоходные гаубицы. Большинство машин было переделано в огнемётные танки.</value>
   </data>
   <data name="B-1bis_captured_short" xml:space="preserve">
     <value>Pz. B2</value>
@@ -175,13 +175,16 @@
     <value>Sturmpanzer I Bison</value>
   </data>
   <data name="Bison_I_descr" xml:space="preserve">
-    <value>Developed from 1939 through 1940 on the chassis of the Panzerkampfwagen I. Equipped with the 150 mm s.I.G. 33 gun that was mounted together with the gun carriage. Rate of fire was three rounds per minute; on-board ammunition totaled eight shells. The vehicle required the support of an ammunition carrier. The SPG was used from 1940 through 1943 during the French Campaign, Balkan Campaign, and on the Eastern Front. Later the Sturmpanzer II with a similar gun type was developed.</value>
+    <value>САУ была создана в 1939–1940 гг. на базе ходовой части танка Panzerkampfwagen I. Оснащена 150-мм пушкой s.I.G. 33, которая устанавливалась вместе с лафетом. Скорострельность составляла 3 выстрела в минуту, возимый боезапас — всего 8 выстрелов. Требовалось сопровождение транспортёра. Применялась в 1940–1943 гг. в ходе Французской кампании, в Балканской кампании и на Восточном фронте. Впоследствии была разработана САУ Sturmpanzer II с аналогичным типом орудия.</value>
   </data>
   <data name="Bison_I_short" xml:space="preserve">
     <value>Bison</value>
   </data>
   <data name="Chassis_Auf_Panther" xml:space="preserve">
     <value>Aufkl. Panther</value>
+  </data>
+  <data name="Chassis_Auf_Panther_2" xml:space="preserve">
+    <value>Aufkl. Panther verstärkteketten</value>
   </data>
   <data name="Chassis_DW_II" xml:space="preserve">
     <value>D.W.</value>
@@ -261,6 +264,9 @@
   </data>
   <data name="Chassis_G113_SP_I_C_2" xml:space="preserve">
     <value>Spähpanzer SP I C PT II</value>
+  </data>
+  <data name="Chassis_G114_Rheinmetall_Skorpian" xml:space="preserve">
+    <value>Rheinmetall 12,8 cm K 43 Skorpion</value>
   </data>
   <data name="Chassis_G114_Skorpian" xml:space="preserve">
     <value>Rheinmetall 12,8 cm K 43 Skorpion</value>
@@ -561,7 +567,7 @@ AOS-895-3</value>
     <value>Durchbruchswagen 2</value>
   </data>
   <data name="DW_II_descr" xml:space="preserve">
-    <value>Prototype of a heavy tank, developed by the Henschel und Sohn company. The prototype was built in 1938. In September 1939 the VK 30.01 project was preferred, and the DW program was canceled. However, the DW I and DW II prototypes were used for various trials until 1941.</value>
+    <value>Прототип тяжёлого танка. Разрабатывался компанией Henschel und Sohn в рамках программы по созданию тяжёлого танка. Опытный образец был собран в 1938 году. Однако в сентябре 1939 года заказчики отдали предпочтение проекту VK 30.01, и официально программа развития DW была закрыта. Тем не менее прототипы DW I и DW II активно использовались для различных тестов до 1941 года.</value>
   </data>
   <data name="DW_II_short" xml:space="preserve">
     <value>D.W. 2</value>
@@ -582,19 +588,19 @@ AOS-895-3</value>
     <value>Dicker Max</value>
   </data>
   <data name="DickerMax_descr" xml:space="preserve">
-    <value>The Dicker Max ("Fat Max") was initially intended to destroy bunkers. Two prototypes were built in the spring of 1941. Later the vehicle was redesignated a heavy tank destroyer. The design was never put into mass production, but the prototypes fought on the Eastern Front.</value>
+    <value>Первоначально машина предназначалась для разрушения дотов. Два прототипа были выпущены весной 1941 года. Впоследствии была переклассифицирована в тяжёлый истребитель танков. Опытные образцы воевали на Восточном фронте. Серийно не выпускалась.</value>
   </data>
   <data name="DickerMax_short" xml:space="preserve">
     <value>Dicker Max</value>
   </data>
   <data name="Die_Signalfahnen_bot" xml:space="preserve">
-    <value>Signal Flags</value>
+    <value>«Сигнальные флажки»</value>
   </data>
   <data name="E-100" xml:space="preserve">
     <value>E 100</value>
   </data>
   <data name="E-100_descr" xml:space="preserve">
-    <value>In June 1943, the Adlerwerke company received an order for development of the E 100. However, in 1944, heavy tank development was discontinued. By the end of the war, only the chassis was completed, which was later captured by the British Army.</value>
+    <value>В июне 1943 года компания Adlerwerke получила заказ на разработку танка E 100. Однако в 1944 году все работы над тяжёлыми танками были прекращены. К концу войны было изготовлено шасси прототипа, захваченное впоследствии британской армией.</value>
   </data>
   <data name="E-100_short" xml:space="preserve">
     <value>E 100</value>
@@ -603,13 +609,13 @@ AOS-895-3</value>
     <value>E 25</value>
   </data>
   <data name="E-25_descr" xml:space="preserve">
-    <value>The development of the E 25 was part of the "E" program, supervised by the Waffenprüfamt 6 committee. The E 25 was developed by the Argus company (Karlsruhe, Germany) under the supervision of Dr. Herman Klaue. No prototypes were manufactured.</value>
+    <value>Разработка E 25 велась в рамках программы «E» под управлением Waffenprüfamt 6. Над E 25 работали специалисты компании Argus (г. Карлсруэ) под руководством доктора Хермана Клауэ. Прототип изготовлен не был.</value>
   </data>
   <data name="E-50" xml:space="preserve">
     <value>E 50</value>
   </data>
   <data name="E-50_descr" xml:space="preserve">
-    <value>In 1945 the E 50 was conceived as a standard medium tank of the Panzerwaffe to replace the Panther and Panther II. It existed only in blueprints.</value>
+    <value>В 1945 году Е 50 должен был стать основным немецким средним танком и заменить «Пантеру» и «Пантеру II». Работы над танком были прекращены на стадии эскизного проектирования.</value>
   </data>
   <data name="E-50_short" xml:space="preserve">
     <value>E 50</value>
@@ -618,7 +624,7 @@ AOS-895-3</value>
     <value>E 75</value>
   </data>
   <data name="E-75_descr" xml:space="preserve">
-    <value>In 1945 the E 75 was conceived as a standard heavy tank of the Panzerwaffe to replace the Tiger II. It existed only in blueprints.</value>
+    <value>В 1945 году E 75 должен был стать основным немецким тяжёлым танком и заменить «Тигра II». Работы над танком были прекращены на стадии эскизного проектирования.</value>
   </data>
   <data name="E-75_short" xml:space="preserve">
     <value>E 75</value>
@@ -627,7 +633,7 @@ AOS-895-3</value>
     <value>E 50 Ausf. M</value>
   </data>
   <data name="E50_Ausf_M_descr" xml:space="preserve">
-    <value>The German Army demanded that the E-series tanks had transmissions positioned in the rear. However, the E 50 and E 75 tanks used the Tiger II engine-transmission compartment, which made rear placement of the transmission impossible. The E 50 Ausf. M tank was a redesign of the E 50 project with the transmission placed in the rear.</value>
+    <value>Одним из требований, выдвигаемых военными к танкам E-серии, было перенесение трансмиссии в кормовую часть корпуса. Однако в процессе разработки танков E 50 и E 75 была полностью заимствована компоновка моторно-трансмиссионного отделения танка «Тигр II», что полностью исключало возможность переноса трансмиссии в кормовую часть. E 50 Ausf. M — реконструкция проекта E 50 с задним расположением трансмиссии.</value>
   </data>
   <data name="E50_Ausf_M_short" xml:space="preserve">
     <value>E 50 M</value>
@@ -636,7 +642,7 @@ AOS-895-3</value>
     <value>Ferdinand</value>
   </data>
   <data name="Ferdinand_descr" xml:space="preserve">
-    <value>Developed on the basis of the Porsche Tiger, with a total of 90 vehicles produced in April and May 1943. They first saw combat in the Battle of Kursk (Operation Citadel).</value>
+    <value>Машина создана на базе «Тигра» Порше. Всего в апреле – мае 1943 года было изготовлено 90 машин, которые впервые были использованы в Курской битве.</value>
   </data>
   <data name="Ferdinandstandardketten" xml:space="preserve">
     <value>Ferdinand</value>
@@ -717,7 +723,7 @@ AOS-895-3</value>
     <value>Tiger I L/56</value>
   </data>
   <data name="G04_PzVI_Tiger_IA_descr" xml:space="preserve">
-    <value>Development of the Tiger I was started in 1937 by the Henschel company. Mass production began in 1942, with a total of 1,354 vehicles manufactured. The tank first saw combat near Leningrad, and Tigers were at the forefront of battles from Tunisia to Kursk. Although production was discontinued in the summer of 1944, the Tiger I continued to see action until the end of the war.</value>
+    <value>Разработка танка началась в 1937 году компанией Henschel. Выпускался серийно с 1942 года. Впервые использовался в боевых действиях под Ленинградом. Танк участвовал в боях в Тунисе, самое массовое применение было в ходе сражения на Курской Дуге. Несмотря на прекращение производства летом 1944 года, «Tiger I» использовался до конца войны. Всего было выпущено 1354 танка.</value>
   </data>
   <data name="G04_PzVI_Tiger_IA_short" xml:space="preserve">
     <value>Tiger I L/56</value>
@@ -726,7 +732,7 @@ AOS-895-3</value>
     <value>Großtraktor - Krupp</value>
   </data>
   <data name="G100_Gtraktor_Krupp_descr" xml:space="preserve">
-    <value>An experimental medium tank, developed by the Krupp company. By 1929, two prototypes were manufactured from non-armored steel and underwent trials in the Soviet Union until 1933. The trials revealed multiple faults, and the vehicle never saw service. However, the results of vehicle development were later used by German engineers.</value>
+    <value>Опытная боевая машина, разработанная компанией Krupp в рамках конкурса по созданию среднего танка. Два образца из неброневой стали были построены к 1929 году. До 1933 года проходили испытания в Советском Союзе. Из-за большого количества недоработок танк на вооружение принят не был, однако полученный опыт был широко использован немецкими конструкторами в последующем танкостроении.</value>
   </data>
   <data name="G100_Gtraktor_Krupp_short" xml:space="preserve">
     <value>Gr.Tr.</value>
@@ -735,7 +741,7 @@ AOS-895-3</value>
     <value>StuG III Ausf. B</value>
   </data>
   <data name="G101_StuG_III_descr" xml:space="preserve">
-    <value>In 1935, Erich von Manstein of the German Army General Staff, in a letter to General Ludwig Beck, described the idea of building assault artillery to support attacking infantry units. Five prototypes of the "zero" series were manufactured in 1937. Early modifications from Ausf.A to Ausf.F/8 were produced until December 1942.</value>
+    <value>В 1935 Эрих фон Манштейн в письме к генералу Беку описал идею машин штурмовой артиллерии, главной задачей которых должна была быть непосредственная поддержка атакующих подразделений пехоты. В 1937 году были изготовлены первые пять прототипов так называемой «нулевой» серии. Ранние модификации от Ausf.A до Ausf.F/8 выпускались до декабря 1942 года.</value>
   </data>
   <data name="G101_StuG_III_short" xml:space="preserve">
     <value>StuG III B</value>
@@ -744,7 +750,9 @@ AOS-895-3</value>
     <value>Spähpanzer Ru 251</value>
   </data>
   <data name="G103_RU_251_descr" xml:space="preserve">
-    <value>The vehicle was developed on the basis of the Kanonenjagdpanzer 4-5 tank destroyer by the Henschel company in 1964. The tank was planned to replace the obsolete M41 Walker Bulldog vehicles used by the reconnaissance battalions of the armored divisions in the German Army. The tank never saw mass production, but some technical innovations were applied later in the development of other vehicles. The total number of prototypes built is unknown.</value>
+    <value>Был построен компанией Henschel в 1964 году по программе замены устаревающих танков M41 Walker Bulldog в немецкой армии, где ими вооружались разведывательные батальоны танковых дивизий и другие подразделения. Базой послужила ПТ-САУ Kanonenjagdpanzer 4–5. Машина не была выпущена в серийное производство,
+но некоторые технические решения использовались
+в проектировании других танков. Количество изготовленных прототипов неизвестно.</value>
   </data>
   <data name="G103_RU_251_short" xml:space="preserve">
     <value>Ru 251</value>
@@ -753,7 +761,7 @@ AOS-895-3</value>
     <value>StuG IV</value>
   </data>
   <data name="G104_Stug_IV_descr" xml:space="preserve">
-    <value>In February 1943, at the suggestion of the Ministry of Armament, the Krupp company began trials of a new vehicle with the superstructure of the updated StuG III and the new suspension of the Pz.Kpfw. IV H and J. The first vehicles were produced by December 1943. Having canceled the production of the Pz. IV, the Krupp company focused their attention on the production of the new vehicles starting in January 1944. A total of 1,108 vehicles were manufactured, with 31 more converted from existing tanks.</value>
+    <value>По предложению Министерства вооружений в феврале 1943 года компания Krupp начала испытания установки рубки доработанной StuG III на новое шасси Pz.Kpfw. IV Ausf. H и J. Первые машины сошли с конвейера к декабрю 1943 года, а с января 1944 компания Krupp полностью перешла на их производство, свернув выпуск Pz. IV. Всего произведено 1108 машин и ещё 31 переделана из танков.</value>
   </data>
   <data name="G104_Stug_IV_short" xml:space="preserve">
     <value>StuG IV</value>
@@ -762,7 +770,7 @@ AOS-895-3</value>
     <value>T 55A</value>
   </data>
   <data name="G105_T-55_NVA_DDR_descr" xml:space="preserve">
-    <value>An upgraded version of the T-55 tank. The T 55A had a higher level of nuclear protection and no bow machinegun. From 1962 through 1970, about 1,800 of the T-55 and T 55A tanks were supplied to East Germany by the U.S.S.R.</value>
+    <value>Т 55А являлся усовершенствованным вариантом танка Т-55. Отличался повышенным уровнем противоатомной защиты и отсутствием курсового пулемёта. Около 1800 танков Т-55 и Т 55А было поставлено из СССР в ГДР в период с 1962 по 1970 год.</value>
   </data>
   <data name="G105_T-55_NVA_DDR_short" xml:space="preserve">
     <value>T 55A</value>
@@ -771,7 +779,7 @@ AOS-895-3</value>
     <value>Panther mit 8,8 cm L/71</value>
   </data>
   <data name="G106_PzKpfwPanther_AusfF_descr" xml:space="preserve">
-    <value>Development of a modification of the Panther started in the spring of 1944. The new variant was to incorporate a newly designed Schmalturm turret. The new vehicle was designated the Panther Ausf. F. On January 23, 1945, it was reported that the 88-mm gun of the Tiger was mounted on the upgraded version of the new turret. A large number of hulls for the vehicle were manufactured, but the turret never saw production and existed only as a wooden model.</value>
+    <value>Весной 1944 года были начаты работы над модификацией Panther с целью установки башни нового дизайна Schmalturm. Новая машина получила обозначение Panther Ausf. F. 23 января 1945 года полковник Хольцхауэр доложил о работах по установке 88-мм орудия «Королевского тигра» для доработанной версии этой башни. Корпусов было выпущено значительное количество, однако башня так и осталась деревянным макетом.</value>
   </data>
   <data name="G106_PzKpfwPanther_AusfF_short" xml:space="preserve">
     <value>Panther 8,8</value>
@@ -780,7 +788,7 @@ AOS-895-3</value>
     <value>Pz.Kpfw. III Ausf. K</value>
   </data>
   <data name="G107_PzKpfwIII_AusfK_descr" xml:space="preserve">
-    <value>This tank was developed on the basis of the later Pz.Kpfw.III Ausf. J chassis, combining it with the Pz.Kpfw.IV Ausf. F2 turret and a 75-mm gun. The first design plans were completed by the end of December 1941. Manufacturing began, but the vehicle proved overly complex and production was soon canceled. A total of 50 vehicles were completed and used as command vehicles. They featured 50-mm guns; the 75-mm guns were never mounted.</value>
+    <value>Проект командирского танка на базе более позднего варианта Pz.Kpfw.III Ausf. J с башней от Pz.Kpfw.IV Ausf.F2 и 75-мм орудием. Предварительные чертежи были готовы к концу декабря 1941 года, а в марте 1942 года проект был отменён по причине сложности реализации. Было выпущено около 50 машин, использовавшихся в качестве командирских. Они были вооружены 50-мм пушками; 75-мм пушки так и не были установлены.</value>
   </data>
   <data name="G107_PzKpfwIII_AusfK_short" xml:space="preserve">
     <value>Pz. III K</value>
@@ -789,7 +797,7 @@ AOS-895-3</value>
     <value>Pz.Kpfw. II Ausf. D</value>
   </data>
   <data name="G108_PzKpfwII_AusfD_descr" xml:space="preserve">
-    <value>A high-speed modification of the Pz. II intended for light divisions formed from the cavalry. The Pz.Kpfw.II Ausf. D tank had a completely new hull and suspension. The turret and guns were taken from the Ausf. C. version. The suspension had eight large-diameter paired wheels with individual torsion bars and no support rollers. The tanks with enhanced suspension elements, including new drive and idler wheels, were designated Ausf. E. According to various sources, about 200–250 vehicles of the D and E modifications were manufactured.</value>
+    <value>Быстроходная модификация Pz. II для оснащения лёгких дивизий, созданных на базе кавалерийских. Танк Pz.Kpfw. II Ausf. D имел совершенно новый корпус и ходовую часть, а башня с вооружением была заимствована у Ausf. С. Ходовая часть включала восемь сдвоенных опорных катков большого диаметра с индивидуальной торсионной подвеской без поддерживающих катков. Танки с усиленными элементами подвески и с новыми ведущими и направляющими колёсами получили обозначение Ausf. Е. По разным данным, произведено 200–250 машин модификаций D и E.</value>
   </data>
   <data name="G108_PzKpfwII_AusfD_short" xml:space="preserve">
     <value>Pz. II D</value>
@@ -798,7 +806,7 @@ AOS-895-3</value>
     <value>Krupp-Steyr Waffenträger</value>
   </data>
   <data name="G109_Steyr_WT_descr" xml:space="preserve">
-    <value>A vehicle project by Steyr as a special artillery transporter that would be able not only to transport the gun but also to fire it from the chassis. To keep costs down and reduce complexity, the design used many components of the Raupenschlepper Ost, a tracked artillery mover. The turret and gun were supplied by Krupp. One wooden model and one prototype were manufactured by September 2, 1944.</value>
+    <value>Проект компании Steyr, разработанный в рамках конкурса по созданию специального артиллерийского транспортёра, способного не только перевозить артиллерийскую систему, но и вести огонь непосредственно с шасси. Для удешевления и максимального упрощения конструкции предполагалось широко использовать детали гусеничного тягача Raupenschlepper Ost. Башня с орудием была предоставлена компанией Krupp. К 2 сентября 1944 года был изготовлен деревянный макет и один прототип.</value>
   </data>
   <data name="G109_Steyr_WT_short" xml:space="preserve">
     <value>Steyr WT</value>
@@ -807,7 +815,7 @@ AOS-895-3</value>
     <value>Kanonenjagdpanzer</value>
   </data>
   <data name="G112_KanonenJagdPanzer_descr" xml:space="preserve">
-    <value>The first prototypes of the Kanonenjagdpanzer, also known as the Jagdpanzer Kanone 90mm, were produced in 1960 by the Hanomag and Henschel companies for the FRG. Production continued until 1967. A total of 770 vehicles for the Bundeswehr and 80 for the Belgian Armed Forces were built. However, in 1985 the vehicle was deemed outdated. Some of them were converted into artillery observation vehicles and others were refitted into anti-tank guided missile carriers. Some Kanonenjagdpanzer remained in service until 1990.</value>
+    <value>Первые прототипы Kanonenjagdpanzer были построены в 1960 году Hanomag и Henschel для ФРГ, и выпуск продолжался вплоть до 1967 года. Всего для Бундесвера и вооружённых сил Бельгии было построено 770 и 80 машин соответственно, однако уже в 1985 году эта ПТ-САУ перестала отвечать техническим требованиям того времени. Часть машин была переоборудована в наблюдательные, часть — в противотанковые ракетные установки. Некоторые Kanonenjagdpanzer, известные так же как Jagdpanzer Kanone 90mm, оставались на вооружении в частях Heimatschutztruppe до 1990 года.</value>
   </data>
   <data name="G112_KanonenJagdPanzer_short" xml:space="preserve">
     <value>KanJPz</value>
@@ -816,16 +824,25 @@ AOS-895-3</value>
     <value>Spähpanzer SP I C</value>
   </data>
   <data name="G113_SP_I_C_descr" xml:space="preserve">
-    <value>The reconnaissance tank destroyer was being developed by Hotchkiss and Klöckner-Humboldt-Deutz companies from 1956 through 1962 in order to increase the anti-tank capability of recon tank battalions. A 90-mm anti-tank gun was planned to be mounted on the new vehicle. The project was eventually declined. The number of prototypes built is unknown.</value>
+    <value>Для повышения огневой мощи и улучшения противотанковых возможностей танкоразведывательных батальонов с 1956 по 1962 год проводились работы по созданию разведывательного истребителя танков. Для этого планировалась установка на боевую разведывательную машину 90-мм противотанкового орудия. Над проектом работали компании Hotchkiss и Klöckner-Humboldt-Deutz. Проект так и не был принят, количество построенных прототипов неизвестно.</value>
   </data>
   <data name="G113_SP_I_C_short" xml:space="preserve">
     <value>SP I C</value>
+  </data>
+  <data name="G114_Rheinmetall_Skorpian" xml:space="preserve">
+    <value>Rheinmetall Skorpion G</value>
+  </data>
+  <data name="G114_Rheinmetall_Skorpian_descr" xml:space="preserve">
+    <value>Разработка самоходных установок второй серии на базе танка Panther была начата компанией Rheinmetall в январе 1943 года. Чертёж машины 12,8 cm Skorpion датируется 2 апреля 1943 года. Машина не была реализована в металле.</value>
+  </data>
+  <data name="G114_Rheinmetall_Skorpian_short" xml:space="preserve">
+    <value>Skorpion G</value>
   </data>
   <data name="G114_Skorpian" xml:space="preserve">
     <value>Rheinmetall Skorpion</value>
   </data>
   <data name="G114_Skorpian_descr" xml:space="preserve">
-    <value>Development of the second series of self-propelled guns on the basis of the Panther tank was started by the Rheinmetall company in January 1943. The design plans for the 12,8 cm Skorpion were completed on April 2, 1943. Existed only in blueprints.</value>
+    <value>Разработка самоходных установок второй серии на базе танка Panther была начата компанией Rheinmetall в январе 1943 года. Чертёж машины 12,8 cm Skorpion датируется 2 апреля 1943 года. Машина не была реализована в металле.</value>
   </data>
   <data name="G114_Skorpian_short" xml:space="preserve">
     <value>Skorpion</value>
@@ -834,7 +851,7 @@ AOS-895-3</value>
     <value>VK 100.01 (P)</value>
   </data>
   <data name="G115_Typ_205_4_Jun_descr" xml:space="preserve">
-    <value>A version of the Maus from June 4, 1942. The 120-ton predecessor of the superheavy tank existed only in blueprints and never saw service. The vehicle was only an intermittent stage in the development of the Maus.</value>
+    <value>Версия танка Maus от 4 июня 1942 года. 120-тонный предшественник сверхтяжёлого танка остался не более чем одним из этапов работы над проектом. В металле построен не был, в боевых действиях не применялся.</value>
   </data>
   <data name="G115_Typ_205_4_Jun_short" xml:space="preserve">
     <value>VK 100.01 P</value>
@@ -843,7 +860,7 @@ AOS-895-3</value>
     <value>Turán III prototípus</value>
   </data>
   <data name="G116_Turan_III_prot_descr" xml:space="preserve">
-    <value>Prototype of the WWII Hungarian medium tank. It featured the long-barreled 75 mm 43.M gun and improved armor compared to previous modifications. Never saw mass production due to the termination of vehicle manufacturing in Hungary by the summer of 1944.</value>
+    <value>Прототип венгерского среднего танка периода Второй мировой войны c длинноствольной 75-мм пушкой 43.M и улучшенным бронированием по сравнению с предшествующими модификациями. Серийно не выпускался в связи с прекращением производства бронетехники в Венгрии к лету 1944 года.</value>
   </data>
   <data name="G116_Turan_III_prot_short" xml:space="preserve">
     <value>Turán III PT</value>
@@ -852,7 +869,7 @@ AOS-895-3</value>
     <value>43 M. Toldi III</value>
   </data>
   <data name="G117_Toldi_III_descr" xml:space="preserve">
-    <value>Modification of the 38M Toldi I light tank. The vehicle was named after the Hungarian knight Miklos Toldi. The tank featured improved armor and increased ammunition capacity compared to previous versions. Approximately 12 vehicles were manufactured during WWII.</value>
+    <value>Модификация лёгкого танка 38М Toldi I, названного в честь венгерского рыцаря Миклоша Толди. Отличался от предыдущих версий усиленным бронированием и увеличенным боекомплектом. В период Второй мировой войны было выпущено около 12 машин.</value>
   </data>
   <data name="G117_Toldi_III_short" xml:space="preserve">
     <value>Toldi III</value>
@@ -861,13 +878,13 @@ AOS-895-3</value>
     <value>VK 45.03</value>
   </data>
   <data name="G118_VK4503_descr" xml:space="preserve">
-    <value>Heavy tank developed at the end of WWII. The project was designated the Tiger III (VK 45.03) on October 12, 1942. Existed only in blueprints.</value>
+    <value>Тяжёлый танк конца Второй мировой войны. 12 октября 1942 года проект получил обозначение Tiger III (VK 45.03). Существовал только в эскизах.</value>
   </data>
   <data name="G119_Panzer58" xml:space="preserve">
     <value>Panzer 58</value>
   </data>
   <data name="G119_Panzer58_descr" xml:space="preserve">
-    <value>Swiss project of a medium tank with improved combat characteristics and the ability to fight in mountainous terrain, developed in 1953. The plans called for using the gun from the British Centurion tank. A total of two prototypes and ten vehicles were produced, but the vehicle never saw mass production.</value>
+    <value>Швейцарский проект среднего танка с улучшенными боевыми характеристиками и возможностью применения в горной местности, разработанный в 1953 году. Предполагалось использовать орудие английского танка Centurion. Было изготовлено 2 прототипа и 10 машин, однако серийно не выпускался.</value>
   </data>
   <data name="G119_Panzer58_short" xml:space="preserve">
     <value>Pz. 58</value>
@@ -876,7 +893,7 @@ AOS-895-3</value>
     <value>Panzer 58 Mutz</value>
   </data>
   <data name="G119_Pz58_Mutz_descr" xml:space="preserve">
-    <value>Developed in 1953 in Switzerland, the first prototype of this tank featured a 90 mm gun. A second prototype with a British 20-pounder gun was built later. In the end, a series of 10 vehicles, featuring 105 mm guns, were produced and remained in service until 1964. After this, the vehicles were used as a basis for the Panzer 61. The only Panzer 58 that survives today features a 20-pounder gun and is currently located in the tank museum in Thun, Bern.</value>
+    <value>Танк был спроектирован в 1953 году в Швейцарии. На первый прототип было установлено 90-мм орудие, позже появился прототип с британским 20-фунтовым орудием. Также были изготовлены 10 серийных машин со 105-мм орудием, которые состояли на вооружении до 1964 года. Впоследствии машины стали основой для Panzer 61. Единственный сохранившийся экземпляр Panzer 58 (с 20-фунтовым орудием) находится в танковом музее в городе Тун кантона Берн.</value>
   </data>
   <data name="G119_Pz58_Mutz_short" xml:space="preserve">
     <value>Pz. 58 Mutz</value>
@@ -888,13 +905,13 @@ AOS-895-3</value>
     <value>leKpz M 41 90 mm GF</value>
   </data>
   <data name="G120_M41_90_GrandFinal_descr" xml:space="preserve">
-    <value>German variant of the M41A1 Walker Bulldog U.S. light tank. The changes mainly related to the 76 mm M32 gun, which was re-bored to 90 mm and shortened by 425 mm.</value>
+    <value>Немецкий вариант модернизации американского лёгкого танка М41A1 Walker Bulldog. Изменения главным образом коснулись орудия 76 mm gun M32, которое рассверлили до 90 мм и укоротили на 425 мм.</value>
   </data>
   <data name="G120_M41_90_GrandFinal_short" xml:space="preserve">
     <value>M 41 90 GF</value>
   </data>
   <data name="G120_M41_90_descr" xml:space="preserve">
-    <value>The German modification of the M41A1 Walker Bulldog U.S. light tank. Major changes were introduced to the 76 mm gun M32, which was reamed out to 90 mm and shortened by 425 mm.</value>
+    <value>Немецкий вариант модернизации американского лёгкого танка М41A1 Walker Bulldog. Изменения главным образом коснулись орудия 76 mm gun M32, которое рассверлили до 90 мм и укоротили на 425 мм.</value>
   </data>
   <data name="G120_M41_90_short" xml:space="preserve">
     <value>M 41 90 mm</value>
@@ -903,7 +920,7 @@ AOS-895-3</value>
     <value>Grille 15</value>
   </data>
   <data name="G121_Grille_15_L63_descr" xml:space="preserve">
-    <value>In the summer of 1942, Waffenamt (the German Army Weapon Agency) concluded an agreement with the Krupp and Rheinmetall companies for designing a tank destroyer on the chassis of the Panther tank. It was planned to mount either the 128-mm K 43 gun or the 150-mm sFH 43 howitzer. The projects were designated Grille 12 and Grille 15, featured rear placement of the fighting compartment, and differed only in the artillery system type. Later, the Grille 15 received a 150-mm gun with a length of 63 calibers, which could penetrate 200 mm of armor at 4,000 meters. However, development was slow, and the Grille 15 remained only in blueprints.</value>
+    <value>Летом 1942 года Управление вооружений сухопутных сил Германии заключило договор с компаниями Krupp и Rheinmetall на создание САУ на шасси танка Panther. Рассматривались варианты установки 128-мм орудия K 43 и 150-мм гаубицы sFH 43. Проекты получили обозначение Grille 12 и Grille 15. Имели заднее расположение боевого отделения и отличались между собой только типом артсистемы. Позднее было принято требование об установке 150-мм пушки с длиной ствола в 63 калибра на Grille 15. Такое орудие имело возможность пробития снарядами 200-мм брони на дистанции 4000 метров. Однако работы затянулись, и проект Grille 15 так и не был реализован в металле.</value>
   </data>
   <data name="G121_Grille_15_L63_short" xml:space="preserve">
     <value>Grille 15</value>
@@ -912,7 +929,7 @@ AOS-895-3</value>
     <value>VK 65.01 (H)</value>
   </data>
   <data name="G122_VK6501H_descr" xml:space="preserve">
-    <value>January 19, 1939, the Panzer and Motorized Equipment Branch (WaPrüf 6) of the German Army Weapons Agency announced development of a 65-ton tank. The Henschel and Krupp companies received an order for production of pilot vehicles on September 1st, 1939. A wooden dummy was created by April 1940 and, according to various sources, one or two more prototypes in unarmored steel and with no turret were produced by mid-1941. In 1942, development was discontinued and the prototypes were destroyed.</value>
+    <value>19 января 1939 года отдел испытания танкового вооружения (WaPrüf 6) заявил о начале работ по созданию танка массой 65 тонн. 1 сентября 1939 года компании Henschel и Krupp получили заказ на изготовление предсерийных машин. К апрелю 1940 года был создан деревянный макет; к середине 1941 года был построен прототип (по другим данным — два прототипа) из неброневой стали и без башни. В 1942 году работы по проекту были свёрнуты, и прототип был уничтожен.</value>
   </data>
   <data name="G122_VK6501H_short" xml:space="preserve">
     <value>VK 65.01 (H)</value>
@@ -921,7 +938,7 @@ AOS-895-3</value>
     <value>Marder II</value>
   </data>
   <data name="G20_Marder_II_descr" xml:space="preserve">
-    <value>Light tank destroyer developed in early 1942 based on the chassis of the outdated, but massively produced, Pz.Kpfw. II, and fitted with a powerful gun. The vehicle saw wide use on the Eastern Front; from 1944, it also fought in Italy and on the Western Front. The tank destroyer was in service until the end of the war.</value>
+    <value>Лёгкая ПТ-САУ, разработанная в начале 1942 года на базе шасси устаревшего, но массового танка Pz.Kpfw. II. Машина также получила мощное орудие. Активно применялась на Восточном фронте, а с 1944 года — в Италии и на Западном фронте. Состояла на вооружении до конца войны.</value>
   </data>
   <data name="G20_Marder_II_short" xml:space="preserve">
     <value>Marder II</value>
@@ -930,7 +947,7 @@ AOS-895-3</value>
     <value>VK 45.02 (P) Ausf. B7</value>
   </data>
   <data name="G58_VK4502P_descr" xml:space="preserve">
-    <value>Variants with forward-mounted turret and rear-mounted turret were designed by Ferdinand Porsche. The tank never saw mass production.</value>
+    <value>Вариант с передним и задним расположением башни был разработан Фердинандом Порше. Серийно не выпускался.</value>
   </data>
   <data name="G58_VK4502P_short" xml:space="preserve">
     <value>VK 45.02 B7</value>
@@ -939,7 +956,7 @@ AOS-895-3</value>
     <value>G.Pz. Mk. VI (e)</value>
   </data>
   <data name="GW_Mk_VIe_descr" xml:space="preserve">
-    <value>In 1940, German forces captured several light British Mk. VI tanks. The vehicles were redesignated as Leichter Panzerkampfwagen Mk. IV 734(e) and used for training purposes by the Wehrmacht until the fall of 1942. In November, the decision was made to develop a self-propelled gun on the basis of the captured vehicles. In 1942, modifications with a 105 and 150 mm field howitzer were developed. All these SPGs were lost during the defense of France in the summer and fall of 1944.</value>
+    <value>В ходе кампании 1940 года немецкими трофеями стали несколько британских лёгких танков Mk. VI. В Вермахте они получили обозначение Leichter Panzerkampfwagen Mk. IV 734(e). До осени 1942 года трофеи использовались как учебные машины, но в ноябре было принято решение разработать на их базе самоходное орудие. В 1942 году были разработаны варианты САУ со 105- и 150-мм полевой гаубицей. Все машины были потеряны во время боёв во Франции летом–осенью 1944 года.</value>
   </data>
   <data name="GW_Mk_VIe_short" xml:space="preserve">
     <value>G.Pz. Mk. VI</value>
@@ -948,7 +965,7 @@ AOS-895-3</value>
     <value>G.W. Tiger (P)</value>
   </data>
   <data name="GW_Tiger_P_descr" xml:space="preserve">
-    <value>Conceptualization of a heavy SPG mounted on an elongated Porsche Tiger chassis. It is known that Ferdinand Porsche intended to develop the SPG; however, the work was never started.</value>
+    <value>Реконструкция внешнего облика тяжёлой САУ на удлинённом шасси «Тигра» Porsche. Известно, что Фердинанд Порше собирался заняться разработкой САУ, но планы так и не были реализованы.</value>
   </data>
   <data name="GW_Tiger_P_short" xml:space="preserve">
     <value>G.W. Tiger P</value>
@@ -957,7 +974,7 @@ AOS-895-3</value>
     <value>G.W. E 100</value>
   </data>
   <data name="G_E_descr" xml:space="preserve">
-    <value>Project for a 210 mm mortar on the chassis of the E 100. The vehicle was never produced.</value>
+    <value>Проект установки 210-мм мортиры на шасси танка E 100. Прототип построен не был.</value>
   </data>
   <data name="G_E_short" xml:space="preserve">
     <value>G.W. E 100</value>
@@ -966,7 +983,7 @@ AOS-895-3</value>
     <value>G.W. Panther</value>
   </data>
   <data name="G_Panther_descr" xml:space="preserve">
-    <value>Developed by the Krupp company in 1943 and 1944. A scale model of the SPG was built, but no full-size prototypes were ever produced.</value>
+    <value>Разрабатывалась компанией Krupp в 1943–1944 гг. Был построен только макет САУ.</value>
   </data>
   <data name="G_Panther_short" xml:space="preserve">
     <value>G.W. Panther</value>
@@ -975,7 +992,7 @@ AOS-895-3</value>
     <value>G.W. Tiger</value>
   </data>
   <data name="G_Tiger_descr" xml:space="preserve">
-    <value>Development of an SPG on the chassis of the Pz.Kpfw. VIB Tiger II started in 1942. The project called for designing a common self-propelled gun carriage for the 17 cm Kanone 72 gun and 21 cm Mörser 18/1 howitzer. The concept of the SPG allowed the use of artillery systems from both the carriage and the ground. Work on building an experimental prototype began in 1945.</value>
+    <value>Разработка САУ на базе Pz.Kpfw. VIB Tiger II началась в 1942 году. Проект предполагал создание общего самоходного лафета для 170-мм пушки 17 cm Kanone 72 и 210-мм мортиры 21 cm Mörser 18/1. Концепция данной САУ подразумевала возможность использования артиллерийских систем как с машины, так и с грунта. В 1945 году была начата сборка экспериментального образца.</value>
   </data>
   <data name="G_Tiger_short" xml:space="preserve">
     <value>G.W. Tiger</value>
@@ -987,7 +1004,7 @@ AOS-895-3</value>
     <value>Grille</value>
   </data>
   <data name="Grille_descr" xml:space="preserve">
-    <value>German WWII self-propelled gun. Developed on the Czechoslovakian Pz.Kpfw. 38(t) chassis from 1943 through 1944. A total of 282 vehicles were manufactured.</value>
+    <value>Немецкая самоходная гаубица времён Второй мировой войны. Создана на шасси чехословацкого лёгкого танка Pz.Kpfw. 38(t). Производство данного типа САУ велось с 1943 по 1944 годы. Всего было выпущено 282 машины.</value>
   </data>
   <data name="Grille_mod_1" xml:space="preserve">
     <value>Grille</value>
@@ -1008,7 +1025,7 @@ AOS-895-3</value>
     <value>Pz.Kpfw. 38H 735 (f)</value>
   </data>
   <data name="H39_captured_descr" xml:space="preserve">
-    <value>In May 1940 the French Army had more than 800 vehicles of this type, most of which were captured by the German forces. They were widely used by the Wehrmacht to supplement existing armor.</value>
+    <value>В мае 1940 года французская армия имела в строю более 800 танков этого типа. Многие из них попали в руки немцев и широко использовались Вермахтом.</value>
   </data>
   <data name="H39_captured_short" xml:space="preserve">
     <value>Pz. 38H</value>
@@ -1029,7 +1046,7 @@ AOS-895-3</value>
     <value>Jagdpanzer 38 (t) verstärkteketten</value>
   </data>
   <data name="Hetzer_descr" xml:space="preserve">
-    <value>In 1943, the Wehrmacht were experiencing a dire shortage of StuG III tank destroyers because the joint U.S.A.-U.K. air raids caused considerable damage to the Alkett company's factory that produced these vehicles. December 1943, a decision was made to utilize the working capacities of the BMM company in Prague to start production of tank destroyers. Components of the Pz.Kpfw. 38(t) tank were widely used in the new vehicle. The first prototypes were produced in March 1944. More than 2,800 vehicles were built by May 1945.</value>
+    <value>В 1943 году Вермахт испытывал острую нехватку ПТ-САУ Stug III (англо-американские авианалёты нанесли значительные повреждения заводу-производителю компании Alkett). В декабре 1943 года было принято решение о производстве лёгких ПТ-САУ на мощностях пражской компании BMM. В конструкции широко использовались элементы танка Pz.Kpfw. 38(t). Первые прототипы были изготовлены в марте 1944 года. До мая 1945 года было выпущено более 2800 машин.</value>
   </data>
   <data name="Hetzer_short" xml:space="preserve">
     <value>Hetzer</value>
@@ -1059,7 +1076,7 @@ AOS-895-3</value>
     <value>Hummel verstärkteketten</value>
   </data>
   <data name="Hummel_descr" xml:space="preserve">
-    <value>In the autumn of 1942 the Alkett company started the development of a new SPG with a 150-mm gun. To boost new vehicle production, it was planned to use the readily available components of Pz. III and Pz. IV vehicles. The SPG was made on the same chassis as the Nashorn heavy tank destroyer. A total of 714 vehicles and 150 ammunition carriers that used the same chassis were built.</value>
+    <value>Осенью 1942 года фирма Alkett приступила к разработке новой САУ со 150-мм орудием. Для ускорения производства предусматривалось максимальное использование уже имеющихся узлов и агрегатов Pz. III и Pz. IV. САУ производилась на том же шасси, что и тяжёлая самоходная противотанковая установка Nashorn. Всего было выпущено 714 машин и 150 подвозчиков боеприпасов на этой же базе.</value>
   </data>
   <data name="Hummel_short" xml:space="preserve">
     <value>Hummel</value>
@@ -1068,7 +1085,7 @@ AOS-895-3</value>
     <value>Indien-Panzer</value>
   </data>
   <data name="Indien_Panzer_descr" xml:space="preserve">
-    <value>The project was developed as a medium tank for the Indian Army. The work on the project was carried out by Porsche, Daimler-Benz, and Zahnradfabrik AG of Friedrichshafen. However, the vehicle was deemed to be too complicated for production in India, and the project was canceled.</value>
+    <value>Проект, разработанный в рамках конкурса по созданию среднего танка для нужд индийской армии. Работы велись в 1954–1955 гг. компаниями Porsche, Daimler-Benz и Zahnradfabrik AG of Friedrichshafen. Однако машина оказалась слишком сложной для производства в Индии, и все работы по проекту были свёрнуты.</value>
   </data>
   <data name="Indien_Panzer_short" xml:space="preserve">
     <value>Indien-Pz.</value>
@@ -1080,13 +1097,13 @@ AOS-895-3</value>
     <value>Jagdpanther II</value>
   </data>
   <data name="JagdPantherII_descr" xml:space="preserve">
-    <value>Developed on the basis of the Panther II. The vehicle was to be equipped with a 128 mm gun and the fighting compartment to be located in the rear. Existed only in blueprints.</value>
+    <value>Разработана на базе танка Panther II. Предполагалось, что боевое отделение будет располагаться в корме, и машина будет оснащена 128-мм орудием. Существовала только в эскизах.</value>
   </data>
   <data name="JagdPantherII_short" xml:space="preserve">
     <value>JPanther II</value>
   </data>
   <data name="JagdPanther_descr" xml:space="preserve">
-    <value>Development of this tank destroyer, based on the chassis of the new VK 30.02 (MAN) tank, began in 1942. In October 1943, the prototype trials were started. A total of 392 vehicles were manufactured.</value>
+    <value>Разработка истребителя танков на базе шасси нового танка VK 30.02 (MAN) началась ещё в 1942 году, а в октябре 1943 года приступили к испытаниям прототипа. Всего было выпущено 392 машины.</value>
   </data>
   <data name="JagdPanther_short" xml:space="preserve">
     <value>JPanther</value>
@@ -1104,7 +1121,7 @@ AOS-895-3</value>
     <value>Jagdpanzer IV</value>
   </data>
   <data name="JagdPzIV_descr" xml:space="preserve">
-    <value>The Pz. IV medium tank served as the basis for many vehicles, including tank destroyers. At the end of 1944, a version of the 75-mm PaK 42 L/70 gun was prepared for this basis. The new variant of the vehicle was designated the JagdPzIV/70. From August 1944 through March 1945, the Nibelungenwerke company produced 278 vehicles of this type.</value>
+    <value>Средний танк Pz. IV послужил базой для множества боевых машин, в том числе и для ПТ-САУ. В конце 1944 года была подготовлена версия 75-мм орудия PaK 42 L/70 для установки на эту базу. Новый вариант машины получил название JagdPzIV/70. С августа 1944 по март 1945 компания Nibelungenwerke произвела 278 ПТ-САУ этого типа.</value>
   </data>
   <data name="JagdPzIV_short" xml:space="preserve">
     <value>Jg.Pz. IV</value>
@@ -1113,7 +1130,7 @@ AOS-895-3</value>
     <value>Jagdpanzer E 100</value>
   </data>
   <data name="JagdPz_E100_descr" xml:space="preserve">
-    <value>The E 100 was conceived as the basis for a self-propelled gun, an antiaircraft vehicle, and a tank destroyer. However, development was never started.</value>
+    <value>На базе танка E 100 предполагалось выпускать САУ артподдержки, зенитную самоходную установку и ПТ-САУ, однако эти проекты даже не успели начать разрабатывать.</value>
   </data>
   <data name="JagdPz_E100_short" xml:space="preserve">
     <value>Jg.Pz. E 100</value>
@@ -1125,7 +1142,7 @@ AOS-895-3</value>
     <value>8,8 cm Pak 43 Jagdtiger</value>
   </data>
   <data name="JagdTiger_SdKfz_185_descr" xml:space="preserve">
-    <value>In 1945, the production order for the Jagdtiger was increased, and the supply of compatible guns became insufficient. As a result, approximately 20 vehicles were equipped with the 8,8 cm PaK 43 L/71 gun.</value>
+    <value>В 1945 году заказ на выпуск Jagdtiger был увеличен, и возникла проблема нехватки устанавливаемых на него орудий. Было принято решение установить на некоторые ПТ-САУ (около 20 машин) орудие 8,8 cm PaK 43 L/71.</value>
   </data>
   <data name="JagdTiger_SdKfz_185_short" xml:space="preserve">
     <value>JgTig.8,8 cm</value>
@@ -1143,7 +1160,7 @@ AOS-895-3</value>
     <value>Jagdtiger verstärkteketten</value>
   </data>
   <data name="JagdTiger_descr" xml:space="preserve">
-    <value>Developed from 1942 through 1944, the heavy tank destroyer, with the chassis of the Tiger II heavy tank, became the heaviest mass-produced armored vehicle ever. According to various sources, 70–79 tank destroyers were manufactured from 1944 through 1945. The vehicles saw service in the 653rd and 512th Heavy Panzerjäger Battalions.</value>
+    <value>Тяжёлая ПТ-САУ на шасси тяжёлого танка «Тигр II» была разработана в 1942—1944 годах и стала самым тяжёлым серийно производившимся образцом бронетехники всех времён. Машина серийно производилась с 1944 по 1945 год, было выпущено всего, по разным данным, от 70 до 79 ПТ-САУ, поставленных на вооружение 653-го и 512-го тяжёлых батальонов истребителей танков.</value>
   </data>
   <data name="JagdTiger_turm" xml:space="preserve">
     <value>Jagdtiger</value>
@@ -1172,6 +1189,9 @@ AOS-895-3</value>
   <data name="LT-40_turm" xml:space="preserve">
     <value>Pz.Kpfw. 38 (t) Ausf. A</value>
   </data>
+  <data name="Leichtertaktorketten" xml:space="preserve">
+    <value>Leichttraktor</value>
+  </data>
   <data name="LeichtertaktorkettenB" xml:space="preserve">
     <value>Leichttraktor verstärkteketten</value>
   </data>
@@ -1182,7 +1202,7 @@ AOS-895-3</value>
     <value>Leopard 1</value>
   </data>
   <data name="Leopard1_descr" xml:space="preserve">
-    <value>Main battle tank of the Federal Republic of Germany. Development was started in 1956. The first prototypes were built in 1965 at the Krauss-Maffei factory. The Leopard 1 saw service in the armies of more than 10 countries.</value>
+    <value>Основной боевой танк ФРГ. Работы по созданию машины начались в 1956 году. Первые опытные образцы были построены в 1965 году на заводе Krauss-Maffei. Состоял на вооружении более чем в 10 странах мира.</value>
   </data>
   <data name="Leopard1_short" xml:space="preserve">
     <value>Leopard 1</value>
@@ -1200,7 +1220,7 @@ AOS-895-3</value>
     <value>Löwe</value>
   </data>
   <data name="Lowe_descr" xml:space="preserve">
-    <value>Development of this 70-ton super-heavy tank started on November 1, 1941. In February 1942, the Krupp company suggested the VK 70.01 avant project, later designated the Löwe ("Lion"). Several designs varying in configuration, armament, and armor, were drafted. However, the project was canceled after the Führer made the decision to develop even heavier tanks. No prototypes were ever built.</value>
+    <value>Работы над проектом супертяжёлого танка массой более 70 тонн начались 1 ноября 1941 года, а уже в феврале 1942 года компания Krupp представила аванпроект VK 70.01, получивший впоследствии собственное название Löwe — лев. Было спроектировано сразу несколько альтернативных версий с разными вариантами компоновки, вооружения и бронирования. Однако после решения фюрера о проектировании ещё более тяжёлых танков все работы были прекращены. Ни одного экземпляра так и не было выпущено.</value>
   </data>
   <data name="Ltraktor" xml:space="preserve">
     <value>Leichttraktor</value>
@@ -1209,13 +1229,13 @@ AOS-895-3</value>
     <value>Leichttraktor</value>
   </data>
   <data name="Ltraktor_bot_descr" xml:space="preserve">
-    <value>Produced from 1930 through 1934. Four prototypes with different armament, crew, weight, and suspension features were manufactured.</value>
+    <value>В 1930–1934 гг. было изготовлено четыре опытных танка, различавшихся вооружением, составом экипажа, массой и особенностями ходовой части.</value>
   </data>
   <data name="Ltraktor_bot_short" xml:space="preserve">
     <value>L.Tr.</value>
   </data>
   <data name="Ltraktor_descr" xml:space="preserve">
-    <value>Produced from 1930 to 1934. Four prototypes with different armament, crew, weight, and suspension features were manufactured.</value>
+    <value>В 1930–1934 гг. было изготовлено четыре опытных танка, различавшихся по вооружению, составу экипажа, массе и особенностям ходовой части.</value>
   </data>
   <data name="Ltraktor_short" xml:space="preserve">
     <value>L.Tr.</value>
@@ -1288,7 +1308,7 @@ verstärkteketten</value>
     <value>Marder 38T</value>
   </data>
   <data name="Marder_III_descr" xml:space="preserve">
-    <value>Developed on the basis of the Pz.Kpfw. 38 (t) tank. Either a Pak 40 or Pak 36(r) gun was mounted in a cabin with an open top and back. The vehicle entered service at the end of 1942. This tank destroyer was mass-produced until the middle of 1944 and was used until the end of the war.</value>
+    <value>ПТ-САУ на базе танка Pz.Kpfw. 38 (t). Орудие PaK 40 либо Pak 36(r) устанавливалось в открытой сверху и сзади рубке. Принята на вооружение в конце 1942 года. Выпускалась серийно до середины 1944 года. Применялась до конца войны.</value>
   </data>
   <data name="Marder_III_short" xml:space="preserve">
     <value>Marder 38T</value>
@@ -1300,7 +1320,7 @@ verstärkteketten</value>
     <value>Maus</value>
   </data>
   <data name="Maus_descr" xml:space="preserve">
-    <value>Developed from June 1942 through July 1944, with two prototypes produced, only one of which received a turret and armament.</value>
+    <value>Разрабатывался с июня 1942 по июль 1944 года. Было изготовлено два прототипа, из которых только один получил башню с вооружением.</value>
   </data>
   <data name="Maus_short" xml:space="preserve">
     <value>Maus</value>
@@ -1386,11 +1406,17 @@ verstärkteketten</value>
   <data name="Maybach_HL_174" xml:space="preserve">
     <value>Maybach HL 174</value>
   </data>
+  <data name="Maybach_HL_174_05" xml:space="preserve">
+    <value>Maybach HL 87</value>
+  </data>
   <data name="Maybach_HL_190" xml:space="preserve">
     <value>Maybach HL 190</value>
   </data>
   <data name="Maybach_HL_190_short" xml:space="preserve">
     <value>Maybach HL 190</value>
+  </data>
+  <data name="Maybach_HL_210P30" xml:space="preserve">
+    <value>Maybach HL 210 P30</value>
   </data>
   <data name="Maybach_HL_210P30A" xml:space="preserve">
     <value>Maybach HL 230 P30</value>
@@ -1436,7 +1462,7 @@ TRM P45</value>
     <value>Maybach HL 230 P30</value>
   </data>
   <data name="Maybach_HL_230P30_2500rpm" xml:space="preserve">
-    <value>Maybach HL 230 P30 2500 rpm</value>
+    <value>Maybach HL 230 P30</value>
   </data>
   <data name="Maybach_HL_230P45" xml:space="preserve">
     <value>Maybach HL 230 P45</value>
@@ -1466,6 +1492,15 @@ TRM P45</value>
   </data>
   <data name="Maybach_HL_234P30_Ausf_A_short" xml:space="preserve">
     <value>Maybach HL 230</value>
+  </data>
+  <data name="Maybach_HL_234P45" xml:space="preserve">
+    <value>Maybach HL 234</value>
+  </data>
+  <data name="Maybach_HL_234P50" xml:space="preserve">
+    <value>Maybach HL 295 Ausf. A</value>
+  </data>
+  <data name="Maybach_HL_234P50_short" xml:space="preserve">
+    <value>Maybach HL 295 (A)</value>
   </data>
   <data name="Maybach_HL_234P60" xml:space="preserve">
     <value>Maybach Neues Projekt</value>
@@ -1503,7 +1538,7 @@ TRM P45</value>
     <value>Nashorn</value>
   </data>
   <data name="Nashorn_descr" xml:space="preserve">
-    <value>The official designation of the Nashorn ("Rhinoceros") tank destroyer was 8.8 cm PaK 43/1 auf Geschützwagen III/IV (Sf). The vehicle was designated the Hornisse ("Hornet") until 1944. Produced on the same chassis as the Hummel heavy SPG. The vehicle first saw combat on the Eastern Front in the summer of 1943. A total of 494 vehicles were manufactured.</value>
+    <value>Полное название ПТ-САУ Nashorn («Носорог») — 8.8 cm PaK 43/1 auf Geschützwagen III/IV (Sf). До 1944 года называлась Hornisse («Шершень»). Производилась на том же шасси, что и тяжёлая САУ артподдержки Hummel. Впервые использована в бою летом 1943 года на Восточном фронте. Всего было выпущено 494 машины.</value>
   </data>
   <data name="Nashorn_short" xml:space="preserve">
     <value>Nashorn</value>
@@ -1512,7 +1547,7 @@ TRM P45</value>
     <value>Panther II</value>
   </data>
   <data name="Panther_II_descr" xml:space="preserve">
-    <value>The vehicle was conceived in 1943. Two prototypes with the existing Panther I turrets were ordered in 1944. By 1945 only one of them had been built by the MAN company.</value>
+    <value>Планы создания машины появились уже в 1943 году. В 1944 г. были заказаны два прототипа с башнями от «Пантеры I». К 1945 году компанией MAN был изготовлен только один прототип.</value>
   </data>
   <data name="Panther_II_short" xml:space="preserve">
     <value>Panther II</value>
@@ -1521,7 +1556,7 @@ TRM P45</value>
     <value>Panther/M10</value>
   </data>
   <data name="Panther_M10_descr" xml:space="preserve">
-    <value>During the preparation of Otto Skorzeny's Panzerbrigade 150 for the Ardennes offensive, four Panther tanks were disguised as M10 tank destroyers. The tank brigade was to carry out diversions deep behind the allied lines. All vehicles were lost during the battle with the 120th U.S. Infantry Regiment on February 21, 1945.</value>
+    <value>При подготовке Арденнской операции в 150-й танковой бригаде СС, которой командовал Отто Скорцени, четыре «Пантеры» были замаскированы под ПТ-САУ М10. Бригада предназначалась для боевых и диверсионных действий в тылу союзников. Все машины были потеряны 21 февраля 1945 года в бою с частями 120-й пехотной дивизии армии США.</value>
   </data>
   <data name="Panther_M10_short" xml:space="preserve">
     <value>Panther/M10</value>
@@ -1533,7 +1568,7 @@ TRM P45</value>
     <value>Panzerjäger I</value>
   </data>
   <data name="PanzerJager_I_descr" xml:space="preserve">
-    <value>Development of the Panzerjäger I, the German tank destroyer, started in 1939 based on the Panzerkampfwagen I Ausf. B. Initially, the 37-mm Pak 36 gun was mounted on the chassis of the Panzerkampfwagen I Ausf. B. However, during the invasion of Poland, it was revealed that the gun was not effective against new vehicles. After Germany captured Czechoslovakia in 1940, the 47-mm Pak 36(t) L/43.4 (Škoda 47-mm A-5 KP ÚV vz. 38 Model A5) gun was mounted on the tank destroyer. A total of 202 vehicles were manufactured and saw action until 1943.</value>
+    <value>Работы над немецкой ПТ-САУ Panzerjäger I начались в 1939 году на базе танка Panzerkampfwagen I Ausf. B. Изначально на шасси танка Panzerkampfwagen I Ausf. B установили немецкую 37-мм пушку Pak 36, но в ходе войны с Польшей выяснилось, что данное орудие не позволяет противостоять новым образцам бронетехники. После захвата Чехословакии в 1940 году на танк была установлена 47-мм пушка Pak 36(t) L/43.4 (Škoda 47-mm A-5 KP ÚV vz. 38 Model A5). Всего было выпущено 202 машины, которые участвовали в боевых действиях до 1943 года.</value>
   </data>
   <data name="PanzerJager_I_short" xml:space="preserve">
     <value>Pz.Jäg. I</value>
@@ -1606,7 +1641,7 @@ Typ 180/2</value>
     <value>Leopard Prototyp A</value>
   </data>
   <data name="Pro_Ag_A_descr" xml:space="preserve">
-    <value>Prototype developed from 1960 through 1961 as a medium tank for the Bundeswehr, with a total of 26 prototypes manufactured. The prototypes were tested up to 1963. The vehicle was the predecessor of the Leopard medium tank.</value>
+    <value>Прототип, разработанный в рамках конкурса по созданию среднего танка для нужд Бундесвера. Разрабатывался в 1960–1961 гг. Всего было изготовлено 26 опытных образцов, которые проходили испытания до 1963 года. Являлся непосредственным предшественником среднего танка Leopard.</value>
   </data>
   <data name="Pro_Ag_A_short" xml:space="preserve">
     <value>Leopard PT A</value>
@@ -1669,7 +1704,7 @@ verstärkterturm</value>
 verstärkteketten</value>
   </data>
   <data name="Pz35t_descr" xml:space="preserve">
-    <value>Developed by Škoda in 1935, the vehicle saw service in the Czechoslovakian army under the designation LT vz. 35. During the occupation of Czechoslovakia, the captured tanks were redesignated as Pz.Kpfw. 35 (t) and deployed with the Wehrmacht. The vehicles were actively used by the 1st Light Division (the 6th Panzer Division after reorganization) until the late 1941. A total of 434 tanks were manufactured.</value>
+    <value>Разработан компанией Škoda в 1935 году. Состоял на вооружении чехословацкой армии под обозначением LT vz. 35. Во время оккупации Чехии захваченные танки получили наименование Pz.Kpfw. 35 (t) и поступили на вооружение Вермахта. Активно использовались до конца 1941 года в составе немецкой 1-й лёгкой дивизии, а после её переформирования — 6-й танковой дивизии. Всего было выпущено 434 машины.</value>
   </data>
   <data name="Pz35t_short" xml:space="preserve">
     <value>Pz. 35 (t)</value>
@@ -1678,7 +1713,7 @@ verstärkteketten</value>
     <value>Pz.Kpfw. 38 (t) n.A.</value>
   </data>
   <data name="Pz38_NA_descr" xml:space="preserve">
-    <value>Developed by the BMM company as a new light reconnaissance tank on the chassis of the Pz.Kpfw. 38 (t) from July 1940. The vehicle used welding technology instead of rivets. The new engine and improved transmission allowed for a top speed of 64 km/h. Development was discontinued in favor of the VK 1303. Five prototypes were manufactured.</value>
+    <value>Разработка велась компанией BMM с июля 1940 года в рамках программы создания нового лёгкого разведывательного танка. Основой для проекта послужил Pz.Kpfw. 38 (t). Была применена сварка корпуса, установлены новый двигатель и переработанная коробка передач. В ходе испытаний максимальная скорость машины достигла 64 км/ч. Работы по танку были свёрнуты в пользу VK 1303. Было выпущено пять опытных образцов.</value>
   </data>
   <data name="Pz38_NA_short" xml:space="preserve">
     <value>Pz. 38 nA</value>
@@ -1696,7 +1731,7 @@ verstärkteketten</value>
     <value>Pz.Kpfw. 38 (t) Ausf. E</value>
   </data>
   <data name="Pz38t_descr" xml:space="preserve">
-    <value>Developed by the ČKD company for the Czechoslovakian Army in 1938. During the German occupation, the vehicle saw service in the Wehrmacht and was used in the Polish and French Campaigns, as well as on the Eastern Front. The tank saw combat on the front line until the middle of 1942. Approximately 1,400 vehicles in eight modifications (Ausf. A/B/C/D/E/F/S/G) were manufactured.</value>
+    <value>Разработан компанией ČKD для нужд Чехословацкой армии в 1938 году. Во время немецкой оккупации состоял на вооружении Вермахта. В составе немецких танковых частей применялся в польской и французской кампаниях, а также на советско-германском фронте. В боевых частях первой линии использовался до середины 1942 года. Было выпущено примерно 1400 танков в восьми вариантах (Ausf A/B/C/D/E/F/S/G).</value>
   </data>
   <data name="Pz38t_short" xml:space="preserve">
     <value>Pz. 38 (t)</value>
@@ -1717,19 +1752,19 @@ verstärkteketten</value>
     <value>Pz.Kpfw. III Ausf. E</value>
   </data>
   <data name="PzIII_A_descr" xml:space="preserve">
-    <value>Produced in 1937, with a total of 10 vehicles manufactured. The project was canceled due to its weak suspension and inadequate armor.</value>
+    <value>Заказ на создание боевой гусеничной машины массой 15 тонн с пушечным вооружением поступил ещё в 1935 году. И хотя масса первой крупносерийной машины Pz.Kpfw. III Ausf. E уже достигла 19,5 тонн, её конструкция была признана удачной, и количество машин в серии достигло 96. Последующие модификации выпускались ещё более крупными партиями, в результате чего Pz. Kpfw. III стал самым массовым танком Вермахта.</value>
   </data>
   <data name="PzIII_A_short" xml:space="preserve">
     <value>Pz. III E</value>
   </data>
   <data name="PzIII_AusfJ" xml:space="preserve">
-    <value>Pz.Kpfw. III</value>
+    <value>Pz.Kpfw. III Ausf. J</value>
   </data>
   <data name="PzIII_AusfJ_descr" xml:space="preserve">
-    <value>Production of the F variant started in October 1939. Some of the new vehicles received a new 50 mm KwK 38 gun. This proved to be a successful decision, and in March 1941, production of the M variant with 50 mm-thick frontal armor and the 50 mm gun was launched. 1,067 vehicles received the improved KwK 39 gun with greater penetration power. However, installation of a 75 mm gun turn out to be unsuccessful and the L variant later received the same 50 mm gun as its predecessors. A total of 5,691 vehicles were produced, among which 1,969 were equipped with long-barrel guns and 2,391 with short-barrel 50 mm guns.</value>
+    <value>Выпуск модификации J начался с марта 1941 года. Машина помимо усиления бронирования получила новое весьма удачное 50-мм орудие KwK38, а 1067 машин были вооружены орудием с ещё большей пробиваемостью — KwK39. Попытка установить 75-мм орудие (модификация N) была признана неудачной, и самыми крупносерийными стали модификации J, L и M с хорошо зарекомендовавшими себя 50-миллиметровками. Всего было выпущено 5691 машина, из них 1969 с длинноствольной и 2391 с короткоствольной 50-мм пушкой.</value>
   </data>
   <data name="PzIII_AusfJ_short" xml:space="preserve">
-    <value>Pz. III</value>
+    <value>Pz. III J</value>
   </data>
   <data name="PzIII_Ausf_A" xml:space="preserve">
     <value>Pz.Kpfw. III Ausf. A</value>
@@ -1763,7 +1798,7 @@ Ausf. L</value>
     <value>Pz.Kpfw. III/IV</value>
   </data>
   <data name="PzIII_IV_descr" xml:space="preserve">
-    <value>The tank was intended to use parts and components of the Pz.Kpfw. III and Pz.Kpfw. IV vehicles. Existed only in blueprints.</value>
+    <value>Проект нового танка с рациональными углами наклона брони и элементами конструкции Pz. Kpfw. IV и Pz. Kpfw. III был утверждён 4 января 1944 года. В марте 1944 был заключён контракт на производство трёх прототипов, но уже 12 июля программа была свёрнута. Серийно производился только истребитель танков на похожей базе.</value>
   </data>
   <data name="PzIII_IV_short" xml:space="preserve">
     <value>Pz. III/IV</value>
@@ -1806,7 +1841,7 @@ Ausf. L</value>
     <value>Pz.Kpfw. II Ausf. J</value>
   </data>
   <data name="PzII_J_descr" xml:space="preserve">
-    <value>Reconnaissance tank with reinforced armor. The vehicle was a further development of the Pz.Kpfw II. In October 1939, a preproduction batch was ordered, and the first prototype was built in July 1940. From 1943 through 1944, seven vehicles were used by the 12th Panzer Division on the Eastern Front. A total of 22 tanks were manufactured.</value>
+    <value>Разведывательный танк с усиленным бронированием. Являлся дальнейшим развитием Pz.Kpfw II. В октябре 1939 года был сделан заказ на установочную партию. В июле 1940 года был построен первый прототип. В 1943–1944 гг. семь машин участвовали в боевых действиях на Восточном фронте в составе 12-й танковой дивизии. Всего было произведено 22 машины.</value>
   </data>
   <data name="PzII_J_short" xml:space="preserve">
     <value>Pz. II J</value>
@@ -1815,7 +1850,7 @@ Ausf. L</value>
     <value>Pz.Kpfw. II Luchs</value>
   </data>
   <data name="PzII_Luchs_descr" xml:space="preserve">
-    <value>As compared to the Pz.Kpfw. II Ausf. C, the vehicle featured a new hull and turret, as well as a chassis with a staggered arrangement of roadwheels. The reconnaissance tank had strong characteristics, but only 131 vehicles of the L modification were built, after manufacture proved to be too expensive.</value>
+    <value>Основными отличиями данной машины от Pz.Kpfw. II Ausf. С являлись новый корпус, башня и ходовая с шахматным расположением опорных катков. Данная разведывательная машина обладала высокими характеристиками, однако в связи с дороговизной был произведён всего 131 танк модификации L.</value>
   </data>
   <data name="PzII_Luchs_short" xml:space="preserve">
     <value>Luchs</value>
@@ -1845,13 +1880,13 @@ Ausf. L</value>
     <value>Pz.Kpfw. II</value>
   </data>
   <data name="PzII_bot_descr" xml:space="preserve">
-    <value>The A, B, C, and F models were produced from March 1937 through April 1940 and from March 1941 through December 1942, with a total of 1,637 vehicles built.</value>
+    <value>Образцы А, В, С и F выпускались с марта 1937 по апрель 1940 года и с марта 1941 по декабрь 1942 года. Всего было выпущено 1637 машин этих типов.</value>
   </data>
   <data name="PzII_bot_short" xml:space="preserve">
     <value>Pz. II</value>
   </data>
   <data name="PzII_descr" xml:space="preserve">
-    <value>The last modification of the light Pz. II tank. The vehicle featured enhanced armor, the 2 cm KwK 38 gun and improved observation devices. A total of 524 vehicles were built from March 1941 through December 1942.</value>
+    <value>Последняя модификация лёгкого танка серии Pz. II. Основное отличие от предыдущих вариантов — усиленное бронирование, орудие 2 cm KwK 38 и улучшенные смотровые приборы. В период с марта 1941 по декабрь 1942 года было выпущено 524 машины.</value>
   </data>
   <data name="PzII_ketten_Ausf_A" xml:space="preserve">
     <value>Pz.Kpfw. II Ausf. A</value>
@@ -1890,7 +1925,7 @@ Ausf. F</value>
     <value>Pz.Kpfw. IV hydrostat.</value>
   </data>
   <data name="PzIV_Hydro_descr" xml:space="preserve">
-    <value>This experimental version of the Pz.Kpfw. IV Ausf. G, incorporating hydrostatic drive, began development in 1944. Trials were discontinued due to the unreliability of the transmission and the lack of spare parts.</value>
+    <value>В 1944 году был изготовлен экспериментальный танк Pz.Kpfw. IV Ausf. G с гидростатическим приводом. Испытания машины были прерваны из-за проблем с запасными частями и ненадёжной работы трансмиссии.</value>
   </data>
   <data name="PzIV_Hydro_short" xml:space="preserve">
     <value>Pz. IV hydr.</value>
@@ -1923,13 +1958,13 @@ Ausf. A</value>
 Ausf. B</value>
   </data>
   <data name="PzIV_descr" xml:space="preserve">
-    <value>Produced in greater numbers than any other tank of the Panzerwaffe. Manufactured from October 1937 through March 1945, with a total production of 8,519 tanks plus command vehicles. Beginning in May 1942 this tank was equipped with a long-barreled gun.</value>
+    <value>Самый массовый танк Панцерваффе. С мая 1942 года начал оснащаться длинноствольной пушкой. Всего с октября 1937 по март 1945 года было изготовлено 8519 машин, не считая командирских.</value>
   </data>
   <data name="PzIV_schmalturm" xml:space="preserve">
     <value>Pz.Kpfw. IV Schmalturm</value>
   </data>
   <data name="PzIV_schmalturm_descr" xml:space="preserve">
-    <value>In November 1944 the Krupp company presented several avant-projects aimed to upgrade armament of tanks and tank destroyers in service. Among them there was a project of mounting a Panther's Schmalturm (tight turret) on the Pz IV Ausf. J. The project was canceled due to phasing out the Pz IV production.</value>
+    <value>В ноябре 1944 года компания Krupp подготовила серию аванпроектов, направленных на усиление вооружения существующих танков и истребителей танков. Среди них был проект установки на Pz IV Ausf. J тесной башни, разрабатываемой для «Пантеры». Проект не был рассмотрен в связи с принятием решения о прекращении производства Pz IV.</value>
   </data>
   <data name="PzIV_schmalturm_short" xml:space="preserve">
     <value>Pz. IV S.</value>
@@ -1944,13 +1979,13 @@ Ausf. B</value>
     <value>Pz.Kpfw. I Ausf. C</value>
   </data>
   <data name="PzI_ausf_C_descr" xml:space="preserve">
-    <value>The initial order for this tank was placed in 1939. It was originally conceived as a high-speed reconaissance tank for airborne units. Mass production started at the beginning of 1942. In early 1943 two vehicles were deployed with the 1st Tank Division. Another 38 vehicles were deployed with the 58th Reserve Tank Corps in the summer of 1944.</value>
+    <value>Заказ на разработку нового танка был выдан в 1939 году. Первоначально машина разрабатывалась как быстроходный разведывательный танк для воздушно-десантных частей. В июле 1942 года было начато производство танка. В начале 1943 года две машины поступили на вооружение в 1-ю танковую дивизию для испытания в бою. Остальные 38 машин были переданы в состав 58-го резервного танкового корпуса летом 1944 года.</value>
   </data>
   <data name="PzI_ausf_C_short" xml:space="preserve">
     <value>Pz. I C</value>
   </data>
   <data name="PzI_descr" xml:space="preserve">
-    <value>The Pz I Ausf. A was the first mass-produced German tank. In 1935 the design received an upgrade, including elongated hull and a more powerful engine. Mass production of this version, the Pz I Ausf. B, eventually totalled 675 tanks. The standard armament was weak, but some tanks were upgraded on the battlefield to mount 20-mm guns.</value>
+    <value>Pz I Ausf. A был первым массовым немецким танком. В 1935 году конструкция машины была доработана и начался серийный выпуск Pz I Ausf. B с удлинённым корпусом и шасси, а также более мощным двигателем. Всего было выпущено 675 машин этой модификации. Танк отличался очень слабым вооружением, поэтому во время Гражданской войны в Испании несколько машин в полевых условиях было модифицировано под установку 20-мм орудия.</value>
   </data>
   <data name="PzI_short" xml:space="preserve">
     <value>Pz. I</value>
@@ -1995,7 +2030,7 @@ Versuchs-Serie</value>
     <value>Tiger II</value>
   </data>
   <data name="PzVIB_Tiger_II_descr" xml:space="preserve">
-    <value>The most heavily armored tank carrying the most powerful anti-tank gun. The vehicle's drawbacks included an overloaded suspension and engine-transmission group, as well as excessive general mass. When engaging enemy vehicles at long range, the Tiger II had an upper hand over any other vehicle in terms of the gun and armor protection. However, due to the excessive mass of the vehicle, relatively low durability of the engine and transmission, and small total number of vehicles built, the Tiger II did not have any significant impact on the course of war.</value>
+    <value>Наиболее защищённый танк с самой мощной противотанковой пушкой, но с перегруженной моторно-трансмисcионной группой и ходовой частью, а также со слишком большой массой. При условии навязывания противнику огневого боя на большой дистанции преимущества «Тигра II» в вооружении и броневой защите были подавляющими. Однако из-за большой массы, низкой надёжности двигателя и трансмиссии, а также вследствие небольшого количества произведённых машин «Тигр II» не оказал серьёзного влияния на ход боевых действий.</value>
   </data>
   <data name="PzVIB_Tiger_II_short" xml:space="preserve">
     <value>Tiger II</value>
@@ -2027,7 +2062,7 @@ Ausf. E</value>
     <value>Tiger (P)</value>
   </data>
   <data name="PzVI_Tiger_P_descr" xml:space="preserve">
-    <value>On May 26, 1941, Adolf Hitler ordered Ferdinand Porsche and the Henschel company to develop prototypes of a new heavy tank. The prototypes were shown to the Führer on April 20, 1942. Manufacturing began, but the production run was cut short due to the complexity of the tank's drive and control systems, and a shortage of the required copper. Later, 90 produced hulls were converted into Ferdinand tank destroyers.</value>
+    <value>26 мая 1941 года Адольф Гитлер приказал доктору Порше и компании Henschel разработать прототипы нового тяжёлого танка, которые были продемонстрированы фюреру 20 апреля 1942 года. Машина разработки Порше не пошла в производство из-за слишком сложной системы привода и управления, а также необходимости использования большого количества меди. Позднее 90 оставшихся корпусов переделали в ПТ-САУ Ferdinand.</value>
   </data>
   <data name="PzVI_Tiger_P_short" xml:space="preserve">
     <value>Tiger (P)</value>
@@ -2036,7 +2071,7 @@ Ausf. E</value>
     <value>Pz.Kpfw. Tiger Ausf. E</value>
   </data>
   <data name="PzVI_descr" xml:space="preserve">
-    <value>Development of the Tiger I was started in 1937 by the Henschel company. Mass production began in 1942, with an eventual total of 1,354 vehicles manufactured. The tank first saw combat in the fighting for Leningrad, and Tigers were at the forefront of battles from Tunisia to Kursk. Although production was discontinued in the summer of 1944, the Tiger I continued to see action until the end of the war.</value>
+    <value>Разработка танка началась в 1937 году компанией Henschel. Выпускался серийно с 1942 года. Впервые использовался в боевых действиях под Ленинградом. Танк участвовал в боях в Тунисе, самое массовое применение было в ходе сражения на Курской Дуге. Несмотря на прекращение производства летом 1944 года, «Тигр I» использовался до конца войны. Всего было выпущено 1354 танка.</value>
   </data>
   <data name="PzV_PzIV" xml:space="preserve">
     <value>Pz.Kpfw. V/IV</value>
@@ -2045,7 +2080,7 @@ Ausf. E</value>
     <value>Pz.Kpfw. V Berge-Panther</value>
   </data>
   <data name="PzV_PzIV_CN_descr" xml:space="preserve">
-    <value>Only one prototype was built. The Pz.Kpfw. IV turret was mounted as a stationary module on the Panther hull for testing.</value>
+    <value>Танк был изготовлен ремонтно-восстановительной ротой 653-го тяжёлого противотанкового батальона на базе шасси БРЭМ Bergepanther и башни Pz. IV.</value>
   </data>
   <data name="PzV_PzIV_CN_short" xml:space="preserve">
     <value>Pz. V BP</value>
@@ -2057,25 +2092,25 @@ Ausf. E</value>
     <value>Pz.Kpfw. V Berge-Panther Alpha</value>
   </data>
   <data name="PzV_PzIV_ausf_Alfa_CN_descr" xml:space="preserve">
-    <value>Only one prototype was built. The Pz.Kpfw. IV turret was mounted as a stationary module on the Panther hull for testing.</value>
+    <value>Танк был изготовлен ремонтно-восстановительной ротой 653-го тяжёлого противотанкового батальона на базе шасси БРЭМ Bergepanther и башни Pz. IV.</value>
   </data>
   <data name="PzV_PzIV_ausf_Alfa_CN_short" xml:space="preserve">
     <value>Pz. V BP A</value>
   </data>
   <data name="PzV_PzIV_ausf_Alfa_descr" xml:space="preserve">
-    <value>Only one prototype was built. The Pz.Kpfw. IV turret was mounted as a stationary module on the Panther hull for testing.</value>
+    <value>Танк был изготовлен ремонтно-восстановительной ротой 653-го тяжёлого противотанкового батальона на базе шасси БРЭМ Bergepanther и башни Pz. IV.</value>
   </data>
   <data name="PzV_PzIV_ausf_Alfa_short" xml:space="preserve">
     <value>Pz. V/IV A</value>
   </data>
   <data name="PzV_PzIV_descr" xml:space="preserve">
-    <value>Only one prototype was built. The Pz.Kpfw. IV turret was mounted as a stationary module on the Panther hull for testing.</value>
+    <value>Танк был изготовлен ремонтно-восстановительной ротой 653-го тяжёлого противотанкового батальона на базе шасси БРЭМ Bergepanther и башни Pz. IV.</value>
   </data>
   <data name="PzV_PzIV_short" xml:space="preserve">
     <value>Pz. V/IV</value>
   </data>
   <data name="PzV_descr" xml:space="preserve">
-    <value>This famous tank was produced from January 1943 through April 1945, with a total of 5,796 vehicles built plus eight vehicles built on the F series chassis.</value>
+    <value>Этот знаменитый танк выпускался с января 1943 по апрель 1945 года. Всего было выпущено 5796 машин, не считая восьми шасси серии F.</value>
   </data>
   <data name="PzV_short" xml:space="preserve">
     <value>Panther</value>
@@ -2084,7 +2119,7 @@ Ausf. E</value>
     <value>Pz.Kpfw. II Ausf. G</value>
   </data>
   <data name="Pz_II_AusfG_descr" xml:space="preserve">
-    <value>The German WWII light reconnaissance tank was a modification of the Pz. II tank. The vehicle featured an improved hull and suspension, a more powerful engine, and observation devices for the radio operator and driver, which increased the view range.</value>
+    <value>Немецкий лёгкий разведывательный танк времён Второй мировой войны. Являлся модернизированным вариантом Pz. II c улучшенным корпусом и ходовой, более мощным двигателем, а также улучшенным обзором за счёт наличия смотровых приборов для радиста и механика-водителя.</value>
   </data>
   <data name="Pz_II_AusfG_short" xml:space="preserve">
     <value>Pz. II G</value>
@@ -2093,7 +2128,7 @@ Ausf. E</value>
     <value>Pz.Kpfw. IV Ausf. A</value>
   </data>
   <data name="Pz_IV_AusfA_descr" xml:space="preserve">
-    <value>Development of the vehicle started in 1935. It was nicknamed Pz Kpfw IV in April 1936. Mass production began in the fall of 1937, and the first vehicles saw service starting in 1938. A total of 35 vehicles were manufactured and were in service until 1941.</value>
+    <value>Разработка танка началась в 1935 году. В апреле 1936 года машина получила обозначение Pz Kpfw IV. Осенью 1937 года начался серийный выпуск, и в январе 1938 года первые три танка поступили в войска. Всего было выпущено 35 машин, которые состояли на вооружении до весны 1941 года.</value>
   </data>
   <data name="Pz_IV_AusfA_short" xml:space="preserve">
     <value>Pz. IV A</value>
@@ -2102,7 +2137,7 @@ Ausf. E</value>
     <value>Pz.Kpfw. IV Ausf. D</value>
   </data>
   <data name="Pz_IV_AusfD_descr" xml:space="preserve">
-    <value>This modification of the Pz IV was developed in October 1939. The vehicle had enhanced armor and an improved, external gun mantlet. The tank was mass-produced until May 1940, with a total of 229 vehicles manufactured.</value>
+    <value>Выпуск этой модификации танка Pz IV начался в октябре 1939 года. Основными отличиями стали усиленное бронирование и наружное расположение маски пушки. За время серийного выпуска, который продолжался до мая 1940 года, было выпущено 229 машин этого типа.</value>
   </data>
   <data name="Pz_IV_AusfD_short" xml:space="preserve">
     <value>Pz. IV D</value>
@@ -2111,7 +2146,8 @@ Ausf. E</value>
     <value>Pz.Kpfw. IV Ausf. H</value>
   </data>
   <data name="Pz_IV_AusfH_descr" xml:space="preserve">
-    <value>The G variant of the Pz. IV was produced starting in May 1942. In April 1943 production began on the H variant—eventually the most massively produced version of the Pz. IV. The Ausf. H shared the upgraded gun of the Ausf. G, and utilized a single 80-mm front glacis plate instead of layered plates. A new transmission slightly reduced vehicle speed but was more reliable. The tanks of this variant also featured side screens, 5–8 mm thick, on the hull and turret sides. A total of 3,774 vehicles of the Ausf. H were built.</value>
+    <value>Pz. IV модификации G выпускался с мая 1942 года. В апреле 1943 года параллельно начался выпуск машин модификации Н, которая стала самой массовой в истории Pz. IV. Дополнительное бронирование на первых моделях было навесным, а впоследствии было заменено единой плитой толщиной 80 мм.
+Была установлена новая трансмиссия, хотя и несколько снизившая скорость машины, но более надёжная. Также на танки этих модификаций стали ставить экраны толщиной 5-8 мм. Всего было выпущено 3774 машины модификации H.</value>
   </data>
   <data name="Pz_IV_AusfH_short" xml:space="preserve">
     <value>Pz. IV H</value>
@@ -2120,7 +2156,8 @@ Ausf. E</value>
     <value>Pz.Sfl. IVb</value>
   </data>
   <data name="Pz_Sfl_IVb_descr" xml:space="preserve">
-    <value>SPG prototype equipped with a 105-mm howitzer. Developed in 1939 by the Krupp company, a total of 8 prototypes were manufactured and sent to the Eastern Front for trials. However, the SPG never entered mass production.</value>
+    <value>Опытный образец САУ, вооружённый 105-мм гаубицей. Исходный вариант был разработан в 1939 году компанией Krupp. В 1940 году подвергся изменениям. Первые два прототипа машины были готовы 7 января 1942 года. В этом же году была выпущена опытная серия в количестве десяти САУ. Шесть из них были направлены в войска для испытаний,
+а четыре — в учебные подразделения Вермахта.</value>
   </data>
   <data name="Pz_Sfl_IVb_short" xml:space="preserve">
     <value>Pz.Sfl. IVb</value>
@@ -2129,7 +2166,7 @@ Ausf. E</value>
     <value>Pz.Sfl. IVc</value>
   </data>
   <data name="Pz_Sfl_IVc_descr" xml:space="preserve">
-    <value>Proposed antiaircraft vehicle mounting the 88-mm antiaircraft gun. Development started in Germany in 1941. The vehicle was based on the Pz.Sfl.IVc chassis. The operational requirements for the vehicle were constantly changed, and the FlaK 41 gun was mounted on the chassis only in 1944. The vehicle was to be the basis of variants with other armament alternatives. However, the plan was never implemented. Only three prototypes were manufactured.</value>
+    <value>Разработка ЗСУ под 88-мм зенитное орудие началась в Германии в 1941 году. В качестве основы было использовано шасси Pz.Sfl.IVc. Из-за постоянных изменений ТТЗ орудие FlaK 41 было установлено на шасси только в 1944 году. Машину планировалось использовать и с другими вариантами вооружения, но эти планы реализованы не были. Всего было выпущено три прототипа.</value>
   </data>
   <data name="Pz_Sfl_IVc_short" xml:space="preserve">
     <value>Pz.Sfl. IVc</value>
@@ -2150,7 +2187,7 @@ Ausf. E</value>
     <value>Rhm.-Borsig Waffenträger</value>
   </data>
   <data name="RhB_Waffentrager_descr" xml:space="preserve">
-    <value>Developed by the Rheinmetall-Borsig company and designed as a special artillery carrier. The vehicle was designed to carry an artillery system as well as to fire from the chassis. The vehicle utilized the suspension of the Hetzer tank destroyer. Development continued from the end of 1942 through to the middle of 1944. However, the project was discontinued in favor of the Ardelt project because of a complicated design, high cost, and excessive weight.</value>
+    <value>Проект компании Rheinmetall-Borsig был разработан в рамках конкурса по созданию специального артиллерийского транспортёра. Машина позволяла не только перевозить артиллерийскую систему, но и вести огонь непосредственно с шасси. В конструкции предполагалось широко использовать детали ходовой части САУ Hetzer. Разработка велась с конца 1942 до середины 1944 года, однако из-за сложности конструкции, высокой стоимости и большой массы предпочтение было отдано проекту компании Ardelt.</value>
   </data>
   <data name="RhB_Waffentrager_short" xml:space="preserve">
     <value>Rhm.-B. WT</value>
@@ -2165,7 +2202,7 @@ Ausf. E</value>
     <value>Pz.Kpfw. S35 739 (f)</value>
   </data>
   <data name="S35_captured_descr" xml:space="preserve">
-    <value>Some of 400 of these French tanks were captured by the German Army. They were later used for training purposes and on secondary fronts.</value>
+    <value>Из 400 машин, находящихся в составе французской армии, часть была захвачена немцами. Использовались как учебные и на второстепенных фронтах.</value>
   </data>
   <data name="S35_captured_short" xml:space="preserve">
     <value>Pz. S35</value>
@@ -2204,7 +2241,7 @@ Ausf. E</value>
     <value>StuG III Ausf. G</value>
   </data>
   <data name="StuG_40_AusfG_descr" xml:space="preserve">
-    <value>This vehicle first saw combat in France in 1940. It was produced, in several modifications, on the basis of the Pz. III tank until 1945. By 1944, 9,346 of these self-propelled guns destroyed about 20,000 enemy vehicles. Some vehicles were in operation until 1967 and were even deployed in the Six-Day War by some countries of the Arab world against Israel.</value>
+    <value>Боевой путь этой машины начался во Франции в 1940 году. Выпускалась на базе танка Pz. III в различных модификациях до 1945 года. К 1944 году на счету 9346 этих самоходных установок  было около 20 000 подбитых танков. Некоторые машины находились в эксплуатации до 1967 года и даже приняли участие в Шестидневной войне на стороне некоторых стран Арабского мира против Израиля.</value>
   </data>
   <data name="StuG_40_AusfG_short" xml:space="preserve">
     <value>StuG III G</value>
@@ -2213,7 +2250,8 @@ Ausf. E</value>
     <value>Sturer Emil</value>
   </data>
   <data name="Sturer_Emil_descr" xml:space="preserve">
-    <value>Experimental tank destroyer developed on the basis of the VK 30.01(H) heavy tank. Only two vehicles were manufactured. They fought on the Eastern Front. The tank destroyer was designated as “Sturer Emil” (German for “Stubborn Emil”) due to frequent breakdowns.</value>
+    <value>Немецкая опытная ПТ-САУ. Создана в 1942 году в ходе эксперимента по установке опытного 128-мм противотанкового орудия на удлинённое шасси танка
+VK 30.01 (H). Всего было выпущено две машины, которые использовались в боевых действиях на Южном фронте летом-осенью 1942 года. Из-за выявленных в ходе фронтовых испытаний многочисленных недостатков машина не вошла в серийное производство.</value>
   </data>
   <data name="Sturer_Emil_short" xml:space="preserve">
     <value>St. Emil</value>
@@ -2225,7 +2263,7 @@ Ausf. E</value>
     <value>Sturmpanzer II</value>
   </data>
   <data name="Sturmpanzer_II_descr" xml:space="preserve">
-    <value>Developed in 1941 and based on the Pz.Kpfw. II Ausf. B. All manufactured vehicles were sent to the front and lost. The SPGs were used by the Afrika Division in Libya and Tunisia.</value>
+    <value>Самоходная гаубица на базе танка Pz.Kpfw. II Ausf. B, созданная в 1941 году. Все произведённые машины были отправлены на фронт и потеряны. Применялись в составе Afrika Division в Ливии и Тунисе.</value>
   </data>
   <data name="Sturmpanzer_II_short" xml:space="preserve">
     <value>St.Pz. II</value>
@@ -2259,7 +2297,7 @@ verstärkteketten</value>
     <value>Pz.Kpfw. T 15</value>
   </data>
   <data name="T-15_descr" xml:space="preserve">
-    <value>This experimental light tank was developed at the Škoda factory in 1941–1943, with a total of five prototypes manufactured. The vehicle was never mass-produced, nor saw service.</value>
+    <value>Экспериментальный лёгкий танк, разработка которого велась на заводе Škoda в 1941–1943 гг. Всего было произведено 5 опытных машин. Серийно не выпускался. На вооружении не состоял.</value>
   </data>
   <data name="T-15_short" xml:space="preserve">
     <value>Pz. T 15</value>
@@ -2268,7 +2306,7 @@ verstärkteketten</value>
     <value>Pz.Kpfw. T 25</value>
   </data>
   <data name="T-25_descr" xml:space="preserve">
-    <value>The vehicle was developed by the Škoda company under the Panzer Development Program initiated by the Heer (German Army land forces). The T-25 existed only in blueprints.</value>
+    <value>Разработан компанией Škoda в рамках программы по развитию танковых войск Управления вооружений сухопутных сил. Существовал только в эскизах.</value>
   </data>
   <data name="T-25_short" xml:space="preserve">
     <value>Pz. T 25</value>
@@ -2353,6 +2391,9 @@ Ausf. E</value>
   </data>
   <data name="Turret_1_G113_SP_I_C" xml:space="preserve">
     <value>Spähpanzer SP I C PT I</value>
+  </data>
+  <data name="Turret_1_G114_Rheinmetall_Skorpian" xml:space="preserve">
+    <value>Rheinmetall 12,8 cm K 43 Skorpion</value>
   </data>
   <data name="Turret_1_G114_Skorpian" xml:space="preserve">
     <value>Rheinmetall 12,8 cm K 43 Skorpion</value>
@@ -2515,6 +2556,9 @@ Turm Nr. 1</value>
   <data name="Turret_1_Waffentrager_IV" xml:space="preserve">
     <value>Waffenträger auf Pz. IV für 12.8 cm</value>
   </data>
+  <data name="Turret_2_Auf_Panther" xml:space="preserve">
+    <value>VK 28.01 Ausf. C</value>
+  </data>
   <data name="Turret_2_DW_II" xml:space="preserve">
     <value>VK 30.01 (H) 0-Serie</value>
   </data>
@@ -2602,7 +2646,7 @@ Schwerer Turm</value>
     <value>VK 16.02 Leopard</value>
   </data>
   <data name="VK1602_descr" xml:space="preserve">
-    <value>The design of the VK 16.02, known as the Leopard, was based on the Panzer II Ausf. J (VK 16.01) and Panzer II Ausf. M (VK 13.01) that had been developed earlier. A dummy vehicle was ready in May–June 1942, and the first prototype was built by September 1, 1942. According to "Panzerprogramm 41", that provided for the manufacturing of 339 vehicles (105 by December 1943 and 150 by the middle of 1944), mass production was to be launched in April 1943 but never started. Later, the Leopard turret was mounted on the Sd.Kfz.234/2 designated as Puma.</value>
+    <value>Дизайн VK 16.02, получившего название «Леопард», основывался на более ранних разработках Panzer II Ausf. J (VK 16.01) и Panzer II Ausf. M (VK 13.01). Макет был готов в мае–июне 1942 года, а первый прототип закончен к 1 сентября 1942 года. Полномасштабное производство должно было начаться в апреле 1943 года. Программой «Panzerprogramm 41» было предусмотрено производство 339 танков Leopard (105 к декабрю 1943 года и ещё 150 к середине 1944 года). Однако производство танка так и не было начато. Позже башня «Леопарда» была установлена на бронемашину Sd.Kfz.234/2 «Пума».</value>
   </data>
   <data name="VK1602_short" xml:space="preserve">
     <value>Leopard</value>
@@ -2611,7 +2655,7 @@ Schwerer Turm</value>
     <value>VK 20.01 (D)</value>
   </data>
   <data name="VK2001DB_descr" xml:space="preserve">
-    <value>Prototype of a medium tank developed by Daimler-Benz from 1939 through 1941. The new vehicle was to become a new standard medium tank of the Wehrmacht. The prototype was deployed on the Eastern front. Combat testing revealed a number of serious faults. In 1941, the tank was deemed obsolete, and the project was discontinued.</value>
+    <value>Прототип среднего танка. Работы по проектированию и созданию опытного образца велись компанией Daimler-Benz с 1939 по 1941 год. Новая машина должна была стать новым единым средним танком Вермахта. Во время использования прототипа на Восточном фронте был выявлен ряд серьёзных проблем. В декабре 1941 года танк был признан устаревшим, и все работы по нему были свёрнуты.</value>
   </data>
   <data name="VK2001DB_short" xml:space="preserve">
     <value>VK 20.01 D</value>
@@ -2620,7 +2664,7 @@ Schwerer Turm</value>
     <value>VK 28.01</value>
   </data>
   <data name="VK2801_descr" xml:space="preserve">
-    <value>The vehicle was intended as a standard light tank of the Panzerwaffe and a basis for antiaircraft tanks and vehicles able to ride on any terrain and railroad tracks. Existed only in blueprints.</value>
+    <value>Разведывательный танк, разрабатывавшийся компанией Daimler-Benz. В металле проект реализован не был.</value>
   </data>
   <data name="VK2801_short" xml:space="preserve">
     <value>VK 28.01</value>
@@ -2649,7 +2693,7 @@ Schwerer Turm</value>
 verstärkteketten</value>
   </data>
   <data name="VK3001H_descr" xml:space="preserve">
-    <value>An order for developing the vehicle was placed on September 9, 1939. Over the course of its development, Henschel engineers actively used elements of the D.W. II project. The first two prototypes were ready in March 1942; another two were built by October the same year. Hulls of the prototypes underwent trials at the plant proving ground. After the trials, two prototypes were converted into heavy tank destoyers. Six turrets manufactured by the Krupp company were placed at the Atlantic Wall.</value>
+    <value>Заказ на танк был выдан 9 сентября 1939 года. В процессе разработки инженеры компании Henschel активно использовали наработки по проекту DW II. Первые два прототипа были готовы к марту 1942 года, ещё два были построены к октябрю. Прототипы активно испытывались на заводском полигоне, однако без башни и вооружения. По окончании испытаний два шасси были переделаны в тяжёлые истребители танков. Шесть башен, изготовленных компанией Krupp, были установлены на «Атлантическом валу».</value>
   </data>
   <data name="VK3001H_short" xml:space="preserve">
     <value>VK 30.01 H</value>
@@ -2678,7 +2722,7 @@ Krupp Turm</value>
 verstärkteketten</value>
   </data>
   <data name="VK3001P_descr" xml:space="preserve">
-    <value>The Porsche company developed the concept of a new vehicle in 1939. On March 5, 1941, after numerous approvals, the company prepared blueprints and, in July 1941, produced the hull from mild steel. The hull and chassis (with detachable equipment for trenching) passed performance trials. One wooden prototype of the turret and one wooden prototype of the hull were manufactured. In 1942, the project was discontinued in favor of new heavy tanks.</value>
+    <value>Идея проекта нового танка компании Porsche появилась ещё в 1939 году, когда была разработана новая концепция. После многочисленных согласований 5 марта 1941 года были разработаны чертежи, а в июле 1941 был изготовлен корпус из мягкой стали. Корпус и шасси прошли ходовые испытания, в том числе с навесным оборудованием для рытья траншей. Был сделан только один деревянный макет башни, а также деревянный макет корпуса. В 1942 году проект закрыли в пользу новых тяжёлых танков.</value>
   </data>
   <data name="VK3001P_short" xml:space="preserve">
     <value>VK 30.01 P</value>
@@ -2699,7 +2743,7 @@ verstärkteketten</value>
     <value>VK 30.01 (D)</value>
   </data>
   <data name="VK3002DB_V1_descr" xml:space="preserve">
-    <value>In the winter of 1941–1942 the WaPrüf 6 issued technical requirements for a new 30-ton tank. The orders for development were placed with MAN and Daimler-Benz. The prototypes were to be ready by May 1942. However, on May 13th, 1942 only comparative characteristics of the projects were submitted. The MAN's project was preferred, and the Daimler-Benz's project was canceled.</value>
+    <value>Зимой 1941–1942 года WaPrüf 6 сформулировал тактико-технические требования к новому 30-ти тонному танку. Контракты на разработку машины были заключены с компаниями MAN и Daimler-Benz. Прототипы должны были быть подготовлены к маю 1942 года. Однако 13 мая 1942 года были представлены только сравнительные характеристики проектов. Предпочтение было отдано проекту MAN. Работы над проектом Daimler-Benz были свёрнуты.</value>
   </data>
   <data name="VK3002DB_V1_short" xml:space="preserve">
     <value>VK 30.01 D</value>
@@ -2712,7 +2756,7 @@ verstärkteketten</value>
 verstärkteketten</value>
   </data>
   <data name="VK3002DB_descr" xml:space="preserve">
-    <value>Developed as a response to, and influenced by, the Soviet T-34. The initial order for the production of 200 vehicles was canceled in favor of the Panther.</value>
+    <value>Танк, разработанный как ответ Т-34 и под его влиянием. Заказ на постройку 200 машин был отменён. Предпочтение было отдано «Пантере».</value>
   </data>
   <data name="VK3002DB_short" xml:space="preserve">
     <value>VK 30.02 D</value>
@@ -2724,7 +2768,7 @@ verstärkteketten</value>
     <value>VK 30.02 (M)</value>
   </data>
   <data name="VK3002M_descr" xml:space="preserve">
-    <value>A medium tank, developed by the MAN company and designed as a 30-ton tank. Simultaneously, the Daimler-Benz company developed a competing project. On May 13, 1942, the two projects were submitted to the Ministry of Armaments and War Production. The MAN design was preferred, and the tank eventually entered service as the Pz.Kpfw. V Panther.</value>
+    <value>Средний танк, разработанный компанией MAN в рамках конкурса по созданию нового 30-ти тонного танка. Одновременно работы велись компанией Daimler-Benz. 13 мая 1942 года Министерству вооружения Германии были представлены сравнительные характеристики проектов. Предпочтение было отдано проекту MAN. Танк был принят на вооружение под названием Pz.Kpfw. V «Пантера».</value>
   </data>
   <data name="VK3002M_short" xml:space="preserve">
     <value>VK 30.02 M</value>
@@ -2746,7 +2790,7 @@ Ausf. H2</value>
     <value>VK 36.01 (H)</value>
   </data>
   <data name="VK3601H_descr" xml:space="preserve">
-    <value>An experimental German WWII heavy tank developed by Henschel. The vehicle was a further development of the VK 30.01 (H) project and a stage in the design process for the Tiger. A total of eight chassis and one prototype were built in 1942. During the development, various technical solutions were trialed. Some of them later served as a basis for German heavy tank designs during the WWII. The chassis was also used in armored recovery vehicles.</value>
+    <value>Немецкий опытный тяжёлый танк времён Второй мировой войны, разработанный компанией Henschel, дальнейшее развитие проекта VK 30.01 (H). Проект стал одним из этапов разработки танка «Тигр». Всего в начале 1942 года было построено 8 шасси и 1 прототип. В ходе работы над прототипом были отработаны многие технические решения, которые впоследствии послужили основой при разработке тяжёлых танков Германии во Второй мировой войне. В дальнейшем шасси использовались в качестве базы для ремонтно-эвакуационных машин.</value>
   </data>
   <data name="VK3601H_henshelketten" xml:space="preserve">
     <value>VK 36.01 (H)</value>
@@ -2768,7 +2812,7 @@ verstärkteketten</value>
     <value>VK 45.02 (P) Ausf. A</value>
   </data>
   <data name="VK4502A_descr" xml:space="preserve">
-    <value>Development of this vehicle started in April 1942. The Krupp company received an order for construction of turrets. However, the prototype was never manufactured. The turrets were mounted on the first Tiger IIs.</value>
+    <value>Работа над машиной началась в апреле 1942 года. Компания Krupp получила заказ на постройку башен, однако опытный экземпляр построен не был. Башни были установлены на первые «Тигры II».</value>
   </data>
   <data name="VK4502A_short" xml:space="preserve">
     <value>VK 45.02 A</value>
@@ -2803,7 +2847,7 @@ Schwerer Turm</value>
 verstärkteketten</value>
   </data>
   <data name="VK4502P_descr" xml:space="preserve">
-    <value>Two designs of this vehicle (one with the forward-mounted turret and the other with the rear-mounted turret) were drawn up by Ferdinand Porsche. The tank never saw mass production.</value>
+    <value>Разработан Фердинандом Порше. Был разработан вариант с передним и задним расположением башни. Серийно не выпускался.</value>
   </data>
   <data name="VK4502P_short" xml:space="preserve">
     <value>VK 45.02 B</value>
@@ -2812,10 +2856,13 @@ verstärkteketten</value>
     <value>VK 72.01 (K)</value>
   </data>
   <data name="VK7201_descr" xml:space="preserve">
-    <value>A superheavy tank with rear placement of the turret. Developed by the Krupp company. A new vehicle was to have stronger armament and enhanced armor compared to the VK 70.01. Existed only in blueprints.</value>
+    <value>Вариант сверхтяжёлого танка c задним расположением башни. Разрабатывался компанией Krupp. От VK 70.01 отличался усиленным вооружением и бронированием. Существовал только в эскизах.</value>
   </data>
   <data name="VK7201_short" xml:space="preserve">
     <value>VK 72.01 K</value>
+  </data>
+  <data name="Verbesserteturm" xml:space="preserve">
+    <value>L.K.A. 2</value>
   </data>
   <data name="W-55" xml:space="preserve">
     <value>W-55</value>
@@ -2824,7 +2871,7 @@ verstärkteketten</value>
     <value>Waffenträger auf E 100</value>
   </data>
   <data name="Waffentrager_E100_descr" xml:space="preserve">
-    <value>A proposal to mount a large-caliber antiaircraft gun on the chassis of the E 100 tank. The vehicle was to feature either 128- or 150-mm guns with an automatic loading system. However, the design project was never developed.</value>
+    <value>Аванпроект установки зенитных орудий большого калибра на шасси танка E 100. Предполагалось использовать 128- и 150-мм орудия с автоматом перезарядки. Однако проект так и не был разработан.</value>
   </data>
   <data name="Waffentrager_E100_short" xml:space="preserve">
     <value>WT auf E 100</value>
@@ -2833,7 +2880,7 @@ verstärkteketten</value>
     <value>Waffenträger auf Pz. IV</value>
   </data>
   <data name="Waffentrager_IV_descr" xml:space="preserve">
-    <value>Tank destroyer developed in February 1944 on the basis of the PzIV tank. Development was discontinued in favor of a similar vehicle on the basis of the Krupp Waffentrager 12.8 cm PaK 44 of Czech origin. Existed only in blueprints.</value>
+    <value>ПТ-САУ, разработанная в феврале 1944 года на базе узлов и агрегатов PzIV. Существовала только в эскизах. Работы над проектом были прекращены в пользу аналогичной машины, разработанной на базе узлов и агрегатов Krupp Waffentrager 12.8 cm PaK 44 чешского производства.</value>
   </data>
   <data name="Waffentrager_IV_short" xml:space="preserve">
     <value>WT auf Pz. IV</value>
@@ -2845,7 +2892,7 @@ verstärkteketten</value>
     <value>Wespe</value>
   </data>
   <data name="Wespe_descr" xml:space="preserve">
-    <value>Self-propelled gun on the basis of the outdated Pz.Kpfw. II. The vehicle was designed as a mobile artillery unit for armored forces. The armored cabin with the modified 105 mm field howitzer was mounted on the middle and rear parts of the chassis. This SPG was a successful re-use of the outdated chassis. A total of 700 vehicles were built from 1943 through 1944.</value>
+    <value>САУ на базе устаревшего лёгкого танка Pz.Kpfw. II. Предназначалась для повышения мобильности частей полевой артиллерии бронетанковых войск. Бронированная боевая рубка с модифицированной 105-мм полевой гаубицей устанавливалась над средней и задней частями шасси. В целом данная машина была примером целесообразного использования шасси устаревших танков. Всего в период с 1943 по 1944 год было изготовлено более 700 машин.</value>
   </data>
   <data name="Wespe_short" xml:space="preserve">
     <value>Wespe</value>
@@ -3263,6 +3310,9 @@ Ausf. K</value>
   <data name="_50mm_KwK_39_L60" xml:space="preserve">
     <value>5 cm Kw.K. 39 L/60</value>
   </data>
+  <data name="_50mm_PaK_39_L60" xml:space="preserve">
+    <value>5 cm Pak 38 L/60</value>
+  </data>
   <data name="_50mm_Pzgr39" xml:space="preserve">
     <value>Pzgr 39</value>
   </data>
@@ -3529,5 +3579,11 @@ Ausf. K</value>
   </data>
   <data name="_Gr_38_HL_A" xml:space="preserve">
     <value>Gr 38 HL A</value>
+  </data>
+  <data name="artillery_shell" xml:space="preserve">
+    <value>Artillery shell</value>
+  </data>
+  <data name="bomber_shell" xml:space="preserve">
+    <value>Bomber shell</value>
   </data>
 </root>

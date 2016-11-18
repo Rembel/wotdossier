@@ -121,7 +121,7 @@
     <value>AMX 38</value>
   </data>
   <data name="AMX38_descr" xml:space="preserve">
-    <value>Developed in 1937 by the AMX company on the basis of the Renault R-40. The vehicle had a larger turret than comparable vehicles and was equipped with a diesel engine. By 1940 two vehicles were ready for trials.</value>
+    <value>Разработан в 1937 году компанией АМХ с использованием узлов ходовой части танка Renault R-40. Танк имел более просторную башню, чем серийные машины, и оснащался дизельным двигателем. К испытаниям в начале 1940 года было изготовлено две машины.</value>
   </data>
   <data name="AMX38_short" xml:space="preserve">
     <value>AMX 38</value>
@@ -130,7 +130,7 @@
     <value>AMX 40</value>
   </data>
   <data name="AMX40_descr" xml:space="preserve">
-    <value>Development was started in March 1940. Initially, the vehicle was to have a wheeled caterpillar propulsion system. The blueprint of the vehicle was created but in July 1940 work was discontinued.</value>
+    <value>Проектирование АМХ 40 началось в марте 1940 г. Машина имела колёсно-гусеничный движитель. Был подготовлен эскизный проект, однако в июле 1940 года проектирование было прекращено.</value>
   </data>
   <data name="AMX40_short" xml:space="preserve">
     <value>AMX 40</value>
@@ -139,7 +139,7 @@
     <value>AMX 50 Foch</value>
   </data>
   <data name="AMX50_Foch_descr" xml:space="preserve">
-    <value>Tank destroyer on the basis of the AMX 50. A prototype was manufactured in 1950. By 1951 a few more vehicles were ready for trials. The vehicle was in service until 1952.</value>
+    <value>В конце 40-х–начале 50-х гг. во Франции велась разработка тяжёлых ПТ-САУ. Данный проект разрабатывался под влиянием немецких ПТ-САУ периода Второй мировой войны. Машина была вооружена 120-мм орудием. Был построен как минимум один прототип, показанный на параде в Париже 14 июля 1950 года. Серийно не выпускалась.</value>
   </data>
   <data name="AMX50_Foch_short" xml:space="preserve">
     <value>Foch</value>
@@ -148,7 +148,7 @@
     <value>AMX 13 105 AM mle. 50</value>
   </data>
   <data name="AMX_105AM_descr" xml:space="preserve">
-    <value>Self-propelled gun on the basis of the AMX-B tank. The prototype was developed and tested beginning in 1949. Mass production was launched in 1955.</value>
+    <value>САУ на базе танка AMX-B. Прототип машины разрабатывался и испытывался с 1949 года. В 1955 году началось серийное производство.</value>
   </data>
   <data name="AMX_105AM_short" xml:space="preserve">
     <value>AMX 13 AM</value>
@@ -157,7 +157,7 @@
     <value>AMX 12 t</value>
   </data>
   <data name="AMX_12t_descr" xml:space="preserve">
-    <value>This design of a light high-speed tank was developed in 1946. The vehicle was never actually produced, but became the basis for the well-known AMX 13.</value>
+    <value>Проект лёгкого скоростного танка был разработан в 1946 году, но так и не был реализован. На его основе был создан проект знаменитого танка AMX 13.</value>
   </data>
   <data name="AMX_12t_short" xml:space="preserve">
     <value>AMX 12 t</value>
@@ -166,7 +166,7 @@
     <value>AMX 13 F3 AM</value>
   </data>
   <data name="AMX_13F3AM_descr" xml:space="preserve">
-    <value>Developed at the end of the 1950s on the basis of the AMX 13. The vehicle was mass-produced until the end of the 1960s and is still in service in France, Argentina, Chile, Ecuador, Morocco, and other countries.</value>
+    <value>Разработана в конце 50-х годов на базе АМХ 13. Выпускалась до конца 60-х годов. До сих пор состоит на вооружении во Франции, Аргентине, Чили, Эквадоре, Марокко и ряде других стран.</value>
   </data>
   <data name="AMX_13F3AM_short" xml:space="preserve">
     <value>AMX 13 F3</value>
@@ -175,7 +175,7 @@
     <value>AMX 13 75</value>
   </data>
   <data name="AMX_13_75_descr" xml:space="preserve">
-    <value>Maneuverable light tank with an oscillating turret and a 75 mm autoloader gun that could fire up to 10 shots per minute. At that time, the gun on this vehicle had superior penetration compared to the guns of most other medium tanks.</value>
+    <value>Манёвренный лёгкий танк с башней качающегося типа, в которую устанавливалось 75-мм орудие с механизмом заряжания, обеспечивающим скорострельность до 10 выстрелов в минуту. Данное орудие превосходило по бронепробиваемости орудия большинства средних танков того времени.</value>
   </data>
   <data name="AMX_13_75_short" xml:space="preserve">
     <value>AMX 13 75</value>
@@ -184,7 +184,7 @@
     <value>AMX 13 90</value>
   </data>
   <data name="AMX_13_90_descr" xml:space="preserve">
-    <value>In the early 1960s, the 75-mm gun with a muzzle velocity of 1,000 m/s was deemed outdated. The vehicle received the new 90-mm F3 gun that used more powerful HEAT shells. This modernization did not require any significant changes to the turret or vehicle design. The first vehicles were manufactured in February, 1967. The existing vehicles underwent the gun modernization as well.</value>
+    <value>В начале 1960-х гг. 75-мм орудие с начальной скоростью снаряда 1000 м/с перестало отвечать требованиям того времени, поэтому его заменили на 90-мм орудие F3, использовавшее более мощные кумулятивные боеприпасы. Модернизация не повлекла существенных изменений в конструкции башни и танке в целом. Первые машины были выпущены в феврале 1967 года. Кроме того, 75-мм орудия заменялись на 90-мм орудия на уже выпущенных танках.</value>
   </data>
   <data name="AMX_13_90_short" xml:space="preserve">
     <value>AMX 13 90</value>
@@ -193,7 +193,7 @@
     <value>AMX 30 1er prototype</value>
   </data>
   <data name="AMX_30_prototype_descr" xml:space="preserve">
-    <value>Developed as part of a competitive search for a unified European tank. The vehicle turned out to have maneuverability, engine power, and effective anti-tank engagement distance superior to all other vehicles except the Leopard 1. The armor of the vehicle was quite thin, but it was decided that technological advances in anti-tank shells had essentially rendered armor obsolete: survivability would depend on mobility and firepower.</value>
+    <value>Разработан в рамках конкурса по созданию единого европейского танка. Превосходил все танки, кроме Leopard 1, по подвижности и удельной мощности, а также обладал самой большой эффективной дальностью противотанкового огня. Хотя броня машины была слабее, чем у большинства современных танков, с появлением ПТ боеприпасов толщина брони перестала иметь существенное значение.</value>
   </data>
   <data name="AMX_30_prototype_short" xml:space="preserve">
     <value>AMX 30</value>
@@ -202,7 +202,7 @@
     <value>AMX 50 Foch (155)</value>
   </data>
   <data name="AMX_50Fosh_155_descr" xml:space="preserve">
-    <value>In 1952, with the launch of the AMX 50 120 tank project, the French discontinued development of the AMX 50 Foch tank destroyer. A tank destroyer having the same 120-mm gun armament as the tank was thought to be unnecessary. There were attempts to upgrade the main gun to 155 mm, but these efforts were abandoned as France made moves to adopt standardized NATO equipment.</value>
+    <value>В 1952 году во Франции были прекращены работы над ПТ-САУ AMX 50 Foch со 120-мм орудием. Одной из причин такого решения была разработка танка АМХ 50 120 с таким же вооружением. Попытка увеличить калибр главного орудия ПТ-САУ до 155 мм не была доведена даже до аванпроекта из-за происходящей в армиях стран НАТО стандартизации вооружения.</value>
   </data>
   <data name="AMX_50Fosh_155_short" xml:space="preserve">
     <value>Foch 155</value>
@@ -211,7 +211,7 @@
     <value>AMX 50 100</value>
   </data>
   <data name="AMX_50_100_descr" xml:space="preserve">
-    <value>The AMX 50 100 heavy tank was a further development of the M4 project. The first prototype was built in 1949. The 55-ton vehicle featured a 100-mm gun in the oscillating turret. The prototype was tested with gasoline and diesel engines from 1950 through 1952. The vehicle never entered mass production nor saw service.</value>
+    <value>Тяжёлый танк AMX 50 100 являлся дальнейшим развитием проекта M4. В 1949 году был построен первый экземпляр. Машина массой 55 тонн получила в качестве основного вооружения 100-мм пушку в башне качающегося типа. Машины испытывались с дизельным и бензиновым двигателями. Испытания проходили с 1950 по 1952 гг. Танк в серийное производство и на вооружение не поступил.</value>
   </data>
   <data name="AMX_50_100_short" xml:space="preserve">
     <value>AMX 50 100</value>
@@ -220,7 +220,7 @@
     <value>AMX 50 120</value>
   </data>
   <data name="AMX_50_120_descr" xml:space="preserve">
-    <value>A prototype of the AMX 50 tank. Developed in the early 1950s under the influence of the Soviet IS-3 and T-10. The tank featured enhanced armor and a 120-mm gun in the oscillating turret.</value>
+    <value>Один из прототипов танка AMX 50. Работы над машиной велись в первой половине 50-х годов. Танк создавался под влиянием советских танков ИС-3 и T-10. Особенностями данной модели были 120-мм орудие в качающейся башне и усиленное бронирование.</value>
   </data>
   <data name="AMX_50_120_short" xml:space="preserve">
     <value>AMX 50 120</value>
@@ -229,16 +229,16 @@
     <value>AMX 50 B</value>
   </data>
   <data name="AMX_50_68t_descr" xml:space="preserve">
-    <value>Developed starting in 1951 by DEFA, the state weapons design bureau. By 1958, the AMX 50 B received a number of improvements, including a low-profile cast hull and torsion-bar suspension. A new oscillating turret with a 120-mm gun was also mounted on the vehicle. Despite the fact that the Maybach engine power provided just 1,000 h.p., specialists from the German Gruppe M company were looking for a solution that would allow the vehicle to reach a speed of up to 65 km/h. Only one finished prototype of this variant was built.</value>
+    <value>Разработка была начата в 1951 году компанией DEFA. К 1958 году танк AMX 50 B получил ряд улучшений: более низкий, частично литой корпус и торсионную подвеску. На него также была установлена новая башня качающегося типа со 120-мм орудием. Несмотря на то, что предельная мощность двигателя Maybach составляла 1000 л.с., специалисты из немецкой компании Gruppe M пытались разработать решение, которое позволило бы танку развивать скорость до 65 км/ч. Был построен всего один завершённый прототип данной модификации.</value>
   </data>
   <data name="AMX_50_68t_fallout" xml:space="preserve">
-    <value>(R) AMX 50 B</value>
+    <value>(A) AMX 50 B</value>
   </data>
   <data name="AMX_50_68t_fallout_descr" xml:space="preserve">
-    <value>Developed starting in 1951 by DEFA, the state weapons design bureau. By 1958, the AMX 50 B received a number of improvements, including a low-profile cast hull and torsion-bar suspension. A new oscillating turret with a 120-mm gun was also mounted on the vehicle. Despite the fact that the Maybach engine power provided just 1000 hp, the specialists from the German Gruppe M company were looking for a solution that would allow the vehicle to reach the speed up to 65 km/h. Only one finished prototype of this variant was built.</value>
+    <value>Разработка была начата в 1951 году компанией DEFA. К 1958 году танк AMX 50 B получил ряд улучшений: более низкий, частично литой корпус и торсионную подвеску. На него также была установлена новая башня качающегося типа со 120-мм орудием. Несмотря на то, что предельная мощность двигателя Maybach составляла 1000 л.с., специалисты из немецкой компании Gruppe M пытались разработать решение, которое позволило бы танку развивать скорость до 65 км/ч. Был построен всего один завершённый прототип данной модификации.</value>
   </data>
   <data name="AMX_50_68t_fallout_short" xml:space="preserve">
-    <value>(R) AMX 50 B</value>
+    <value>(A) AMX 50 B</value>
   </data>
   <data name="AMX_50_68t_short" xml:space="preserve">
     <value>AMX 50 B</value>
@@ -247,7 +247,7 @@
     <value>AMX AC mle. 46</value>
   </data>
   <data name="AMX_AC_Mle1946_descr" xml:space="preserve">
-    <value>Proposed plan for a heavy tank destroyer on the basis of the M4. Development was started in 1946. The configuration of the vehicle had a strong resemblance to the Jagdpanther. Existed only in blueprints.</value>
+    <value>Аванпроект тяжёлой ПТ-САУ на базе танка М4. Разработан в 1946 году. По компоновке машина напоминала Jagdpanther. Существовала только в эскизах.</value>
   </data>
   <data name="AMX_AC_Mle1946_short" xml:space="preserve">
     <value>AMX AC 46</value>
@@ -256,7 +256,7 @@
     <value>AMX AC mle. 48</value>
   </data>
   <data name="AMX_AC_Mle1948_descr" xml:space="preserve">
-    <value>A draft project of a heavy tank destroyer, developed in 1947–1948 under the influence of the Jagdpanther. The vehicle was to feature a 120 mm gun as the main armament. The distinctive feature of the vehicle was three 20 mm MG 151/20 machineguns, mounted on top of the fighting compartment and rear. Existed only in blueprints.</value>
+    <value>Один из эскизных проектов тяжёлой ПТ-САУ, разработанный в 1947–1948 годах под влиянием Jagdpanther. В качестве основного вооружения планировалось установить 120-мм орудие. Отличительной особенностью машины являлись три 20-мм пулемёта MG 151/20, которые устанавливались на крышу боевого отделения и корму. Работы над машиной были прекращены на стадии эскизного проектирования.</value>
   </data>
   <data name="AMX_AC_Mle1948_short" xml:space="preserve">
     <value>AMX AC 48</value>
@@ -268,7 +268,7 @@
     <value>AMX M4 mle. 45</value>
   </data>
   <data name="AMX_M4_1945_descr" xml:space="preserve">
-    <value>Development of this heavy tank started in 1945. The vehicle incorporated several design features of the Pz.Kpfw. VI Ausf. B Tiger II tank. The vehicle existed only in blueprints. Later the AMX M4 (1945) became a prototype for the AMX 50 100.</value>
+    <value>Работы по проектированию начались в 1945 году. При создании танка разработчики опирались на идеи, воплощённые в немецком танке Pz.Kpfw. VI Ausf. B Tiger II. Проект был закрыт на стадии подготовки документации. На основе AMX M4 (1945) впоследствии разрабатывался AMX 50 100.</value>
   </data>
   <data name="AMX_M4_1945_short" xml:space="preserve">
     <value>AMX M4 45</value>
@@ -277,7 +277,7 @@
     <value>AMX 105 AM mle. 47</value>
   </data>
   <data name="AMX_Ob_Am105_descr" xml:space="preserve">
-    <value>A 105-mm SPG design project developed by the Construction Bureau in Issy-les-Moulineaux (Paris, France). The draft was ready in September 1947. However, development was discontinued and the project was canceled.</value>
+    <value>Проект 105-мм САУ, разработанный конструкторским бюро в Исси-ле-Мулино (Франция). Эскиз был готов в сентябре 1947 года. Однако впоследствии все работы были свёрнуты, а проект закрыт.</value>
   </data>
   <data name="AMX_Ob_Am105_short" xml:space="preserve">
     <value>AMX 105 AM</value>
@@ -286,7 +286,7 @@
     <value>ARL 44</value>
   </data>
   <data name="ARL_44_descr" xml:space="preserve">
-    <value>Development of the vehicle started while France was still occupied by the German forces. It was an attempt to use the obsolete B1 Bis chassis and fit it with a modern, more powerful gun. The project was finished by the Atelier de Construction de Rueil Design Bureau. A total of 60 vehicles were manufactured. However, the tank was considered unsuccessful compared to similar foreign vehicles.</value>
+    <value>Разработка машины началась во время войны в период немецкой оккупации. Это была попытка использовать старое шасси от B1 bis, установив на него новое, более мощное вооружение. Завершило разработки конструкторское бюро Atelier de Construction de Rueil. И хотя на фоне зарубежных разработок машина была далеко не самой удачной, было произведено 60 машин.</value>
   </data>
   <data name="ARL_44_short" xml:space="preserve">
     <value>ARL 44</value>
@@ -295,7 +295,7 @@
     <value>ARL V39</value>
   </data>
   <data name="ARL_V39_descr" xml:space="preserve">
-    <value>A prototype of the ARL 40. The vehicle was intended as an assault SPG. Mass production was to be launched in 1940 but never started due to the occupation of France.</value>
+    <value>Прототип САУ ARL 40. Машину собирались использовать в качестве штурмовой САУ. Серийное производство планировали начать во второй половине 1940 года, однако в связи с оккупацией Франции оно так и не было начато.</value>
   </data>
   <data name="ARL_V39_short" xml:space="preserve">
     <value>ARL V39</value>
@@ -310,7 +310,7 @@
     <value>B1</value>
   </data>
   <data name="B1_descr" xml:space="preserve">
-    <value>Development was started in 1921. Due to extended trials the vehicle did not enter service until 1934. A total of 403 tanks in two basic modifications were manufactured from 1935 through 1940.</value>
+    <value>Разрабатывался с 1921 года и был принят на вооружение в 1934 году. Всего на заводах Renault, FCM, Schneider, FAMH и AMX было произведено 403 машины. Танк многократно модернизировался и, несмотря на устаревшую конструкцию, в боях с немецкими войсками в мае–июне 1940 года заслужил репутацию неуязвимой машины благодаря отличному бронированию.</value>
   </data>
   <data name="B1_short" xml:space="preserve">
     <value>B1</value>
@@ -319,7 +319,7 @@
     <value>BDR G1 B</value>
   </data>
   <data name="BDR_G1B_descr" xml:space="preserve">
-    <value>The project of a new vehicle was suggested by engineers of the Baudet-Donon-Rousell company in June 1938. However, the design was never developed.</value>
+    <value>Конструкция нового танка была предложена инженерами Baudet-Donon-Rousell в июне 1938 года. Однако даже проект машины разработан не был.</value>
   </data>
   <data name="BDR_G1B_short" xml:space="preserve">
     <value>BDR G1 B</value>
@@ -331,13 +331,13 @@
     <value>Bat.-Châtillon 155 55</value>
   </data>
   <data name="Bat_Chatillon155_55_descr" xml:space="preserve">
-    <value>A 155-mm SPG design project developed in 1955. The vehicle was intended to be manufactured on the chassis of the U.S. M47 medium tank, which was exported to France. However, the chassis of the French medium tank Batignolles-Châtillon 25 t was preferred over other variants. The initial version existed only in blueprints.</value>
+    <value>Проект 155-мм САУ. Разработка началась в 1955 году. Первоначально планировалось использовать шасси американского среднего танка М47, который поставлялся во Францию. Однако в дальнейшем предпочтение было отдано шасси французского танка Batignolles-Châtillon 25 t, а первоначальный проект остался только на бумаге.</value>
   </data>
   <data name="Bat_Chatillon155_55_short" xml:space="preserve">
     <value>B-C 155 55</value>
   </data>
   <data name="Bat_Chatillon155_descr" xml:space="preserve">
-    <value>SPG prototype on the basis of the Batignolles-Châtillon 25 t manufactured in 1958. Never entered mass production.</value>
+    <value>Прототип САУ на базе танка Batignolles-Châtillon 25 t. Опытный образец был выпущен в 1958 году. Серийно машина не выпускалась.</value>
   </data>
   <data name="Bat_Chatillon155_short" xml:space="preserve">
     <value>B-C 155 58</value>
@@ -346,7 +346,7 @@
     <value>Bat.-Châtillon 25 t</value>
   </data>
   <data name="Bat_Chatillon25t_descr" xml:space="preserve">
-    <value>This experimental tank was a further development of the AMX 13. The tank underwent trials but never entered mass production nor saw service. Two vehicles were manufactured.</value>
+    <value>Экспериментальный французский танк. Являлся дальнейшим развитием концепции АМХ 13. Прошёл испытания, но серийно не выпускался и на вооружении не состоял. Всего было выпущено две машины.</value>
   </data>
   <data name="Bat_Chatillon25t_short" xml:space="preserve">
     <value>B-C 25 t</value>
@@ -595,8 +595,17 @@ de 33 calibres</value>
   <data name="Chassis_ELC_AMX_2" xml:space="preserve">
     <value>AMX ELC bis</value>
   </data>
+  <data name="Chassis_F19_Lorraine40t" xml:space="preserve">
+    <value>Lorraine 40 t</value>
+  </data>
   <data name="Chassis_F74_AMX_M4_1949" xml:space="preserve">
     <value>AMX M4 mle. 49</value>
+  </data>
+  <data name="Chassis_F74_AMX_M4_1949_Liberte" xml:space="preserve">
+    <value>AMX M4 mle. 49 Liberté</value>
+  </data>
+  <data name="Chassis_F84_Somua_SM" xml:space="preserve">
+    <value>Somua SM</value>
   </data>
   <data name="Chassis_FCM36_20t" xml:space="preserve">
     <value>FCM 36</value>
@@ -634,6 +643,9 @@ de 33 calibres</value>
   <data name="Chassis_Lorraine39_L_AM_2" xml:space="preserve">
     <value>Lorraine 39L AM bis</value>
   </data>
+  <data name="Chassis_Lorraine40t" xml:space="preserve">
+    <value>Lorraine 40 t</value>
+  </data>
   <data name="Chassis_Lorraine40t_2" xml:space="preserve">
     <value>Lorraine 40 t bis</value>
   </data>
@@ -645,6 +657,9 @@ de 33 calibres</value>
   </data>
   <data name="Chassis_RenaultBS2" xml:space="preserve">
     <value>Renault FT 75 BS bis</value>
+  </data>
+  <data name="Chassis_RenaultFT" xml:space="preserve">
+    <value>M17</value>
   </data>
   <data name="Chassis_RenaultFT2" xml:space="preserve">
     <value>M26/27</value>
@@ -701,13 +716,13 @@ de 33 calibres</value>
     <value>Somua SAu 40 bis</value>
   </data>
   <data name="Cummins_VT8-460" xml:space="preserve">
-    <value>Cummins VT8-460</value>
+    <value>Continental R975</value>
   </data>
   <data name="D1" xml:space="preserve">
     <value>D1</value>
   </data>
   <data name="D1_descr" xml:space="preserve">
-    <value>Development was started in 1929. Mass production was launched in 1930, with 160 vehicles manufactured by 1935. A total of 152 tanks fought in France. Eighteen vehicles were captured by the German Army and used for training purposes.</value>
+    <value>Разработка началась в 1929 г. Первая партия была выпущена в 1930 году. До 1935 года было выпущено 160 машин. В боях во Франции принимали участие 152 танка. Восемнадцать танков D1 были захвачены немецкой армией и использовались для обучения танкистов.</value>
   </data>
   <data name="D1_short" xml:space="preserve">
     <value>D1</value>
@@ -716,10 +731,13 @@ de 33 calibres</value>
     <value>D2</value>
   </data>
   <data name="D2_descr" xml:space="preserve">
-    <value>A further modification of the D1 tank. Developed in 1934 by the Renault company. A total of 100 vehicles were manufactured from 1936 through 1940. The vehicles of the second series were designated as D2bis.</value>
+    <value>Дальнейшее развитие танка D1. Разработан в 1934 году компанией Renault. С 1936 по 1940 год двумя сериями было выпущено 100 машин. Танки второй серии иногда назывались D2bis.</value>
   </data>
   <data name="D2_short" xml:space="preserve">
     <value>D2</value>
+  </data>
+  <data name="Delahaye_103" xml:space="preserve">
+    <value>Delahaye 103</value>
   </data>
   <data name="Delahaye_103TT" xml:space="preserve">
     <value>Delahaye 103TT</value>
@@ -745,7 +763,7 @@ de 33 calibres</value>
     <value>AMX ELC bis</value>
   </data>
   <data name="ELC_AMX_descr" xml:space="preserve">
-    <value>Developed from 1957 through 1961 to provide French airborne troops with an air-transportable vehicle that could engage heavy tanks. The vehicle mounted a 90-mm gun and had a very low silhouette. The two crew members were seated in the turret, which could turn through 360 degrees, but only when the vehicle was not moving. Variants with different guns were planned. Only one prototype was manufactured. The vehicle never saw service.</value>
+    <value>Танк разрабатывался в 1957–1961 гг. в связи с потребностью французских воздушно-десантных войск в боевой машине с возможностью доставки по воздуху, которая смогла бы обеспечить надёжное противотанковое прикрытие от тяжелобронированных целей. Танк имел 90-мм орудие и отличался очень низким силуэтом. Экипаж из двух человек размещался в башне, которая могла вращаться на 360 градусов только когда танк был неподвижен. Предполагалась разработка машин с различным вооружением. Был выпущен один прототип. Танк на вооружении не состоял.</value>
   </data>
   <data name="ELC_AMX_short" xml:space="preserve">
     <value>AMX ELC bis</value>
@@ -780,11 +798,20 @@ de 33 calibres</value>
   <data name="ER_56" xml:space="preserve">
     <value>ER 56</value>
   </data>
+  <data name="F19_Lorraine40t" xml:space="preserve">
+    <value>Lorraine 40 t</value>
+  </data>
+  <data name="F19_Lorraine40t_descr" xml:space="preserve">
+    <value>Опытный французский танк. Разрабатывался в 40-х годах, в 1952 году было построено два прототипа. В новой машине, наряду с качающейся башней, была использована оригинальная ходовая с пневматическими шинами и «щучий нос». Танк прошел испытания, но серийно не выпускался.</value>
+  </data>
+  <data name="F19_Lorraine40t_short" xml:space="preserve">
+    <value>Lorr. 40 t</value>
+  </data>
   <data name="F68_AMX_Chasseur_de_char_46" xml:space="preserve">
     <value>AMX Chasseur de chars</value>
   </data>
   <data name="F68_AMX_Chasseur_de_char_46_descr" xml:space="preserve">
-    <value>In 1946, the AMX company presented this design for a new vehicle. The powerful engine and light weight would have made the vehicle highly mobile, and the 90-mm gun was equipped with a mechanical ammunition system for a high rate of fire. However, the large dimensions of the vehicle, its thin armor, high cost, and the complexity of the design made it unappealing, and the project never advanced to a prototype.</value>
+    <value>Аванпроект новой машины был представлен компанией AMX в 1946 году. Мощный двигатель и небольшая масса должны были обеспечить новой машине отличную подвижность, а 90-мм орудие с механизированной боеукладкой — хорошую скорострельность. Однако значительные размеры при довольно слабом бронировании, а также весьма сложная и дорогая конструкция не были одобрены комиссией. Существовал только в эскизах.</value>
   </data>
   <data name="F68_AMX_Chasseur_de_char_46_short" xml:space="preserve">
     <value>AMX CDC</value>
@@ -796,13 +823,13 @@ de 33 calibres</value>
     <value>AMX 13 57 GF</value>
   </data>
   <data name="F69_AMX13_57_100_GrandFinal_descr" xml:space="preserve">
-    <value>The AMX company conceived this light tank, which was to mount the 57-mm L/100 gun. Problems in development slowed the project, and by the 1950s the vehicle was still not ready for presentation. By that time, the production of a modified chassis with the turret mounting a 75-mm gun had taken precedence, and the 57-mm version was discontinued.</value>
+    <value>Проект лёгкого танка, который так и не был выпущен. При его проектировании специалисты компании AMX рассматривали возможность установки различных вариантов вооружения, в том числе 57-мм орудия с длиной ствола 100 калибров. Разработка слишком затянулась, поэтому в 50-х годах макет уже не соответствовал предъявляемым требованиям. На тот момент в серийное производство был запущен модернизированный вариант шасси с башней под орудие калибра 75 мм. В итоге разработка танка была свёрнута ещё до представления аванпроекта.</value>
   </data>
   <data name="F69_AMX13_57_100_GrandFinal_short" xml:space="preserve">
     <value>AMX 13 57F</value>
   </data>
   <data name="F69_AMX13_57_100_descr" xml:space="preserve">
-    <value>The AMX company conceived this light tank, which was to mount the 57-mm L/100 gun. Problems in development slowed the project, and by the 1950s the vehicle was still not ready for presentation. By that time, the production of a modified chassis with the turret mounting a 75-mm gun had taken precedence, and the 57-mm version was discontinued.</value>
+    <value>Проект лёгкого танка, который так и не был выпущен. При его проектировании специалисты компании AMX рассматривали возможность установки различных вариантов вооружения, в том числе 57-мм орудия с длиной ствола 100 калибров. Разработка слишком затянулась, поэтому в 50-х годах макет уже не соответствовал предъявляемым требованиям. На тот момент в серийное производство был запущен модернизированный вариант шасси с башней под орудие калибра 75 мм. В итоге разработка танка была свёрнута ещё до представления аванпроекта.</value>
   </data>
   <data name="F69_AMX13_57_100_short" xml:space="preserve">
     <value>AMX 13 57</value>
@@ -811,7 +838,7 @@ de 33 calibres</value>
     <value>AMX 30 B</value>
   </data>
   <data name="F72_AMX_30_descr" xml:space="preserve">
-    <value>Developed in 1966. The vehicle had maneuverability, engine power, and effective anti-tank engagement distance superior to all other vehicles except the Leopard 1. Great view range allowed the vehicle’s commander to coordinate the actions of the crew and to maintain situational awareness, greatly increasing the vehicle’s effectiveness. The armor of the vehicle was quite thin, but it was decided that technological advances in anti-tank shells had essentially rendered armor obsolete: survivability would depend on mobility and firepower. A total of 2,800 vehicles were manufactured.</value>
+    <value>Разработан в 1966 году. Превосходил все танки, кроме Leopard 1, по подвижности и удельной мощности, а также обладал самой большой эффективной дальностью противотанкового огня. Благодаря превосходному обзору командир мог координировать действия экипажа и оперативно реагировать на изменение боевой обстановки, что ещё больше увеличивало эффективность танка. С появлением ПТ боеприпасов толщина брони перестала иметь существенное значение. Всего было выпущено около 2800 танков.</value>
   </data>
   <data name="F72_AMX_30_short" xml:space="preserve">
     <value>AMX 30 B</value>
@@ -820,7 +847,7 @@ de 33 calibres</value>
     <value>M4A1 Revalorisé</value>
   </data>
   <data name="F73_M4A1_Revalorise_descr" xml:space="preserve">
-    <value>In the 1950s, the M4 Sherman of various modifications was supplied to France as part of MDAP. French design bureaus started modernizing the vehicle with the goal of improving its firepower. This initiative was followed by a modernization program for the Israel Defense Forces (Sherman M51). The tank never saw service in France. The number of prototypes built is unknown.</value>
+    <value>В 50-х гг. в рамках MDAP Франции были поставлены танки М4 Sherman различных модификаций. В дальнейшем уже во Франции начались работы по модернизации машин, в первую очередь по усилению их огневой мощи. Результатом этих работ стала программа модернизации данных танков для Армии обороны Израиля (Sherman М51). Во Франции танк на вооружении не состоял. Количество опытных экземпляров неизвестно.</value>
   </data>
   <data name="F73_M4A1_Revalorise_short" xml:space="preserve">
     <value>M4A1 Rev.</value>
@@ -828,8 +855,17 @@ de 33 calibres</value>
   <data name="F74_AMX_M4_1949" xml:space="preserve">
     <value>AMX M4 mle. 49</value>
   </data>
+  <data name="F74_AMX_M4_1949_Liberte" xml:space="preserve">
+    <value>AMX M4 mle. 49 Liberté</value>
+  </data>
+  <data name="F74_AMX_M4_1949_Liberte_descr" xml:space="preserve">
+    <value>Французский тяжёлый танк, изначально известный как «Проект 141». Разработка началась сразу после окончания Второй мировой войны, поскольку Франция нуждалась в современных тяжёлых танках. Существовал только в эскизах.</value>
+  </data>
+  <data name="F74_AMX_M4_1949_Liberte_short" xml:space="preserve">
+    <value>AMX M4 49 L</value>
+  </data>
   <data name="F74_AMX_M4_1949_descr" xml:space="preserve">
-    <value>A heavy tank that was originally known as Project 141. Since France needed modern heavy tanks, development started immediately after World War II. Existed only in blueprints.</value>
+    <value>Французский тяжёлый танк, изначально известный как «Проект 141». Разработка началась сразу после окончания Второй мировой войны, поскольку Франция нуждалась в современных тяжёлых танках. Существовал только в эскизах.</value>
   </data>
   <data name="F74_AMX_M4_1949_short" xml:space="preserve">
     <value>AMX M4 49</value>
@@ -838,16 +874,25 @@ de 33 calibres</value>
     <value>Bat.-Châtillon 25 t AP</value>
   </data>
   <data name="F75_Char_de_25t_descr" xml:space="preserve">
-    <value>In 1950–1951, engineers of the FAMH company (Compagnie des forges et aciéries de la marine et d'Homécourt) worked on the development of a medium tank with a 90-mm gun and a 25-ton rotating turret. Work was discontinued at the preliminary design stage. Later, all elements of the vehicle were incorporated in the Batignolles-Châtillon 25 t tank.</value>
+    <value>В 1950–51 гг. инженерами компании FAMH (Compagnie des forges et aciéries de la marine et d'Homécourt) велась разработка среднего танка с 90-мм орудием и качающейся башней. Работы над машиной были прекращены на стадии аванпроекта. В дальнейшем все наработки были использованы при создании танка Batignolles-Châtillon 25 t.</value>
   </data>
   <data name="F75_Char_de_25t_short" xml:space="preserve">
     <value>B-C 25 t AP</value>
+  </data>
+  <data name="F84_Somua_SM" xml:space="preserve">
+    <value>Somua SM</value>
+  </data>
+  <data name="F84_Somua_SM_descr" xml:space="preserve">
+    <value>Французский тяжёлый танк, представленный на конкурсе проектов как альтернатива проекту AMX 50. Разработка машины была начата в 1946 году, однако прототип был готов только в октябре 1951 года. Машина разрабатывалась с применением немецких технологий танкостроения; танк был вооружён 100-мм пушкой с автоматом заряжания барабанного типа в качающейся башне. Испытания проводились с января по июль 1953 года, однако они не показали положительных результатов. В итоге предпочтение было отдано проекту AMX 50.</value>
+  </data>
+  <data name="F84_Somua_SM_short" xml:space="preserve">
+    <value>Somua SM</value>
   </data>
   <data name="FCM36_20t" xml:space="preserve">
     <value>FCM 36</value>
   </data>
   <data name="FCM36_20t_descr" xml:space="preserve">
-    <value>Developed in the mid-1930s as an infantry-support tank. It was the only French vehicle to utilize a diesel engine. By 1939, a total of 100 vehicles were manufactured.</value>
+    <value>Разработан в середине 30-х годов в рамках конкурса по созданию нового танка поддержки пехоты. Единственный французский танк с дизельным двигателем. До 1939 года было выпущено 100 машин.</value>
   </data>
   <data name="FCM36_20t_short" xml:space="preserve">
     <value>FCM 36</value>
@@ -856,7 +901,7 @@ de 33 calibres</value>
     <value>FCM 36 Pak 40</value>
   </data>
   <data name="FCM_36Pak40_descr" xml:space="preserve">
-    <value>In 1943, ten FCM36 tanks were converted into tank destroyers. Earlier, 12 vehicles of this type were converted into self-propelled guns carrying a 105-mm gun.</value>
+    <value>В 1943 году десять из захваченных немцами французских танков FCM 36 были переоборудованы в самоходные противотанковые орудия. Машины использовались во Франции в составе Verstärkte Schnelle Brigade West.</value>
   </data>
   <data name="FCM_36Pak40_short" xml:space="preserve">
     <value>FCM36Pak40</value>
@@ -865,13 +910,13 @@ de 33 calibres</value>
     <value>FCM 50 t</value>
   </data>
   <data name="FCM_50t_descr" xml:space="preserve">
-    <value>Development was started in December 1945. The vehicle was conceived as an alternative for the AMX 50t and combined archaic features typical of the pre-war French tank-construction industry as well as German innovations. The vehicle was to be equipped with an additional container trailer, equipment for underwater driving, and a demountable mine clearer.</value>
+    <value>Разработка машины началась в декабре 1945 года. Проект должен был составить альтернативу АМХ 50t. Машина сочетала в себе архаичные решения, характерные для довоенного французского танкостроения с немецкими разработками. Танк должен был оснащаться дополнительным баком-прицепом, устройством для подводного вождения и съёмным минным тралом. Работы над проектом были прекращены на стадии эскиза.</value>
   </data>
   <data name="FCM_50t_short" xml:space="preserve">
     <value>FCM 50 t</value>
   </data>
   <data name="Fanions_de_signaux_bot" xml:space="preserve">
-    <value>Signal Flags</value>
+    <value>«Сигнальные флажки»</value>
   </data>
   <data name="Franklin" xml:space="preserve">
     <value>Franklin</value>
@@ -895,7 +940,7 @@ de 33 calibres</value>
     <value>Hotchkiss 35</value>
   </data>
   <data name="Hotchkiss_H35_descr" xml:space="preserve">
-    <value>Cavalry support tank. Developed in 1934. Mass production was launched in 1935, with a total of 400 vehicles manufactured. In 1938 a new modification, the H38, entered production. About 1000 of the H35/H38/H39 vehicles were produced.</value>
+    <value>Танк поддержки кавалерийских соединений. Разработан в 1934 году. Выпускался серийно с 1935 года. Всего было выпущено 400 машин. В 1938 году начался выпуск новой модификации Н38. Всего было выпущено около тысячи танков Н35/Н38/Н39.</value>
   </data>
   <data name="Hotchkiss_H35_short" xml:space="preserve">
     <value>H35</value>
@@ -904,7 +949,7 @@ de 33 calibres</value>
     <value>Lorraine 155 mle. 50</value>
   </data>
   <data name="Lorraine155_50_descr" xml:space="preserve">
-    <value>SPG prototype developed in 1952 on the basis of the experimental Lorraine 40t. Never entered mass production nor saw service.</value>
+    <value>Прототип САУ, разработанный на базе опытного танка Lorraine 40t в 1952 году. Серийно не выпускался. На вооружении не состоял.</value>
   </data>
   <data name="Lorraine155_50_short" xml:space="preserve">
     <value>Lorr. 155 50</value>
@@ -913,7 +958,7 @@ de 33 calibres</value>
     <value>Lorraine 155 mle. 51</value>
   </data>
   <data name="Lorraine155_51_descr" xml:space="preserve">
-    <value>Experimental SPG on the basis of the prototype of the medium tank Char de Bataille Lorraine 40t. The prototype was manufactured in 1952. Never entered mass production nor saw service.</value>
+    <value>Экспериментальная САУ на базе прототипа среднего танка Char de Bataille Lorraine 40t. Прототип выпущен  в 1952 году. На вооружении не состояла и серийно не выпускалась.</value>
   </data>
   <data name="Lorraine155_51_short" xml:space="preserve">
     <value>Lorr. 155 51</value>
@@ -922,7 +967,7 @@ de 33 calibres</value>
     <value>Lorraine 39L AM</value>
   </data>
   <data name="Lorraine39_L_AM_descr" xml:space="preserve">
-    <value>Self-propelled gun on the basis of the Lorraine 37L. Development was started just before World War II. Existed only in blueprints.</value>
+    <value>САУ на базе Lorraine 37L. Разработка началась накануне Второй мировой войны. Существовала только в эскизах.</value>
   </data>
   <data name="Lorraine39_L_AM_short" xml:space="preserve">
     <value>Lorr. 39L AM</value>
@@ -931,7 +976,7 @@ de 33 calibres</value>
     <value>Lorraine 40 t</value>
   </data>
   <data name="Lorraine40t_descr" xml:space="preserve">
-    <value>A single prototype was manufactured in 1952. The vehicle featured suspension air-core tires and oscillating turret. The design passed trials but never entered mass production.</value>
+    <value>Единственный прототип машины был выпущен в 1952 году. В новой машине, наряду с качающейся башней, была использована оригинальная ходовая с пневматическими шинами. Танк прошел испытания, но серийно не выпускался.</value>
   </data>
   <data name="Lorraine40t_short" xml:space="preserve">
     <value>Lorr. 40 t</value>
@@ -972,11 +1017,17 @@ P45F</value>
     <value>Maybach HL 230
 TRM P30</value>
   </data>
+  <data name="Maybach_HL_234P45" xml:space="preserve">
+    <value>Maybach HL 234 P45</value>
+  </data>
   <data name="Maybach_HL_234P45A" xml:space="preserve">
     <value>Maybach V-12 ACC</value>
   </data>
   <data name="Maybach_HL_234P45A_short" xml:space="preserve">
     <value>Maybach V-12 ACC</value>
+  </data>
+  <data name="Maybach_HL_234P45_short" xml:space="preserve">
+    <value>Maybach HL 234 P45</value>
   </data>
   <data name="Maybach_HL_234P50" xml:space="preserve">
     <value>Maybach HL 234 P50</value>
@@ -984,8 +1035,14 @@ TRM P30</value>
   <data name="Maybach_HL_234P50_short" xml:space="preserve">
     <value>Maybach HL 234 P50</value>
   </data>
+  <data name="Maybach_HL_235_850" xml:space="preserve">
+    <value>Maybach HL 235 (850)</value>
+  </data>
   <data name="Maybach_HL_295" xml:space="preserve">
     <value>Maybach HL 295</value>
+  </data>
+  <data name="Maybach_HL_295_003_Somua" xml:space="preserve">
+    <value>Maybach HL 295.003 "Somua"</value>
   </data>
   <data name="Maybach_HL_295_F" xml:space="preserve">
     <value>Maybach HL 295 F</value>
@@ -1024,7 +1081,7 @@ mle. 1950</value>
     <value>Renault FT 75 BS</value>
   </data>
   <data name="RenaultBS_descr" xml:space="preserve">
-    <value>The first order for an SPG on the basis of the Renault FT-17 was placed in December 1917. However, no SPG entered service until the end of World War I. After the end of the war a total of 39 vehicles were manufactured.</value>
+    <value>Первый заказ на САУ на базе танка Renault FT-17 был сделан в декабре 1917 года. Однако до конца Первой мировой войны ни одной САУ в армию не поставили. Только после окончания боевых действий было выпущено 39 машин.</value>
   </data>
   <data name="RenaultBS_short" xml:space="preserve">
     <value>FT BS</value>
@@ -1036,7 +1093,7 @@ mle. 1950</value>
     <value>Renault FT AC</value>
   </data>
   <data name="RenaultFT_AC_descr" xml:space="preserve">
-    <value>As the French Army's vast fleet of Renault FT tanks passed into obsolence, some efforts were made to upgrade the vehicles. One proposal was to convert them into tank destroyers, but the plan was never implemented.</value>
+    <value>Большое количество находящихся на вооружении во французской армии Renault FT вынуждало постоянно предпринимать попытки модернизации этих устаревших машин. Например, было предложено переделать танки в ПТ-САУ, но проект так и остался нереализованным.</value>
   </data>
   <data name="RenaultFT_AC_short" xml:space="preserve">
     <value>FT AC</value>
@@ -1045,13 +1102,13 @@ mle. 1950</value>
     <value>Renault FT</value>
   </data>
   <data name="RenaultFT_bot_descr" xml:space="preserve">
-    <value>The vehicle entered service in 1917, with 3,177 vehicles manufactured by the end of World War I and 3,800 vehicles produced in total. At the beginning of World War II, a total of 1,560 vehicles were in service.</value>
+    <value>Машина была принята на вооружение в 1917 году, и к моменту окончания Первой мировой войны было выпущено 3177 танков. Общий выпуск составил 3800 машин. К началу Второй мировой войны во французской армии числилось 1560 танков Renault FT.</value>
   </data>
   <data name="RenaultFT_bot_short" xml:space="preserve">
     <value>FT</value>
   </data>
   <data name="RenaultFT_descr" xml:space="preserve">
-    <value>The vehicle entered service in 1917, with 3,177 vehicles manufactured by the end of World War I and 3,800 vehicles produced in total. At the beginning of World War II, a total of 1,560 vehicles were in service.</value>
+    <value>Машина была принята на вооружение в 1917 году, и к моменту окончания Первой мировой войны было выпущено 3177 танков. Общий выпуск составил 3800 машин. К началу Второй мировой войны во французской армии числилось 1560 танков Renault FT.</value>
   </data>
   <data name="RenaultFT_short" xml:space="preserve">
     <value>FT</value>
@@ -1060,7 +1117,7 @@ mle. 1950</value>
     <value>Renault R35</value>
   </data>
   <data name="RenaultR35_descr" xml:space="preserve">
-    <value>The most massively produced WWII French light tank. Developed in 1934 on a request from the army for infantry support. A total of 1,630 vehicles were manufactured from 1936 through 1940.</value>
+    <value>Самый массовый лёгкий французский танк Второй мировой войны. Разработан по заказу армии для сопровождения пехоты в 1934 году. С 1936 по 1940 год было выпущено 1630 танков.</value>
   </data>
   <data name="RenaultR35_short" xml:space="preserve">
     <value>R35</value>
@@ -1069,7 +1126,7 @@ mle. 1950</value>
     <value>Renault UE 57</value>
   </data>
   <data name="RenaultUE57_descr" xml:space="preserve">
-    <value>Developed in 1943 in Great Britain by mounting the British 6-pounder gun on the chassis of the French tankette UE2. One prototype was manufactured.</value>
+    <value>Разработана в 1943 году в Великобритании путём установки британского шестифунтового орудия с дульным тормозом специально разработанной конструкции на шасси французской танкетки UE2. Выпущен один экземпляр.</value>
   </data>
   <data name="RenaultUE57_short" xml:space="preserve">
     <value>UE 57</value>
@@ -1090,7 +1147,7 @@ mle. 1950</value>
     <value>Renault G1</value>
   </data>
   <data name="Renault_G1R_descr" xml:space="preserve">
-    <value>Developed from 1935 through 1940. The vehicle was comparable to the T-34 in terms of its characteristics. Among several presented prototypes, the Renault G1R project was eventually selected. The vehicle had individual torsion-bar suspension and an innovative gun-mounting scheme. A prototype was built by 1940. However, the development was stopped when France was defeated later that year.</value>
+    <value>Разработан в 1935–1940 годах. По тактико-техническим характеристикам его можно было сравнить с Т-34. Среди целого ряда представленных на конкурс аванпроектов в конечном счёте был выбран проект Renault G1R. Танк имел индивидуальную торсионную подвеску и оригинальную установку вооружения. К 1940 году был построен макет танка, однако работы были прекращены в связи с поражением Франции в этом же году.</value>
   </data>
   <data name="Renault_G1R_short" xml:space="preserve">
     <value>G1 R</value>
@@ -1136,13 +1193,16 @@ Naeder-FIEUX</value>
     <value>SARL 42</value>
   </data>
   <data name="SARL42_descr" xml:space="preserve">
-    <value>Developed by Hubert Clermont from 1940 through 1942, during the German occupation of France. Some elements of the SOMUA S35 medium tank and of the experimental G1R infantry tank were incorporated in the new vehicle. It was hoped that development would be continued after the liberation of the country. However, by 1944 the project was deemed outdated.</value>
+    <value>Разработан в 1940–1942 гг. инженером Юбером Клермоном. Были использованы наработки по проекту пехотного танка G1R, проектирование которого было прекращено в 1940 году, и элементы конструкции серийного среднего танка SOMUA S35. Работы над танком проходили в условиях немецкой оккупации с перспективой реализации проекта после освобождения страны. Однако в 1944 году проект был признан технически устаревшим.</value>
   </data>
   <data name="SARL42_short" xml:space="preserve">
     <value>SARL 42</value>
   </data>
   <data name="SCR_508" xml:space="preserve">
     <value>SCR 508</value>
+  </data>
+  <data name="SCR_508_1" xml:space="preserve">
+    <value>SCR 508/1</value>
   </data>
   <data name="SCR_528" xml:space="preserve">
     <value>SCR 528F</value>
@@ -1152,6 +1212,9 @@ Naeder-FIEUX</value>
   </data>
   <data name="SCR_619_fallout" xml:space="preserve">
     <value>SCR 619</value>
+  </data>
+  <data name="SOFAM_12GSds" xml:space="preserve">
+    <value>SOFAM 12 GSdS</value>
   </data>
   <data name="SOFAM_12GSds_A" xml:space="preserve">
     <value>SOFAM 12 GSds</value>
@@ -1166,7 +1229,7 @@ Naeder-FIEUX</value>
     <value>S35 CA</value>
   </data>
   <data name="S_35CA_descr" xml:space="preserve">
-    <value>The design called for the conversion of tanks into tank destroyers by mounting a 17-pounder gun into an open-topped, lightly armored cabin.</value>
+    <value>В соответствии с эскизным проектом, предполагалось переоборудовать танки в ПТ-САУ путём установки 17-фунтового английского орудия в открытую сверху легкобронированную рубку.</value>
   </data>
   <data name="S_35CA_short" xml:space="preserve">
     <value>S35 CA</value>
@@ -1193,7 +1256,7 @@ Naeder-FIEUX</value>
     <value>Somua S35</value>
   </data>
   <data name="Somua_S35_descr" xml:space="preserve">
-    <value>Good firepower, armor protection, and mobility made the S35 one of the best tanks of its time. However, the small turret forced the commander to handle multiple tasks at once: searching for enemy targets, aiming and reloading the gun, and coordinating the actions of the crew. This workload reduced his situational awareness and decreased the vehicle’s effectiveness on the battlefield. By the time France capitulated on June 22, 1940, a total of 427 vehicles had been manufactured.</value>
+    <value>Благодаря высокой огневой мощи, защищённости и подвижности S35 был наиболее удачным французским танком и одним из лучших танков своего времени. Из-за применения одноместной башни командир был вынужден одновременно производить поиск целей, наводить и перезаряжать орудие и координировать действия экипажа. Это уменьшало возможности экипажа оперативно реагировать на изменения боевой обстановки и снижало огневую мощь танка. Всего ко времени капитуляции Франции 22 июня 1940 года было выпущено 427 танков S35.</value>
   </data>
   <data name="Somua_S35_short" xml:space="preserve">
     <value>Somua S35</value>
@@ -1202,7 +1265,7 @@ Naeder-FIEUX</value>
     <value>Somua SAu 40</value>
   </data>
   <data name="Somua_Sau_40_descr" xml:space="preserve">
-    <value>A proposed tank destroyer on the basis of the Somua S35. Existed only in blueprints.</value>
+    <value>Проект ПТ-САУ на базе танка Somua S35. Существовал только в эскизах.</value>
   </data>
   <data name="Somua_Sau_40_short" xml:space="preserve">
     <value>SAu 40</value>
@@ -1329,8 +1392,17 @@ Naeder-FIEUX</value>
   <data name="Turret_1_ELC_AMX" xml:space="preserve">
     <value>AMX ELC bis</value>
   </data>
+  <data name="Turret_1_F19_Lorraine40t" xml:space="preserve">
+    <value>Lorraine 40 t</value>
+  </data>
   <data name="Turret_1_F74_AMX_M4_1949" xml:space="preserve">
     <value>AMX M4 mle. 49</value>
+  </data>
+  <data name="Turret_1_F74_AMX_M4_1949_Liberte" xml:space="preserve">
+    <value>AMX M4 mle. 49 Liberté</value>
+  </data>
+  <data name="Turret_1_F84_Somua_SM" xml:space="preserve">
+    <value>Somua SM</value>
   </data>
   <data name="Turret_1_FCM36_20t" xml:space="preserve">
     <value>Tracteur RN.3</value>
@@ -1358,6 +1430,9 @@ Naeder-FIEUX</value>
   </data>
   <data name="Turret_1_RenaultBS" xml:space="preserve">
     <value>Renault FT 75 BS</value>
+  </data>
+  <data name="Turret_1_RenaultFT" xml:space="preserve">
+    <value>Renault FT Omnibus</value>
   </data>
   <data name="Turret_1_RenaultFT_AC" xml:space="preserve">
     <value>Renault FT AC</value>
@@ -1449,11 +1524,14 @@ Naeder-FIEUX</value>
   <data name="_100mm_SA_47_AC" xml:space="preserve">
     <value>100 mm AC SA47</value>
   </data>
+  <data name="_100mm_SA_47_L" xml:space="preserve">
+    <value>100 mm SA47 A</value>
+  </data>
   <data name="_105_leFH18B2" xml:space="preserve">
     <value>105 leFH18B2</value>
   </data>
   <data name="_105_leFH18B2_descr" xml:space="preserve">
-    <value>Heavy B1 tanks captured by the German army during the French Campaign underwent modification and were actively used by the Wehrmacht. Some vehicles were converted into SPGs, designated 10.5 cm leFH18/3 auf Geschützwagen B2 (f).</value>
+    <value>Тяжёлые танки серии B1, захваченные немецкой армией в ходе французской кампании, были модернизированы и активно использовались Вермахтом. Часть их была переоборудована в самоходные гаубицы, получившие обозначение 10.5 cm leFH18/3 auf Geschützwagen B2 (f).</value>
   </data>
   <data name="_105_leFH18B2_short" xml:space="preserve">
     <value>leFH18B2</value>
@@ -1531,19 +1609,19 @@ Naeder-FIEUX</value>
     <value>Frt.Prf. mle. 1945</value>
   </data>
   <data name="_120mm_FrtPrf1945_fallout" xml:space="preserve">
-    <value>Frt.Prf. mle. 1945 R</value>
+    <value>Frt.Prf. mle. 1945 A</value>
   </data>
   <data name="_120mm_OE_mle_1930" xml:space="preserve">
     <value>OE mle. 1930</value>
   </data>
   <data name="_120mm_OE_mle_1930_fallout" xml:space="preserve">
-    <value>OE mle. 1930 R</value>
+    <value>OE mle. 1930 A</value>
   </data>
   <data name="_120mm_Prf1943" xml:space="preserve">
     <value>Prf. mle. 1943</value>
   </data>
   <data name="_120mm_Prf1943_fallout" xml:space="preserve">
-    <value>Prf. mle. 1943 R</value>
+    <value>Prf. mle. 1943 A</value>
   </data>
   <data name="_120mm_SA_46" xml:space="preserve">
     <value>120 mm SA46</value>

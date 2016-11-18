@@ -724,6 +724,37 @@
       "devices": "\t122\t"
     }
   },
+  "_90mm_HVAP_T30E15": {
+    "id": "\t124\t",
+    "userString": "#usa_vehicles:_90mm_HVAP_T30E15",
+    "icon": "ap_cr",
+    "price": "\t255\t",
+    "kind": "ARMOR_PIERCING_CR",
+    "caliber": "\t90\t",
+    "isTracer": "\ttrue\t",
+    "effects": "\tmainAPCR\t",
+    "damage": {
+      "armor": "\t240\t",
+      "devices": "\t122\t"
+    }
+  },
+  "_90mm_HVAP_T30E16": {
+    "id": "\t125\t",
+    "userString": "#usa_vehicles:_90mm_HVAP_T30E16",
+    "icon": "ap_cr",
+    "price": {
+      "#text": "\t11\t",
+      "gold": ""
+    },
+    "kind": "ARMOR_PIERCING_CR",
+    "caliber": "\t90\t",
+    "isTracer": "\ttrue\t",
+    "effects": "\tmainAPCR\t",
+    "damage": {
+      "armor": "\t240\t",
+      "devices": "\t122\t"
+    }
+  },
   "_90mm_HVAP_M304": {
     "id": "\t24\t",
     "userString": "#usa_vehicles:_90mm_HVAP_M304",

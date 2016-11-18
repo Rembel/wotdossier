@@ -118,40 +118,40 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="A-20" xml:space="preserve">
-    <value>A-20</value>
+    <value>А-20</value>
   </data>
   <data name="A-20_descr" xml:space="preserve">
-    <value>Development of the A-20 tank started at Kharkiv Factory No. 183 in December 1937. The project was a further development of the BT-7 tank and became a predecessor of the legendary T-34. Work on the vehicle was led by Mikhail Koshkin. On May 18, 1938, technical characteristics of the tank designated BT-20 were approved. Only a few experimental prototypes, with a wheeled caterpillar suspension, were built for training purposes.</value>
+    <value>В декабре 1937 года на Харьковском заводе №138 была начата разработка танка А-20. Данный проект являлся дальнейшим развитием танка БТ-7, и стал предшественником легендарного Т-34. Работу над этой машиной возглавлял Михаил Кошкин. 18 мая 1938 года были утверждены ТТХ для танка под индексом БТ-20. Было построено небольшое количество экземпляров этой версии (с колёсно-гусеничной ходовой) для учебных целей.</value>
   </data>
   <data name="A-20_mod_1938" xml:space="preserve">
-    <value>A-20 mod. 1938</value>
+    <value>А-20 обр. 1938 г.</value>
   </data>
   <data name="A-20_mod_1941" xml:space="preserve">
-    <value>A-20 mod. 1941</value>
+    <value>А-20 обр. 1940 г.</value>
   </data>
   <data name="A-20bis" xml:space="preserve">
-    <value>SP-3</value>
+    <value>СП-3</value>
   </data>
   <data name="A-32" xml:space="preserve">
-    <value>A-32</value>
+    <value>А-32</value>
   </data>
   <data name="A-32_descr" xml:space="preserve">
-    <value>Experimental medium tank. The A-32 and A-20 were developed and put on trials at the same time. The A-32 was adopted for service and evolved into the T-34.</value>
+    <value>Опытный средний танк, разрабатывался и испытывался параллельно с А-20. После доработок выпускался серийно как Т-34.</value>
   </data>
   <data name="A-32_mod_1939" xml:space="preserve">
-    <value>A-32</value>
+    <value>А-32</value>
   </data>
   <data name="A43" xml:space="preserve">
-    <value>A-43</value>
+    <value>А-43</value>
   </data>
   <data name="A43_descr" xml:space="preserve">
-    <value>Developed at Factory No. 183 in 1941 under the designation A-43. The vehicle was to replace the T-34. The A-43 was conceived to feature a torsion bar suspension, a V-5 engine, a new transmission, a commander’s cupola, and front armor enhanced to 60 mm.</value>
+    <value>Проект танка был разработан конструкторским бюро Харьковского паровозостроительного завода №183 им. Коминтерна. Данный проект был разработан по итогам изучения новейших немецких танков в качестве замены Т-34. После изучения материалов макетная комиссия внесла ряд предложений для доработки проекта. Но в связи с началом войны все работы по танку были свёрнуты.</value>
   </data>
   <data name="A44" xml:space="preserve">
-    <value>A-44</value>
+    <value>А-44</value>
   </data>
   <data name="A44_descr" xml:space="preserve">
-    <value>The project was developed at Factory No. 183 by engineer I.S. Ber in April 1941. The vehicle was to be manufactured in three different versions with different armor, armament, combat weight, and speed. The prototype was scheduled to be built by the beginning of 1942. However, the project was discontinued due to the outbreak of the Soviet–German war.</value>
+    <value>Проект был разработан в апреле 1941 года ведущим конструктором завода №183 И. С. Бером. Планировали выпускать машину в трёх вариантах, отличающихся по бронированию, вооружению, боевой массе и скорости. Опытный образец предполагалось выпустить к началу 1942 года, но в связи с началом войны и эвакуацией все работы над танком были прекращены.</value>
   </data>
   <data name="AEC3" xml:space="preserve">
     <value>AEC3</value>
@@ -160,379 +160,385 @@
     <value>AEC A190</value>
   </data>
   <data name="AMO-3" xml:space="preserve">
-    <value>AMO-3</value>
+    <value>АМО-3</value>
   </data>
   <data name="AT-1" xml:space="preserve">
-    <value>AT-1</value>
+    <value>АТ-1</value>
   </data>
   <data name="AT-1_descr" xml:space="preserve">
-    <value>The AT-1 tank destroyer based on the T-26 light tank was developed by the construction bureau at the Experimental Design Mechanical Department of Factory No. 185 in Leningrad from 1935 through 1936. The vehicle was designed for anti-tank warfare. Two prototypes equipped with the 76.2 mm PS-3 tank guns were built, which underwent trials by 1936. This vehicle never saw mass production.</value>
+    <value>Самоходная артиллерийская установка АТ-1 разрабатывалась конструкторским бюро Опытного завода Спецмаштреста (Ленинградский завод опытного машиностроения № 185 имени С. М. Кирова) на базе лёгкого танка Т-26 в 1935-36 гг. и предназначалась для борьбы с танками. Было построено два прототипа, вооружённых танковым орудием ПС-3 калибра 76,2 мм, проходивших испытания в 1935-36 г. Серийно не выпускалась.</value>
   </data>
   <data name="AT-1bis" xml:space="preserve">
-    <value>AT-1 Bis</value>
+    <value>АТ-1 Бис</value>
   </data>
   <data name="Alarm_flags_bot" xml:space="preserve">
-    <value>Signal Flags</value>
+    <value>«Сигнальные флажки»</value>
   </data>
   <data name="BD-2" xml:space="preserve">
-    <value>BD-2</value>
+    <value>БД-2</value>
   </data>
   <data name="BT-2" xml:space="preserve">
-    <value>BT-2</value>
+    <value>БТ-2</value>
   </data>
   <data name="BT-2_bis" xml:space="preserve">
-    <value>BT-5</value>
+    <value>БТ-5</value>
   </data>
   <data name="BT-2_cylindrical" xml:space="preserve">
-    <value>BT-2</value>
+    <value>БТ-2</value>
   </data>
   <data name="BT-2_descr" xml:space="preserve">
-    <value>Developed on the basis of the Christie tank M1931. Produced at the Kharkiv Komintern Locomotive Factory (KhPZ), with 650 BT-2 tanks and 1,884 BT-5 tanks manufactured from 1932 through 1935.</value>
+    <value>Разработан на базе танка Christie М1931. Выпускался на Харьковском паровозостроительном заводе. Всего в 1932–1935 гг. было выпущено 650 БТ-2 и 1884 БТ-5.</value>
   </data>
   <data name="BT-2bis" xml:space="preserve">
-    <value>BT-5</value>
+    <value>БТ-5</value>
   </data>
   <data name="BT-5" xml:space="preserve">
-    <value>BT-5</value>
+    <value>БТ-5</value>
   </data>
   <data name="BT-5_cylindrical" xml:space="preserve">
-    <value>BT-7 mod. 1935</value>
+    <value>БТ-7 обр. 1935 г.</value>
   </data>
   <data name="BT-5_cylindrical_short" xml:space="preserve">
-    <value>BT-7 mod. 1935</value>
+    <value>БТ-7 обр. 1935 г.</value>
   </data>
   <data name="BT-7" xml:space="preserve">
-    <value>BT-7</value>
+    <value>БТ-7</value>
   </data>
   <data name="BT-7_conic" xml:space="preserve">
-    <value>BT-7 mod. 1937</value>
+    <value>БТ-7 обр. 1937 г.</value>
   </data>
   <data name="BT-7_conic_short" xml:space="preserve">
-    <value>BT-7 mod. 1937</value>
+    <value>БТ-7 обр. 1937 г.</value>
   </data>
   <data name="BT-7_descr" xml:space="preserve">
-    <value>The Soviet wheeled caterpillar tank used in the 1930s–1940s. The third vehicle in the series of the Soviet light BT tanks. The BT-7 differed from its predecessors in the welded hull of a modified shape and a new engine. A total of 5,556 vehicles of different variants were produced and saw action during the Khalkhyn Gol battles, Polish Campaign, Winter War and World War II.</value>
+    <value>Cоветский колёсно-гусеничный танк периода 1930–1940-х годов. Третий танк семейства советских лёгких танков БТ. В отличие от своих предшественников, имел сварной корпус несколько изменённой формы и новый двигатель. Всего было произведено 5556 машин различных модификаций, принимавших участие в боях на Халхин-Голе, польской кампании, финской и Второй мировой  войнах.</value>
   </data>
   <data name="BT-SV" xml:space="preserve">
-    <value>BT-SV</value>
+    <value>БТ-СВ</value>
   </data>
   <data name="BT-SV_descr" xml:space="preserve">
-    <value>Experimental tank. Developed by the Tsyganov group from 1936 through 1938. The vehicle underwent field trials, but never saw service.</value>
+    <value>Опытный танк, разработанный группой Цыганова в 1936–1938 гг. Прошёл полигонные испытания. На вооружении не состоял.</value>
   </data>
   <data name="Bedford_Twin-Six" xml:space="preserve">
     <value>Bedford Twin-Six</value>
   </data>
   <data name="Chassis_A43" xml:space="preserve">
-    <value>A-43 variant A</value>
+    <value>А-43 вариант А</value>
   </data>
   <data name="Chassis_A43_2" xml:space="preserve">
-    <value>A-43 variant B</value>
+    <value>А-43 вариант Б</value>
   </data>
   <data name="Chassis_A44" xml:space="preserve">
-    <value>A-44</value>
+    <value>А-44</value>
   </data>
   <data name="Chassis_A44_2" xml:space="preserve">
-    <value>A-44 enhanced</value>
+    <value>А-44 усиленная</value>
   </data>
   <data name="Chassis_IS-6" xml:space="preserve">
-    <value>IS-6</value>
+    <value>ИС-6</value>
   </data>
   <data name="Chassis_IS-7_fallout" xml:space="preserve">
-    <value>IS-7</value>
+    <value>ИС-7</value>
   </data>
   <data name="Chassis_IS4" xml:space="preserve">
-    <value>IS-4M</value>
+    <value>ИС-4М</value>
   </data>
   <data name="Chassis_IS8" xml:space="preserve">
-    <value>T-10</value>
+    <value>Т-10</value>
   </data>
   <data name="Chassis_IS8_2" xml:space="preserve">
-    <value>T-10M</value>
+    <value>Т-10М</value>
   </data>
   <data name="Chassis_KV-13" xml:space="preserve">
-    <value>KV-13 mod. 1942</value>
+    <value>КВ-13 обр. 1942 г.</value>
   </data>
   <data name="Chassis_KV-13_2" xml:space="preserve">
-    <value>KV-13 mod. 1943</value>
+    <value>КВ-13 обр. 1943 г.</value>
   </data>
   <data name="Chassis_KV-1s" xml:space="preserve">
-    <value>KV-1S mod. 1942</value>
+    <value>КВ-1С обр. 1942 г.</value>
   </data>
   <data name="Chassis_KV-5" xml:space="preserve">
-    <value>KV-5</value>
+    <value>КВ-5</value>
   </data>
   <data name="Chassis_KV1" xml:space="preserve">
-    <value>KV-1 mod. 1940</value>
+    <value>КВ-1 обр. 1940 г.</value>
   </data>
   <data name="Chassis_KV1_2" xml:space="preserve">
-    <value>KV-1 mod. 1941</value>
+    <value>КВ-1 обр. 1941 г.</value>
   </data>
   <data name="Chassis_KV2_1" xml:space="preserve">
-    <value>KV-2 mod. 1940</value>
+    <value>КВ-2 обр. 1940 г.</value>
   </data>
   <data name="Chassis_KV2_2" xml:space="preserve">
-    <value>KV-2 mod. 1941</value>
+    <value>КВ-2 обр. 1941 г.</value>
   </data>
   <data name="Chassis_KV4" xml:space="preserve">
-    <value>KV-4</value>
+    <value>КВ-4</value>
   </data>
   <data name="Chassis_KV4_2" xml:space="preserve">
-    <value>KV-4 Bis</value>
+    <value>КВ-4 Бис</value>
   </data>
   <data name="Chassis_LTP" xml:space="preserve">
-    <value>LTP</value>
+    <value>ЛТП</value>
   </data>
   <data name="Chassis_Object263" xml:space="preserve">
-    <value>Object 263</value>
+    <value>Объект 263</value>
   </data>
   <data name="Chassis_Object268" xml:space="preserve">
-    <value>Object 268</value>
+    <value>Объект 268</value>
   </data>
   <data name="Chassis_Object416" xml:space="preserve">
-    <value>Object 416 mod. 1952</value>
+    <value>Объект 416 обр. 1952 г.</value>
   </data>
   <data name="Chassis_Object416_2" xml:space="preserve">
-    <value>Object 416 mod. 1953</value>
+    <value>Объект 416 обр. 1953 г.</value>
   </data>
   <data name="Chassis_Object_140" xml:space="preserve">
-    <value>Object 140</value>
+    <value>Объект 140</value>
   </data>
   <data name="Chassis_Object_212" xml:space="preserve">
-    <value>212A</value>
+    <value>212А</value>
   </data>
   <data name="Chassis_Object_212_2" xml:space="preserve">
-    <value>212A enhanced</value>
+    <value>212А усиленная</value>
   </data>
   <data name="Chassis_Object_261" xml:space="preserve">
-    <value>Object 261</value>
+    <value>Объект 261</value>
   </data>
   <data name="Chassis_Object_430" xml:space="preserve">
-    <value>Object 430</value>
+    <value>Объект 430</value>
   </data>
   <data name="Chassis_Object_704" xml:space="preserve">
-    <value>Object 704</value>
+    <value>Объект 704</value>
   </data>
   <data name="Chassis_Object_704_2" xml:space="preserve">
-    <value>Object 704M</value>
+    <value>Объект 704М</value>
   </data>
   <data name="Chassis_Object_907" xml:space="preserve">
-    <value>Object 907</value>
+    <value>Объект 907</value>
   </data>
   <data name="Chassis_Object_907A" xml:space="preserve">
-    <value>Object 907A</value>
+    <value>Объект 907A</value>
   </data>
   <data name="Chassis_R100_SU122A" xml:space="preserve">
-    <value>SU-122A</value>
+    <value>СУ-122А</value>
   </data>
   <data name="Chassis_R100_SU122A_2" xml:space="preserve">
-    <value>SU-122A enhanced</value>
+    <value>СУ-122А усиленная</value>
   </data>
   <data name="Chassis_R101_MT25" xml:space="preserve">
-    <value>MT-25</value>
+    <value>МТ-25</value>
   </data>
   <data name="Chassis_R101_MT25_2" xml:space="preserve">
-    <value>MT-25 reinforced</value>
+    <value>МТ-25 усиленная</value>
   </data>
   <data name="Chassis_R104_Object_430_II" xml:space="preserve">
-    <value>Object 430 Version II</value>
+    <value>Объект 430 Вариант II</value>
   </data>
   <data name="Chassis_R104_Object_430_II_2" xml:space="preserve">
-    <value>Object 430 Version II enhanced</value>
+    <value>Объект 430 Вариант II усиленная</value>
   </data>
   <data name="Chassis_R105_BT_7A" xml:space="preserve">
-    <value>BT-7 art.</value>
+    <value>БТ-7 арт.</value>
   </data>
   <data name="Chassis_R106_KV85" xml:space="preserve">
-    <value>KV-85</value>
+    <value>КВ-85</value>
   </data>
   <data name="Chassis_R106_KV85_2" xml:space="preserve">
-    <value>KV-122</value>
+    <value>КВ-122</value>
   </data>
   <data name="Chassis_R107_LTB" xml:space="preserve">
-    <value>LTTB</value>
+    <value>ЛТТБ</value>
   </data>
   <data name="Chassis_R107_LTB_2" xml:space="preserve">
-    <value>LTTB enhanced</value>
+    <value>ЛТТБ усиленная</value>
   </data>
   <data name="Chassis_R108_T34_85M" xml:space="preserve">
-    <value>T-34-85M</value>
+    <value>Т-34-85М</value>
   </data>
   <data name="Chassis_R109_T54S" xml:space="preserve">
-    <value>T-54 ltwt. version</value>
+    <value>Т-54 обл. вариант</value>
   </data>
   <data name="Chassis_R109_T54S_2" xml:space="preserve">
-    <value>T-54 enhanced ltwt. version</value>
+    <value>Т-54 обл. вариант усиленная</value>
   </data>
   <data name="Chassis_R110_Object_260" xml:space="preserve">
-    <value>Object 260 mod. 1945</value>
+    <value>Объект 260 обр. 1945 г.</value>
   </data>
   <data name="Chassis_R111_ISU130" xml:space="preserve">
-    <value>ISU-130</value>
+    <value>ИСУ-130</value>
   </data>
   <data name="Chassis_R112_T54_45" xml:space="preserve">
-    <value>T-54 first prototype</value>
+    <value>Т-54 первый образец</value>
   </data>
   <data name="Chassis_R113_Object_730" xml:space="preserve">
-    <value>IS-5 (Object 730)</value>
+    <value>ИС-5 (Объект 730)</value>
   </data>
   <data name="Chassis_R114_Object_244" xml:space="preserve">
-    <value>Object 244</value>
+    <value>Объект 244</value>
   </data>
   <data name="Chassis_R115_IS-3_auto" xml:space="preserve">
-    <value>IS-3A</value>
+    <value>ИС-3 с МЗ</value>
   </data>
   <data name="Chassis_R116_ISU122C_Berlin" xml:space="preserve">
-    <value>ISU-122S</value>
+    <value>ИСУ-122С</value>
   </data>
   <data name="Chassis_R117_T34_85_Rudy" xml:space="preserve">
-    <value>T-34-85-60</value>
+    <value>Т-34-85-60</value>
   </data>
   <data name="Chassis_R118_T28_F30" xml:space="preserve">
-    <value>T-28E with F-30</value>
+    <value>Т-28Э с Ф-30</value>
   </data>
   <data name="Chassis_R119_Object_777" xml:space="preserve">
-    <value>Object 777 Version II</value>
+    <value>Объект 777 Вариант II</value>
   </data>
   <data name="Chassis_R120_T22SR_A22" xml:space="preserve">
-    <value>T-22 medium</value>
+    <value>Т-22 ср.</value>
   </data>
   <data name="Chassis_R121_KV4_KTT" xml:space="preserve">
-    <value>KV-4 KTTS</value>
+    <value>КВ-4 КТТС</value>
   </data>
   <data name="Chassis_R122_T44_100" xml:space="preserve">
-    <value>T-44-100</value>
+    <value>Т-44-100</value>
   </data>
   <data name="Chassis_R123_Kirovets_1" xml:space="preserve">
-    <value>Kirovets-1</value>
+    <value>Кировец-1</value>
   </data>
   <data name="Chassis_R125_T_45" xml:space="preserve">
-    <value>T-45</value>
+    <value>Т-45</value>
   </data>
   <data name="Chassis_R126_Object_730_5" xml:space="preserve">
-    <value>Object 268 Version V</value>
+    <value>Объект 268 Вариант 5</value>
   </data>
   <data name="Chassis_R127_T44_100_P" xml:space="preserve">
-    <value>T-44-100 (R)</value>
+    <value>Т-44-100 (Р)</value>
   </data>
   <data name="Chassis_R128_KV4_Kreslavskiy" xml:space="preserve">
-    <value>KV-4 by Kreslavskiy</value>
+    <value>КВ-4 Креславского</value>
   </data>
   <data name="Chassis_R129_Object_257" xml:space="preserve">
-    <value>Object 257</value>
+    <value>Объект 257</value>
+  </data>
+  <data name="Chassis_R133_KV_122" xml:space="preserve">
+    <value>КВ-122</value>
   </data>
   <data name="Chassis_R71_IS_2B" xml:space="preserve">
-    <value>IS-2M</value>
+    <value>ИС-2М</value>
   </data>
   <data name="Chassis_ST_I" xml:space="preserve">
-    <value>ST-I</value>
+    <value>СТ-I</value>
   </data>
   <data name="Chassis_ST_I_2" xml:space="preserve">
-    <value>ST-IM</value>
+    <value>СТ-IМ</value>
   </data>
   <data name="Chassis_SU-101" xml:space="preserve">
-    <value>SU-101</value>
+    <value>СУ-101</value>
   </data>
   <data name="Chassis_SU-101_2" xml:space="preserve">
-    <value>SU-102</value>
+    <value>СУ-102</value>
   </data>
   <data name="Chassis_SU100M1" xml:space="preserve">
-    <value>SU-100M1</value>
+    <value>СУ-100М1</value>
   </data>
   <data name="Chassis_SU100M1_2" xml:space="preserve">
-    <value>SU-100M1 Bis</value>
+    <value>СУ-100М1 Бис</value>
   </data>
   <data name="Chassis_SU100Y" xml:space="preserve">
-    <value>SU-100Y</value>
+    <value>СУ-100Y</value>
   </data>
   <data name="Chassis_SU122_44_2" xml:space="preserve">
-    <value>SU-122-44</value>
+    <value>СУ-122-44</value>
   </data>
   <data name="Chassis_SU122_54" xml:space="preserve">
-    <value>SU-122-54M1</value>
+    <value>СУ-122-54М1</value>
   </data>
   <data name="Chassis_SU122_54_2" xml:space="preserve">
-    <value>SU-122-54M2</value>
+    <value>СУ-122-54М2</value>
   </data>
   <data name="Chassis_SU14_1" xml:space="preserve">
-    <value>SU-14</value>
+    <value>СУ-14</value>
   </data>
   <data name="Chassis_SU14_1_2" xml:space="preserve">
-    <value>SU-14-1</value>
+    <value>СУ-14-1</value>
   </data>
   <data name="Chassis_SU76I" xml:space="preserve">
-    <value>SU-76I</value>
+    <value>СУ-76И</value>
   </data>
   <data name="Chassis_SU_85I" xml:space="preserve">
-    <value>SU-85I</value>
+    <value>СУ-85И</value>
   </data>
   <data name="Chassis_T-127" xml:space="preserve">
-    <value>T-127</value>
+    <value>Т-127</value>
   </data>
   <data name="Chassis_T-50" xml:space="preserve">
-    <value>T-50</value>
+    <value>Т-50</value>
   </data>
   <data name="Chassis_T-50_2" xml:space="preserve">
-    <value>T-50M</value>
+    <value>Т-50М</value>
   </data>
   <data name="Chassis_T-54_2" xml:space="preserve">
-    <value>T-54 mod. 1946</value>
+    <value>Т-54 обр. 1946 г.</value>
   </data>
   <data name="Chassis_T-54_3" xml:space="preserve">
-    <value>T-54 mod. 1949</value>
+    <value>Т-54 обр. 1949 г.</value>
   </data>
   <data name="Chassis_T-60" xml:space="preserve">
-    <value>T-60</value>
+    <value>Т-60</value>
   </data>
   <data name="Chassis_T-60_2" xml:space="preserve">
-    <value>T-60 enhanced</value>
+    <value>Т-60 усиленная</value>
   </data>
   <data name="Chassis_T-70" xml:space="preserve">
-    <value>T-70</value>
+    <value>Т-70</value>
   </data>
   <data name="Chassis_T-70_2" xml:space="preserve">
-    <value>T-70 enhanced</value>
+    <value>Т-70 усиленная</value>
   </data>
   <data name="Chassis_T150" xml:space="preserve">
-    <value>T-150</value>
+    <value>Т-150</value>
   </data>
   <data name="Chassis_T150_2" xml:space="preserve">
-    <value>T-150M</value>
+    <value>Т-150М</value>
   </data>
   <data name="Chassis_T44_122" xml:space="preserve">
-    <value>T-44-122</value>
+    <value>Т-44-122</value>
   </data>
   <data name="Chassis_T44_85" xml:space="preserve">
-    <value>T-44-85</value>
+    <value>Т-44-85</value>
   </data>
   <data name="Chassis_T62A" xml:space="preserve">
-    <value>T-62A</value>
+    <value>Т-62А</value>
   </data>
   <data name="Chassis_T62A_fallout" xml:space="preserve">
-    <value>T-62A</value>
+    <value>Т-62А</value>
   </data>
   <data name="Chassis_T80" xml:space="preserve">
-    <value>T-80</value>
+    <value>Т-80</value>
   </data>
   <data name="Chassis_T80_2" xml:space="preserve">
-    <value>T-80 enhanced</value>
+    <value>Т-80 усиленная</value>
   </data>
   <data name="Chassis_T_50_2_1" xml:space="preserve">
-    <value>T-50-2</value>
+    <value>Т-50-2</value>
+  </data>
+  <data name="Chassis_T_50_2_2" xml:space="preserve">
+    <value>Т-50-2М</value>
   </data>
   <data name="Chassis_Tetrarch_LL" xml:space="preserve">
-    <value>Tetrarch</value>
+    <value>Тетрарх</value>
   </data>
   <data name="Churchill_LL" xml:space="preserve">
-    <value>Churchill III</value>
+    <value>Черчилль III</value>
   </data>
   <data name="Churchill_LL_descr" xml:space="preserve">
-    <value>A British tank supplied to the U.S.S.R. under Lend-Lease. The U.S.S.R. received a total of 301 vehicles, with some lost at sea during transport to Murmansk.</value>
+    <value>Английский танк, поступавший в СССР по ленд-лизу. Всего был поставлен 301 танк, однако часть была потеряна при транспортировке морем в Мурманск.</value>
   </data>
   <data name="Churchll" xml:space="preserve">
-    <value>Churchill</value>
+    <value>Черчилль</value>
   </data>
   <data name="Churchll_mk_III" xml:space="preserve">
-    <value>Churchill III</value>
+    <value>Черчилль III</value>
   </data>
   <data name="Continental_W-670_LL" xml:space="preserve">
     <value>Continental W-670</value>
@@ -542,274 +548,293 @@
 W-670</value>
   </data>
   <data name="D-744" xml:space="preserve">
-    <value>D-744</value>
+    <value>Д-744</value>
   </data>
   <data name="D37812_LL" xml:space="preserve">
     <value>D37812</value>
   </data>
   <data name="GAZ-202" xml:space="preserve">
-    <value>GAZ 202</value>
+    <value>ГАЗ-202</value>
   </data>
   <data name="GAZ-203" xml:space="preserve">
-    <value>GAZ-203</value>
+    <value>ГАЗ-203</value>
   </data>
   <data name="GAZ-34-BT" xml:space="preserve">
-    <value>GAM-34-BT</value>
+    <value>ГАМ-34-БТ</value>
+  </data>
+  <data name="GAZ-74B" xml:space="preserve">
+    <value>СУ-85А</value>
   </data>
   <data name="GAZ-74b" xml:space="preserve">
-    <value>SU-85B</value>
+    <value>СУ-85Б</value>
   </data>
   <data name="GAZ-74b_descr" xml:space="preserve">
-    <value>In April-May of 1943, the SU-85B tank destroyer designed by the Gorky Automobile Plant underwent trials. The vehicle was a modernization of the SU-85A and featured the artillery LB-2 gun, 160-hp engine, and SU-76M chassis. The cabin, drive wheels, and spare parts kits were redesigned. Only one prototype was built.</value>
+    <value>В апреле–мае 1943 года были проведены испытания ПТ-САУ СУ-85Б конструкции Горьковского Автозавода имени Молотова. Машина являлась модернизацией СУ-85А и комплектовалась артиллерийским орудием ЛБ-2, 160-сильным двигателем и шасси СУ-76М. Были переделаны боевая рубка, ведущие колеса, а также ящики ЗИП. Был выпущен единственный прототип.</value>
   </data>
   <data name="GAZ-M1" xml:space="preserve">
-    <value>GAZ-M1</value>
+    <value>ГАЗ-М1</value>
   </data>
   <data name="GMC" xml:space="preserve">
     <value>GMC 6004</value>
   </data>
   <data name="IS" xml:space="preserve">
-    <value>IS</value>
+    <value>ИС</value>
   </data>
   <data name="IS-1" xml:space="preserve">
-    <value>IS-1</value>
+    <value>ИС-1</value>
   </data>
   <data name="IS-122" xml:space="preserve">
-    <value>IS-122</value>
+    <value>ИС-122</value>
   </data>
   <data name="IS-2M" xml:space="preserve">
-    <value>IS-2M</value>
+    <value>ИС-2М</value>
   </data>
   <data name="IS-3" xml:space="preserve">
-    <value>IS-3</value>
+    <value>ИС-3</value>
   </data>
   <data name="IS-3M" xml:space="preserve">
-    <value>IS-3M</value>
+    <value>ИС-3М</value>
   </data>
   <data name="IS-3_K" xml:space="preserve">
-    <value>Kirovets-1</value>
+    <value>Кировец-1</value>
   </data>
   <data name="IS-3_descr" xml:space="preserve">
-    <value>Mass production of the vehicle started in May 1945. On September 7,1945, IS-3 tanks took part in the Allied Victory Parade through Berlin. A total of 1170 vehicles were manufactured by the end of 1946, when production was canceled. From 1948 through the late 1950s, the tanks underwent a number of modernization refits.</value>
+    <value>Серийное производство началось в мае 1945 года. 7 сентября машины этого типа приняли участие в параде стран-участниц антигитлеровской коалиции в Берлине. До прекращения серийного выпуска в середине 1946 года было выпущено 1170 танков. С 1948 года до конца 50-х гг. машины проходили модернизацию.</value>
   </data>
   <data name="IS-4" xml:space="preserve">
-    <value>IS-4</value>
+    <value>ИС-4</value>
   </data>
   <data name="IS-4_descr" xml:space="preserve">
-    <value>The project was developed by the Design Bureau of the Chelyabinsk Kirov Plant starting in December 1943. In April 1944 two prototypes of the Object 701 were built. After prototype trials, the design was improved. In late 1944 and early 1945 two more prototypes underwent trials. The Object 701 No. 5 was recommended for adoption into service. However, production was called off in favor of the IS-3 just entering mass-production. After IS-3 production was suspended in 1946, production of the IS-4 began, continuing until 1949. A total of 25 IS-4M tanks were built in 1951. Later all previously produced tanks were modernized to the level of the IS-4M. According to different sources, between 235 and 258 vehicles were built in total; they were stationed in the Far East.</value>
+    <value>Проект разрабатывался в КБ Кировского завода с декабря 1943 г. В апреле 1944 г. начались работы по производству двух прототипов танка «Объект 701». После испытаний проект был доработан, и осенью 1944 – зимой 1945 гг. были испытаны ещё два прототипа. Танк «Объект 701» №5 был рекомендован к принятию на вооружение, но из-за начавшегося производства ИС-3 серийный выпуск танка начат не был. После приостановки производства ИС-3 в 1946 г. танк ИС-4 был принят на вооружение. В 1949 г. производство ИС-4 было прекращено. В 1951 году было выпущено 25 танков ИС-4М. В дальнейшем все выпущенные ранее танки были модернизированы до уровня ИС-4М. По разным сведениям всего было построено от 235 до 258 машин, которые использовались на Дальнем Востоке.</value>
   </data>
   <data name="IS-6" xml:space="preserve">
-    <value>IS-6</value>
+    <value>ИС-6</value>
   </data>
   <data name="IS-6_descr" xml:space="preserve">
-    <value>Plans for this vehicle were drawn up in the construction bureau of the Chelyabinsk Kirov plant from December 1943 to the summer of 1944. Further development and the construction of the first prototype took place at the Uralmash plant. However, the vehicle had no advantages over the other heavy tank designs under consideration, and its armor was seen as inferior to the IS-4 (Object 701), so the IS-6 was not selected for production.</value>
+    <value>Эскизное проектирование танка проходило в КБ Челябинского Кировского завода с начала декабря 1943 до лета 1944 года. Затем работы были перенесены на Уралмаш, где были разработаны чертежи и опытный образец. Однако танк не имел никаких преимуществ перед другими тяжёлыми танками, а также уступал по броневой защите разрабатываемому ИС-4 («Объект 701»). На вооружение принят не был.</value>
   </data>
   <data name="IS-7" xml:space="preserve">
-    <value>IS-7</value>
+    <value>ИС-7</value>
   </data>
   <data name="IS-7_descr" xml:space="preserve">
-    <value>Development of the IS-7 started in the spring of 1945. Prototypes successfully underwent trials in 1946 and 1947. However, the IS-7 never saw mass production.</value>
+    <value>Работа над танком началась весной 1945 года. Прототипы испытывались в 1946 и 1947 гг. В 1948 г. прошёл госиспытания. Серийно не выпускался.</value>
   </data>
   <data name="IS-7_fallout" xml:space="preserve">
-    <value>(R) IS-7</value>
+    <value>(А) ИС-7</value>
   </data>
   <data name="IS-7_fallout_descr" xml:space="preserve">
-    <value>Development of the IS-7 started in the spring of 1945. Prototypes successfully underwent trials in 1946 and 1947. However, the IS-7 never saw mass production.</value>
+    <value>Работа над танком началась весной 1945 года. Прототипы испытывались в 1946 и 1947 гг. В 1948 году прошёл госиспытания. Серийно не выпускался.</value>
   </data>
   <data name="IS-85" xml:space="preserve">
-    <value>IS-85</value>
+    <value>ИС-85</value>
   </data>
   <data name="IS8" xml:space="preserve">
-    <value>T-10</value>
+    <value>Т-10</value>
   </data>
   <data name="IS8_descr" xml:space="preserve">
-    <value>Development started in 1949. The vehicle entered service in 1953 under the designation T-10. Subsequent development yielded several modifications of the tank, the most mass-produced being the T-10M. Approximately 2,500 vehicles were produced.</value>
+    <value>Разработка танка началась в 1949 году. Был принят на вооружение в 1953 году под обозначением Т-10. Позже был разработан ряд вариантов танка, самым массовым из которых являлся Т-10М. Всего было выпущено не менее 2500 машин.</value>
   </data>
   <data name="ISU-152" xml:space="preserve">
-    <value>ISU-152</value>
+    <value>ИСУ-152</value>
   </data>
   <data name="ISU-152_01" xml:space="preserve">
-    <value>ISU-152</value>
+    <value>ИСУ-152</value>
   </data>
   <data name="ISU-152_descr" xml:space="preserve">
-    <value>Developed on the basis of the IS tank. The ISU-152 was conceived as a replacement for the SU-152, which was based on the KV-1s chassis. A total of 4,635 vehicles were built from November 1943 through June 1945.</value>
+    <value>Разработана на базе танка ИС. Создавалась для замены СУ-152 в связи с прекращением производства КВ-1с. С ноября 1943 по июнь 1945 года было изготовлено 4635 машин.</value>
   </data>
   <data name="ISU-152_mod_1945" xml:space="preserve">
-    <value>ISU-152M</value>
+    <value>ИСУ-152М</value>
   </data>
   <data name="IS_descr" xml:space="preserve">
-    <value>The IS-1 (IS-85) heavy tank was a thorough modernization of the KV-1. The tank featured the 85-mm D-5T gun. The IS-1 entered mass production in October 1943, but work was discontinued at the beginning of 1944, as the IS-2 (IS-122) tank entered mass production in December 1943. A total of 107 vehicles were manufactured.</value>
+    <value>Тяжёлый танк ИС-1 (ИC-85) стал результатом глубокой модернизации танка КВ-1. Основным вооружением танка являлась пушка Д-5Т калибра 85 мм. Серийное производство машины началось в октябре 1943 года, но уже в начале 1944 года было прекращено в связи с началом выпуска в декабре 1943 года танка ИС-2 (ИС-122). Всего было выпущено 107 машин.</value>
   </data>
   <data name="KRSTB" xml:space="preserve">
-    <value>KRSTB</value>
+    <value>КРСТБ</value>
   </data>
   <data name="KV" xml:space="preserve">
-    <value>KV</value>
+    <value>КВ</value>
   </data>
   <data name="KV-13" xml:space="preserve">
-    <value>KV-13</value>
+    <value>КВ-13</value>
   </data>
   <data name="KV-13_descr" xml:space="preserve">
-    <value>Development was started in the fall of 1941, under the initiative of Semyon Ginsburg. After successful trials in the fall of 1942, the development of a second prototype was begun.</value>
+    <value>Работы над танком начались осенью 1941 года по инициативе С. А. Гинзбурга. Осенью 1942 г. он был отправлен на испытания. По результатам испытаний начались работы над вторым опытным образцом.</value>
   </data>
   <data name="KV-1s" xml:space="preserve">
-    <value>KV-1S</value>
+    <value>КВ-1С</value>
   </data>
   <data name="KV-1s_bis" xml:space="preserve">
-    <value>KV-1S mod. 1943</value>
+    <value>КВ-1С обр. 1943 г.</value>
   </data>
   <data name="KV-1s_descr" xml:space="preserve">
-    <value>A further modification of the KV-1 heavy tank series developed in the summer of 1942. It passed into Red Army service on August 20, 1942. Compared to its predecessors, KV-1S had several design features which allowed for the tank’s weight to be reduced to 42.3 tons. Also, the KV-1S had increased top speed, maneuverability, and durability. However, the 76-mm ZIS-5 gun remained. This, coupled with reduced and inefficient armoring, made the new vehicle basically equal to the Т-34 in terms of battle performance. A total of 1,083 vehicles of this modification were manufactured. This tank was widely used on all fronts of the Great Patriotic War.</value>
+    <value>КВ-1С является дальнейшим развитием серии тяжёлых танков КВ-1. Разработан летом 1942 года. 20 августа 1942 года принят на вооружение РККА. По сравнению с предшественниками КВ-1С имел ряд конструктивных особенностей, благодаря которым масса танка была снижена до 42,3 т, увеличены скорость, манёвренность и надёжность машины. Однако оставшееся на вооружении 76-мм орудие ЗИС-5, ослабленная броня и неудачная схема бронирования практически уравнивали новый танк с Т-34 по боевым качествам. Всего было выпущено 1083 танка данной модификации, которые широко применялись на фронтах Великой Отечественной войны.</value>
+  </data>
+  <data name="KV-2" xml:space="preserve">
+    <value>КВ-2</value>
   </data>
   <data name="KV-220" xml:space="preserve">
-    <value>KV-220-2</value>
+    <value>КВ-220-2</value>
   </data>
   <data name="KV-220-1" xml:space="preserve">
-    <value>KV-220-2</value>
+    <value>КВ-220-2</value>
   </data>
   <data name="KV-220_descr" xml:space="preserve">
-    <value>Development of KV-220 on the basis of the KV heavy tank started in the summer of 1940. A prototype was built on December 5. Unlike other KV modifications, the tank featured an elongated hull, additional support roller, enhanced armor (100 mm), and a new turret with the 85 mm F-30 gun. In the fall of 1941, production of the KV-1 was discontinued. The vehicle received the mass-produced KV turret and was sent to the frontlines.</value>
+    <value>Разработка КВ-220 на базе тяжёлого танка КВ началась летом 1940 года. Опытный образец был построен 5 декабря. Tанк имел ряд отличительных особенностей: удлинённый корпус, дополнительный опорный каток, увеличенную до 100 мм броневую защиту, а также новую башню с 85-мм пушкой Ф-30. Осенью 1941 года на опытный образец установили башню от серийного КВ, и танк был отправлен на фронт.</value>
   </data>
   <data name="KV-220_mod" xml:space="preserve">
-    <value>T-220</value>
+    <value>Т-220</value>
   </data>
   <data name="KV-220_test" xml:space="preserve">
-    <value>KV-220-2 Beta Test</value>
+    <value>КВ-220-2 Бета-Тест</value>
   </data>
   <data name="KV-220_test_short" xml:space="preserve">
-    <value>KV-220-2 T</value>
+    <value>КВ-220-2 Т</value>
   </data>
   <data name="KV-3" xml:space="preserve">
-    <value>KV-3</value>
+    <value>КВ-3</value>
   </data>
   <data name="KV-3_descr" xml:space="preserve">
-    <value>Developed on the basis of the KV heavy tank, the vehicle initially had very few differences from the mass-produced model. It underwent field trials in January–February 1941. Eventually, several crucial changes were made to the design, greatly boosting the combat characteristics of the vehicle. By July 22, 1941, chassis and engine development was completed. According to some sources, in the fall of 1941, the vehicle was equipped with a serial KV turret and sent to the front.</value>
+    <value>Разработан на базе тяжёлого танка КВ. Изначально практически не имел отличий от серийных машин. В январе–феврале 1941 года машина проходила полигонные испытания. Впоследствии в конструкцию танка был внесён ряд изменений, которые значительно повлияли на его характеристики. К 22 июня 1941 года завершились работы над шасси и двигателем. По некоторым данным, осенью 1941 года машина была доукомплектована башней от серийного КВ и отправлена на фронт.</value>
   </data>
   <data name="KV-3bis" xml:space="preserve">
-    <value>KV-3 Bis</value>
+    <value>КВ-3 Бис</value>
   </data>
   <data name="KV-5" xml:space="preserve">
-    <value>KV-5</value>
+    <value>КВ-5</value>
   </data>
   <data name="KV-5_descr" xml:space="preserve">
-    <value>Development began in June 1941 at the Leningrad Kirov Plant and was completed by August, but plans were interrupted due to the complicated situation on the front. The KV-5 was to utilize some components of the KV-1. A new turret was designed, incorporating the 107-mm ZIS-6 gun. Two roadwheels and a single support roller were to be added on each side. A new 1,200 h.p. diesel engine was being developed for the vehicle, however it was not completed in time and was replaced with two V-2K engines.</value>
+    <value>Проектирование началось в июне 1941 года на ЛКЗ. К августу проект был завершён, но из-за сложной обстановки на фронте опытный образец построен не был. В танке предусматривалось использование узлов КВ-1. Была спроектирована новая башня, в которую устанавливалась 107-мм пушка ЗИС-6. В ходовую было добавлено по два опорных катка и по одному поддерживающему катку с каждой стороны. Для танка разрабатывался новый дизельный двигатель мощностью 1200 л.с., но к окончанию проектных работ он не был завершён, и его заменили на 2 В-2К.</value>
   </data>
   <data name="KV1" xml:space="preserve">
-    <value>KV-1</value>
+    <value>КВ-1</value>
   </data>
   <data name="KV1S_mod_42" xml:space="preserve">
-    <value>KV-1S</value>
+    <value>КВ-1С</value>
   </data>
   <data name="KV1S_mod_43" xml:space="preserve">
-    <value>KV-122 mod. 1944</value>
+    <value>КВ-122 обр. 1944 г.</value>
   </data>
   <data name="KV1_descr" xml:space="preserve">
-    <value>Development started at the end of 1938. A prototype was produced in August 1939. The vehicle first saw combat in December 1939 at the Mannerheim Line. The tank was mass-produced from March 1940 through August 1942, with a total of 2,769 vehicles manufactured.</value>
+    <value>Разработка началась в конце 1938 года. Опытный образец был выпущен в августе 1939 года. Впервые использовался в декабре 1939 года во время боёв на Линии Маннергейма. Серийно выпускался с марта 1940 по август 1942 года. Всего было выпущено 2769 машин этого типа.</value>
   </data>
   <data name="KV2" xml:space="preserve">
-    <value>KV-2</value>
+    <value>КВ-2</value>
   </data>
   <data name="KV220" xml:space="preserve">
-    <value>KV-220-2</value>
+    <value>КВ-220-2</value>
   </data>
   <data name="KV2_descr" xml:space="preserve">
-    <value>Heavy assault tank. Developed on the basis of the KV-1 in January 1940, with a total of 334 vehicles manufactured from 1940 through 1941. The KV-2 tanks were used in action in 1941, with most of the vehicles lost the same year.</value>
+    <value>Тяжёлый штурмовой танк. Разработан на базе КВ-1 в январе 1940 года. В 1940–1941 гг. было выпущено 334 машины этого типа, которые активно использовались в боевых действиях 1941 года, и тогда же были практически все потеряны.</value>
   </data>
   <data name="KV4" xml:space="preserve">
-    <value>KV-4</value>
+    <value>КВ-4</value>
   </data>
   <data name="KV4_descr" xml:space="preserve">
-    <value>The project of N. L. Dukhov developed in April 1941. A prototype was to be produced by November 1941. However, the work was discontinued due to the outbreak of the Soviet–German war.</value>
+    <value>Проект инженера Н. Л. Духова, разработанный в апреле 1941 года. К ноябрю 1941 г. планировалось выпустить опытный образец, но в связи с началом Великой Отечественной войны все работы по созданию машины были прекращены.</value>
   </data>
   <data name="KV_1" xml:space="preserve">
-    <value>KV-1</value>
+    <value>КВ-1</value>
+  </data>
+  <data name="KV_2" xml:space="preserve">
+    <value>КВ-2</value>
   </data>
   <data name="KV_descr" xml:space="preserve">
-    <value>Developed by the Special Design Bureau No. 2 at the Kirov Plant in Leningrad in 1939. Produced from February 1940 through September 1942, with a total production of 2,769 KV-1 vehicles and 334 KV-2 vehicles.</value>
+    <value>Разработан в СКБ-2 Ленинградского Кировского завода в 1939 году. Выпускался с февраля 1940 по сентябрь 1942 года. Всего было выпущено 2769 КВ-1 и 334 КВ-2.</value>
   </data>
   <data name="KZ-V8" xml:space="preserve">
-    <value>KZ V8</value>
+    <value>КЗ V8</value>
   </data>
   <data name="LTP" xml:space="preserve">
-    <value>LTP</value>
+    <value>ЛТП</value>
   </data>
   <data name="LTP_descr" xml:space="preserve">
-    <value>A proposed light vehicle developed by Lieutenant Provornov in the summer of 1942. No prototypes were manufactured.</value>
+    <value>Аванпроект лёгкого танка, разработанный лейтенантом К. Я. Проворновым летом 1942 года. Прототип выпущен не был.</value>
+  </data>
+  <data name="M-17E" xml:space="preserve">
+    <value>М-17Э</value>
   </data>
   <data name="M-17F" xml:space="preserve">
-    <value>M-17T</value>
+    <value>М-17Т</value>
   </data>
   <data name="M-17FA" xml:space="preserve">
-    <value>M-17T</value>
+    <value>М-17Т</value>
   </data>
   <data name="M-17F_R" xml:space="preserve">
-    <value>M-17F</value>
+    <value>М-17Ф</value>
   </data>
   <data name="M-17L_R" xml:space="preserve">
-    <value>M-17L 1,445 r/min</value>
+    <value>М-17Л 1445 об/мин</value>
   </data>
   <data name="M-17T" xml:space="preserve">
-    <value>M-17L 1,400 r/min</value>
+    <value>М-17Л 1400 об/мин</value>
   </data>
   <data name="M-5-400" xml:space="preserve">
-    <value>M-5-400</value>
+    <value>М-5-400</value>
   </data>
   <data name="M-5-400F" xml:space="preserve">
-    <value>M-5-400F</value>
+    <value>М-5-400Ф</value>
+  </data>
+  <data name="M-5-400F_Bis" xml:space="preserve">
+    <value>М-5-400Ф Бис</value>
   </data>
   <data name="M-50T" xml:space="preserve">
-    <value>M-50T</value>
+    <value>М-50Т</value>
+  </data>
+  <data name="M-50TD" xml:space="preserve">
+    <value>М-50ТД</value>
   </data>
   <data name="M-50T_fallout" xml:space="preserve">
-    <value>M-50T</value>
+    <value>М-50Т</value>
   </data>
   <data name="M-80" xml:space="preserve">
-    <value>M-80</value>
+    <value>М-80</value>
   </data>
   <data name="M3_Stuart_LL" xml:space="preserve">
-    <value>M3 Light</value>
+    <value>М3 лёгкий</value>
   </data>
   <data name="M3_Stuart_LL_descr" xml:space="preserve">
-    <value>The most famous light tank of World War II, with a total of 13,859 vehicles manufactured from 1941 through September 1943. 1,576 tanks (mostly of the M3A1 version) were supplied to the U.S.S.R. under Lend-Lease, and many more to the British.</value>
+    <value>Самый известный лёгкий танк Второй мировой войны. С 1941 по сентябрь 1943 года было изготовлено 13859 машин. По ленд-лизу в СССР было поставлено 1576 танков, в основном модификации М3А1.</value>
   </data>
   <data name="M500" xml:space="preserve">
-    <value>M500</value>
+    <value>М500</value>
   </data>
   <data name="MS-1" xml:space="preserve">
-    <value>MS-1</value>
+    <value>МС-1</value>
   </data>
   <data name="MS-1_bot" xml:space="preserve">
-    <value>MS-1</value>
+    <value>МС-1</value>
   </data>
   <data name="MS-1_bot_descr" xml:space="preserve">
-    <value>The first Soviet mass-produced tank, with a total of 959 vehicles manufactured from 1928 through 1931.</value>
+    <value>Первый советский танк, запущенный в массовое производство. С 1928 по 1931 год было выпущено 959 машин.</value>
   </data>
   <data name="MS-1_descr" xml:space="preserve">
-    <value>The first Soviet mass-produced tank with a total of 959 vehicles manufactured from 1928 through 1931.</value>
+    <value>МС-1 является первым советским танком, запущенным в массовое производство. С 1928 по 1931 год было выпущено 959 машин.</value>
   </data>
   <data name="MT-5-1" xml:space="preserve">
-    <value>MT-5-1</value>
+    <value>МТ-5-1</value>
   </data>
   <data name="MT25" xml:space="preserve">
-    <value>MT-25</value>
+    <value>МТ-25</value>
   </data>
   <data name="MT25_descr" xml:space="preserve">
-    <value>A proposed project of a light wheeled caterpillar vehicle. The draft was completed in February 1943. The most innovative feature was the suspension design. The suspension wheels were interleaved, and power was delivered to all wheels. No prototypes were manufactured.</value>
+    <value>Аванпроект лёгкого колёсно-гусеничного танка. Эскизные работы были закончены в феврале 1943 года. Главной особенностью была конструкция подвески — все опорные катки являлись ведущими. Прототип построен не был.</value>
   </data>
   <data name="M_40" xml:space="preserve">
-    <value>M-40</value>
+    <value>М-40</value>
   </data>
   <data name="M_40_1200" xml:space="preserve">
-    <value>M-40</value>
+    <value>М-40</value>
   </data>
   <data name="Matilda" xml:space="preserve">
-    <value>Matilda II</value>
+    <value>Матильда II</value>
   </data>
   <data name="Matilda_II_LL" xml:space="preserve">
-    <value>Matilda IV</value>
+    <value>Матильда IV</value>
   </data>
   <data name="Matilda_II_LL_descr" xml:space="preserve">
-    <value>A British tank supplied to the U.S.S.R. under Lend-Lease. A total of 1,084 vehicles were sent to the Soviet Union, with some lost at sea during transport to Murmansk.</value>
+    <value>Английский танк, поступавший в СССР по ленд-лизу.
+В декабре 1941 года один образец Matilda был перевооружён отечественным 76,2-мм орудием ЗИС-5 и 7,62-мм пулемётом ДТ. В результате была увеличена огневая мощь танка, как за счет увеличенного бронепробития, так и за счет использования осколочно-фугасного снаряда. Точных данных о серийном перевооружении машин нет.</value>
   </data>
   <data name="Maybach_HL_120_TRM_A" xml:space="preserve">
     <value>Maybach HL 120 TRM</value>
@@ -821,1675 +846,1709 @@ W-670</value>
     <value>WS No. 19R</value>
   </data>
   <data name="Mod_T-10" xml:space="preserve">
-    <value>IS-3</value>
+    <value>ИС-3</value>
   </data>
   <data name="Object263" xml:space="preserve">
-    <value>Object 263</value>
+    <value>Объект 263</value>
   </data>
   <data name="Object263_descr" xml:space="preserve">
-    <value>The development of a heavy tank destroyer on the basis of the IS-7 heavy tank was started in 1950. Three design projects were developed, one of which resulted in a full-size wooden prototype. However, further development was discontinued due to phasing out the IS-7 mass-production.</value>
+    <value>Разработка тяжёлой противотанковой самоходной установки на базе тяжёлого танка ИС-7 началась в 1950 году. Было разработано три эскизных варианта проекта. На основании одного из проектов был изготовлен полноразмерный деревянный макет машины. Однако в дальнейшем все работы по проекту были прекращены в связи с отказом от серийного производства ИС-7.</value>
   </data>
   <data name="Object263_short" xml:space="preserve">
-    <value>Obj. 263</value>
+    <value>Об. 263</value>
   </data>
   <data name="Object268" xml:space="preserve">
-    <value>Object 268</value>
+    <value>Объект 268</value>
   </data>
   <data name="Object268_descr" xml:space="preserve">
-    <value>Development of the Object 268 was started in the summer of 1952 at the Kirov Plant, Leningrad, under the supervision of Joseph Kotin. The vehicle was developed on the basis of the T-10 heavy tank. A prototype was manufactured in 1956. The vehicle passed trials, but never saw mass production.</value>
+    <value>Работы над машиной были начаты летом 1952 года в ОКБТ ЛКЗ под руководством Ж. Я. Котина. Установка разрабатывалась на базе тяжёлого танка Т-10. Опытный образец был выпущен в 1956 году. Машина прошла испытания, однако серийно не выпускалась.</value>
   </data>
   <data name="Object268_short" xml:space="preserve">
-    <value>Obj. 268</value>
+    <value>Об. 268</value>
   </data>
   <data name="Object416" xml:space="preserve">
-    <value>Object 416</value>
+    <value>Объект 416</value>
   </data>
   <data name="Object416_descr" xml:space="preserve">
-    <value>The development of the Object 416 started at the Construction Bureau of Factory No. 75 in the fall of 1949. The blueprint was developed by March 1950. Due to technical problems with the turret, a working prototype was not ready until April 1952. Improvements were made, and another prototype was built in the summer of 1953, but the vehicle never entered mass production.</value>
+    <value>Средний танк «Объект 416» разрабатывался в КБ завода №75 с осени 1949 года. Эскизный проект был закончен к марту 1950 года. Из-за проблем с башней экспериментальный образец машины был готов только в конце апреля 1952 г., а доработанный после заводских испытаний опытный образец — летом 1953. Машина прошла испытания, но серийно не выпускалась.</value>
   </data>
   <data name="Object416_short" xml:space="preserve">
-    <value>Obj. 416</value>
+    <value>Об. 416</value>
   </data>
   <data name="Object_140" xml:space="preserve">
-    <value>Object 140</value>
+    <value>Объект 140</value>
   </data>
   <data name="Object_140_descr" xml:space="preserve">
-    <value>An experimental medium tank. Developed between 1953 and 1958 in Nizhny Tagil to replace the T-54. Two prototypes were built, but in 1958 the project was terminated in favor of the Object 430.</value>
+    <value>Опытный вариант среднего танка. Разрабатывался в 1953–1958 годах в Нижнем Тагиле в рамках программы по созданию нового среднего танка с целью замены 
+Т-54. Было выпущено два опытных образца. В 1958 году все работы были прекращены в пользу более совершенного «Объекта 430».</value>
   </data>
   <data name="Object_140_short" xml:space="preserve">
-    <value>Obj. 140</value>
+    <value>Об. 140</value>
   </data>
   <data name="Object_212" xml:space="preserve">
-    <value>212A</value>
+    <value>212А</value>
   </data>
   <data name="Object_212_descr" xml:space="preserve">
-    <value>Technical requirements for the 212A self-propelled gun were developed in August 1940. The Special Design Bureau No. 2 of the Leningrad Kirov Plant started development based on the KV-220. Blueprints for the vehicle were ready by February 24, 1941, but a prototype was never manufactured. By August of 1941, development was passed on to the UHMP (Ural Heavy Machinery Plant), but a prototype was never built.</value>
+    <value>Тактико-технические требования к САУ 212A были разработаны в августе 1940 года. Проектирование было начато в СКБ-2 Ленинградского Кировского завода на базе танка КВ-220. К 24 февраля 1941 года были подготовлены чертежи машины, однако к сборке опытного образца не приступили. В конце августа 1941 года все работы были переданы на УЗТМ, но и там к изготовлению опытного образца не приступили.</value>
   </data>
   <data name="Object_212_short" xml:space="preserve">
-    <value>212A</value>
+    <value>212А</value>
   </data>
   <data name="Object_261" xml:space="preserve">
-    <value>Object 261</value>
+    <value>Объект 261</value>
   </data>
   <data name="Object_261_descr" xml:space="preserve">
-    <value>Developed on the basis of the IS-7 by the design bureaus of the Kirov Plants in Chelyabinsk and Leningrad. The project was launched in 1947, but was canceled while still in the design phase.</value>
+    <value>Разрабатывалась в КБ Челябинского и Ленинградского Кировских заводов на базе танка ИС-7. Работы были начаты в 1947 году, однако вскоре были прекращены на стадии макета.</value>
   </data>
   <data name="Object_261_short" xml:space="preserve">
-    <value>Obj. 261</value>
+    <value>Об. 261</value>
   </data>
   <data name="Object_430" xml:space="preserve">
-    <value>Object 430</value>
+    <value>Объект 430</value>
   </data>
   <data name="Object_430_descr" xml:space="preserve">
-    <value>A prototype of this medium tank was developed from 1953 through 1957 to replace the T-54. Soviet authorities wanted a tank with greater nuclear survivability and firepower, so in 1961 the project was discontinued in favor of the Object 432. Several prototypes of the vehicle were manufactured.</value>
+    <value>Опытный образец среднего танка. Разрабатывался в 1953–1957 годах с целью замены Т-54. В связи с повышением требований к противоатомной, противокумулятивной защите и огневой мощи работы над проектом были свёрнуты в пользу «Объекта 432» в 1961 году. Было выпущено несколько прототипов.</value>
   </data>
   <data name="Object_430_short" xml:space="preserve">
-    <value>Obj. 430</value>
+    <value>Об. 430</value>
   </data>
   <data name="Object_907" xml:space="preserve">
-    <value>Object 907</value>
+    <value>Объект 907</value>
   </data>
   <data name="Object_907A" xml:space="preserve">
-    <value>Object 907A</value>
+    <value>Объект 907A</value>
   </data>
   <data name="Object_907A_descr" xml:space="preserve">
-    <value>The decision to start development of a next-generation medium tank was made on July 13th, 1953. Development was carried out by Research Institute No. 100. The project was submitted in March 1954, and at the beginning of 1955 the hull of the new vehicle was tested for shell resistance. However, later the project was canceled.</value>
+    <value>Решение о начале работ над средними танками нового поколения было принято 13 июля 1953 года. Разработка велась в ВНИИ-100. Проект был представлен на рассмотрение в марте 1954 года, а в начале 1955 года были проведены испытания корпуса новой машины на снарядостойкость. Однако в дальнейшем работы над проектом были свёрнуты.</value>
   </data>
   <data name="Object_907A_short" xml:space="preserve">
-    <value>Obj. 907A</value>
+    <value>Об. 907A</value>
   </data>
   <data name="Object_907_descr" xml:space="preserve">
-    <value>The decision to start development of a next-generation medium tank was made on July 13th, 1953. Development was carried out by Research Institute No. 100. The project was submitted in March 1954, and at the beginning of 1955 the hull of the new vehicle was tested for shell resistance. However, later the project was canceled.</value>
+    <value>Решение о начале работ над средними танками нового поколения было принято 13 июля 1953 года. Разработка велась в ВНИИ-100. Проект был представлен на рассмотрение в марте 1954 года, а в начале 1955 года были проведены испытания корпуса новой машины на снарядостойкость. Однако в дальнейшем работы над проектом были свёрнуты.</value>
   </data>
   <data name="Object_907_short" xml:space="preserve">
-    <value>Obj. 907</value>
+    <value>Об. 907</value>
   </data>
   <data name="Observer" xml:space="preserve">
-    <value>Spectator</value>
+    <value>Наблюдатель</value>
   </data>
   <data name="Observer_descr" xml:space="preserve">
-    <value>Spectator vehicle</value>
+    <value>Машина Наблюдателя</value>
   </data>
   <data name="QF_6_pounder_Mk_III" xml:space="preserve">
     <value>QF 6-pdr Mk. V</value>
   </data>
   <data name="R104_Object_430_II" xml:space="preserve">
-    <value>Object 430 Version II</value>
+    <value>Объект 430 Вариант II</value>
   </data>
   <data name="R104_Object_430_II_descr" xml:space="preserve">
-    <value>Developed at the Construction Bureau of Factory No. 73 in early 1953. From March 8th through March 10th, 1953, the Ministry of Transport and Heavy Engineering considered the project, along with an alternate version of the tank with a more conventional configuration. However, later development was discontinued.</value>
+    <value>Танк разрабатывался в КБ завода №73 в начале 1953 года для замены танка Т-54. Проект был рассмотрен 8-10 марта 1953 года Министерством транспортного и тяжёлого машиностроения вместе с проектом среднего танка классической компоновки. Однако дальнейшие работы по проекту были свёрнуты.</value>
   </data>
   <data name="R104_Object_430_II_short" xml:space="preserve">
-    <value>Obj. 430 II</value>
+    <value>Об. 430 II</value>
   </data>
   <data name="R105_BT_7A" xml:space="preserve">
-    <value>BT-7 artillery</value>
+    <value>БТ-7 артиллерийский</value>
   </data>
   <data name="R105_BT_7A_descr" xml:space="preserve">
-    <value>In 1934–1935 the design bureau of the Kharkiv Locomotive Factory developed this artillery modification of the BT-7. The new elliptical turret was equipped with the 76.2-mm CT-28 gun. In addition, some vehicles received new radio stations. A total of 155 artillery BT-7s were manufactured. The vehicles saw combat on the Karelian Isthmus, in Manchuria, and during the first period of the Great Patriotic War.</value>
+    <value>В 1934–1935 годах КБ Харьковского паровозостроительного завода был разработан артиллерийский вариант серийного танка БТ-7. В новую эллиптическую башню увеличенного размера была установлена 76,2-мм пушка КТ-28. Кроме того, часть машин получила новые радиостанции. Всего было выпущено 155 танков БТ-7 артиллерийский, которые приняли участие в боях на Карельском перешейке, в Маньчжурии и в первом периоде Великой Отечественной войны.</value>
   </data>
   <data name="R105_BT_7A_short" xml:space="preserve">
-    <value>BT-7 art.</value>
+    <value>БТ-7 арт.</value>
   </data>
   <data name="R106_KV85" xml:space="preserve">
-    <value>KV-85</value>
+    <value>КВ-85</value>
   </data>
   <data name="R106_KV85_descr" xml:space="preserve">
-    <value>A further development of the KV-1S tank. Unlike the previous modification, the KV-85 had enhanced armament. The vehicle was developed in the spring of 1943 at the Chelyabinsk Kirov Plant. The tank entered service on August 8, 1943, and was mass produced until September, with a total of 148 vehicles manufactured. The KV-85 was used by the breakthrough armored regiments of the Red Army.</value>
+    <value>КВ-85 являлся дальнейшим развитием танка КВ-1С. По сравнению с предыдущей модификацией, КВ-85 имел более мощное вооружение. Разработка проводилась весной 1943 года на ЧКЗ. Танк был принят на вооружение 8 августа 1943 года и серийно производился до сентября этого же года. КВ-85 активно использовался частями Красной Армии в составе танковых полков прорыва. Всего было выпущено 148 машин этого типа.</value>
   </data>
   <data name="R107_LTB" xml:space="preserve">
-    <value>LTTB</value>
+    <value>ЛТТБ</value>
   </data>
   <data name="R107_LTB_descr" xml:space="preserve">
-    <value>Development of the light tank project was started in early 1944 at Factory No. 174. The project was canceled during the design phase and the phase of setting tactical and technical requirements.</value>
+    <value>Проект лёгкого танка. Разработка машины велась в начале 1944 года на заводе № 174. Работы завершились на стадии эскизного проектирования и обсуждения тактико-технических требований.</value>
   </data>
   <data name="R108_T34_85M" xml:space="preserve">
-    <value>T-34-85M</value>
+    <value>Т-34-85М</value>
   </data>
   <data name="R108_T34_85M_descr" xml:space="preserve">
-    <value>A modification of the T-34-85 tank, produced at Factory No. 183. Unlike the original vehicle, it featured enhanced front armor and reduced rear armor. Fuel tanks were transferred from the fighting compartment to the rear. When the suspension proved faulty, production was halted after just one prototype was built.</value>
+    <value>Модификация танка Т-34-85. Производилась на заводе № 183. От оригинального танка отличалась усиленным лобовым бронированием за счёт снижения бронирования кормы и баками, которые были перенесены из боевого отделения в корму. Был выпущен единственный прототип, так как ходовая часть оказалась недостаточно надёжной.</value>
   </data>
   <data name="R109_T54S" xml:space="preserve">
-    <value>T-54 ltwt.</value>
+    <value>Т-54 облегчённый</value>
   </data>
   <data name="R109_T54S_descr" xml:space="preserve">
-    <value>A proposed lightweight version of the T-54 medium tank. Development was started in May 1949. Compared to its series-produced predecessor, the tank had better performance and maneuverability. Therefore, the tank was planned to replace the T-54 in accomplishing complicated missions. However, the T-54 tank of 1949 was improved and mass produced, and the lightweight version was canceled while still in the design phase.</value>
+    <value>Проект облегчённого варианта среднего танка Т-54. Работы над машиной начались в мае 1949 года. Предполагалось, что данная машина, благодаря повышенной проходимости и манёвренности, сможет быть использована для задач, выполнение которых для обычных серийных танков Т-54 было нецелесообразно. Однако пока шло обсуждение проекта, Т-54 образца 1949 года был доработан и выпущен серийно, и необходимости в облегчённом среднем танке больше не было.</value>
   </data>
   <data name="R109_T54S_short" xml:space="preserve">
-    <value>T-54 ltwt.</value>
+    <value>Т-54 обл.</value>
   </data>
   <data name="R110_Object_260" xml:space="preserve">
-    <value>Object 260</value>
+    <value>Объект 260</value>
   </data>
   <data name="R110_Object_260_descr" xml:space="preserve">
-    <value>A version of the Object 260 heavy tank. The design plans were completed in September 1945, but no prototypes were manufactured.</value>
+    <value>Один из вариантов проекта тяжёлого танка «Объект 260». Работа над эскизными чертежами была завершена в сентябре 1945 года. Опытный образец построен не был.</value>
   </data>
   <data name="R110_Object_260_short" xml:space="preserve">
-    <value>Obj. 260</value>
+    <value>Об. 260</value>
   </data>
   <data name="R111_ISU130" xml:space="preserve">
-    <value>ISU-130</value>
+    <value>ИСУ-130</value>
   </data>
   <data name="R111_ISU130_descr" xml:space="preserve">
-    <value>This heavy SPG on the basis of the ISU-122S was developed in 1944, with a prototype built in October. The 130-mm S-26 gun, based on the B-13 naval gun, was mounted on the ISU-122S. The vehicle underwent automotive and firing trials by 1945, but penetration characteristics were inferior to those of the 122-mm guns, and the war was drawing to a close, so the vehicle never entered service.</value>
+    <value>Тяжёлая САУ на базе ИСУ-122С. Была разработана в 1944 году, а опытный образец был построен в октябре того же года. Создана посредством установки на ИСУ-122С 130-мм орудия C-26 на базе морской пушки Б-13. Ходовые и артиллерийские испытания проводились до июня 1945 года. В связи с окончанием Великой Отечественной войны и ввиду того, что машина по показателям бронепробиваемости уступала 122-мм орудиям, ИСУ-130 так и не была принята на вооружение.</value>
   </data>
   <data name="R112_T54_45" xml:space="preserve">
-    <value>T-54 first prototype</value>
+    <value>Т-54 первый образец</value>
   </data>
   <data name="R112_T54_45_descr" xml:space="preserve">
-    <value>Developed at Factory No. 183 in 1944. It was based on the T-44, with many components modified to enhance the armor and armament of the new vehicle. According to one source, the first prototype was built at the end of 1944. However, some other sources mention another date—January 1945. The tank underwent trials in March and April 1945, but never entered mass production.</value>
+    <value>Разработан в 1944 году на заводе № 183. При разработке были использованы многие узлы и механизмы танка Т-44, в которые были внесены изменения, направленные на усиление бронирования и вооружения новой машины. По данным одного из источников, первый опытный образец был построен в конце 1944, но некоторые источники называют другую дату — январь 1945. Испытания танка проводились в марте–апреле 1945. Машина серийно не выпускалась.</value>
   </data>
   <data name="R112_T54_45_short" xml:space="preserve">
-    <value>T-54 mod. 1</value>
+    <value>Т-54 обр. 1</value>
   </data>
   <data name="R113" xml:space="preserve">
-    <value>R-113</value>
+    <value>Р-113</value>
   </data>
   <data name="R113M" xml:space="preserve">
-    <value>R-113</value>
+    <value>Р-113</value>
   </data>
   <data name="R113_Object_730" xml:space="preserve">
-    <value>IS-5 (Object 730)</value>
+    <value>ИС-5 (Объект 730)</value>
   </data>
   <data name="R113_Object_730_descr" xml:space="preserve">
-    <value>The development of the vehicle was started in 1949 by the Design Bureau of the Chelyabinsk Kirov Plant under the supervision of Joseph Kotin. In 1950 a preproduction batch of 10 vehicles was launched. After the vehicle underwent all trials and received upgrades, it was adopted for service in 1953 under the designation IS-8.</value>
+    <value>Разработка опытного советского тяжёлого танка началась в 1949 году в конструкторском бюро ЧКЗ под руководством Ж.Я. Котина. В 1950 году была выпущена установочная партия в 10 машин. После проведения полного комплекса испытаний и внесения доработок эту машину приняли на вооружение в 1953 году под обозначением ИС-8.</value>
   </data>
   <data name="R113_Object_730_short" xml:space="preserve">
-    <value>IS-5</value>
+    <value>ИС-5</value>
   </data>
   <data name="R114_Object_244" xml:space="preserve">
-    <value>Object 244</value>
+    <value>Объект 244</value>
   </data>
   <data name="R114_Object_244_descr" xml:space="preserve">
-    <value>A further development of the experimental tank Object 237. The Object 244 featured a more powerful gun. The fighting compartment was slightly changed: the radio was placed in a turret recess, a more efficient fan was installed, and the ammo rack and periscopic sight were modified. The driver's compartment and engine-transmission compartment were not modified. The vehicle never entered service due to problems with the gun barrel.</value>
+    <value>Дальнейшее развитие опытного танка «Объект 237». Танк «Объект 244» отличался установкой более мощного основного орудия. Боевое отделение подверглось незначительным изменениям: радиостанция была расположена в нише башни, был установлен новый вентилятор повышенной производительности, были изменены боеукладка и перископический прицел. Устройство отделения управления, моторного и трансмиссионного отделений осталось без изменений. На вооружении танк не состоял из-за недостаточной прочности ствола орудия.</value>
   </data>
   <data name="R114_Object_244_short" xml:space="preserve">
-    <value>Obj. 244</value>
+    <value>Об. 244</value>
   </data>
   <data name="R115_IS-3_auto" xml:space="preserve">
-    <value>IS-3A</value>
+    <value>ИС-3 с МЗ</value>
   </data>
   <data name="R115_IS-3_auto_descr" xml:space="preserve">
-    <value>In 1956–1957, the Military Armored Forces Academy developed a speculative design for a new loading system on the IS-3 and T-10 heavy tanks. The IS-3 variant featured a double-row ammo rack with an automatic loading system. The crew was reduced to three members: commander, gunner, and driver. The turret was redesigned in order to accommodate the loading mechanism. The vehicle existed only in blueprints.</value>
+    <value>В 1956–1957 годах слушатели Академии БТВ разработали дипломный проект установки механизма заряжания для тяжёлых танков ИС-3 и Т-10. В варианте для ИС-3 была предусмотрена двухрядная боеукладка магазинного типа. Экипаж был сокращён до трёх человек: командир, наводчик, механик-водитель. Ввиду размещения механизма заряжания была изменена конструкция башни. Работы над проектом прекратились на стадии эскизного проектирования.</value>
   </data>
   <data name="R115_IS-3_auto_short" xml:space="preserve">
-    <value>IS-3A</value>
+    <value>ИС-3 с МЗ</value>
   </data>
   <data name="R116_ISU122C_Berlin" xml:space="preserve">
-    <value>ISU-122S</value>
+    <value>ИСУ-122С</value>
   </data>
   <data name="R116_ISU122C_Berlin_descr" xml:space="preserve">
-    <value>A heavy assault gun, built on the basis of the IS tank, was effective against German heavy tanks as well as fortifications. The prototype was built at the Chelyabinsk Kirov Plant in April 1944. The vehicle entered service in August of that year, and a total of 675 vehicles were manufactured in 1944 and 1945.</value>
+    <value>Тяжёлая самоходная артиллерийская установка на базе танка ИС. На протяжении Второй мировой войны машина выполняла функции мощного штурмового орудия и истребителя танков. Прототип был построен на ЧКЗ в апреле 1944 года. Машина была принята на вооружение 22 августа 1944 года. Всего с августа 1944 до конца 1945 года было выпущено 675 ИСУ-122C.</value>
   </data>
   <data name="R117_T34_85_Rudy" xml:space="preserve">
-    <value>T-34-85 Rudy</value>
+    <value>Т-34-85 Rudy</value>
   </data>
   <data name="R117_T34_85_Rudy_descr" xml:space="preserve">
-    <value>This fictional T-34-85 tank, identified as Number 102 of the 1st Tank Brigade of the Polish Army, was featured in the Polish TV series "Four Tank-Men and a Dog." In reality, Т-34-85s were produced in Poland in the 1950s at the Bumar Labedy plant, located in Gliwice. The Polish variant was slightly modified from the Soviet tank of the late-war period.</value>
+    <value>Танк принимал участие в съёмках фильма «Четыре танкиста и собака». По сюжету фильма это танк Т-34-85 с бортовым номером 102 1-й танковой бригады Войска Польского имени Героев Вестерплатте. В реальности это танк Т-34-85 польского производства, имевший некоторые отличия от советского танка позднего военного периода. В 1951 году лицензию на производство Т-34-85 приобрёл польский завод Bumar Labedy, расположенный в городе Гливице, Польша.</value>
   </data>
   <data name="R117_T34_85_Rudy_short" xml:space="preserve">
     <value>Rudy</value>
   </data>
   <data name="R118_T28_F30" xml:space="preserve">
-    <value>T-28E with F-30</value>
+    <value>Т-28Э с Ф-30</value>
   </data>
   <data name="R118_T28_F30_descr" xml:space="preserve">
-    <value>The T-28 tank with the 85-mm F-30 gun was developed in 1941. One prototype was built and underwent trials. Unlike mass-produced T-28 tanks, the vehicle featured different armament. No sources were found proving that the tank was mass-produced or used in action.</value>
+    <value>Танк Т-28 с 85-мм танковой пушкой Ф-30 был создан в 1941 году. Был изготовлен один опытный образец, который прошёл полигонные испытания. От серийных Т-28 танк отличался только вооружением. Данных о серийном производстве или использовании в боевых условиях этого танка нет.</value>
   </data>
   <data name="R118_T28_F30_short" xml:space="preserve">
-    <value>T-28E F-30</value>
+    <value>Т-28Э Ф-30</value>
   </data>
   <data name="R119_Object_777" xml:space="preserve">
-    <value>Object 777 Version II</value>
+    <value>Объект 777 Вариант II</value>
   </data>
   <data name="R119_Object_777_descr" xml:space="preserve">
-    <value>The Object 777 is a unique project of a heavy tank. The vehicle was developed at the Chelyabinsk Kirov Plant. By 1953, the design plans were made, and the dummy vehicle was built. The prototype was to feature a cast hull and streamlined turret. The 122-mm M-62-T2 gun was to be mounted on the tank. However, development proceeded no further. The Object 777 never entered mass production nor saw service.</value>
+    <value>«Объект 777» представляет собой уникальный проект тяжёлого танка. Проектные работы велись на Кировском заводе в Челябинске. К 1953 году были подготовлены эскизные чертежи и изготовлен макет. Проект предусматривал изготовление литого корпуса и башни обтекаемой формы. На танк планировалось установить 122-мм пушку М-62-Т2. Однако работы над танком остановили на стадии проектирования. Серийно «Объект 777» не производился и на вооружение принят не был.</value>
   </data>
   <data name="R119_Object_777_short" xml:space="preserve">
-    <value>Obj. 777 II</value>
+    <value>Об. 777 II</value>
   </data>
   <data name="R120_T22SR_A22" xml:space="preserve">
-    <value>T-22 medium</value>
+    <value>Т-22 ср.</value>
   </data>
   <data name="R120_T22SR_A22_descr" xml:space="preserve">
-    <value>The prototype of the A-22 hull was produced in 1949. The design incorporated rolled armor plates with maximum slope angles. Test firing showed that the hull was well-protected from high-caliber Armor-Piercing shells. The hull was used as a basis for the project of the T-22 medium tank. Development was discontinued after the preparation of the suspension and general design. Later, the best innovations were applied in the development of the Object 907.</value>
+    <value>Макет бронекорпуса А-22 на основе катаных бронелистов предельного угла наклона создан в 1949 году. Пробные обстрелы показали высокую защищённость макета от бронебойных снарядов больших калибров. На его основе создан эскизный проект среднего танка Т-22 ср. После проработки ходовой и общей схемы компоновки машины работы были свёрнуты. Удачные решения впоследствии были использованы в работе над «Объектом 907».</value>
   </data>
   <data name="R120_T22SR_A22_short" xml:space="preserve">
-    <value>T-22 med.</value>
+    <value>Т-22 ср.</value>
   </data>
   <data name="R121_KV4_KTT" xml:space="preserve">
-    <value>KV-4 KTTS</value>
+    <value>КВ-4 КТТС</value>
   </data>
   <data name="R121_KV4_KTT_descr" xml:space="preserve">
-    <value>Heavy tank destroyer with the 107 mm M-75 (ZiS-24) gun mounted on the chassis of the proposed KV-4 tank. Existed only in blueprints.</value>
+    <value>Тяжёлая ПТ-САУ, вооружённая экспериментальной 107-мм пушкой М-75 (ЗиС-24), установленной на шасси проектировавшегося танка КВ-4. Существовала только в эскизах.</value>
   </data>
   <data name="R121_KV4_KTT_short" xml:space="preserve">
-    <value>KV-4 KTTS</value>
+    <value>КВ-4 КТТС</value>
   </data>
   <data name="R122_T44_100" xml:space="preserve">
-    <value>T-44-100</value>
+    <value>Т-44-100</value>
   </data>
   <data name="R122_T44_100_descr" xml:space="preserve">
-    <value>Experimental medium tank that was developed in 1945 on the basis of the T-44 tank. Unlike the T-44 tank, the T-44-100 featured the 100 mm LB-1 gun mounted in a newly designed turret, and slat side armor. Only two vehicles were manufactured.</value>
+    <value>Советский опытный средний танк был создан в 1945 году на базе танка Т-44. От серийных Т-44 отличался 100-мм орудием ЛБ-1, для установки которого была спроектирована новая башня, а также наличием противокумулятивных экранов по бортам корпуса. Всего было выпущено две машины.</value>
   </data>
   <data name="R122_T44_100_short" xml:space="preserve">
-    <value>T-44-100</value>
+    <value>Т-44-100</value>
   </data>
   <data name="R123" xml:space="preserve">
-    <value>R-123</value>
+    <value>Р-123</value>
   </data>
   <data name="R123_Kirovets_1" xml:space="preserve">
-    <value>Kirovets-1</value>
+    <value>Кировец-1</value>
   </data>
   <data name="R123_Kirovets_1_descr" xml:space="preserve">
-    <value>The Kirovets-1 project (IS-3, prototype No. 1) was developed from July through November 1944. The prototype was built at the Chelyabinsk Kirov Plant in September–October 1944. From December 18 through December 24, 1944, the vehicle underwent trials at the NIBT proving grounds in Kubinka. After it was decided to manufacture a pilot series of the modified IS-2 with a hull proposed by engineers of Plant No. 100 and Сentral Research Institute-48, the work on the Kirovets-1 was discontinued.</value>
+    <value>Проект «Кировец-1» (ИС-3, образец №1) был разработан в период с июля по ноябрь 1944 года. Опытный образец танка был собран на ЧКЗ в сентябре–октябре 1944 года. В период с 18 по 24 декабря 1944 года танк прошёл испытания на НИБТ полигоне в Кубинке. В связи с принятием решения об изготовлении установочной серии модернизированного танка ИС-2 с корпусом, предложенным конструкторами завода №100 и ЦНИИ-48, дальнейшие работы были прекращены.</value>
   </data>
   <data name="R123_Kirovets_1_short" xml:space="preserve">
-    <value>Kirovets-1</value>
+    <value>Кировец-1</value>
   </data>
   <data name="R123_fallout" xml:space="preserve">
-    <value>R-123</value>
+    <value>Р-123</value>
   </data>
   <data name="R125_T_45" xml:space="preserve">
-    <value>T-45</value>
+    <value>Т-45</value>
   </data>
   <data name="R125_T_45_descr" xml:space="preserve">
-    <value>The upgraded version of the T-60 tank. Unlike the original vehicle, the T-45 featured enhanced armor and a turret with a 45-mm gun of 1938, as well as a coaxial DT machinegun. The vehicle was deemed obsolete by June 1942 as compared to the T-70. The vehicle never saw mass production. However, one manufactured prototype was sent to the front.</value>
+    <value>Модернизированная версия танка Т-60. От оригинала отличалась усиленным бронированием и башней, в которую устанавливалось 45-мм орудие образца 1938 года и спаренный пулемёт ДТ. Однако к июню 1942 года машина была признана устаревшей по сравнению с Т-70, и серийный выпуск налажен не был. Тем не менее опытный образец был отправлен на фронт.</value>
   </data>
   <data name="R125_T_45_short" xml:space="preserve">
-    <value>T-45</value>
+    <value>Т-45</value>
   </data>
   <data name="R126_Object_730_5" xml:space="preserve">
-    <value>Object 268 Version V</value>
+    <value>Объект 268 Вариант 5</value>
   </data>
   <data name="R126_Object_730_5_descr" xml:space="preserve">
-    <value>A tank destroyer based on the Object 730 (T-10) tank. Developed in the early 1950s. The project allowed a gun to be mounted in a rotating turret, enabling all-round horizontal fire. Most ammunition was placed in the rear of the turret in order to improve crew operating conditions. The project was cancelled, because expensive and complicated modifications of many basic components were required.</value>
+    <value>Проект САУ на базе танка Объект 730 (Т-10), разработанный в первой половине 50-х годов. Проект предусматривал размещение пушки во вращающейся башне, что позволяло вести круговой обстрел по горизонту. Размещение большей части боеукладки в нише башни позволяло улучшить условия работы экипажа. Все работы были свёрнуты на стадии проектирования по причине необходимости дорогостоящих и сложных переделок ряда узлов базовой машины.</value>
   </data>
   <data name="R126_Object_730_5_short" xml:space="preserve">
-    <value>Obj. 268 5</value>
+    <value>Об. 268 5</value>
   </data>
   <data name="R127_T44_100_P" xml:space="preserve">
-    <value>T-44-100 (R)</value>
+    <value>Т-44-100 (Р)</value>
   </data>
   <data name="R127_T44_100_P_descr" xml:space="preserve">
-    <value>Experimental medium tank that was developed in 1945 on the basis of the T-44 tank. Unlike the T-44 tank, the T-44-100 featured the 100 mm LB-1 gun mounted in a newly designed turret, and slat side armor. Only two vehicles were manufactured.</value>
+    <value>Советский опытный средний танк был создан в 1945 году на базе танка Т-44. От серийных Т-44 отличался 100-мм орудием ЛБ-1, для установки которого была спроектирована новая башня, а также наличием противокумулятивных экранов по бортам корпуса. Всего было выпущено две машины.</value>
   </data>
   <data name="R127_T44_100_P_short" xml:space="preserve">
-    <value>T-44-100 (R)</value>
+    <value>Т-44-100 (Р)</value>
   </data>
   <data name="R128_KV4_Kreslavskiy" xml:space="preserve">
-    <value>KV-4 by Kreslavskiy</value>
+    <value>КВ-4 Креславского</value>
   </data>
   <data name="R128_KV4_Kreslavskiy_descr" xml:space="preserve">
-    <value>A project by M.I. Kreslavskiy. Due to the beginning of World War II, no prototypes were built. Existed only in blueprints.</value>
+    <value>Проект инженера М. И. Креславского. В связи с началом Великой Отечественной войны не было построено ни одного прототипа. Существовал только в эскизах.</value>
   </data>
   <data name="R128_KV4_Kreslavskiy_short" xml:space="preserve">
-    <value>KV-4 Kresl.</value>
+    <value>КВ-4 Кресл.</value>
   </data>
   <data name="R129_Object_257" xml:space="preserve">
-    <value>Object 257</value>
+    <value>Объект 257</value>
   </data>
   <data name="R129_Object_257_descr" xml:space="preserve">
-    <value>This project for a heavy tank was developed during the 1940s. The vehicle only existed in blueprints.</value>
+    <value>Данный проект тяжёлого танка разрабатывался в 40-х годах. Все работы были прекращены на стадии разработки документации.</value>
   </data>
   <data name="R129_Object_257_short" xml:space="preserve">
-    <value>Obj. 257</value>
+    <value>Об. 257</value>
+  </data>
+  <data name="R133_KV_122" xml:space="preserve">
+    <value>КВ-122</value>
+  </data>
+  <data name="R133_KV_122_descr" xml:space="preserve">
+    <value>Опытный образец танка КВ-122 был создан весной 1944 года в конструкторском бюро ЧКЗ на базе серийного танка КВ-85 и отличался от него установкой башни со 122-мм орудием. Башня была заимствована у танка ИС-2 образца 1944 года. В связи с началом серийного производства тяжёлых танков ИС все работы над проектом были свёрнуты.</value>
   </data>
   <data name="R53_Object_704" xml:space="preserve">
-    <value>Object 704</value>
+    <value>Объект 704</value>
   </data>
   <data name="R53_Object_704_descr" xml:space="preserve">
-    <value>Developed in 1945 on the basis of the IS-2 and IS-3 vehicles, under the supervision of Joseph Kotin. One of the distinctive features was the slope angle of armor plates. Passed trials successfully, but never entered service.</value>
+    <value>Разработана в 1945 году под руководством Ж. Я. Котина на базе узлов ИС-3 и ИС-2. Отличалась рациональными углами наклона брони. Прошла испытания. На вооружении не состояла.</value>
   </data>
   <data name="R53_Object_704_short" xml:space="preserve">
-    <value>Obj. 704</value>
+    <value>Об. 704</value>
   </data>
   <data name="R71_IS_2B" xml:space="preserve">
-    <value>IS-2</value>
+    <value>ИС-2</value>
   </data>
   <data name="R71_IS_2B_descr" xml:space="preserve">
-    <value>Built in 1944, the IS-2 (IS-122) heavy tank was a modification of the IS-1. It featured a simple cast glacis plate. Elite Soviet Guards heavy tank regiments used the IS-2 extensively in the assaults on the fortress cities of Budapest, Breslau, and Berlin. These vehicles featured thick white stripes for quick identification by other Soviet tank crews. This vehicle, a tank of the 7th Guards Independent Heavy Tank Brigade, was made famous in a photo taken in front of the iconic Brandenburg Gate in the heart of Berlin.</value>
+    <value>Тяжёлый танк ИС-2 (ИC-122) стал результатом модернизации танка ИС-1 и с 1944 года получил более простую в изготовлении литую лобовую деталь. В составе отдельных гвардейских тяжёлых танковых полков ИС-2 активно использовался для штурма укреплённых городов, таких как Будапешт, Бреслау, Берлин. Для взаимного опознавания на такие машины наносились специальные тактические знаки — белые полосы. Данная модель представляет танк 7-й Гвардейской тяжёлой танковой бригады, фотография которого на фоне Бранденбургских ворот приобрела всемирную известность.</value>
   </data>
   <data name="RTY_RCEHb" xml:space="preserve">
-    <value>RTU ("Yasen")</value>
+    <value>РТУ («Ясень»)</value>
   </data>
   <data name="S-51" xml:space="preserve">
-    <value>S-51</value>
+    <value>С-51</value>
   </data>
   <data name="S-51_01" xml:space="preserve">
-    <value>S-51</value>
+    <value>С-51</value>
   </data>
   <data name="S-51_descr" xml:space="preserve">
-    <value>Developed by the Grabin Central Artillery Design Bureau in the fall of 1943. The S-51 passed trials successfully in the spring of 1944, but never entered mass production.</value>
+    <value>Самоходная артиллерийская установка С-51 была разработана и построена на базе шасси КВ-1С. Работы по изготовлению опытного образца начались в январе 1944 года. На доработанный под установку орудия корпус ремонтного КВ-1С была установлена качающаяся часть 203-мм гаубицы Б-4. В марте 1944 года начались испытания самоходной установки, которые продолжались до начала апреля. С-51 прошла испытания, но на вооружение принята не была.</value>
   </data>
   <data name="S-51bis" xml:space="preserve">
-    <value>S-51 Bis</value>
+    <value>С-51 Бис</value>
   </data>
   <data name="SCR_209" xml:space="preserve">
     <value>SCR 209</value>
   </data>
   <data name="ST_I" xml:space="preserve">
-    <value>ST-I</value>
+    <value>СТ-I</value>
   </data>
   <data name="ST_I_descr" xml:space="preserve">
-    <value>The design was developed at Factory No. 92 by engineers V.A. Ganin and A.S. Chasovnikov. The new tank was intended as an upgraded version of the unsatisfactory heavy tanks of that time. Existed only in blueprints.</value>
+    <value>Проект танка был разработан на заводе № 92 инженерами В. А. Ганиным и А. С. Часовниковым. Целью проекта было создание тяжёлого танка, в котором были бы устранены основные недостатки существующих в то время тяжёлых танков. Существовал только в эскизах.</value>
   </data>
   <data name="SU-100" xml:space="preserve">
-    <value>SU-100</value>
+    <value>СУ-100</value>
   </data>
   <data name="SU-100_descr" xml:space="preserve">
-    <value>Tank destroyer on the basis of the T-34-85 and SU-85 with a total of 2,495 vehicles produced from September 1944 through June 1945. After the vehicle saw service, the Red Army praised it as a very effective tank destroyer with strong firepower, which could stand against any mass-produced German armored vehicle.</value>
+    <value>ПТ-САУ на базе Т-34-85 и СУ-85. Всего с сентября 1944 по июнь 1945 было выпущено 2495 машин. С принятием на вооружение данной самоходки РККА получила высокоэффективное противотанковое средство с исключительно мощным вооружением, способное противостоять любым образцам немецкой бронетехники.</value>
   </data>
   <data name="SU-100_mod_1944" xml:space="preserve">
-    <value>SU-100</value>
+    <value>СУ-100</value>
   </data>
   <data name="SU-100_mod_1945" xml:space="preserve">
-    <value>SU-100-60</value>
+    <value>СУ-100-60</value>
   </data>
   <data name="SU-101" xml:space="preserve">
-    <value>SU-101</value>
+    <value>СУ-101</value>
   </data>
   <data name="SU-101_descr" xml:space="preserve">
-    <value>In 1944 the Construction Bureau of the Ural Heavy Machinery Plant developed the SU-101 with the D-10S gun and the SU-102 with the D-25S gun. Both vehicles were designated as Uralmash-1. Prototypes were manufactured in April 1945. The vehicles never entered mass production nor saw service.</value>
+    <value>В 1944 году КБ УЗТМ параллельно разработало СУ-101 с орудием Д-10С и СУ-102 с орудием Д-25С. Обе машины назывались «Уралмаш-1». В апреле 1945 года были выпущены опытные образцы. Серийно не выпускались, на вооружении не состояли.</value>
   </data>
   <data name="SU-101_short" xml:space="preserve">
-    <value>SU-101</value>
+    <value>СУ-101</value>
   </data>
   <data name="SU-14" xml:space="preserve">
-    <value>SU-14-2</value>
+    <value>СУ-14-2</value>
   </data>
   <data name="SU-14Bis" xml:space="preserve">
-    <value>SU-14-2 enhanced</value>
+    <value>СУ-14-2 усиленная</value>
   </data>
   <data name="SU-14_1" xml:space="preserve">
-    <value>SU-14-2</value>
+    <value>СУ-14-2</value>
   </data>
   <data name="SU-14_descr" xml:space="preserve">
-    <value>A "Special Purpose Heavy Triplex" self-propelled gun developed from 1932 through 1937, with two prototypes modernized in 1940. It never entered mass production.</value>
+    <value>САУ «триплекса ТАОН». Разрабатывалась с 1932 по 1937 год. Серийно не выпускалась. Два прототипа были модернизированы в 1940 году.</value>
   </data>
   <data name="SU-152" xml:space="preserve">
-    <value>SU-152</value>
+    <value>СУ-152</value>
   </data>
   <data name="SU-152_01" xml:space="preserve">
-    <value>SU-152</value>
+    <value>СУ-152</value>
   </data>
   <data name="SU-152_descr" xml:space="preserve">
-    <value>Development of a tank destroyer on the basis of the KV-1S heavy tank began on January 4, 1943. The vehicle received the designation KV-14 (Object 236). A prototype underwent field trials at the beginning of February 1943 and entered service on February 14, 1943. In April, the KV-14 was renamed SU-152. By December 1943, 670 vehicles were manufactured. Thanks to its ability to successfully combat german Tiger I and Panther tanks, the SU-152 was dubbed "Hunter" by the troops.</value>
+    <value>Разработка ПТ-САУ на базе тяжёлого танка КВ-1С началась 4 января 1943 года. Машина получила обозначение КВ-14 (Объект 236). В начале февраля 1943 года опытный образец проходил полигонные испытания и был принят на вооружение 14 февраля 1943 года. В апреле КВ-14 был переименован в СУ-152. До декабря 1943 года было выпущено 670 машин данного типа. Благодаря способности успешно противостоять немецким танкам Tiger I и Panther, СУ-152 получила неофициальное название «Зверобой».</value>
   </data>
   <data name="SU-152_mod_1943" xml:space="preserve">
-    <value>SU-152</value>
+    <value>СУ-152</value>
   </data>
   <data name="SU-152_mod_1944" xml:space="preserve">
-    <value>SU-152M</value>
+    <value>СУ-152М</value>
   </data>
   <data name="SU-18" xml:space="preserve">
-    <value>SU-18</value>
+    <value>СУ-18</value>
   </data>
   <data name="SU-18Bis" xml:space="preserve">
-    <value>SU-18 Bis</value>
+    <value>СУ-18 Бис</value>
   </data>
   <data name="SU-18_descr" xml:space="preserve">
-    <value>Self-propelled gun on the basis of the MS-1 chassis. This model only existed in blueprints, with no prototypes developed. Never entered mass production.</value>
+    <value>Проект САУ на шасси танка МС-1. Существовал только в эскизах. Прототип машины построен не был. Серийно не выпускалась.</value>
   </data>
   <data name="SU-26" xml:space="preserve">
-    <value>SU-26</value>
+    <value>СУ-26</value>
   </data>
   <data name="SU-26_descr" xml:space="preserve">
-    <value>Self-propelled gun on the basis of the T-26. Produced in Leningrad at the end of 1941, with a total of 12 or 14 vehicles built, three of which remained in service until 1944.</value>
+    <value>САУ на базе танка Т-26. Выпускалась в Ленинграде в конце 1941 года. Всего было произведено 12 или 14 машин. Три из них состояли на вооружении до 1944 года.</value>
   </data>
   <data name="SU-5" xml:space="preserve">
-    <value>SU-5</value>
+    <value>СУ-5</value>
   </data>
   <data name="SU-5_descr" xml:space="preserve">
-    <value>A "Small Triplex" light self-propelled gun. Prototypes were developed and put through trials in 1934, and participated in a parade on Red Square. The vehicle never saw mass production.</value>
+    <value>САУ «малого триплекса». Работы по разработке и испытания проводились в 1934 году. Экспериментальная машина была отправлена на парад на Красной площади. Серийно не выпускалась.</value>
   </data>
   <data name="SU-5bis" xml:space="preserve">
-    <value>SU-5 Bis</value>
+    <value>СУ-5 Бис</value>
   </data>
   <data name="SU-76" xml:space="preserve">
-    <value>SU-76M</value>
+    <value>СУ-76М</value>
   </data>
   <data name="SU-76_1" xml:space="preserve">
-    <value>SU-76</value>
+    <value>СУ-76</value>
   </data>
   <data name="SU-76_descr" xml:space="preserve">
-    <value>Light vehicle with a 76-mm gun, the most widely produced Soviet SPG. Despite its weak armor and armament, the vehicle was used to support infantry and cavalry.</value>
+    <value>Лёгкая боевая машина с 76-мм пушкой, самая массовая советская САУ. Несмотря на слабую бронезащиту и слабое вооружение, использовалась для сопровождения пехоты и кавалерии.</value>
   </data>
   <data name="SU-76bis" xml:space="preserve">
-    <value>SU-76M</value>
+    <value>СУ-76М</value>
   </data>
   <data name="SU-8" xml:space="preserve">
-    <value>SU-8</value>
+    <value>СУ-8</value>
   </data>
   <data name="SU-85" xml:space="preserve">
-    <value>SU-85</value>
+    <value>СУ-85</value>
   </data>
   <data name="SU-85A" xml:space="preserve">
-    <value>SU-85B</value>
+    <value>СУ-85Б</value>
   </data>
   <data name="SU-85A1" xml:space="preserve">
-    <value>SU-85A</value>
+    <value>СУ-85А</value>
   </data>
   <data name="SU-85_01" xml:space="preserve">
-    <value>SU-85</value>
+    <value>СУ-85</value>
   </data>
   <data name="SU-85_descr" xml:space="preserve">
-    <value>Developed on the basis of the T-34 medium tank and the SU-122 assault gun. Produced from August 1943 through July 1944. The 85-mm D-5S gun allowed the SU-85 to effectively hit enemy medium tanks at distances of more than 1,000 meters and to penetrate the front armor of heavy tanks at shorter distances.</value>
+    <value>Разработана на базе среднего танка Т-34 и штурмового орудия СУ-122. Выпускалась с августа 1943 по июль 1944 года. 85-мм пушка Д-5С позволяла СУ-85 эффективно поражать средние танки противника на дистанциях более километра, а на меньших дистанциях пробивать лобовую броню тяжёлых танков.</value>
   </data>
   <data name="SU-85_mod_1942" xml:space="preserve">
-    <value>SU-85-II</value>
+    <value>СУ-85-II</value>
   </data>
   <data name="SU-85_mod_1942_short" xml:space="preserve">
-    <value>SU-85-II</value>
+    <value>СУ-85-II</value>
   </data>
   <data name="SU-85_mod_1943" xml:space="preserve">
-    <value>SU-85</value>
+    <value>СУ-85</value>
   </data>
   <data name="SU-85_mod_1943_short" xml:space="preserve">
-    <value>SU-85</value>
+    <value>СУ-85</value>
   </data>
   <data name="SU-8Bis" xml:space="preserve">
-    <value>SU-8 Bis</value>
+    <value>СУ-8 Бис</value>
   </data>
   <data name="SU-8_descr" xml:space="preserve">
-    <value>A "Medium Triplex" self-propelled gun. Development started in 1934, but was soon suspended. After a pause, development resumed in 1939, but the vehicle never entered mass production.</value>
+    <value>САУ «среднего триплекса». Разработка была начата в 1934 году и возобновлена в 1939. Серийно не выпускалась.</value>
   </data>
   <data name="SU100M1" xml:space="preserve">
-    <value>SU-100M1</value>
+    <value>СУ-100М1</value>
   </data>
   <data name="SU100M1_descr" xml:space="preserve">
-    <value>Developed in 1944 at the Uralmash heavy machinery plant, this vehicle was based on the T-34-85 tank. Its engine compartment was placed in the front of the hull, while the fighting compartment was located in the rear, which provided additional protection for the crew and considerably reduced the under armor hull volume. Although the SU-100M1 project was never manufactured, it was an intermittent stage in the development of the SU-100 and SU-101, both of which existed in reality.</value>
+    <value>Разработана на УЗТМ в 1944 году на базе танка Т-34-85. Моторное отделение располагалось в передней части корпуса, а боевое — в корме, что обеспечивало дополнительную защиту экипажа и значительно уменьшало заброневой объём кормовой части. Хотя проект СУ-100М1 так и не был реализован, данная машина является переходным звеном между реально существовавшими СУ-100 и СУ-101.</value>
   </data>
   <data name="SU100Y" xml:space="preserve">
-    <value>SU-100Y</value>
+    <value>СУ-100Y</value>
   </data>
   <data name="SU100Y_descr" xml:space="preserve">
-    <value>Developed on the basis of the T-100 heavy tank. The vehicle was intended to neutralize fortified emplacements and enemy vehicles, and was equipped with the improved B-13-S2 naval gun. The only prototype was manufactured in March 1940. The vehicle never entered mass production.</value>
+    <value>Разработана на базе тяжёлого танка Т-100. Предназначалась для подавления укреплённых огневых точек и уничтожения бронетехники противника. Была вооружена доработанным корабельным орудием Б-13-С2. В марте 1940 года был изготовлен один прототип. На вооружении не состояла.</value>
   </data>
   <data name="SU122A" xml:space="preserve">
-    <value>SU-122A</value>
+    <value>СУ-122А</value>
   </data>
   <data name="SU122A_descr" xml:space="preserve">
-    <value>A proposed 122-mm SPG on the basis of the SU-76. No prototypes were built.</value>
+    <value>Проект 122-мм САУ на базе СУ-76. Не было построено ни одного прототипа.</value>
   </data>
   <data name="SU122_44" xml:space="preserve">
-    <value>SU-122-44</value>
+    <value>СУ-122-44</value>
   </data>
   <data name="SU122_44_descr" xml:space="preserve">
-    <value>Development was started in June 1944 by the Uralmash Design Bureau. The vehicle was based on the T-44 chassis and had a conventional configuration, with the front placement of the fighting compartment. In October, People's Commissariat of the Tank Industry considered the SU-122-44 project. In December the design project was ready. However, the SU-100M-2 with the rear placement of the fighting compartment was preferred.</value>
+    <value>Разработка СУ-122-44 была начата в июне 1944 г. в конструкторском бюро завода «Уралмаш». Машина имела классическую компоновку с передним расположением боевого отделения и базировалась на шасси нового танка Т-44. В октябре проект был рассмотрен на заседании технического совета НКТП. В декабре разработка проекта была закончена, однако предпочтение было отдано проекту СУ-100М-2 с кормовым расположением боевого отделения.</value>
   </data>
   <data name="SU122_44_short" xml:space="preserve">
-    <value>SU-122-44</value>
+    <value>СУ-122-44</value>
   </data>
   <data name="SU122_54" xml:space="preserve">
-    <value>SU-122-54</value>
+    <value>СУ-122-54</value>
   </data>
   <data name="SU122_54_descr" xml:space="preserve">
-    <value>Development was started in the summer of 1948. The T-54 tank was used as a basis for this tank destroyer. The vehicle entered service in March 1954. Mass production was launched in 1955, with a total of 100 vehicles manufactured. The principal configuration of the vehicle is similar to the configuration of WWII assault guns.</value>
+    <value>Разработка началась летом 1948 года. В конструкции широко использовались узлы и агрегаты танка Т-54. Машина была принята на вооружение в марте 1954 года и выпускалась малыми партиями серийно с 1955 года. Всего было выпущено около 100 машин. Основная компоновка совпадает с компоновкой штурмовых орудий периода Великой Отечественной войны.</value>
   </data>
   <data name="SU122_54_short" xml:space="preserve">
-    <value>SU-122-54</value>
+    <value>СУ-122-54</value>
   </data>
   <data name="SU14_1" xml:space="preserve">
-    <value>SU-14-1</value>
+    <value>СУ-14-1</value>
   </data>
   <data name="SU14_1_descr" xml:space="preserve">
-    <value>Developed on the basis of the SU-14. In 1936 a prototype was manufactured and tested. In 1937 the project supervisor was purged and the project was canceled. The prototype was shipped to Kubinka for storage. In 1941, during the Battle of Moscow, the SU-14-1 was used for long-range bombardment.</value>
+    <value>Разработана в 1935 году на основе опыта, полученного при работе над СУ-14. В 1936 году был изготовлен и отправлен на испытания опытный образец. В 1937 году руководитель проекта был репрессирован, и все работы над проектом были свёрнуты, а опытный образец передан в Кубинку на хранение. В 1941 году, во время боёв под Москвой, САУ использовалась для стрельбы с дальних дистанций.</value>
   </data>
   <data name="SU76I" xml:space="preserve">
-    <value>SU-76I</value>
+    <value>СУ-76И</value>
   </data>
   <data name="SU76I_descr" xml:space="preserve">
-    <value>Developed on the basis of captured German StuG III and Pz.Kpfw. III vehicles in 1943 at Sverdlovsk plant No. 37. A total of 200 vehicles were manufactured.</value>
+    <value>Первый опытный образец СУ-76И (И — «иностранная») удалось собрать к началу марта 1943 года на базе трофейных шасси танков StuG III и Pz.Kpfw. III с использованием советской 76-мм пушки Ф-34. Всего было выпущено 200 машин. В боевых действиях СУ-76И использовались до конца лета 1944 года, а в учебных частях — до конца войны. Дальнейшим этапом развития должна была стать СУ-85И.</value>
   </data>
   <data name="SU_85I" xml:space="preserve">
-    <value>SU-85I</value>
+    <value>СУ-85И</value>
   </data>
   <data name="SU_85I_descr" xml:space="preserve">
-    <value>A proposed modification of captured German Pz.Kpfw. III tanks, which were to be mounted with the 85 mm gun. Never entered mass production nor saw service.</value>
+    <value>Наряду с созданием известной СУ-76И проводились работы по установке 85-мм орудия в рубку на шасси трофейного немецкого танка Pz.Kpfw. III. В боевых действиях машина не применялась.</value>
   </data>
   <data name="Su-26A" xml:space="preserve">
-    <value>SU-26</value>
+    <value>СУ-26</value>
   </data>
   <data name="Su-26B" xml:space="preserve">
-    <value>SU-26 Bis</value>
+    <value>СУ-26 Бис</value>
   </data>
   <data name="T-127" xml:space="preserve">
-    <value>T-127</value>
+    <value>Т-127</value>
   </data>
   <data name="T-127_descr" xml:space="preserve">
-    <value>Developed together with the T-126 at Factory No. 174 during the summer of 1940. Vehicle development was suspended during the preliminary design phase and then discontinued due to problems with the V-3 diesel engine.</value>
+    <value>Машина разрабатывалась параллельно с Т-126 на заводе № 174 с весны по осень 1940 года. Работы были остановлены на стадии эскизного проектирования и свёрнуты из-за проблем в доводке дизеля В-3.</value>
   </data>
   <data name="T-18" xml:space="preserve">
-    <value>MS-1</value>
+    <value>МС-1</value>
   </data>
   <data name="T-18Bis" xml:space="preserve">
-    <value>T-18</value>
+    <value>Т-18</value>
   </data>
   <data name="T-18_Standart" xml:space="preserve">
-    <value>MS-1 mod. 1927</value>
+    <value>МС-1 обр. 1927 г.</value>
   </data>
   <data name="T-18_Standart_bot" xml:space="preserve">
-    <value>MS-1 mod. 1927</value>
+    <value>МС-1 обр. 1927 г.</value>
   </data>
   <data name="T-18_bot" xml:space="preserve">
-    <value>MS-1</value>
+    <value>МС-1</value>
   </data>
   <data name="T-18_mod" xml:space="preserve">
-    <value>MS-1 mod. 1930</value>
+    <value>МС-1 обр. 1930 г.</value>
   </data>
   <data name="T-26" xml:space="preserve">
-    <value>T-26</value>
+    <value>Т-26</value>
   </data>
   <data name="T-26F" xml:space="preserve">
-    <value>T-26F</value>
+    <value>Т-26Ф</value>
   </data>
   <data name="T-26M" xml:space="preserve">
-    <value>T-26M</value>
+    <value>Т-26М</value>
   </data>
   <data name="T-26_bot" xml:space="preserve">
-    <value>T-26</value>
+    <value>Т-26</value>
   </data>
   <data name="T-26_bot_descr" xml:space="preserve">
-    <value>Produced in greater numbers than any other tank of the Red Army during the pre-war period, with 11,218 vehicles in four main modifications built from 1931 through 1941.</value>
+    <value>Лёгкий танк Т-26 был создан в начале 1930-х годов на базе английского танка Vickers Mk.E. Танк предназначался для непосредственной поддержки пехоты. Выпускался в нескольких модификациях с 1931 по 1941 год. Также на его базе был создан ряд специальных машин и самоходных артиллерийских установок, которые не получили широкого применения. Всего с 1931 по 1941 было выпущено 9686 танков различных модификаций и комплектаций.</value>
   </data>
   <data name="T-26_conic" xml:space="preserve">
-    <value>T-26 mod. 1938</value>
+    <value>Т-26 обр. 1938 г.</value>
   </data>
   <data name="T-26_conic_short" xml:space="preserve">
-    <value>T-26 mod. 1938</value>
+    <value>Т-26 обр. 1938 г.</value>
   </data>
   <data name="T-26_cylindrical" xml:space="preserve">
-    <value>T-26 mod. 1936–1937</value>
+    <value>Т-26 обр. 1936–1937 гг.</value>
   </data>
   <data name="T-26_cylindrical_bot" xml:space="preserve">
-    <value>T-26 mod. 1936–1937</value>
+    <value>Т-26 обр. 1936–1937 гг.</value>
   </data>
   <data name="T-26_cylindrical_bot_short" xml:space="preserve">
-    <value>T-26 mod. 1936–1937</value>
+    <value>Т-26 обр. 1936–1937 гг.</value>
   </data>
   <data name="T-26_cylindrical_short" xml:space="preserve">
-    <value>T-26 mod. 1936–1937</value>
+    <value>Т-26 обр. 1936–1937 гг.</value>
   </data>
   <data name="T-26_descr" xml:space="preserve">
-    <value>Produced in greater numbers than any other tank of the Red Army during the pre-war period, with 11,218 vehicles in four main modifications built from 1931 through 1941.</value>
+    <value>Лёгкий танк Т-26 был создан в начале 1930-х годов на базе английского танка Vickers Mk.E. Танк предназначался для непосредственной поддержки пехоты. Выпускался в нескольких модификациях с 1931 по 1941 год. Также на его базе был создан ряд специальных машин и самоходных артиллерийских установок, которые не получили широкого применения. Всего с 1931 по 1941 было выпущено 9686 танков различных модификаций и комплектаций.</value>
   </data>
   <data name="T-28" xml:space="preserve">
-    <value>T-28</value>
+    <value>Т-28</value>
   </data>
   <data name="T-28_0" xml:space="preserve">
-    <value>T-28</value>
+    <value>Т-28</value>
   </data>
   <data name="T-28_A" xml:space="preserve">
-    <value>T-28A</value>
+    <value>Т-28А</value>
   </data>
   <data name="T-28_conic" xml:space="preserve">
-    <value>T-28 conical</value>
+    <value>Т-28 коническая</value>
   </data>
   <data name="T-28_conic_short" xml:space="preserve">
-    <value>T-28 conic.</value>
+    <value>Т-28 конич.</value>
   </data>
   <data name="T-28_cylindrical" xml:space="preserve">
-    <value>T-28 cylindrical</value>
+    <value>Т-28 цилиндрическая</value>
   </data>
   <data name="T-28_cylindrical_short" xml:space="preserve">
-    <value>T-28 cylindr.</value>
+    <value>Т-28 цилиндр.</value>
   </data>
   <data name="T-28_descr" xml:space="preserve">
-    <value>The T-28 tank was developed by the Experimental Machine Design Bureau of the Voroshilov plant. The vehicle saw service on August 11, 1933. A total of 503 tanks were manufactured at the Leningrad Kirov Plant between 1933 and 1940. During mass production, the T-28 tank underwent a number of changes in design and modifications. The vehicles were used in the war with Finland in the winter of 1939–1940 and at the beginning of WWII.</value>
+    <value>Танк Т-28 разработан в 1932 году в ОКМО завода им. Ворошилова. На вооружение принят 11 августа 1933 года. Серийно производился с 1933 по 1940 год на ЛКЗ, всего было выпущено 503 машины. За время серийного производства Т-28 претерпел ряд конструктивных изменений и доработок. Танки Т-28 применялись в боевых действиях во время Советско-Финской войны 1939–1940 гг. и на начальном этапе Великой Отечественной войны.</value>
   </data>
   <data name="T-34" xml:space="preserve">
-    <value>T-34</value>
+    <value>Т-34</value>
   </data>
   <data name="T-34-85" xml:space="preserve">
-    <value>T-34-85</value>
+    <value>Т-34-85</value>
   </data>
   <data name="T-34-85Bis" xml:space="preserve">
-    <value>T-34-85-60</value>
+    <value>Т-34-85-60</value>
   </data>
   <data name="T-34-85_descr" xml:space="preserve">
-    <value>Final modification of the T-34 tank of 1943. A new three-man gun turret allowed a more powerful 85-mm gun to be mounted. This greatly increased the combat effectiveness of the tank compared to its predecessor, the T-34-76. A total of more than 35,000, in several variants, were produced. Today the tank is still in service in several countries.</value>
+    <value>Является завершающей модификацией танка Т-34 образца 1943 г. Новая трёхместная орудийная башня позволила установить более мощную 85-мм пушку. Это значительно повысило боевую эффективность танка по сравнению с предшественником Т-34-76. Всего было выпущено более 35 тысяч единиц различных модификаций. До настоящего времени состоит на вооружении ряда стран.</value>
   </data>
   <data name="T-34_descr" xml:space="preserve">
-    <value>The legend of the Soviet armored forces and the most widely-produced Soviet tank of World War II, with a total of 33,805 vehicles manufactured. Three variants of this model were produced at several Soviet factories from 1940 through 1944.</value>
+    <value>Легенда советских бронетанковых войск. Самый массовый советский танк Второй мировой войны. С 1940 по 1944 год на различных заводах СССР было изготовлено 33805 машин трёх модификаций.</value>
   </data>
   <data name="T-34_mod_100" xml:space="preserve">
-    <value>T-34-85 extended</value>
+    <value>Т-34-85 расширенная</value>
   </data>
   <data name="T-34_mod_100_short" xml:space="preserve">
-    <value>T-34-85 enlarg.</value>
+    <value>Т-34-85 расш.</value>
   </data>
   <data name="T-34_mod_1940" xml:space="preserve">
-    <value>T-34 mod. 1940</value>
+    <value>Т-34 обр. 1940 г.</value>
   </data>
   <data name="T-34_mod_1941" xml:space="preserve">
-    <value>T-34 mod. 1941</value>
+    <value>Т-34 обр. 1941 г.</value>
   </data>
   <data name="T-34_mod_1941_short" xml:space="preserve">
-    <value>T-34 mod. 1941</value>
+    <value>Т-34 обр. 1941 г.</value>
   </data>
   <data name="T-34_mod_1942" xml:space="preserve">
-    <value>T-34 mod. 1942</value>
+    <value>Т-34 обр. 1942 г.</value>
   </data>
   <data name="T-34_mod_1943" xml:space="preserve">
-    <value>T-34 mod. 1943</value>
+    <value>Т-34 обр. 1943 г.</value>
   </data>
   <data name="T-34_mod_1943_short" xml:space="preserve">
-    <value>T-34 mod. 1943</value>
+    <value>Т-34 обр. 1943 г.</value>
   </data>
   <data name="T-43" xml:space="preserve">
-    <value>T-43</value>
+    <value>Т-43</value>
   </data>
   <data name="T-43M" xml:space="preserve">
-    <value>T-43 mod. 1943</value>
+    <value>Т-43 обр. 1943 г.</value>
   </data>
   <data name="T-43_descr" xml:space="preserve">
-    <value>Designed as a replacement for the T-34 in the spring of 1942. The T-43 was recommended for service, but all work on the project was discontinued in favor of improving the T-34. The vehicle never entered mass production.</value>
+    <value>Разрабатывался для замены Т-34 с весны 1942 года. Был рекомендован к принятию на вооружение, однако дальнейшие работы по танку были прекращены в пользу усиления Т-34. Серийно не выпускался.</value>
   </data>
   <data name="T-43_mod_100" xml:space="preserve">
-    <value>T-43 mod. 1943</value>
+    <value>Т-43 обр. 1943 г.</value>
   </data>
   <data name="T-43_mod_43" xml:space="preserve">
-    <value>T-43 mod. 1942</value>
+    <value>Т-43 обр. 1942 г.</value>
   </data>
   <data name="T-44" xml:space="preserve">
-    <value>T-44</value>
+    <value>Т-44</value>
   </data>
   <data name="T-44-100" xml:space="preserve">
-    <value>T-44-100</value>
+    <value>Т-44-100</value>
   </data>
   <data name="T-44Bis" xml:space="preserve">
-    <value>T-44M</value>
+    <value>Т-44М</value>
   </data>
   <data name="T-44_descr" xml:space="preserve">
-    <value>Adopted in 1944, with a total of 965 vehicles produced by the end of the war. The T-44 remained in service until the end of the 1970s.</value>
+    <value>Принят на вооружение в 1944 году. До конца войны было выпущено 965 машин. Танк состоял на вооружении до конца 70-х годов.</value>
   </data>
   <data name="T-46" xml:space="preserve">
-    <value>T-46</value>
+    <value>Т-46</value>
   </data>
   <data name="T-46-1" xml:space="preserve">
-    <value>T-46-1</value>
+    <value>Т-46-1</value>
   </data>
   <data name="T-46-1_short" xml:space="preserve">
-    <value>T-46-1</value>
+    <value>Т-46-1</value>
   </data>
   <data name="T-46_descr" xml:space="preserve">
-    <value>Developed under the program for improving the maneuverability of the T-26 light tank through redesigning its chassis to a wheeled caterpillar type. The prototype was built in 1935. The vehicle saw service on February 29, 1936 after a series of modifications. At least four vehicles from the experimental batch underwent trials in 1937, but the production was discontinued due to transmission faults and high cost. The manufactured vehicles were used during the Winter War and World War II.</value>
+    <value>Разработан в рамках программы по повышению подвижности лёгкого танка Т-26 путём перевода его на колёсно-гусеничный ход. Прототип был изготовлен в 1935 году и принят на вооружение 29 февраля 1936 года после ряда доработок. По меньшей мере четыре машины из опытной партии серийных T-46 проходили войсковые испытания в 1937 году, однако из-за недостаточной надёжности силовой передачи и высокой стоимости производство танков было прекращено. Изготовленные танки применялись в боевых действиях Советско-финской и Второй Мировой войн.</value>
   </data>
   <data name="T-46_mod_1" xml:space="preserve">
-    <value>T-46</value>
+    <value>Т-46</value>
   </data>
   <data name="T-46_mod_2" xml:space="preserve">
-    <value>T-46-1</value>
+    <value>Т-46-1</value>
   </data>
   <data name="T-50" xml:space="preserve">
-    <value>T-50</value>
+    <value>Т-50</value>
   </data>
   <data name="T-50_descr" xml:space="preserve">
-    <value>Developed in October 1940. The design presented by Plant 174 was submitted for consideration. After successful trials in February and March 1941 the vehicle entered service.</value>
+    <value>Работы над машиной начались в октябре 1940 г. После испытаний опытного образца в феврале — марте 1941 г. машина была принята на вооружение.</value>
   </data>
   <data name="T-50_short" xml:space="preserve">
-    <value>T-50</value>
+    <value>Т-50</value>
   </data>
   <data name="T-54" xml:space="preserve">
-    <value>T-54</value>
+    <value>Т-54</value>
   </data>
   <data name="T-54_descr" xml:space="preserve">
-    <value>The first prototype was constructed at the end of 1944. After successful trials in 1945–1947 the T-54 mod. 1947 was adopted for service. 713 vehicles were constructed before production was phased out. In 1949 production of a new variant was launched.</value>
+    <value>Прототип создан в конце 1944 года. После испытаний в 1945–1947 гг. был принят на вооружение обр. 1947 года. После выпуска 713 машин от серийного производства было решено отказаться. В 1949 году был начат выпуск новой модели.</value>
   </data>
   <data name="T-60" xml:space="preserve">
-    <value>T-60</value>
+    <value>Т-60</value>
   </data>
   <data name="T-60_descr" xml:space="preserve">
-    <value>Developed in August 1941 at the Construction Bureau of Plant No. 37 under the supervision of N. A. Astrov. The vehicle came into service in September 1941, and was mass-produced until February 1943, with a total of 5920 vehicles manufactured. The T-60 tank was in service until the end of the war.</value>
+    <value>Разработан в августе 1941 года в КБ завода №37 под руководством Н. А. Астрова. Принят на вооружение в сентябре 1941 г. Серийное производство продолжалось до февраля 1943 года. Всего было выпущено 5920 танков. Состоял на вооружении до конца войны.</value>
   </data>
   <data name="T-70" xml:space="preserve">
-    <value>T-70</value>
+    <value>Т-70</value>
   </data>
   <data name="T-70_descr" xml:space="preserve">
-    <value>Developed in October and November 1941 at the Construction Bureau of the Gorky Automobile Plant under the supervision of N. A. Astrov. The vehicle came into service in January 1942, and it was mass-produced until October 1943, with a total of 8231 vehicles manufactured. Some vehicles were used until the end of the war.</value>
+    <value>Разработан в октябре — ноябре 1941 года в КБ Горьковского автомобильного завода под руководством Н. А. Астрова. Принят на вооружение в январе 1942 года. Серийное производство было прекращено в октябре 1943 года. Всего был выпущен 8231 танк. Применялся до конца войны.</value>
   </data>
   <data name="T150" xml:space="preserve">
-    <value>T-150</value>
+    <value>Т-150</value>
   </data>
   <data name="T150_descr" xml:space="preserve">
-    <value>The T-150 was a further development of the KV-1. The vehicle weighed as much as 50 tons. The T-150 underwent trials in the first half of 1941. A prototype fought in the battles for Leningrad, and became a basis for a modification of the KV-1 with reinforced armor.</value>
+    <value>Т-150 являлся дальнейшим развитием КВ-1. Масса машины достигла 50 тонн. В первой половине 1941 года танк прошёл полигонные испытания. Опытный образец принял участие в обороне Ленинграда, а также послужил основой для создания версии танка КВ-1 с усиленным бронированием.</value>
   </data>
   <data name="T44_122" xml:space="preserve">
-    <value>T-44-122</value>
+    <value>Т-44-122</value>
   </data>
   <data name="T44_122_descr" xml:space="preserve">
-    <value>Development of the vehicle started in 1943. The prototype was built by the end of the year and underwent trials in January 1944. In February 1944, the tank was re-equipped with a 122-mm gun and sent again for trials. Compared to the production vehicle, the 1943 prototype featured a different hull shape, turret, engine, and armor layout.</value>
+    <value>Разработка машины началась в 1943 году. Работы над прототипом были завершены к концу года, а в январе 1944 года прототип прошёл испытания. В феврале 1944 года танк был перевооружён 122-мм орудием и снова отправлен на испытания. От серийного варианта прототип 1943 года отличался формой корпуса и башни, а также двигателем и бронированием.</value>
   </data>
   <data name="T44_85" xml:space="preserve">
-    <value>T-44-85</value>
+    <value>Т-44-85</value>
   </data>
   <data name="T44_85_descr" xml:space="preserve">
-    <value>Development started in 1943. The design received an upgrade after the trials of the prototype. A standard T-44A model was built in August 1944 and the trials continued. The T-44A never entered mass-production. However, the next prototype of the vehicle was mass-produced.</value>
+    <value>Разработка машины началась в 1943 году. После испытаний первого прототипа в конструкцию машины был внесён ряд изменений. Эталонный экземпляр Т-44А был готов к августу 1944 года и поступил на дальнейшие испытания. Данный вариант T-44 серийно не выпускался, однако в серию пошёл следующий образец машины.</value>
   </data>
   <data name="T62A" xml:space="preserve">
-    <value>T-62A</value>
+    <value>Т-62А</value>
   </data>
   <data name="T62A_descr" xml:space="preserve">
-    <value>Development of the first Soviet post-war medium tank started in 1951. In 1961, the T-62 tank with a smoothbore gun was deployed. At the same time a variant, the T-62A, with a rifled gun was also deployed. In March 1962, mass production of the T-62A was discontinued. The T-62 tank was mass-produced from 1961 through 1975, with a total of twenty thousand vehicles manufactured. Later modifications of the vehicle are still in service.</value>
+    <value>Разработка среднего танка первого послевоенного поколения началась в 1951 году. В 1961 году на вооружение были приняты Т-62А с нарезным орудием и Т-62 с гладкоствольным орудием. Однако в марте 1962 года было принято решение не начинать серийное производство Т-62А. Танк Т-62 выпускался серийно с 1961 по 1975 год. Всего было выпущено 20 тысяч машин. Поздние модификации танка состоят на вооружении до настоящего времени.</value>
   </data>
   <data name="T62A_fallout" xml:space="preserve">
-    <value>(R) T-62A</value>
+    <value>(А) Т-62А</value>
   </data>
   <data name="T62A_fallout_descr" xml:space="preserve">
-    <value>Development of the first Soviet post-war medium tank started in 1951. In 1961, after developing and testing several working prototypes, the T-62A with a rifled gun and the T-62 with a smoothbore gun were deployed. In March 1962, mass production of the T-62A was discontinued. The T-62 tank was mass-produced from 1961 through 1975, with a total of twenty thousand vehicles manufactured. Later modifications of the vehicle are still in service.</value>
+    <value>Работа над средним танком первого послевоенного поколения началась в 1951 году. После разработки и испытаний нескольких экспериментальных образцов на вооружение в 1961 году были приняты Т-62А с нарезным орудием и Т-62 с гладкоствольной пушкой. Однако в марте 1962 года было принято решение серийное производство Т-62А не начинать. Танк же Т-62 выпускался с 1961 по 1975 год. Всего было выпущено 20 тысяч машин. Поздние модификации танка состоят на вооружении до настоящего времени.</value>
   </data>
   <data name="T62A_fallout_short" xml:space="preserve">
-    <value>(R) T-62A</value>
+    <value>(А) Т-62А</value>
   </data>
   <data name="T62A_short" xml:space="preserve">
-    <value>T-62A</value>
+    <value>Т-62А</value>
   </data>
   <data name="T80" xml:space="preserve">
-    <value>T-80</value>
+    <value>Т-80</value>
   </data>
   <data name="T80_descr" xml:space="preserve">
-    <value>Developed in the summer and fall of 1942 at the Construction Bureau of the Gorky Automobile Plant under the supervision of N. A. Astrov. The vehicle came into service in December 1942. A total of 85 vehicles were mass-produced.</value>
+    <value>Разработан летом–осенью 1942 года в КБ Горьковского автомобильного завода под руководством Н. А. Астрова. Принят на вооружение в декабре 1942 года. За время серийного производства было выпущено 85 машин.</value>
   </data>
   <data name="TD-12" xml:space="preserve">
-    <value>TD-12</value>
+    <value>ТД-12</value>
+  </data>
+  <data name="TD-30" xml:space="preserve">
+    <value>М-50Д</value>
   </data>
   <data name="TDDG" xml:space="preserve">
-    <value>DG</value>
+    <value>ДГ</value>
   </data>
   <data name="T_50_2" xml:space="preserve">
-    <value>T-50-2</value>
+    <value>Т-50-2</value>
   </data>
   <data name="T_50_2_descr" xml:space="preserve">
-    <value>The designs of the T-50 were submitted by the Construction Bureau of the Kirov Plant (Leningrad) and Plant 174. The design introduced by the Kirov Plant was more difficult to implement. The distinctive features of the vehicle were its hull shape and a horseshoe-shaped radiator.</value>
+    <value>Одновременно с заводом №174 свой проект Т-50 подготовили в КБ ЛКЗ. Особенностями танка были литой корпус и подковообразный радиатор. В массовом производстве машина была сложнее проекта завода №174.</value>
   </data>
   <data name="T_50_2_short" xml:space="preserve">
-    <value>T-50-2</value>
+    <value>Т-50-2</value>
   </data>
   <data name="Tetrarch_LL" xml:space="preserve">
-    <value>Tetrarch</value>
+    <value>Тетрарх</value>
   </data>
   <data name="Tetrarch_LL_descr" xml:space="preserve">
-    <value>Developed in 1936 by the Vickers-Armstrong company, with a total of 177 vehicles in two basic modifications the Tetrarch Mk I and the Tetrarch Mk ICS manufactured from 1941 through 1942. In 1942 twenty vehicles were delivered to the U.S.S.R. under Lend-Lease, of which 19 fought on the Eastern Front until October 1943.</value>
+    <value>Разработан в 1936 году компанией Vickers-Armstrong. В 1941–1942 гг. было выпущено 177 машин двух основных модификаций — Tetrarch Mk I и Tetrarch Mk ICS. В 1942 году по ленд-лизу в СССР было поставлено 20 танков, из которых 19 применялись на Восточном фронте до октября 1943 года.</value>
   </data>
   <data name="Tetrarch_LL_short" xml:space="preserve">
-    <value>Tetrarch</value>
+    <value>Тетрарх</value>
   </data>
   <data name="Tip_9" xml:space="preserve">
-    <value>Type 9</value>
+    <value>Тип 9</value>
   </data>
   <data name="Turret_1_A43" xml:space="preserve">
-    <value>A-43</value>
+    <value>А-43</value>
   </data>
   <data name="Turret_1_A44" xml:space="preserve">
-    <value>A-44</value>
+    <value>А-44</value>
   </data>
   <data name="Turret_1_IS8" xml:space="preserve">
-    <value>T-10</value>
+    <value>Т-10</value>
   </data>
   <data name="Turret_1_KV-13" xml:space="preserve">
-    <value>KV-13 mod. 1942</value>
+    <value>КВ-13 обр. 1942 г.</value>
   </data>
   <data name="Turret_1_KV-5" xml:space="preserve">
-    <value>KV-5</value>
+    <value>КВ-5</value>
   </data>
   <data name="Turret_1_KV1" xml:space="preserve">
-    <value>KV-1 LKZ mod. 1941</value>
+    <value>КВ-1 ЛКЗ обр. 1941 г.</value>
   </data>
   <data name="Turret_1_KV1_short" xml:space="preserve">
-    <value>KV-1 LKZ</value>
+    <value>КВ-1 ЛКЗ</value>
   </data>
   <data name="Turret_1_KV2" xml:space="preserve">
-    <value>MT-1</value>
+    <value>МТ-1</value>
   </data>
   <data name="Turret_1_KV4" xml:space="preserve">
-    <value>KV-4</value>
+    <value>КВ-4</value>
   </data>
   <data name="Turret_1_LTP" xml:space="preserve">
-    <value>LTP</value>
+    <value>ЛТП</value>
   </data>
   <data name="Turret_1_Object263" xml:space="preserve">
-    <value>Object 263</value>
+    <value>Объект 263</value>
   </data>
   <data name="Turret_1_Object268" xml:space="preserve">
-    <value>Object 268</value>
+    <value>Объект 268</value>
   </data>
   <data name="Turret_1_Object416" xml:space="preserve">
-    <value>Object 416 mod. 1952</value>
+    <value>Объект 416 обр. 1952 г.</value>
   </data>
   <data name="Turret_1_Object_140" xml:space="preserve">
-    <value>Object 140</value>
+    <value>Объект 140</value>
   </data>
   <data name="Turret_1_Object_212" xml:space="preserve">
-    <value>212A</value>
+    <value>212А</value>
   </data>
   <data name="Turret_1_Object_261" xml:space="preserve">
-    <value>Object 261</value>
+    <value>Объект 261</value>
   </data>
   <data name="Turret_1_Object_430" xml:space="preserve">
-    <value>Object 430</value>
+    <value>Объект 430</value>
   </data>
   <data name="Turret_1_Object_704" xml:space="preserve">
-    <value>Object 704</value>
+    <value>Объект 704</value>
   </data>
   <data name="Turret_1_Object_907" xml:space="preserve">
-    <value>Object 907</value>
+    <value>Объект 907</value>
   </data>
   <data name="Turret_1_Object_907A" xml:space="preserve">
-    <value>Object 907A</value>
+    <value>Объект 907A</value>
   </data>
   <data name="Turret_1_R100_SU122A" xml:space="preserve">
-    <value>SU-122A</value>
+    <value>СУ-122А</value>
   </data>
   <data name="Turret_1_R101_MT25" xml:space="preserve">
-    <value>MT-25</value>
+    <value>МТ-25</value>
   </data>
   <data name="Turret_1_R104_Object_430_II" xml:space="preserve">
-    <value>Object 430 Version II</value>
+    <value>Объект 430 Вариант II</value>
   </data>
   <data name="Turret_1_R105_BT_7A" xml:space="preserve">
-    <value>BT-7 art.</value>
+    <value>БТ-7 арт.</value>
   </data>
   <data name="Turret_1_R106_KV85" xml:space="preserve">
-    <value>KV-85</value>
+    <value>КВ-85</value>
   </data>
   <data name="Turret_1_R107_LTB" xml:space="preserve">
-    <value>LTTB</value>
+    <value>ЛТТБ</value>
   </data>
   <data name="Turret_1_R108_T34_85M" xml:space="preserve">
-    <value>T-34-85M</value>
+    <value>Т-34-85М</value>
   </data>
   <data name="Turret_1_R110_Object_260" xml:space="preserve">
-    <value>Object 260 mod. 1945</value>
+    <value>Объект 260 обр. 1945 г.</value>
   </data>
   <data name="Turret_1_R111_ISU130" xml:space="preserve">
-    <value>ISU-130</value>
+    <value>ИСУ-130</value>
   </data>
   <data name="Turret_1_R112_T54_45" xml:space="preserve">
-    <value>T-54 first prototype</value>
+    <value>Т-54 первый образец</value>
   </data>
   <data name="Turret_1_R113_Object_730" xml:space="preserve">
-    <value>IS-5 (Object 730)</value>
+    <value>ИС-5 (Объект 730)</value>
   </data>
   <data name="Turret_1_R114_Object_244" xml:space="preserve">
-    <value>Object 244</value>
+    <value>Объект 244</value>
   </data>
   <data name="Turret_1_R115_IS-3_auto" xml:space="preserve">
-    <value>IS-3A</value>
+    <value>ИС-3 с МЗ</value>
   </data>
   <data name="Turret_1_R116_ISU122C_Berlin" xml:space="preserve">
-    <value>ISU-122S</value>
+    <value>ИСУ-122С</value>
   </data>
   <data name="Turret_1_R117_T34_85_Rudy" xml:space="preserve">
-    <value>T-34-85</value>
+    <value>Т-34-85</value>
   </data>
   <data name="Turret_1_R118_T28_F30" xml:space="preserve">
-    <value>T-28E with F-30</value>
+    <value>Т-28Э с Ф-30</value>
   </data>
   <data name="Turret_1_R119_Object_777" xml:space="preserve">
-    <value>Object 777 Version II</value>
+    <value>Объект 777 Вариант II</value>
   </data>
   <data name="Turret_1_R120_T22SR_A22" xml:space="preserve">
-    <value>T-22 medium</value>
+    <value>Т-22 ср.</value>
   </data>
   <data name="Turret_1_R121_KV4_KTT" xml:space="preserve">
-    <value>KV-4 KTTS</value>
+    <value>КВ-4 КТТС</value>
   </data>
   <data name="Turret_1_R122_T44_100" xml:space="preserve">
-    <value>T-44-100</value>
+    <value>Т-44-100</value>
   </data>
   <data name="Turret_1_R123_Kirovets_1" xml:space="preserve">
-    <value>Kirovets-1</value>
+    <value>Кировец-1</value>
   </data>
   <data name="Turret_1_R125_T_45" xml:space="preserve">
-    <value>T-45</value>
+    <value>Т-45</value>
   </data>
   <data name="Turret_1_R126_Object_730_5" xml:space="preserve">
-    <value>Object 268 Version V</value>
+    <value>Объект 268 Вариант 5</value>
   </data>
   <data name="Turret_1_R127_T44_100_P" xml:space="preserve">
-    <value>T-44-100 (R)</value>
+    <value>Т-44-100 (Р)</value>
   </data>
   <data name="Turret_1_R128_KV4_Kreslavskiy" xml:space="preserve">
-    <value>KV-4 by Kreslavskiy</value>
+    <value>КВ-4 Креславского</value>
   </data>
   <data name="Turret_1_R129_Object_257" xml:space="preserve">
-    <value>Object 257</value>
+    <value>Объект 257</value>
+  </data>
+  <data name="Turret_1_R133_KV_122" xml:space="preserve">
+    <value>КВ-122</value>
   </data>
   <data name="Turret_1_R71_IS_2B" xml:space="preserve">
-    <value>IS-122</value>
+    <value>ИС-122</value>
   </data>
   <data name="Turret_1_ST_I" xml:space="preserve">
-    <value>Object 701-1</value>
+    <value>Объект 701-1</value>
   </data>
   <data name="Turret_1_SU-101" xml:space="preserve">
-    <value>SU-101</value>
+    <value>СУ-101</value>
   </data>
   <data name="Turret_1_SU100M1" xml:space="preserve">
-    <value>SU-100M1</value>
+    <value>СУ-100М1</value>
   </data>
   <data name="Turret_1_SU100Y" xml:space="preserve">
-    <value>SU-100Y</value>
+    <value>СУ-100Y</value>
   </data>
   <data name="Turret_1_SU122_44" xml:space="preserve">
-    <value>SU-122-44</value>
+    <value>СУ-122-44</value>
   </data>
   <data name="Turret_1_SU122_54" xml:space="preserve">
-    <value>SU-122/54</value>
+    <value>СУ-122/54</value>
   </data>
   <data name="Turret_1_SU14_1" xml:space="preserve">
-    <value>SU-14-1</value>
+    <value>СУ-14-1</value>
   </data>
   <data name="Turret_1_SU76I" xml:space="preserve">
-    <value>SU-76I</value>
+    <value>СУ-76И</value>
   </data>
   <data name="Turret_1_T-127" xml:space="preserve">
-    <value>T-127</value>
+    <value>Т-127</value>
   </data>
   <data name="Turret_1_T-50" xml:space="preserve">
-    <value>T-50</value>
+    <value>Т-50</value>
   </data>
   <data name="Turret_1_T-54_2" xml:space="preserve">
-    <value>T-54 mod. 1946</value>
+    <value>Т-54 обр. 1946 г.</value>
   </data>
   <data name="Turret_1_T-60" xml:space="preserve">
-    <value>T-40</value>
+    <value>Т-40</value>
   </data>
   <data name="Turret_1_T-70" xml:space="preserve">
-    <value>T-70</value>
+    <value>Т-70</value>
   </data>
   <data name="Turret_1_T150" xml:space="preserve">
-    <value>T-150-KV</value>
+    <value>Т-150-КВ</value>
   </data>
   <data name="Turret_1_T44_122" xml:space="preserve">
-    <value>T-44-122</value>
+    <value>Т-44-122</value>
   </data>
   <data name="Turret_1_T44_85" xml:space="preserve">
-    <value>T-44-85</value>
+    <value>Т-44-85</value>
   </data>
   <data name="Turret_1_T46" xml:space="preserve">
-    <value>T-26</value>
+    <value>Т-26</value>
   </data>
   <data name="Turret_1_T62A" xml:space="preserve">
-    <value>T-62A</value>
+    <value>Т-62А</value>
   </data>
   <data name="Turret_1_T62A_fallout" xml:space="preserve">
-    <value>T-62A</value>
+    <value>Т-62А</value>
   </data>
   <data name="Turret_1_T80" xml:space="preserve">
-    <value>T-80</value>
+    <value>Т-80</value>
   </data>
   <data name="Turret_1_T_50_2" xml:space="preserve">
-    <value>T-50-2</value>
+    <value>Т-50-2</value>
   </data>
   <data name="Turret_1_Tetrarch_LL" xml:space="preserve">
-    <value>Tetrarch</value>
+    <value>Тетрарх</value>
   </data>
   <data name="Turret_2_A43" xml:space="preserve">
-    <value>A-44</value>
+    <value>А-44</value>
   </data>
   <data name="Turret_2_A44" xml:space="preserve">
-    <value>A-44 shielded</value>
+    <value>А-44 экранированная</value>
   </data>
   <data name="Turret_2_IS8" xml:space="preserve">
-    <value>T-10M</value>
+    <value>Т-10М</value>
   </data>
   <data name="Turret_2_KV-13" xml:space="preserve">
-    <value>KV-13 mod. 1943</value>
+    <value>КВ-13 обр. 1943 г.</value>
   </data>
   <data name="Turret_2_KV1" xml:space="preserve">
-    <value>KV-1 ChTZ mod. 1942</value>
+    <value>КВ-1 ЧТЗ обр. 1942 г.</value>
   </data>
   <data name="Turret_2_KV1_short" xml:space="preserve">
-    <value>KV-1 ChTZ</value>
+    <value>КВ-1 ЧТЗ</value>
   </data>
   <data name="Turret_2_KV2" xml:space="preserve">
-    <value>MT-2</value>
+    <value>МТ-2</value>
   </data>
   <data name="Turret_2_KV4" xml:space="preserve">
-    <value>KV-4-5</value>
+    <value>КВ-4-5</value>
   </data>
   <data name="Turret_2_Object416" xml:space="preserve">
-    <value>Object 416 mod. 1953</value>
+    <value>Объект 416 обр. 1953 г.</value>
   </data>
   <data name="Turret_2_R101_MT25" xml:space="preserve">
-    <value>T-34M mod. 1941</value>
+    <value>Т-34М обр. 1941 г.</value>
   </data>
   <data name="Turret_2_R104_Object_430_II" xml:space="preserve">
-    <value>Object 430 Version II enhanced</value>
+    <value>Объект 430 Вариант II усиленная</value>
   </data>
   <data name="Turret_2_R106_KV85" xml:space="preserve">
-    <value>KV-122 mod. 1944</value>
+    <value>КВ-122 обр. 1944 г.</value>
   </data>
   <data name="Turret_2_R109_T54S" xml:space="preserve">
-    <value>T-54 ltwt. version</value>
+    <value>Т-54 облегчённый вариант</value>
   </data>
   <data name="Turret_2_ST_I" xml:space="preserve">
-    <value>ST-I</value>
+    <value>СТ-I</value>
   </data>
   <data name="Turret_2_T-54_2" xml:space="preserve">
-    <value>T-54 mod. 1949</value>
+    <value>Т-54 обр. 1949 г.</value>
   </data>
   <data name="Turret_2_T-60" xml:space="preserve">
-    <value>T-60</value>
+    <value>Т-60</value>
   </data>
   <data name="Turret_2_T-70" xml:space="preserve">
-    <value>T-70M</value>
+    <value>Т-70М</value>
   </data>
   <data name="Turret_2_T150" xml:space="preserve">
-    <value>T-150-220</value>
+    <value>Т-150-220</value>
+  </data>
+  <data name="Turret_2_T_50_2" xml:space="preserve">
+    <value>Т-50-2М</value>
   </data>
   <data name="Turret_710_mod_5" xml:space="preserve">
-    <value>IS-4M</value>
+    <value>ИС-4М</value>
   </data>
   <data name="Turret_IS-6" xml:space="preserve">
-    <value>IS-6</value>
+    <value>ИС-6</value>
   </data>
   <data name="Turret_IS-7_fallout" xml:space="preserve">
-    <value>IS-7</value>
+    <value>ИС-7</value>
   </data>
   <data name="V-11" xml:space="preserve">
-    <value>V-11</value>
+    <value>В-11</value>
   </data>
   <data name="V-11-IS-3" xml:space="preserve">
-    <value>V-11-IS-3</value>
+    <value>В-11-ИС-3</value>
+  </data>
+  <data name="V-11_700" xml:space="preserve">
+    <value>В-11 (700)</value>
   </data>
   <data name="V-12" xml:space="preserve">
-    <value>V-12</value>
+    <value>В-12</value>
   </data>
   <data name="V-12-5" xml:space="preserve">
-    <value>V-12-5</value>
+    <value>В-12-5</value>
   </data>
   <data name="V-12-5A" xml:space="preserve">
-    <value>V-12-5</value>
+    <value>В-12-5</value>
   </data>
   <data name="V-12-5U" xml:space="preserve">
-    <value>V-12-5U</value>
+    <value>В-12-5У</value>
   </data>
   <data name="V-12-5_shortened" xml:space="preserve">
-    <value>V-12-5 shortened</value>
+    <value>В-12-5 укороченный</value>
   </data>
   <data name="V-12-6" xml:space="preserve">
-    <value>V-12-6</value>
+    <value>В-12-6</value>
   </data>
   <data name="V-12-6V" xml:space="preserve">
-    <value>V-12-6V</value>
+    <value>В-12-6В</value>
   </data>
   <data name="V-12A" xml:space="preserve">
-    <value>V-12 A</value>
+    <value>В-12 А</value>
   </data>
   <data name="V-12P" xml:space="preserve">
-    <value>V-12P</value>
+    <value>В-12П</value>
   </data>
   <data name="V-16" xml:space="preserve">
-    <value>V-16</value>
+    <value>В-16</value>
   </data>
   <data name="V-16FN" xml:space="preserve">
-    <value>V-16FN</value>
+    <value>В-16ФН</value>
   </data>
   <data name="V-16M" xml:space="preserve">
-    <value>V-16M</value>
+    <value>В-16М</value>
   </data>
   <data name="V-2" xml:space="preserve">
-    <value>V-2</value>
+    <value>В-2</value>
   </data>
   <data name="V-2-212" xml:space="preserve">
-    <value>V-2K forced</value>
+    <value>В-2К форсированный</value>
   </data>
   <data name="V-2-34" xml:space="preserve">
-    <value>V-2-34</value>
+    <value>В-2-34</value>
   </data>
   <data name="V-2-34M" xml:space="preserve">
-    <value>V-2-34M</value>
+    <value>В-2-34М</value>
   </data>
   <data name="V-2-34_B" xml:space="preserve">
-    <value>V-2-34</value>
+    <value>В-2-34</value>
   </data>
   <data name="V-2-44" xml:space="preserve">
-    <value>V-2-44</value>
+    <value>В-2-44</value>
   </data>
   <data name="V-2-54" xml:space="preserve">
-    <value>V-2-54</value>
+    <value>В-2-54</value>
+  </data>
+  <data name="V-2-54A" xml:space="preserve">
+    <value>В-2-54</value>
   </data>
   <data name="V-2-54IS" xml:space="preserve">
-    <value>V-2-54IS</value>
+    <value>В-2-54ИС</value>
   </data>
   <data name="V-2IS" xml:space="preserve">
-    <value>V-2IS</value>
+    <value>В-2ИС</value>
   </data>
   <data name="V-2IS_B" xml:space="preserve">
-    <value>V-2IS</value>
+    <value>В-2ИС</value>
   </data>
   <data name="V-2IS_R" xml:space="preserve">
-    <value>V-2-10</value>
+    <value>В-2-10</value>
   </data>
   <data name="V-2K" xml:space="preserve">
-    <value>V-2K</value>
+    <value>В-2К</value>
   </data>
   <data name="V-2KT" xml:space="preserve">
-    <value>V-2SN</value>
+    <value>В-2СН</value>
   </data>
   <data name="V-2SN" xml:space="preserve">
-    <value>V-2SN</value>
+    <value>В-2СН</value>
   </data>
   <data name="V-2SNx2" xml:space="preserve">
-    <value>2x V-2K-F</value>
+    <value>2x В-2К-Ф</value>
   </data>
   <data name="V-3" xml:space="preserve">
-    <value>V-3</value>
+    <value>В-3</value>
   </data>
   <data name="V-4" xml:space="preserve">
-    <value>V-4</value>
+    <value>В-4</value>
   </data>
   <data name="V-44" xml:space="preserve">
-    <value>V-44</value>
+    <value>В-44</value>
   </data>
   <data name="V-44A" xml:space="preserve">
-    <value>V-44-500</value>
+    <value>В-44-500</value>
   </data>
   <data name="V-5" xml:space="preserve">
-    <value>V-5</value>
+    <value>В-5</value>
   </data>
   <data name="V-54" xml:space="preserve">
-    <value>V-54</value>
+    <value>В-54</value>
   </data>
   <data name="V-54-6" xml:space="preserve">
-    <value>V-54-6</value>
+    <value>В-54-6</value>
   </data>
   <data name="V-54K" xml:space="preserve">
-    <value>V-54K</value>
+    <value>В-54К</value>
   </data>
   <data name="V-55" xml:space="preserve">
-    <value>V-55</value>
+    <value>В-55</value>
   </data>
   <data name="V-55U" xml:space="preserve">
-    <value>V-14</value>
+    <value>В-14</value>
   </data>
   <data name="V-55_fallout" xml:space="preserve">
-    <value>V-55</value>
+    <value>В-55</value>
   </data>
   <data name="V-5F" xml:space="preserve">
-    <value>V-5F</value>
+    <value>В-5Ф</value>
+  </data>
+  <data name="V-5U" xml:space="preserve">
+    <value>В-5У</value>
   </data>
   <data name="V-7" xml:space="preserve">
-    <value>V-7</value>
+    <value>В-7</value>
   </data>
   <data name="ValentineMK_I" xml:space="preserve">
-    <value>Valentine</value>
+    <value>Валентайн</value>
   </data>
   <data name="Valentine_LL" xml:space="preserve">
-    <value>Valentine II</value>
+    <value>Валентайн II</value>
   </data>
   <data name="Valentine_LL_descr" xml:space="preserve">
-    <value>A British tank supplied to the U.S.S.R. under Lend-Lease. A total of 3,782 vehicles were sent to the Soviet Union, with some lost at sea during transport to Murmansk.</value>
+    <value>Английский танк, поступавший в СССР по ленд-лизу. Всего было поставлено 3782 танка, однако часть была потеряна при транспортировке морем в Мурманск.</value>
   </data>
   <data name="ZiS-16" xml:space="preserve">
-    <value>ZiS-16</value>
+    <value>ЗИС-16</value>
   </data>
   <data name="ZiS-16_A" xml:space="preserve">
-    <value>ZiS-16</value>
+    <value>ЗИС-16</value>
   </data>
   <data name="_100mm_3UBK4" xml:space="preserve">
-    <value>ZUBK4</value>
+    <value>3УБК4</value>
   </data>
   <data name="_100mm_3UBK4M" xml:space="preserve">
-    <value>ZUBK4M</value>
+    <value>3УБК4М</value>
   </data>
   <data name="_100mm_3UBK4M_fallout" xml:space="preserve">
-    <value>ZUBK4M R</value>
+    <value>3УБК4М А</value>
   </data>
   <data name="_100mm_3UOF10" xml:space="preserve">
-    <value>ZUOF10</value>
+    <value>3УОФ10</value>
   </data>
   <data name="_100mm_3UOF10_fallout" xml:space="preserve">
-    <value>ZUOF10 R</value>
+    <value>3УОФ10 А</value>
   </data>
   <data name="_100mm_BR-412D" xml:space="preserve">
-    <value>UBR-412D</value>
+    <value>УБР-412Д</value>
   </data>
   <data name="_100mm_D-10T2S" xml:space="preserve">
-    <value>100 mm D-10T2S</value>
+    <value>100 мм Д-10Т2С</value>
   </data>
   <data name="_100mm_D10S" xml:space="preserve">
-    <value>100 mm D10S</value>
+    <value>100 мм Д-10С</value>
   </data>
   <data name="_100mm_D10S_obr_44" xml:space="preserve">
-    <value>100 mm D-10S mod. 1944</value>
+    <value>100 мм Д-10С обр. 1944 г.</value>
   </data>
   <data name="_100mm_D10T" xml:space="preserve">
-    <value>100 mm D10T</value>
+    <value>100 мм Д-10Т</value>
   </data>
   <data name="_100mm_D10TK" xml:space="preserve">
-    <value>100 mm D10T-K</value>
+    <value>100 мм Д-10Т-К</value>
   </data>
   <data name="_100mm_D10T_obr_45" xml:space="preserve">
-    <value>100 mm D10T mod. 1945</value>
+    <value>100 мм Д-10Т обр. 1945 г.</value>
   </data>
   <data name="_100mm_D54S" xml:space="preserve">
-    <value>100 mm D-54S</value>
+    <value>100 мм Д-54С</value>
   </data>
   <data name="_100mm_D54_M" xml:space="preserve">
-    <value>100 mm D-54TS</value>
+    <value>100 мм Д-54ТС</value>
   </data>
   <data name="_100mm_D54_TS" xml:space="preserve">
-    <value>100 mm U-8TS</value>
+    <value>100 мм У-8ТС</value>
   </data>
   <data name="_100mm_D54_TS_fallout" xml:space="preserve">
-    <value>100 mm U-8TS</value>
+    <value>100 мм У-8ТС</value>
   </data>
   <data name="_100mm_D54_obr_45" xml:space="preserve">
-    <value>100 mm D-54</value>
+    <value>100 мм Д-54</value>
   </data>
   <data name="_100mm_LB-1" xml:space="preserve">
-    <value>100 mm LB-1</value>
+    <value>100 мм ЛБ-1</value>
   </data>
   <data name="_100mm_LB-1A" xml:space="preserve">
-    <value>100 mm LB-1</value>
+    <value>100 мм ЛБ-1</value>
   </data>
   <data name="_100mm_LB-1S" xml:space="preserve">
-    <value>100 mm LB-1C</value>
+    <value>100 мм ЛБ-1С</value>
   </data>
   <data name="_100mm_M-63" xml:space="preserve">
-    <value>100 mm M-63</value>
+    <value>100 мм М-63</value>
   </data>
   <data name="_100mm_S34" xml:space="preserve">
-    <value>100 mm S-34</value>
+    <value>100 мм С-34</value>
   </data>
   <data name="_100mm_UBR-412" xml:space="preserve">
-    <value>UBR-412</value>
+    <value>УБР-412</value>
   </data>
   <data name="_100mm_UBR-412B" xml:space="preserve">
-    <value>UBR-412B</value>
+    <value>УБР-412Б</value>
   </data>
   <data name="_100mm_UBR-412P" xml:space="preserve">
-    <value>UBR-412P</value>
+    <value>УБР-412П</value>
   </data>
   <data name="_100mm_UBR-412PB" xml:space="preserve">
-    <value>UBR-412PB</value>
+    <value>УБР-412ПБ</value>
   </data>
   <data name="_100mm_UBR-412PB_fallout" xml:space="preserve">
-    <value>UBR-412PB R</value>
+    <value>УБР-412ПБ А</value>
   </data>
   <data name="_100mm_UOF-412" xml:space="preserve">
-    <value>UOF-412</value>
+    <value>УОФ-412</value>
   </data>
   <data name="_100mm_UOF-412B" xml:space="preserve">
-    <value>UOF-412B</value>
+    <value>УОФ-412Б</value>
   </data>
   <data name="_107mm_UBR-420" xml:space="preserve">
-    <value>UBR-420</value>
+    <value>УБР-420</value>
   </data>
   <data name="_107mm_UBR-420M" xml:space="preserve">
-    <value>UBR-420M</value>
+    <value>УБР-420М</value>
   </data>
   <data name="_107mm_UBR-420P" xml:space="preserve">
-    <value>UBR-420P</value>
+    <value>УБР-420П</value>
   </data>
   <data name="_107mm_UBR-420PM" xml:space="preserve">
-    <value>UBR-420PM</value>
+    <value>УБР-420ПМ</value>
   </data>
   <data name="_107mm_UOF-420" xml:space="preserve">
-    <value>UOF-420</value>
+    <value>УОФ-420</value>
   </data>
   <data name="_107mm_UOF-420M" xml:space="preserve">
-    <value>UOF-420M</value>
+    <value>УОФ-420М</value>
   </data>
   <data name="_107mm_ZiS-24" xml:space="preserve">
-    <value>107 mm ZiS-24</value>
+    <value>107 мм ЗиС-24</value>
   </data>
   <data name="_107mm_ZiS-24_A" xml:space="preserve">
-    <value>107 mm M-75</value>
+    <value>107 мм М-75</value>
   </data>
   <data name="_107mm_ZiS-6" xml:space="preserve">
-    <value>107 mm ZiS-6</value>
+    <value>107 мм ЗиС-6</value>
   </data>
   <data name="_107mm_ZiS-6M" xml:space="preserve">
-    <value>107 mm ZiS-6M</value>
+    <value>107 мм ЗиС-6М</value>
+  </data>
+  <data name="_107mm_ZiS-6_S" xml:space="preserve">
+    <value>107 мм ЗиС-6С</value>
   </data>
   <data name="_10R" xml:space="preserve">
-    <value>10R</value>
+    <value>10Р</value>
   </data>
   <data name="_10RK" xml:space="preserve">
-    <value>10RK</value>
+    <value>10РК</value>
   </data>
   <data name="_10RK-26" xml:space="preserve">
-    <value>10RK-26</value>
+    <value>10РК-26</value>
   </data>
   <data name="_10RK-26_fallout" xml:space="preserve">
-    <value>10RK-26</value>
+    <value>10РК-26</value>
   </data>
   <data name="_10RKM" xml:space="preserve">
-    <value>10RKM</value>
+    <value>10РКМ</value>
   </data>
   <data name="_10RT-26E" xml:space="preserve">
-    <value>10RT-26</value>
+    <value>10РТ-26</value>
   </data>
   <data name="_12.7mm_AP_B32" xml:space="preserve">
-    <value>B-32</value>
+    <value>Б-32</value>
   </data>
   <data name="_12.7mm_DSHK" xml:space="preserve">
-    <value>12.7 mm DShK</value>
+    <value>12,7 мм ДШК</value>
   </data>
   <data name="_122-mm_D-25S_with_a_piston_shutter" xml:space="preserve">
-    <value>122 mm D-2-5S</value>
+    <value>122 мм Д-2-5С</value>
   </data>
   <data name="_122-mm_D-25S_with_wedges_shutter" xml:space="preserve">
-    <value>122 mm D-25S</value>
+    <value>122 мм Д-25С</value>
   </data>
   <data name="_122-mm_D-25TA" xml:space="preserve">
-    <value>122 mm D-25TA</value>
+    <value>122 мм Д-25ТА</value>
   </data>
   <data name="_122-mm_D-25T_with_a_piston_shutter" xml:space="preserve">
-    <value>122 mm D-2-5T</value>
+    <value>122 мм Д-2-5Т</value>
   </data>
   <data name="_122-mm_D-25T_with_wedges_shutter" xml:space="preserve">
-    <value>122 mm D-25T</value>
+    <value>122 мм Д-25Т</value>
+  </data>
+  <data name="_122-mm_D-25T_with_wedges_shutter_A" xml:space="preserve">
+    <value>122 мм Д-25Т</value>
   </data>
   <data name="_122-mm_D-25T_with_wedges_shutter_B" xml:space="preserve">
-    <value>122 mm D-25T</value>
+    <value>122 мм Д-25Т</value>
   </data>
   <data name="_122-mm_D-30" xml:space="preserve">
-    <value>122 mm D-30</value>
+    <value>122 мм Д-30</value>
   </data>
   <data name="_122-mm_D-49" xml:space="preserve">
-    <value>122 mm D-49</value>
+    <value>122 мм Д-49</value>
   </data>
   <data name="_122mm_3BM14" xml:space="preserve">
-    <value>ZBM14</value>
+    <value>3БМ14</value>
   </data>
   <data name="_122mm_3VBK6" xml:space="preserve">
-    <value>ZVBK6</value>
+    <value>3ВБК6</value>
   </data>
   <data name="_122mm_A-19" xml:space="preserve">
-    <value>122 mm A-19 mod. 1937</value>
+    <value>122 мм А-19 обр. 1937 г.</value>
   </data>
   <data name="_122mm_A-19_short" xml:space="preserve">
-    <value>122 mm A-19</value>
+    <value>122 мм А-19</value>
   </data>
   <data name="_122mm_BL-13-1" xml:space="preserve">
-    <value>122 mm BL-13-1</value>
+    <value>122 мм БЛ-13-1</value>
   </data>
   <data name="_122mm_BL-9" xml:space="preserve">
-    <value>122 mm BL-9</value>
+    <value>122 мм БЛ-9</value>
   </data>
   <data name="_122mm_BL-9S" xml:space="preserve">
-    <value>122 mm BL-9S</value>
+    <value>122 мм БЛ-9С</value>
   </data>
   <data name="_122mm_BM11" xml:space="preserve">
-    <value>BK-9</value>
+    <value>БК-9</value>
   </data>
   <data name="_122mm_BP-463" xml:space="preserve">
-    <value>BP-463</value>
+    <value>БП-463</value>
   </data>
   <data name="_122mm_BP450S" xml:space="preserve">
-    <value>BP-460A</value>
+    <value>БП-460А</value>
   </data>
   <data name="_122mm_BP450SO" xml:space="preserve">
-    <value>BP-450AO</value>
+    <value>БП-460АО</value>
   </data>
   <data name="_122mm_BR-471D" xml:space="preserve">
-    <value>BR-472</value>
+    <value>БР-472</value>
   </data>
   <data name="_122mm_D-25-44" xml:space="preserve">
-    <value>122 mm D-25-44</value>
+    <value>122 мм Д-25-44</value>
   </data>
   <data name="_122mm_D-25C_mod1944" xml:space="preserve">
-    <value>122 mm D-25S mod. 1944</value>
+    <value>122 мм Д-25С обр. 1944 г.</value>
   </data>
   <data name="_122mm_D-25C_mod1944_B" xml:space="preserve">
-    <value>122 mm D-25S mod. 1944</value>
+    <value>122 мм Д-25С обр. 1944 г.</value>
   </data>
   <data name="_122mm_D-25C_mod1944_B_short" xml:space="preserve">
-    <value>122 mm D-25S</value>
+    <value>122 мм Д-25С</value>
   </data>
   <data name="_122mm_D-25C_mod1944_short" xml:space="preserve">
-    <value>122 mm D-25S</value>
+    <value>122 мм Д-25С</value>
   </data>
   <data name="_122mm_M-30" xml:space="preserve">
-    <value>122 mm Howitzer M-30</value>
+    <value>122 мм гаубица М-30</value>
   </data>
   <data name="_122mm_M62-T2" xml:space="preserve">
-    <value>122 mm M62-T2</value>
+    <value>122 мм M62-T2</value>
   </data>
   <data name="_122mm_M62-T2A" xml:space="preserve">
-    <value>122 mm M62-T2</value>
+    <value>122 мм M62-T2</value>
   </data>
   <data name="_122mm_M62-T2S" xml:space="preserve">
-    <value>122 mm M62-C2</value>
+    <value>122 мм М62-С2</value>
   </data>
   <data name="_122mm_OF-462" xml:space="preserve">
-    <value>OF-462</value>
+    <value>ОФ-462</value>
   </data>
   <data name="_122mm_OF420S" xml:space="preserve">
-    <value>OF-420S</value>
+    <value>ОФ-42ОС</value>
   </data>
   <data name="_122mm_OF420SO" xml:space="preserve">
-    <value>OF-420-SO</value>
+    <value>ОФ-420СО</value>
   </data>
   <data name="_122mm_OF420SOMSH" xml:space="preserve">
-    <value>OF-420-SOMSh</value>
+    <value>ОФ-420СОМШ</value>
   </data>
   <data name="_122mm_S-41" xml:space="preserve">
-    <value>122 mm Howitzer S-41</value>
+    <value>122 мм гаубица С-41</value>
   </data>
   <data name="_122mm_UBP-471BM" xml:space="preserve">
-    <value>BP-471BM</value>
+    <value>БП-471БМ</value>
   </data>
   <data name="_122mm_UBR-471" xml:space="preserve">
-    <value>UBR-471</value>
+    <value>УБР-471</value>
   </data>
   <data name="_122mm_UBR-471P" xml:space="preserve">
-    <value>BR-471D</value>
+    <value>БР-471Д</value>
   </data>
   <data name="_122mm_UBR-471PBM" xml:space="preserve">
-    <value>BR-471PBM</value>
+    <value>БР-471ПБМ</value>
   </data>
   <data name="_122mm_UOF-471" xml:space="preserve">
-    <value>UOF-471</value>
+    <value>УОФ-471</value>
   </data>
   <data name="_122mm_UOF-471BM" xml:space="preserve">
-    <value>UOF-471BM</value>
+    <value>УОФ-471БМ</value>
   </data>
   <data name="_122mm_UOF-472" xml:space="preserve">
-    <value>UOF-472</value>
+    <value>УОФ-472</value>
   </data>
   <data name="_122mm_cannon_M-30S" xml:space="preserve">
-    <value>122 mm M-30S</value>
+    <value>122 мм М-30С</value>
   </data>
   <data name="_122mm_cannon_U-11" xml:space="preserve">
-    <value>122 mm U-11</value>
+    <value>122 мм У-11</value>
   </data>
   <data name="_122mm_cannon_mod_1930" xml:space="preserve">
-    <value>122 mm Howitzer mod. 1910/1930</value>
+    <value>122 мм гаубица обр. 1910/30 г.</value>
   </data>
   <data name="_122mm_howitzer_A-19" xml:space="preserve">
-    <value>122 mm Howitzer A-19</value>
+    <value>122 мм гаубица А-19</value>
   </data>
   <data name="_12LL" xml:space="preserve">
     <value>12LL</value>
   </data>
   <data name="_12RT" xml:space="preserve">
-    <value>12RT</value>
+    <value>12РТ</value>
   </data>
   <data name="_130mm_2-01743" xml:space="preserve">
-    <value>Ch. № 2-01743</value>
+    <value>Ч. № 2-01743</value>
   </data>
   <data name="_130mm_2-02742" xml:space="preserve">
-    <value>Ch. № 2-02742</value>
+    <value>Ч. № 2-02742</value>
   </data>
   <data name="_130mm_2-02864A" xml:space="preserve">
-    <value>Ch. № 2-02864A</value>
+    <value>Ч. № 2-02864А</value>
   </data>
   <data name="_130mm_B-13-S2" xml:space="preserve">
-    <value>130 mm B-13-S2</value>
+    <value>130 мм Б-13-С2</value>
   </data>
   <data name="_130mm_OF-46" xml:space="preserve">
-    <value>OF-46</value>
+    <value>ОФ-46</value>
   </data>
   <data name="_130mm_PB-46" xml:space="preserve">
-    <value>PB-46</value>
+    <value>ПБ-46</value>
   </data>
   <data name="_130mm_PB-46A" xml:space="preserve">
-    <value>PB-46A</value>
+    <value>ПБ-46А</value>
   </data>
   <data name="_130mm_S-26A" xml:space="preserve">
-    <value>130 mm S-26</value>
+    <value>130 мм С-26</value>
   </data>
   <data name="_130mm_S-70" xml:space="preserve">
-    <value>130 mm S-70</value>
+    <value>130 мм С-70</value>
   </data>
   <data name="_130mm_S-70A" xml:space="preserve">
-    <value>130 mm S-70A</value>
+    <value>130 мм С-70A</value>
   </data>
   <data name="_130mm_S-70_fallout" xml:space="preserve">
-    <value>130 mm S-70</value>
+    <value>130 мм С-70</value>
   </data>
   <data name="_130mm_UBR-482" xml:space="preserve">
-    <value>UBR-482</value>
+    <value>УБР-482</value>
   </data>
   <data name="_130mm_UBR-482M" xml:space="preserve">
-    <value>UBR-482M</value>
+    <value>УБР-482М</value>
   </data>
   <data name="_130mm_UBR-482P" xml:space="preserve">
-    <value>UBR-482P</value>
+    <value>УБР-482П</value>
   </data>
   <data name="_130mm_UBR-482PM" xml:space="preserve">
-    <value>UBR-482PM</value>
+    <value>УБР-482ПМ</value>
   </data>
   <data name="_130mm_UBR-482P_fallout" xml:space="preserve">
-    <value>UBR-482P R</value>
+    <value>УБР-482П А</value>
   </data>
   <data name="_130mm_UBR-482_fallout" xml:space="preserve">
-    <value>UBR-482 R</value>
+    <value>УБР-482 А</value>
   </data>
   <data name="_130mm_UOF-482" xml:space="preserve">
-    <value>UOF-482</value>
+    <value>УОФ-482</value>
   </data>
   <data name="_130mm_UOF-482M" xml:space="preserve">
-    <value>UOF-482M</value>
+    <value>УОФ-482М</value>
   </data>
   <data name="_130mm_UOF-482_fallout" xml:space="preserve">
-    <value>UOF-482 R</value>
+    <value>УОФ-482 А</value>
   </data>
   <data name="_152mm_53-G-530" xml:space="preserve">
-    <value>53-G-530</value>
+    <value>53-Г-530</value>
   </data>
   <data name="_152mm_53-G-551" xml:space="preserve">
-    <value>53-G-551</value>
+    <value>53-Г-551</value>
   </data>
   <data name="_152mm_53-OF-530" xml:space="preserve">
-    <value>53-OF-530</value>
+    <value>53-ОФ-530</value>
   </data>
   <data name="_152mm_53-OF-551" xml:space="preserve">
-    <value>53-OF-551</value>
+    <value>53-ОФ-551</value>
   </data>
   <data name="_152mm_53-OF-551BM" xml:space="preserve">
-    <value>53-OF-551BM</value>
+    <value>53-ОФ-551БМ</value>
   </data>
   <data name="_152mm_53-OF-551M" xml:space="preserve">
-    <value>53-HE-551M</value>
+    <value>53-ОФ-551М</value>
   </data>
   <data name="_152mm_53BP540" xml:space="preserve">
-    <value>53-BP-540</value>
+    <value>53-БП-540</value>
   </data>
   <data name="_152mm_53OF500" xml:space="preserve">
-    <value>53-OF-500</value>
+    <value>53-ОФ-500</value>
   </data>
   <data name="_152mm_BL-10" xml:space="preserve">
-    <value>152 mm BL-10</value>
+    <value>152 мм БЛ-10</value>
   </data>
   <data name="_152mm_BR-2" xml:space="preserve">
-    <value>152 mm BR-2</value>
+    <value>152 мм БР-2</value>
   </data>
   <data name="_152mm_M-10" xml:space="preserve">
-    <value>152 mm M-10</value>
+    <value>152 мм М-10</value>
   </data>
   <data name="_152mm_M64" xml:space="preserve">
-    <value>152 mm M64</value>
+    <value>152 мм М64</value>
   </data>
   <data name="_152mm_ML-20C" xml:space="preserve">
-    <value>152 mm ML-20S</value>
+    <value>152 мм МЛ-20С</value>
   </data>
   <data name="_152mm_ML-20CM_obr1944" xml:space="preserve">
-    <value>152 mm ML-20SM mod. 1944</value>
+    <value>152 мм МЛ-20СМ обр. 1944 г.</value>
   </data>
   <data name="_152mm_ML-20CM_obr1944_short" xml:space="preserve">
-    <value>152 mm ML-20SM</value>
+    <value>152 мм МЛ-20СМ</value>
   </data>
   <data name="_152mm_ML-20_mod_1937" xml:space="preserve">
-    <value>152 mm ML-20 mod. 1931/37</value>
+    <value>152 мм МЛ-20 обр. 1931/37 гг.</value>
   </data>
   <data name="_152mm_ML-20_mod_1937_short" xml:space="preserve">
-    <value>152 mm ML-20</value>
+    <value>152 мм МЛ-20</value>
   </data>
   <data name="_152mm_MPB_1915" xml:space="preserve">
-    <value>MPB mod. 1915/28</value>
+    <value>МПБ обр. 1915/28 г.</value>
   </data>
   <data name="_152mm_M_53" xml:space="preserve">
-    <value>152 mm M-53</value>
+    <value>152 мм М-53</value>
   </data>
   <data name="_152mm_UBK551M" xml:space="preserve">
-    <value>UBK551M</value>
+    <value>УБК551М</value>
   </data>
   <data name="_152mm_UBR551" xml:space="preserve">
-    <value>UBR-551</value>
+    <value>УБР-551</value>
   </data>
   <data name="_152mm_UBR551M" xml:space="preserve">
-    <value>UBR551M</value>
+    <value>УБР551М</value>
   </data>
   <data name="_152mm_UBR551P" xml:space="preserve">
-    <value>UBR-551P</value>
+    <value>УБР-551П</value>
   </data>
   <data name="_152mm_howitzer_D-1" xml:space="preserve">
-    <value>152 mm Howitzer D-1</value>
+    <value>152 мм гаубица Д-1</value>
   </data>
   <data name="_152mm_howitzer_ML-20_mod_1931" xml:space="preserve">
-    <value>152 mm Howitzer ML-20 mod. 1931</value>
+    <value>152 мм гаубица МЛ-20 обр. 1931 г.</value>
   </data>
   <data name="_152mm_mortar_NM_mod1931" xml:space="preserve">
-    <value>152 mm Mortar NM mod. 1931</value>
+    <value>152 мм мортира НМ обр. 1931 г.</value>
   </data>
   <data name="_180mm_B-1-P" xml:space="preserve">
-    <value>180 mm B-1-P</value>
+    <value>180 мм Б-1-П</value>
   </data>
   <data name="_180mm_F-600BM" xml:space="preserve">
-    <value>F-600BM</value>
+    <value>Ф-600БМ</value>
   </data>
   <data name="_180mm_F-600D" xml:space="preserve">
-    <value>F-600D</value>
+    <value>Ф-600Д</value>
   </data>
   <data name="_180mm_UBR-600" xml:space="preserve">
-    <value>UBR-600</value>
+    <value>УБР-600</value>
   </data>
   <data name="_203mm_B-4" xml:space="preserve">
-    <value>203 mm B-4</value>
+    <value>203 мм Б-4</value>
   </data>
   <data name="_203mm_F-625D" xml:space="preserve">
-    <value>F-625D</value>
+    <value>Ф-625Д</value>
   </data>
   <data name="_203mm_F-625DBM" xml:space="preserve">
-    <value>F-625DBM</value>
+    <value>Ф-625ДБМ</value>
   </data>
   <data name="_203mm_G-620" xml:space="preserve">
-    <value>G-620</value>
+    <value>Г-620</value>
   </data>
   <data name="_20mm_BC-20" xml:space="preserve">
-    <value>BC-20</value>
+    <value>БЦ-20</value>
   </data>
   <data name="_20mm_TNSH" xml:space="preserve">
-    <value>20 mm TNSh</value>
+    <value>20 мм ТНШ</value>
   </data>
   <data name="_20mm_UBR-20" xml:space="preserve">
-    <value>UBR-20</value>
+    <value>УБР-20</value>
   </data>
   <data name="_23mm_BC-23" xml:space="preserve">
-    <value>BC-23</value>
+    <value>БЦ-23</value>
+  </data>
+  <data name="_23mm_PT-23TB" xml:space="preserve">
+    <value>23 мм ПТ-23ТБ</value>
   </data>
   <data name="_23mm_UBR-23" xml:space="preserve">
-    <value>UBR-23</value>
+    <value>УБР-23</value>
   </data>
   <data name="_23mm_VJA" xml:space="preserve">
-    <value>23 mm VJa</value>
+    <value>23 мм ВЯ</value>
   </data>
   <data name="_2pdr_APCNR_Mk.1" xml:space="preserve">
     <value>APCNR Mk. 1</value>
@@ -2504,148 +2563,151 @@ W-670</value>
     <value>QF 2-pdr Mk. IX-A</value>
   </data>
   <data name="_2xV-16" xml:space="preserve">
-    <value>2x V-16</value>
+    <value>2x В-16</value>
   </data>
   <data name="_2xV-16_1000" xml:space="preserve">
-    <value>2x V-16 (1000)</value>
+    <value>2x В-16 (1000)</value>
   </data>
   <data name="_37mm_APC_M51_LL" xml:space="preserve">
-    <value>M51</value>
+    <value>М51</value>
   </data>
   <data name="_37mm_AP_M74_LL" xml:space="preserve">
-    <value>M74</value>
+    <value>М74</value>
   </data>
   <data name="_37mm_B-3" xml:space="preserve">
-    <value>37 mm B-3</value>
+    <value>37 мм Б-3</value>
   </data>
   <data name="_37mm_B-3_bot" xml:space="preserve">
-    <value>37 mm B-3</value>
+    <value>37 мм Б-3</value>
   </data>
   <data name="_37mm_BPT1" xml:space="preserve">
-    <value>BPT1</value>
+    <value>БПТ1</value>
   </data>
   <data name="_37mm_Gochkins" xml:space="preserve">
-    <value>37 mm Hotchkiss</value>
+    <value>37 мм Гочкис</value>
   </data>
   <data name="_37mm_Gochkins_bot" xml:space="preserve">
-    <value>37 mm Hotchkiss</value>
+    <value>37 мм Гочкис</value>
   </data>
   <data name="_37mm_HE_M63_LL" xml:space="preserve">
-    <value>M63</value>
+    <value>М63</value>
   </data>
   <data name="_37mm_M-5_LL" xml:space="preserve">
-    <value>37 mm M5</value>
+    <value>37 мм M5</value>
   </data>
   <data name="_37mm_UBR-160" xml:space="preserve">
-    <value>UBR-160</value>
+    <value>УБР-160</value>
   </data>
   <data name="_37mm_UBR-160P" xml:space="preserve">
-    <value>UBR-160P</value>
+    <value>УБР-160П</value>
   </data>
   <data name="_37mm_UBR-160_bot" xml:space="preserve">
-    <value>UBR-160</value>
+    <value>УБР-160</value>
   </data>
   <data name="_37mm_UBR160PA" xml:space="preserve">
-    <value>UBR-160PA</value>
+    <value>УБР-160ПА</value>
   </data>
   <data name="_37mm_UBR160bis" xml:space="preserve">
-    <value>UBR-160 bis</value>
+    <value>УБР-160 бис</value>
   </data>
   <data name="_37mm_UBRT1" xml:space="preserve">
-    <value>UBRT1</value>
+    <value>УБРТ1</value>
   </data>
   <data name="_37mm_UBRT1_bot" xml:space="preserve">
-    <value>UBRT1</value>
+    <value>УБРТ1</value>
   </data>
   <data name="_37mm_UO160A" xml:space="preserve">
-    <value>UO-160A</value>
+    <value>УО-160А</value>
   </data>
   <data name="_37mm_UOF-160" xml:space="preserve">
-    <value>UOF-160</value>
+    <value>УОФ-160</value>
   </data>
   <data name="_37mm_UOT1" xml:space="preserve">
-    <value>UOT1</value>
+    <value>УОТ1</value>
   </data>
   <data name="_37mm_ZiS-19" xml:space="preserve">
-    <value>37 mm ZiS-19</value>
+    <value>37 мм ЗиС-19</value>
+  </data>
+  <data name="_37mm_ZiS-19_S" xml:space="preserve">
+    <value>37 мм ЗиС-19С</value>
   </data>
   <data name="_37mm_automatic_SH-37" xml:space="preserve">
-    <value>37 mm Automatic SH-37</value>
+    <value>37 мм автомат. Ш-37</value>
   </data>
   <data name="_45mm_20K" xml:space="preserve">
-    <value>45 mm 20K</value>
+    <value>45 мм 20К</value>
   </data>
   <data name="_45mm_20KL" xml:space="preserve">
-    <value>45 mm 20KL</value>
+    <value>45 мм 20К(л)</value>
   </data>
   <data name="_45mm_20K_S" xml:space="preserve">
-    <value>45 mm 20KS</value>
+    <value>45 мм 20КС</value>
   </data>
   <data name="_45mm_UBR-240A" xml:space="preserve">
-    <value>UBR-240A</value>
+    <value>УБР-240А</value>
   </data>
   <data name="_45mm_UBR-240PA" xml:space="preserve">
-    <value>UBR-240PA</value>
+    <value>УБР-240ПА</value>
   </data>
   <data name="_45mm_UBR-243SP" xml:space="preserve">
-    <value>UBR-243SP</value>
+    <value>УБР-243СП</value>
   </data>
   <data name="_45mm_UBR-243SPA" xml:space="preserve">
-    <value>UBR-243SPA</value>
+    <value>УБР-243СПА</value>
   </data>
   <data name="_45mm_UOF-240A" xml:space="preserve">
-    <value>UOF-240A</value>
+    <value>УОФ-240А</value>
   </data>
   <data name="_45mm_UOF-243" xml:space="preserve">
-    <value>UOF-243</value>
+    <value>УОФ-243</value>
   </data>
   <data name="_45mm_VT-42" xml:space="preserve">
-    <value>45 mm VT-42</value>
+    <value>45 мм ВТ-42</value>
   </data>
   <data name="_45mm_VT-43" xml:space="preserve">
-    <value>45 mm VT-43</value>
+    <value>45 мм ВТ-43</value>
   </data>
   <data name="_45mm_mod_1932" xml:space="preserve">
-    <value>45 mm mod. 1932</value>
+    <value>45 мм обр. 1932 г.</value>
   </data>
   <data name="_4TD" xml:space="preserve">
-    <value>4TD</value>
+    <value>4ТД</value>
   </data>
   <data name="_57mm_413" xml:space="preserve">
-    <value>57 mm project 413</value>
+    <value>57 мм проект 413</value>
   </data>
   <data name="_57mm_UBR-271K" xml:space="preserve">
-    <value>UBR-271K</value>
+    <value>УБР-271К</value>
   </data>
   <data name="_57mm_UBR-271KO" xml:space="preserve">
-    <value>UBR-271KO</value>
+    <value>УБР-271КО</value>
   </data>
   <data name="_57mm_UBR-271N" xml:space="preserve">
-    <value>UBR-271N</value>
+    <value>УБР-271Н</value>
   </data>
   <data name="_57mm_UBR-271NO" xml:space="preserve">
-    <value>UBR-271NO</value>
+    <value>УБР-271НО</value>
   </data>
   <data name="_57mm_UO-271U" xml:space="preserve">
-    <value>UO-271U</value>
+    <value>УО-271У</value>
   </data>
   <data name="_57mm_UO-271UO" xml:space="preserve">
-    <value>UO-271UO</value>
+    <value>УО-271УО</value>
   </data>
   <data name="_57mm_ZiS-2" xml:space="preserve">
-    <value>57 mm ZiS-2</value>
+    <value>57 мм ЗиС-2</value>
   </data>
   <data name="_57mm_ZiS-4" xml:space="preserve">
-    <value>57 mm ZiS-4</value>
+    <value>57 мм ЗиС-4</value>
   </data>
   <data name="_57mm_ZiS-8" xml:space="preserve">
-    <value>57 mm ZiS-8</value>
+    <value>57 мм ЗиС-8</value>
   </data>
   <data name="_57mm_ZiS-8_S" xml:space="preserve">
-    <value>57 mm ZiS-8S</value>
+    <value>57 мм ЗиС-8С</value>
   </data>
   <data name="_5TD" xml:space="preserve">
-    <value>5TD</value>
+    <value>5ТД</value>
   </data>
   <data name="_6pdr_APCR_MK_1T" xml:space="preserve">
     <value>APCR Mk. 1T</value>
@@ -2654,193 +2716,193 @@ W-670</value>
     <value>AP Mk. 1T</value>
   </data>
   <data name="_71-TK-1" xml:space="preserve">
-    <value>71-TK-1</value>
+    <value>71-ТК-1</value>
   </data>
   <data name="_71-TK-1_bot" xml:space="preserve">
-    <value>71-TK-1</value>
+    <value>71-ТК-1</value>
   </data>
   <data name="_71-TK-3" xml:space="preserve">
-    <value>71-TK-3</value>
+    <value>71-ТК-3</value>
   </data>
   <data name="_71-TK-3U" xml:space="preserve">
-    <value>71-TK-3U</value>
+    <value>71-ТК-3У</value>
   </data>
   <data name="_76mm_BP-354" xml:space="preserve">
-    <value>BP-350A</value>
+    <value>БП-350А</value>
   </data>
   <data name="_76mm_BR-350A" xml:space="preserve">
-    <value>BR-350A</value>
+    <value>БР-350А</value>
   </data>
   <data name="_76mm_F-32" xml:space="preserve">
-    <value>76 mm F-32</value>
+    <value>76 мм Ф-32</value>
   </data>
   <data name="_76mm_F-34" xml:space="preserve">
-    <value>76 mm F-34</value>
+    <value>76 мм Ф-34</value>
   </data>
   <data name="_76mm_F-34S_A" xml:space="preserve">
-    <value>76 mm S-1</value>
+    <value>76 мм С-1</value>
   </data>
   <data name="_76mm_KT-28" xml:space="preserve">
-    <value>76 mm KT-28</value>
+    <value>76 мм КТ-28</value>
   </data>
   <data name="_76mm_KT-28A" xml:space="preserve">
-    <value>76 mm KT-28</value>
+    <value>76 мм КТ-28</value>
   </data>
   <data name="_76mm_L-10" xml:space="preserve">
-    <value>76 mm L-10</value>
+    <value>76 мм Л-10</value>
   </data>
   <data name="_76mm_L-10U" xml:space="preserve">
-    <value>76 mm L-10U</value>
+    <value>76 мм Л-10У</value>
   </data>
   <data name="_76mm_L-10_S" xml:space="preserve">
-    <value>76 mm L-10S</value>
+    <value>76 мм Л-10С</value>
   </data>
   <data name="_76mm_L-11" xml:space="preserve">
-    <value>76 mm L-11</value>
+    <value>76 мм Л-11</value>
   </data>
   <data name="_76mm_S-54" xml:space="preserve">
-    <value>76 mm S-54</value>
+    <value>76 мм С-54</value>
   </data>
   <data name="_76mm_S-54_S" xml:space="preserve">
-    <value>76 mm S-54S</value>
+    <value>76 мм С-54С</value>
   </data>
   <data name="_76mm_UBR-354A" xml:space="preserve">
-    <value>UBR-354A</value>
+    <value>УБР-354А</value>
   </data>
   <data name="_76mm_UBR-354KA" xml:space="preserve">
-    <value>UBR-354KA</value>
+    <value>УБР-354КА</value>
   </data>
   <data name="_76mm_UBR-354KB" xml:space="preserve">
-    <value>UBR-354KB</value>
+    <value>УБР-354КБ</value>
   </data>
   <data name="_76mm_UBR-354MA" xml:space="preserve">
-    <value>UBR-354MA</value>
+    <value>УБР-354МА</value>
   </data>
   <data name="_76mm_UBR-354MP" xml:space="preserve">
-    <value>UBR-354MP</value>
+    <value>УБР-354МП</value>
   </data>
   <data name="_76mm_UOF-354" xml:space="preserve">
-    <value>UOF-354</value>
+    <value>УОФ-354</value>
   </data>
   <data name="_76mm_UOF-354K" xml:space="preserve">
-    <value>UOF-354K</value>
+    <value>УОФ-354К</value>
   </data>
   <data name="_76mm_UOF-354M" xml:space="preserve">
-    <value>UOF-354M</value>
+    <value>УОФ-354М</value>
   </data>
   <data name="_76mm_ZiS-3_mod_42" xml:space="preserve">
-    <value>76 mm ZiS-3</value>
+    <value>76 мм ЗиС-3</value>
   </data>
   <data name="_76mm_ZiS-5" xml:space="preserve">
-    <value>76 mm ZiS-5</value>
+    <value>76 мм ЗиС-5</value>
   </data>
   <data name="_76mm_ZiS-96" xml:space="preserve">
-    <value>76 mm F-96</value>
+    <value>76 мм Ф-96</value>
   </data>
   <data name="_76mm_cannon_mod_1905_30" xml:space="preserve">
-    <value>76 mm Gun mod. 1902/30 30 clb</value>
+    <value>76 мм пушка обр. 1902/30 г. 30 клб</value>
   </data>
   <data name="_76mm_cannon_mod_1905_40" xml:space="preserve">
-    <value>76 mm Gun mod. 1902/30 40 clb</value>
+    <value>76 мм пушка обр. 1902/30 г. 40 клб</value>
   </data>
   <data name="_76mm_cannon_mod_1927" xml:space="preserve">
-    <value>76 mm Regimental Gun mod. 1927</value>
+    <value>76 мм полковая пушка обр. 1927 г.</value>
   </data>
   <data name="_85mm_D-5S" xml:space="preserve">
-    <value>85 mm D-5S</value>
+    <value>85 мм Д-5С</value>
   </data>
   <data name="_85mm_D-5S-85A" xml:space="preserve">
-    <value>85 mm D-5S-85A</value>
+    <value>85 мм Д-5С-85А</value>
   </data>
   <data name="_85mm_D-5T" xml:space="preserve">
-    <value>85 mm D-5T</value>
+    <value>85 мм Д-5Т</value>
   </data>
   <data name="_85mm_D10_85" xml:space="preserve">
-    <value>85 mm D-10-85</value>
+    <value>85 мм Д-10-85</value>
   </data>
   <data name="_85mm_D5S-85BM" xml:space="preserve">
-    <value>85 mm D5S-85BM</value>
+    <value>85 мм Д-5С-85БМ</value>
   </data>
   <data name="_85mm_D5T-85BM" xml:space="preserve">
-    <value>85 mm D5T-85BM</value>
+    <value>85 мм Д-5Т-85БМ</value>
   </data>
   <data name="_85mm_D5T-85BMA" xml:space="preserve">
-    <value>85 mm D-5T-85BM</value>
+    <value>85 мм Д-5Т-85БМ</value>
   </data>
   <data name="_85mm_F-30" xml:space="preserve">
-    <value>85 mm F-30</value>
+    <value>85 мм Ф-30</value>
   </data>
   <data name="_85mm_F-30A" xml:space="preserve">
-    <value>85 mm F-30</value>
+    <value>85 мм Ф-30</value>
   </data>
   <data name="_85mm_LB-2S" xml:space="preserve">
-    <value>85 mm LB-2S</value>
+    <value>85 мм ЛБ-2С</value>
   </data>
   <data name="_85mm_S-31" xml:space="preserve">
-    <value>85 mm S-31</value>
+    <value>85 мм С-31</value>
   </data>
   <data name="_85mm_UBR-365K" xml:space="preserve">
-    <value>UBR-365K</value>
+    <value>УБР-365К</value>
   </data>
   <data name="_85mm_UBR-365KBM" xml:space="preserve">
-    <value>UBR-365KBM</value>
+    <value>УБР-365КБМ</value>
   </data>
   <data name="_85mm_UBR-365KBM100" xml:space="preserve">
-    <value>UBR-365KBM100</value>
+    <value>УБР-365КБМ100</value>
   </data>
   <data name="_85mm_UBR-365P" xml:space="preserve">
-    <value>UBR-365P</value>
+    <value>УБР-365П</value>
   </data>
   <data name="_85mm_UBR-365PBM" xml:space="preserve">
-    <value>UBR-365PBM</value>
+    <value>УБР-365ПБМ</value>
   </data>
   <data name="_85mm_UBR-365PBM100" xml:space="preserve">
-    <value>UBR-365PBM100</value>
+    <value>УБР-365ПБМ100</value>
   </data>
   <data name="_85mm_UBR-367" xml:space="preserve">
-    <value>UBR-367</value>
+    <value>УБР-367</value>
   </data>
   <data name="_85mm_UBR-367P" xml:space="preserve">
-    <value>UBR-367P</value>
+    <value>УБР-367П</value>
   </data>
   <data name="_85mm_UO-367" xml:space="preserve">
-    <value>UO-367</value>
+    <value>УО-367</value>
   </data>
   <data name="_85mm_UOF-365BM" xml:space="preserve">
-    <value>UOF-365BM</value>
+    <value>УОФ-365БМ</value>
   </data>
   <data name="_85mm_UOF-365BM100" xml:space="preserve">
-    <value>UOF-365BM100</value>
+    <value>УОФ-365БМ100</value>
   </data>
   <data name="_85mm_UOF-365K" xml:space="preserve">
-    <value>UOF-365K</value>
+    <value>УОФ-365К</value>
   </data>
   <data name="_85mm_ZiS_S-53" xml:space="preserve">
-    <value>85 mm ZiS-S-53</value>
+    <value>85 мм ЗиС-С-53</value>
   </data>
   <data name="_85mm_ZiS_S-53A" xml:space="preserve">
-    <value>85 mm ZiS-S-53</value>
+    <value>85 мм ЗиС-С-53</value>
   </data>
   <data name="_85mm_ZiS_S-53_44" xml:space="preserve">
-    <value>85 mm ZIS-S-53 (367)</value>
+    <value>85 мм ЗиС-С-53 (367)</value>
   </data>
   <data name="_85mm_ZiS_S-53_B" xml:space="preserve">
-    <value>85 mm ZiS-S-53</value>
+    <value>85 мм ЗиС-С-53</value>
   </data>
   <data name="_9R" xml:space="preserve">
-    <value>9R</value>
+    <value>9Р</value>
   </data>
   <data name="_9RK" xml:space="preserve">
-    <value>9RK</value>
+    <value>9РК</value>
   </data>
   <data name="_9RM" xml:space="preserve">
-    <value>9RM</value>
+    <value>9РМ</value>
   </data>
   <data name="_9RS" xml:space="preserve">
-    <value>9RS</value>
+    <value>9РС</value>
   </data>
   <data name="_9RU" xml:space="preserve">
-    <value>9RU</value>
+    <value>9РУ</value>
   </data>
   <data name="chassisE1_LL" xml:space="preserve">
     <value>Stuart E1</value>

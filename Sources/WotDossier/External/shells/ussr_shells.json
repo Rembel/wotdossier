@@ -49,7 +49,6 @@
     "userString": "#ussr_vehicles:_23mm_BC-23",
     "icon": "ap",
     "price": "\t3\t",
-    "notInShop": "\ttrue\t",
     "kind": "ARMOR_PIERCING",
     "caliber": "\t23\t",
     "isTracer": "\ttrue\t",
@@ -67,7 +66,6 @@
       "#text": "\t1\t",
       "gold": ""
     },
-    "notInShop": "\ttrue\t",
     "kind": "ARMOR_PIERCING_CR",
     "caliber": "\t23\t",
     "isTracer": "\ttrue\t",

@@ -2,16 +2,14 @@
   "userSecretsId": "aspnet-WotDossier.Web-026ef7f7-35d3-4fac-80f2-2001567446cd",
 
   "dependencies": {
-    "Microsoft.NETCore.App": {
-      "version": "1.0.0",
+   "Microsoft.NETCore.App": {
+      "version": "1.0.1",
       "type": "platform"
     },
-    "Microsoft.ApplicationInsights.AspNetCore": "1.0.0",
-    "Microsoft.AspNetCore.Authentication.Cookies": "1.0.0",
+"Microsoft.AspNetCore.Authentication.Cookies": "1.0.0",
     "Microsoft.AspNetCore.Diagnostics": "1.0.0",
     "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": "1.0.0",
     "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "1.0.0",
-    "Microsoft.AspNetCore.Mvc": "1.0.0",
     "Microsoft.AspNetCore.Razor.Tools": {
       "version": "1.0.0-preview2-final",
       "type": "build"
@@ -21,13 +19,7 @@
     "WotDossier.Domain": "1.0.0-*",
     "System.Runtime.Serialization.Primitives": "4.1.1",
     "Microsoft.AspNetCore.Server.IISIntegration": "1.0.0",
-    "Microsoft.AspNetCore.Server.Kestrel": "1.0.0",
     "Microsoft.AspNetCore.StaticFiles": "1.0.0",
-    "Microsoft.EntityFrameworkCore.SqlServer": "1.0.0",
-    "Microsoft.EntityFrameworkCore.SqlServer.Design": {
-      "version": "1.0.0",
-      "type": "build"
-    },
     "Microsoft.EntityFrameworkCore.Tools": {
       "version": "1.0.0-preview2-final",
       "type": "build"
@@ -48,14 +40,19 @@
       "version": "1.0.0-preview2-final",
       "type": "build"
     },
-    "Npgsql": "3.1.6",
-    "Npgsql.EntityFrameworkCore.PostgreSQL.Design": "1.0.1",
     "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0",
     "Microsoft.Extensions.DependencyInjection": "1.0.0",
-    "Npgsql.EntityFrameworkCore.PostgreSQL": "1.0.1",
-    "Microsoft.EntityFrameworkCore": "1.0.0",
-    "Microsoft.EntityFrameworkCore.Relational": "1.0.0",
-    "BundlerMinifier.Core": "2.1.258"
+    "BundlerMinifier.Core": "2.2.301",
+    "Microsoft.ApplicationInsights.AspNetCore": "1.0.2",
+    "Microsoft.AspNetCore.Mvc": "1.0.1",
+    "Microsoft.AspNetCore.Server.Kestrel": "1.0.1",
+    "Microsoft.EntityFrameworkCore": "1.0.1",
+    "Microsoft.EntityFrameworkCore.Relational": "1.0.1",
+    "Microsoft.EntityFrameworkCore.SqlServer": "1.0.1",
+    "Microsoft.EntityFrameworkCore.SqlServer.Design": "1.0.1",
+    "Npgsql": "3.1.8",
+    "Npgsql.EntityFrameworkCore.PostgreSQL": "1.0.2",
+    "Npgsql.EntityFrameworkCore.PostgreSQL.Design": "1.0.2"
   },
 
   "tools": {

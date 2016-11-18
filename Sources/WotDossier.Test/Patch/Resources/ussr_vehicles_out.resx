@@ -118,372 +118,375 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="observer" xml:space="preserve">
-    <value>Наблюдатель</value>
+    <value>Spectator</value>
   </data>
   <data name="r04_t_34" xml:space="preserve">
-    <value>Т-34</value>
+    <value>T-34</value>
   </data>
   <data name="r02_su_85" xml:space="preserve">
-    <value>СУ-85</value>
+    <value>SU-85</value>
   </data>
   <data name="r01_is" xml:space="preserve">
-    <value>ИС</value>
+    <value>IS</value>
   </data>
   <data name="r03_bt_7" xml:space="preserve">
-    <value>БТ-7</value>
+    <value>BT-7</value>
   </data>
   <data name="r08_bt_2" xml:space="preserve">
-    <value>БТ-2</value>
+    <value>BT-2</value>
   </data>
   <data name="r05_kv" xml:space="preserve">
-    <value>КВ</value>
+    <value>KV</value>
   </data>
   <data name="r06_t_28" xml:space="preserve">
-    <value>Т-28</value>
+    <value>T-28</value>
   </data>
   <data name="r15_s_51" xml:space="preserve">
-    <value>С-51</value>
+    <value>S-51</value>
   </data>
   <data name="r12_a_20" xml:space="preserve">
-    <value>А-20</value>
+    <value>A-20</value>
   </data>
   <data name="r18_su_152" xml:space="preserve">
-    <value>СУ-152</value>
-  </data>
-  <data name="r07_t_34_85" xml:space="preserve">
-    <value>Т-34-85</value>
-  </data>
-  <data name="r13_kv_1s" xml:space="preserve">
-    <value>КВ-1С</value>
-  </data>
-  <data name="r22_t_46" xml:space="preserve">
-    <value>Т-46</value>
-  </data>
-  <data name="r17_su_100" xml:space="preserve">
-    <value>СУ-100</value>
-  </data>
-  <data name="r11_ms_1" xml:space="preserve">
-    <value>МС-1</value>
-  </data>
-  <data name="r16_su_18" xml:space="preserve">
-    <value>СУ-18</value>
-  </data>
-  <data name="r27_su_14" xml:space="preserve">
-    <value>СУ-14-2</value>
-  </data>
-  <data name="r20_t_44" xml:space="preserve">
-    <value>Т-44</value>
-  </data>
-  <data name="r09_t_26" xml:space="preserve">
-    <value>Т-26</value>
-  </data>
-  <data name="r14_su_5" xml:space="preserve">
-    <value>СУ-5</value>
-  </data>
-  <data name="r10_at_1" xml:space="preserve">
-    <value>АТ-1</value>
-  </data>
-  <data name="r19_is_3" xml:space="preserve">
-    <value>ИС-3</value>
-  </data>
-  <data name="r26_su_8" xml:space="preserve">
-    <value>СУ-8</value>
-  </data>
-  <data name="r39_kv_3" xml:space="preserve">
-    <value>КВ-3</value>
-  </data>
-  <data name="r90_is_4m" xml:space="preserve">
-    <value>ИС-4</value>
-  </data>
-  <data name="r24_su_76" xml:space="preserve">
-    <value>СУ-76М</value>
-  </data>
-  <data name="r23_t_43" xml:space="preserve">
-    <value>Т-43</value>
-  </data>
-  <data name="r25_gaz_74b" xml:space="preserve">
-    <value>GAZ-74b</value>
-  </data>
-  <data name="r45_is_7" xml:space="preserve">
-    <value>ИС-7</value>
-  </data>
-  <data name="r47_isu_152" xml:space="preserve">
-    <value>ИСУ-152</value>
-  </data>
-  <data name="r66_su_26" xml:space="preserve">
-    <value>СУ-26</value>
-  </data>
-  <data name="r40_t_54" xml:space="preserve">
-    <value>Т-54</value>
-  </data>
-  <data name="r53_object_704" xml:space="preserve">
-    <value>Объект 704</value>
-  </data>
-  <data name="r51_object_212" xml:space="preserve">
-    <value>212А</value>
-  </data>
-  <data name="r52_object_261" xml:space="preserve">
-    <value>Объект 261</value>
-  </data>
-  <data name="r46_kv_13" xml:space="preserve">
-    <value>КВ-13</value>
-  </data>
-  <data name="r61_object252" xml:space="preserve">
-    <value>ИС-6</value>
-  </data>
-  <data name="r41_t_50" xml:space="preserve">
-    <value>Т-50</value>
-  </data>
-  <data name="r70_t_50_2" xml:space="preserve">
-    <value>Т-50-2</value>
-  </data>
-  <data name="r58_su_101" xml:space="preserve">
-    <value>СУ-101</value>
-  </data>
-  <data name="r74_su100m1" xml:space="preserve">
-    <value>СУ-100М1</value>
-  </data>
-  <data name="r77_kv2" xml:space="preserve">
-    <value>КВ-2</value>
-  </data>
-  <data name="r63_st_i" xml:space="preserve">
-    <value>СТ-I</value>
-  </data>
-  <data name="r73_kv4" xml:space="preserve">
-    <value>КВ-4</value>
-  </data>
-  <data name="r72_t150" xml:space="preserve">
-    <value>Т-150</value>
-  </data>
-  <data name="r81_is8" xml:space="preserve">
-    <value>Т-10</value>
-  </data>
-  <data name="r80_kv1" xml:space="preserve">
-    <value>КВ-1</value>
-  </data>
-  <data name="r75_su122_54" xml:space="preserve">
-    <value>СУ-122-54</value>
-  </data>
-  <data name="r57_a43" xml:space="preserve">
-    <value>А-43</value>
-  </data>
-  <data name="r59_a44" xml:space="preserve">
-    <value>А-44</value>
-  </data>
-  <data name="r60_object416" xml:space="preserve">
-    <value>Объект 416</value>
-  </data>
-  <data name="r88_object268" xml:space="preserve">
-    <value>Объект 268</value>
-  </data>
-  <data name="r87_t62a" xml:space="preserve">
-    <value>Т-62А</value>
-  </data>
-  <data name="r93_object263" xml:space="preserve">
-    <value>Объект 263</value>
-  </data>
-  <data name="r43_t_70" xml:space="preserve">
-    <value>Т-70</value>
-  </data>
-  <data name="r42_t_60" xml:space="preserve">
-    <value>Т-60</value>
-  </data>
-  <data name="r95_object_907" xml:space="preserve">
-    <value>Объект 907</value>
-  </data>
-  <data name="r44_t80" xml:space="preserve">
-    <value>Т-80</value>
-  </data>
-  <data name="r91_su14_1" xml:space="preserve">
-    <value>СУ-14-1</value>
-  </data>
-  <data name="r100_su122a" xml:space="preserve">
-    <value>СУ-122А</value>
-  </data>
-  <data name="r101_mt25" xml:space="preserve">
-    <value>МТ-25</value>
-  </data>
-  <data name="r97_object_140" xml:space="preserve">
-    <value>Объект 140</value>
-  </data>
-  <data name="r96_object_430" xml:space="preserve">
-    <value>Объект 430</value>
-  </data>
-  <data name="r104_object_430_ii" xml:space="preserve">
-    <value>Объект 430 Вариант II</value>
-  </data>
-  <data name="r109_t54s" xml:space="preserve">
-    <value>Т-54 облегчённый</value>
-  </data>
-  <data name="r107_ltb" xml:space="preserve">
-    <value>ЛТТБ</value>
-  </data>
-  <data name="r106_kv85" xml:space="preserve">
-    <value>КВ-85</value>
-  </data>
-  <data name="r38_kv_220" xml:space="preserve">
-    <value>КВ-220-2 Бета-Тест</value>
-  </data>
-  <data name="r32_matilda_ii_ll" xml:space="preserve">
-    <value>Матильда IV</value>
-  </data>
-  <data name="r33_churchill_ll" xml:space="preserve">
-    <value>Черчилль III</value>
-  </data>
-  <data name="r34_bt_sv" xml:space="preserve">
-    <value>БТ-СВ</value>
-  </data>
-  <data name="r31_valentine_ll" xml:space="preserve">
-    <value>Валентайн II</value>
-  </data>
-  <data name="r67_m3_ll" xml:space="preserve">
-    <value>М3 лёгкий</value>
-  </data>
-  <data name="r68_a_32" xml:space="preserve">
-    <value>А-32</value>
-  </data>
-  <data name="r54_kv_5" xml:space="preserve">
-    <value>КВ-5</value>
-  </data>
-  <data name="r56_t_127" xml:space="preserve">
-    <value>Т-127</value>
-  </data>
-  <data name="r78_su_85i" xml:space="preserve">
-    <value>СУ-85И</value>
-  </data>
-  <data name="r38_kv_220_action" xml:space="preserve">
-    <value>КВ-220-2</value>
-  </data>
-  <data name="r50_su76i" xml:space="preserve">
-    <value>СУ-76И</value>
-  </data>
-  <data name="r84_tetrarch_ll" xml:space="preserve">
-    <value>Тетрарх</value>
-  </data>
-  <data name="r49_su100y" xml:space="preserve">
-    <value>СУ-100Y</value>
-  </data>
-  <data name="r89_su122_44" xml:space="preserve">
-    <value>СУ-122-44</value>
-  </data>
-  <data name="r07_t_34_85_training" xml:space="preserve">
-    <value>Т-34-85</value>
-  </data>
-  <data name="r86_ltp" xml:space="preserve">
-    <value>ЛТП</value>
-  </data>
-  <data name="r99_t44_122" xml:space="preserve">
-    <value>Т-44-122</value>
-  </data>
-  <data name="r98_t44_85" xml:space="preserve">
-    <value>Т-44-85</value>
-  </data>
-  <data name="r108_t34_85m" xml:space="preserve">
-    <value>Т-34-85М</value>
-  </data>
-  <data name="r110_object_260" xml:space="preserve">
-    <value>Объект 260</value>
-  </data>
-  <data name="r111_isu130" xml:space="preserve">
-    <value>ИСУ-130</value>
-  </data>
-  <data name="r113_object_730" xml:space="preserve">
-    <value>ИС-5 (Объект 730)</value>
-  </data>
-  <data name="r71_is_2b" xml:space="preserve">
-    <value>ИС-2</value>
-  </data>
-  <data name="r117_t34_85_rudy" xml:space="preserve">
-    <value>Т-34-85 Rudy</value>
-  </data>
-  <data name="r116_isu122c_berlin" xml:space="preserve">
-    <value>ИСУ-122С</value>
-  </data>
-  <data name="r112_t54_45" xml:space="preserve">
-    <value>Т-54 первый образец</value>
-  </data>
-  <data name="r114_object_244" xml:space="preserve">
-    <value>Объект 244</value>
-  </data>
-  <data name="r115_is_3_auto" xml:space="preserve">
-    <value>ИС-3 с МЗ</value>
-  </data>
-  <data name="r95_object_907a" xml:space="preserve">
-    <value>Объект 907A</value>
-  </data>
-  <data name="r105_bt_7a" xml:space="preserve">
-    <value>БТ-7 артиллерийский</value>
-  </data>
-  <data name="r119_object_777" xml:space="preserve">
-    <value>Объект 777 Вариант II</value>
-  </data>
-  <data name="r118_t28_f30" xml:space="preserve">
-    <value>Т-28Э с Ф-30</value>
-  </data>
-  <data name="r120_t22sr_a22" xml:space="preserve">
-    <value>Т-22 ср.</value>
-  </data>
-  <data name="r122_t44_100" xml:space="preserve">
-    <value>Т-44-100</value>
-  </data>
-  <data name="r121_kv4_ktt" xml:space="preserve">
-    <value>КВ-4 КТТС</value>
-  </data>
-  <data name="r123_kirovets_1" xml:space="preserve">
-    <value>Кировец-1</value>
-  </data>
-  <data name="r127_t44_100_p" xml:space="preserve">
-    <value>Т-44-100 (Р)</value>
-  </data>
-  <data name="r128_kv4_kreslavskiy" xml:space="preserve">
-    <value>КВ-4 Креславского</value>
-  </data>
-  <data name="r125_t_45" xml:space="preserve">
-    <value>Т-45</value>
-  </data>
-  <data name="r126_object_730_5" xml:space="preserve">
-    <value>Объект 268 Вариант 5</value>
-  </data>
-  <data name="r129_object_257" xml:space="preserve">
-    <value>Объект 257</value>
-  </data>
-  <data name="r87_t62a_fallout" xml:space="preserve">
-    <value>(А) Т-62А</value>
-  </data>
-  <data name="r45_is_7_fallout" xml:space="preserve">
-    <value>(А) ИС-7</value>
-  </data>
-  <data name="r47_isu_152_igr" xml:space="preserve">
-    <value>ISU-152</value>
-  </data>
-  <data name="r20_t_44_igr" xml:space="preserve">
-    <value>T-44</value>
-  </data>
-  <data name="r19_is_3_igr" xml:space="preserve">
-    <value>IS-3</value>
-  </data>
-  <data name="r106_kv85_igr" xml:space="preserve">
-    <value>KV-85</value>
-  </data>
-  <data name="r77_kv2_igr" xml:space="preserve">
-    <value>KV-2</value>
-  </data>
-  <data name="r18_su_152_igr" xml:space="preserve">
     <value>SU-152</value>
   </data>
-  <data name="r54_kv_5_igr" xml:space="preserve">
-    <value>KV-5</value>
+  <data name="r07_t_34_85" xml:space="preserve">
+    <value>T-34-85</value>
   </data>
-  <data name="r31_valentine_ll_igr" xml:space="preserve">
-    <value>Valentine II</value>
+  <data name="r13_kv_1s" xml:space="preserve">
+    <value>KV-1S</value>
   </data>
-  <data name="r45_is_7_igr" xml:space="preserve">
+  <data name="r22_t_46" xml:space="preserve">
+    <value>T-46</value>
+  </data>
+  <data name="r17_su_100" xml:space="preserve">
+    <value>SU-100</value>
+  </data>
+  <data name="r11_ms_1" xml:space="preserve">
+    <value>MS-1</value>
+  </data>
+  <data name="r16_su_18" xml:space="preserve">
+    <value>SU-18</value>
+  </data>
+  <data name="r27_su_14" xml:space="preserve">
+    <value>SU-14-2</value>
+  </data>
+  <data name="r20_t_44" xml:space="preserve">
+    <value>T-44</value>
+  </data>
+  <data name="r09_t_26" xml:space="preserve">
+    <value>T-26</value>
+  </data>
+  <data name="r14_su_5" xml:space="preserve">
+    <value>SU-5</value>
+  </data>
+  <data name="r10_at_1" xml:space="preserve">
+    <value>AT-1</value>
+  </data>
+  <data name="r19_is_3" xml:space="preserve">
+    <value>IS-3</value>
+  </data>
+  <data name="r26_su_8" xml:space="preserve">
+    <value>SU-8</value>
+  </data>
+  <data name="r39_kv_3" xml:space="preserve">
+    <value>KV-3</value>
+  </data>
+  <data name="r90_is_4m" xml:space="preserve">
+    <value>IS-4</value>
+  </data>
+  <data name="r24_su_76" xml:space="preserve">
+    <value>SU-76M</value>
+  </data>
+  <data name="r23_t_43" xml:space="preserve">
+    <value>T-43</value>
+  </data>
+  <data name="r25_gaz_74b" xml:space="preserve">
+    <value>SU-85B</value>
+  </data>
+  <data name="r45_is_7" xml:space="preserve">
     <value>IS-7</value>
   </data>
+  <data name="r47_isu_152" xml:space="preserve">
+    <value>ISU-152</value>
+  </data>
+  <data name="r66_su_26" xml:space="preserve">
+    <value>SU-26</value>
+  </data>
+  <data name="r40_t_54" xml:space="preserve">
+    <value>T-54</value>
+  </data>
+  <data name="r53_object_704" xml:space="preserve">
+    <value>Object 704</value>
+  </data>
+  <data name="r51_object_212" xml:space="preserve">
+    <value>212A</value>
+  </data>
+  <data name="r52_object_261" xml:space="preserve">
+    <value>Object 261</value>
+  </data>
+  <data name="r46_kv_13" xml:space="preserve">
+    <value>KV-13</value>
+  </data>
+  <data name="r61_object252" xml:space="preserve">
+    <value>IS-6</value>
+  </data>
+  <data name="r41_t_50" xml:space="preserve">
+    <value>T-50</value>
+  </data>
+  <data name="r70_t_50_2" xml:space="preserve">
+    <value>T-50-2</value>
+  </data>
+  <data name="r58_su_101" xml:space="preserve">
+    <value>SU-101</value>
+  </data>
+  <data name="r74_su100m1" xml:space="preserve">
+    <value>SU-100M1</value>
+  </data>
+  <data name="r77_kv2" xml:space="preserve">
+    <value>KV-2</value>
+  </data>
+  <data name="r63_st_i" xml:space="preserve">
+    <value>ST-I</value>
+  </data>
+  <data name="r73_kv4" xml:space="preserve">
+    <value>KV-4</value>
+  </data>
+  <data name="r72_t150" xml:space="preserve">
+    <value>T-150</value>
+  </data>
+  <data name="r81_is8" xml:space="preserve">
+    <value>T-10</value>
+  </data>
+  <data name="r80_kv1" xml:space="preserve">
+    <value>KV-1</value>
+  </data>
+  <data name="r75_su122_54" xml:space="preserve">
+    <value>SU-122-54</value>
+  </data>
+  <data name="r57_a43" xml:space="preserve">
+    <value>A-43</value>
+  </data>
+  <data name="r59_a44" xml:space="preserve">
+    <value>A-44</value>
+  </data>
+  <data name="r60_object416" xml:space="preserve">
+    <value>Object 416</value>
+  </data>
+  <data name="r88_object268" xml:space="preserve">
+    <value>Object 268</value>
+  </data>
+  <data name="r87_t62a" xml:space="preserve">
+    <value>T-62A</value>
+  </data>
+  <data name="r93_object263" xml:space="preserve">
+    <value>Object 263</value>
+  </data>
+  <data name="r43_t_70" xml:space="preserve">
+    <value>T-70</value>
+  </data>
+  <data name="r42_t_60" xml:space="preserve">
+    <value>T-60</value>
+  </data>
+  <data name="r95_object_907" xml:space="preserve">
+    <value>Object 907</value>
+  </data>
+  <data name="r44_t80" xml:space="preserve">
+    <value>T-80</value>
+  </data>
+  <data name="r91_su14_1" xml:space="preserve">
+    <value>SU-14-1</value>
+  </data>
+  <data name="r100_su122a" xml:space="preserve">
+    <value>SU-122A</value>
+  </data>
+  <data name="r101_mt25" xml:space="preserve">
+    <value>MT-25</value>
+  </data>
+  <data name="r97_object_140" xml:space="preserve">
+    <value>Object 140</value>
+  </data>
+  <data name="r96_object_430" xml:space="preserve">
+    <value>Object 430</value>
+  </data>
+  <data name="r104_object_430_ii" xml:space="preserve">
+    <value>Object 430 Version II</value>
+  </data>
+  <data name="r109_t54s" xml:space="preserve">
+    <value>T-54 ltwt.</value>
+  </data>
+  <data name="r107_ltb" xml:space="preserve">
+    <value>LTTB</value>
+  </data>
+  <data name="r106_kv85" xml:space="preserve">
+    <value>KV-85</value>
+  </data>
+  <data name="r38_kv_220_beta" xml:space="preserve">
+    <value>KV-220-2 Beta Test</value>
+  </data>
+  <data name="r32_matilda_ii_ll" xml:space="preserve">
+    <value>Matilda IV</value>
+  </data>
+  <data name="r33_churchill_ll" xml:space="preserve">
+    <value>Churchill III</value>
+  </data>
+  <data name="r34_bt_sv" xml:space="preserve">
+    <value>BT-SV</value>
+  </data>
+  <data name="r31_valentine_ll" xml:space="preserve">
+    <value>Valentine II</value>
+  </data>
+  <data name="r67_m3_ll" xml:space="preserve">
+    <value>M3 Light</value>
+  </data>
+  <data name="r68_a_32" xml:space="preserve">
+    <value>A-32</value>
+  </data>
+  <data name="r54_kv_5" xml:space="preserve">
+    <value>KV-5</value>
+  </data>
+  <data name="r56_t_127" xml:space="preserve">
+    <value>T-127</value>
+  </data>
+  <data name="r78_su_85i" xml:space="preserve">
+    <value>SU-85I</value>
+  </data>
+  <data name="r38_kv_220" xml:space="preserve">
+    <value>KV-220-2</value>
+  </data>
+  <data name="r50_su76i" xml:space="preserve">
+    <value>SU-76I</value>
+  </data>
+  <data name="r84_tetrarch_ll" xml:space="preserve">
+    <value>Tetrarch</value>
+  </data>
+  <data name="r49_su100y" xml:space="preserve">
+    <value>SU-100Y</value>
+  </data>
+  <data name="r89_su122_44" xml:space="preserve">
+    <value>SU-122-44</value>
+  </data>
+  <data name="r07_t_34_85_training" xml:space="preserve">
+    <value>T-34-85</value>
+  </data>
+  <data name="r86_ltp" xml:space="preserve">
+    <value>LTP</value>
+  </data>
+  <data name="r99_t44_122" xml:space="preserve">
+    <value>T-44-122</value>
+  </data>
+  <data name="r98_t44_85" xml:space="preserve">
+    <value>T-44-85</value>
+  </data>
+  <data name="r108_t34_85m" xml:space="preserve">
+    <value>T-34-85M</value>
+  </data>
+  <data name="r110_object_260" xml:space="preserve">
+    <value>Object 260</value>
+  </data>
+  <data name="r111_isu130" xml:space="preserve">
+    <value>ISU-130</value>
+  </data>
+  <data name="r113_object_730" xml:space="preserve">
+    <value>IS-5 (Object 730)</value>
+  </data>
+  <data name="r71_is_2b" xml:space="preserve">
+    <value>IS-2</value>
+  </data>
+  <data name="r117_t34_85_rudy" xml:space="preserve">
+    <value>T-34-85 Rudy</value>
+  </data>
+  <data name="r116_isu122c_berlin" xml:space="preserve">
+    <value>ISU-122S</value>
+  </data>
+  <data name="r112_t54_45" xml:space="preserve">
+    <value>T-54 first prototype</value>
+  </data>
+  <data name="r114_object_244" xml:space="preserve">
+    <value>Object 244</value>
+  </data>
+  <data name="r115_is_3_auto" xml:space="preserve">
+    <value>IS-3A</value>
+  </data>
+  <data name="r95_object_907a" xml:space="preserve">
+    <value>Object 907A</value>
+  </data>
+  <data name="r105_bt_7a" xml:space="preserve">
+    <value>BT-7 artillery</value>
+  </data>
+  <data name="r119_object_777" xml:space="preserve">
+    <value>Object 777 Version II</value>
+  </data>
+  <data name="r118_t28_f30" xml:space="preserve">
+    <value>T-28E with F-30</value>
+  </data>
+  <data name="r120_t22sr_a22" xml:space="preserve">
+    <value>T-22 medium</value>
+  </data>
+  <data name="r122_t44_100" xml:space="preserve">
+    <value>T-44-100</value>
+  </data>
+  <data name="r121_kv4_ktt" xml:space="preserve">
+    <value>KV-4 KTTS</value>
+  </data>
+  <data name="r123_kirovets_1" xml:space="preserve">
+    <value>Kirovets-1</value>
+  </data>
+  <data name="r127_t44_100_p" xml:space="preserve">
+    <value>T-44-100 (R)</value>
+  </data>
+  <data name="r128_kv4_kreslavskiy" xml:space="preserve">
+    <value>KV-4 by Kreslavskiy</value>
+  </data>
+  <data name="r125_t_45" xml:space="preserve">
+    <value>T-45</value>
+  </data>
+  <data name="r126_object_730_5" xml:space="preserve">
+    <value>Object 268 Version V</value>
+  </data>
+  <data name="r129_object_257" xml:space="preserve">
+    <value>Object 257</value>
+  </data>
+  <data name="r133_kv_122" xml:space="preserve">
+    <value>R133_KV_122</value>
+  </data>
+  <data name="r87_t62a_fallout" xml:space="preserve">
+    <value>(R) T-62A</value>
+  </data>
+  <data name="r45_is_7_fallout" xml:space="preserve">
+    <value>(R) IS-7</value>
+  </data>
+  <data name="r47_isu_152_igr" xml:space="preserve">
+    <value>ИСУ-152</value>
+  </data>
+  <data name="r20_t_44_igr" xml:space="preserve">
+    <value>Т-44</value>
+  </data>
+  <data name="r19_is_3_igr" xml:space="preserve">
+    <value>ИС-3</value>
+  </data>
+  <data name="r106_kv85_igr" xml:space="preserve">
+    <value>КВ-85</value>
+  </data>
+  <data name="r77_kv2_igr" xml:space="preserve">
+    <value>КВ-2</value>
+  </data>
+  <data name="r18_su_152_igr" xml:space="preserve">
+    <value>СУ-152</value>
+  </data>
+  <data name="r54_kv_5_igr" xml:space="preserve">
+    <value>КВ-5</value>
+  </data>
+  <data name="r31_valentine_ll_igr" xml:space="preserve">
+    <value>Валентайн II</value>
+  </data>
+  <data name="r45_is_7_igr" xml:space="preserve">
+    <value>ИС-7</value>
+  </data>
   <data name="r11_ms_1_bot" xml:space="preserve">
-    <value>МС-1</value>
+    <value>MS-1</value>
   </data>
   <data name="r09_t_26_bot" xml:space="preserve">
-    <value>Т-26</value>
+    <value>T-26</value>
   </data>
 </root>

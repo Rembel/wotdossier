@@ -117,37 +117,812 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AOS_895" xml:space="preserve">
+    <value>AOS-895</value>
+  </data>
+  <data name="AVS_1195" xml:space="preserve">
+    <value>AVS-1195</value>
+  </data>
+  <data name="AV_1195" xml:space="preserve">
+    <value>AV-1195</value>
+  </data>
+  <data name="BNAG_L8V_36TR" xml:space="preserve">
+    <value>Büssing NAG L8V/36 TR</value>
+  </data>
+  <data name="BNAG_L8V_36TR_A" xml:space="preserve">
+    <value>Büssing NAG L8V/36 TR</value>
+  </data>
   <data name="Chassis_S01_Strv_74_A2" xml:space="preserve">
     <value>Strv m/42-57 Alternativ A.2</value>
   </data>
+  <data name="Chassis_S02_Strv_M42" xml:space="preserve">
+    <value>Lago III</value>
+  </data>
+  <data name="Chassis_S02_Strv_M42_2" xml:space="preserve">
+    <value>Lago IV</value>
+  </data>
+  <data name="Chassis_S03_Strv_M38" xml:space="preserve">
+    <value>Strv m/38</value>
+  </data>
+  <data name="Chassis_S03_Strv_M38_2" xml:space="preserve">
+    <value>Strv m/39</value>
+  </data>
+  <data name="Chassis_S04_Lago_I" xml:space="preserve">
+    <value>Lago I</value>
+  </data>
+  <data name="Chassis_S04_Lago_I_2" xml:space="preserve">
+    <value>Lago II</value>
+  </data>
+  <data name="Chassis_S05_Strv_M21_29" xml:space="preserve">
+    <value>Strv fm/21</value>
+  </data>
+  <data name="Chassis_S06_Ikv_90_Typ_B_Bofors" xml:space="preserve">
+    <value>Ikv 90 Alt 1</value>
+  </data>
+  <data name="Chassis_S06_Ikv_90_Typ_B_Bofors_2" xml:space="preserve">
+    <value>Ikv 90 Alt 2</value>
+  </data>
+  <data name="Chassis_S07_Strv_74" xml:space="preserve">
+    <value>Strv 74 prototyp</value>
+  </data>
+  <data name="Chassis_S07_Strv_74_2" xml:space="preserve">
+    <value>Strv 74</value>
+  </data>
+  <data name="Chassis_S08_Ikv_65_Alt_2" xml:space="preserve">
+    <value>Ikv 65 Alt II</value>
+  </data>
+  <data name="Chassis_S08_Ikv_65_Alt_2_2" xml:space="preserve">
+    <value>Ikv 65 Alt III</value>
+  </data>
+  <data name="Chassis_S09_L_120_TD" xml:space="preserve">
+    <value>L-120</value>
+  </data>
+  <data name="Chassis_S09_L_120_TD_2" xml:space="preserve">
+    <value>Pvlvv fm/42</value>
+  </data>
+  <data name="Chassis_S10_Strv_103_0_Series" xml:space="preserve">
+    <value>Strv 103-0</value>
+  </data>
+  <data name="Chassis_S10_Strv_103_0_Series_2" xml:space="preserve">
+    <value>Strv 103A</value>
+  </data>
+  <data name="Chassis_S11_Strv_103B" xml:space="preserve">
+    <value>Strv 103B</value>
+  </data>
+  <data name="Chassis_S12_Strv_M40" xml:space="preserve">
+    <value>Strv m/40L</value>
+  </data>
+  <data name="Chassis_S12_Strv_M40_2" xml:space="preserve">
+    <value>Strv m/40K</value>
+  </data>
+  <data name="Chassis_S13_Leo" xml:space="preserve">
+    <value>Leo m/47</value>
+  </data>
+  <data name="Chassis_S13_Leo_2" xml:space="preserve">
+    <value>Leo m/48</value>
+  </data>
+  <data name="Chassis_S14_Ikv_103" xml:space="preserve">
+    <value>Ikv 102</value>
+  </data>
+  <data name="Chassis_S14_Ikv_103_2" xml:space="preserve">
+    <value>Ikv 103</value>
+  </data>
+  <data name="Chassis_S15_L_60" xml:space="preserve">
+    <value>L-60</value>
+  </data>
+  <data name="Chassis_S16_Kranvagn" xml:space="preserve">
+    <value>Kranvagn</value>
+  </data>
+  <data name="Chassis_S17_EMIL_1952_E2" xml:space="preserve">
+    <value>Emil II 1 a</value>
+  </data>
+  <data name="Chassis_S17_EMIL_1952_E2_2" xml:space="preserve">
+    <value>Emil II 1 b</value>
+  </data>
+  <data name="Chassis_S18_EMIL_1951_E1" xml:space="preserve">
+    <value>Emil Alt 1</value>
+  </data>
+  <data name="Chassis_S18_EMIL_1951_E1_2" xml:space="preserve">
+    <value>Emil Alt 2</value>
+  </data>
+  <data name="Chassis_S19_Sav_M43" xml:space="preserve">
+    <value>Sav m/43 m/ä</value>
+  </data>
+  <data name="Chassis_S19_Sav_M43_2" xml:space="preserve">
+    <value>Sav m/43 m/n</value>
+  </data>
+  <data name="Chassis_S20_Ikv_72" xml:space="preserve">
+    <value>Tk fm/49</value>
+  </data>
+  <data name="Chassis_S20_Ikv_72_2" xml:space="preserve">
+    <value>Ikv 72</value>
+  </data>
+  <data name="Chassis_S21_UDES_03" xml:space="preserve">
+    <value>Projekt 2013A</value>
+  </data>
+  <data name="Chassis_S21_UDES_03_2" xml:space="preserve">
+    <value>UDES 03</value>
+  </data>
+  <data name="DB_605" xml:space="preserve">
+    <value>DB 605</value>
+  </data>
+  <data name="Daimler_Benz_m_1910" xml:space="preserve">
+    <value>Daimler-Benz m/1910</value>
+  </data>
+  <data name="Ford_317" xml:space="preserve">
+    <value>Ford 317</value>
+  </data>
+  <data name="Ford_391" xml:space="preserve">
+    <value>Ford 391</value>
+  </data>
+  <data name="Ford_ENN" xml:space="preserve">
+    <value>Ford ENN</value>
+  </data>
+  <data name="GM_6V_53" xml:space="preserve">
+    <value>GM 6V 53</value>
+  </data>
+  <data name="Leyland_L60" xml:space="preserve">
+    <value>Leyland L60</value>
+  </data>
+  <data name="MTU_837_Ea_500" xml:space="preserve">
+    <value>MTU 837 Ea-500</value>
+  </data>
+  <data name="Meteor_Mark_IV_Mod_271" xml:space="preserve">
+    <value>Meteor Mark IV Mod 271</value>
+  </data>
+  <data name="Motoraggregat_1S" xml:space="preserve">
+    <value>Motoraggregat 1S</value>
+  </data>
+  <data name="Motoraggregat_3" xml:space="preserve">
+    <value>Motoraggregat 3</value>
+  </data>
+  <data name="Motoraggregat_5" xml:space="preserve">
+    <value>Motoraggregat 5</value>
+  </data>
+  <data name="Motoraggregat_9" xml:space="preserve">
+    <value>Motoraggregat 9</value>
+  </data>
+  <data name="Ra_100" xml:space="preserve">
+    <value>Ra 100</value>
+  </data>
+  <data name="Ra_105" xml:space="preserve">
+    <value>Ra 105</value>
+  </data>
+  <data name="Ra_146" xml:space="preserve">
+    <value>Ra 146</value>
+  </data>
+  <data name="Ra_400" xml:space="preserve">
+    <value>Ra 400</value>
+  </data>
   <data name="Ra_400_1" xml:space="preserve">
     <value>Ra 400</value>
+  </data>
+  <data name="Ra_421" xml:space="preserve">
+    <value>Ra 421</value>
+  </data>
+  <data name="Ra_421_1" xml:space="preserve">
+    <value>Ra 421</value>
   </data>
   <data name="S01_Strv_74_A2" xml:space="preserve">
     <value>Strv m/42-57 Alt A.2</value>
   </data>
   <data name="S01_Strv_74_A2_descr" xml:space="preserve">
-    <value>As part of development of the Strv 74, a project was proposed for a vehicle with the oscillating turret of the French AMX 13 tank and the 7,5 cm kan strv 74 gun; however, the vehicle was never built.</value>
+    <value>В рамках разработки танка Strv 74 был предложен проект машины с качающейся башней французского танка АMX 13 и орудием 7,5 cm kan strv 74. Проект не был реализован.</value>
   </data>
   <data name="S01_Strv_74_A2_short" xml:space="preserve">
     <value>Strv m/42-57</value>
   </data>
+  <data name="S02_Strv_M42" xml:space="preserve">
+    <value>Strv m/42</value>
+  </data>
+  <data name="S02_Strv_M42_descr" xml:space="preserve">
+    <value>Разработан на базе среднего танка Lago в 1930-х годах. На танк массой 22,5 тонны устанавливалось короткоствольное 75-мм орудие «Бофорс». Всего было выпущено 282 машины различных модификаций, отличавшихся силовой установкой и трансмиссией. В модификациях ТМ, ТН и TV устанавливались спаренные двигатели Scania-Vabis L-603 мощностью 160 л.с., в то время как танки Strv m/42 ЕН приводились в движение одним двигателем Volvo A8B мощностью 370 л.с.</value>
+  </data>
+  <data name="S02_Strv_M42_short" xml:space="preserve">
+    <value>Strv m/42</value>
+  </data>
+  <data name="S03_Strv_M38" xml:space="preserve">
+    <value>Strv m/38</value>
+  </data>
+  <data name="S03_Strv_M38_descr" xml:space="preserve">
+    <value>Разработан компанией Landsverk AB на основе лёгкого танка L-60. За время серийного производства танк неоднократно подвергался модернизации. В период с 1939 по 1944 год было выпущено порядка 216 машин различных модификаций. Состоял на вооружении шведской армии до 1960-х годов.</value>
+  </data>
+  <data name="S03_Strv_M38_short" xml:space="preserve">
+    <value>Strv m/38</value>
+  </data>
+  <data name="S04_Lago_I" xml:space="preserve">
+    <value>Lago</value>
+  </data>
+  <data name="S04_Lago_I_descr" xml:space="preserve">
+    <value>Компания Landsverk начала разработку танка в 1936 году. Были использованы наработки по лёгкому танку
+L-60. В 1939 году к проекту проявила заинтересованность Венгрия. В 1940 году был собран прототип машины, но к этому времени Венгерское правительство приняло решение о разработке собственного среднего танка на базе Škoda Т-21. В дальнейшем некоторые технические решения использовались при разработке танка Strv m/42.</value>
+  </data>
+  <data name="S04_Lago_I_short" xml:space="preserve">
+    <value>Lago</value>
+  </data>
+  <data name="S05_Strv_M21_29" xml:space="preserve">
+    <value>Strv fm/21</value>
+  </data>
+  <data name="S05_Strv_M21_29_descr" xml:space="preserve">
+    <value>В 1918 году в Германии испытывался танк LK II. Машина успешно прошла испытания, и германская армия разместила заказ на производство 1 000 единиц, который так и не был выполнен до конца Первой мировой войны. В 1920 году Швеция приобрела у Германии 10 танков LK II, которые были приняты на вооружение шведской армии под обозначением Stridsvagn fm/21. В 1929 – 1932 гг. танки прошли модернизацию: на них установили более мощные двигатели и внесли некоторые изменения в лобовую часть. Все модернизированные машины получили название Stridsvagn m/21-29 и использовались в качестве учебных танков до 1940 года.</value>
+  </data>
+  <data name="S05_Strv_M21_29_short" xml:space="preserve">
+    <value>Strv fm/21</value>
+  </data>
+  <data name="S06_Ikv_90_Typ_B_Bofors" xml:space="preserve">
+    <value>Ikv 90 Typ B</value>
+  </data>
+  <data name="S06_Ikv_90_Typ_B_Bofors_descr" xml:space="preserve">
+    <value>Проект компании Bofors. Разрабатывался в 1965–1966 гг. в рамках конкурса Министерства обороны Швеции по созданию лёгкого танка. Легкобронированная машина должна была сочетать высокую скорость и манёвренность с вооружением достаточно мощным, чтобы бороться с современными танками и оказывать поддержку войскам на поле боя. Проект был готов в январе 1966 года и передан для дальнейшей работы, однако машина не была реализована в металле.</value>
+  </data>
+  <data name="S06_Ikv_90_Typ_B_Bofors_short" xml:space="preserve">
+    <value>Ikv 90 B</value>
+  </data>
+  <data name="S07_Strv_74" xml:space="preserve">
+    <value>Strv 74</value>
+  </data>
+  <data name="S07_Strv_74_descr" xml:space="preserve">
+    <value>В начале 1950-х годов шведская армия приняла на вооружение средний танк Centurion, однако возникла потребность в более лёгком и подвижном танке. Было принято решение модернизировать морально устаревшие танки Strv m/42 путём установки новой башни и вооружения. Танк получил новое обозначение Strv 74. В период с 1957 по 1960 годы было выпущено 225 машин. Состоял на вооружении шведской армии до 1984 года.</value>
+  </data>
+  <data name="S07_Strv_74_short" xml:space="preserve">
+    <value>Strv 74</value>
+  </data>
+  <data name="S08_Ikv_65_Alt_2" xml:space="preserve">
+    <value>Ikv 65 Alt II</value>
+  </data>
+  <data name="S08_Ikv_65_Alt_2_descr" xml:space="preserve">
+    <value>В середине 60-х годов Министерство обороны Швеции сформулировало требования к новому лёгкому танку. Легкобронированная машина должна была сочетать высокую скорость и манёвренность с вооружением достаточно мощным, чтобы бороться с современными танками и оказывать поддержку войскам на поле боя. В рамках конкурса компанией Landsverk было разработано несколько проектов машин, как с вращающейся башней, так и с орудием, установленным в неподвижной рубке. По сути, они являлись противотанковыми САУ. Работы над данными машинами были прекращены на стадии чертежей и макетирования.</value>
+  </data>
+  <data name="S08_Ikv_65_Alt_2_short" xml:space="preserve">
+    <value>Ikv 65 II</value>
+  </data>
+  <data name="S09_L_120_TD" xml:space="preserve">
+    <value>Pvlvv fm/42</value>
+  </data>
+  <data name="S09_L_120_TD_descr" xml:space="preserve">
+    <value>Проект шведской ПТ САУ 1939 года на базе лёгкого танка L-120. На вооружение принята не была. Был построен один прототип.</value>
+  </data>
+  <data name="S09_L_120_TD_short" xml:space="preserve">
+    <value>Pvlvv fm/42</value>
+  </data>
+  <data name="S10_Strv_103_0_Series" xml:space="preserve">
+    <value>Strv 103-0</value>
+  </data>
+  <data name="S10_Strv_103_0_Series_descr" xml:space="preserve">
+    <value>В 1960 году с компанией Bofors был заключён контракт на производство танка с безбашенной компоновкой. Было выпущено около 10 опытных образцов «нулевой серии» Strv 103. От серийных машин они отличались более слабым бронированием, имели другую командирскую башенку и более слабую силовую установку. В 1964 году на основе этих опытных машин стали производить Strv 103A.</value>
+  </data>
+  <data name="S10_Strv_103_0_Series_short" xml:space="preserve">
+    <value>Strv 103-0</value>
+  </data>
+  <data name="S11_Strv_103B" xml:space="preserve">
+    <value>Strv 103B</value>
+  </data>
+  <data name="S11_Strv_103B_descr" xml:space="preserve">
+    <value>Разрабатывался в 1969–1971 гг. в рамках модернизации Strv 103. По сравнению с предыдущей модификацией Strv 103A, Strv 103B получила более мощный газотурбинный двигатель, лазерный дальномер и инфракрасные приборы. Также была предусмотрена возможность установки оборудования для преодоления водных преград. В 1970 году на вооружение было принято 220 машин. В то же время машины ранней модификации Strv 103A были переоборудованы до версии Strv 103B, в результате чего по состоянию на 1971 год их общее количество составило 290 единиц.</value>
+  </data>
+  <data name="S11_Strv_103B_short" xml:space="preserve">
+    <value>Strv 103B</value>
+  </data>
+  <data name="S12_Strv_M40" xml:space="preserve">
+    <value>Strv m/40L</value>
+  </data>
+  <data name="S12_Strv_M40_descr" xml:space="preserve">
+    <value>К 1940 году стала очевидной острая нехватка танков в шведской армии. Одним из путей решения проблемы стала модернизация танков L-60. Первые 100 модернизированных машин получили улучшенное бронирование и новую автоматическую трансмиссию. Модернизация производилась компанией AB Landsverk, поэтому данные танки поступили на вооружение под обозначением Strv m/40L. В дальнейшем на танки, производимые на заводе в Карлстаде, стали устанавливать более мощные двигатели, усиленную подвеску и бронирование. Эти машины получили обозначение Strv m/40K.</value>
+  </data>
+  <data name="S12_Strv_M40_short" xml:space="preserve">
+    <value>Strv m/40L</value>
+  </data>
+  <data name="S13_Leo" xml:space="preserve">
+    <value>Leo</value>
+  </data>
+  <data name="S13_Leo_descr" xml:space="preserve">
+    <value>Во второй половине 40-х годов компания Landsverk разработала серию танков, предназначавшихся в первую очередь для экспорта. Самым тяжёлым в данной серии был средний танк Strv Leo. Проект вызвал интерес со стороны армии, однако он не имел существенных преимуществ перед иностранными образцами, доступными для покупки. В итоге предпочтение было отдано другому проекту.</value>
+  </data>
+  <data name="S13_Leo_short" xml:space="preserve">
+    <value>Leo</value>
+  </data>
+  <data name="S14_Ikv_103" xml:space="preserve">
+    <value>Ikv 103</value>
+  </data>
+  <data name="S14_Ikv_103_descr" xml:space="preserve">
+    <value>В 1956 году в производство был запущен модернизированный вариант САУ Ikv 102, получивший обозначение Ikv 103. Данные машины предназначались для огневой поддержки войск. Всего было выпущено около 80 машин, которые находились на вооружении до начала 80-х годов.</value>
+  </data>
+  <data name="S14_Ikv_103_short" xml:space="preserve">
+    <value>Ikv 103</value>
+  </data>
+  <data name="S15_L_60" xml:space="preserve">
+    <value>L-60</value>
+  </data>
+  <data name="S15_L_60_descr" xml:space="preserve">
+    <value>Разработан компанией Landsverk AB в 1934 году. Являлся дальнейшим развитием танка L-10. В конструкции танка был использован ряд революционных технических решений. Четыре машины были проданы в Австрию, Венгрию и Ирландию. После доработки был принят на вооружение армии Швеции под обозначением Stridsvagn m/38.</value>
+  </data>
+  <data name="S15_L_60_short" xml:space="preserve">
+    <value>L-60</value>
+  </data>
+  <data name="S16_Kranvagn" xml:space="preserve">
+    <value>Kranvagn</value>
+  </data>
+  <data name="S16_Kranvagn_descr" xml:space="preserve">
+    <value>Проект по созданию новой машины для вооружённых сил Швеции стартовал в 1949 году. Из соображений секретности танк получил необычное название KRV, которое расшифровывалось как «самоходный кран». В основу проекта легли французские разработки по AMX 50. Были выпущены и испытаны облегчённые шасси, а также построен макет машины с башней. Прототип построен не был.</value>
+  </data>
+  <data name="S16_Kranvagn_short" xml:space="preserve">
+    <value>Kranvagn</value>
+  </data>
+  <data name="S17_EMIL_1952_E2" xml:space="preserve">
+    <value>Emil II</value>
+  </data>
+  <data name="S17_EMIL_1952_E2_descr" xml:space="preserve">
+    <value>Вариант тяжёлого танка, разработанный в рамках проекта 1949 года по созданию новой машины. К 1952 году было предложено три проекта тяжёлого танка. EMIL 1952 E2 был вторым вариантом. В зависимости от бронирования и установленного двигателя масса данной машины варьировалась от 34 до 39 тонн. Однако в конце 1952 года от версии Е2 отказались в пользу варианта Е3, который имел схожие характеристики при более мощном бронировании.</value>
+  </data>
+  <data name="S17_EMIL_1952_E2_short" xml:space="preserve">
+    <value>Emil II</value>
+  </data>
+  <data name="S18_EMIL_1951_E1" xml:space="preserve">
+    <value>Emil I</value>
+  </data>
+  <data name="S18_EMIL_1951_E1_descr" xml:space="preserve">
+    <value>Вариант тяжёлого танка, разрабатывавшегося для шведской армии в рамках проекта EMIL в 50-х годах. На проект повлияли конструкторские решения, использованные на французском танке AMX 13, на что указывает конструкция и внешний вид башни. В 1951 году был подготовлен эскизный вариант, но от него отказались в пользу более поздних версий.</value>
+  </data>
+  <data name="S18_EMIL_1951_E1_short" xml:space="preserve">
+    <value>Emil I</value>
+  </data>
+  <data name="S19_Sav_M43" xml:space="preserve">
+    <value>Sav m/43</value>
+  </data>
+  <data name="S19_Sav_M43_descr" xml:space="preserve">
+    <value>Шведская САУ класса штурмовых орудий. Разрабатывалась в 1941–1944 гг. В марте 1944 года компания Scania-Vabis получила заказ на производство 36 установок. Первые 18 машин были переоборудованы из танков Strv m/41 SII. Первоначально САУ вооружались 75-мм орудием, но в марте 1946 все машины были перевооружены 105-мм орудием. Всего было выпущено 36 САУ, которые находились на службе до 1973 года.</value>
+  </data>
+  <data name="S19_Sav_M43_short" xml:space="preserve">
+    <value>Sav m/43</value>
+  </data>
+  <data name="S20_Ikv_72" xml:space="preserve">
+    <value>Ikv 72</value>
+  </data>
+  <data name="S20_Ikv_72_descr" xml:space="preserve">
+    <value>После Второй мировой войны в Швеции возникла необходимость создания легкобронированной машины огневой поддержки пехоты. Одной из таких машин стала пехотная артиллерийская машина Ikv 72 компании Landsverk. Всего до 1954 года на вооружение было поставлено 36 машин. В 1956-58 гг. машины были перевооружены более мощными орудиями калибра 10,5 мм и использовались до середины 1970-х годов под наименованием Ikv 102.</value>
+  </data>
+  <data name="S20_Ikv_72_short" xml:space="preserve">
+    <value>Ikv 72</value>
+  </data>
+  <data name="S21_UDES_03" xml:space="preserve">
+    <value>UDES 03</value>
+  </data>
+  <data name="S21_UDES_03_descr" xml:space="preserve">
+    <value>Проект 20-тонной машины разрабатывался в первой половине 70-х годов. В разработке участвовала исследовательская группа UDES, а также компании Bofors и Hägglunds. Проект был представлен компанией Bofors в 1972 году. В дальнейшем было решено вернуться к концепции с вращающейся башней, и работы были продолжены в рамках проекта UDES 14. Проект компании Bofors воплощён не был.</value>
+  </data>
+  <data name="S21_UDES_03_short" xml:space="preserve">
+    <value>UDES 03</value>
+  </data>
+  <data name="SFA_8_cyl_boxer" xml:space="preserve">
+    <value>SFA 8 cyl boxer</value>
+  </data>
+  <data name="SFA_B42" xml:space="preserve">
+    <value>SFA B42</value>
+  </data>
+  <data name="SFA_F12" xml:space="preserve">
+    <value>SFA F12</value>
+  </data>
+  <data name="Saab_Scania_DS14" xml:space="preserve">
+    <value>Saab-Scania DS14</value>
+  </data>
+  <data name="Scania_Vabis_1664" xml:space="preserve">
+    <value>Scania-Vabis 1664</value>
+  </data>
+  <data name="Scania_Vabis_335" xml:space="preserve">
+    <value>Scania-Vabis 335</value>
+  </data>
+  <data name="Scania_Vabis_L_603" xml:space="preserve">
+    <value>Scania-Vabis L 603</value>
+  </data>
   <data name="Turret_1_S01_Strv_74_A2" xml:space="preserve">
     <value>Strv m/42-57 Alternativ A.2</value>
+  </data>
+  <data name="Turret_1_S02_Strv_M42" xml:space="preserve">
+    <value>Lago m/40</value>
+  </data>
+  <data name="Turret_1_S03_Strv_M38" xml:space="preserve">
+    <value>Strv m/38</value>
+  </data>
+  <data name="Turret_1_S04_Lago_I" xml:space="preserve">
+    <value>Lago m/38</value>
+  </data>
+  <data name="Turret_1_S05_Strv_M21_29" xml:space="preserve">
+    <value>Strv fm/21</value>
+  </data>
+  <data name="Turret_1_S06_Ikv_90_Typ_B_Bofors" xml:space="preserve">
+    <value>Ikv 90 Typ B</value>
+  </data>
+  <data name="Turret_1_S07_Strv_74" xml:space="preserve">
+    <value>Strv 74 prototyptorn</value>
+  </data>
+  <data name="Turret_1_S08_Ikv_65_Alt_2" xml:space="preserve">
+    <value>Ikv 65 Alt II</value>
+  </data>
+  <data name="Turret_1_S09_L_120_TD" xml:space="preserve">
+    <value>Pvlvv fm/42</value>
+  </data>
+  <data name="Turret_1_S10_Strv_103_0_Series" xml:space="preserve">
+    <value>Strv 103-0</value>
+  </data>
+  <data name="Turret_1_S11_Strv_103B" xml:space="preserve">
+    <value>Strv 103B</value>
+  </data>
+  <data name="Turret_1_S12_Strv_M40" xml:space="preserve">
+    <value>Strv m/40L</value>
+  </data>
+  <data name="Turret_1_S13_Leo" xml:space="preserve">
+    <value>Leo m/47</value>
+  </data>
+  <data name="Turret_1_S14_Ikv_103" xml:space="preserve">
+    <value>Ikv 103</value>
+  </data>
+  <data name="Turret_1_S15_L_60" xml:space="preserve">
+    <value>L-60</value>
+  </data>
+  <data name="Turret_1_S16_Kranvagn" xml:space="preserve">
+    <value>Kranvagn</value>
+  </data>
+  <data name="Turret_1_S17_EMIL_1952_E2" xml:space="preserve">
+    <value>Emil II</value>
+  </data>
+  <data name="Turret_1_S18_EMIL_1951_E1" xml:space="preserve">
+    <value>Emil I</value>
+  </data>
+  <data name="Turret_1_S19_Sav_M43" xml:space="preserve">
+    <value>Sav m/43</value>
+  </data>
+  <data name="Turret_1_S20_Ikv_72" xml:space="preserve">
+    <value>Ikv 72</value>
+  </data>
+  <data name="Turret_1_S21_UDES_03" xml:space="preserve">
+    <value>UDES 03</value>
+  </data>
+  <data name="Turret_2_S02_Strv_M42" xml:space="preserve">
+    <value>Strv m/42</value>
+  </data>
+  <data name="Turret_2_S03_Strv_M38" xml:space="preserve">
+    <value>Strv m/39</value>
+  </data>
+  <data name="Turret_2_S04_Lago_I" xml:space="preserve">
+    <value>Lago m/40</value>
+  </data>
+  <data name="Turret_2_S07_Strv_74" xml:space="preserve">
+    <value>Strv 74</value>
+  </data>
+  <data name="Turret_2_S12_Strv_M40" xml:space="preserve">
+    <value>Strv m/40K</value>
+  </data>
+  <data name="Turret_2_S13_Leo" xml:space="preserve">
+    <value>Leo m/48</value>
+  </data>
+  <data name="Volvo_A8B" xml:space="preserve">
+    <value>Volvo A8B</value>
+  </data>
+  <data name="Volvo_DC" xml:space="preserve">
+    <value>Volvo DC</value>
+  </data>
+  <data name="Volvo_FE" xml:space="preserve">
+    <value>Volvo FE</value>
+  </data>
+  <data name="Volvo_TD_100_A" xml:space="preserve">
+    <value>Volvo TD 100 A</value>
+  </data>
+  <data name="Volvo_TD_70_A" xml:space="preserve">
+    <value>Volvo TD 70 A</value>
+  </data>
+  <data name="Volvo_THD_100_B" xml:space="preserve">
+    <value>Volvo THD 100 B</value>
+  </data>
+  <data name="_105mm_TK_105_9" xml:space="preserve">
+    <value>10,5 cm TK 105-9</value>
+  </data>
+  <data name="_105mm_kan_UDES_03" xml:space="preserve">
+    <value>10,5 cm kan UDES 03</value>
+  </data>
+  <data name="_105mm_kan_ikv_102" xml:space="preserve">
+    <value>10,5 cm kan ikv 102</value>
+  </data>
+  <data name="_105mm_kan_ikv_103" xml:space="preserve">
+    <value>10,5 cm kan ikv 103</value>
+  </data>
+  <data name="_105mm_kan_m_34" xml:space="preserve">
+    <value>10 cm kan m/34</value>
+  </data>
+  <data name="_105mm_kan_m_44_sav" xml:space="preserve">
+    <value>10,5 cm kan m/44 sav</value>
+  </data>
+  <data name="_105mm_kan_strv_103_L_51" xml:space="preserve">
+    <value>10,5 cm kan strv 103 L/51</value>
+  </data>
+  <data name="_105mm_kan_strv_103_L_62" xml:space="preserve">
+    <value>10,5 cm kan strv 103 L/62</value>
+  </data>
+  <data name="_105mm_kan_strv_103_L_62_1" xml:space="preserve">
+    <value>10,5 cm kan strv 103 L/62</value>
+  </data>
+  <data name="_105mm_lt_sgr_m_34" xml:space="preserve">
+    <value>lt sgr m/34</value>
+  </data>
+  <data name="_105mm_lvkan_m_42" xml:space="preserve">
+    <value>10,5 cm lvkan m/42</value>
+  </data>
+  <data name="_105mm_psgr_m_49" xml:space="preserve">
+    <value>psgr m/49</value>
+  </data>
+  <data name="_105mm_sgr_m_40_B" xml:space="preserve">
+    <value>sgr m/40 B</value>
+  </data>
+  <data name="_105mm_sgr_m_52" xml:space="preserve">
+    <value>sgr m/52</value>
+  </data>
+  <data name="_105mm_slpgr_m_42" xml:space="preserve">
+    <value>slpgr m/42</value>
+  </data>
+  <data name="_105mm_slpgr_m_43" xml:space="preserve">
+    <value>slpgr m/43</value>
+  </data>
+  <data name="_105mm_slpgr_m_43_1" xml:space="preserve">
+    <value>slpgr m/43(1)</value>
+  </data>
+  <data name="_105mm_slpprj_fm_49" xml:space="preserve">
+    <value>slpprj fm/49</value>
+  </data>
+  <data name="_105mm_slpprj_m_44" xml:space="preserve">
+    <value>slpprj m/44</value>
+  </data>
+  <data name="_105mm_slpprj_m_49" xml:space="preserve">
+    <value>slpprj m/49</value>
+  </data>
+  <data name="_105mm_slpprj_m_52" xml:space="preserve">
+    <value>slpprj m/52</value>
+  </data>
+  <data name="_105mm_slpprj_m_52_B" xml:space="preserve">
+    <value>slpprj m/52 B</value>
+  </data>
+  <data name="_105mm_slpprj_m_61" xml:space="preserve">
+    <value>slpprj m/61</value>
+  </data>
+  <data name="_105mm_slpprj_m_66" xml:space="preserve">
+    <value>slpprj m/66</value>
+  </data>
+  <data name="_105mm_slpprj_m_ny" xml:space="preserve">
+    <value>slpprj m/ny</value>
+  </data>
+  <data name="_105mm_slpsgr_m_49" xml:space="preserve">
+    <value>slpsgr m/49</value>
+  </data>
+  <data name="_105mm_slpsgr_m_60" xml:space="preserve">
+    <value>slpsgr m/60</value>
+  </data>
+  <data name="_105mm_slpsgr_m_65" xml:space="preserve">
+    <value>slpsgr m/65</value>
+  </data>
+  <data name="_105mm_slsgr_m_61A" xml:space="preserve">
+    <value>slsgr m/61A</value>
+  </data>
+  <data name="_105mm_tung_sgr_m_34" xml:space="preserve">
+    <value>tung sgr m/34</value>
+  </data>
+  <data name="_120mm_akan_L_40" xml:space="preserve">
+    <value>12 cm akan L/40</value>
+  </data>
+  <data name="_120mm_psgr_m_51" xml:space="preserve">
+    <value>psgr m/51</value>
+  </data>
+  <data name="_120mm_sgr_m_51" xml:space="preserve">
+    <value>sgr m/51</value>
+  </data>
+  <data name="_120mm_slpprj_m_51" xml:space="preserve">
+    <value>slpprj m/51</value>
+  </data>
+  <data name="_1_W_Sv" xml:space="preserve">
+    <value>1 W Sv</value>
+  </data>
+  <data name="_20mm_akan_m_40" xml:space="preserve">
+    <value>20 mm akan m/40</value>
+  </data>
+  <data name="_20mm_akan_m_Madsen" xml:space="preserve">
+    <value>20 mm akan m/Madsen</value>
+  </data>
+  <data name="_20mm_akan_m_Madsen_A" xml:space="preserve">
+    <value>20 mm akan m/Madsen</value>
+  </data>
+  <data name="_20mm_pvlvkan_m_40" xml:space="preserve">
+    <value>20 mm pvlvkan m/40</value>
+  </data>
+  <data name="_20mm_slpprj_m_40" xml:space="preserve">
+    <value>slpprj m/40</value>
+  </data>
+  <data name="_20mm_slpprj_m_40_M" xml:space="preserve">
+    <value>slpprj m/40 M</value>
+  </data>
+  <data name="_20mm_slpprj_m_49" xml:space="preserve">
+    <value>slpprj m/49</value>
+  </data>
+  <data name="_20mm_slpprj_m_Madsen" xml:space="preserve">
+    <value>slpprj m/Madsen</value>
+  </data>
+  <data name="_20mm_slsgr_m_42" xml:space="preserve">
+    <value>slsgr m/42</value>
+  </data>
+  <data name="_20mm_slsgr_m_Madsen" xml:space="preserve">
+    <value>slsgr m/Madsen</value>
+  </data>
+  <data name="_25_W_Sv_1_m_39" xml:space="preserve">
+    <value>25 W Sv/1 m/39</value>
+  </data>
+  <data name="_25_W_Sv_1_m_39_42" xml:space="preserve">
+    <value>25 W Sv/1 m/39-42</value>
+  </data>
+  <data name="_25_W_Sv_1_m_39_A" xml:space="preserve">
+    <value>25 W Sv/1 m/39</value>
+  </data>
+  <data name="_2_st_Scania_Vabis_1664" xml:space="preserve">
+    <value>2 st Scania-Vabis 1664</value>
+  </data>
+  <data name="_2_st_Scania_Vabis_607" xml:space="preserve">
+    <value>2 st Scania-Vabis 607</value>
   </data>
   <data name="_2_st_Scania_Vabis_607_1" xml:space="preserve">
     <value>2 st Scania-Vabis 607</value>
   </data>
+  <data name="_2_st_Scania_Vabis_L_603_1" xml:space="preserve">
+    <value>2 st Scania-Vabis L 603/1</value>
+  </data>
+  <data name="_37mm_kan_m_38_49_strv" xml:space="preserve">
+    <value>37 mm kan m/38-49 strv</value>
+  </data>
+  <data name="_37mm_kan_m_38_strv" xml:space="preserve">
+    <value>37 mm kan m/38 strv</value>
+  </data>
+  <data name="_37mm_kanon_m_Skoda" xml:space="preserve">
+    <value>37 mm kan m/Škoda</value>
+  </data>
+  <data name="_37mm_pgr_m_Skoda" xml:space="preserve">
+    <value>pgr m/Škoda</value>
+  </data>
+  <data name="_37mm_pvkan_m_38" xml:space="preserve">
+    <value>37 mm pvkan m/38</value>
+  </data>
+  <data name="_37mm_sgr_m_34" xml:space="preserve">
+    <value>sgr m/34</value>
+  </data>
+  <data name="_37mm_sgr_m_Skoda" xml:space="preserve">
+    <value>sgr m/Škoda</value>
+  </data>
+  <data name="_37mm_slpgr_m_Skoda" xml:space="preserve">
+    <value>slpgr m/Škoda</value>
+  </data>
+  <data name="_37mm_slpprj_fm_47" xml:space="preserve">
+    <value>slpprj fm/47</value>
+  </data>
+  <data name="_37mm_slpprj_m_38" xml:space="preserve">
+    <value>slpprj m/38</value>
+  </data>
+  <data name="_37mm_slpprj_m_49" xml:space="preserve">
+    <value>slpprj m/49</value>
+  </data>
+  <data name="_37mm_uprj_fm_47" xml:space="preserve">
+    <value>uprj fm/47</value>
+  </data>
+  <data name="_47mm_kan_m_38_strv" xml:space="preserve">
+    <value>47 mm kan m/38 strv</value>
+  </data>
+  <data name="_47mm_sgr_m_38" xml:space="preserve">
+    <value>sgr m/38</value>
+  </data>
+  <data name="_47mm_slpprj_m_38" xml:space="preserve">
+    <value>slpprj m/38</value>
+  </data>
+  <data name="_47mm_slpprj_m_39" xml:space="preserve">
+    <value>slpprj m/39</value>
+  </data>
+  <data name="_57mm_pvkan_m_43" xml:space="preserve">
+    <value>57 mm pvkan m/43</value>
+  </data>
+  <data name="_57mm_sgr_m_43" xml:space="preserve">
+    <value>sgr m/43</value>
+  </data>
+  <data name="_57mm_slpprj_m_43" xml:space="preserve">
+    <value>slpprj m/43</value>
+  </data>
+  <data name="_57mm_slpprj_m_49" xml:space="preserve">
+    <value>slpprj m/49</value>
+  </data>
+  <data name="_70_W_Sv_m_43" xml:space="preserve">
+    <value>70 W Sv m/43</value>
+  </data>
+  <data name="_75mm_kan_m_02" xml:space="preserve">
+    <value>7,5 cm kan m/02</value>
+  </data>
+  <data name="_75mm_kan_m_41_ikv" xml:space="preserve">
+    <value>7,5 cm kan m/41 ikv</value>
+  </data>
+  <data name="_75mm_kan_m_41_ikv_L_50" xml:space="preserve">
+    <value>7,5 cm kan m/41 ikv L/50</value>
+  </data>
+  <data name="_75mm_kan_m_41_ikv_L_50_neglkrut" xml:space="preserve">
+    <value>7,5 cm kan m/41 ikv L/50 (neglkrut)</value>
+  </data>
+  <data name="_75mm_kan_m_41_strv" xml:space="preserve">
+    <value>7,5 cm kan m/41 strv</value>
+  </data>
+  <data name="_75mm_kan_m_43_strv" xml:space="preserve">
+    <value>7,5 cm kan m/43 strv</value>
+  </data>
   <data name="_75mm_kan_strv_74" xml:space="preserve">
     <value>7,5 cm kan strv 74</value>
+  </data>
+  <data name="_75mm_kan_strv_74_R" xml:space="preserve">
+    <value>7,5 cm kan strv 74</value>
+  </data>
+  <data name="_75mm_lvkan_m_36" xml:space="preserve">
+    <value>7,5 cm lvkan m/36</value>
+  </data>
+  <data name="_75mm_sgr_m_22_38" xml:space="preserve">
+    <value>sgr m/22-38</value>
   </data>
   <data name="_75mm_sgr_m_38" xml:space="preserve">
     <value>sgr m/38</value>
   </data>
+  <data name="_75mm_sgr_m_40" xml:space="preserve">
+    <value>sgr m/40</value>
+  </data>
+  <data name="_75mm_slpgr_fm_43" xml:space="preserve">
+    <value>slpgr m/43</value>
+  </data>
   <data name="_75mm_slpgr_m_43" xml:space="preserve">
     <value>slpgr m/43</value>
   </data>
+  <data name="_75mm_slpprj_m_40" xml:space="preserve">
+    <value>slpprj m/40</value>
+  </data>
+  <data name="_75mm_slpprj_m_40_B" xml:space="preserve">
+    <value>slpprj m/40 B</value>
+  </data>
+  <data name="_75mm_slpprj_m_40_C" xml:space="preserve">
+    <value>slpprj m/40 C</value>
+  </data>
+  <data name="_75mm_slpprj_m_40_N" xml:space="preserve">
+    <value>slpprj m/40 N</value>
+  </data>
+  <data name="_75mm_slpprj_m_41" xml:space="preserve">
+    <value>slpprj m/41</value>
+  </data>
   <data name="_75mm_slpprj_m_49" xml:space="preserve">
     <value>slpprj m/49</value>
+  </data>
+  <data name="_75mm_slpsgr_fm_45" xml:space="preserve">
+    <value>slpsgr fm/45</value>
+  </data>
+  <data name="_90mm_Bofors_L_43" xml:space="preserve">
+    <value>9 cm Bofors L/43</value>
+  </data>
+  <data name="_90mm_Bofors_L_53" xml:space="preserve">
+    <value>9 cm Bofors L/53</value>
+  </data>
+  <data name="_90mm_kan_m_F" xml:space="preserve">
+    <value>9 cm kan m/F</value>
+  </data>
+  <data name="_90mm_sgr_m_F" xml:space="preserve">
+    <value>sgr m/F</value>
+  </data>
+  <data name="_90mm_slpprj_m_F" xml:space="preserve">
+    <value>slpprj m/F</value>
+  </data>
+  <data name="_90mm_slpprj_typ_I" xml:space="preserve">
+    <value>slpprj typ I</value>
+  </data>
+  <data name="_90mm_slpprj_typ_II" xml:space="preserve">
+    <value>slpprj typ II</value>
+  </data>
+  <data name="_90mm_slpsgr_m_F" xml:space="preserve">
+    <value>slpsgr m/F</value>
+  </data>
+  <data name="_90mm_slpsgr_typ_I" xml:space="preserve">
+    <value>slpsgr typ I</value>
+  </data>
+  <data name="_90mm_slsgr_m_72" xml:space="preserve">
+    <value>slsgr m/72</value>
   </data>
 </root>

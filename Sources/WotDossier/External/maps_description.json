@@ -30,7 +30,7 @@
       }
     },
     "wwmusic": "music_tutorial",
-    "wwloadingMusic": "music_rus_city",
+    "wwloadingMusic": "music_tutorial",
     "water": {
       "texScale": "\t0\t",
       "freqX": "\t0\t",
@@ -233,7 +233,9 @@
         "controlPoint": "\t-43,884850 -85,558710\t"
       }
     },
-    "useAdvancedPhysics": "\ttrue\t"
+    "useAdvancedPhysics": "\ttrue\t",
+    "roadMap": "",
+    "mapActivities": ""
   },
   {
     "name": "#arenas:03_campania/name",
@@ -588,6 +590,15 @@
     "defaultGroundEffect": "\tNone\t",
     "wwloadingMusic": "music_himmelsdorf",
     "wwambientSound": "ambient_wind_spring_01",
+    "wwDefaultReverb": {
+      "auxBus": "AUX_env_Mountain",
+      "controlValue": "1.0"
+    },
+    "soundRemapping": {
+      "loadBanks": {
+        "bank": "env_Mountain.bnk"
+      }
+    },
     "water": {
       "texScale": "\t0\t",
       "freqX": "\t0\t",
@@ -638,7 +649,9 @@
           "team2": ""
         }
       }
-    }
+    },
+    "mapActivities": "",
+    "roadMap": ""
   },
   {
     "name": "#arenas:08_ruinberg/name",
@@ -1259,6 +1272,11 @@
     "batchingEnabled": "\t0\t",
     "wwloadingMusic": "music_rus_vilage",
     "wwambientSound": "ambient_wind_summer_01",
+    "soundRemapping": {
+      "loadBanks": {
+        "bank": "env_Mountain.bnk"
+      }
+    },
     "water": {
       "texScale": "\t0\t",
       "freqX": "\t0\t",
@@ -3320,6 +3338,15 @@
     "batchingEnabled": "\t0\t",
     "wwloadingMusic": "music_euro_vilage",
     "wwambientSound": "ambient_wind_autumn_01",
+    "wwDefaultReverb": {
+      "auxBus": "AUX_env_Mountain",
+      "controlValue": "1.0"
+    },
+    "soundRemapping": {
+      "loadBanks": {
+        "bank": "env_Mountain.bnk"
+      }
+    },
     "gameplayTypes": {
       "ctf": {
         "teamBasePositions": {
@@ -3456,7 +3483,9 @@
           }
         ]
       }
-    }
+    },
+    "mapActivities": "",
+    "roadMap": ""
   },
   {
     "name": "#arenas:19_monastery/name",
@@ -3473,6 +3502,11 @@
     "batchingEnabled": "\t0\t",
     "wwloadingMusic": "music_euro_vilage",
     "wwambientSound": "ambient_wind_summer_01",
+    "soundRemapping": {
+      "loadBanks": {
+        "bank": "env_Mountain.bnk"
+      }
+    },
     "water": {
       "texScale": "\t0\t",
       "freqX": "\t0\t",

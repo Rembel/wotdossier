@@ -29,12 +29,14 @@ namespace WotDossier.Dal
         private Dictionary<int, RatingExpectancy> _ratingExpectations;
 
         public static readonly Version VersionAll = new Version("100.0.0.0");
-        public static readonly Version VersionRelease = new Version("0.9.15.1");
-        public static readonly Version VersionTest = new Version("0.9.16.0");
+        public static readonly Version VersionRelease = new Version("0.9.17.0");
+        public static readonly Version VersionTest = new Version("0.9.18.0");
 
         private static readonly List<Version> _versions = new List<Version>
         {
                 VersionRelease,
+                new Version("0.9.16.0"),
+                new Version("0.9.15.1"),
                 new Version("0.9.15.0"),
                 new Version("0.9.14.0"),
                 new Version("0.9.13.0"),

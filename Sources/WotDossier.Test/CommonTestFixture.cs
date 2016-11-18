@@ -242,12 +242,15 @@ namespace WotDossier.Test
         [Test]
         public void ImportTanksXmlTest()
         {
+            EnshureScriptsCopied();
+
             CopyGameTextResources();
 
             Console.WriteLine("Copy tanks definitions");
 
+            var scriptsPath = Path.Combine(Environment.CurrentDirectory, @"Output\Patch\Scripts");
             var destination = Path.Combine(Environment.CurrentDirectory, @"Output\Patch\Tanks");
-            var source = Path.Combine(clientPath, @"res\scripts\item_defs\vehicles");
+            var source = Path.Combine(scriptsPath, @"item_defs\vehicles");
 
             Directory.CreateDirectory(destination);
 
@@ -542,12 +545,16 @@ namespace WotDossier.Test
             string destination;
             string source;
 
+            EnshureScriptsCopied();
+
             ImportTanksXmlTest();
 
             Console.WriteLine("Copy maps definitions");
 
             destination = Path.Combine(Environment.CurrentDirectory, @"Output\Patch\Maps");
-            source = Path.Combine(clientPath, @"res\scripts\arena_defs");
+
+            var scriptsPath = Path.Combine(Environment.CurrentDirectory, @"Output\Patch\scripts");
+            source = Path.Combine(scriptsPath, @"arena_defs");
 
             Directory.CreateDirectory(destination);
 
@@ -567,11 +574,24 @@ namespace WotDossier.Test
                 var achievement = @"gui/maps/icons/achievement";
                 zip.ExtractSelectedEntries("name = *.*", achievement, destination, ExtractExistingFileAction.OverwriteSilently);
 
-                Directory.Move(Path.Combine(destination, achievement), Path.Combine(destination, "achievement"));
+                var achievementsDestinationPath = Path.Combine(destination, "achievement");
+
+                if (Directory.Exists(achievementsDestinationPath))
+                {
+                    Directory.Delete(achievementsDestinationPath, true);
+                }
+
+                Directory.Move(Path.Combine(destination, achievement), achievementsDestinationPath);
 
                 var vehicle = @"gui/maps/icons/vehicle";
                 zip.ExtractSelectedEntries("name = *.*", vehicle, destination, ExtractExistingFileAction.OverwriteSilently);
                 var vehiclesPath = Path.Combine(destination, @"vehicle");
+
+                if (Directory.Exists(vehiclesPath))
+                {
+                    Directory.Delete(vehiclesPath, true);
+                }
+
                 Directory.Move(Path.Combine(destination, vehicle), vehiclesPath);
 
                 var files = Directory.GetFiles(vehiclesPath);
@@ -588,6 +608,21 @@ namespace WotDossier.Test
             }
 
 
+        }
+
+        private void EnshureScriptsCopied()
+        {
+            var destination = Path.Combine(Environment.CurrentDirectory, @"Output\Patch");
+            var scriptsPath = Path.Combine(destination, @"scripts");
+
+            if (!Directory.Exists(scriptsPath))
+            {
+                string filepath = Path.Combine(clientPath, @"res\packages\scripts.pkg");
+                using (var zip = new ZipFile(filepath, Encoding.GetEncoding((int)CodePage.CyrillicDOS)))
+                {
+                    zip.ExtractAll(destination, ExtractExistingFileAction.OverwriteSilently);
+                }
+            }
         }
 
         private void CopyGameTextResources()

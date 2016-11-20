@@ -207,7 +207,7 @@ namespace WotDossier.Update.Update
                 return filepath;
             }
 
-            catch
+            catch(Exception e)
             {
                 // when something goes wrong - at least do the cleanup :)
                 if (filepath.Length > 0)
@@ -220,6 +220,7 @@ namespace WotDossier.Update.Update
                     {
                     }
                 }
+                Logger.Error("Error on getting tanks data from server", e);
             }
             return null;
         }

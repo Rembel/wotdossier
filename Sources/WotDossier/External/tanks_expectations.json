@@ -197,7 +197,7 @@
   {
     "comp_descr": 14657,
     "tank_title": "AMX 105 AM mle. 47",
-    "icon": "AMX_Ob_Am105",
+    "icon": "F66_AMX_Ob_Am105",
     "pr_nominal_damage": 400.0,
     "wn8_nominal_damage": 397.33,
     "wn8_nominal_win_rate": 54.01,
@@ -223,7 +223,7 @@
   {
     "comp_descr": 4161,
     "tank_title": "AMX 13 105 AM mle. 50",
-    "icon": "AMX_105AM",
+    "icon": "F22_AMX_105AM",
     "pr_nominal_damage": 750.0,
     "wn8_nominal_damage": 597.94,
     "wn8_nominal_win_rate": 52.9,
@@ -262,7 +262,7 @@
   {
     "comp_descr": 5185,
     "tank_title": "AMX 13 75",
-    "icon": "AMX_13_75",
+    "icon": "F16_AMX_13_75",
     "pr_nominal_damage": 700.0,
     "wn8_nominal_damage": 613.95,
     "wn8_nominal_win_rate": 51.12,
@@ -288,7 +288,7 @@
   {
     "comp_descr": 4673,
     "tank_title": "AMX 13 F3 AM",
-    "icon": "AMX_13F3AM",
+    "icon": "F23_AMX_13F3AM",
     "pr_nominal_damage": 1200.0,
     "wn8_nominal_damage": 961.32,
     "wn8_nominal_win_rate": 53.15,
@@ -327,7 +327,7 @@
   {
     "comp_descr": 5953,
     "tank_title": "AMX 38",
-    "icon": "AMX38",
+    "icon": "F13_AMX38",
     "pr_nominal_damage": 100.0,
     "wn8_nominal_damage": 214.75,
     "wn8_nominal_win_rate": 57.2,
@@ -340,7 +340,7 @@
   {
     "comp_descr": 2881,
     "tank_title": "AMX 40",
-    "icon": "AMX40",
+    "icon": "F14_AMX40",
     "pr_nominal_damage": 250.0,
     "wn8_nominal_damage": 225.92,
     "wn8_nominal_win_rate": 52.79,
@@ -392,7 +392,7 @@
   {
     "comp_descr": 11073,
     "tank_title": "AMX 50 Foch",
-    "icon": "AMX50_Foch",
+    "icon": "F37_AMX50_Foch",
     "pr_nominal_damage": 2200.0,
     "wn8_nominal_damage": 1580.26,
     "wn8_nominal_win_rate": 50.26,
@@ -457,7 +457,7 @@
   {
     "comp_descr": 14145,
     "tank_title": "AMX ELC bis",
-    "icon": "ELC_AMX",
+    "icon": "F62_ELC_AMX",
     "pr_nominal_damage": 275.0,
     "wn8_nominal_damage": 481.96,
     "wn8_nominal_win_rate": 53.84,
@@ -522,7 +522,7 @@
   {
     "comp_descr": 11585,
     "tank_title": "ARL V39",
-    "icon": "ARL_V39",
+    "icon": "F34_ARL_V39",
     "pr_nominal_damage": 850.0,
     "wn8_nominal_damage": 709.44,
     "wn8_nominal_win_rate": 50.86,
@@ -600,7 +600,7 @@
   {
     "comp_descr": 14353,
     "tank_title": "Aufklarungspanzer Panther",
-    "icon": "Auf_Panther",
+    "icon": "G85_Auf_Panther",
     "pr_nominal_damage": 700.0,
     "wn8_nominal_damage": 673.84,
     "wn8_nominal_win_rate": 51.02,
@@ -613,7 +613,7 @@
   {
     "comp_descr": 1089,
     "tank_title": "B1",
-    "icon": "B1",
+    "icon": "F04_B1",
     "pr_nominal_damage": 250.0,
     "wn8_nominal_damage": 326.95,
     "wn8_nominal_win_rate": 54.04,
@@ -626,7 +626,7 @@
   {
     "comp_descr": 14401,
     "tank_title": "Bat.-Chatillon 155 55",
-    "icon": "Bat_Chatillon155_55",
+    "icon": "F67_Bat_Chatillon155_55",
     "pr_nominal_damage": 2000.0,
     "wn8_nominal_damage": 1474.08,
     "wn8_nominal_win_rate": 50.05,
@@ -639,7 +639,7 @@
   {
     "comp_descr": 11841,
     "tank_title": "Bat.-Chatillon 155 58",
-    "icon": "Bat_Chatillon155_58",
+    "icon": "F38_Bat_Chatillon155_58",
     "pr_nominal_damage": 2200.0,
     "wn8_nominal_damage": 1760.24,
     "wn8_nominal_win_rate": 49.98,
@@ -652,7 +652,7 @@
   {
     "comp_descr": 3649,
     "tank_title": "Bat.-Chatillon 25 t",
-    "icon": "Bat_Chatillon25t",
+    "icon": "F18_Bat_Chatillon25t",
     "pr_nominal_damage": 2100.0,
     "wn8_nominal_damage": 1869.91,
     "wn8_nominal_win_rate": 48.73,
@@ -663,10 +663,10 @@
     "tank_type": 2
   },
   {
-    "comp_descr": 62529,
+    "comp_descr": 5697,
     "tank_title": "Bat.-Chatillon 25 t AP",
     "icon": "F75_Char_de_25t",
-    "pr_nominal_damage": 1900.0,
+    "pr_nominal_damage": 1800.0,
     "wn8_nominal_damage": 1421.89,
     "wn8_nominal_win_rate": 49.46,
     "wn8_nominal_spotted": 1.3,
@@ -678,7 +678,7 @@
   {
     "comp_descr": 6721,
     "tank_title": "BDR G1 B",
-    "icon": "BDR_G1B",
+    "icon": "F05_BDR_G1B",
     "pr_nominal_damage": 500.0,
     "wn8_nominal_damage": 629.89,
     "wn8_nominal_win_rate": 54.02,
@@ -726,19 +726,6 @@
     "wn8_nominal_defence": 1.11,
     "tank_level": 7,
     "tank_type": 3
-  },
-  {
-    "comp_descr": 769,
-    "tank_title": "BT-7",
-    "icon": "R03_BT-7",
-    "pr_nominal_damage": 100.0,
-    "wn8_nominal_damage": 208.34,
-    "wn8_nominal_win_rate": 54.05,
-    "wn8_nominal_spotted": 2.0,
-    "wn8_nominal_frags": 0.81,
-    "wn8_nominal_defence": 0.98,
-    "tank_level": 3,
-    "tank_type": 1
   },
   {
     "comp_descr": 3921,
@@ -1055,7 +1042,7 @@
   {
     "comp_descr": 1601,
     "tank_title": "D1",
-    "icon": "D1",
+    "icon": "F02_D1",
     "pr_nominal_damage": 125.0,
     "wn8_nominal_damage": 226.85,
     "wn8_nominal_win_rate": 57.26,
@@ -1068,7 +1055,7 @@
   {
     "comp_descr": 321,
     "tank_title": "D2",
-    "icon": "D2",
+    "icon": "F03_D2",
     "pr_nominal_damage": 140.0,
     "wn8_nominal_damage": 285.38,
     "wn8_nominal_win_rate": 57.96,
@@ -1081,7 +1068,7 @@
   {
     "comp_descr": 57105,
     "tank_title": "Dicker Max",
-    "icon": "DickerMax",
+    "icon": "G41_DickerMax",
     "pr_nominal_damage": 850.0,
     "wn8_nominal_damage": 854.09,
     "wn8_nominal_win_rate": 52.29,
@@ -1094,7 +1081,7 @@
   {
     "comp_descr": 13329,
     "tank_title": "Durchbruchswagen 2",
-    "icon": "DW_II",
+    "icon": "G90_DW_II",
     "pr_nominal_damage": 300.0,
     "wn8_nominal_damage": 413.44,
     "wn8_nominal_win_rate": 56.54,
@@ -1107,7 +1094,7 @@
   {
     "comp_descr": 9489,
     "tank_title": "E 100",
-    "icon": "E-100",
+    "icon": "G56_E-100",
     "pr_nominal_damage": 2300.0,
     "wn8_nominal_damage": 1931.54,
     "wn8_nominal_win_rate": 49.73,
@@ -1133,7 +1120,7 @@
   {
     "comp_descr": 10257,
     "tank_title": "E 50",
-    "icon": "E-50",
+    "icon": "G54_E-50",
     "pr_nominal_damage": 1900.0,
     "wn8_nominal_damage": 1528.52,
     "wn8_nominal_win_rate": 50.48,
@@ -1146,7 +1133,7 @@
   {
     "comp_descr": 12305,
     "tank_title": "E 50 Ausf. M",
-    "icon": "E50_Ausf_M",
+    "icon": "G73_E50_Ausf_M",
     "pr_nominal_damage": 2200.0,
     "wn8_nominal_damage": 1857.67,
     "wn8_nominal_win_rate": 48.52,
@@ -1159,7 +1146,7 @@
   {
     "comp_descr": 9745,
     "tank_title": "E 75",
-    "icon": "E-75",
+    "icon": "G55_E-75",
     "pr_nominal_damage": 2000.0,
     "wn8_nominal_damage": 1566.14,
     "wn8_nominal_win_rate": 51.05,
@@ -1198,7 +1185,7 @@
   {
     "comp_descr": 2369,
     "tank_title": "FCM 36 Pak 40",
-    "icon": "FCM_36Pak40",
+    "icon": "F27_FCM_36Pak40",
     "pr_nominal_damage": 450.0,
     "wn8_nominal_damage": 434.32,
     "wn8_nominal_win_rate": 58.97,
@@ -1224,7 +1211,7 @@
   {
     "comp_descr": 7697,
     "tank_title": "Ferdinand",
-    "icon": "Ferdinand",
+    "icon": "G37_Ferdinand",
     "pr_nominal_damage": 1800.0,
     "wn8_nominal_damage": 1461.46,
     "wn8_nominal_win_rate": 50.96,
@@ -1367,7 +1354,7 @@
   {
     "comp_descr": 9233,
     "tank_title": "G.W. E 100",
-    "icon": "G_E",
+    "icon": "G61_G_E",
     "pr_nominal_damage": 2200.0,
     "wn8_nominal_damage": 1701.21,
     "wn8_nominal_win_rate": 48.82,
@@ -1380,7 +1367,7 @@
   {
     "comp_descr": 8977,
     "tank_title": "G.W. Panther",
-    "icon": "G_Panther",
+    "icon": "G49_G_Panther",
     "pr_nominal_damage": 1550.0,
     "wn8_nominal_damage": 1179.13,
     "wn8_nominal_win_rate": 51.68,
@@ -1406,7 +1393,7 @@
   {
     "comp_descr": 15377,
     "tank_title": "G.W. Tiger (P)",
-    "icon": "GW_Tiger_P",
+    "icon": "G94_GW_Tiger_P",
     "pr_nominal_damage": 1750.0,
     "wn8_nominal_damage": 1198.98,
     "wn8_nominal_win_rate": 50.11,
@@ -1495,22 +1482,9 @@
     "tank_type": 3
   },
   {
-    "comp_descr": 1809,
-    "tank_title": "Hetzer",
-    "icon": "Hetzer",
-    "pr_nominal_damage": 400.0,
-    "wn8_nominal_damage": 444.65,
-    "wn8_nominal_win_rate": 56.09,
-    "wn8_nominal_spotted": 0.62,
-    "wn8_nominal_frags": 1.38,
-    "wn8_nominal_defence": 1.12,
-    "tank_level": 4,
-    "tank_type": 4
-  },
-  {
     "comp_descr": 1345,
     "tank_title": "Hotchkiss H35",
-    "icon": "Hotchkiss_H35",
+    "icon": "F12_Hotchkiss_H35",
     "pr_nominal_damage": 175.0,
     "wn8_nominal_damage": 235.06,
     "wn8_nominal_win_rate": 58.59,
@@ -1536,7 +1510,7 @@
   {
     "comp_descr": 13841,
     "tank_title": "Indien-Panzer",
-    "icon": "Indien_Panzer",
+    "icon": "G88_Indien_Panzer",
     "pr_nominal_damage": 1350.0,
     "wn8_nominal_damage": 1134.78,
     "wn8_nominal_win_rate": 50.4,
@@ -1562,7 +1536,7 @@
   {
     "comp_descr": 3857,
     "tank_title": "Jagdpanther",
-    "icon": "JagdPanther",
+    "icon": "G18_JagdPanther",
     "pr_nominal_damage": 1300.0,
     "wn8_nominal_damage": 1068.76,
     "wn8_nominal_win_rate": 52.61,
@@ -1586,9 +1560,22 @@
     "tank_type": 4
   },
   {
+    "comp_descr": 1809,
+    "tank_title": "Jagdpanzer 38(t) Hetzer",
+    "icon": "G09_Hetzer",
+    "pr_nominal_damage": 400.0,
+    "wn8_nominal_damage": 444.65,
+    "wn8_nominal_win_rate": 56.09,
+    "wn8_nominal_spotted": 0.62,
+    "wn8_nominal_frags": 1.38,
+    "wn8_nominal_defence": 1.12,
+    "tank_level": 4,
+    "tank_type": 4
+  },
+  {
     "comp_descr": 12049,
     "tank_title": "Jagdpanzer E 100",
-    "icon": "JagdPz_E100",
+    "icon": "G72_JagdPz_E100",
     "pr_nominal_damage": 2400.0,
     "wn8_nominal_damage": 2092.41,
     "wn8_nominal_win_rate": 49.36,
@@ -1677,22 +1664,22 @@
     "tank_type": 4
   },
   {
-    "comp_descr": 63233,
-    "tank_title": "KV-4 by Kreslavskiy",
-    "icon": "R128_KV4_Kreslavskiy",
-    "pr_nominal_damage": 1600.0,
-    "wn8_nominal_damage": 1179.34,
-    "wn8_nominal_win_rate": 52.5,
-    "wn8_nominal_spotted": 0.81,
-    "wn8_nominal_frags": 0.81,
-    "wn8_nominal_defence": 0.73,
-    "tank_level": 8,
+    "comp_descr": 51201,
+    "tank_title": "KV-220-2 Beta Test",
+    "icon": "R38_KV-220_beta",
+    "pr_nominal_damage": 450.0,
+    "wn8_nominal_damage": 693.27,
+    "wn8_nominal_win_rate": 59.7,
+    "wn8_nominal_spotted": 1.41,
+    "wn8_nominal_frags": 1.43,
+    "wn8_nominal_defence": 1.3,
+    "tank_level": 5,
     "tank_type": 3
   },
   {
     "comp_descr": 3089,
     "tank_title": "Leichttraktor",
-    "icon": "Ltraktor",
+    "icon": "G12_Ltraktor",
     "pr_nominal_damage": 125.0,
     "wn8_nominal_damage": 252.0,
     "wn8_nominal_win_rate": 59.11,
@@ -1770,7 +1757,7 @@
   {
     "comp_descr": 7233,
     "tank_title": "Lorraine 155 mle. 50",
-    "icon": "Lorraine155_50",
+    "icon": "F24_Lorraine155_50",
     "pr_nominal_damage": 1550.0,
     "wn8_nominal_damage": 1132.9,
     "wn8_nominal_win_rate": 51.78,
@@ -1783,7 +1770,7 @@
   {
     "comp_descr": 7489,
     "tank_title": "Lorraine 155 mle. 51",
-    "icon": "Lorraine155_51",
+    "icon": "F25_Lorraine155_51",
     "pr_nominal_damage": 1750.0,
     "wn8_nominal_damage": 1324.46,
     "wn8_nominal_win_rate": 50.83,
@@ -1796,7 +1783,7 @@
   {
     "comp_descr": 3393,
     "tank_title": "Lorraine 39L AM",
-    "icon": "Lorraine39_L_AM",
+    "icon": "F21_Lorraine39_L_AM",
     "pr_nominal_damage": 425.0,
     "wn8_nominal_damage": 418.61,
     "wn8_nominal_win_rate": 58.16,
@@ -1807,10 +1794,10 @@
     "tank_type": 5
   },
   {
-    "comp_descr": 5697,
+    "comp_descr": 62529,
     "tank_title": "Lorraine 40 t",
-    "icon": "Lorraine40t",
-    "pr_nominal_damage": 1800.0,
+    "icon": "F19_Lorraine40t",
+    "pr_nominal_damage": 1900.0,
     "wn8_nominal_damage": 1421.89,
     "wn8_nominal_win_rate": 49.46,
     "wn8_nominal_spotted": 1.3,
@@ -1822,7 +1809,7 @@
   {
     "comp_descr": 54289,
     "tank_title": "Lowe",
-    "icon": "Lowe",
+    "icon": "G51_Lowe",
     "pr_nominal_damage": 1400.0,
     "wn8_nominal_damage": 1241.5,
     "wn8_nominal_win_rate": 50.08,
@@ -1887,7 +1874,7 @@
   {
     "comp_descr": 9505,
     "tank_title": "M103",
-    "icon": "M103",
+    "icon": "A66_M103",
     "pr_nominal_damage": 2000.0,
     "wn8_nominal_damage": 1534.64,
     "wn8_nominal_win_rate": 50.5,
@@ -1900,7 +1887,7 @@
   {
     "comp_descr": 7969,
     "tank_title": "M12",
-    "icon": "M12",
+    "icon": "A32_M12",
     "pr_nominal_damage": 1550.0,
     "wn8_nominal_damage": 1157.11,
     "wn8_nominal_win_rate": 52.57,
@@ -1913,7 +1900,7 @@
   {
     "comp_descr": 11553,
     "tank_title": "M18 Hellcat",
-    "icon": "M18_Hellcat",
+    "icon": "A41_M18_Hellcat",
     "pr_nominal_damage": 950.0,
     "wn8_nominal_damage": 850.23,
     "wn8_nominal_win_rate": 54.38,
@@ -1965,7 +1952,7 @@
   {
     "comp_descr": 52769,
     "tank_title": "M22 Locust",
-    "icon": "M22_Locust",
+    "icon": "A43_M22_Locust",
     "pr_nominal_damage": 250.0,
     "wn8_nominal_damage": 277.13,
     "wn8_nominal_win_rate": 57.29,
@@ -1978,7 +1965,7 @@
   {
     "comp_descr": 9761,
     "tank_title": "M24 Chaffee",
-    "icon": "M24_Chaffee",
+    "icon": "A34_M24_Chaffee",
     "pr_nominal_damage": 550.0,
     "wn8_nominal_damage": 456.21,
     "wn8_nominal_win_rate": 54.61,
@@ -2004,7 +1991,7 @@
   {
     "comp_descr": 3105,
     "tank_title": "M3 Lee",
-    "icon": "M3_Grant",
+    "icon": "A04_M3_Grant",
     "pr_nominal_damage": 250.0,
     "wn8_nominal_damage": 327.52,
     "wn8_nominal_win_rate": 54.22,
@@ -2030,7 +2017,7 @@
   {
     "comp_descr": 7201,
     "tank_title": "M36 Jackson",
-    "icon": "M36_Slagger",
+    "icon": "A31_M36_Slagger",
     "pr_nominal_damage": 850.0,
     "wn8_nominal_damage": 834.35,
     "wn8_nominal_win_rate": 54.82,
@@ -2043,7 +2030,7 @@
   {
     "comp_descr": 4641,
     "tank_title": "M37",
-    "icon": "M37",
+    "icon": "A17_M37",
     "pr_nominal_damage": 400.0,
     "wn8_nominal_damage": 384.14,
     "wn8_nominal_win_rate": 53.8,
@@ -2082,7 +2069,7 @@
   {
     "comp_descr": 7457,
     "tank_title": "M40/M43",
-    "icon": "M40M43",
+    "icon": "A37_M40M43",
     "pr_nominal_damage": 1800.0,
     "wn8_nominal_damage": 1412.4,
     "wn8_nominal_win_rate": 52.03,
@@ -2108,7 +2095,7 @@
   {
     "comp_descr": 17953,
     "tank_title": "M41 Walker Bulldog",
-    "icon": "M41_Bulldog",
+    "icon": "A97_M41_Bulldog",
     "pr_nominal_damage": 725.0,
     "wn8_nominal_damage": 848.42,
     "wn8_nominal_win_rate": 52.9,
@@ -2199,7 +2186,7 @@
   {
     "comp_descr": 52257,
     "tank_title": "M4A2E4 Sherman",
-    "icon": "M4A2E4",
+    "icon": "A44_M4A2E4",
     "pr_nominal_damage": 400.0,
     "wn8_nominal_damage": 445.44,
     "wn8_nominal_win_rate": 53.99,
@@ -2238,7 +2225,7 @@
   {
     "comp_descr": 1313,
     "tank_title": "M4A3E8 Sherman",
-    "icon": "M4A3E8_Sherman",
+    "icon": "A06_M4A3E8_Sherman",
     "pr_nominal_damage": 625.0,
     "wn8_nominal_damage": 698.18,
     "wn8_nominal_win_rate": 55.22,
@@ -2251,7 +2238,7 @@
   {
     "comp_descr": 5153,
     "tank_title": "M5 Stuart",
-    "icon": "M5_Stuart",
+    "icon": "A22_M5_Stuart",
     "pr_nominal_damage": 160.0,
     "wn8_nominal_damage": 260.36,
     "wn8_nominal_win_rate": 55.44,
@@ -2303,7 +2290,7 @@
   {
     "comp_descr": 801,
     "tank_title": "M6",
-    "icon": "M6",
+    "icon": "A10_M6",
     "pr_nominal_damage": 800.0,
     "wn8_nominal_damage": 824.92,
     "wn8_nominal_win_rate": 53.75,
@@ -2368,7 +2355,7 @@
   {
     "comp_descr": 10273,
     "tank_title": "M8A1",
-    "icon": "M8A1",
+    "icon": "A57_M8A1",
     "pr_nominal_damage": 350.0,
     "wn8_nominal_damage": 473.0,
     "wn8_nominal_win_rate": 57.91,
@@ -2433,7 +2420,7 @@
   {
     "comp_descr": 6929,
     "tank_title": "Maus",
-    "icon": "Maus",
+    "icon": "G42_Maus",
     "pr_nominal_damage": 2200.0,
     "wn8_nominal_damage": 1775.7,
     "wn8_nominal_win_rate": 49.65,
@@ -2446,7 +2433,7 @@
   {
     "comp_descr": 52001,
     "tank_title": "MTLS-1G14",
-    "icon": "MTLS-1G14",
+    "icon": "A33_MTLS-1G14",
     "pr_nominal_damage": 400.0,
     "wn8_nominal_damage": 277.13,
     "wn8_nominal_win_rate": 57.29,
@@ -2468,32 +2455,6 @@
     "wn8_nominal_defence": 1.15,
     "tank_level": 6,
     "tank_type": 4
-  },
-  {
-    "comp_descr": 50689,
-    "tank_title": "Object 268 Version V",
-    "icon": "R126_Object_730_5",
-    "pr_nominal_damage": 2800.0,
-    "wn8_nominal_damage": 2095.69,
-    "wn8_nominal_win_rate": 48.96,
-    "wn8_nominal_spotted": 0.81,
-    "wn8_nominal_frags": 1.01,
-    "wn8_nominal_defence": 0.57,
-    "tank_level": 10,
-    "tank_type": 4
-  },
-  {
-    "comp_descr": 17153,
-    "tank_title": "Object 430",
-    "icon": "R96_Object_430",
-    "pr_nominal_damage": 2200.0,
-    "wn8_nominal_damage": 1817.73,
-    "wn8_nominal_win_rate": 50.23,
-    "wn8_nominal_spotted": 1.52,
-    "wn8_nominal_frags": 1.05,
-    "wn8_nominal_defence": 0.79,
-    "tank_level": 10,
-    "tank_type": 2
   },
   {
     "comp_descr": 4961,
@@ -2550,7 +2511,7 @@
   {
     "comp_descr": 1297,
     "tank_title": "Panther",
-    "icon": "PzV",
+    "icon": "G03_PzV_Panther",
     "pr_nominal_damage": 900.0,
     "wn8_nominal_damage": 900.4,
     "wn8_nominal_win_rate": 53.22,
@@ -2563,7 +2524,7 @@
   {
     "comp_descr": 8465,
     "tank_title": "Panther II",
-    "icon": "Panther_II",
+    "icon": "G64_Panther_II",
     "pr_nominal_damage": 1350.0,
     "wn8_nominal_damage": 1079.15,
     "wn8_nominal_win_rate": 52.13,
@@ -2680,7 +2641,7 @@
   {
     "comp_descr": 52497,
     "tank_title": "Pz.Kpfw. 38H 735 (f)",
-    "icon": "H39_captured",
+    "icon": "G33_H39_captured",
     "pr_nominal_damage": 300.0,
     "wn8_nominal_damage": 343.02,
     "wn8_nominal_win_rate": 56.35,
@@ -2693,7 +2654,7 @@
   {
     "comp_descr": 52241,
     "tank_title": "Pz.Kpfw. B2 740 (f)",
-    "icon": "B-1bis_captured",
+    "icon": "G35_B-1bis_captured",
     "pr_nominal_damage": 400.0,
     "wn8_nominal_damage": 535.42,
     "wn8_nominal_win_rate": 60.82,
@@ -2706,7 +2667,7 @@
   {
     "comp_descr": 12817,
     "tank_title": "Pz.Kpfw. I",
-    "icon": "PzI",
+    "icon": "G53_PzI",
     "pr_nominal_damage": 145.0,
     "wn8_nominal_damage": 184.55,
     "wn8_nominal_win_rate": 56.56,
@@ -2719,7 +2680,7 @@
   {
     "comp_descr": 12561,
     "tank_title": "Pz.Kpfw. I Ausf. C",
-    "icon": "PzI_ausf_C",
+    "icon": "G63_PzI_ausf_C",
     "pr_nominal_damage": 225.0,
     "wn8_nominal_damage": 238.12,
     "wn8_nominal_win_rate": 55.76,
@@ -2795,22 +2756,9 @@
     "tank_type": 1
   },
   {
-    "comp_descr": 4369,
-    "tank_title": "Pz.Kpfw. III",
-    "icon": "PzIII_AusfJ",
-    "pr_nominal_damage": 270.0,
-    "wn8_nominal_damage": 328.24,
-    "wn8_nominal_win_rate": 56.07,
-    "wn8_nominal_spotted": 1.89,
-    "wn8_nominal_frags": 0.96,
-    "wn8_nominal_defence": 0.94,
-    "tank_level": 4,
-    "tank_type": 2
-  },
-  {
     "comp_descr": 4881,
-    "tank_title": "Pz.Kpfw. III Ausf. A",
-    "icon": "PzIII_A",
+    "tank_title": "Pz.Kpfw. III Ausf. E",
+    "icon": "G102_Pz_III",
     "pr_nominal_damage": 135.0,
     "wn8_nominal_damage": 271.37,
     "wn8_nominal_win_rate": 57.43,
@@ -2819,6 +2767,19 @@
     "wn8_nominal_defence": 1.03,
     "tank_level": 3,
     "tank_type": 1
+  },
+  {
+    "comp_descr": 4369,
+    "tank_title": "Pz.Kpfw. III Ausf. J",
+    "icon": "G10_PzIII_AusfJ",
+    "pr_nominal_damage": 270.0,
+    "wn8_nominal_damage": 328.24,
+    "wn8_nominal_win_rate": 56.07,
+    "wn8_nominal_spotted": 1.89,
+    "wn8_nominal_frags": 0.96,
+    "wn8_nominal_defence": 0.94,
+    "tank_level": 4,
+    "tank_type": 2
   },
   {
     "comp_descr": 61457,
@@ -2836,7 +2797,7 @@
   {
     "comp_descr": 6417,
     "tank_title": "Pz.Kpfw. III/IV",
-    "icon": "PzIII_IV",
+    "icon": "G28_PzIII_IV",
     "pr_nominal_damage": 325.0,
     "wn8_nominal_damage": 413.68,
     "wn8_nominal_win_rate": 53.0,
@@ -2849,7 +2810,7 @@
   {
     "comp_descr": 17,
     "tank_title": "Pz.Kpfw. IV",
-    "icon": "PzIV",
+    "icon": "G79_Pz_IV_AusfGH",
     "pr_nominal_damage": 500.0,
     "wn8_nominal_damage": 544.32,
     "wn8_nominal_win_rate": 55.45,
@@ -2862,7 +2823,7 @@
   {
     "comp_descr": 17169,
     "tank_title": "Pz.Kpfw. IV Ausf. A",
-    "icon": "Pz_IV_AusfA",
+    "icon": "G83_Pz_IV_AusfA",
     "pr_nominal_damage": 220.0,
     "wn8_nominal_damage": 312.16,
     "wn8_nominal_win_rate": 58.51,
@@ -2875,7 +2836,7 @@
   {
     "comp_descr": 17425,
     "tank_title": "Pz.Kpfw. IV Ausf. D",
-    "icon": "Pz_IV_AusfD",
+    "icon": "G80_Pz_IV_AusfD",
     "pr_nominal_damage": 270.0,
     "wn8_nominal_damage": 427.76,
     "wn8_nominal_win_rate": 56.78,
@@ -2888,7 +2849,7 @@
   {
     "comp_descr": 18193,
     "tank_title": "Pz.Kpfw. IV Ausf. H",
-    "icon": "Pz_IV_AusfH",
+    "icon": "G81_Pz_IV_AusfH",
     "pr_nominal_damage": 450.0,
     "wn8_nominal_damage": 544.32,
     "wn8_nominal_win_rate": 55.45,
@@ -2901,7 +2862,7 @@
   {
     "comp_descr": 55057,
     "tank_title": "Pz.Kpfw. IV hydrostat.",
-    "icon": "PzIV_Hydro",
+    "icon": "G70_PzIV_Hydro",
     "pr_nominal_damage": 475.0,
     "wn8_nominal_damage": 588.01,
     "wn8_nominal_win_rate": 53.54,
@@ -2914,7 +2875,7 @@
   {
     "comp_descr": 57361,
     "tank_title": "Pz.Kpfw. IV Schmalturm",
-    "icon": "PzIV_schmalturm",
+    "icon": "G77_PzIV_Schmalturm",
     "pr_nominal_damage": 725.0,
     "wn8_nominal_damage": 714.75,
     "wn8_nominal_win_rate": 51.98,
@@ -2940,7 +2901,7 @@
   {
     "comp_descr": 54801,
     "tank_title": "Pz.Kpfw. T 15",
-    "icon": "T-15",
+    "icon": "G50_T-15",
     "pr_nominal_damage": 250.0,
     "wn8_nominal_damage": 263.73,
     "wn8_nominal_win_rate": 59.12,
@@ -2966,7 +2927,7 @@
   {
     "comp_descr": 51473,
     "tank_title": "Pz.Kpfw. V/IV",
-    "icon": "PzV_PzIV",
+    "icon": "G32_PzV_PzIV",
     "pr_nominal_damage": 525.0,
     "wn8_nominal_damage": 473.49,
     "wn8_nominal_win_rate": 49.86,
@@ -2979,7 +2940,7 @@
   {
     "comp_descr": 54033,
     "tank_title": "Pz.Kpfw. V/IV Alpha",
-    "icon": "PzV_PzIV_ausf_Alfa",
+    "icon": "G32_PzV_PzIV_ausf_Alfa",
     "pr_nominal_damage": 525.0,
     "wn8_nominal_damage": 473.49,
     "wn8_nominal_win_rate": 49.86,
@@ -2992,7 +2953,7 @@
   {
     "comp_descr": 15633,
     "tank_title": "Pz.Sfl. IVb",
-    "icon": "Pz_Sfl_IVb",
+    "icon": "G95_Pz_Sfl_IVb",
     "pr_nominal_damage": 400.0,
     "wn8_nominal_damage": 438.98,
     "wn8_nominal_win_rate": 55.31,
@@ -3005,7 +2966,7 @@
   {
     "comp_descr": 16145,
     "tank_title": "Pz.Sfl. IVc",
-    "icon": "Pz_Sfl_IVc",
+    "icon": "G76_Pz_Sfl_IVc",
     "pr_nominal_damage": 550.0,
     "wn8_nominal_damage": 615.04,
     "wn8_nominal_win_rate": 52.5,
@@ -3018,7 +2979,7 @@
   {
     "comp_descr": 51745,
     "tank_title": "Ram II",
-    "icon": "Ram-II",
+    "icon": "A62_Ram-II",
     "pr_nominal_damage": 450.0,
     "wn8_nominal_damage": 549.03,
     "wn8_nominal_win_rate": 57.4,
@@ -3031,7 +2992,7 @@
   {
     "comp_descr": 577,
     "tank_title": "Renault FT",
-    "icon": "RenaultFT",
+    "icon": "F01_RenaultFT",
     "pr_nominal_damage": 90.0,
     "wn8_nominal_damage": 197.72,
     "wn8_nominal_win_rate": 56.83,
@@ -3044,7 +3005,7 @@
   {
     "comp_descr": 833,
     "tank_title": "Renault FT 75 BS",
-    "icon": "RenaultBS",
+    "icon": "F20_RenaultBS",
     "pr_nominal_damage": 170.0,
     "wn8_nominal_damage": 244.88,
     "wn8_nominal_win_rate": 57.79,
@@ -3057,7 +3018,7 @@
   {
     "comp_descr": 7745,
     "tank_title": "Renault FT AC",
-    "icon": "RenaultFT_AC",
+    "icon": "F30_RenaultFT_AC",
     "pr_nominal_damage": 200.0,
     "wn8_nominal_damage": 326.57,
     "wn8_nominal_win_rate": 59.96,
@@ -3096,7 +3057,7 @@
   {
     "comp_descr": 609,
     "tank_title": "Renault Otsu",
-    "icon": "NC27",
+    "icon": "J01_NC27",
     "pr_nominal_damage": 100.0,
     "wn8_nominal_damage": 198.09,
     "wn8_nominal_win_rate": 57.36,
@@ -3122,7 +3083,7 @@
   {
     "comp_descr": 8257,
     "tank_title": "Renault UE 57",
-    "icon": "RenaultUE57",
+    "icon": "F52_RenaultUE57",
     "pr_nominal_damage": 250.0,
     "wn8_nominal_damage": 357.41,
     "wn8_nominal_win_rate": 59.02,
@@ -3146,9 +3107,22 @@
     "tank_type": 4
   },
   {
+    "comp_descr": 50193,
+    "tank_title": "Rheinmetall Skorpion G",
+    "icon": "G114_Rheinmetall_Skorpian",
+    "pr_nominal_damage": 1550.0,
+    "wn8_nominal_damage": 1617.19,
+    "wn8_nominal_win_rate": 51.6,
+    "wn8_nominal_spotted": 0.54,
+    "wn8_nominal_frags": 1.19,
+    "wn8_nominal_defence": 1.02,
+    "tank_level": 8,
+    "tank_type": 4
+  },
+  {
     "comp_descr": 16657,
     "tank_title": "Rhm.-Borsig Waffentrager",
-    "icon": "RhB_Waffentrager",
+    "icon": "G99_RhB_Waffentrager",
     "pr_nominal_damage": 1800.0,
     "wn8_nominal_damage": 1617.19,
     "wn8_nominal_win_rate": 51.6,
@@ -3161,7 +3135,7 @@
   {
     "comp_descr": 10049,
     "tank_title": "S35 CA",
-    "icon": "S_35CA",
+    "icon": "F33_S_35CA",
     "pr_nominal_damage": 675.0,
     "wn8_nominal_damage": 676.29,
     "wn8_nominal_win_rate": 55.03,
@@ -3304,7 +3278,7 @@
   {
     "comp_descr": 9793,
     "tank_title": "Somua SAu 40",
-    "icon": "Somua_Sau_40",
+    "icon": "F32_Somua_Sau_40",
     "pr_nominal_damage": 280.0,
     "wn8_nominal_damage": 384.76,
     "wn8_nominal_win_rate": 55.04,
@@ -3356,7 +3330,7 @@
   {
     "comp_descr": 2657,
     "tank_title": "STA-1",
-    "icon": "STA_1",
+    "icon": "J13_STA_1",
     "pr_nominal_damage": 1400.0,
     "wn8_nominal_damage": 1151.44,
     "wn8_nominal_win_rate": 51.05,
@@ -3382,7 +3356,7 @@
   {
     "comp_descr": 3681,
     "tank_title": "STB-1",
-    "icon": "ST_B1",
+    "icon": "J16_ST_B1",
     "pr_nominal_damage": 2200.0,
     "wn8_nominal_damage": 1898.81,
     "wn8_nominal_win_rate": 49.05,
@@ -3390,6 +3364,19 @@
     "wn8_nominal_frags": 1.03,
     "wn8_nominal_defence": 0.81,
     "tank_level": 10,
+    "tank_type": 2
+  },
+  {
+    "comp_descr": 51585,
+    "tank_title": "Strv m/42-57 Alt A.2",
+    "icon": "S01_Strv_74_A2",
+    "pr_nominal_damage": 750.0,
+    "wn8_nominal_damage": 769.67,
+    "wn8_nominal_win_rate": 53.07,
+    "wn8_nominal_spotted": 1.51,
+    "wn8_nominal_frags": 0.99,
+    "wn8_nominal_defence": 1.03,
+    "tank_level": 6,
     "tank_type": 2
   },
   {
@@ -3447,7 +3434,7 @@
   {
     "comp_descr": 11025,
     "tank_title": "Sturer Emil",
-    "icon": "Sturer_Emil",
+    "icon": "G43_Sturer_Emil",
     "pr_nominal_damage": 1300.0,
     "wn8_nominal_damage": 1016.32,
     "wn8_nominal_win_rate": 49.87,
@@ -3482,19 +3469,6 @@
     "wn8_nominal_defence": 1.62,
     "tank_level": 4,
     "tank_type": 5
-  },
-  {
-    "comp_descr": 12033,
-    "tank_title": "SU-122-54",
-    "icon": "R75_SU122_54",
-    "pr_nominal_damage": 2100.0,
-    "wn8_nominal_damage": 1521.63,
-    "wn8_nominal_win_rate": 49.95,
-    "wn8_nominal_spotted": 0.83,
-    "wn8_nominal_frags": 0.96,
-    "wn8_nominal_defence": 0.83,
-    "tank_level": 9,
-    "tank_type": 4
   },
   {
     "comp_descr": 60945,
@@ -3588,22 +3562,9 @@
     "tank_type": 3
   },
   {
-    "comp_descr": 53505,
-    "tank_title": "T-127",
-    "icon": "R56_T-127",
-    "pr_nominal_damage": 380.0,
-    "wn8_nominal_damage": 369.01,
-    "wn8_nominal_win_rate": 57.83,
-    "wn8_nominal_spotted": 1.78,
-    "wn8_nominal_frags": 1.68,
-    "wn8_nominal_defence": 1.69,
-    "tank_level": 3,
-    "tank_type": 1
-  },
-  {
     "comp_descr": 33,
     "tank_title": "T14",
-    "icon": "T14",
+    "icon": "A21_T14",
     "pr_nominal_damage": 450.0,
     "wn8_nominal_damage": 600.51,
     "wn8_nominal_win_rate": 55.62,
@@ -3629,7 +3590,7 @@
   {
     "comp_descr": 53537,
     "tank_title": "T1E6",
-    "icon": "T1_E6",
+    "icon": "A74_T1_E6",
     "pr_nominal_damage": 175.0,
     "wn8_nominal_damage": 182.92,
     "wn8_nominal_win_rate": 55.84,
@@ -3642,7 +3603,7 @@
   {
     "comp_descr": 51489,
     "tank_title": "T2 Light Tank",
-    "icon": "T2_lt",
+    "icon": "A19_T2_lt",
     "pr_nominal_damage": 225.0,
     "wn8_nominal_damage": 191.01,
     "wn8_nominal_win_rate": 55.4,
@@ -3681,7 +3642,7 @@
   {
     "comp_descr": 15137,
     "tank_title": "T21",
-    "icon": "T21",
+    "icon": "A71_T21",
     "pr_nominal_damage": 500.0,
     "wn8_nominal_damage": 480.16,
     "wn8_nominal_win_rate": 52.61,
@@ -3707,7 +3668,7 @@
   {
     "comp_descr": 9249,
     "tank_title": "T25 AT",
-    "icon": "T25_AT",
+    "icon": "A64_T25_AT",
     "pr_nominal_damage": 1300.0,
     "wn8_nominal_damage": 1062.78,
     "wn8_nominal_win_rate": 53.42,
@@ -3733,7 +3694,7 @@
   {
     "comp_descr": 11041,
     "tank_title": "T25/2",
-    "icon": "T25_2",
+    "icon": "A72_T25_2",
     "pr_nominal_damage": 1300.0,
     "wn8_nominal_damage": 969.7,
     "wn8_nominal_win_rate": 52.63,
@@ -3759,7 +3720,7 @@
   {
     "comp_descr": 8225,
     "tank_title": "T28",
-    "icon": "T28",
+    "icon": "A39_T28",
     "pr_nominal_damage": 1800.0,
     "wn8_nominal_damage": 1352.42,
     "wn8_nominal_win_rate": 51.22,
@@ -3900,19 +3861,6 @@
     "tank_type": 2
   },
   {
-    "comp_descr": 2561,
-    "tank_title": "T-34-85",
-    "icon": "R07_T-34-85",
-    "pr_nominal_damage": 775.0,
-    "wn8_nominal_damage": 734.12,
-    "wn8_nominal_win_rate": 54.8,
-    "wn8_nominal_spotted": 1.41,
-    "wn8_nominal_frags": 0.98,
-    "wn8_nominal_defence": 0.93,
-    "tank_level": 6,
-    "tank_type": 2
-  },
-  {
     "comp_descr": 16673,
     "tank_title": "T37",
     "icon": "A94_T37",
@@ -3939,48 +3887,9 @@
     "tank_type": 4
   },
   {
-    "comp_descr": 6657,
-    "tank_title": "T-43",
-    "icon": "R23_T-43",
-    "pr_nominal_damage": 925.0,
-    "wn8_nominal_damage": 872.72,
-    "wn8_nominal_win_rate": 54.23,
-    "wn8_nominal_spotted": 1.51,
-    "wn8_nominal_frags": 0.92,
-    "wn8_nominal_defence": 0.98,
-    "tank_level": 7,
-    "tank_type": 2
-  },
-  {
-    "comp_descr": 50945,
-    "tank_title": "T-45",
-    "icon": "R125_T_45",
-    "pr_nominal_damage": 145.0,
-    "wn8_nominal_damage": 249.15,
-    "wn8_nominal_win_rate": 60.05,
-    "wn8_nominal_spotted": 1.37,
-    "wn8_nominal_frags": 1.45,
-    "wn8_nominal_defence": 1.73,
-    "tank_level": 2,
-    "tank_type": 1
-  },
-  {
-    "comp_descr": 3073,
-    "tank_title": "T-46",
-    "icon": "R22_T-46",
-    "pr_nominal_damage": 135.0,
-    "wn8_nominal_damage": 253.74,
-    "wn8_nominal_win_rate": 55.64,
-    "wn8_nominal_spotted": 1.32,
-    "wn8_nominal_frags": 1.02,
-    "wn8_nominal_defence": 1.02,
-    "tank_level": 3,
-    "tank_type": 1
-  },
-  {
     "comp_descr": 18209,
     "tank_title": "T49",
-    "icon": "T49",
+    "icon": "A100_T49",
     "pr_nominal_damage": 1000.0,
     "wn8_nominal_damage": 911.07,
     "wn8_nominal_win_rate": 50.86,
@@ -4019,7 +3928,7 @@
   {
     "comp_descr": 14881,
     "tank_title": "T57 Heavy Tank",
-    "icon": "T57_58",
+    "icon": "A67_T57_58",
     "pr_nominal_damage": 2550.0,
     "wn8_nominal_damage": 2067.63,
     "wn8_nominal_win_rate": 48.77,
@@ -4045,7 +3954,7 @@
   {
     "comp_descr": 14625,
     "tank_title": "T69",
-    "icon": "T69",
+    "icon": "A90_T69",
     "pr_nominal_damage": 1500.0,
     "wn8_nominal_damage": 1209.15,
     "wn8_nominal_win_rate": 51.97,
@@ -4058,7 +3967,7 @@
   {
     "comp_descr": 55073,
     "tank_title": "T7 Combat Car",
-    "icon": "T7_Combat_Car",
+    "icon": "A93_T7_Combat_Car",
     "pr_nominal_damage": 175.0,
     "wn8_nominal_damage": 173.77,
     "wn8_nominal_win_rate": 56.76,
@@ -4095,19 +4004,6 @@
     "tank_type": 1
   },
   {
-    "comp_descr": 15873,
-    "tank_title": "T-80",
-    "icon": "R44_T80",
-    "pr_nominal_damage": 280.0,
-    "wn8_nominal_damage": 366.27,
-    "wn8_nominal_win_rate": 57.37,
-    "wn8_nominal_spotted": 1.5,
-    "wn8_nominal_frags": 1.04,
-    "wn8_nominal_defence": 1.29,
-    "tank_level": 4,
-    "tank_type": 1
-  },
-  {
     "comp_descr": 18721,
     "tank_title": "T82 HMC",
     "icon": "A27_T82",
@@ -4122,8 +4018,8 @@
   },
   {
     "comp_descr": 8481,
-    "tank_title": "T92",
-    "icon": "T92",
+    "tank_title": "T92 HMC",
+    "icon": "A38_T92",
     "pr_nominal_damage": 2200.0,
     "wn8_nominal_damage": 1702.96,
     "wn8_nominal_win_rate": 49.11,
@@ -4136,7 +4032,7 @@
   {
     "comp_descr": 8737,
     "tank_title": "T95",
-    "icon": "T95",
+    "icon": "A40_T95",
     "pr_nominal_damage": 2100.0,
     "wn8_nominal_damage": 1760.06,
     "wn8_nominal_win_rate": 52.2,
@@ -4149,7 +4045,7 @@
   {
     "comp_descr": 53793,
     "tank_title": "T95E2",
-    "icon": "T95_E2",
+    "icon": "A81_T95_E2",
     "pr_nominal_damage": 1350.0,
     "wn8_nominal_damage": 1142.92,
     "wn8_nominal_win_rate": 53.42,
@@ -4175,7 +4071,7 @@
   {
     "comp_descr": 10769,
     "tank_title": "Tiger (P)",
-    "icon": "PzVI_Tiger_P",
+    "icon": "G57_PzVI_Tiger_P",
     "pr_nominal_damage": 1150.0,
     "wn8_nominal_damage": 1080.19,
     "wn8_nominal_win_rate": 53.51,
@@ -4188,7 +4084,7 @@
   {
     "comp_descr": 529,
     "tank_title": "Tiger I",
-    "icon": "PzVI",
+    "icon": "G04_PzVI_Tiger_I",
     "pr_nominal_damage": 1150.0,
     "wn8_nominal_damage": 1092.65,
     "wn8_nominal_win_rate": 53.06,
@@ -4331,7 +4227,7 @@
   {
     "comp_descr": 1889,
     "tank_title": "Type 4 Chi-To",
-    "icon": "Chi_To",
+    "icon": "J10_Chi_To",
     "pr_nominal_damage": 750.0,
     "wn8_nominal_damage": 735.95,
     "wn8_nominal_win_rate": 51.83,
@@ -4357,7 +4253,7 @@
   {
     "comp_descr": 1121,
     "tank_title": "Type 5 Chi-Ri",
-    "icon": "Chi_Ri",
+    "icon": "J11_Chi_Ri",
     "pr_nominal_damage": 1200.0,
     "wn8_nominal_damage": 914.22,
     "wn8_nominal_win_rate": 50.9,
@@ -4435,7 +4331,7 @@
   {
     "comp_descr": 3425,
     "tank_title": "Type 61",
-    "icon": "Type_61",
+    "icon": "J14_Type_61",
     "pr_nominal_damage": 2000.0,
     "wn8_nominal_damage": 1557.06,
     "wn8_nominal_win_rate": 50.36,
@@ -4539,7 +4435,7 @@
   {
     "comp_descr": 3169,
     "tank_title": "Type 97 Te-Ke",
-    "icon": "Te_Ke",
+    "icon": "J02_Te_Ke",
     "pr_nominal_damage": 160.0,
     "wn8_nominal_damage": 225.13,
     "wn8_nominal_win_rate": 56.79,
@@ -4565,7 +4461,7 @@
   {
     "comp_descr": 51809,
     "tank_title": "Type 98 Ke-Ni Otsu",
-    "icon": "Ke_Ni_B",
+    "icon": "J05_Ke_Ni_B",
     "pr_nominal_damage": 180.0,
     "wn8_nominal_damage": 306.28,
     "wn8_nominal_win_rate": 57.97,
@@ -4721,7 +4617,7 @@
   {
     "comp_descr": 10001,
     "tank_title": "VK 28.01",
-    "icon": "VK2801",
+    "icon": "G66_VK2801",
     "pr_nominal_damage": 500.0,
     "wn8_nominal_damage": 497.77,
     "wn8_nominal_win_rate": 52.55,
@@ -4734,7 +4630,7 @@
   {
     "comp_descr": 14097,
     "tank_title": "VK 30.01 (D)",
-    "icon": "VK3002DB_V1",
+    "icon": "G87_VK3002DB_V1",
     "pr_nominal_damage": 700.0,
     "wn8_nominal_damage": 717.8,
     "wn8_nominal_win_rate": 54.17,
@@ -4773,7 +4669,7 @@
   {
     "comp_descr": 4113,
     "tank_title": "VK 30.02 (D)",
-    "icon": "VK3002DB",
+    "icon": "G24_VK3002DB",
     "pr_nominal_damage": 850.0,
     "wn8_nominal_damage": 860.38,
     "wn8_nominal_win_rate": 52.19,
@@ -4786,7 +4682,7 @@
   {
     "comp_descr": 15889,
     "tank_title": "VK 30.02 (M)",
-    "icon": "VK3002M",
+    "icon": "G96_VK3002M",
     "pr_nominal_damage": 725.0,
     "wn8_nominal_damage": 721.04,
     "wn8_nominal_win_rate": 51.94,
@@ -4812,7 +4708,7 @@
   {
     "comp_descr": 10513,
     "tank_title": "VK 45.02 (P) Ausf. A",
-    "icon": "VK4502A",
+    "icon": "G67_VK4502A",
     "pr_nominal_damage": 1450.0,
     "wn8_nominal_damage": 1216.9,
     "wn8_nominal_win_rate": 51.33,
@@ -4825,7 +4721,7 @@
   {
     "comp_descr": 7441,
     "tank_title": "VK 45.02 (P) Ausf. B",
-    "icon": "VK4502P",
+    "icon": "G58_VK4502P",
     "pr_nominal_damage": 2000.0,
     "wn8_nominal_damage": 1561.36,
     "wn8_nominal_win_rate": 51.35,
@@ -4838,7 +4734,7 @@
   {
     "comp_descr": 62225,
     "tank_title": "VK 45.02 (P) Ausf. B7",
-    "icon": "G58_VK4502P",
+    "icon": "G58_VK4502P7",
     "pr_nominal_damage": 1200.0,
     "wn8_nominal_damage": 1080.19,
     "wn8_nominal_win_rate": 53.51,
@@ -4877,7 +4773,7 @@
   {
     "comp_descr": 16913,
     "tank_title": "Waffentrager auf E 100",
-    "icon": "Waffentrager_E100",
+    "icon": "G98_Waffentrager_E100",
     "pr_nominal_damage": 2650.0,
     "wn8_nominal_damage": 2275.67,
     "wn8_nominal_win_rate": 49.09,
@@ -4890,7 +4786,7 @@
   {
     "comp_descr": 16401,
     "tank_title": "Waffentrager auf Pz. IV",
-    "icon": "Waffentrager_IV",
+    "icon": "G97_Waffentrager_IV",
     "pr_nominal_damage": 2200.0,
     "wn8_nominal_damage": 1840.85,
     "wn8_nominal_win_rate": 50.49,
@@ -4994,7 +4890,7 @@
   {
     "comp_descr": 52993,
     "tank_title": "А-32",
-    "icon": "A-32",
+    "icon": "R68_A-32",
     "pr_nominal_damage": 350.0,
     "wn8_nominal_damage": 288.58,
     "wn8_nominal_win_rate": 53.31,
@@ -5007,7 +4903,7 @@
   {
     "comp_descr": 12289,
     "tank_title": "А-43",
-    "icon": "A43",
+    "icon": "R57_A43",
     "pr_nominal_damage": 700.0,
     "wn8_nominal_damage": 678.69,
     "wn8_nominal_win_rate": 54.07,
@@ -5020,7 +4916,7 @@
   {
     "comp_descr": 12545,
     "tank_title": "А-44",
-    "icon": "A44",
+    "icon": "R59_A44",
     "pr_nominal_damage": 850.0,
     "wn8_nominal_damage": 933.04,
     "wn8_nominal_win_rate": 53.35,
@@ -5033,7 +4929,7 @@
   {
     "comp_descr": 5121,
     "tank_title": "АТ-1",
-    "icon": "AT-1",
+    "icon": "R10_AT-1",
     "pr_nominal_damage": 170.0,
     "wn8_nominal_damage": 291.76,
     "wn8_nominal_win_rate": 58.53,
@@ -5046,7 +4942,7 @@
   {
     "comp_descr": 1025,
     "tank_title": "БТ-2",
-    "icon": "BT-2",
+    "icon": "R08_BT-2",
     "pr_nominal_damage": 175.0,
     "wn8_nominal_damage": 251.4,
     "wn8_nominal_win_rate": 58.11,
@@ -5054,6 +4950,19 @@
     "wn8_nominal_frags": 1.43,
     "wn8_nominal_defence": 1.29,
     "tank_level": 2,
+    "tank_type": 1
+  },
+  {
+    "comp_descr": 769,
+    "tank_title": "БТ-7",
+    "icon": "R03_BT-7",
+    "pr_nominal_damage": 100.0,
+    "wn8_nominal_damage": 208.34,
+    "wn8_nominal_win_rate": 54.05,
+    "wn8_nominal_spotted": 2.0,
+    "wn8_nominal_frags": 0.81,
+    "wn8_nominal_defence": 0.98,
+    "tank_level": 3,
     "tank_type": 1
   },
   {
@@ -5072,7 +4981,7 @@
   {
     "comp_descr": 52225,
     "tank_title": "БТ-СВ",
-    "icon": "BT-SV",
+    "icon": "R34_BT-SV",
     "pr_nominal_damage": 400.0,
     "wn8_nominal_damage": 355.63,
     "wn8_nominal_win_rate": 57.95,
@@ -5085,7 +4994,7 @@
   {
     "comp_descr": 52481,
     "tank_title": "Валентайн II",
-    "icon": "Valentine_LL",
+    "icon": "R31_Valentine_LL",
     "pr_nominal_damage": 360.0,
     "wn8_nominal_damage": 431.56,
     "wn8_nominal_win_rate": 57.68,
@@ -5189,7 +5098,7 @@
   {
     "comp_descr": 7169,
     "tank_title": "ИС-7",
-    "icon": "IS-7",
+    "icon": "R45_IS-7",
     "pr_nominal_damage": 2200.0,
     "wn8_nominal_damage": 1794.19,
     "wn8_nominal_win_rate": 49.14,
@@ -5228,7 +5137,7 @@
   {
     "comp_descr": 7425,
     "tank_title": "ИСУ-152",
-    "icon": "ISU-152",
+    "icon": "R47_ISU-152",
     "pr_nominal_damage": 1900.0,
     "wn8_nominal_damage": 1514.89,
     "wn8_nominal_win_rate": 51.46,
@@ -5254,7 +5163,7 @@
   {
     "comp_descr": 8961,
     "tank_title": "КВ-13",
-    "icon": "KV-13",
+    "icon": "R46_KV-13",
     "pr_nominal_damage": 825.0,
     "wn8_nominal_damage": 788.67,
     "wn8_nominal_win_rate": 53.86,
@@ -5267,7 +5176,7 @@
   {
     "comp_descr": 18689,
     "tank_title": "КВ-1С",
-    "icon": "KV-1s",
+    "icon": "R13_KV-1s",
     "pr_nominal_damage": 500.0,
     "wn8_nominal_damage": 692.22,
     "wn8_nominal_win_rate": 57.66,
@@ -5280,7 +5189,7 @@
   {
     "comp_descr": 10497,
     "tank_title": "КВ-2",
-    "icon": "KV2",
+    "icon": "R77_KV2",
     "pr_nominal_damage": 775.0,
     "wn8_nominal_damage": 862.17,
     "wn8_nominal_win_rate": 54.5,
@@ -5292,22 +5201,9 @@
   },
   {
     "comp_descr": 54017,
-    "tank_title": "КВ-220-2",
-    "icon": "R38_KV-220_action",
-    "pr_nominal_damage": 750.0,
-    "wn8_nominal_damage": 693.27,
-    "wn8_nominal_win_rate": 59.7,
-    "wn8_nominal_spotted": 1.41,
-    "wn8_nominal_frags": 1.43,
-    "wn8_nominal_defence": 1.3,
-    "tank_level": 5,
-    "tank_type": 3
-  },
-  {
-    "comp_descr": 51201,
     "tank_title": "КВ-220-2 Бета-Тест",
     "icon": "R38_KV-220",
-    "pr_nominal_damage": 450.0,
+    "pr_nominal_damage": 750.0,
     "wn8_nominal_damage": 693.27,
     "wn8_nominal_win_rate": 59.7,
     "wn8_nominal_spotted": 1.41,
@@ -5332,8 +5228,21 @@
   {
     "comp_descr": 11009,
     "tank_title": "КВ-4",
-    "icon": "KV4",
+    "icon": "R73_KV4",
     "pr_nominal_damage": 1400.0,
+    "wn8_nominal_damage": 1179.34,
+    "wn8_nominal_win_rate": 52.5,
+    "wn8_nominal_spotted": 0.81,
+    "wn8_nominal_frags": 0.81,
+    "wn8_nominal_defence": 0.73,
+    "tank_level": 8,
+    "tank_type": 3
+  },
+  {
+    "comp_descr": 63233,
+    "tank_title": "КВ-4 Креславского",
+    "icon": "R128_KV4_Kreslavskiy",
+    "pr_nominal_damage": 1600.0,
     "wn8_nominal_damage": 1179.34,
     "wn8_nominal_win_rate": 52.5,
     "wn8_nominal_spotted": 0.81,
@@ -5423,7 +5332,7 @@
   {
     "comp_descr": 52737,
     "tank_title": "М3 лёгкий",
-    "icon": "M3_Stuart_LL",
+    "icon": "R67_M3_LL",
     "pr_nominal_damage": 145.0,
     "wn8_nominal_damage": 230.42,
     "wn8_nominal_win_rate": 53.42,
@@ -5436,7 +5345,7 @@
   {
     "comp_descr": 51457,
     "tank_title": "Матильда IV",
-    "icon": "Matilda_II_LL",
+    "icon": "R32_Matilda_II_LL",
     "pr_nominal_damage": 450.0,
     "wn8_nominal_damage": 582.79,
     "wn8_nominal_win_rate": 57.51,
@@ -5462,7 +5371,7 @@
   {
     "comp_descr": 16641,
     "tank_title": "МТ-25",
-    "icon": "MT25",
+    "icon": "R101_MT25",
     "pr_nominal_damage": 275.0,
     "wn8_nominal_damage": 427.11,
     "wn8_nominal_win_rate": 52.59,
@@ -5475,7 +5384,7 @@
   {
     "comp_descr": 16897,
     "tank_title": "Объект 140",
-    "icon": "Object_140",
+    "icon": "R97_Object_140",
     "pr_nominal_damage": 2200.0,
     "wn8_nominal_damage": 1873.31,
     "wn8_nominal_win_rate": 49.19,
@@ -5514,7 +5423,7 @@
   {
     "comp_descr": 8705,
     "tank_title": "Объект 261",
-    "icon": "Object_261",
+    "icon": "R52_Object_261",
     "pr_nominal_damage": 2200.0,
     "wn8_nominal_damage": 1792.43,
     "wn8_nominal_win_rate": 49.55,
@@ -5527,7 +5436,7 @@
   {
     "comp_descr": 14337,
     "tank_title": "Объект 263",
-    "icon": "Object263",
+    "icon": "R93_Object263",
     "pr_nominal_damage": 2500.0,
     "wn8_nominal_damage": 2095.36,
     "wn8_nominal_win_rate": 50.18,
@@ -5540,7 +5449,7 @@
   {
     "comp_descr": 13569,
     "tank_title": "Объект 268",
-    "icon": "Object268",
+    "icon": "R88_Object268",
     "pr_nominal_damage": 2700.0,
     "wn8_nominal_damage": 2159.69,
     "wn8_nominal_win_rate": 48.71,
@@ -5551,9 +5460,22 @@
     "tank_type": 4
   },
   {
+    "comp_descr": 50689,
+    "tank_title": "Объект 268 Вариант 5",
+    "icon": "R126_Object_730_5",
+    "pr_nominal_damage": 2800.0,
+    "wn8_nominal_damage": 2095.69,
+    "wn8_nominal_win_rate": 48.96,
+    "wn8_nominal_spotted": 0.81,
+    "wn8_nominal_frags": 1.01,
+    "wn8_nominal_defence": 0.57,
+    "tank_level": 10,
+    "tank_type": 4
+  },
+  {
     "comp_descr": 13313,
     "tank_title": "Объект 416",
-    "icon": "Object416",
+    "icon": "R60_Object416",
     "pr_nominal_damage": 1400.0,
     "wn8_nominal_damage": 1234.31,
     "wn8_nominal_win_rate": 52.46,
@@ -5561,6 +5483,19 @@
     "wn8_nominal_frags": 0.98,
     "wn8_nominal_defence": 0.91,
     "tank_level": 8,
+    "tank_type": 2
+  },
+  {
+    "comp_descr": 17153,
+    "tank_title": "Объект 430",
+    "icon": "R96_Object_430",
+    "pr_nominal_damage": 2200.0,
+    "wn8_nominal_damage": 1817.73,
+    "wn8_nominal_win_rate": 50.23,
+    "wn8_nominal_spotted": 1.52,
+    "wn8_nominal_frags": 1.05,
+    "wn8_nominal_defence": 0.79,
+    "tank_level": 10,
     "tank_type": 2
   },
   {
@@ -5605,7 +5540,7 @@
   {
     "comp_descr": 15617,
     "tank_title": "Объект 907",
-    "icon": "Object_907",
+    "icon": "R95_Object_907",
     "pr_nominal_damage": 2200.0,
     "wn8_nominal_damage": 1988.35,
     "wn8_nominal_win_rate": 51.95,
@@ -5618,7 +5553,7 @@
   {
     "comp_descr": 60673,
     "tank_title": "Объект 907A",
-    "icon": "Object_907A",
+    "icon": "R95_Object_907A",
     "pr_nominal_damage": 2200.0,
     "wn8_nominal_damage": 1988.35,
     "wn8_nominal_win_rate": 51.95,
@@ -5631,7 +5566,7 @@
   {
     "comp_descr": 1793,
     "tank_title": "С-51",
-    "icon": "S-51",
+    "icon": "R15_S-51",
     "pr_nominal_damage": 1500.0,
     "wn8_nominal_damage": 1197.46,
     "wn8_nominal_win_rate": 52.01,
@@ -5644,7 +5579,7 @@
   {
     "comp_descr": 10753,
     "tank_title": "СТ-I",
-    "icon": "ST_I",
+    "icon": "R63_ST_I",
     "pr_nominal_damage": 2000.0,
     "wn8_nominal_damage": 1645.19,
     "wn8_nominal_win_rate": 52.72,
@@ -5670,7 +5605,7 @@
   {
     "comp_descr": 54785,
     "tank_title": "СУ-100Y",
-    "icon": "SU100Y",
+    "icon": "R49_SU100Y",
     "pr_nominal_damage": 900.0,
     "wn8_nominal_damage": 882.34,
     "wn8_nominal_win_rate": 54.83,
@@ -5683,7 +5618,7 @@
   {
     "comp_descr": 10241,
     "tank_title": "СУ-100М1",
-    "icon": "SU100M1",
+    "icon": "R74_SU100M1",
     "pr_nominal_damage": 1200.0,
     "wn8_nominal_damage": 1027.09,
     "wn8_nominal_win_rate": 53.54,
@@ -5696,7 +5631,7 @@
   {
     "comp_descr": 9985,
     "tank_title": "СУ-101",
-    "icon": "SU-101",
+    "icon": "R58_SU-101",
     "pr_nominal_damage": 1700.0,
     "wn8_nominal_damage": 1225.21,
     "wn8_nominal_win_rate": 50.94,
@@ -5709,7 +5644,7 @@
   {
     "comp_descr": 55297,
     "tank_title": "СУ-122-44",
-    "icon": "SU122_44",
+    "icon": "R89_SU122_44",
     "pr_nominal_damage": 1350.0,
     "wn8_nominal_damage": 1143.08,
     "wn8_nominal_win_rate": 54.51,
@@ -5717,6 +5652,19 @@
     "wn8_nominal_frags": 1.21,
     "wn8_nominal_defence": 0.9,
     "tank_level": 7,
+    "tank_type": 4
+  },
+  {
+    "comp_descr": 12033,
+    "tank_title": "СУ-122-54",
+    "icon": "R75_SU122_54",
+    "pr_nominal_damage": 2100.0,
+    "wn8_nominal_damage": 1521.63,
+    "wn8_nominal_win_rate": 49.95,
+    "wn8_nominal_spotted": 0.83,
+    "wn8_nominal_frags": 0.96,
+    "wn8_nominal_defence": 0.83,
+    "tank_level": 9,
     "tank_type": 4
   },
   {
@@ -5735,7 +5683,7 @@
   {
     "comp_descr": 16129,
     "tank_title": "СУ-14-1",
-    "icon": "SU14_1",
+    "icon": "R91_SU14_1",
     "pr_nominal_damage": 1500.0,
     "wn8_nominal_damage": 982.98,
     "wn8_nominal_win_rate": 51.95,
@@ -5748,7 +5696,7 @@
   {
     "comp_descr": 4097,
     "tank_title": "СУ-14-2",
-    "icon": "SU-14",
+    "icon": "R27_SU-14",
     "pr_nominal_damage": 1650.0,
     "wn8_nominal_damage": 1346.67,
     "wn8_nominal_win_rate": 51.69,
@@ -5787,7 +5735,7 @@
   {
     "comp_descr": 7681,
     "tank_title": "СУ-26",
-    "icon": "SU-26",
+    "icon": "R66_SU-26",
     "pr_nominal_damage": 350.0,
     "wn8_nominal_damage": 427.1,
     "wn8_nominal_win_rate": 54.94,
@@ -5800,7 +5748,7 @@
   {
     "comp_descr": 4865,
     "tank_title": "СУ-5",
-    "icon": "SU-5",
+    "icon": "R14_SU-5",
     "pr_nominal_damage": 550.0,
     "wn8_nominal_damage": 619.79,
     "wn8_nominal_win_rate": 55.75,
@@ -5813,7 +5761,7 @@
   {
     "comp_descr": 54273,
     "tank_title": "СУ-76И",
-    "icon": "SU76I",
+    "icon": "R50_SU76I",
     "pr_nominal_damage": 450.0,
     "wn8_nominal_damage": 456.96,
     "wn8_nominal_win_rate": 60.42,
@@ -5839,7 +5787,7 @@
   {
     "comp_descr": 5633,
     "tank_title": "СУ-8",
-    "icon": "SU-8",
+    "icon": "R26_SU-8",
     "pr_nominal_damage": 1200.0,
     "wn8_nominal_damage": 1016.01,
     "wn8_nominal_win_rate": 53.76,
@@ -5865,7 +5813,7 @@
   {
     "comp_descr": 53761,
     "tank_title": "СУ-85И",
-    "icon": "SU_85I",
+    "icon": "R78_SU_85I",
     "pr_nominal_damage": 500.0,
     "wn8_nominal_damage": 640.29,
     "wn8_nominal_win_rate": 53.96,
@@ -5889,9 +5837,22 @@
     "tank_type": 3
   },
   {
+    "comp_descr": 53505,
+    "tank_title": "Т-127",
+    "icon": "R56_T-127",
+    "pr_nominal_damage": 380.0,
+    "wn8_nominal_damage": 369.01,
+    "wn8_nominal_win_rate": 57.83,
+    "wn8_nominal_spotted": 1.78,
+    "wn8_nominal_frags": 1.68,
+    "wn8_nominal_defence": 1.69,
+    "tank_level": 3,
+    "tank_type": 1
+  },
+  {
     "comp_descr": 11265,
     "tank_title": "Т-150",
-    "icon": "T150",
+    "icon": "R72_T150",
     "pr_nominal_damage": 700.0,
     "wn8_nominal_damage": 832.77,
     "wn8_nominal_win_rate": 55.06,
@@ -5917,7 +5878,7 @@
   {
     "comp_descr": 4609,
     "tank_title": "Т-26",
-    "icon": "T-26",
+    "icon": "R09_T-26",
     "pr_nominal_damage": 150.0,
     "wn8_nominal_damage": 269.68,
     "wn8_nominal_win_rate": 59.05,
@@ -5967,6 +5928,19 @@
     "tank_type": 2
   },
   {
+    "comp_descr": 2561,
+    "tank_title": "Т-34-85",
+    "icon": "R07_T-34-85",
+    "pr_nominal_damage": 775.0,
+    "wn8_nominal_damage": 734.12,
+    "wn8_nominal_win_rate": 54.8,
+    "wn8_nominal_spotted": 1.41,
+    "wn8_nominal_frags": 0.98,
+    "wn8_nominal_defence": 0.93,
+    "tank_level": 6,
+    "tank_type": 2
+  },
+  {
     "comp_descr": 59393,
     "tank_title": "Т-34-85 Rudy",
     "icon": "R117_T34_85_Rudy",
@@ -5993,9 +5967,22 @@
     "tank_type": 2
   },
   {
+    "comp_descr": 6657,
+    "tank_title": "Т-43",
+    "icon": "R23_T-43",
+    "pr_nominal_damage": 925.0,
+    "wn8_nominal_damage": 872.72,
+    "wn8_nominal_win_rate": 54.23,
+    "wn8_nominal_spotted": 1.51,
+    "wn8_nominal_frags": 0.92,
+    "wn8_nominal_defence": 0.98,
+    "tank_level": 7,
+    "tank_type": 2
+  },
+  {
     "comp_descr": 4353,
     "tank_title": "Т-44",
-    "icon": "T-44",
+    "icon": "R20_T-44",
     "pr_nominal_damage": 1250.0,
     "wn8_nominal_damage": 1011.77,
     "wn8_nominal_win_rate": 52.6,
@@ -6034,7 +6021,7 @@
   {
     "comp_descr": 56833,
     "tank_title": "Т-44-122",
-    "icon": "T44_122",
+    "icon": "R99_T44_122",
     "pr_nominal_damage": 850.0,
     "wn8_nominal_damage": 1253.57,
     "wn8_nominal_win_rate": 56.95,
@@ -6047,7 +6034,7 @@
   {
     "comp_descr": 57089,
     "tank_title": "Т-44-85",
-    "icon": "T44_85",
+    "icon": "R98_T44_85",
     "pr_nominal_damage": 850.0,
     "wn8_nominal_damage": 788.67,
     "wn8_nominal_win_rate": 53.86,
@@ -6058,9 +6045,35 @@
     "tank_type": 2
   },
   {
+    "comp_descr": 50945,
+    "tank_title": "Т-45",
+    "icon": "R125_T_45",
+    "pr_nominal_damage": 145.0,
+    "wn8_nominal_damage": 249.15,
+    "wn8_nominal_win_rate": 60.05,
+    "wn8_nominal_spotted": 1.37,
+    "wn8_nominal_frags": 1.45,
+    "wn8_nominal_defence": 1.73,
+    "tank_level": 2,
+    "tank_type": 1
+  },
+  {
+    "comp_descr": 3073,
+    "tank_title": "Т-46",
+    "icon": "R22_T-46",
+    "pr_nominal_damage": 135.0,
+    "wn8_nominal_damage": 253.74,
+    "wn8_nominal_win_rate": 55.64,
+    "wn8_nominal_spotted": 1.32,
+    "wn8_nominal_frags": 1.02,
+    "wn8_nominal_defence": 1.02,
+    "tank_level": 3,
+    "tank_type": 1
+  },
+  {
     "comp_descr": 9473,
     "tank_title": "Т-50",
-    "icon": "T-50",
+    "icon": "R41_T-50",
     "pr_nominal_damage": 150.0,
     "wn8_nominal_damage": 240.17,
     "wn8_nominal_win_rate": 54.74,
@@ -6073,7 +6086,7 @@
   {
     "comp_descr": 7937,
     "tank_title": "Т-54",
-    "icon": "T-54",
+    "icon": "R40_T-54",
     "pr_nominal_damage": 2000.0,
     "wn8_nominal_damage": 1416.7,
     "wn8_nominal_win_rate": 51.19,
@@ -6112,7 +6125,7 @@
   {
     "comp_descr": 15361,
     "tank_title": "Т-60",
-    "icon": "T-60",
+    "icon": "R42_T-60",
     "pr_nominal_damage": 175.0,
     "wn8_nominal_damage": 249.15,
     "wn8_nominal_win_rate": 60.05,
@@ -6138,7 +6151,7 @@
   {
     "comp_descr": 15105,
     "tank_title": "Т-70",
-    "icon": "T-70",
+    "icon": "R43_T-70",
     "pr_nominal_damage": 250.0,
     "wn8_nominal_damage": 323.79,
     "wn8_nominal_win_rate": 57.65,
@@ -6149,9 +6162,22 @@
     "tank_type": 1
   },
   {
+    "comp_descr": 15873,
+    "tank_title": "Т-80",
+    "icon": "R44_T80",
+    "pr_nominal_damage": 280.0,
+    "wn8_nominal_damage": 366.27,
+    "wn8_nominal_win_rate": 57.37,
+    "wn8_nominal_spotted": 1.5,
+    "wn8_nominal_frags": 1.04,
+    "wn8_nominal_defence": 1.29,
+    "tank_level": 4,
+    "tank_type": 1
+  },
+  {
     "comp_descr": 54529,
     "tank_title": "Тетрарх",
-    "icon": "Tetrarch_LL",
+    "icon": "R84_Tetrarch_LL",
     "pr_nominal_damage": 225.0,
     "wn8_nominal_damage": 267.5,
     "wn8_nominal_win_rate": 58.0,
@@ -6164,7 +6190,7 @@
   {
     "comp_descr": 51713,
     "tank_title": "Черчилль III",
-    "icon": "Churchill_LL",
+    "icon": "R33_Churchill_LL",
     "pr_nominal_damage": 525.0,
     "wn8_nominal_damage": 611.11,
     "wn8_nominal_win_rate": 54.83,

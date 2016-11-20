@@ -1,5 +1,5 @@
 {
-  "header": { "version": 27 },
+  "header": { "version": 28 },
   "data": [
     {
       "IDNum": 1,
@@ -2842,6 +2842,14 @@
       "expWinRate": 49.09
     },
     {
+      "IDNum": 50193,
+      "expFrag": 1.19,
+      "expDamage": 1617.19,
+      "expSpot": 0.54,
+      "expDef": 1.02,
+      "expWinRate": 51.6
+    },
+    {
       "IDNum": 50689,
       "expFrag": 1.01,
       "expDamage": 2095.69,
@@ -2912,6 +2920,14 @@
       "expSpot": 1.42,
       "expDef": 0.84,
       "expWinRate": 51.89
+    },
+    {
+      "IDNum": 51585,
+      "expFrag": 0.99,
+      "expDamage": 769.67,
+      "expSpot": 1.51,
+      "expDef": 1.03,
+      "expWinRate": 53.07
     },
     {
       "IDNum": 51713,

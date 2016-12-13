@@ -65,7 +65,7 @@ namespace WotDossier
             CultureHelper.SetUiCulture(SettingsReader.Get().Language);
 
             //TODO: Remove, hard hack
-            //RestoreAutomapperDll();
+            RestoreDlls(new [] { "OxyPlot.dll", "OxyPlot.Wpf.dll" });
 
             bool isNewInstance;
             _mutex = new Mutex(true, INSTANCE_ID, out isNewInstance);
@@ -153,20 +153,22 @@ namespace WotDossier
             base.OnStartup(e);
         }
 
-        private void RestoreAutomapperDll()
+        private void RestoreDlls(string[] libraries)
         {
-            const string library = @"AutoMapper.dll";
-            string currentDirectory = Folder.AssemblyDirectory();
-            string path = Path.Combine(currentDirectory, library);
-            if (!File.Exists(path))
+            foreach (var library in libraries)
             {
-                Assembly entryAssembly = Assembly.GetEntryAssembly();
-                var resourceName = entryAssembly.GetName().Name + @"." + library;
-                byte[] embeddedResource = entryAssembly.GetEmbeddedResource(resourceName);
-                using (FileStream fileStream = File.OpenWrite(path))
+                string currentDirectory = Folder.AssemblyDirectory();
+                string path = Path.Combine(currentDirectory, library);
+                if (!File.Exists(path))
                 {
-                    fileStream.Write(embeddedResource, 0, embeddedResource.Length);
-                    fileStream.Flush();
+                    Assembly entryAssembly = Assembly.GetEntryAssembly();
+                    var resourceName = entryAssembly.GetName().Name + @"." + library;
+                    byte[] embeddedResource = entryAssembly.GetEmbeddedResource(resourceName);
+                    using (FileStream fileStream = File.OpenWrite(path))
+                    {
+                        fileStream.Write(embeddedResource, 0, embeddedResource.Length);
+                        fileStream.Flush();
+                    }
                 }
             }
         }

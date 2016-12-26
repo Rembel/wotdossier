@@ -38,16 +38,9 @@ namespace WotDossier.Applications.Logic
             string url;
 
             string str = file.MD5();
-            string result = new Uri(string.Format(FIND_REPLAY_URL, SettingsReader.Get().Server, str)).Get();
 
-            WotReplaysSiteResponse response = null;
-
-            try
-            {
-                response = JsonConvert.DeserializeObject<WotReplaysSiteResponse>(result);
-            }
-            catch (Exception) {/*ignore*/}
-
+            WotReplaysSiteResponse response = new Uri(string.Format(FIND_REPLAY_URL, SettingsReader.Get().Server, str)).Get<WotReplaysSiteResponse>();
+            
             //if replay not found
             if (response == null || (response.Result.HasValue && response.Result == false))
             {
@@ -167,11 +160,7 @@ namespace WotDossier.Applications.Logic
                 {
                     string str = file.MD5();
 
-                    try
-                    {
-                        response = JsonConvert.DeserializeObject<WotReplaysSiteResponse>(new Uri(string.Format(FIND_REPLAY_URL, SettingsReader.Get().Server, str)).Get());
-                    }
-                    catch (Exception) {/*ignore*/}
+                    response = new Uri(string.Format(FIND_REPLAY_URL, SettingsReader.Get().Server, str)).Get<WotReplaysSiteResponse>();
 
                     if (response == null || response.Result.HasValue && (response.Result == false))
                     {

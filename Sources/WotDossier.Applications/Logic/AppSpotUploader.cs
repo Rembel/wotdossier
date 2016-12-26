@@ -110,9 +110,7 @@ namespace WotDossier.Applications.Logic
                 .End()
                 .GetRequestBytes();
 
-            string uploadData = new Uri(string.Format(URL_SECTION_UPDATE, id)).Get();
-
-            AppSpotResponse appSpotResponse = JsonConvert.DeserializeObject<AppSpotResponse>(uploadData);
+            AppSpotResponse appSpotResponse = new Uri(string.Format(URL_SECTION_UPDATE, id)).Get<AppSpotResponse>();
 
             string uploadUrl = string.Format(URL_UPLOAD, id, appSpotResponse.expires, appSpotResponse.secret);
 

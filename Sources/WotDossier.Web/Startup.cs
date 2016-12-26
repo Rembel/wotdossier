@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 using System.Reflection;
 using System.Runtime.Serialization;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
@@ -12,13 +9,10 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
-using NLog;
-using NLog.Config;
 using ProtoBuf.Meta;
 using WotDossier.Domain;
 using WotDossier.Domain.Entities;
 using WotDossier.Web.Data;
-using WotDossier.Web.Logging;
 using WotDossier.Web.Logic;
 using WotDossier.Web.Models;
 using WotDossier.Web.Services;
@@ -37,10 +31,7 @@ namespace WotDossier.Web
             if (env.IsDevelopment())
             {
                 // For more details on using the user secret store see http://go.microsoft.com/fwlink/?LinkID=532709
-                builder.AddUserSecrets();
-
-                // This will push telemetry data through Application Insights pipeline faster, allowing you to view results immediately.
-                builder.AddApplicationInsightsSettings(developerMode: true);
+                builder.AddUserSecrets("aspnet-WotDossier.Web-e1573d08-bc0b-4b4b-a861-4e39603afe3e");
             }
 
             builder.AddEnvironmentVariables();
@@ -52,9 +43,6 @@ namespace WotDossier.Web
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            // Add framework services.
-            services.AddApplicationInsightsTelemetry(Configuration);
-
             var postgreConnectionString = Configuration.GetConnectionString("PostgresqlConnection");
             var defaultConnectionString = Configuration.GetConnectionString("DefaultConnection");
             services
@@ -80,15 +68,16 @@ namespace WotDossier.Web
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
-            var xmlLoggingConfiguration = new  XmlLoggingConfiguration("config.nlog");
-            loggerFactory.AddNLog(new LogFactory(xmlLoggingConfiguration));
-            
-app.UseApplicationInsightsRequestTelemetry();
+            loggerFactory.AddConsole(Configuration.GetSection("Logging"));
+            loggerFactory.AddDebug();
 
+            //var xmlLoggingConfiguration = new  XmlLoggingConfiguration("config.nlog");
+            //loggerFactory.AddNLog(new LogFactory(xmlLoggingConfiguration));
+            
             if (env.IsDevelopment())
             {
-                loggerFactory.AddConsole(Configuration.GetSection("Logging"));
-                loggerFactory.AddDebug();
+            //loggerFactory.AddConsole(Configuration.GetSection("Logging"));
+            //loggerFactory.AddDebug();
 
                 app.UseDeveloperExceptionPage();
                 app.UseDatabaseErrorPage();
@@ -98,8 +87,6 @@ app.UseApplicationInsightsRequestTelemetry();
             {
                 app.UseExceptionHandler("/Home/Error");
             }
-
-            app.UseApplicationInsightsExceptionTelemetry();
 
             app.UseStaticFiles();
 
@@ -130,8 +117,8 @@ app.UseApplicationInsightsRequestTelemetry();
                                     .AddSubType(400, RuntimeTypeModel.Default.Add<RandomBattlesStatisticEntity>().Type)
                                  .Type)
                 .AddSubType(700, RuntimeTypeModel.Default.Add<RandomBattlesAchievementsEntity>().Type)
-                                    //.AddSubType(500, RuntimeTypeModel.Default.Add<TankStatisticEntityBase>()
-                                    //                    .AddSubType(600, RuntimeTypeModel.Default.Add<TankRandomBattlesStatisticEntity>().Type).Type)
+                .AddSubType(500, RuntimeTypeModel.Default.Add<TankStatisticEntityBase>()
+                                    .AddSubType(600, RuntimeTypeModel.Default.Add<TankRandomBattlesStatisticEntity>().Type).Type)
                                     ;
         }
 

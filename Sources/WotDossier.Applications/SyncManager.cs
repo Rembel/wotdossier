@@ -103,8 +103,7 @@ namespace WotDossier.Applications
         {
             try
             {
-                var response = ApiMethod("dbversion").Get();
-                var serverDbVersion = JsonConvert.DeserializeObject<DbVersionEntity>(response);
+                var serverDbVersion = ApiMethod("dbversion").Get<DbVersionEntity>();
                 var clientDbVersion = _repository.GetCurrentDbVersion();
                 return serverDbVersion.SchemaVersion.Equals(clientDbVersion.SchemaVersion, StringComparison.Ordinal);
             }
@@ -156,17 +155,16 @@ namespace WotDossier.Applications
 
         private void UpdateLocalStatistic(int rev)
         {
-            AppSettings settings = SettingsReader.Get();
-            string statistic = ApiMethod($"statistic/{rev}").Get();
+            //AppSettings settings = SettingsReader.Get();
+            //string statistic = ApiMethod($"statistic/{rev}").Get();
         }
 
         private int GetServerDataVersion(int playerId, string server)
         {
-            string player = ApiMethod($"player/{server}/{playerId}").Get();
-            if (!string.IsNullOrEmpty(player))
+            var player = ApiMethod($"player/{server}/{playerId}").Get<PlayerEntity>();
+            if (player != null)
             {
-                var entity = JsonConvert.DeserializeObject<PlayerEntity>(player);
-                return entity.Rev;
+                return player.Rev;
             }
             return 0;
         }

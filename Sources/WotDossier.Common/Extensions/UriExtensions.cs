@@ -2,6 +2,8 @@
 using System.Globalization;
 using System.IO;
 using System.Net;
+using System.Net.Http;
+using System.Net.Http.Headers;
 
 namespace WotDossier.Common.Extensions
 {
@@ -21,27 +23,19 @@ namespace WotDossier.Common.Extensions
             }
         }
 
-        public static string Get(this Uri uri)
+        public static T Get<T>(this Uri uri)
         {
-            string str = null;
-            var client = new WebClient();
-            client.Proxy.Credentials = CredentialCache.DefaultCredentials;
-            try
+            var client = new HttpClient();
+            //client.BaseAddress = uri;
+            client.DefaultRequestHeaders.Accept.Clear();
+            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+            T result = default(T);
+            HttpResponseMessage response = client.GetAsync(uri).Result;
+            if (response.IsSuccessStatusCode)
             {
-                Stream stream = client.OpenRead(uri);
-                if (stream != null)
-                {
-                    str = new StreamReader(stream).ReadToEnd();
-                }
+                result = response.Content.ReadAsAsync<T>().Result;
             }
-            catch (WebException)
-            {
-            }
-            finally
-            {
-                client.Dispose();
-            }
-            return str;
+            return result;
         }
 
         public static void Post(this Uri uri, string data)
@@ -53,9 +47,6 @@ namespace WotDossier.Common.Extensions
                 client.Headers[HttpRequestHeader.ContentType] = "application/json; charset=utf-8";
                 //client.Headers[HttpRequestHeader.ContentLength] = data.Length.ToString(CultureInfo.InvariantCulture);
                 client.UploadStringAsync(uri, data);
-            }
-            catch (WebException)
-            {
             }
             finally
             {
@@ -72,9 +63,6 @@ namespace WotDossier.Common.Extensions
                 client.Headers[HttpRequestHeader.ContentType] = "application/octet-stream";
                 //client.Headers[HttpRequestHeader.ContentLength] = data.Length.ToString(CultureInfo.InvariantCulture);
                 client.UploadDataAsync(uri, data);
-            }
-            catch (WebException)
-            {
             }
             finally
             {

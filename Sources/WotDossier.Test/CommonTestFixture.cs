@@ -30,7 +30,7 @@ namespace WotDossier.Test
     [TestFixture]
     public class CommonTestFixture : TestFixtureBase
     {
-        private string clientPath = @"I:\World_of_Tanks_CT";
+        private string clientPath = @"c:\World_of_Tanks";
 
         [Test]
         public void MultipleUploadTest()

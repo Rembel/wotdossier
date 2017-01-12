@@ -116,11 +116,11 @@ namespace WotDossier.Applications
 
         private void UpdateServerStatistic(PlayerEntity player, int rev)
         {
-            var tankRandomStatistic = _repository.GetTanksStatistic<TankRandomBattlesStatisticEntity>(player.Id, rev);
+            var tankRandomStatistic = _repository.GetTanksStatistic<TankRandomBattlesStatisticEntity>(player.Id, rev).Where(x => x.BattlesCount > 0);
             var data = new ClientStat
             {
                 Player = player, 
-                Tanks = _repository.GetTanks(player, rev),
+                Tanks = _repository.GetTanks(player, rev).Where(x => x.TankType != -1).ToList(),
                 RandomStatistic = _repository.GetPlayerStatistic<RandomBattlesStatisticEntity>(player.AccountId, rev),
                 TankRandomStatistic = tankRandomStatistic,
                 //HistoricalStatistic = _repository.GetPlayerStatistic<HistoricalBattlesStatisticEntity>(player.PlayerId, rev),

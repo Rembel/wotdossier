@@ -90,13 +90,13 @@ namespace WotDossier.Dal
             {
                 playerEntity = GetPlayerByAccountId(accountId) ??
                                //recreate payer record in case db was deleted but exists user configured in application setting 
-                               CreatePlayer(serverStatistic.dataField.nickname, serverStatistic.dataField.account_id, 
+                               CreatePlayer(serverStatistic.dataField.nickname, serverStatistic.dataField.account_id,
                                Utils.UnixDateToDateTime((long)serverStatistic.dataField.created_at), serverStatistic.server);
 
                 T currentSnapshot = _dataProvider.QueryOver<T>().Where(x => x.PlayerId == playerEntity.Id)
                                                .OrderBy(x => x.Updated)
                                                .Desc.Take(1)
-                                               .SingleOrDefault<T>() ?? new T { PlayerId = playerEntity.Id};
+                                               .SingleOrDefault<T>() ?? new T { PlayerId = playerEntity.Id };
 
                 //new battles
                 if (currentSnapshot.BattlesCount < newSnapshot.BattlesCount)
@@ -104,7 +104,7 @@ namespace WotDossier.Dal
                     //create new record
                     if (IsNewSnapshotShouldBeAdded(currentSnapshot.Updated, newSnapshot.Updated))
                     {
-                        currentSnapshot = new T { PlayerId = playerEntity.Id, PlayerUId = playerEntity.UId, UId = Guid.NewGuid()};
+                        currentSnapshot = new T { PlayerId = playerEntity.Id, PlayerUId = playerEntity.UId, UId = Guid.NewGuid() };
                     }
 
                     newSnapshot.Update(currentSnapshot);
@@ -127,6 +127,26 @@ namespace WotDossier.Dal
             }
 
             return playerEntity;
+        }
+
+        private static bool IsNewSnapshotShouldBeAdded(TankStatisticEntityBase statisticEntity, Func<TankJson, StatisticJson> predicate, TankJson dossierTank, DateTime lastBattleTime)
+        {
+            TankJson currentSnapshot = CompressHelper.DecompressObject<TankJson>(statisticEntity.Raw);
+            var currentSnapshotBattlesCount = predicate(currentSnapshot).battlesCount;
+
+            if (currentSnapshotBattlesCount < predicate(dossierTank).battlesCount)
+            {
+                var dbStatisticUpdateTime = statisticEntity.Updated;
+                if (currentSnapshotBattlesCount == 0)
+                {
+                    return true;
+                }
+
+                lastBattleTime = lastBattleTime.AddHours(-AppConfigSettings.SliceTime);
+                dbStatisticUpdateTime = dbStatisticUpdateTime.AddHours(-AppConfigSettings.SliceTime);
+                return lastBattleTime.Date != dbStatisticUpdateTime.Date;
+            }
+            return false;
         }
 
         private static bool IsNewSnapshotShouldBeAdded(DateTime currentSnapshotUpdated, DateTime newSnapshotUpdated)
@@ -164,11 +184,11 @@ namespace WotDossier.Dal
                 playerEntity.AccountId = accountId;
                 playerEntity.Creaded = creaded;
             }
-         
+
             playerEntity.Name = name;
             playerEntity.Server = server;
             _dataProvider.Save(playerEntity);
-            
+
             _dataProvider.CommitTransaction();
 
             _dataProvider.CloseSession();
@@ -191,7 +211,7 @@ namespace WotDossier.Dal
             playerEntity.Creaded = creaded;
             playerEntity.Server = server;
             _dataProvider.Save(playerEntity);
-            
+
             return playerEntity;
         }
 
@@ -237,7 +257,7 @@ namespace WotDossier.Dal
         /// <param name="tanks">The tanks.</param>
         /// <param name="predicate">The predicate.</param>
         /// <returns></returns>
-        public PlayerEntity UpdateTankStatistic<T>(int accountId, List<TankJson> tanks, Func<TankJson, StatisticJson> predicate) where T : TankStatisticEntityBase, new ()
+        public PlayerEntity UpdateTankStatistic<T>(int accountId, List<TankJson> tanks, Func<TankJson, StatisticJson> predicate) where T : TankStatisticEntityBase, new()
         {
             _dataProvider.OpenSession();
             _dataProvider.BeginTransaction();
@@ -248,85 +268,41 @@ namespace WotDossier.Dal
             {
                 IList<TankEntity> tankEntities = _dataProvider.QueryOver<TankEntity>().Where(x => x.PlayerId == playerEntity.Id).List<TankEntity>();
 
-                DateTime updated = tanks.Max(x => x.Common.lastBattleTimeR);
+                DateTime lastBattleTime = tanks.Max(x => x.Common.lastBattleTimeR);
 
-                foreach (TankJson tank in tanks)
+                foreach (TankJson dossierTank in tanks)
                 {
-                    int tankId = tank.Common.tankid;
-                    int countryId = tank.Common.countryid;
+                    T statisticEntity = null;
 
-                    TankEntity tankEntity = tankEntities.SingleOrDefault(x => x.TankId == tankId && x.CountryId == countryId);
-                    if (tankEntity == null)
+                    TankEntity tankEntity = tankEntities.SingleOrDefault(x => x.TankId == dossierTank.Common.tankid && x.CountryId == dossierTank.Common.countryid);
+                    var tankNotExists = tankEntity == null;
+                    if (tankNotExists)
                     {
-                        tankEntity = new TankEntity();
-                        tankEntity.CountryId = countryId;
-                        tankEntity.TankId = tankId;
-                        tankEntity.Icon = tank.Description.Icon.IconId;
-                        tankEntity.PlayerId = playerEntity.Id;
-                        tankEntity.PlayerUId = playerEntity.UId;
-                        tankEntity.IsPremium = tank.Common.premium == 1;
-                        tankEntity.Name = tank.Common.tanktitle;
-                        tankEntity.TankType = tank.Common.type;
-                        tankEntity.Tier = tank.Common.tier;
-                        tankEntity.UniqueId = tank.UniqueId();
+                        tankEntity = CreateTankEntity(dossierTank, playerEntity);
                         _dataProvider.Save(tankEntity);
-
-                        T statisticEntity = new T();
-                        statisticEntity.TankIdObject = tankEntity;
-                        statisticEntity.TankUId = tankEntity.UId;
-                        Update(statisticEntity, tank, predicate);
-                        _dataProvider.Save(statisticEntity);
                     }
                     else
                     {
                         TankEntity tankAlias = null;
-                        T statisticEntity = _dataProvider.QueryOver<T>()
+                        statisticEntity = _dataProvider.QueryOver<T>()
                             .JoinAlias(x => x.TankIdObject, () => tankAlias)
                             .Where(x =>
                                 tankAlias.PlayerId == playerEntity.Id
-                                && tankAlias.TankId == tankId
-                                && tankAlias.CountryId == countryId)
+                                && tankAlias.TankId == dossierTank.Common.tankid && tankAlias.CountryId == dossierTank.Common.countryid)
                             .OrderBy(x => x.Updated).Desc.Take(1).SingleOrDefault<T>();
-
-                        int currentSnapshotBattlesCount = 0;
-
-                        if (statisticEntity != null)
-                        {
-                            TankJson currentSnapshot = CompressHelper.DecompressObject<TankJson>(statisticEntity.Raw);
-                            currentSnapshotBattlesCount = predicate(currentSnapshot).battlesCount;
-                        }
-                        else
-                        {
-                            statisticEntity = new T();
-                            statisticEntity.TankIdObject = tankEntity;
-                            statisticEntity.TankUId = tankEntity.UId;
-                        }
-
-                        if (currentSnapshotBattlesCount < predicate(tank).battlesCount)
-                        {
-                            //create new record
-                            if (IsNewSnapshotShouldBeAdded(statisticEntity.Updated, updated))
-                            {
-                                statisticEntity = new T();
-                                statisticEntity.TankIdObject = tankEntity;
-                                statisticEntity.TankUId = tankEntity.UId;
-                            }
-
-                            statisticEntity.Updated = updated;
-                            Update(statisticEntity, tank, predicate);
-                            _dataProvider.Save(statisticEntity);
-                        }
-                        //new tank
-                        else if (currentSnapshotBattlesCount == 0 && predicate(tank).battlesCount == 0)
-                        {
-                            statisticEntity = new T();
-                            statisticEntity.TankIdObject = tankEntity;
-                            statisticEntity.TankUId = tankEntity.UId;
-                            statisticEntity.Updated = updated;
-                            Update(statisticEntity, tank, predicate);
-                            _dataProvider.Save(statisticEntity);
-                        }
                     }
+
+                    if (tankNotExists || statisticEntity == null || IsNewSnapshotShouldBeAdded(statisticEntity, predicate, dossierTank, lastBattleTime))
+                    {
+                        statisticEntity = new T
+                        {
+                            TankIdObject = tankEntity,
+                            TankUId = tankEntity.UId
+                        };
+                    }
+
+                    Update(statisticEntity, dossierTank, predicate);
+                    _dataProvider.Save(statisticEntity);
                 }
 
                 _dataProvider.CommitTransaction();
@@ -347,9 +323,27 @@ namespace WotDossier.Dal
             return playerEntity;
         }
 
+        private TankEntity CreateTankEntity(TankJson dossierTank, PlayerEntity playerEntity)
+        {
+            TankEntity tankEntity = new TankEntity
+            {
+                CountryId = dossierTank.Common.countryid,
+                TankId = dossierTank.Common.tankid,
+                Icon = dossierTank.Description.Icon.IconId,
+                PlayerId = playerEntity.Id,
+                PlayerUId = playerEntity.UId,
+                IsPremium = dossierTank.Common.premium == 1,
+                Name = dossierTank.Common.tanktitle,
+                TankType = dossierTank.Common.type,
+                Tier = dossierTank.Common.tier,
+                UniqueId = dossierTank.UniqueId()
+            };
+            return tankEntity;
+        }
+
         private void Update(TankStatisticEntityBase statisticEntity, TankJson tank, Func<TankJson, StatisticJson> predicate)
         {
-            statisticEntity.Updated = tank.Common.lastBattleTimeR;
+            statisticEntity.Updated = tank.Common.creationTimeR > tank.Common.lastBattleTimeR ? tank.Common.creationTimeR : tank.Common.lastBattleTimeR;
             statisticEntity.Version = tank.Common.basedonversion;
             statisticEntity.Raw = tank.Raw;
             statisticEntity.BattlesCount = predicate(tank).battlesCount;

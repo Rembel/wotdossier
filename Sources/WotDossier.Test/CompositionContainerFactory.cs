@@ -1,6 +1,7 @@
 ﻿using System;
 using System.ComponentModel.Composition.Hosting;
 using Common.Logging;
+using NUnit.Framework;
 
 namespace WotDossier.Test
 {
@@ -42,7 +43,7 @@ namespace WotDossier.Test
             {
                 if (_container == null)
                 {
-                    var directoryCatalog = new DirectoryCatalog(Environment.CurrentDirectory);
+                    var directoryCatalog = new DirectoryCatalog(TestContext.CurrentContext.TestDirectory);
                     _container = new CompositionContainer(new AggregateCatalog(directoryCatalog));
                 }
                 return _container;

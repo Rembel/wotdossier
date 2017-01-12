@@ -102,7 +102,7 @@ namespace WotDossier.Test
         [Test]
         public void CacheFileTest()
         {
-            Version version = new Version("0.9.14.0");
+            Version version = new Version("0.9.13.0");
             const BattleMode battleMode = BattleMode.RandomCompany;
 
             //trick
@@ -151,7 +151,7 @@ namespace WotDossier.Test
         {
             FileInfo cacheFile = null;
 
-            string path = Environment.CurrentDirectory + folder;
+            string path = TestContext.CurrentContext.TestDirectory + folder;
 
             if (Directory.Exists(path))
             {

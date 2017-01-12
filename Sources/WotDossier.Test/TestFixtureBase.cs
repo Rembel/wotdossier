@@ -49,6 +49,7 @@ namespace WotDossier.Test
         [TestFixtureSetUp]
         public void Init()
         {
+            Environment.CurrentDirectory = TestContext.CurrentContext.TestDirectory;
             AssemblyExtensions.SetEntryAssembly(Assembly.LoadFrom(Path.Combine(TestContext.CurrentContext.TestDirectory, "WotDossier.Test.dll")));
             CompositionContainerFactory.Instance.Container.SatisfyImportsOnce(this);
             _databaseManager = new DatabaseManager();

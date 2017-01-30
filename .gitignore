@@ -36,3 +36,4 @@ obj
 *.suo
 /Sources/.vs/config
 /Sources/WotDossier.Web/node_modules
+/Sources/WotDossier.Web/appsettings.json

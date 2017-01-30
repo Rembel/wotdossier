@@ -1,0 +1,14 @@
+﻿{
+  "ConnectionStrings": {
+    "DefaultConnection": "Server=(localdb)\\mssqllocaldb;Database=aspnet-WotDossier.Web-e1573d08-bc0b-4b4b-a861-4e39603afe3e;Trusted_Connection=True;MultipleActiveResultSets=true",
+"PostgresqlConnection": ""
+  },
+  "Logging": {
+    "IncludeScopes": false,
+    "LogLevel": {
+      "Default": "Debug",
+      "System": "Information",
+      "Microsoft": "Information"
+    }
+  }
+}

@@ -254,11 +254,10 @@ msgstr "Type 4 Chi-To"
 
 msgid "Chi_To_descr"
 msgstr ""
-"Средний танк Type 4 Chi-To разработан в 1943 г.\n"
-"на базе Chi-Nu. Предполагалось, что машина заменит устаревшие танки Chi-Ha, "
-"но проблемы с сырьём и комплектующими не позволили развернуть серийное "
-"производство. Всего было выпущено шесть шасси\n"
-"и собрано два танка на их базе."
+"Средний танк Type 4 Chi-To разработан в 1943 г. на базе Chi-Nu. "
+"Предполагалось, что машина заменит устаревшие танки Chi-Ha, но проблемы с "
+"сырьём и комплектующими не позволили развернуть серийное производство. Всего "
+"было выпущено шесть шасси и собрано два танка на их базе."
 
 msgid "Chi_To_short"
 msgstr "Chi-To"
@@ -785,8 +784,17 @@ msgstr "14 cm Capped Common Semi-AP Kai"
 msgid "_140mm_Common_Type_0_HE"
 msgstr "14 cm Common Type 0 HE"
 
+msgid "_150mm_45_41st_Year_Type"
+msgstr "15 cm/45 41st Year Type"
+
 msgid "_150mm_APHE_Type1"
 msgstr "APHE Type 1"
+
+msgid "_150mm_Common_Type_0_HE"
+msgstr "Common Type 0"
+
+msgid "_150mm_Common_Type_0_HE_Kai"
+msgstr "Common Type 0 Kai"
 
 msgid "_150mm_HEAT_Type3"
 msgstr "HEAT Type 3"

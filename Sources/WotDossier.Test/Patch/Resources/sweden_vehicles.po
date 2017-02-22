@@ -136,6 +136,12 @@ msgstr "Projekt 2013A"
 msgid "Chassis_S21_UDES_03_2"
 msgstr "UDES 03"
 
+msgid "Chassis_S22_Strv_S1"
+msgstr "Strv S1"
+
+msgid "Chassis_S23_Strv_81"
+msgstr "Strv 81"
+
 msgid "DB_605"
 msgstr "DB 605"
 
@@ -160,10 +166,16 @@ msgstr "Leyland L60"
 msgid "MTU_837_Ea_500"
 msgstr "MTU 837 Ea-500"
 
+msgid "Meteor_Mark_IVB"
+msgstr "Meteor Mark IVB"
+
 msgid "Meteor_Mark_IV_Mod_271"
 msgstr "Meteor Mark IV Mod 271"
 
 msgid "Motoraggregat_1S"
+msgstr "Motoraggregat 1S"
+
+msgid "Motoraggregat_1S_A"
 msgstr "Motoraggregat 1S"
 
 msgid "Motoraggregat_3"
@@ -440,9 +452,9 @@ msgstr ""
 "Вариант тяжёлого танка, разработанный в рамках проекта 1949 года по созданию "
 "новой машины. К 1952 году было предложено три проекта тяжёлого танка. EMIL "
 "1952 E2 был вторым вариантом. В зависимости от бронирования и установленного "
-"двигателя масса данной машины варьировалась от 34 до 39 тонн. Однако в конце "
-"1952 года от версии Е2 отказались в пользу варианта Е3, который имел схожие "
-"характеристики при более мощном бронировании."
+"двигателя, масса данной машины варьировалась от 34 до 39 тонн. Однако в "
+"конце 1952 года от версии Е2 отказались в пользу варианта Е3, который имел "
+"схожие характеристики при более мощном бронировании."
 
 msgid "S17_EMIL_1952_E2_short"
 msgstr "Emil II"
@@ -485,7 +497,7 @@ msgstr ""
 "легкобронированной машины огневой поддержки пехоты. Одной из таких машин "
 "стала пехотная артиллерийская машина Ikv 72 компании Landsverk. Всего до "
 "1954 года на вооружение было поставлено 36 машин. В 1956-58 гг. машины были "
-"перевооружены более мощными орудиями калибра 10,5 мм и использовались до "
+"перевооружены более мощными орудиями калибра 10,5 см и использовались до "
 "середины 1970-х годов под наименованием Ikv 102."
 
 msgid "S20_Ikv_72_short"
@@ -505,6 +517,37 @@ msgstr ""
 
 msgid "S21_UDES_03_short"
 msgstr "UDES 03"
+
+msgid "S22_Strv_S1"
+msgstr "Strv S1"
+
+msgid "S22_Strv_S1_descr"
+msgstr ""
+"Работы над созданием перспективного танка для шведской армии возглавил "
+"инженер Свен Берге. Первые эскизы уникальной машины датированы 1956 годом. К "
+"1961 году был окончательно сформирован облик нового танка, изготовлен "
+"полномерный деревянный макет, а немного позже появился первый прототип — "
+"Strv S1. На прототипе испытывалась работа подвески, позволявшей машине "
+"осуществлять вертикальное наведение орудия, жёстко закреплённого в корпусе. "
+"Прототип Strv S2 появился в конце 1962 года. Опыт, полученный в ходе "
+"испытаний прототипов, послужил основой для серийного производства танка Strv "
+"103."
+
+msgid "S22_Strv_S1_short"
+msgstr "Strv S1"
+
+msgid "S23_Strv_81"
+msgstr "Strv 81"
+
+msgid "S23_Strv_81_descr"
+msgstr ""
+"В середине 1950-х г. Швеция закупила у Великобритании около 240 танков "
+"Centurion Mk. 3 и Mk. 5. В шведской армии машины получили наименование Strv "
+"81. Танки находились на вооружении вплоть до начала 2000-х гг. и "
+"неоднократно модернизировались на протяжении всего срока службы."
+
+msgid "S23_Strv_81_short"
+msgstr "Strv 81"
 
 msgid "SFA_8_cyl_boxer"
 msgstr "SFA 8 cyl boxer"
@@ -590,6 +633,12 @@ msgstr "Ikv 72"
 msgid "Turret_1_S21_UDES_03"
 msgstr "UDES 03"
 
+msgid "Turret_1_S22_Strv_S1"
+msgstr "Strv S1"
+
+msgid "Turret_1_S23_Strv_81"
+msgstr "Strv 81"
+
 msgid "Turret_2_S02_Strv_M42"
 msgstr "Strv m/42"
 
@@ -645,6 +694,9 @@ msgid "_105mm_kan_m_44_sav"
 msgstr "10,5 cm kan m/44 sav"
 
 msgid "_105mm_kan_strv_103_L_51"
+msgstr "10,5 cm kan strv 103 L/51"
+
+msgid "_105mm_kan_strv_103_L_51_1"
 msgstr "10,5 cm kan strv 103 L/51"
 
 msgid "_105mm_kan_strv_103_L_62"
@@ -774,7 +826,7 @@ msgid "_2_st_Scania_Vabis_1664"
 msgstr "2 st Scania-Vabis 1664"
 
 msgid "_2_st_Scania_Vabis_607"
-msgstr "2 st Scania-Vabis 607"
+msgstr "2 st Scania-Vabis 607/1"
 
 msgid "_2_st_Scania_Vabis_607_1"
 msgstr "2 st Scania-Vabis 607"
@@ -907,6 +959,18 @@ msgstr "slpprj m/49"
 
 msgid "_75mm_slpsgr_fm_45"
 msgstr "slpsgr fm/45"
+
+msgid "_84mm_kan_strv_81_1"
+msgstr "8,4 cm kan strv 81"
+
+msgid "_84mm_slpprj_m_53"
+msgstr "slpprj m/53"
+
+msgid "_84mm_slpprj_m_54"
+msgstr "slpprj m/54"
+
+msgid "_84mm_slsgr_m_53"
+msgstr "slsgr m/53"
 
 msgid "_90mm_Bofors_L_43"
 msgstr "9 cm Bofors L/43"

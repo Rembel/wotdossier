@@ -333,9 +333,7 @@
     <value>Type 4 Chi-To</value>
   </data>
   <data name="Chi_To_descr" xml:space="preserve">
-    <value>Средний танк Type 4 Chi-To разработан в 1943 г.
-на базе Chi-Nu. Предполагалось, что машина заменит устаревшие танки Chi-Ha, но проблемы с сырьём и комплектующими не позволили развернуть серийное производство. Всего было выпущено шесть шасси
-и собрано два танка на их базе.</value>
+    <value>Средний танк Type 4 Chi-To разработан в 1943 г. на базе Chi-Nu. Предполагалось, что машина заменит устаревшие танки Chi-Ha, но проблемы с сырьём и комплектующими не позволили развернуть серийное производство. Всего было выпущено шесть шасси и собрано два танка на их базе.</value>
   </data>
   <data name="Chi_To_short" xml:space="preserve">
     <value>Chi-To</value>
@@ -769,8 +767,17 @@ Otsu-Gata Sensha (танк модель В). Японские машины бы�
   <data name="_140mm_Common_Type_0_HE" xml:space="preserve">
     <value>14 cm Common Type 0 HE</value>
   </data>
+  <data name="_150mm_45_41st_Year_Type" xml:space="preserve">
+    <value>15 cm/45 41st Year Type</value>
+  </data>
   <data name="_150mm_APHE_Type1" xml:space="preserve">
     <value>APHE Type 1</value>
+  </data>
+  <data name="_150mm_Common_Type_0_HE" xml:space="preserve">
+    <value>Common Type 0</value>
+  </data>
+  <data name="_150mm_Common_Type_0_HE_Kai" xml:space="preserve">
+    <value>Common Type 0 Kai</value>
   </data>
   <data name="_150mm_HEAT_Type3" xml:space="preserve">
     <value>HEAT Type 3</value>

@@ -1040,7 +1040,7 @@ msgstr ""
 "Первоначально вооружение танка предполагалось разместить в лобовой части "
 "корпуса и бортовых спонсонах. В ходе разработки опытных образцов было "
 "принято решение добавить башню, а спонсоны не устанавливать. К 1943 году, "
-"когда был построен и вышел на испытания TOG 2*, концепция танка полностью "
+"когда был построен и вышел на испытания TOG II*, концепция танка полностью "
 "устарела, и он так и не был принят на вооружение."
 
 msgid "GB68_Matilda_Black_Prince"
@@ -1083,7 +1083,7 @@ msgid "GB70_FV4202_105_short"
 msgstr "FV4202"
 
 msgid "GB70_N_FV4202_105"
-msgstr "FV4202 (P)"
+msgstr "FV4202"
 
 msgid "GB70_N_FV4202_105_descr"
 msgstr ""
@@ -1093,7 +1093,7 @@ msgstr ""
 "Chieftain."
 
 msgid "GB70_N_FV4202_105_short"
-msgstr "FV4202 (P)"
+msgstr "FV4202"
 
 msgid "GB71_AT_15A"
 msgstr "AT 15A"
@@ -1121,8 +1121,8 @@ msgstr "AT 2"
 msgid "GB73_AT2_descr"
 msgstr ""
 "Проект штурмового танка, предназначенного для прорыва укреплённых районов "
-"противника. Эскиз машины был готов 15 мая 1943 года. Опытный образец "
-"построен не был, но проект послужил основой для создания тяжёлого штурмового "
+"противника. Эскиз машины был готов 15 мая 1943 г. Опытный образец построен "
+"не был, но проект послужил началом работ по созданию тяжёлого штурмового "
 "танка A39 Tortoise."
 
 msgid "GB74_AT8"
@@ -1549,8 +1549,17 @@ msgstr "Birch Gun"
 msgid "Turret_1_GB27_Sexton"
 msgstr "Sexton II"
 
+msgid "Turret_1_GB28_Bishop"
+msgstr "Bishop"
+
+msgid "Turret_1_GB29_Crusader_5inch"
+msgstr "Crusader 5.5-in. SP"
+
 msgid "Turret_1_GB30_FV3805"
 msgstr "FV3805"
+
+msgid "Turret_1_GB31_Conqueror_Gun"
+msgstr "Conqueror Gun Carriage"
 
 msgid "Turret_1_GB32_Tortoise"
 msgstr "Tortoise"
@@ -1635,6 +1644,9 @@ msgstr "Light Mk. VIC"
 
 msgid "Turret_1_GB77_FV304"
 msgstr "FV304"
+
+msgid "Turret_1_GB79_FV206"
+msgstr "FV207"
 
 msgid "Turret_1_GB80_Charioteer"
 msgstr "Charioteer"

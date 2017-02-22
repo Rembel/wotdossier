@@ -168,6 +168,12 @@ msgstr "Pz.Kpfw. II Ausf. D"
 msgid "Chassis_G109_Steyr_WT"
 msgstr "Krupp-Steyr Waffenträger"
 
+msgid "Chassis_G110_Typ_205"
+msgstr "170 ton Panzer"
+
+msgid "Chassis_G110_Typ_205_2"
+msgstr "Mäuschen"
+
 msgid "Chassis_G112_KanonenJagdPanzer"
 msgstr "Kanonenjagdpanzer"
 
@@ -183,8 +189,14 @@ msgstr "Rheinmetall 12,8 cm K 43 Skorpion"
 msgid "Chassis_G114_Skorpian"
 msgstr "Rheinmetall 12,8 cm K 43 Skorpion"
 
-msgid "Chassis_G115_Typ_205_4_Jun"
+msgid "Chassis_G115_Typ_205B"
 msgstr "VK 100.01 (P)"
+
+msgid "Chassis_G115_Typ_205B_2"
+msgstr "VK 100.01 (P) verstärkteketten"
+
+msgid "Chassis_G115_Typ_205_4_Jun"
+msgstr "VK 100.01 (P) Ausf. B"
 
 msgid "Chassis_G116_Turan_III_prot"
 msgstr "Turán III prototípus"
@@ -196,6 +208,9 @@ msgid "Chassis_G118_VK4503"
 msgstr "VK 45.03"
 
 msgid "Chassis_G119_Panzer58"
+msgstr "Panzer 58"
+
+msgid "Chassis_G119_Panzer58_BF"
 msgstr "Panzer 58"
 
 msgid "Chassis_G119_Pz58_Mutz"
@@ -212,6 +227,12 @@ msgstr "Grille 15"
 
 msgid "Chassis_G122_VK6501H"
 msgstr "VK 65.01 (H)"
+
+msgid "Chassis_G16_PzVIB_Tiger_II_F"
+msgstr "Tiger II"
+
+msgid "Chassis_G16_PzVIB_Tiger_II_F_short"
+msgstr "Tiger II"
 
 msgid "Chassis_G58_VK4502P"
 msgstr "VK 45.02(P) Ausf. B"
@@ -465,6 +486,9 @@ msgstr "VK 45.02 (P) Ausf. A"
 msgid "Chassis_VK7201"
 msgstr "VK 72.01 (K)"
 
+msgid "Chassis_VK7201P"
+msgstr "Pz.Kpfw. VII"
+
 msgid "Chassis_Waffentrager_E100"
 msgstr "Waffenträger auf E 100"
 
@@ -497,11 +521,17 @@ msgstr ""
 msgid "DW_II_short"
 msgstr "D.W. 2"
 
+msgid "Daimler-Benz_DB-603"
+msgstr "DB 603 mit mechanischer Aufladung"
+
 msgid "Daimler-Benz_DB-603A2"
 msgstr "MB 507"
 
 msgid "Daimler-Benz_DB-603A2_short"
 msgstr "MB 507"
+
+msgid "Daimler-Benz_DB-603_short"
+msgstr "DB 603 mit Aufladung"
 
 msgid "Daimler-Benz_MB-809"
 msgstr "Daimler-Benz MB 809"
@@ -578,9 +608,9 @@ msgid "E50_Ausf_M_descr"
 msgstr ""
 "Одним из требований, выдвигаемых военными к танкам E-серии, было перенесение "
 "трансмиссии в кормовую часть корпуса. Однако в процессе разработки танков E "
-"50 и E 75 была полностью заимствована компоновка моторно-трансмиссионного "
-"отделения танка «Тигр II», что полностью исключало возможность переноса "
-"трансмиссии в кормовую часть. E 50 Ausf. M — реконструкция проекта E 50 с "
+"50 и E 75 для ускорения работы была полностью заимствована компоновка "
+"моторно-трансмиссионного отделения танка Tiger II, что полностью исключало "
+"перенос трансмиссии назад. E 50 Ausf. M — реконструкция проекта E 50 с "
 "задним расположением трансмиссии."
 
 msgid "E50_Ausf_M_short"
@@ -661,7 +691,7 @@ msgid "FuG_F"
 msgstr "Fu.Spr.Ger. \"f\""
 
 msgid "FuG_FA"
-msgstr "Fu.Spr.Ger. \"f\""
+msgstr "Fu.Spr.Ger. \"f\" A"
 
 msgid "FuG_Spr.1"
 msgstr "FuG Spr. 1"
@@ -819,6 +849,20 @@ msgstr ""
 msgid "G109_Steyr_WT_short"
 msgstr "Steyr WT"
 
+msgid "G110_Typ_205"
+msgstr "Mäuschen"
+
+msgid "G110_Typ_205_descr"
+msgstr ""
+"Летом 1942 года компания Porsche получила заказ на проведение опытно-"
+"конструкторских работ по созданию танка прорыва с максимально допустимым "
+"уровнем защиты и мощным вооружением. Typ 205 Mäuschen стал одним из эскизных "
+"проектов в процессе разработки сверхтяжелого танка Maus со схожей "
+"компоновкой. Машина не была реализована в металле."
+
+msgid "G110_Typ_205_short"
+msgstr "Mäuschen"
+
 msgid "G112_KanonenJagdPanzer"
 msgstr "Kanonenjagdpanzer"
 
@@ -875,8 +919,20 @@ msgstr ""
 msgid "G114_Skorpian_short"
 msgstr "Skorpion"
 
-msgid "G115_Typ_205_4_Jun"
+msgid "G115_Typ_205B"
 msgstr "VK 100.01 (P)"
+
+msgid "G115_Typ_205B_descr"
+msgstr ""
+"Версия танка Maus от 4 июня 1942 года. 120-тонный предшественник "
+"сверхтяжёлого танка остался не более чем одним из этапов работы над "
+"проектом. В металле построен не был, в боевых действиях не применялся."
+
+msgid "G115_Typ_205B_short"
+msgstr "VK 100.01 P"
+
+msgid "G115_Typ_205_4_Jun"
+msgstr "VK 100.01 (P) Ausf. B"
 
 msgid "G115_Typ_205_4_Jun_descr"
 msgstr ""
@@ -885,7 +941,7 @@ msgstr ""
 "проектом. В металле построен не был, в боевых действиях не применялся."
 
 msgid "G115_Typ_205_4_Jun_short"
-msgstr "VK 100.01 P"
+msgstr "VK 100.01 B"
 
 msgid "G116_Turan_III_prot"
 msgstr "Turán III prototípus"
@@ -923,6 +979,19 @@ msgstr ""
 
 msgid "G119_Panzer58"
 msgstr "Panzer 58"
+
+msgid "G119_Panzer58_BF"
+msgstr "Schwarzpanzer 58"
+
+msgid "G119_Panzer58_BF_descr"
+msgstr ""
+"Швейцарский проект среднего танка 1953 года с современными боевыми "
+"характеристиками и возможностью применения в горной местности. "
+"Предполагалось использовать орудие английского танка Centurion. Было "
+"изготовлено 2 прототипа и 10 машин. Серийно не выпускался."
+
+msgid "G119_Panzer58_BF_short"
+msgstr "Schwarzpz.58"
 
 msgid "G119_Panzer58_descr"
 msgstr ""
@@ -1271,6 +1340,23 @@ msgstr "Jg.Pz. E 100"
 msgid "JagdTiger"
 msgstr "Jagdtiger"
 
+msgid "JagdTigerH"
+msgstr "Jagdtiger (H)"
+
+msgid "JagdTigerH_descr"
+msgstr ""
+"Тяжёлая ПТ-САУ на шасси танка Tiger II разрабатывалась в 1942—1944 годах и "
+"стала самым тяжёлым серийно производившимся образцом бронетехники всех "
+"времён. Jagdtiger серийно производился с 1944 по 1945 год. По разным данным, "
+"всего было выпущено от 70 до 79 ПТ-САУ, поставленных на вооружение 653-го и "
+"512-го тяжёлых батальонов истребителей танков."
+
+msgid "JagdTigerH_ketten"
+msgstr "Jagdtiger (H)"
+
+msgid "JagdTigerH_turm"
+msgstr "Jagdtiger (H)"
+
 msgid "JagdTiger_SdKfz_185"
 msgstr "8,8 cm Pak 43 Jagdtiger"
 
@@ -1444,6 +1530,9 @@ msgid "MB507"
 msgstr "DB 603 A2"
 
 msgid "MB517"
+msgstr "MB 517"
+
+msgid "MB517P"
 msgstr "MB 517"
 
 msgid "MarderII"
@@ -1653,13 +1742,15 @@ msgstr ""
 "TRM P45"
 
 msgid "Maybach_HL_234"
-msgstr "Maybach HL 234"
+msgstr "Maybach NL 234"
 
 msgid "Maybach_HL_234P30_Ausf_A"
-msgstr "Maybach HL 230"
+msgstr "Maybach HL 234 TRM P72"
 
 msgid "Maybach_HL_234P30_Ausf_A_short"
-msgstr "Maybach HL 230"
+msgstr ""
+"Maybach HL 234\n"
+"TRM P72"
 
 msgid "Maybach_HL_234P45"
 msgstr "Maybach HL 234"
@@ -1765,7 +1856,13 @@ msgid "PanzerJager_I_short"
 msgstr "Pz.Jäg. I"
 
 msgid "Porsche_16_Cyl_Y"
+msgstr "Porsche Typ 212 NL"
+
+msgid "Porsche_16_Cyl_Y1"
 msgstr "Porsche 16 Cyl. Y"
+
+msgid "Porsche_16_Cyl_Y2"
+msgstr "Porsche Typ 212 NL"
 
 msgid "Porsche_Deutz_Typ180_2"
 msgstr "Porsche Deutz Typ 180/2"
@@ -1795,6 +1892,9 @@ msgstr "2x Porsche Typ 100/3A"
 
 msgid "Porsche_Typ_101_1_x2"
 msgstr "2 x Porsche Typ 101/1"
+
+msgid "Porsche_Typ_220"
+msgstr "DB 603 A1"
 
 msgid "Praga_AusfIV"
 msgstr "Praga Ausf. IV"
@@ -2240,9 +2340,9 @@ msgid "PzIV_schmalturm_descr"
 msgstr ""
 "В ноябре 1944 года компания Krupp подготовила серию аванпроектов, "
 "направленных на усиление вооружения существующих танков и истребителей "
-"танков. Среди них был проект установки на Pz IV Ausf. J тесной башни, "
-"разрабатываемой для «Пантеры». Проект не был рассмотрен в связи с принятием "
-"решения о прекращении производства Pz IV."
+"танков. Среди них был проект установки на Pz. IV Ausf. J башни Schmalturm, "
+"разрабатываемой для Panther. Проект не был рассмотрен по причине перегрузки "
+"шасси, а также в связи с принятием решения о прекращении производства Pz. IV."
 
 msgid "PzIV_schmalturm_short"
 msgstr "Pz. IV S."
@@ -2321,6 +2421,23 @@ msgstr ""
 
 msgid "PzVIB_Tiger_II"
 msgstr "Tiger II"
+
+msgid "PzVIB_Tiger_II_F"
+msgstr "Tiger II (H)"
+
+msgid "PzVIB_Tiger_II_F_descr"
+msgstr ""
+"Наиболее защищённый танк Второй мировой войны с самой мощной противотанковой "
+"пушкой, но с перегруженной моторно-трансмисcионной группой и ходовой частью, "
+"а также со слишком большой массой. При условии навязывания противнику "
+"огневого боя на большой дистанции, преимущества танка Tiger II в вооружении "
+"и броневой защите были подавляющими. Однако из-за большой массы, низкой "
+"надёжности двигателя и трансмиссии, а также вследствие небольшого количества "
+"произведённых машин, Tiger II не оказал серьёзного влияния на ход боевых "
+"действий."
+
+msgid "PzVIB_Tiger_II_F_short"
+msgstr "Tiger II (H)"
 
 msgid "PzVIB_Tiger_II_descr"
 msgstr ""
@@ -2404,7 +2521,7 @@ msgid "PzV_PzIV_ausf_Alfa"
 msgstr "Pz.Kpfw. V/IV Alpha"
 
 msgid "PzV_PzIV_ausf_Alfa_CN"
-msgstr "Pz.Kpfw. V Berge-Panther Alpha"
+msgstr "Pz. V Berge-Panther Alpha"
 
 msgid "PzV_PzIV_ausf_Alfa_CN_descr"
 msgstr ""
@@ -2457,9 +2574,9 @@ msgstr "Pz.Kpfw. IV Ausf. A"
 msgid "Pz_IV_AusfA_descr"
 msgstr ""
 "Разработка танка началась в 1935 году. В апреле 1936 года машина получила "
-"обозначение Pz Kpfw IV. Осенью 1937 года начался серийный выпуск, и в январе "
-"1938 года первые три танка поступили в войска. Всего было выпущено 35 машин, "
-"которые состояли на вооружении до весны 1941 года."
+"обозначение Pz.Kpfw. IV. Осенью 1937 года начался серийный выпуск, и в "
+"январе 1938 года первые три танка поступили в войска. Всего было выпущено 35 "
+"машин, которые состояли на вооружении до весны 1941 года."
 
 msgid "Pz_IV_AusfA_short"
 msgstr "Pz. IV A"
@@ -2768,6 +2885,9 @@ msgstr "Pz.Kpfw. II Ausf. D"
 msgid "Turret_1_G109_Steyr_WT"
 msgstr "Krupp-Steyr Waffenträger"
 
+msgid "Turret_1_G110_Typ_205"
+msgstr "Mäuschen"
+
 msgid "Turret_1_G112_KanonenJagdPanzer"
 msgstr "Kanonenjagdpanzer"
 
@@ -2780,8 +2900,11 @@ msgstr "Rheinmetall 12,8 cm K 43 Skorpion"
 msgid "Turret_1_G114_Skorpian"
 msgstr "Rheinmetall 12,8 cm K 43 Skorpion"
 
-msgid "Turret_1_G115_Typ_205_4_Jun"
+msgid "Turret_1_G115_Typ_205B"
 msgstr "VK 100.01 (P)"
+
+msgid "Turret_1_G115_Typ_205_4_Jun"
+msgstr "VK 100.01 (P) Ausf. B"
 
 msgid "Turret_1_G116_Turan_III_prot"
 msgstr "Turán III prototípus"
@@ -2793,6 +2916,9 @@ msgid "Turret_1_G118_VK4503"
 msgstr "VK 45.03"
 
 msgid "Turret_1_G119_Panzer58"
+msgstr "Panzer 58"
+
+msgid "Turret_1_G119_Panzer58_BF"
 msgstr "Panzer 58"
 
 msgid "Turret_1_G119_Pz58_Mutz"
@@ -2809,6 +2935,12 @@ msgstr "Grille 15"
 
 msgid "Turret_1_G122_VK6501H"
 msgstr "VK 65.01 (H) S.W."
+
+msgid "Turret_1_G16_PzVIB_Tiger_II_F"
+msgstr "Tiger II"
+
+msgid "Turret_1_G16_PzVIB_Tiger_II_F_short"
+msgstr "Tiger II"
 
 msgid "Turret_1_G58_VK4502P"
 msgstr "VK 45.02 (P) Ausf. B"
@@ -3024,6 +3156,9 @@ msgstr "Waffenträger auf Pz. IV für 15 cm"
 
 msgid "Turret_VK7201"
 msgstr "VK 72.01 (K)"
+
+msgid "Turret_VK7201P"
+msgstr "Pz.Kpfw. VII"
 
 msgid "V12_cylinder_Boxer_Motor"
 msgstr "12 cylinder Boxer-Motor"
@@ -3256,9 +3391,10 @@ msgstr "VK 45.02 (P) Ausf. A"
 
 msgid "VK4502A_descr"
 msgstr ""
-"Работа над машиной началась в апреле 1942 года. Компания Krupp получила "
-"заказ на постройку башен, однако опытный экземпляр построен не был. Башни "
-"были установлены на первые «Тигры II»."
+"Проект развития немецкого тяжёлого танка VK 45.01 (P). Опытный экземпляр "
+"построен не был, так как 10-цилиндровый двигатель Porsche не прошёл "
+"испытания. В дальнейшем уже изготовленные для танка башни были установлены "
+"на первые серийные Tiger II."
 
 msgid "VK4502A_short"
 msgstr "VK 45.02 A"
@@ -3304,6 +3440,18 @@ msgstr "VK 45.02 B"
 
 msgid "VK7201"
 msgstr "VK 72.01 (K)"
+
+msgid "VK7201P"
+msgstr "Pz.Kpfw. VII"
+
+msgid "VK7201P_descr"
+msgstr ""
+"Вариант сверхтяжёлого танка c задним расположением башни. Разрабатывался "
+"компанией Krupp. От VK 70.01 отличался усиленным вооружением и "
+"бронированием. Существовал только в эскизах."
+
+msgid "VK7201P_short"
+msgstr "Pz.Kpfw. VII"
 
 msgid "VK7201_descr"
 msgstr ""
@@ -3502,7 +3650,13 @@ msgstr "12,8 cm Kanone 44 L/55"
 msgid "_128mm_KwK44_L55"
 msgstr "12,8 cm Kw.K. 44 L/55"
 
+msgid "_128mm_KwK46_L61"
+msgstr "12,8 cm Kw.K. 46 L/61"
+
 msgid "_128mm_L50"
+msgstr "12,8 cm Kw.K. L/50"
+
+msgid "_128mm_L50A"
 msgstr "12,8 cm Kw.K. L/50"
 
 msgid "_128mm_PaK44_2_L61"
@@ -3510,6 +3664,9 @@ msgstr "12,8 cm Pak L/66"
 
 msgid "_128mm_PaK44_L55"
 msgstr "12,8 cm Pak 44 L/55"
+
+msgid "_128mm_PaK44_L55A"
+msgstr "12,8 cm Pak 44/1 L/55"
 
 msgid "_128mm_PzGr39"
 msgstr "Pzgr 39"

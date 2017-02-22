@@ -935,7 +935,7 @@ AOI-1195-5</value>
     <value>TOG II*</value>
   </data>
   <data name="GB63_TOG_II_descr" xml:space="preserve">
-    <value>Танк разрабатывался для боевых действий в условиях позиционной войны. Первоначально вооружение танка предполагалось разместить в лобовой части корпуса и бортовых спонсонах. В ходе разработки опытных образцов было принято решение добавить башню, а спонсоны не устанавливать. К 1943 году, когда был построен и вышел на испытания TOG 2*, концепция танка полностью устарела, и он так и не был принят на вооружение.</value>
+    <value>Танк разрабатывался для боевых действий в условиях позиционной войны. Первоначально вооружение танка предполагалось разместить в лобовой части корпуса и бортовых спонсонах. В ходе разработки опытных образцов было принято решение добавить башню, а спонсоны не устанавливать. К 1943 году, когда был построен и вышел на испытания TOG II*, концепция танка полностью устарела, и он так и не был принят на вооружение.</value>
   </data>
   <data name="GB68_Matilda_Black_Prince" xml:space="preserve">
     <value>Matilda Black Prince</value>
@@ -965,13 +965,13 @@ AOI-1195-5</value>
     <value>FV4202</value>
   </data>
   <data name="GB70_N_FV4202_105" xml:space="preserve">
-    <value>FV4202 (P)</value>
+    <value>FV4202</value>
   </data>
   <data name="GB70_N_FV4202_105_descr" xml:space="preserve">
     <value>Экспериментальный танк, созданный на базе среднего танка Centurion. Работы над машиной велись с 1956 по 1959 год. Серийно не выпускался. Технические решения и инновации, воплощённые в FV4202, явились основой для танка FV4201 Chieftain.</value>
   </data>
   <data name="GB70_N_FV4202_105_short" xml:space="preserve">
-    <value>FV4202 (P)</value>
+    <value>FV4202</value>
   </data>
   <data name="GB71_AT_15A" xml:space="preserve">
     <value>AT 15A</value>
@@ -989,7 +989,7 @@ AOI-1195-5</value>
     <value>AT 2</value>
   </data>
   <data name="GB73_AT2_descr" xml:space="preserve">
-    <value>Проект штурмового танка, предназначенного для прорыва укреплённых районов противника. Эскиз машины был готов 15 мая 1943 года. Опытный образец построен не был, но проект послужил основой для создания тяжёлого штурмового танка A39 Tortoise.</value>
+    <value>Проект штурмового танка, предназначенного для прорыва укреплённых районов противника. Эскиз машины был готов 15 мая 1943 г. Опытный образец построен не был, но проект послужил началом работ по созданию тяжёлого штурмового танка A39 Tortoise.</value>
   </data>
   <data name="GB74_AT8" xml:space="preserve">
     <value>AT 8</value>
@@ -1360,8 +1360,17 @@ AOI-1195-5</value>
   <data name="Turret_1_GB27_Sexton" xml:space="preserve">
     <value>Sexton II</value>
   </data>
+  <data name="Turret_1_GB28_Bishop" xml:space="preserve">
+    <value>Bishop</value>
+  </data>
+  <data name="Turret_1_GB29_Crusader_5inch" xml:space="preserve">
+    <value>Crusader 5.5-in. SP</value>
+  </data>
   <data name="Turret_1_GB30_FV3805" xml:space="preserve">
     <value>FV3805</value>
+  </data>
+  <data name="Turret_1_GB31_Conqueror_Gun" xml:space="preserve">
+    <value>Conqueror Gun Carriage</value>
   </data>
   <data name="Turret_1_GB32_Tortoise" xml:space="preserve">
     <value>Tortoise</value>
@@ -1446,6 +1455,9 @@ AOI-1195-5</value>
   </data>
   <data name="Turret_1_GB77_FV304" xml:space="preserve">
     <value>FV304</value>
+  </data>
+  <data name="Turret_1_GB79_FV206" xml:space="preserve">
+    <value>FV207</value>
   </data>
   <data name="Turret_1_GB80_Charioteer" xml:space="preserve">
     <value>Charioteer</value>

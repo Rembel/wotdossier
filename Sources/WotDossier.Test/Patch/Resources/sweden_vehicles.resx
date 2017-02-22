@@ -243,6 +243,12 @@
   <data name="Chassis_S21_UDES_03_2" xml:space="preserve">
     <value>UDES 03</value>
   </data>
+  <data name="Chassis_S22_Strv_S1" xml:space="preserve">
+    <value>Strv S1</value>
+  </data>
+  <data name="Chassis_S23_Strv_81" xml:space="preserve">
+    <value>Strv 81</value>
+  </data>
   <data name="DB_605" xml:space="preserve">
     <value>DB 605</value>
   </data>
@@ -267,10 +273,16 @@
   <data name="MTU_837_Ea_500" xml:space="preserve">
     <value>MTU 837 Ea-500</value>
   </data>
+  <data name="Meteor_Mark_IVB" xml:space="preserve">
+    <value>Meteor Mark IVB</value>
+  </data>
   <data name="Meteor_Mark_IV_Mod_271" xml:space="preserve">
     <value>Meteor Mark IV Mod 271</value>
   </data>
   <data name="Motoraggregat_1S" xml:space="preserve">
+    <value>Motoraggregat 1S</value>
+  </data>
+  <data name="Motoraggregat_1S_A" xml:space="preserve">
     <value>Motoraggregat 1S</value>
   </data>
   <data name="Motoraggregat_3" xml:space="preserve">
@@ -452,7 +464,7 @@ L-60. В 1939 году к проекту проявила заинтересов
     <value>Emil II</value>
   </data>
   <data name="S17_EMIL_1952_E2_descr" xml:space="preserve">
-    <value>Вариант тяжёлого танка, разработанный в рамках проекта 1949 года по созданию новой машины. К 1952 году было предложено три проекта тяжёлого танка. EMIL 1952 E2 был вторым вариантом. В зависимости от бронирования и установленного двигателя масса данной машины варьировалась от 34 до 39 тонн. Однако в конце 1952 года от версии Е2 отказались в пользу варианта Е3, который имел схожие характеристики при более мощном бронировании.</value>
+    <value>Вариант тяжёлого танка, разработанный в рамках проекта 1949 года по созданию новой машины. К 1952 году было предложено три проекта тяжёлого танка. EMIL 1952 E2 был вторым вариантом. В зависимости от бронирования и установленного двигателя, масса данной машины варьировалась от 34 до 39 тонн. Однако в конце 1952 года от версии Е2 отказались в пользу варианта Е3, который имел схожие характеристики при более мощном бронировании.</value>
   </data>
   <data name="S17_EMIL_1952_E2_short" xml:space="preserve">
     <value>Emil II</value>
@@ -479,7 +491,7 @@ L-60. В 1939 году к проекту проявила заинтересов
     <value>Ikv 72</value>
   </data>
   <data name="S20_Ikv_72_descr" xml:space="preserve">
-    <value>После Второй мировой войны в Швеции возникла необходимость создания легкобронированной машины огневой поддержки пехоты. Одной из таких машин стала пехотная артиллерийская машина Ikv 72 компании Landsverk. Всего до 1954 года на вооружение было поставлено 36 машин. В 1956-58 гг. машины были перевооружены более мощными орудиями калибра 10,5 мм и использовались до середины 1970-х годов под наименованием Ikv 102.</value>
+    <value>После Второй мировой войны в Швеции возникла необходимость создания легкобронированной машины огневой поддержки пехоты. Одной из таких машин стала пехотная артиллерийская машина Ikv 72 компании Landsverk. Всего до 1954 года на вооружение было поставлено 36 машин. В 1956-58 гг. машины были перевооружены более мощными орудиями калибра 10,5 см и использовались до середины 1970-х годов под наименованием Ikv 102.</value>
   </data>
   <data name="S20_Ikv_72_short" xml:space="preserve">
     <value>Ikv 72</value>
@@ -492,6 +504,24 @@ L-60. В 1939 году к проекту проявила заинтересов
   </data>
   <data name="S21_UDES_03_short" xml:space="preserve">
     <value>UDES 03</value>
+  </data>
+  <data name="S22_Strv_S1" xml:space="preserve">
+    <value>Strv S1</value>
+  </data>
+  <data name="S22_Strv_S1_descr" xml:space="preserve">
+    <value>Работы над созданием перспективного танка для шведской армии возглавил инженер Свен Берге. Первые эскизы уникальной машины датированы 1956 годом. К 1961 году был окончательно сформирован облик нового танка, изготовлен полномерный деревянный макет, а немного позже появился первый прототип — Strv S1. На прототипе испытывалась работа подвески, позволявшей машине осуществлять вертикальное наведение орудия, жёстко закреплённого в корпусе. Прототип Strv S2 появился в конце 1962 года. Опыт, полученный в ходе испытаний прототипов, послужил основой для серийного производства танка Strv 103.</value>
+  </data>
+  <data name="S22_Strv_S1_short" xml:space="preserve">
+    <value>Strv S1</value>
+  </data>
+  <data name="S23_Strv_81" xml:space="preserve">
+    <value>Strv 81</value>
+  </data>
+  <data name="S23_Strv_81_descr" xml:space="preserve">
+    <value>В середине 1950-х г. Швеция закупила у Великобритании около 240 танков Centurion Mk. 3 и Mk. 5. В шведской армии машины получили наименование Strv 81. Танки находились на вооружении вплоть до начала 2000-х гг. и неоднократно модернизировались на протяжении всего срока службы.</value>
+  </data>
+  <data name="S23_Strv_81_short" xml:space="preserve">
+    <value>Strv 81</value>
   </data>
   <data name="SFA_8_cyl_boxer" xml:space="preserve">
     <value>SFA 8 cyl boxer</value>
@@ -577,6 +607,12 @@ L-60. В 1939 году к проекту проявила заинтересов
   <data name="Turret_1_S21_UDES_03" xml:space="preserve">
     <value>UDES 03</value>
   </data>
+  <data name="Turret_1_S22_Strv_S1" xml:space="preserve">
+    <value>Strv S1</value>
+  </data>
+  <data name="Turret_1_S23_Strv_81" xml:space="preserve">
+    <value>Strv 81</value>
+  </data>
   <data name="Turret_2_S02_Strv_M42" xml:space="preserve">
     <value>Strv m/42</value>
   </data>
@@ -632,6 +668,9 @@ L-60. В 1939 году к проекту проявила заинтересов
     <value>10,5 cm kan m/44 sav</value>
   </data>
   <data name="_105mm_kan_strv_103_L_51" xml:space="preserve">
+    <value>10,5 cm kan strv 103 L/51</value>
+  </data>
+  <data name="_105mm_kan_strv_103_L_51_1" xml:space="preserve">
     <value>10,5 cm kan strv 103 L/51</value>
   </data>
   <data name="_105mm_kan_strv_103_L_62" xml:space="preserve">
@@ -761,7 +800,7 @@ L-60. В 1939 году к проекту проявила заинтересов
     <value>2 st Scania-Vabis 1664</value>
   </data>
   <data name="_2_st_Scania_Vabis_607" xml:space="preserve">
-    <value>2 st Scania-Vabis 607</value>
+    <value>2 st Scania-Vabis 607/1</value>
   </data>
   <data name="_2_st_Scania_Vabis_607_1" xml:space="preserve">
     <value>2 st Scania-Vabis 607</value>
@@ -894,6 +933,18 @@ L-60. В 1939 году к проекту проявила заинтересов
   </data>
   <data name="_75mm_slpsgr_fm_45" xml:space="preserve">
     <value>slpsgr fm/45</value>
+  </data>
+  <data name="_84mm_kan_strv_81_1" xml:space="preserve">
+    <value>8,4 cm kan strv 81</value>
+  </data>
+  <data name="_84mm_slpprj_m_53" xml:space="preserve">
+    <value>slpprj m/53</value>
+  </data>
+  <data name="_84mm_slpprj_m_54" xml:space="preserve">
+    <value>slpprj m/54</value>
+  </data>
+  <data name="_84mm_slsgr_m_53" xml:space="preserve">
+    <value>slsgr m/53</value>
   </data>
   <data name="_90mm_Bofors_L_43" xml:space="preserve">
     <value>9 cm Bofors L/43</value>

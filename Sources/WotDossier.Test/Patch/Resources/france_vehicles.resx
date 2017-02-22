@@ -121,7 +121,7 @@
     <value>AMX 38</value>
   </data>
   <data name="AMX38_descr" xml:space="preserve">
-    <value>Разработан в 1937 году компанией АМХ с использованием узлов ходовой части танка Renault R-40. Танк имел более просторную башню, чем серийные машины, и оснащался дизельным двигателем. К испытаниям в начале 1940 года было изготовлено две машины.</value>
+    <value>Разрабатывался в 1937–1938 гг. в рамках программы «20-тонный танк» и должен был заменить уже принятый на вооружение D2. Проект предусматривал два варианта башни с установкой 37-мм и 47-мм орудий. К испытаниям в 1938 г. было построено две машины. Серийно не выпускался.</value>
   </data>
   <data name="AMX38_short" xml:space="preserve">
     <value>AMX 38</value>
@@ -1202,7 +1202,7 @@ Naeder-FIEUX</value>
     <value>SCR 508</value>
   </data>
   <data name="SCR_508_1" xml:space="preserve">
-    <value>SCR 508/1</value>
+    <value>SCR 508/2</value>
   </data>
   <data name="SCR_528" xml:space="preserve">
     <value>SCR 528F</value>

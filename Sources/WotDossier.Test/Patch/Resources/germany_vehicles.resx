@@ -256,6 +256,12 @@
   <data name="Chassis_G109_Steyr_WT" xml:space="preserve">
     <value>Krupp-Steyr Waffenträger</value>
   </data>
+  <data name="Chassis_G110_Typ_205" xml:space="preserve">
+    <value>170 ton Panzer</value>
+  </data>
+  <data name="Chassis_G110_Typ_205_2" xml:space="preserve">
+    <value>Mäuschen</value>
+  </data>
   <data name="Chassis_G112_KanonenJagdPanzer" xml:space="preserve">
     <value>Kanonenjagdpanzer</value>
   </data>
@@ -271,8 +277,14 @@
   <data name="Chassis_G114_Skorpian" xml:space="preserve">
     <value>Rheinmetall 12,8 cm K 43 Skorpion</value>
   </data>
-  <data name="Chassis_G115_Typ_205_4_Jun" xml:space="preserve">
+  <data name="Chassis_G115_Typ_205B" xml:space="preserve">
     <value>VK 100.01 (P)</value>
+  </data>
+  <data name="Chassis_G115_Typ_205B_2" xml:space="preserve">
+    <value>VK 100.01 (P) verstärkteketten</value>
+  </data>
+  <data name="Chassis_G115_Typ_205_4_Jun" xml:space="preserve">
+    <value>VK 100.01 (P) Ausf. B</value>
   </data>
   <data name="Chassis_G116_Turan_III_prot" xml:space="preserve">
     <value>Turán III prototípus</value>
@@ -284,6 +296,9 @@
     <value>VK 45.03</value>
   </data>
   <data name="Chassis_G119_Panzer58" xml:space="preserve">
+    <value>Panzer 58</value>
+  </data>
+  <data name="Chassis_G119_Panzer58_BF" xml:space="preserve">
     <value>Panzer 58</value>
   </data>
   <data name="Chassis_G119_Pz58_Mutz" xml:space="preserve">
@@ -300,6 +315,12 @@
   </data>
   <data name="Chassis_G122_VK6501H" xml:space="preserve">
     <value>VK 65.01 (H)</value>
+  </data>
+  <data name="Chassis_G16_PzVIB_Tiger_II_F" xml:space="preserve">
+    <value>Tiger II</value>
+  </data>
+  <data name="Chassis_G16_PzVIB_Tiger_II_F_short" xml:space="preserve">
+    <value>Tiger II</value>
   </data>
   <data name="Chassis_G58_VK4502P" xml:space="preserve">
     <value>VK 45.02(P) Ausf. B</value>
@@ -547,6 +568,9 @@ verstärkteketten</value>
   <data name="Chassis_VK7201" xml:space="preserve">
     <value>VK 72.01 (K)</value>
   </data>
+  <data name="Chassis_VK7201P" xml:space="preserve">
+    <value>Pz.Kpfw. VII</value>
+  </data>
   <data name="Chassis_Waffentrager_E100" xml:space="preserve">
     <value>Waffenträger auf E 100</value>
   </data>
@@ -572,11 +596,17 @@ AOS-895-3</value>
   <data name="DW_II_short" xml:space="preserve">
     <value>D.W. 2</value>
   </data>
+  <data name="Daimler-Benz_DB-603" xml:space="preserve">
+    <value>DB 603 mit mechanischer Aufladung</value>
+  </data>
   <data name="Daimler-Benz_DB-603A2" xml:space="preserve">
     <value>MB 507</value>
   </data>
   <data name="Daimler-Benz_DB-603A2_short" xml:space="preserve">
     <value>MB 507</value>
+  </data>
+  <data name="Daimler-Benz_DB-603_short" xml:space="preserve">
+    <value>DB 603 mit Aufladung</value>
   </data>
   <data name="Daimler-Benz_MB-809" xml:space="preserve">
     <value>Daimler-Benz MB 809</value>
@@ -633,7 +663,7 @@ AOS-895-3</value>
     <value>E 50 Ausf. M</value>
   </data>
   <data name="E50_Ausf_M_descr" xml:space="preserve">
-    <value>Одним из требований, выдвигаемых военными к танкам E-серии, было перенесение трансмиссии в кормовую часть корпуса. Однако в процессе разработки танков E 50 и E 75 была полностью заимствована компоновка моторно-трансмиссионного отделения танка «Тигр II», что полностью исключало возможность переноса трансмиссии в кормовую часть. E 50 Ausf. M — реконструкция проекта E 50 с задним расположением трансмиссии.</value>
+    <value>Одним из требований, выдвигаемых военными к танкам E-серии, было перенесение трансмиссии в кормовую часть корпуса. Однако в процессе разработки танков E 50 и E 75 для ускорения работы была полностью заимствована компоновка моторно-трансмиссионного отделения танка Tiger II, что полностью исключало перенос трансмиссии назад. E 50 Ausf. M — реконструкция проекта E 50 с задним расположением трансмиссии.</value>
   </data>
   <data name="E50_Ausf_M_short" xml:space="preserve">
     <value>E 50 M</value>
@@ -711,7 +741,7 @@ AOS-895-3</value>
     <value>Fu.Spr.Ger. "f"</value>
   </data>
   <data name="FuG_FA" xml:space="preserve">
-    <value>Fu.Spr.Ger. "f"</value>
+    <value>Fu.Spr.Ger. "f" A</value>
   </data>
   <data name="FuG_Spr.1" xml:space="preserve">
     <value>FuG Spr. 1</value>
@@ -811,6 +841,15 @@ AOS-895-3</value>
   <data name="G109_Steyr_WT_short" xml:space="preserve">
     <value>Steyr WT</value>
   </data>
+  <data name="G110_Typ_205" xml:space="preserve">
+    <value>Mäuschen</value>
+  </data>
+  <data name="G110_Typ_205_descr" xml:space="preserve">
+    <value>Летом 1942 года компания Porsche получила заказ на проведение опытно-конструкторских работ по созданию танка прорыва с максимально допустимым уровнем защиты и мощным вооружением. Typ 205 Mäuschen стал одним из эскизных проектов в процессе разработки сверхтяжелого танка Maus со схожей компоновкой. Машина не была реализована в металле.</value>
+  </data>
+  <data name="G110_Typ_205_short" xml:space="preserve">
+    <value>Mäuschen</value>
+  </data>
   <data name="G112_KanonenJagdPanzer" xml:space="preserve">
     <value>Kanonenjagdpanzer</value>
   </data>
@@ -847,14 +886,23 @@ AOS-895-3</value>
   <data name="G114_Skorpian_short" xml:space="preserve">
     <value>Skorpion</value>
   </data>
-  <data name="G115_Typ_205_4_Jun" xml:space="preserve">
+  <data name="G115_Typ_205B" xml:space="preserve">
     <value>VK 100.01 (P)</value>
+  </data>
+  <data name="G115_Typ_205B_descr" xml:space="preserve">
+    <value>Версия танка Maus от 4 июня 1942 года. 120-тонный предшественник сверхтяжёлого танка остался не более чем одним из этапов работы над проектом. В металле построен не был, в боевых действиях не применялся.</value>
+  </data>
+  <data name="G115_Typ_205B_short" xml:space="preserve">
+    <value>VK 100.01 P</value>
+  </data>
+  <data name="G115_Typ_205_4_Jun" xml:space="preserve">
+    <value>VK 100.01 (P) Ausf. B</value>
   </data>
   <data name="G115_Typ_205_4_Jun_descr" xml:space="preserve">
     <value>Версия танка Maus от 4 июня 1942 года. 120-тонный предшественник сверхтяжёлого танка остался не более чем одним из этапов работы над проектом. В металле построен не был, в боевых действиях не применялся.</value>
   </data>
   <data name="G115_Typ_205_4_Jun_short" xml:space="preserve">
-    <value>VK 100.01 P</value>
+    <value>VK 100.01 B</value>
   </data>
   <data name="G116_Turan_III_prot" xml:space="preserve">
     <value>Turán III prototípus</value>
@@ -882,6 +930,15 @@ AOS-895-3</value>
   </data>
   <data name="G119_Panzer58" xml:space="preserve">
     <value>Panzer 58</value>
+  </data>
+  <data name="G119_Panzer58_BF" xml:space="preserve">
+    <value>Schwarzpanzer 58</value>
+  </data>
+  <data name="G119_Panzer58_BF_descr" xml:space="preserve">
+    <value>Швейцарский проект среднего танка 1953 года с современными боевыми характеристиками и возможностью применения в горной местности. Предполагалось использовать орудие английского танка Centurion. Было изготовлено 2 прототипа и 10 машин. Серийно не выпускался.</value>
+  </data>
+  <data name="G119_Panzer58_BF_short" xml:space="preserve">
+    <value>Schwarzpz.58</value>
   </data>
   <data name="G119_Panzer58_descr" xml:space="preserve">
     <value>Швейцарский проект среднего танка с улучшенными боевыми характеристиками и возможностью применения в горной местности, разработанный в 1953 году. Предполагалось использовать орудие английского танка Centurion. Было изготовлено 2 прототипа и 10 машин, однако серийно не выпускался.</value>
@@ -1138,6 +1195,18 @@ AOS-895-3</value>
   <data name="JagdTiger" xml:space="preserve">
     <value>Jagdtiger</value>
   </data>
+  <data name="JagdTigerH" xml:space="preserve">
+    <value>Jagdtiger (H)</value>
+  </data>
+  <data name="JagdTigerH_descr" xml:space="preserve">
+    <value>Тяжёлая ПТ-САУ на шасси танка Tiger II разрабатывалась в 1942—1944 годах и стала самым тяжёлым серийно производившимся образцом бронетехники всех времён. Jagdtiger серийно производился с 1944 по 1945 год. По разным данным, всего было выпущено от 70 до 79 ПТ-САУ, поставленных на вооружение 653-го и 512-го тяжёлых батальонов истребителей танков.</value>
+  </data>
+  <data name="JagdTigerH_ketten" xml:space="preserve">
+    <value>Jagdtiger (H)</value>
+  </data>
+  <data name="JagdTigerH_turm" xml:space="preserve">
+    <value>Jagdtiger (H)</value>
+  </data>
   <data name="JagdTiger_SdKfz_185" xml:space="preserve">
     <value>8,8 cm Pak 43 Jagdtiger</value>
   </data>
@@ -1289,6 +1358,9 @@ AOS-895-3</value>
     <value>DB 603 A2</value>
   </data>
   <data name="MB517" xml:space="preserve">
+    <value>MB 517</value>
+  </data>
+  <data name="MB517P" xml:space="preserve">
     <value>MB 517</value>
   </data>
   <data name="MarderII" xml:space="preserve">
@@ -1485,13 +1557,14 @@ HL 230 TRM P30</value>
 TRM P45</value>
   </data>
   <data name="Maybach_HL_234" xml:space="preserve">
-    <value>Maybach HL 234</value>
+    <value>Maybach NL 234</value>
   </data>
   <data name="Maybach_HL_234P30_Ausf_A" xml:space="preserve">
-    <value>Maybach HL 230</value>
+    <value>Maybach HL 234 TRM P72</value>
   </data>
   <data name="Maybach_HL_234P30_Ausf_A_short" xml:space="preserve">
-    <value>Maybach HL 230</value>
+    <value>Maybach HL 234
+TRM P72</value>
   </data>
   <data name="Maybach_HL_234P45" xml:space="preserve">
     <value>Maybach HL 234</value>
@@ -1574,7 +1647,13 @@ TRM P45</value>
     <value>Pz.Jäg. I</value>
   </data>
   <data name="Porsche_16_Cyl_Y" xml:space="preserve">
+    <value>Porsche Typ 212 NL</value>
+  </data>
+  <data name="Porsche_16_Cyl_Y1" xml:space="preserve">
     <value>Porsche 16 Cyl. Y</value>
+  </data>
+  <data name="Porsche_16_Cyl_Y2" xml:space="preserve">
+    <value>Porsche Typ 212 NL</value>
   </data>
   <data name="Porsche_Deutz_Typ180_2" xml:space="preserve">
     <value>Porsche Deutz Typ 180/2</value>
@@ -1603,6 +1682,9 @@ Typ 180/2</value>
   </data>
   <data name="Porsche_Typ_101_1_x2" xml:space="preserve">
     <value>2 x Porsche Typ 101/1</value>
+  </data>
+  <data name="Porsche_Typ_220" xml:space="preserve">
+    <value>DB 603 A1</value>
   </data>
   <data name="Praga_AusfIV" xml:space="preserve">
     <value>Praga Ausf. IV</value>
@@ -1964,7 +2046,7 @@ Ausf. B</value>
     <value>Pz.Kpfw. IV Schmalturm</value>
   </data>
   <data name="PzIV_schmalturm_descr" xml:space="preserve">
-    <value>В ноябре 1944 года компания Krupp подготовила серию аванпроектов, направленных на усиление вооружения существующих танков и истребителей танков. Среди них был проект установки на Pz IV Ausf. J тесной башни, разрабатываемой для «Пантеры». Проект не был рассмотрен в связи с принятием решения о прекращении производства Pz IV.</value>
+    <value>В ноябре 1944 года компания Krupp подготовила серию аванпроектов, направленных на усиление вооружения существующих танков и истребителей танков. Среди них был проект установки на Pz. IV Ausf. J башни Schmalturm, разрабатываемой для Panther. Проект не был рассмотрен по причине перегрузки шасси, а также в связи с принятием решения о прекращении производства Pz. IV.</value>
   </data>
   <data name="PzIV_schmalturm_short" xml:space="preserve">
     <value>Pz. IV S.</value>
@@ -2029,6 +2111,15 @@ Versuchs-Serie</value>
   <data name="PzVIB_Tiger_II" xml:space="preserve">
     <value>Tiger II</value>
   </data>
+  <data name="PzVIB_Tiger_II_F" xml:space="preserve">
+    <value>Tiger II (H)</value>
+  </data>
+  <data name="PzVIB_Tiger_II_F_descr" xml:space="preserve">
+    <value>Наиболее защищённый танк Второй мировой войны с самой мощной противотанковой пушкой, но с перегруженной моторно-трансмисcионной группой и ходовой частью, а также со слишком большой массой. При условии навязывания противнику огневого боя на большой дистанции, преимущества танка Tiger II в вооружении и броневой защите были подавляющими. Однако из-за большой массы, низкой надёжности двигателя и трансмиссии, а также вследствие небольшого количества произведённых машин, Tiger II не оказал серьёзного влияния на ход боевых действий.</value>
+  </data>
+  <data name="PzVIB_Tiger_II_F_short" xml:space="preserve">
+    <value>Tiger II (H)</value>
+  </data>
   <data name="PzVIB_Tiger_II_descr" xml:space="preserve">
     <value>Наиболее защищённый танк с самой мощной противотанковой пушкой, но с перегруженной моторно-трансмисcионной группой и ходовой частью, а также со слишком большой массой. При условии навязывания противнику огневого боя на большой дистанции преимущества «Тигра II» в вооружении и броневой защите были подавляющими. Однако из-за большой массы, низкой надёжности двигателя и трансмиссии, а также вследствие небольшого количества произведённых машин «Тигр II» не оказал серьёзного влияния на ход боевых действий.</value>
   </data>
@@ -2089,7 +2180,7 @@ Ausf. E</value>
     <value>Pz.Kpfw. V/IV Alpha</value>
   </data>
   <data name="PzV_PzIV_ausf_Alfa_CN" xml:space="preserve">
-    <value>Pz.Kpfw. V Berge-Panther Alpha</value>
+    <value>Pz. V Berge-Panther Alpha</value>
   </data>
   <data name="PzV_PzIV_ausf_Alfa_CN_descr" xml:space="preserve">
     <value>Танк был изготовлен ремонтно-восстановительной ротой 653-го тяжёлого противотанкового батальона на базе шасси БРЭМ Bergepanther и башни Pz. IV.</value>
@@ -2128,7 +2219,7 @@ Ausf. E</value>
     <value>Pz.Kpfw. IV Ausf. A</value>
   </data>
   <data name="Pz_IV_AusfA_descr" xml:space="preserve">
-    <value>Разработка танка началась в 1935 году. В апреле 1936 года машина получила обозначение Pz Kpfw IV. Осенью 1937 года начался серийный выпуск, и в январе 1938 года первые три танка поступили в войска. Всего было выпущено 35 машин, которые состояли на вооружении до весны 1941 года.</value>
+    <value>Разработка танка началась в 1935 году. В апреле 1936 года машина получила обозначение Pz.Kpfw. IV. Осенью 1937 года начался серийный выпуск, и в январе 1938 года первые три танка поступили в войска. Всего было выпущено 35 машин, которые состояли на вооружении до весны 1941 года.</value>
   </data>
   <data name="Pz_IV_AusfA_short" xml:space="preserve">
     <value>Pz. IV A</value>
@@ -2386,6 +2477,9 @@ Ausf. E</value>
   <data name="Turret_1_G109_Steyr_WT" xml:space="preserve">
     <value>Krupp-Steyr Waffenträger</value>
   </data>
+  <data name="Turret_1_G110_Typ_205" xml:space="preserve">
+    <value>Mäuschen</value>
+  </data>
   <data name="Turret_1_G112_KanonenJagdPanzer" xml:space="preserve">
     <value>Kanonenjagdpanzer</value>
   </data>
@@ -2398,8 +2492,11 @@ Ausf. E</value>
   <data name="Turret_1_G114_Skorpian" xml:space="preserve">
     <value>Rheinmetall 12,8 cm K 43 Skorpion</value>
   </data>
-  <data name="Turret_1_G115_Typ_205_4_Jun" xml:space="preserve">
+  <data name="Turret_1_G115_Typ_205B" xml:space="preserve">
     <value>VK 100.01 (P)</value>
+  </data>
+  <data name="Turret_1_G115_Typ_205_4_Jun" xml:space="preserve">
+    <value>VK 100.01 (P) Ausf. B</value>
   </data>
   <data name="Turret_1_G116_Turan_III_prot" xml:space="preserve">
     <value>Turán III prototípus</value>
@@ -2411,6 +2508,9 @@ Ausf. E</value>
     <value>VK 45.03</value>
   </data>
   <data name="Turret_1_G119_Panzer58" xml:space="preserve">
+    <value>Panzer 58</value>
+  </data>
+  <data name="Turret_1_G119_Panzer58_BF" xml:space="preserve">
     <value>Panzer 58</value>
   </data>
   <data name="Turret_1_G119_Pz58_Mutz" xml:space="preserve">
@@ -2427,6 +2527,12 @@ Ausf. E</value>
   </data>
   <data name="Turret_1_G122_VK6501H" xml:space="preserve">
     <value>VK 65.01 (H) S.W.</value>
+  </data>
+  <data name="Turret_1_G16_PzVIB_Tiger_II_F" xml:space="preserve">
+    <value>Tiger II</value>
+  </data>
+  <data name="Turret_1_G16_PzVIB_Tiger_II_F_short" xml:space="preserve">
+    <value>Tiger II</value>
   </data>
   <data name="Turret_1_G58_VK4502P" xml:space="preserve">
     <value>VK 45.02 (P) Ausf. B</value>
@@ -2639,6 +2745,9 @@ Schwerer Turm</value>
   <data name="Turret_VK7201" xml:space="preserve">
     <value>VK 72.01 (K)</value>
   </data>
+  <data name="Turret_VK7201P" xml:space="preserve">
+    <value>Pz.Kpfw. VII</value>
+  </data>
   <data name="V12_cylinder_Boxer_Motor" xml:space="preserve">
     <value>12 cylinder Boxer-Motor</value>
   </data>
@@ -2812,7 +2921,7 @@ verstärkteketten</value>
     <value>VK 45.02 (P) Ausf. A</value>
   </data>
   <data name="VK4502A_descr" xml:space="preserve">
-    <value>Работа над машиной началась в апреле 1942 года. Компания Krupp получила заказ на постройку башен, однако опытный экземпляр построен не был. Башни были установлены на первые «Тигры II».</value>
+    <value>Проект развития немецкого тяжёлого танка VK 45.01 (P). Опытный экземпляр построен не был, так как 10-цилиндровый двигатель Porsche не прошёл испытания. В дальнейшем уже изготовленные для танка башни были установлены на первые серийные Tiger II.</value>
   </data>
   <data name="VK4502A_short" xml:space="preserve">
     <value>VK 45.02 A</value>
@@ -2854,6 +2963,15 @@ verstärkteketten</value>
   </data>
   <data name="VK7201" xml:space="preserve">
     <value>VK 72.01 (K)</value>
+  </data>
+  <data name="VK7201P" xml:space="preserve">
+    <value>Pz.Kpfw. VII</value>
+  </data>
+  <data name="VK7201P_descr" xml:space="preserve">
+    <value>Вариант сверхтяжёлого танка c задним расположением башни. Разрабатывался компанией Krupp. От VK 70.01 отличался усиленным вооружением и бронированием. Существовал только в эскизах.</value>
+  </data>
+  <data name="VK7201P_short" xml:space="preserve">
+    <value>Pz.Kpfw. VII</value>
   </data>
   <data name="VK7201_descr" xml:space="preserve">
     <value>Вариант сверхтяжёлого танка c задним расположением башни. Разрабатывался компанией Krupp. От VK 70.01 отличался усиленным вооружением и бронированием. Существовал только в эскизах.</value>
@@ -3034,7 +3152,13 @@ Ausf. K</value>
   <data name="_128mm_KwK44_L55" xml:space="preserve">
     <value>12,8 cm Kw.K. 44 L/55</value>
   </data>
+  <data name="_128mm_KwK46_L61" xml:space="preserve">
+    <value>12,8 cm Kw.K. 46 L/61</value>
+  </data>
   <data name="_128mm_L50" xml:space="preserve">
+    <value>12,8 cm Kw.K. L/50</value>
+  </data>
+  <data name="_128mm_L50A" xml:space="preserve">
     <value>12,8 cm Kw.K. L/50</value>
   </data>
   <data name="_128mm_PaK44_2_L61" xml:space="preserve">
@@ -3042,6 +3166,9 @@ Ausf. K</value>
   </data>
   <data name="_128mm_PaK44_L55" xml:space="preserve">
     <value>12,8 cm Pak 44 L/55</value>
+  </data>
+  <data name="_128mm_PaK44_L55A" xml:space="preserve">
+    <value>12,8 cm Pak 44/1 L/55</value>
   </data>
   <data name="_128mm_PzGr39" xml:space="preserve">
     <value>Pzgr 39</value>

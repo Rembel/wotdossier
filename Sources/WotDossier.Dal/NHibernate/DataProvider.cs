@@ -86,8 +86,11 @@ namespace WotDossier.Dal.NHibernate
                 {
                     if (_factory == null)
                     {
-                        Configuration configuration = new Configuration().Configure().SetInterceptor(new AuditInterceptor()); ;
-                        _factory = InitFluentMappings(configuration).BuildSessionFactory();
+                        Configuration configuration = new Configuration().Configure();
+                        var fluentMappings = InitFluentMappings(configuration);
+                        var cfg = fluentMappings.BuildConfiguration();
+                        cfg.SetInterceptor(new AuditInterceptor());
+                        _factory = cfg.BuildSessionFactory();
                     }
                 }
                 return _factory;

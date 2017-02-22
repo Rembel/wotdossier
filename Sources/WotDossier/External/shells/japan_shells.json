@@ -1099,5 +1099,38 @@
       "armor": "\t910\t",
       "devices": "\t203\t"
     }
+  },
+  "_150mm_Common_Type_0_HE": {
+    "id": "\t75\t",
+    "userString": "#japan_vehicles:_150mm_Common_Type_0_HE",
+    "icon": "he",
+    "price": "\t1320\t",
+    "kind": "HIGH_EXPLOSIVE",
+    "caliber": "152.4",
+    "explosionRadius": "3.66",
+    "isTracer": "\ttrue\t",
+    "effects": "largeHighExplosive",
+    "damage": {
+      "armor": "\t1100\t",
+      "devices": "\t203\t"
+    }
+  },
+  "_150mm_Common_Type_0_HE_Kai": {
+    "id": "\t76\t",
+    "userString": "#japan_vehicles:_150mm_Common_Type_0_HE_Kai",
+    "icon": "he",
+    "price": {
+      "#text": "\t16\t",
+      "gold": ""
+    },
+    "kind": "HIGH_EXPLOSIVE",
+    "caliber": "152.4",
+    "explosionRadius": "3.66",
+    "isTracer": "\ttrue\t",
+    "effects": "largeHighExplosive",
+    "damage": {
+      "armor": "\t1400\t",
+      "devices": "\t203\t"
+    }
   }
 }

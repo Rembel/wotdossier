@@ -490,6 +490,52 @@
       "devices": "\t105\t"
     }
   },
+  "_84mm_slpprj_m_53": {
+    "id": "\t71\t",
+    "userString": "#sweden_vehicles:_84mm_slpprj_m_53",
+    "icon": "ap_cr",
+    "price": "\t680\t",
+    "kind": "ARMOR_PIERCING_CR",
+    "caliber": "83.4",
+    "isTracer": "\ttrue\t",
+    "effects": "\tmainAPCR\t",
+    "damage": {
+      "armor": "\t230\t",
+      "devices": "\t118\t"
+    }
+  },
+  "_84mm_slpprj_m_54": {
+    "id": "\t72\t",
+    "userString": "#sweden_vehicles:_84mm_slpprj_m_54",
+    "icon": "ap_cr",
+    "price": {
+      "#text": "\t11\t",
+      "gold": ""
+    },
+    "kind": "ARMOR_PIERCING_CR",
+    "caliber": "83.4",
+    "isTracer": "\ttrue\t",
+    "effects": "\tmainAPCR\t",
+    "damage": {
+      "armor": "\t230\t",
+      "devices": "\t118\t"
+    }
+  },
+  "_84mm_slsgr_m_53": {
+    "id": "\t73\t",
+    "userString": "#sweden_vehicles:_84mm_slsgr_m_53",
+    "icon": "he",
+    "price": "\t170\t",
+    "kind": "HIGH_EXPLOSIVE",
+    "caliber": "83.4",
+    "explosionRadius": "1.28",
+    "isTracer": "\ttrue\t",
+    "effects": "mainHighExplosive",
+    "damage": {
+      "armor": "\t280\t",
+      "devices": "\t118\t"
+    }
+  },
   "_90mm_slpprj_typ_I": {
     "id": "\t35\t",
     "userString": "#sweden_vehicles:_90mm_slpprj_typ_I",

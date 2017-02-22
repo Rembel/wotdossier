@@ -1089,6 +1089,52 @@
       "devices": "\t135\t"
     }
   },
+  "_100mm_UBR-412BM": {
+    "id": "\t170\t",
+    "userString": "#ussr_vehicles:_100mm_UBR-412BM",
+    "icon": "ap",
+    "price": "\t370\t",
+    "kind": "ARMOR_PIERCING",
+    "caliber": "\t100\t",
+    "isTracer": "\ttrue\t",
+    "effects": "mainArmorPiercing",
+    "damage": {
+      "armor": "\t300\t",
+      "devices": "\t150\t"
+    }
+  },
+  "_100mm_UBR-412PBM": {
+    "id": "\t171\t",
+    "userString": "#ussr_vehicles:_100mm_UBR-412PBM",
+    "icon": "ap_cr",
+    "price": {
+      "#text": "\t11\t",
+      "gold": ""
+    },
+    "kind": "ARMOR_PIERCING_CR",
+    "caliber": "\t100\t",
+    "isTracer": "\ttrue\t",
+    "effects": "\tmainAPCR\t",
+    "damage": {
+      "armor": "\t300\t",
+      "devices": "\t150\t"
+    }
+  },
+  "_100mm_UOF-412BM": {
+    "id": "\t172\t",
+    "userString": "#ussr_vehicles:_100mm_UOF-412BM",
+    "icon": "he",
+    "price": "\t245\t",
+    "kind": "HIGH_EXPLOSIVE",
+    "caliber": "\t100\t",
+    "explosionRadius": "1.76",
+    "isTracer": "\ttrue\t",
+    "effects": "mainHighExplosive",
+    "damage": {
+      "armor": "\t360\t",
+      "devices": "\t150\t"
+    }
+  },
   "_107mm_UBR-420": {
     "id": "\t45\t",
     "userString": "#ussr_vehicles:_107mm_UBR-420",
@@ -1264,6 +1310,37 @@
     "userString": "#ussr_vehicles:_122mm_UBR-471PBM",
     "icon": "ap_cr",
     "price": "\t1180\t",
+    "kind": "ARMOR_PIERCING_CR",
+    "caliber": "\t122\t",
+    "isTracer": "\ttrue\t",
+    "effects": "largeAPCR",
+    "damage": {
+      "armor": "\t440\t",
+      "devices": "\t165\t"
+    }
+  },
+  "_122mm_UBR-471BMM": {
+    "id": "\t168\t",
+    "userString": "#ussr_vehicles:_122mm_UBR-471BMM",
+    "icon": "ap",
+    "price": "\t1025\t",
+    "kind": "ARMOR_PIERCING",
+    "caliber": "\t122\t",
+    "isTracer": "\ttrue\t",
+    "effects": "largeArmorPiercing",
+    "damage": {
+      "armor": "\t440\t",
+      "devices": "\t165\t"
+    }
+  },
+  "_122mm_UBR-471PBMM": {
+    "id": "\t169\t",
+    "userString": "#ussr_vehicles:_122mm_UBR-471PBMM",
+    "icon": "ap_cr",
+    "price": {
+      "#text": "\t12\t",
+      "gold": ""
+    },
     "kind": "ARMOR_PIERCING_CR",
     "caliber": "\t122\t",
     "isTracer": "\ttrue\t",

@@ -1727,6 +1727,21 @@ namespace WotDossier.Dal
                 //0.9.15.1 replay tank name changed to r09_t_26_bot
                 tankDescription = tankDescriptions[161];
             }
+            else if (iconId == "germany_g14_pziii_a")
+            {
+                //0.9.17 replay tank name changed to g102_pz_iii
+                tankDescription = tankDescriptions[10019];
+            }
+            else if (iconId == "ussr_r38_kv_220")
+            {
+                //0.9.17 replay tank name changed to r38_kv_220_beta
+                tankDescription = tankDescriptions[200];
+            }
+            else if (iconId == "ussr_r38_kv_220_action")
+            {
+                //0.9.17 replay tank name changed to r38_kv_220
+                tankDescription = tankDescriptions[211];
+            }
             return tankDescription;
         }
     }

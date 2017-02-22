@@ -169,7 +169,7 @@
     <value>КВ-85</value>
   </data>
   <data name="r106_kv85_igr" xml:space="preserve">
-    <value>KV-85</value>
+    <value>КВ-85</value>
   </data>
   <data name="r107_ltb" xml:space="preserve">
     <value>ЛТТБ</value>
@@ -249,6 +249,12 @@
   <data name="r12_a_20" xml:space="preserve">
     <value>А-20</value>
   </data>
+  <data name="r133_kv_122" xml:space="preserve">
+    <value>КВ-122</value>
+  </data>
+  <data name="r134_object_252u" xml:space="preserve">
+    <value>Объект 252У</value>
+  </data>
   <data name="r13_kv_1s" xml:space="preserve">
     <value>КВ-1С</value>
   </data>
@@ -268,19 +274,19 @@
     <value>СУ-152</value>
   </data>
   <data name="r18_su_152_igr" xml:space="preserve">
-    <value>SU-152</value>
+    <value>СУ-152</value>
   </data>
   <data name="r19_is_3" xml:space="preserve">
     <value>ИС-3</value>
   </data>
   <data name="r19_is_3_igr" xml:space="preserve">
-    <value>IS-3</value>
+    <value>ИС-3</value>
   </data>
   <data name="r20_t_44" xml:space="preserve">
     <value>Т-44</value>
   </data>
   <data name="r20_t_44_igr" xml:space="preserve">
-    <value>T-44</value>
+    <value>Т-44</value>
   </data>
   <data name="r22_t_46" xml:space="preserve">
     <value>Т-46</value>
@@ -304,7 +310,7 @@
     <value>Валентайн II</value>
   </data>
   <data name="r31_valentine_ll_igr" xml:space="preserve">
-    <value>Valentine II</value>
+    <value>Валентайн II</value>
   </data>
   <data name="r32_matilda_ii_ll" xml:space="preserve">
     <value>Матильда IV</value>
@@ -316,10 +322,10 @@
     <value>БТ-СВ</value>
   </data>
   <data name="r38_kv_220" xml:space="preserve">
-    <value>КВ-220-2 Бета-Тест</value>
-  </data>
-  <data name="r38_kv_220_action" xml:space="preserve">
     <value>КВ-220-2</value>
+  </data>
+  <data name="r38_kv_220_beta" xml:space="preserve">
+    <value>КВ-220-2 Бета-Тест</value>
   </data>
   <data name="r39_kv_3" xml:space="preserve">
     <value>КВ-3</value>
@@ -346,7 +352,7 @@
     <value>(А) ИС-7</value>
   </data>
   <data name="r45_is_7_igr" xml:space="preserve">
-    <value>IS-7</value>
+    <value>ИС-7</value>
   </data>
   <data name="r46_kv_13" xml:space="preserve">
     <value>КВ-13</value>
@@ -355,7 +361,7 @@
     <value>ИСУ-152</value>
   </data>
   <data name="r47_isu_152_igr" xml:space="preserve">
-    <value>ISU-152</value>
+    <value>ИСУ-152</value>
   </data>
   <data name="r49_su100y" xml:space="preserve">
     <value>СУ-100Y</value>
@@ -376,7 +382,7 @@
     <value>КВ-5</value>
   </data>
   <data name="r54_kv_5_igr" xml:space="preserve">
-    <value>KV-5</value>
+    <value>КВ-5</value>
   </data>
   <data name="r56_t_127" xml:space="preserve">
     <value>Т-127</value>
@@ -395,6 +401,9 @@
   </data>
   <data name="r61_object252" xml:space="preserve">
     <value>ИС-6</value>
+  </data>
+  <data name="r61_object252_bf" xml:space="preserve">
+    <value>IS-6_BF</value>
   </data>
   <data name="r63_st_i" xml:space="preserve">
     <value>СТ-I</value>
@@ -430,7 +439,7 @@
     <value>КВ-2</value>
   </data>
   <data name="r77_kv2_igr" xml:space="preserve">
-    <value>KV-2</value>
+    <value>КВ-2</value>
   </data>
   <data name="r78_su_85i" xml:space="preserve">
     <value>СУ-85И</value>

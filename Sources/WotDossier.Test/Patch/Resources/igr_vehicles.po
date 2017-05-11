@@ -753,6 +753,9 @@ msgstr "Rolls-Royce Meteor Mk. V"
 msgid "SCR_506_IGR"
 msgstr "SCR 506"
 
+msgid "SCR_508_IGR"
+msgstr "SCR 508"
+
 msgid "SCR_528A1_IGR"
 msgstr "SCR 528AM"
 
@@ -840,6 +843,9 @@ msgstr "M4A3E2"
 
 msgid "Somua_S-40Bis_IGR"
 msgstr "Somua S-40 Bis"
+
+msgid "Sovam_de_250cv_IGR"
+msgstr "SOFAM de 180 cv"
 
 msgid "StuG_40_AusfG_IGR"
 msgstr "StuG III Ausf. G"
@@ -1093,6 +1099,9 @@ msgstr "Wright Continental R-975C4"
 msgid "Wright_Continental_R-975C4_IGR_short"
 msgstr "Wright C. R-975C4"
 
+msgid "_100mm_60-100TA_IGR"
+msgstr "100 mm 60-100TA"
+
 msgid "_100mm_60-100T_IGR"
 msgstr "100 mm 60-100T"
 
@@ -1238,6 +1247,9 @@ msgstr "76 mm Gun M1A1"
 msgid "_76mm_Gun_M1A2_IGR"
 msgstr "76 mm Gun M1A2"
 
+msgid "_76mm_Gun_T185E_IGR"
+msgstr "76 mm Gun T185E"
+
 msgid "_76mm_Gun_T185_IGR"
 msgstr "76 mm Gun T185"
 
@@ -1252,6 +1264,9 @@ msgstr "8V135"
 
 msgid "_90mm_D914_IGR"
 msgstr "90 mm D. 915"
+
+msgid "_90mm_F3M_IGR"
+msgstr "90 mm F3M"
 
 msgid "_90mm_F3_IGR"
 msgstr "90 mm F3"

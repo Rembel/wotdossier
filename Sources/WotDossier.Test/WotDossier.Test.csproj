@@ -408,6 +408,9 @@
     <None Include="Replays\0.9.13\20151208_0904_ussr-Object_140_34_redshire.wotreplay">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="Replays\0.9.17\20170312_2347_ussr-R97_Object_140_28_desert.wotreplay">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="Replays\0.9.1\14003587093213_ussr_Object_140_el_hallouf.wotreplay">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -526,7 +529,7 @@
     <None Include="Patch\Maps\*.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-<None Include="Patch\Tanks\China\*.xml">
+    <None Include="Patch\Tanks\China\*.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="Patch\Tanks\France\*.xml">
@@ -577,7 +580,7 @@
     <None Include="Patch\Tanks\Czech\components\shells.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Patch\Tanks\Sweden\components\shells.xml">
+    <None Include="Patch\Tanks\Sweden\components\*.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <Content Include="x64\SQLite.Interop.dll">

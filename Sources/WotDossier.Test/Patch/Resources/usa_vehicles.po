@@ -120,7 +120,7 @@ msgid "A112_T71E2_short"
 msgstr "T71 CMCD"
 
 msgid "A115_Chrysler_K"
-msgstr "Chrysler K"
+msgstr "Chrysler K GF"
 
 msgid "A115_Chrysler_K_descr"
 msgstr ""
@@ -134,7 +134,22 @@ msgstr ""
 "финансирования проект не получил поддержки со стороны армии."
 
 msgid "A115_Chrysler_K_short"
-msgstr "Chrysler K"
+msgstr "Chrysler GF"
+
+msgid "A116_XM551"
+msgstr "XM551 Sheridan"
+
+msgid "A116_XM551_descr"
+msgstr ""
+"Работы над машиной начались в январе 1959 года в рамках проекта AR/AAV "
+"(бронированная разведывательная/авиадесантная машина). В июне 1962 года "
+"компания Cadillac Motor Car Division передала первый прототип машины "
+"заказчику. Всего, в рамках первого поколения, было изготовлено три "
+"прототипа. В дальнейшем работы были продолжены, и в 1966 году танк был "
+"принят на вооружение под обозначением M551 Sheridan."
+
+msgid "A116_XM551_short"
+msgstr "Sheridan"
 
 msgid "A117_T26E5"
 msgstr "T26E5"
@@ -165,6 +180,19 @@ msgstr ""
 
 msgid "A117_T26E5_short"
 msgstr "T26E5"
+
+msgid "A118_M4_Thunderbolt"
+msgstr "M4A3E8 Thunderbolt VII"
+
+msgid "A118_M4_Thunderbolt_descr"
+msgstr ""
+"Танк Thunderbolt VII командира 37-го танкового батальона подполковника "
+"Крейтона Абрамса (в последующем генерала, начальника штаба сухопутных "
+"войск). Представлял собой танк M4A3E8 Sherman с установленным в полевых "
+"условиях дополнительным бронированием."
+
+msgid "A118_M4_Thunderbolt_short"
+msgstr "Thunderbolt"
 
 msgid "A27_T82"
 msgstr "T82 HMC"
@@ -239,7 +267,7 @@ msgid "AN-GRC-3"
 msgstr "AN/GRC-3"
 
 msgid "AN-VRC-12"
-msgstr "AN/VRC-12"
+msgstr "AN/GRC-6"
 
 msgid "AN-VRC-7"
 msgstr "AN/VRC-7"
@@ -261,6 +289,9 @@ msgstr "AN/VRC-24"
 
 msgid "AN_VRC-3"
 msgstr "AN/VRC-3"
+
+msgid "AN_VRC_12A"
+msgstr "AN/VRC-12"
 
 msgid "AOI-1490"
 msgstr "Continental AOI-1490"
@@ -330,13 +361,19 @@ msgid "Chassis_A112_T71E2"
 msgstr "T71 CMCD"
 
 msgid "Chassis_A115_Chrysler_K"
-msgstr "Chrysler K"
+msgstr "Chrysler K GF"
+
+msgid "Chassis_A116_XM551"
+msgstr "AR/AAV XM551 Sheridan"
 
 msgid "Chassis_A117_T26E5"
 msgstr "T26E5"
 
 msgid "Chassis_A117_T26E5_Patriot"
 msgstr "T26E5 Patriot"
+
+msgid "Chassis_A118_M4_Thunderbolt"
+msgstr "M4A3E8 Thunderbolt VII"
 
 msgid "Chassis_A27_T82"
 msgstr "T82 Pilot No. 1"
@@ -614,6 +651,14 @@ msgstr ""
 msgid "Continental_AOS-895-3"
 msgstr "Continental AOS-895-3"
 
+msgid "Continental_AOS-895-3A"
+msgstr "Continental AOS-895-3A"
+
+msgid "Continental_AOS-895-3A_short"
+msgstr ""
+"Continental\n"
+"AOS-895-3A"
+
 msgid "Continental_AOS-895-3_short"
 msgstr ""
 "Continental\n"
@@ -621,6 +666,22 @@ msgstr ""
 
 msgid "Continental_AOSI-895-5"
 msgstr "Continental AOSI-895-5"
+
+msgid "Continental_AOSI-895-5A"
+msgstr "Continental AOSI-895-5A"
+
+msgid "Continental_AOSI-895-5A_short"
+msgstr ""
+"Continental\n"
+"AOSI-895-5A"
+
+msgid "Continental_AOSI-895-5B"
+msgstr "Continental AOSI-895-5B"
+
+msgid "Continental_AOSI-895-5B_short"
+msgstr ""
+"Continental\n"
+"AOSI-895-5B"
 
 msgid "Continental_AOSI-895-5_short"
 msgstr ""
@@ -838,6 +899,9 @@ msgstr "Ford GAA"
 msgid "Ford_GAA_2"
 msgstr "Ford GAA"
 
+msgid "Ford_GAA_A"
+msgstr "Ford GAA A"
+
 msgid "Ford_GAA_R"
 msgstr "Ford GAA early"
 
@@ -865,6 +929,9 @@ msgstr "Ford GAF V8"
 msgid "Ford_GAN"
 msgstr "Ford GAN"
 
+msgid "Ford_GAN_A"
+msgstr "Ford GAN A"
+
 msgid "Ford_GAN_T"
 msgstr "Ford GAN No. 17"
 
@@ -881,6 +948,14 @@ msgstr ""
 
 msgid "General_Motors_6046"
 msgstr "General Motors 6046"
+
+msgid "General_Motors_6V53T"
+msgstr "General Motors 6V53T"
+
+msgid "General_Motors_6V53T_short"
+msgstr ""
+"General Motors\n"
+"6V53T"
 
 msgid "Guiberson_T-1020-4"
 msgstr "Guiberson T-1020-4"
@@ -1098,9 +1173,12 @@ msgstr "M40/M43"
 
 msgid "M40M43_descr"
 msgstr ""
-"САУ Long Tom и созданная на её базе М43 стали самыми мощными САУ союзников. "
-"М40 использовалась в боях за Кёльн. Обе машины активно применялись в "
-"Корейской войне."
+"Разработка началась весной 1944 года вследствие нехватки орудий М1918 для "
+"САУ М12. Установка была создана на базе шасси M4 Sherman с подвеской типа "
+"HVSS. Конструкция предполагала взаимозаменяемость 155-мм пушки M1 и 203-мм "
+"гаубицы M1 (САУ с этим орудием получила обозначение М43). Впервые установки "
+"были применены в ходе операции «Зебра». Всего было выпущено 418 САУ M40 и 48 "
+"машин M43 (ещё 24 были получены в результате перевооружения М40)."
 
 msgid "M41"
 msgstr "M41 HMC"
@@ -1311,10 +1389,10 @@ msgid "Maybach_HL_230P45"
 msgstr "Maybach HL 230 P45"
 
 msgid "NVSS_T66"
-msgstr "NVSS T66"
+msgstr "HVSS T66"
 
 msgid "NVSS_T80"
-msgstr "NVSS T80"
+msgstr "HVSS T80"
 
 msgid "Ordnance_QF_2pdr_AT_Gun_Mk.X"
 msgstr "QF 2-pdr Mk. IX"
@@ -1354,9 +1432,13 @@ msgstr "Ram II"
 
 msgid "Ram-II_descr"
 msgstr ""
-"Разработан на базе танка М3. Выпускался в Канаде с 1942 до лета 1943 года. "
-"Из 1849 машин ни одна не использовалась в боевых действиях. Использовался "
-"только в учебных целях."
+"Основной производственный вариант канадского среднего крейсерского танка "
+"«Рэм» (Tank Cruiser Ram) периода Второй мировой войны, вооружённый 57-мм "
+"пушкой QF 6 pounder. Разработан в 1941 году на основе американского среднего "
+"танка M3 «Ли». За время серийного производства до июля 1943 года было "
+"произведено 1899 машин. Танк никогда не применялся в бою, но активно "
+"использовался в канадских и британских войсках для учебно-тренировочных "
+"целей, а также послужил основой для САУ и различных специализированных машин."
 
 msgid "Ram_II_D1"
 msgstr "Ram II D1"
@@ -1479,8 +1561,8 @@ msgstr "T14"
 
 msgid "T14_descr"
 msgstr ""
-"Разрабатывался с мая 1942 по май 1943 г. По итогам испытаний было принято "
-"решение о серийном выпуске, но впоследствии оно было отменено, и танк так и "
+"Разрабатывался с мая 1942 по май 1943 года. По итогам испытаний было принято "
+"решение о серийном выпуске, но впоследствии оно было отменено, и танк "
 "остался экспериментальной машиной. Было выпущено два прототипа."
 
 msgid "T16E2"
@@ -1828,7 +1910,7 @@ msgstr "T49"
 msgid "T49_descr"
 msgstr ""
 "Вариант лёгкого танка М41 с увеличенной башней, вооружённый 90-мм пушкой. "
-"Поступил на испытания 5 мая 1954 года. Испытания закончились успешно, однако "
+"Поступил на испытания 5 мая 1954 года. Испытания закончились успешно, однако "
 "серийное производство танка развёрнуто не было из-за его невостребованности."
 
 msgid "T51D1"
@@ -1951,9 +2033,10 @@ msgstr "T92 HMC"
 
 msgid "T92_descr"
 msgstr ""
-"Работы над Т92 начались в начале 1945 года. При проектировании "
-"использовались узлы и агрегаты танка М26. В марте прошли испытания машины в "
-"Абердине. Серийно не выпускалась."
+"Американская САУ, разработанная в 1945 году на базе танка Т26Е3 для "
+"разрушения бункеров и глубоких укрытий в боях с японскими войсками на "
+"островах Тихого океана. Было построено пять машин, включая опытный образец. "
+"Впоследствии работы над САУ были прекращены в связи с окончанием войны."
 
 msgid "T95"
 msgstr "T95"
@@ -2026,13 +2109,19 @@ msgid "Turret_1_A111_T25_Pilot"
 msgstr "T25 Pilot Number 1"
 
 msgid "Turret_1_A115_Chrysler_K"
-msgstr "Chrysler K"
+msgstr "Chrysler K GF"
+
+msgid "Turret_1_A116_XM551"
+msgstr "AR/AAV XM551 Sheridan"
 
 msgid "Turret_1_A117_T26E5"
 msgstr "T26E5"
 
 msgid "Turret_1_A117_T26E5_Patriot"
 msgstr "T26E5 Patriot"
+
+msgid "Turret_1_A118_M4_Thunderbolt"
+msgstr "M4A3E8 Thunderbolt VII"
 
 msgid "Turret_1_A27_T82"
 msgstr "T82 HMC"
@@ -2240,6 +2329,14 @@ msgstr ""
 msgid "Twin_Cadillac_series_44T4"
 msgstr "Twin Cadillac, Series 44T4"
 
+msgid "Twin_Cadillac_series_44T4L"
+msgstr "Twin Cadillac, Series 44T4L"
+
+msgid "Twin_Cadillac_series_44T4L_short"
+msgstr ""
+"Twin Cadillac,\n"
+"Series 44T4L"
+
 msgid "Twin_Cadillac_series_44T4_short"
 msgstr ""
 "Twin Cadillac,\n"
@@ -2293,6 +2390,12 @@ msgstr "VVSS WE210"
 msgid "Wright_Continental_R-975C1"
 msgstr "Wright Continental R-975C1"
 
+msgid "Wright_Continental_R-975C1L"
+msgstr "Wright Continental R-975C1L"
+
+msgid "Wright_Continental_R-975C1L_short"
+msgstr "Wright C. R-975C1L"
+
 msgid "Wright_Continental_R-975C1_short"
 msgstr "Wright C. R-975C1"
 
@@ -2311,11 +2414,23 @@ msgstr "Wright C. R-975C3"
 msgid "Wright_Continental_R-975C4"
 msgstr "Wright Continental R-975C4"
 
+msgid "Wright_Continental_R-975C4L"
+msgstr "Wright Continental R-975C4L"
+
+msgid "Wright_Continental_R-975C4L_short"
+msgstr "Wright C. R-975C4L"
+
 msgid "Wright_Continental_R-975C4_short"
 msgstr "Wright C. R-975C4"
 
 msgid "Wright_Continental_R-975EC2"
 msgstr "Wright Continental R-975EC2"
+
+msgid "Wright_Continental_R-975EC2L"
+msgstr "Wright Continental R-975EC2L"
+
+msgid "Wright_Continental_R-975EC2L_short"
+msgstr "Wright C. R-975EC2L"
 
 msgid "Wright_Continental_R-975EC2_short"
 msgstr "Wright C. R-975EC2"
@@ -2391,6 +2506,15 @@ msgstr "105 mm AT Howitzer M3"
 msgid "_105mm_AT_SPH_M4_L23"
 msgstr "105 mm AT M4"
 
+msgid "_105mm_Exp_APDS"
+msgstr "Exp. APDS"
+
+msgid "_105mm_Exp_HE"
+msgstr "Exp. HE"
+
+msgid "_105mm_Exp_HEAT"
+msgstr "Exp. HEAT"
+
 msgid "_105mm_Gun_M68"
 msgstr "105 mm Gun M68"
 
@@ -2435,6 +2559,9 @@ msgstr "105 mm Howitzer M3"
 
 msgid "_105mm_Howitzer_M4"
 msgstr "105 mm Howitzer M4"
+
+msgid "_105mm_Lightweight_Gun"
+msgstr "105 mm Lightweight Gun"
 
 msgid "_105mm_SPH_M4_L23"
 msgstr "105 mm M4"
@@ -2528,6 +2655,9 @@ msgstr "HEAT M167"
 
 msgid "_155mm_HE_M101"
 msgstr "HE M101"
+
+msgid "_155mm_HE_M101A1"
+msgstr "HE M101A1"
 
 msgid "_155mm_HE_M101E1"
 msgstr "HE M101E1"
@@ -2720,8 +2850,14 @@ msgstr "75 mm Gun M17"
 msgid "_75mm_Gun_M2_L28"
 msgstr "75 mm Gun M2"
 
+msgid "_75mm_Gun_M2_L28L"
+msgstr "75 mm Gun M2L"
+
 msgid "_75mm_Gun_M3_L37"
 msgstr "75 mm Gun M3"
+
+msgid "_75mm_Gun_M3_L37L"
+msgstr "75 mm Gun M3L"
 
 msgid "_75mm_Gun_M6"
 msgstr "75 mm Gun M6"
@@ -2768,6 +2904,9 @@ msgstr "Sprg.18L (captured)"
 msgid "_76mm_APDS_M331A2"
 msgstr "HVAP-DS-T M331A2"
 
+msgid "_76mm_APDS_M331A3"
+msgstr "HVAP-DS-T M331A3"
+
 msgid "_76mm_AP_M339"
 msgstr "AP M339"
 
@@ -2792,6 +2931,9 @@ msgstr "3-inch Gun T9"
 msgid "_76mm_Gun_M1A1"
 msgstr "76 mm Gun M1A1"
 
+msgid "_76mm_Gun_M1A1L"
+msgstr "76 mm Gun M1A1L"
+
 msgid "_76mm_Gun_M1A1T"
 msgstr "76 mm Gun M1A1"
 
@@ -2800,6 +2942,9 @@ msgstr "76 mm Gun M1A2"
 
 msgid "_76mm_Gun_M1A2A"
 msgstr "76 mm Gun M1A2"
+
+msgid "_76mm_Gun_M1A2L"
+msgstr "76 mm Gun M1A2L"
 
 msgid "_76mm_Gun_M32"
 msgstr "76 mm Gun M32"
@@ -2812,6 +2957,9 @@ msgstr "76 mm Gun T102"
 
 msgid "_76mm_Gun_T185"
 msgstr "76 mm Gun T185"
+
+msgid "_76mm_Gun_T185E"
+msgstr "76 mm Gun T185E"
 
 msgid "_76mm_Gun_T185E1"
 msgstr "76 mm Gun T185E1"
@@ -2834,8 +2982,14 @@ msgstr "HEAT"
 msgid "_76mm_HEAT_M496"
 msgstr "HEAT-T M496"
 
+msgid "_76mm_HEAT_M496A1"
+msgstr "HEAT-T M496A1"
+
 msgid "_76mm_HE_M352"
 msgstr "HE M352"
+
+msgid "_76mm_HE_M352A1"
+msgstr "HE M352A1"
 
 msgid "_76mm_HE_M42A1"
 msgstr "HE M42A1"
@@ -2863,6 +3017,9 @@ msgstr "M64"
 
 msgid "_76mm_M79"
 msgstr "HVAP M93(M7)"
+
+msgid "_90mm_APCR_Experimental"
+msgstr "APCR Experimental"
 
 msgid "_90mm_AP_M318"
 msgstr "AP M318"

@@ -714,6 +714,9 @@ Ausf. G</value>
   <data name="SCR_506_IGR" xml:space="preserve">
     <value>SCR 506</value>
   </data>
+  <data name="SCR_508_IGR" xml:space="preserve">
+    <value>SCR 508</value>
+  </data>
   <data name="SCR_528A1_IGR" xml:space="preserve">
     <value>SCR 528AM</value>
   </data>
@@ -781,6 +784,9 @@ Ausf. G</value>
   </data>
   <data name="Somua_S-40Bis_IGR" xml:space="preserve">
     <value>Somua S-40 Bis</value>
+  </data>
+  <data name="Sovam_de_250cv_IGR" xml:space="preserve">
+    <value>SOFAM de 180 cv</value>
   </data>
   <data name="StuG_40_AusfG_IGR" xml:space="preserve">
     <value>StuG III Ausf. G</value>
@@ -1004,6 +1010,9 @@ Ausf. E</value>
   <data name="Wright_Continental_R-975C4_IGR_short" xml:space="preserve">
     <value>Wright C. R-975C4</value>
   </data>
+  <data name="_100mm_60-100TA_IGR" xml:space="preserve">
+    <value>100 mm 60-100TA</value>
+  </data>
   <data name="_100mm_60-100T_IGR" xml:space="preserve">
     <value>100 mm 60-100T</value>
   </data>
@@ -1145,6 +1154,9 @@ Ausf. E</value>
   <data name="_76mm_Gun_M1A2_IGR" xml:space="preserve">
     <value>76 mm Gun M1A2</value>
   </data>
+  <data name="_76mm_Gun_T185E_IGR" xml:space="preserve">
+    <value>76 mm Gun T185E</value>
+  </data>
   <data name="_76mm_Gun_T185_IGR" xml:space="preserve">
     <value>76 mm Gun T185</value>
   </data>
@@ -1159,6 +1171,9 @@ Ausf. E</value>
   </data>
   <data name="_90mm_D914_IGR" xml:space="preserve">
     <value>90 mm D. 915</value>
+  </data>
+  <data name="_90mm_F3M_IGR" xml:space="preserve">
+    <value>90 mm F3M</value>
   </data>
   <data name="_90mm_F3_IGR" xml:space="preserve">
     <value>90 mm F3</value>

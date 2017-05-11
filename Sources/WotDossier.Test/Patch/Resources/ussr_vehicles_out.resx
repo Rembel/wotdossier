@@ -318,6 +318,12 @@
   <data name="r107_ltb" xml:space="preserve">
     <value>ЛТТБ</value>
   </data>
+  <data name="r132_vnii_100lt" xml:space="preserve">
+    <value>R132_VNII_100LT</value>
+  </data>
+  <data name="r131_tank_gavalov" xml:space="preserve">
+    <value>R131_Tank_Gavalov</value>
+  </data>
   <data name="r106_kv85" xml:space="preserve">
     <value>КВ-85</value>
   </data>
@@ -377,6 +383,9 @@
   </data>
   <data name="r98_t44_85" xml:space="preserve">
     <value>Т-44-85</value>
+  </data>
+  <data name="r98_t44_85m" xml:space="preserve">
+    <value>Т-44-85М</value>
   </data>
   <data name="r108_t34_85m" xml:space="preserve">
     <value>Т-34-85М</value>
@@ -451,10 +460,16 @@
     <value>КВ-122</value>
   </data>
   <data name="r134_object_252u" xml:space="preserve">
-    <value>R134_Object_252U</value>
+    <value>Объект 252У</value>
   </data>
   <data name="r61_object252_bf" xml:space="preserve">
-    <value>IS-6_BF</value>
+    <value>ИС-6 Ч</value>
+  </data>
+  <data name="r122_t44_100b" xml:space="preserve">
+    <value>Т-44-100М</value>
+  </data>
+  <data name="r134_object_252k" xml:space="preserve">
+    <value>R134_Object_252K</value>
   </data>
   <data name="r87_t62a_fallout" xml:space="preserve">
     <value>(А) Т-62А</value>

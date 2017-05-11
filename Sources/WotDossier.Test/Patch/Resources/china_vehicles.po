@@ -104,24 +104,22 @@ msgstr "Renault NC-31"
 
 msgid "Ch06_Renault_NC31_bot_descr"
 msgstr ""
-"Проект NC-2 (коммерческое название NC-31) являлся модификацией танка Renault "
-"FT-17 с новой ходовой частью, в которой использовались элементы подвески с "
-"большим ходом и гусеница Kegress-Hinstin из армированной резины с "
-"металлическими башмаками. Наряду с новым 45-сильным двигателем это позволило "
-"увеличить скорость до 16 км/ч. Пятнадцать машин этого типа были "
-"экспортированы в Китай."
+"Модификация танка Renault FT с новой ходовой частью, в которой "
+"использовались элементы подвески с большим ходом и гусеница Kégresse-Hinstin "
+"из армированной резины с металлическими башмаками. Новый двигатель мощностью "
+"45 л.с. позволил танку развивать скорость до 16 км/ч. Пятнадцать машин этого "
+"типа были поставлены в Китай."
 
 msgid "Ch06_Renault_NC31_bot_short"
 msgstr "NC-31"
 
 msgid "Ch06_Renault_NC31_descr"
 msgstr ""
-"Проект NC-2 (коммерческое название NC-31) являлся модификацией танка Renault "
-"FT-17 с новой ходовой частью, в которой использовались элементы подвески с "
-"большим ходом и гусеница Kegress-Hinstin из армированной резины с "
-"металлическими башмаками. Наряду с новым 45-сильным двигателем это позволило "
-"увеличить скорость до 16 км/ч. Пятнадцать машин этого типа были "
-"экспортированы в Китай."
+"Модификация танка Renault FT с новой ходовой частью, в которой "
+"использовались элементы подвески с большим ходом и гусеница Kégresse-Hinstin "
+"из армированной резины с металлическими башмаками. Новый двигатель мощностью "
+"45 л.с. позволил танку развивать скорость до 16 км/ч. Пятнадцать машин этого "
+"типа были поставлены в Китай."
 
 msgid "Ch06_Renault_NC31_short"
 msgstr "NC-31"
@@ -349,6 +347,32 @@ msgstr ""
 msgid "Ch26_59_Patton_short"
 msgstr "59-Patton"
 
+msgid "Ch28_WZ_132A"
+msgstr "WZ-132A"
+
+msgid "Ch28_WZ_132A_descr"
+msgstr ""
+"Дальнейшее развитие проекта WZ-132. Главным отличием должна была стать более "
+"короткая база. Конструкторы предполагали совместить в танке и высокую "
+"подвижность, и огневую мощь. Прототип проходил испытания во второй половине "
+"1960-х годов, однако проект был свёрнут. Серийно не выпускался, прототип не "
+"сохранился."
+
+msgid "Ch28_WZ_132A_short"
+msgstr "WZ-132A"
+
+msgid "Ch29_Type_62C_prot"
+msgstr "WZ-132-1"
+
+msgid "Ch29_Type_62C_prot_descr"
+msgstr ""
+"Китайский опытный танк, результат объединения различных проектов "
+"модернизации танка Type 62. Название условно. Не было построено ни одного "
+"прототипа."
+
+msgid "Ch29_Type_62C_prot_short"
+msgstr "WZ-132-1"
+
 msgid "Chassis_Ch01_Type59_2"
 msgstr "Type 59"
 
@@ -478,6 +502,15 @@ msgstr "121B"
 msgid "Chassis_Ch26_59_Patton"
 msgstr "59-Patton"
 
+msgid "Chassis_Ch28_WZ_132A"
+msgstr "WZ-132A"
+
+msgid "Chassis_Ch28_WZ_132A_2"
+msgstr "WZ-132B"
+
+msgid "Chassis_Ch29_Type_62C_prot"
+msgstr "WZ-132-1"
+
 msgid "Continental_R-975-C1"
 msgstr "Continental R-975-C1"
 
@@ -583,6 +616,12 @@ msgstr "121B"
 msgid "Turret_1_Ch26_59_Patton"
 msgstr "59-Patton"
 
+msgid "Turret_1_Ch28_WZ_132A"
+msgstr "WZ-132A"
+
+msgid "Turret_1_Ch29_Type_62C_prot"
+msgstr "WZ-132-1"
+
 msgid "Turret_2_Ch04_T34_1"
 msgstr "T-34-1 model 2"
 
@@ -649,11 +688,20 @@ msgstr "100 mm Type 59"
 msgid "_100mm_59-100T"
 msgstr "100 mm 59-100T"
 
+msgid "_100mm_59-100TA"
+msgstr "100 mm 59-100TA"
+
 msgid "_100mm_60-100T"
 msgstr "100 mm 60-100T"
 
+msgid "_100mm_60-100TA"
+msgstr "100 mm 60-100TA"
+
 msgid "_100mm_62-100T"
 msgstr "100 mm 62-100T"
+
+msgid "_100mm_62-100TA"
+msgstr "100 mm 62-100TA"
 
 msgid "_100mm_CJ-412G"
 msgstr "Chuan jian-412G"
@@ -682,6 +730,9 @@ msgstr "HEAT M456"
 msgid "_105mm_HEP_M393A1"
 msgstr "HEP M393A1"
 
+msgid "_105mm_L7A3C"
+msgstr "105 mm L7A3C"
+
 msgid "_105mm_L7C"
 msgstr "105 mm L7C"
 
@@ -691,17 +742,26 @@ msgstr "12150L"
 msgid "_12150L-3_V-12"
 msgstr "NORINCO 12150L3"
 
+msgid "_12150L2"
+msgstr "12150L2"
+
 msgid "_12150L3"
 msgstr "12150L3"
 
 msgid "_12150L7"
 msgstr "12150L7"
 
+msgid "_12150L8"
+msgstr "12150L8"
+
 msgid "_12150LS"
 msgstr "12150LS"
 
 msgid "_12150LT"
 msgstr "12150LT"
+
+msgid "_12150LT2"
+msgstr "12150LT2"
 
 msgid "_12150LZ"
 msgstr "NORINCO 12150L"
@@ -843,6 +903,9 @@ msgstr "47 mm Vickers QF"
 
 msgid "_57mm_55-57FG"
 msgstr "57 mm 55-57FG"
+
+msgid "_57mm_55-57FGA"
+msgstr "57 mm 55-57FGA"
 
 msgid "_57mm_APCR_Type_55_57"
 msgstr "Chuan chao-271"

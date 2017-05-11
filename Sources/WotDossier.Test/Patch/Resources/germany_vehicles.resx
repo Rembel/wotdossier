@@ -281,7 +281,7 @@
     <value>VK 100.01 (P)</value>
   </data>
   <data name="Chassis_G115_Typ_205B_2" xml:space="preserve">
-    <value>VK 100.01 (P) verstärkteketten</value>
+    <value>VK 100.01 (P) verstärkte Ketten</value>
   </data>
   <data name="Chassis_G115_Typ_205_4_Jun" xml:space="preserve">
     <value>VK 100.01 (P) Ausf. B</value>
@@ -315,6 +315,15 @@
   </data>
   <data name="Chassis_G122_VK6501H" xml:space="preserve">
     <value>VK 65.01 (H)</value>
+  </data>
+  <data name="Chassis_G125_Spz_57_Rh" xml:space="preserve">
+    <value>Rheinmetall Panzerwagen</value>
+  </data>
+  <data name="Chassis_G126_HWK_12" xml:space="preserve">
+    <value>HWK 12</value>
+  </data>
+  <data name="Chassis_G126_HWK_12_2" xml:space="preserve">
+    <value>HWK 12 verbessert</value>
   </data>
   <data name="Chassis_G16_PzVIB_Tiger_II_F" xml:space="preserve">
     <value>Tiger II</value>
@@ -991,6 +1000,24 @@ AOS-895-3</value>
   <data name="G122_VK6501H_short" xml:space="preserve">
     <value>VK 65.01 (H)</value>
   </data>
+  <data name="G125_Spz_57_Rh" xml:space="preserve">
+    <value>Rheinmetall Panzerwagen</value>
+  </data>
+  <data name="G125_Spz_57_Rh_descr" xml:space="preserve">
+    <value>8 июня 1957 года фирма Rheinmetall зарегистрировала патент на новый лёгкий танк с вращающейся башней и качающимся на цапфах орудием. Предлагаемая конструкция позволяла оснащать даже лёгкие машины мощными 90 и 105-мм пушками, сохраняя минимальную высоту машины. Не имея своего шасси для постройки танков, Rheinmetall предложила свою башню другим заводам. Данная машина – проект на базе ходовой части от Hanomag и Henschel. Прототип построен не был.</value>
+  </data>
+  <data name="G125_Spz_57_Rh_short" xml:space="preserve">
+    <value>Rhm. Pzw.</value>
+  </data>
+  <data name="G126_HWK_12" xml:space="preserve">
+    <value>HWK 12</value>
+  </data>
+  <data name="G126_HWK_12_descr" xml:space="preserve">
+    <value>Серия лёгких гусеничных бронетранспортёров HWK 10 разрабатывалась компанией Henschel-Werke в конце 1950-х – первой половине 1960-х годов. Машины разрабатывались для экспортных поставок. Первый прототип бронетранспортера HWK 11 был создан в 1963 году, а позже 40 машин были поставлены в Мексику. Также было создано два прототипа разведывательной машины HWK 13. На базе общего шасси планировалось создание танка HWK 12, однако прототип построен не был.</value>
+  </data>
+  <data name="G126_HWK_12_short" xml:space="preserve">
+    <value>HWK 12</value>
+  </data>
   <data name="G20_Marder_II" xml:space="preserve">
     <value>Marder II</value>
   </data>
@@ -1057,6 +1084,12 @@ AOS-895-3</value>
   <data name="Ganz_VIII_VGT_107" xml:space="preserve">
     <value>Ganz VIII. VGT. 107</value>
   </data>
+  <data name="General_Motors_6V53" xml:space="preserve">
+    <value>General Motors 6V53</value>
+  </data>
+  <data name="General_Motors_6V53T" xml:space="preserve">
+    <value>General Motors 6V53T</value>
+  </data>
   <data name="Grille" xml:space="preserve">
     <value>Grille</value>
   </data>
@@ -1115,10 +1148,10 @@ AOS-895-3</value>
     <value>Hotchkiss 6-Zyl. Benzin 154 PS</value>
   </data>
   <data name="Hotchkiss_6_Zyl_Benzin_164_PS" xml:space="preserve">
-    <value>Hotchkiss 6-Zyl. Benzin 164 PS</value>
+    <value>Hotchkiss 6-Zyl. Benzin 190 PS</value>
   </data>
   <data name="Hotchkiss_6_Zyl_Benzin_195_PS" xml:space="preserve">
-    <value>Hotchkiss 6-Zyl. Benzin 195 PS</value>
+    <value>Hotchkiss 6-Zyl. Benzin 230 PS</value>
   </data>
   <data name="Hummel" xml:space="preserve">
     <value>Hummel</value>
@@ -1363,6 +1396,9 @@ AOS-895-3</value>
   <data name="MB517P" xml:space="preserve">
     <value>MB 517</value>
   </data>
+  <data name="MB_881" xml:space="preserve">
+    <value>MB 881</value>
+  </data>
   <data name="MarderII" xml:space="preserve">
     <value>Marder II</value>
   </data>
@@ -1457,6 +1493,9 @@ verstärkteketten</value>
   <data name="Maybach_HL_120_TRM_C" xml:space="preserve">
     <value>Maybach HL 120 TRM V12</value>
   </data>
+  <data name="Maybach_HL_120_TRM_L" xml:space="preserve">
+    <value>Maybach HL 120 TRM L</value>
+  </data>
   <data name="Maybach_HL_120_TRM_R" xml:space="preserve">
     <value>Maybach HL 120 TRM R</value>
   </data>
@@ -1474,6 +1513,9 @@ verstärkteketten</value>
   </data>
   <data name="Maybach_HL_157P" xml:space="preserve">
     <value>Maybach HL 157 P</value>
+  </data>
+  <data name="Maybach_HL_157P_A" xml:space="preserve">
+    <value>Maybach HL 157 P A</value>
   </data>
   <data name="Maybach_HL_174" xml:space="preserve">
     <value>Maybach HL 174</value>
@@ -1501,6 +1543,12 @@ verstärkteketten</value>
   </data>
   <data name="Maybach_HL_210_TRM_P30" xml:space="preserve">
     <value>Maybach HL 210 TRM P30</value>
+  </data>
+  <data name="Maybach_HL_210_TRM_P30L" xml:space="preserve">
+    <value>Argus 12LD330HL</value>
+  </data>
+  <data name="Maybach_HL_210_TRM_P30L_short" xml:space="preserve">
+    <value>Argus 12LD330HL</value>
   </data>
   <data name="Maybach_HL_210_TRM_P30_A" xml:space="preserve">
     <value>Maybach HL 210 TRM P30</value>
@@ -1923,7 +1971,7 @@ Ausf. L</value>
     <value>Pz.Kpfw. II Ausf. J</value>
   </data>
   <data name="PzII_J_descr" xml:space="preserve">
-    <value>Разведывательный танк с усиленным бронированием. Являлся дальнейшим развитием Pz.Kpfw II. В октябре 1939 года был сделан заказ на установочную партию. В июле 1940 года был построен первый прототип. В 1943–1944 гг. семь машин участвовали в боевых действиях на Восточном фронте в составе 12-й танковой дивизии. Всего было произведено 22 машины.</value>
+    <value>Разведывательный танк с усиленным бронированием. Являлся дальнейшим развитием Pz.Kpfw. II. В октябре 1939 года был сделан заказ на установочную партию. В июле 1940 года был построен первый прототип. В 1943–1944 гг. семь машин участвовали в боевых действиях на Восточном фронте в составе 12-й танковой дивизии. Всего было произведено 22 машины.</value>
   </data>
   <data name="PzII_J_short" xml:space="preserve">
     <value>Pz. II J</value>
@@ -2067,7 +2115,8 @@ Ausf. B</value>
     <value>Pz. I C</value>
   </data>
   <data name="PzI_descr" xml:space="preserve">
-    <value>Pz I Ausf. A был первым массовым немецким танком. В 1935 году конструкция машины была доработана и начался серийный выпуск Pz I Ausf. B с удлинённым корпусом и шасси, а также более мощным двигателем. Всего было выпущено 675 машин этой модификации. Танк отличался очень слабым вооружением, поэтому во время Гражданской войны в Испании несколько машин в полевых условиях было модифицировано под установку 20-мм орудия.</value>
+    <value>Pz. I Ausf. A был первым массовым немецким танком.
+В 1935 году конструкция машины была доработана, и начался серийный выпуск Pz. I Ausf. B с удлинённым корпусом и шасси, а также более мощным двигателем. Всего было выпущено 675 машин этой модификации. Танк отличался очень слабым вооружением, поэтому во время Гражданской войны в Испании несколько машин в полевых условиях было модифицировано под установку 20-мм орудия.</value>
   </data>
   <data name="PzI_short" xml:space="preserve">
     <value>Pz. I</value>
@@ -2219,7 +2268,7 @@ Ausf. E</value>
     <value>Pz.Kpfw. IV Ausf. A</value>
   </data>
   <data name="Pz_IV_AusfA_descr" xml:space="preserve">
-    <value>Разработка танка началась в 1935 году. В апреле 1936 года машина получила обозначение Pz.Kpfw. IV. Осенью 1937 года начался серийный выпуск, и в январе 1938 года первые три танка поступили в войска. Всего было выпущено 35 машин, которые состояли на вооружении до весны 1941 года.</value>
+    <value>Средний танк Pz.Kpfw. IV Ausf. A в период разработки считался тяжёлым танком. Является ранней версией самого массового танка Германии. Разработка была начата в 1935 году. Серийное производство началось осенью 1937 года. Pz.Kpfw. IV находился в процессе постоянной модификации. Данная машина воссоздаёт промежуточную версию танка Ausf. A-Ausf. В. Первые три машины поступили в войска в январе 1938 года. Всего было выпущено 35 машин, являвшихся модификациями Ausf. A и состоявших на вооружении до весны 1941 года.</value>
   </data>
   <data name="Pz_IV_AusfA_short" xml:space="preserve">
     <value>Pz. IV A</value>
@@ -2528,6 +2577,12 @@ Ausf. E</value>
   <data name="Turret_1_G122_VK6501H" xml:space="preserve">
     <value>VK 65.01 (H) S.W.</value>
   </data>
+  <data name="Turret_1_G125_Spz_57_Rh" xml:space="preserve">
+    <value>Rheinmetall Panzerwagen</value>
+  </data>
+  <data name="Turret_1_G126_HWK_12" xml:space="preserve">
+    <value>HWK 12</value>
+  </data>
   <data name="Turret_1_G16_PzVIB_Tiger_II_F" xml:space="preserve">
     <value>Tiger II</value>
   </data>
@@ -2679,6 +2734,9 @@ Turm Nr. 1</value>
   </data>
   <data name="Turret_2_G113_SP_I_C" xml:space="preserve">
     <value>Spähpanzer SP I C PT II Rh.-Nr. WK-G2</value>
+  </data>
+  <data name="Turret_2_G126_HWK_12" xml:space="preserve">
+    <value>HWK 12 verbessert</value>
   </data>
   <data name="Turret_2_Indien_Panzer" xml:space="preserve">
     <value>Indien-Panzer</value>
@@ -3045,6 +3103,15 @@ verstärkteketten</value>
   <data name="_105mm_BK_L7A3_L51" xml:space="preserve">
     <value>10,5 cm Bordkanone L7A3</value>
   </data>
+  <data name="_105mm_Exp_APDS" xml:space="preserve">
+    <value>Exp. APDS</value>
+  </data>
+  <data name="_105mm_Exp_HE" xml:space="preserve">
+    <value>Exp. HE</value>
+  </data>
+  <data name="_105mm_Exp_HEAT" xml:space="preserve">
+    <value>Exp. HEAT</value>
+  </data>
   <data name="_105mm_Gr19" xml:space="preserve">
     <value>Gr 19</value>
   </data>
@@ -3053,6 +3120,9 @@ verstärkteketten</value>
   </data>
   <data name="_105mm_K18_L52A" xml:space="preserve">
     <value>10,5 cm Kanone 18</value>
+  </data>
+  <data name="_105mm_Kanone" xml:space="preserve">
+    <value>105 mm Kanone</value>
   </data>
   <data name="_105mm_KwK45_L52" xml:space="preserve">
     <value>10,5 cm Kw.K. L/52</value>
@@ -3173,11 +3243,17 @@ Ausf. K</value>
   <data name="_128mm_PzGr39" xml:space="preserve">
     <value>Pzgr 39</value>
   </data>
+  <data name="_128mm_PzGr39K" xml:space="preserve">
+    <value>Pzgr 39 K</value>
+  </data>
   <data name="_128mm_PzGr39L" xml:space="preserve">
     <value>Pzgr 39 L</value>
   </data>
   <data name="_128mm_PzGr40" xml:space="preserve">
     <value>Pzgr 40</value>
+  </data>
+  <data name="_128mm_PzGr40K" xml:space="preserve">
+    <value>Pzgr 40 K</value>
   </data>
   <data name="_128mm_PzGr43" xml:space="preserve">
     <value>Pzgr 43</value>
@@ -3344,6 +3420,9 @@ Ausf. K</value>
   <data name="_30mm_MK103" xml:space="preserve">
     <value>3 cm M.K. 103</value>
   </data>
+  <data name="_30mm_MK103A" xml:space="preserve">
+    <value>3 cm M.K. 103A</value>
+  </data>
   <data name="_30mm_Pzgr" xml:space="preserve">
     <value>H-Pzgr. Patr. 103 (w)</value>
   </data>
@@ -3437,6 +3516,9 @@ Ausf. K</value>
   <data name="_50mm_KwK_39_L60" xml:space="preserve">
     <value>5 cm Kw.K. 39 L/60</value>
   </data>
+  <data name="_50mm_KwK_39_L60L" xml:space="preserve">
+    <value>5 cm Kw.K. 39 L/60L</value>
+  </data>
   <data name="_50mm_PaK_39_L60" xml:space="preserve">
     <value>5 cm Pak 38 L/60</value>
   </data>
@@ -3499,6 +3581,9 @@ Ausf. K</value>
   </data>
   <data name="_75mm_KwK_40_L48" xml:space="preserve">
     <value>7,5 cm Kw.K. 40 L/48</value>
+  </data>
+  <data name="_75mm_KwK_40_L48L" xml:space="preserve">
+    <value>7,5 cm Kw.K. 40 L/48L</value>
   </data>
   <data name="_75mm_KwK_441_A" xml:space="preserve">
     <value>7,5 cm Kw.K. 44/1 L/70</value>
@@ -3644,6 +3729,9 @@ Ausf. K</value>
   <data name="_90mm_DM13" xml:space="preserve">
     <value>DM13</value>
   </data>
+  <data name="_90mm_DM13A" xml:space="preserve">
+    <value>DM13A</value>
+  </data>
   <data name="_90mm_DM13A1" xml:space="preserve">
     <value>DM13A1</value>
   </data>
@@ -3670,6 +3758,18 @@ Ausf. K</value>
   </data>
   <data name="_90mm_Mecar_HEAT" xml:space="preserve">
     <value>Mecar HEAT</value>
+  </data>
+  <data name="_90mm_Mecar_N" xml:space="preserve">
+    <value>90 mm Mecar N</value>
+  </data>
+  <data name="_90mm_Mecar_N_AP" xml:space="preserve">
+    <value>Mecar N AP</value>
+  </data>
+  <data name="_90mm_Mecar_N_HE" xml:space="preserve">
+    <value>Mecar N HE</value>
+  </data>
+  <data name="_90mm_Mecar_N_HEAT" xml:space="preserve">
+    <value>Mecar N HEAT</value>
   </data>
   <data name="_90mm_Mecar_mit_Mehrladeeinrichtung" xml:space="preserve">
     <value>90 mm Mecar mit Mehrladeeinrichtung</value>

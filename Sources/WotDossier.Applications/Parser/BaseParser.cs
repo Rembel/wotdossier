@@ -29,12 +29,17 @@ namespace WotDossier.Applications.Parser
             get { return 0x07; }
         }
 
+        protected virtual ulong UpdateEvent_Health
+        {
+            get { return 0x03; }
+        }
+
         protected virtual ulong PacketChat
         {
             get { return 0x1f; }
         }
 
-        protected virtual ulong PacketUpdateEvent
+        protected virtual ulong PacketBattleUpdateEvent
         {
             get { return 0x08; }
         }
@@ -128,7 +133,7 @@ namespace WotDossier.Applications.Parser
                 }
                 else
                 //in game updates
-                if (packet.StreamPacketType == PacketUpdateEvent)
+                if (packet.StreamPacketType == PacketBattleUpdateEvent)
                 {
                     _log.Trace("Process packet 0x08");
                     ProcessPacket_0x08(packet);
@@ -168,7 +173,7 @@ namespace WotDossier.Applications.Parser
                 //read 8-12 - update length
                 packet.SubTypePayloadLength = stream.Read(4).ConvertLittleEndian();
 
-                if (packet.StreamSubType == 0x03)
+                if (packet.StreamSubType == UpdateEvent_Health)
                 {
                     int value = BitConverter.ToInt16(stream.Read(2), 0);
                     data.health = value < 0 ? 0 : value;

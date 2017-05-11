@@ -151,7 +151,7 @@
     <value>А-44</value>
   </data>
   <data name="A44_descr" xml:space="preserve">
-    <value>Проект был разработан в апреле 1941 года ведущим конструктором завода №183 И. С. Бером. Планировали выпускать машину в трёх вариантах, отличающихся по бронированию, вооружению, боевой массе и скорости. Опытный образец предполагалось выпустить к началу 1942 года, но в связи с началом войны и эвакуацией все работы над танком были прекращены.</value>
+    <value>Проект был разработан в апреле 1941 года ведущим конструктором завода №183 И.С. Бером. Планировали выпускать машину в трёх вариантах, отличающихся по бронированию, вооружению, боевой массе и скорости. Опытный образец предполагалось выпустить к началу 1942 года, но в связи с началом войны и эвакуацией все работы над танком были прекращены.</value>
   </data>
   <data name="AEC3" xml:space="preserve">
     <value>AEC3</value>
@@ -187,7 +187,7 @@
     <value>БТ-2</value>
   </data>
   <data name="BT-2_descr" xml:space="preserve">
-    <value>Разработан на базе танка Christie М1931. Выпускался на Харьковском паровозостроительном заводе. Всего в 1932–1935 гг. было выпущено 650 БТ-2 и 1884 БТ-5.</value>
+    <value>Советский колёсно-гусеничный танк 1930-х годов. Первый танк в линейке советских лёгких танков БТ. Создан на основе американского танка Christie M1931 (Model 1940), но отличался от прототипа многочисленными конструктивными особенностями, а также высокой скоростью и отличными динамическими качествами. Всего было произведено 620 машин различных модификаций. Данная машина, отличающаяся новым двигателем и новой эллиптической башней с 45-мм пушкой, получила название БТ-5. Всего было произведено 1884 машины данного типа. БТ-5 поставлялись в Испанию и наряду с БТ-2 участвовали в боях на Халхин-Голе, Польской кампании, советско-финской и Второй мировой войнах.</value>
   </data>
   <data name="BT-2bis" xml:space="preserve">
     <value>БТ-5</value>
@@ -217,7 +217,7 @@
     <value>БТ-СВ</value>
   </data>
   <data name="BT-SV_descr" xml:space="preserve">
-    <value>Опытный танк, разработанный группой Цыганова в 1936–1938 гг. Прошёл полигонные испытания. На вооружении не состоял.</value>
+    <value>Разработан в 1937 году на автобронетанковой рембазе №12 Харьковского военного округа. На БТ-СВ широко применялись узлы и агрегаты от танка БТ-7. Корпус опытного образца был изготовлен из листов конструкционной стали толщиной 10-12 мм под большими углами наклона; при серийном производстве предполагалось использовать листы гомогенной броневой стали толщиной 25 мм. Танк прошёл серийные испытания, однако на вооружение принят не был. Впоследствии схема бронирования с рациональными углами наклона бронелистов была применена на опытном танке А-20, а затем на Т-34.</value>
   </data>
   <data name="Bedford_Twin-Six" xml:space="preserve">
     <value>Bedford Twin-Six</value>
@@ -426,8 +426,20 @@
   <data name="Chassis_R129_Object_257" xml:space="preserve">
     <value>Объект 257</value>
   </data>
+  <data name="Chassis_R131_Tank_Gavalov" xml:space="preserve">
+    <value>ЛТГ</value>
+  </data>
+  <data name="Chassis_R131_Tank_Gavalov_2" xml:space="preserve">
+    <value>ЛТГ улучшенный</value>
+  </data>
+  <data name="Chassis_R132_VNII_100LT" xml:space="preserve">
+    <value>Т-100 ЛТ (Изделие 64992)</value>
+  </data>
   <data name="Chassis_R133_KV_122" xml:space="preserve">
     <value>КВ-122</value>
+  </data>
+  <data name="Chassis_R134_Object_252K" xml:space="preserve">
+    <value>Объект 252У Защитник</value>
   </data>
   <data name="Chassis_R134_Object_252U" xml:space="preserve">
     <value>Объект 252У</value>
@@ -585,6 +597,12 @@ W-670</value>
   </data>
   <data name="GAZ-M1" xml:space="preserve">
     <value>ГАЗ-М1</value>
+  </data>
+  <data name="GAZ_O" xml:space="preserve">
+    <value>ГАЗ-О</value>
+  </data>
+  <data name="GAZ_OU" xml:space="preserve">
+    <value>ГАЗ-ОУ</value>
   </data>
   <data name="GMC" xml:space="preserve">
     <value>GMC 6004</value>
@@ -760,6 +778,9 @@ W-670</value>
   <data name="KV_descr" xml:space="preserve">
     <value>Разработан в СКБ-2 Ленинградского Кировского завода в 1939 году. Выпускался с февраля 1940 по сентябрь 1942 года. Всего было выпущено 2769 КВ-1 и 334 КВ-2.</value>
   </data>
+  <data name="KZ-V16" xml:space="preserve">
+    <value>КЗ V16</value>
+  </data>
   <data name="KZ-V8" xml:space="preserve">
     <value>КЗ V8</value>
   </data>
@@ -879,7 +900,8 @@ W-670</value>
     <value>Объект 268</value>
   </data>
   <data name="Object268_descr" xml:space="preserve">
-    <value>Работы над машиной были начаты летом 1952 г. Установка разрабатывалась на шасси тяжёлого танка Т-10. Работы проводились ОКБТ ЛКЗ под руководством Ж. Я. Котина. Опытный образец был изготовлен в 1956 г. Машина прошла испытания, но серийно не выпускалась.</value>
+    <value>Работы над машиной были начаты летом 1952 года. Установка разрабатывалась на шасси тяжёлого танка 
+Т-10. Работы проводились ОКБТ ЛКЗ под руководством Ж. Я. Котина. Опытный образец был изготовлен в 1956 году. Машина прошла испытания, но серийно не выпускалась.</value>
   </data>
   <data name="Object268_short" xml:space="preserve">
     <value>Об. 268</value>
@@ -915,7 +937,7 @@ W-670</value>
     <value>Объект 261</value>
   </data>
   <data name="Object_261_descr" xml:space="preserve">
-    <value>Разрабатывалась в КБ Челябинского и Ленинградского Кировских заводов на базе танка ИС-7. Работы были начаты в 1947 году, однако вскоре были прекращены на стадии макета.</value>
+    <value>Разработка тяжёлой самоходной артиллерийской установки на базе тяжёлого танка ИС-7 велась в 1947 году. Предполагалось вооружить САУ мощной 180-мм морской пушкой. Однако в дальнейшем все работы по проекту были прекращены.</value>
   </data>
   <data name="Object_261_short" xml:space="preserve">
     <value>Об. 261</value>
@@ -936,13 +958,13 @@ W-670</value>
     <value>Объект 907A</value>
   </data>
   <data name="Object_907A_descr" xml:space="preserve">
-    <value>Одновременно с совершенствованием Т-54 в 1950-е гг. в СССР велись работы над созданием средних танков нового поколения. Соответствующее решение было принято 13 июля 1953 г. Эскизный проект танка был разработан ВНИИ-100. Опытный образец был представлен в марте 1953 г. В апреле 1955 г. проведены испытания обстрелом опытных корпусов. Дальнейшие работы над проектом были свёрнуты по причине сложности конструкции.</value>
+    <value>Одновременно с совершенствованием Т-54 в 1950-е гг. в СССР велись работы над созданием средних танков нового поколения. Соответствующее решение было принято 13 июля 1953 года. Эскизный проект танка был разработан ВНИИ-100 и представлен в феврале-марте 1954 года. В апреле 1955 года проведены испытания обстрелом опытных корпусов. Дальнейшие работы над проектом были свёрнуты по причине сложности конструкции.</value>
   </data>
   <data name="Object_907A_short" xml:space="preserve">
     <value>Об. 907A</value>
   </data>
   <data name="Object_907_descr" xml:space="preserve">
-    <value>Одновременно с совершенствованием Т-54 в 1950-е гг. в СССР велись работы над созданием средних танков нового поколения. Соответствующее решение было принято 13 июля 1953 г. Эскизный проект танка был разработан ВНИИ-100. Опытный образец был представлен в марте 1953 г. В апреле 1955 г. проведены испытания обстрелом опытных корпусов. Дальнейшие работы над проектом были свёрнуты по причине сложности конструкции.</value>
+    <value>Одновременно с совершенствованием Т-54 в 1950-е гг. в СССР велись работы над созданием средних танков нового поколения. Соответствующее решение было принято 13 июля 1953 года. Эскизный проект танка был разработан ВНИИ-100 и представлен в феврале-марте 1954 года. В апреле 1955 года проведены испытания обстрелом опытных корпусов. Дальнейшие работы над проектом были свёрнуты по причине сложности конструкции.</value>
   </data>
   <data name="Object_907_short" xml:space="preserve">
     <value>Об. 907</value>
@@ -960,7 +982,8 @@ W-670</value>
     <value>Объект 430 Вариант II</value>
   </data>
   <data name="R104_Object_430_II_descr" xml:space="preserve">
-    <value>Танк разрабатывался в КБ завода №73 в начале 1953 года для замены танка Т-54. Проект был рассмотрен 8-10 марта 1953 года Министерством транспортного и тяжёлого машиностроения вместе с проектом среднего танка классической компоновки. Однако дальнейшие работы по проекту были свёрнуты.</value>
+    <value>Танк разрабатывался в КБ завода №73 в начале 1953 года для замены танка Т-54. Проект был рассмотрен
+8-10 марта 1953 года Министерством транспортного и тяжёлого машиностроения вместе с проектом среднего танка классической компоновки. Однако дальнейшие работы по проекту были свёрнуты.</value>
   </data>
   <data name="R104_Object_430_II_short" xml:space="preserve">
     <value>Об. 430 II</value>
@@ -1187,11 +1210,38 @@ W-670</value>
   <data name="R129_Object_257_short" xml:space="preserve">
     <value>Об. 257</value>
   </data>
+  <data name="R131_Tank_Gavalov" xml:space="preserve">
+    <value>ЛТГ</value>
+  </data>
+  <data name="R131_Tank_Gavalov_descr" xml:space="preserve">
+    <value>Проект лёгкого танка конструкции Гавалова был разработан в 1944 году на Горьковском автозаводе. При проектировании были использованы некоторые оригинальные для того времени конструкторские решения. Так, например, механик-водитель располагался в боевом отделении, а его смотровой прибор устанавливался во входном люке на крыше башни. Прибор был синхронизирован с рабочим местом водителя и вращался вместе с сиденьем относительно башни. Все работы над проектом были свёрнуты на стадии разработки.</value>
+  </data>
+  <data name="R131_Tank_Gavalov_short" xml:space="preserve">
+    <value>ЛТГ</value>
+  </data>
+  <data name="R132_VNII_100LT" xml:space="preserve">
+    <value>Т-100 ЛТ</value>
+  </data>
+  <data name="R132_VNII_100LT_descr" xml:space="preserve">
+    <value>Проект лёгкого танка с комплексом вооружения Т-100. Разработан в ВНИИ-100 совместно с ГСКБ-47 в середине 60-х годов. Танк имел достаточно мощное бронирование, которое в лобовой проекции обеспечивало защиту от 90-мм (по бортам от 20-мм) снарядов на всех дистанциях.</value>
+  </data>
+  <data name="R132_VNII_100LT_short" xml:space="preserve">
+    <value>Т-100 ЛТ</value>
+  </data>
   <data name="R133_KV_122" xml:space="preserve">
     <value>КВ-122</value>
   </data>
   <data name="R133_KV_122_descr" xml:space="preserve">
     <value>Опытный образец танка КВ-122 был создан весной 1944 года в конструкторском бюро ЧКЗ на базе серийного танка КВ-85 и отличался от него установкой башни со 122-мм орудием. Башня была заимствована у танка ИС-2 образца 1944 года. В связи с началом серийного производства тяжёлых танков ИС все работы над проектом были свёрнуты.</value>
+  </data>
+  <data name="R134_Object_252K" xml:space="preserve">
+    <value>Объект 252У Защитник</value>
+  </data>
+  <data name="R134_Object_252K_descr" xml:space="preserve">
+    <value>Объект 252У — один из эскизных проектов, подготовленных при разработке тяжёлого танка ИС-6. Эскизная документация была создана к концу 1944 года, но дальнейшая разработка ИС-6 была свёрнута, а вместе с ней и работа над данным вариантом машины. Танк не был принят на вооружение.</value>
+  </data>
+  <data name="R134_Object_252K_short" xml:space="preserve">
+    <value>Защитник</value>
   </data>
   <data name="R134_Object_252U" xml:space="preserve">
     <value>Объект 252У</value>
@@ -1257,7 +1307,7 @@ W-670</value>
     <value>СУ-101</value>
   </data>
   <data name="SU-101_descr" xml:space="preserve">
-    <value>В 1944 году КБ УЗТМ параллельно разработало СУ-101 с орудием Д-10С и СУ-102 с орудием Д-25С. Обе машины назывались «Уралмаш-1». В апреле 1945 года были выпущены опытные образцы. Серийно не выпускались, на вооружении не состояли.</value>
+    <value>Опытный образец ПТ-САУ предназначался для замены СУ-100. В апреле — мае 1945 года было изготовлено два прототипа, успешно прошедших заводские испытания. Несмотря на высокие ТТХ, после окончания войны дальнейшая работа над проектом была прекращена из-за нецелесообразности развёртывания производства новой САУ, базировавшейся на агрегатах танков военного периода.</value>
   </data>
   <data name="SU-101_short" xml:space="preserve">
     <value>СУ-101</value>
@@ -1593,7 +1643,7 @@ W-670</value>
     <value>Т-50</value>
   </data>
   <data name="T-50_descr" xml:space="preserve">
-    <value>Работы над машиной начались в октябре 1940 г. После испытаний опытного образца в феврале — марте 1941 г. машина была принята на вооружение.</value>
+    <value>Разработан в начале 1940-х годов взамен устаревшего Т-26, однако из-за начавшейся войны и сложной технологии производства не получил широкого распространения. Всего было выпущено 75 машин различных модификаций.</value>
   </data>
   <data name="T-50_short" xml:space="preserve">
     <value>Т-50</value>
@@ -1608,7 +1658,7 @@ W-670</value>
     <value>Т-60</value>
   </data>
   <data name="T-60_descr" xml:space="preserve">
-    <value>Разработан в августе 1941 года в КБ завода №37 под руководством Н. А. Астрова. Принят на вооружение в сентябре 1941 г. Серийное производство продолжалось до февраля 1943 года. Всего было выпущено 5920 танков. Состоял на вооружении до конца войны.</value>
+    <value>Разработан в августе 1941 года КБ завода №37 под руководством Н.А. Астрова. В сентябре того же года был принят на вооружение. За время серийного выпуска построено 5920 танков. Серийное производство продолжалось до февраля 1943 года, однако танк состоял на вооружении до конца войны.</value>
   </data>
   <data name="T-70" xml:space="preserve">
     <value>Т-70</value>
@@ -1835,8 +1885,17 @@ W-670</value>
   <data name="Turret_1_R129_Object_257" xml:space="preserve">
     <value>Объект 257</value>
   </data>
+  <data name="Turret_1_R131_Tank_Gavalov" xml:space="preserve">
+    <value>ЛТГ</value>
+  </data>
+  <data name="Turret_1_R132_VNII_100LT" xml:space="preserve">
+    <value>Т-100 ЛТ (Изделие 64992)</value>
+  </data>
   <data name="Turret_1_R133_KV_122" xml:space="preserve">
     <value>КВ-122</value>
+  </data>
+  <data name="Turret_1_R134_Object_252K" xml:space="preserve">
+    <value>Объект 252У Защитник</value>
   </data>
   <data name="Turret_1_R134_Object_252U" xml:space="preserve">
     <value>Объект 252У</value>
@@ -1985,6 +2044,9 @@ W-670</value>
   <data name="Turret_IS-7_fallout" xml:space="preserve">
     <value>ИС-7</value>
   </data>
+  <data name="UTD_20" xml:space="preserve">
+    <value>УТД-20</value>
+  </data>
   <data name="V-11" xml:space="preserve">
     <value>В-11</value>
   </data>
@@ -2093,6 +2155,9 @@ W-670</value>
   <data name="V-44A" xml:space="preserve">
     <value>В-44-500</value>
   </data>
+  <data name="V-4M" xml:space="preserve">
+    <value>В-4М</value>
+  </data>
   <data name="V-5" xml:space="preserve">
     <value>В-5</value>
   </data>
@@ -2111,6 +2176,9 @@ W-670</value>
   <data name="V-55U" xml:space="preserve">
     <value>В-14</value>
   </data>
+  <data name="V-55UM" xml:space="preserve">
+    <value>В-14М</value>
+  </data>
   <data name="V-55_fallout" xml:space="preserve">
     <value>В-55</value>
   </data>
@@ -2125,6 +2193,9 @@ W-670</value>
   </data>
   <data name="V_12CN" xml:space="preserve">
     <value>В-12ЦН</value>
+  </data>
+  <data name="V_2_10M" xml:space="preserve">
+    <value>В-2-10М</value>
   </data>
   <data name="ValentineMK_I" xml:space="preserve">
     <value>Валентайн</value>
@@ -2156,6 +2227,15 @@ W-670</value>
   <data name="_100mm_3UOF10_fallout" xml:space="preserve">
     <value>3УОФ10 А</value>
   </data>
+  <data name="_100mm_3VBB" xml:space="preserve">
+    <value>3ВББ</value>
+  </data>
+  <data name="_100mm_3VBM" xml:space="preserve">
+    <value>3ВБМ</value>
+  </data>
+  <data name="_100mm_3VOF" xml:space="preserve">
+    <value>3ВОФ</value>
+  </data>
   <data name="_100mm_BR-412D" xml:space="preserve">
     <value>УБР-412Д</value>
   </data>
@@ -2174,8 +2254,14 @@ W-670</value>
   <data name="_100mm_D10TK" xml:space="preserve">
     <value>100 мм Д-10Т-К</value>
   </data>
+  <data name="_100mm_D10TM" xml:space="preserve">
+    <value>100 мм Д-10ТМ</value>
+  </data>
   <data name="_100mm_D10T_obr_45" xml:space="preserve">
     <value>100 мм Д-10Т обр. 1945 г.</value>
+  </data>
+  <data name="_100mm_D10T_obr_45M" xml:space="preserve">
+    <value>100 мм Д-10ТМ обр. 1945 г.</value>
   </data>
   <data name="_100mm_D54S" xml:space="preserve">
     <value>100 мм Д-54С</value>
@@ -2210,6 +2296,9 @@ W-670</value>
   <data name="_100mm_S34" xml:space="preserve">
     <value>100 мм С-34</value>
   </data>
+  <data name="_100mm_T_100" xml:space="preserve">
+    <value>100 мм Т-100</value>
+  </data>
   <data name="_100mm_UBR-412" xml:space="preserve">
     <value>УБР-412</value>
   </data>
@@ -2221,6 +2310,9 @@ W-670</value>
   </data>
   <data name="_100mm_UBR-412P" xml:space="preserve">
     <value>УБР-412П</value>
+  </data>
+  <data name="_100mm_UBR-412PA" xml:space="preserve">
+    <value>УБР-412ПА</value>
   </data>
   <data name="_100mm_UBR-412PB" xml:space="preserve">
     <value>УБР-412ПБ</value>
@@ -2426,6 +2518,9 @@ W-670</value>
   <data name="_122mm_UOF-471" xml:space="preserve">
     <value>УОФ-471</value>
   </data>
+  <data name="_122mm_UOF-471A" xml:space="preserve">
+    <value>УОФ-471А</value>
+  </data>
   <data name="_122mm_UOF-471BM" xml:space="preserve">
     <value>УОФ-471БМ</value>
   </data>
@@ -2519,8 +2614,14 @@ W-670</value>
   <data name="_152mm_53-OF-530" xml:space="preserve">
     <value>53-ОФ-530</value>
   </data>
+  <data name="_152mm_53-OF-531" xml:space="preserve">
+    <value>53-ОФ-531</value>
+  </data>
   <data name="_152mm_53-OF-551" xml:space="preserve">
     <value>53-ОФ-551</value>
+  </data>
+  <data name="_152mm_53-OF-551B" xml:space="preserve">
+    <value>53-ОФ-551Б</value>
   </data>
   <data name="_152mm_53-OF-551BM" xml:space="preserve">
     <value>53-ОФ-551БМ</value>
@@ -2723,6 +2824,9 @@ W-670</value>
   <data name="_45mm_20KL" xml:space="preserve">
     <value>45 мм 20К(л)</value>
   </data>
+  <data name="_45mm_20KM" xml:space="preserve">
+    <value>45 мм 20КМ</value>
+  </data>
   <data name="_45mm_20K_S" xml:space="preserve">
     <value>45 мм 20КС</value>
   </data>
@@ -2738,17 +2842,29 @@ W-670</value>
   <data name="_45mm_UBR-243SPA" xml:space="preserve">
     <value>УБР-243СПА</value>
   </data>
+  <data name="_45mm_UBR-243SPAU" xml:space="preserve">
+    <value>УБР-243СПАУ</value>
+  </data>
+  <data name="_45mm_UBR-243SPU" xml:space="preserve">
+    <value>УБР-243СПУ</value>
+  </data>
   <data name="_45mm_UOF-240A" xml:space="preserve">
     <value>УОФ-240А</value>
   </data>
   <data name="_45mm_UOF-243" xml:space="preserve">
     <value>УОФ-243</value>
   </data>
+  <data name="_45mm_UOF-243U" xml:space="preserve">
+    <value>УОФ-243У</value>
+  </data>
   <data name="_45mm_VT-42" xml:space="preserve">
     <value>45 мм ВТ-42</value>
   </data>
   <data name="_45mm_VT-43" xml:space="preserve">
     <value>45 мм ВТ-43</value>
+  </data>
+  <data name="_45mm_VT-43M" xml:space="preserve">
+    <value>45 мм ВТ-43М</value>
   </data>
   <data name="_45mm_mod_1932" xml:space="preserve">
     <value>45 мм обр. 1932 г.</value>
@@ -2782,6 +2898,9 @@ W-670</value>
   </data>
   <data name="_57mm_ZiS-4" xml:space="preserve">
     <value>57 мм ЗиС-4</value>
+  </data>
+  <data name="_57mm_ZiS-4M" xml:space="preserve">
+    <value>57 мм ЗиС-4М</value>
   </data>
   <data name="_57mm_ZiS-8" xml:space="preserve">
     <value>57 мм ЗиС-8</value>
@@ -2846,6 +2965,9 @@ W-670</value>
   <data name="_76mm_S-54" xml:space="preserve">
     <value>76 мм С-54</value>
   </data>
+  <data name="_76mm_S-54M" xml:space="preserve">
+    <value>76 мм С-54М</value>
+  </data>
   <data name="_76mm_S-54_S" xml:space="preserve">
     <value>76 мм С-54С</value>
   </data>
@@ -2869,6 +2991,9 @@ W-670</value>
   </data>
   <data name="_76mm_UOF-354K" xml:space="preserve">
     <value>УОФ-354К</value>
+  </data>
+  <data name="_76mm_UOF-354KA" xml:space="preserve">
+    <value>УОФ-354КА</value>
   </data>
   <data name="_76mm_UOF-354M" xml:space="preserve">
     <value>УОФ-354М</value>
@@ -2911,6 +3036,9 @@ W-670</value>
   </data>
   <data name="_85mm_D5T-85BMA" xml:space="preserve">
     <value>85 мм Д-5Т-85БМ</value>
+  </data>
+  <data name="_85mm_D5T-85BMU" xml:space="preserve">
+    <value>85 мм Д-5Т-85БМУ</value>
   </data>
   <data name="_85mm_F-30" xml:space="preserve">
     <value>85 мм Ф-30</value>
@@ -2965,6 +3093,9 @@ W-670</value>
   </data>
   <data name="_85mm_ZiS_S-53A" xml:space="preserve">
     <value>85 мм ЗиС-С-53</value>
+  </data>
+  <data name="_85mm_ZiS_S-53M" xml:space="preserve">
+    <value>85 мм ЗиС-С-53М</value>
   </data>
   <data name="_85mm_ZiS_S-53_44" xml:space="preserve">
     <value>85 мм ЗиС-С-53 (367)</value>

@@ -181,13 +181,13 @@
     <value>Renault NC-31</value>
   </data>
   <data name="Ch06_Renault_NC31_bot_descr" xml:space="preserve">
-    <value>Проект NC-2 (коммерческое название NC-31) являлся модификацией танка Renault FT-17 с новой ходовой частью, в которой использовались элементы подвески с большим ходом и гусеница Kegress-Hinstin из армированной резины с металлическими башмаками. Наряду с новым 45-сильным двигателем это позволило увеличить скорость до 16 км/ч. Пятнадцать машин этого типа были экспортированы в Китай.</value>
+    <value>Модификация танка Renault FT с новой ходовой частью, в которой использовались элементы подвески с большим ходом и гусеница Kégresse-Hinstin из армированной резины с металлическими башмаками. Новый двигатель мощностью 45 л.с. позволил танку развивать скорость до 16 км/ч. Пятнадцать машин этого типа были поставлены в Китай.</value>
   </data>
   <data name="Ch06_Renault_NC31_bot_short" xml:space="preserve">
     <value>NC-31</value>
   </data>
   <data name="Ch06_Renault_NC31_descr" xml:space="preserve">
-    <value>Проект NC-2 (коммерческое название NC-31) являлся модификацией танка Renault FT-17 с новой ходовой частью, в которой использовались элементы подвески с большим ходом и гусеница Kegress-Hinstin из армированной резины с металлическими башмаками. Наряду с новым 45-сильным двигателем это позволило увеличить скорость до 16 км/ч. Пятнадцать машин этого типа были экспортированы в Китай.</value>
+    <value>Модификация танка Renault FT с новой ходовой частью, в которой использовались элементы подвески с большим ходом и гусеница Kégresse-Hinstin из армированной резины с металлическими башмаками. Новый двигатель мощностью 45 л.с. позволил танку развивать скорость до 16 км/ч. Пятнадцать машин этого типа были поставлены в Китай.</value>
   </data>
   <data name="Ch06_Renault_NC31_short" xml:space="preserve">
     <value>NC-31</value>
@@ -321,6 +321,24 @@
   <data name="Ch26_59_Patton_short" xml:space="preserve">
     <value>59-Patton</value>
   </data>
+  <data name="Ch28_WZ_132A" xml:space="preserve">
+    <value>WZ-132A</value>
+  </data>
+  <data name="Ch28_WZ_132A_descr" xml:space="preserve">
+    <value>Дальнейшее развитие проекта WZ-132. Главным отличием должна была стать более короткая база. Конструкторы предполагали совместить в танке и высокую подвижность, и огневую мощь. Прототип проходил испытания во второй половине 1960-х годов, однако проект был свёрнут. Серийно не выпускался, прототип не сохранился.</value>
+  </data>
+  <data name="Ch28_WZ_132A_short" xml:space="preserve">
+    <value>WZ-132A</value>
+  </data>
+  <data name="Ch29_Type_62C_prot" xml:space="preserve">
+    <value>WZ-132-1</value>
+  </data>
+  <data name="Ch29_Type_62C_prot_descr" xml:space="preserve">
+    <value>Китайский опытный танк, результат объединения различных проектов модернизации танка Type 62. Название условно. Не было построено ни одного прототипа.</value>
+  </data>
+  <data name="Ch29_Type_62C_prot_short" xml:space="preserve">
+    <value>WZ-132-1</value>
+  </data>
   <data name="Chassis_Ch01_Type59_2" xml:space="preserve">
     <value>Type 59</value>
   </data>
@@ -450,6 +468,15 @@
   <data name="Chassis_Ch26_59_Patton" xml:space="preserve">
     <value>59-Patton</value>
   </data>
+  <data name="Chassis_Ch28_WZ_132A" xml:space="preserve">
+    <value>WZ-132A</value>
+  </data>
+  <data name="Chassis_Ch28_WZ_132A_2" xml:space="preserve">
+    <value>WZ-132B</value>
+  </data>
+  <data name="Chassis_Ch29_Type_62C_prot" xml:space="preserve">
+    <value>WZ-132-1</value>
+  </data>
   <data name="Continental_R-975-C1" xml:space="preserve">
     <value>Continental R-975-C1</value>
   </data>
@@ -555,6 +582,12 @@
   <data name="Turret_1_Ch26_59_Patton" xml:space="preserve">
     <value>59-Patton</value>
   </data>
+  <data name="Turret_1_Ch28_WZ_132A" xml:space="preserve">
+    <value>WZ-132A</value>
+  </data>
+  <data name="Turret_1_Ch29_Type_62C_prot" xml:space="preserve">
+    <value>WZ-132-1</value>
+  </data>
   <data name="Turret_2_Ch04_T34_1" xml:space="preserve">
     <value>T-34-1 model 2</value>
   </data>
@@ -621,11 +654,20 @@
   <data name="_100mm_59-100T" xml:space="preserve">
     <value>100 mm 59-100T</value>
   </data>
+  <data name="_100mm_59-100TA" xml:space="preserve">
+    <value>100 mm 59-100TA</value>
+  </data>
   <data name="_100mm_60-100T" xml:space="preserve">
     <value>100 mm 60-100T</value>
   </data>
+  <data name="_100mm_60-100TA" xml:space="preserve">
+    <value>100 mm 60-100TA</value>
+  </data>
   <data name="_100mm_62-100T" xml:space="preserve">
     <value>100 mm 62-100T</value>
+  </data>
+  <data name="_100mm_62-100TA" xml:space="preserve">
+    <value>100 mm 62-100TA</value>
   </data>
   <data name="_100mm_CJ-412G" xml:space="preserve">
     <value>Chuan jian-412G</value>
@@ -654,6 +696,9 @@
   <data name="_105mm_HEP_M393A1" xml:space="preserve">
     <value>HEP M393A1</value>
   </data>
+  <data name="_105mm_L7A3C" xml:space="preserve">
+    <value>105 mm L7A3C</value>
+  </data>
   <data name="_105mm_L7C" xml:space="preserve">
     <value>105 mm L7C</value>
   </data>
@@ -663,17 +708,26 @@
   <data name="_12150L-3_V-12" xml:space="preserve">
     <value>NORINCO 12150L3</value>
   </data>
+  <data name="_12150L2" xml:space="preserve">
+    <value>12150L2</value>
+  </data>
   <data name="_12150L3" xml:space="preserve">
     <value>12150L3</value>
   </data>
   <data name="_12150L7" xml:space="preserve">
     <value>12150L7</value>
   </data>
+  <data name="_12150L8" xml:space="preserve">
+    <value>12150L8</value>
+  </data>
   <data name="_12150LS" xml:space="preserve">
     <value>12150LS</value>
   </data>
   <data name="_12150LT" xml:space="preserve">
     <value>12150LT</value>
+  </data>
+  <data name="_12150LT2" xml:space="preserve">
+    <value>12150LT2</value>
   </data>
   <data name="_12150LZ" xml:space="preserve">
     <value>NORINCO 12150L</value>
@@ -815,6 +869,9 @@
   </data>
   <data name="_57mm_55-57FG" xml:space="preserve">
     <value>57 mm 55-57FG</value>
+  </data>
+  <data name="_57mm_55-57FGA" xml:space="preserve">
+    <value>57 mm 55-57FGA</value>
   </data>
   <data name="_57mm_APCR_Type_55_57" xml:space="preserve">
     <value>Chuan chao-271</value>

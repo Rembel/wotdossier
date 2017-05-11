@@ -997,6 +997,7 @@
     "userString": "#gb_vehicles:_18pdr_AP_Mk_1T",
     "icon": "ap",
     "price": "\t56\t",
+    "notInShop": "\ttrue\t",
     "kind": "ARMOR_PIERCING",
     "caliber": "83.8",
     "isTracer": "\ttrue\t",
@@ -1435,12 +1436,16 @@
     "price": "\t700\t",
     "kind": "HIGH_EXPLOSIVE",
     "caliber": "139.7",
-    "explosionRadius": "3.15",
+    "explosionRadius": "7.2",
+    "hasStun": "\ttrue\t",
+    "stunDuration": "\t22\t",
+    "guaranteedStunDuration": "0.60",
+    "damageDurationCoeff": "0.40",
     "isTracer": "\ttrue\t",
     "effects": "mainHighExplosive",
     "damage": {
-      "armor": "\t900\t",
-      "devices": "\t191\t"
+      "armor": "\t600\t",
+      "devices": "\t96\t"
     }
   },
   "_5.5inch_HE_Mk_5": {
@@ -1453,12 +1458,16 @@
     },
     "kind": "HIGH_EXPLOSIVE",
     "caliber": "139.7",
-    "explosionRadius": "4.50",
+    "explosionRadius": "8.1",
+    "hasStun": "\ttrue\t",
+    "stunDuration": "\t22\t",
+    "guaranteedStunDuration": "0.60",
+    "damageDurationCoeff": "0.40",
     "isTracer": "\ttrue\t",
     "effects": "mainHighExplosive",
     "damage": {
-      "armor": "\t900\t",
-      "devices": "\t191\t"
+      "armor": "\t600\t",
+      "devices": "\t96\t"
     }
   },
   "_6inch_HE": {
@@ -1468,12 +1477,16 @@
     "price": "\t1220\t",
     "kind": "HIGH_EXPLOSIVE",
     "caliber": "152.4",
-    "explosionRadius": "3.67",
+    "explosionRadius": "\t8\t",
+    "hasStun": "\ttrue\t",
+    "stunDuration": "\t25\t",
+    "guaranteedStunDuration": "0.55",
+    "damageDurationCoeff": "0.45",
     "isTracer": "\ttrue\t",
     "effects": "hugeHighExplosive",
     "damage": {
-      "armor": "\t1250\t",
-      "devices": "\t203\t"
+      "armor": "\t700\t",
+      "devices": "\t102\t"
     }
   },
   "_6inch_AP": {
@@ -1481,6 +1494,7 @@
     "userString": "#gb_vehicles:_6inch_AP",
     "icon": "ap",
     "price": "\t1400\t",
+    "notInShop": "\ttrue\t",
     "kind": "ARMOR_PIERCING",
     "caliber": "152.4",
     "isTracer": "\ttrue\t",
@@ -1500,12 +1514,16 @@
     },
     "kind": "HIGH_EXPLOSIVE",
     "caliber": "152.4",
-    "explosionRadius": "5.26",
+    "explosionRadius": "\t9\t",
+    "hasStun": "\ttrue\t",
+    "stunDuration": "\t25\t",
+    "guaranteedStunDuration": "0.55",
+    "damageDurationCoeff": "0.45",
     "isTracer": "\ttrue\t",
     "effects": "hugeHighExplosive",
     "damage": {
-      "armor": "\t1250\t",
-      "devices": "\t203\t"
+      "armor": "\t700\t",
+      "devices": "\t102\t"
     }
   },
   "_7.2inch_HE": {
@@ -1515,12 +1533,16 @@
     "price": "\t1830\t",
     "kind": "HIGH_EXPLOSIVE",
     "caliber": "182.9",
-    "explosionRadius": "5.05",
+    "explosionRadius": "\t10\t",
+    "hasStun": "\ttrue\t",
+    "stunDuration": "\t28\t",
+    "guaranteedStunDuration": "0.50",
+    "damageDurationCoeff": "0.50",
     "isTracer": "\ttrue\t",
     "effects": "hugeHighExplosive",
     "damage": {
-      "armor": "\t1750\t",
-      "devices": "\t244\t"
+      "armor": "\t900\t",
+      "devices": "\t122\t"
     }
   },
   "_7.2inch_HE_Mk_2": {
@@ -1533,12 +1555,16 @@
     },
     "kind": "HIGH_EXPLOSIVE",
     "caliber": "182.9",
-    "explosionRadius": "7.32",
+    "explosionRadius": "\t11\t",
+    "hasStun": "\ttrue\t",
+    "stunDuration": "\t28\t",
+    "guaranteedStunDuration": "0.50",
+    "damageDurationCoeff": "0.50",
     "isTracer": "\ttrue\t",
     "effects": "hugeHighExplosive",
     "damage": {
-      "armor": "\t1750\t",
-      "devices": "\t244\t"
+      "armor": "\t900\t",
+      "devices": "\t122\t"
     }
   },
   "_183mm_AP_Mk1": {
@@ -1595,12 +1621,16 @@
     "price": "\t2450\t",
     "kind": "HIGH_EXPLOSIVE",
     "caliber": "233.7",
-    "explosionRadius": "7.76",
+    "explosionRadius": "12.8",
+    "hasStun": "\ttrue\t",
+    "stunDuration": "\t33\t",
+    "guaranteedStunDuration": "0.45",
+    "damageDurationCoeff": "0.55",
     "isTracer": "\ttrue\t",
     "effects": "hugeHighExplosive",
     "damage": {
-      "armor": "\t2200\t",
-      "devices": "\t315\t"
+      "armor": "\t1200\t",
+      "devices": "\t155\t"
     }
   },
   "_9.2inch_HE_Mk_19": {
@@ -1613,12 +1643,16 @@
     },
     "kind": "HIGH_EXPLOSIVE",
     "caliber": "233.7",
-    "explosionRadius": "11.10",
+    "explosionRadius": "14.2",
+    "hasStun": "\ttrue\t",
+    "stunDuration": "\t33\t",
+    "guaranteedStunDuration": "0.45",
+    "damageDurationCoeff": "0.55",
     "isTracer": "\ttrue\t",
     "effects": "hugeHighExplosive",
     "damage": {
-      "armor": "\t2200\t",
-      "devices": "\t315\t"
+      "armor": "\t1200\t",
+      "devices": "\t155\t"
     }
   }
 }

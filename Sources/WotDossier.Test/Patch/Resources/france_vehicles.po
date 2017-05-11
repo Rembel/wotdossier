@@ -227,6 +227,12 @@ msgstr "AMX AC 48"
 msgid "AMX_B_270"
 msgstr "AMX B 270"
 
+msgid "AMX_B_271"
+msgstr "AMX B 271"
+
+msgid "AMX_B_272"
+msgstr "AMX B 272"
+
 msgid "AMX_M4_1945"
 msgstr "AMX M4 mle. 45"
 
@@ -420,6 +426,12 @@ msgstr ""
 "Canon de 155 mm\n"
 "de 33 calibres"
 
+msgid "Canon_de_75mm_Vo_1000_m_s"
+msgstr "Canon de 75 mm Vo 1000 m/s"
+
+msgid "Canon_de_75mm_Vo_920_m_s"
+msgstr "Canon de 75 mm Vo 920 m/s"
+
 msgid "Canon_de_90mm_Vo_930_m_s"
 msgstr "Canon de 90 mm Vo 930 m/s"
 
@@ -608,6 +620,12 @@ msgstr "AMX M4 mle. 49 Liberté"
 
 msgid "Chassis_F84_Somua_SM"
 msgstr "Somua SM"
+
+msgid "Chassis_F87_Batignolles-Chatillon_12t"
+msgstr "Batignolles-Châtillon 12 t"
+
+msgid "Chassis_F87_Batignolles-Chatillon_12t_2"
+msgstr "Batignolles-Châtillon 12 t bis"
 
 msgid "Chassis_FCM36_20t"
 msgstr "FCM 36"
@@ -964,6 +982,34 @@ msgstr ""
 msgid "F84_Somua_SM_short"
 msgstr "Somua SM"
 
+msgid "F87_Batignolles-Chatillon_12t"
+msgstr "Bat.-Châtillon 12 t"
+
+msgid "F87_Batignolles-Chatillon_12t_descr"
+msgstr ""
+"Лёгкий танк, разрабатывавшийся во второй половине 40-х годов компанией "
+"Batignolles-Châtillon. Танк имел качающуюся башню и был вооружён 75-мм "
+"орудием. Серийно не выпускался."
+
+msgid "F87_Batignolles-Chatillon_12t_short"
+msgstr "B-C 12 t"
+
+msgid "F88_AMX_13_105"
+msgstr "AMX 13 105"
+
+msgid "F88_AMX_13_105_descr"
+msgstr ""
+"AMX 13 105 представляет собой вариант лёгкого танка AMX 13, разработанный во "
+"второй половине 50-х гг. На танк устанавливалась башня FL 12, "
+"модернизированная под установку 105-мм орудия. Новый вариант танка AMX 13 не "
+"был принят на вооружение французской армией, но экспортировался в ряд других "
+"стран, а в Аргентине производился по лицензии. Несмотря на увеличение "
+"огневой мощи, новая конструкция имела некоторые недостатки. Так, из-за "
+"увеличенной отдачи при стрельбе, на некоторых башнях появлялись трещины."
+
+msgid "F88_AMX_13_105_short"
+msgstr "AMX 13 105"
+
 msgid "FCM36_20t"
 msgstr "FCM 36"
 
@@ -1042,8 +1088,9 @@ msgstr "Lorraine 155 mle. 50"
 
 msgid "Lorraine155_50_descr"
 msgstr ""
-"Прототип САУ, разработанный на базе опытного танка Lorraine 40t в 1952 году. "
-"Серийно не выпускался. На вооружении не состоял."
+"Разрабатывалась во Франции в послевоенные годы на базе опытного танка "
+"Lorraine 40 t. Проходила испытания в 1950 году, но серийно не выпускалась и "
+"на вооружении не состояла."
 
 msgid "Lorraine155_50_short"
 msgstr "Lorr. 155 50"
@@ -1053,9 +1100,9 @@ msgstr "Lorraine 155 mle. 51"
 
 msgid "Lorraine155_51_descr"
 msgstr ""
-"Экспериментальная САУ на базе прототипа среднего танка Char de Bataille "
-"Lorraine 40t. Прототип выпущен  в 1952 году. На вооружении не состояла и "
-"серийно не выпускалась."
+"Разрабатывалась в 1951 году на базе танка Lorraine 40 t с установкой 155-мм "
+"гаубицы. Прототип проходил испытания одновременно с танком. Однако Lorraine "
+"40 t на вооружение принят не был, и работы над САУ были также прекращены."
 
 msgid "Lorraine155_51_short"
 msgstr "Lorr. 155 51"
@@ -1084,7 +1131,13 @@ msgid "Lorraine40t_short"
 msgstr "Lorr. 40 t"
 
 msgid "MATHIS"
-msgstr "MATHIS"
+msgstr "Mathis 250"
+
+msgid "Mathis_210"
+msgstr "Mathis 210"
+
+msgid "Mathis_300"
+msgstr "Mathis 300"
 
 msgid "Maybach_850CV"
 msgstr "Maybach 850 CV"
@@ -1349,6 +1402,9 @@ msgstr "SCR 508/2"
 msgid "SCR_528"
 msgstr "SCR 528F"
 
+msgid "SCR_528_Fr"
+msgstr "SCR-528 Fr"
+
 msgid "SCR_619"
 msgstr "SCR 619"
 
@@ -1365,6 +1421,9 @@ msgid "SOFAM_8Gxb"
 msgstr "SOFAM 8 Gxb"
 
 msgid "SOFAM_8Gxb_A"
+msgstr "SOFAM 8 Gxb"
+
+msgid "SOFAM_8Gxb_B"
 msgstr "SOFAM 8 Gxb"
 
 msgid "S_35CA"
@@ -1424,6 +1483,9 @@ msgstr "SAu 40"
 
 msgid "Sovam_de_150cv"
 msgstr "SOFAM de 150 cv"
+
+msgid "Sovam_de_250cv"
+msgstr "SOFAM de 180 cv"
 
 msgid "TRVP_11_Banane"
 msgstr "TRVP-11 (Banane)"
@@ -1557,6 +1619,9 @@ msgstr "AMX M4 mle. 49 Liberté"
 
 msgid "Turret_1_F84_Somua_SM"
 msgstr "Somua SM"
+
+msgid "Turret_1_F88_AMX_13_105"
+msgstr "AMX 13 105"
 
 msgid "Turret_1_FCM36_20t"
 msgstr "Tracteur RN.3"
@@ -1703,8 +1768,11 @@ msgstr "OFL-105-57"
 msgid "_105mm_CN_105_57"
 msgstr "105 mm mle. 57 (D. 1504)"
 
+msgid "_105mm_D1504"
+msgstr "105 mm D. 1504"
+
 msgid "_105mm_D1504_L51"
-msgstr "105 mm D1504 L/51"
+msgstr "105 mm D. 1504 L/51"
 
 msgid "_105mm_FrtPrf1943"
 msgstr "Frt.Prf. mle. 1943"
@@ -1715,8 +1783,11 @@ msgstr "OCC-105-57"
 msgid "_105mm_HE_OE_F1"
 msgstr "OE-105-57"
 
+msgid "_105mm_OCC_105_D1504"
+msgstr "OCC-105 D. 1504"
+
 msgid "_105mm_OCC_105_D1504_L51"
-msgstr "OFL-105 D1504 L/51"
+msgstr "OCC-105 D. 1504 L/51"
 
 msgid "_105mm_OCC_105_F1"
 msgstr "OCC-105-F1"
@@ -1727,8 +1798,11 @@ msgstr "OCO mle. 1936"
 msgid "_105mm_OE_105_Mle_60"
 msgstr "OE-105-Mle. 60"
 
+msgid "_105mm_OE_105_Mle_60_D1504"
+msgstr "OE-105-Mle. 60 D. 1504"
+
 msgid "_105mm_OE_105_Mle_60_D1504_L51"
-msgstr "OE-105-Mle. 60 D1504 L/51"
+msgstr "OE-105-Mle. 60 D. 1504 L/51"
 
 msgid "_105mm_OE_mle_1920"
 msgstr "OE mle. 1920"
@@ -1739,8 +1813,11 @@ msgstr "OE mle. 1924"
 msgid "_105mm_OE_mle_1930"
 msgstr "OE mle. 1930"
 
+msgid "_105mm_OFL_105_D1504"
+msgstr "OFL-105 D. 1504"
+
 msgid "_105mm_OFL_105_D1504_L51"
-msgstr "OFL-105 D1504 L/51"
+msgstr "OFL-105 D. 1504 L/51"
 
 msgid "_105mm_OFL_105_F1"
 msgstr "OFL-105-F1"
@@ -1952,6 +2029,9 @@ msgstr "APCR"
 msgid "_6F11SRY"
 msgstr "Baudouin 6F 11 SRY"
 
+msgid "_6F11SRYT"
+msgstr "Baudouin 6F 11 SRY T"
+
 msgid "_6pdr_APCR_MK_1T"
 msgstr "APCR Mk. 1T"
 
@@ -1967,8 +2047,14 @@ msgstr "Frt.Prf. mle. 1940"
 msgid "_75mm_FrtPrf1944"
 msgstr "Frt.Prf. mle. 1944"
 
+msgid "_75mm_FrtPrf1944A"
+msgstr "Frt.Prf. mle. 1944A"
+
 msgid "_75mm_Long_44"
 msgstr "75 mm SA44"
+
+msgid "_75mm_Long_44L"
+msgstr "75 mm SA44L"
 
 msgid "_75mm_Long_44_AC"
 msgstr "75 mm AC SA44"
@@ -1982,6 +2068,9 @@ msgstr "OE mle. 1915"
 msgid "_75mm_OE_mle_1924"
 msgstr "OE mle. 1924"
 
+msgid "_75mm_OE_mle_1924A"
+msgstr "OE mle. 1924A"
+
 msgid "_75mm_Odr_mle.1910"
 msgstr "ODR mle. 1910"
 
@@ -1994,6 +2083,9 @@ msgstr "Prf. mle. 1926"
 msgid "_75mm_Prf1930"
 msgstr "Prf. mle. 1930"
 
+msgid "_75mm_Prf1930A"
+msgstr "Prf. mle. 1930A"
+
 msgid "_75mm_Pzgr.40"
 msgstr "Pzgr. 40"
 
@@ -2003,11 +2095,17 @@ msgstr "Pzgr. 39"
 msgid "_75mm_SA32"
 msgstr "75 mm SA32"
 
+msgid "_75mm_SA32L"
+msgstr "75 mm SA32L"
+
 msgid "_75mm_SA49_L48"
 msgstr "75 mm SA49"
 
 msgid "_75mm_SA50"
 msgstr "75 mm SA50"
+
+msgid "_75mm_SA50M"
+msgstr "75 mm CN 75-50"
 
 msgid "_75mm_Sprg.18"
 msgstr "Sprgr. 18"
@@ -2051,6 +2149,9 @@ msgstr "90 mm D. 915"
 msgid "_90mm_F3"
 msgstr "90 mm F3"
 
+msgid "_90mm_F3M"
+msgstr "90 mm F3M"
+
 msgid "_90mm_FrtPrf1944"
 msgstr "Frt.Prf. mle. 1944"
 
@@ -2062,6 +2163,9 @@ msgstr "HE américain"
 
 msgid "_90mm_OE_mle_1924"
 msgstr "OE mle. 1924"
+
+msgid "_90mm_OFL"
+msgstr "OFL"
 
 msgid "_90mm_Prf1941"
 msgstr "Prf. mle. 1941"

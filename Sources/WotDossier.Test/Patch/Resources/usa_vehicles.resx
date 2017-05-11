@@ -190,13 +190,22 @@
     <value>T71 CMCD</value>
   </data>
   <data name="A115_Chrysler_K" xml:space="preserve">
-    <value>Chrysler K</value>
+    <value>Chrysler K GF</value>
   </data>
   <data name="A115_Chrysler_K_descr" xml:space="preserve">
     <value>Chrysler K представляет собой подготовленный к лету 1946 года проект Chrysler Corporation, предусматривающий ряд нестандартных для американской школы танкостроения конструкторских решений. Предполагалось, что трансмиссия и двигатель будут располагаться в передней части корпуса, а боевое отделение в кормовой части. Все члены экипажа должны были располагаться в башне. Считается, что это первый проект в американском танкостроении, который предусматривал расположение мехвода в башне. Из-за ограничения финансирования проект не получил поддержки со стороны армии.</value>
   </data>
   <data name="A115_Chrysler_K_short" xml:space="preserve">
-    <value>Chrysler K</value>
+    <value>Chrysler GF</value>
+  </data>
+  <data name="A116_XM551" xml:space="preserve">
+    <value>XM551 Sheridan</value>
+  </data>
+  <data name="A116_XM551_descr" xml:space="preserve">
+    <value>Работы над машиной начались в январе 1959 года в рамках проекта AR/AAV (бронированная разведывательная/авиадесантная машина). В июне 1962 года компания Cadillac Motor Car Division передала первый прототип машины заказчику. Всего, в рамках первого поколения, было изготовлено три прототипа. В дальнейшем работы были продолжены, и в 1966 году танк был принят на вооружение под обозначением M551 Sheridan.</value>
+  </data>
+  <data name="A116_XM551_short" xml:space="preserve">
+    <value>Sheridan</value>
   </data>
   <data name="A117_T26E5" xml:space="preserve">
     <value>T26E5</value>
@@ -215,6 +224,15 @@
   </data>
   <data name="A117_T26E5_short" xml:space="preserve">
     <value>T26E5</value>
+  </data>
+  <data name="A118_M4_Thunderbolt" xml:space="preserve">
+    <value>M4A3E8 Thunderbolt VII</value>
+  </data>
+  <data name="A118_M4_Thunderbolt_descr" xml:space="preserve">
+    <value>Танк Thunderbolt VII командира 37-го танкового батальона подполковника Крейтона Абрамса (в последующем генерала, начальника штаба сухопутных войск). Представлял собой танк M4A3E8 Sherman с установленным в полевых условиях дополнительным бронированием.</value>
+  </data>
+  <data name="A118_M4_Thunderbolt_short" xml:space="preserve">
+    <value>Thunderbolt</value>
   </data>
   <data name="A27_T82" xml:space="preserve">
     <value>T82 HMC</value>
@@ -263,7 +281,7 @@
     <value>AN/GRC-3</value>
   </data>
   <data name="AN-VRC-12" xml:space="preserve">
-    <value>AN/VRC-12</value>
+    <value>AN/GRC-6</value>
   </data>
   <data name="AN-VRC-7" xml:space="preserve">
     <value>AN/VRC-7</value>
@@ -285,6 +303,9 @@
   </data>
   <data name="AN_VRC-3" xml:space="preserve">
     <value>AN/VRC-3</value>
+  </data>
+  <data name="AN_VRC_12A" xml:space="preserve">
+    <value>AN/VRC-12</value>
   </data>
   <data name="AOI-1490" xml:space="preserve">
     <value>Continental AOI-1490</value>
@@ -352,13 +373,19 @@ AOI-1490</value>
     <value>T71 CMCD</value>
   </data>
   <data name="Chassis_A115_Chrysler_K" xml:space="preserve">
-    <value>Chrysler K</value>
+    <value>Chrysler K GF</value>
+  </data>
+  <data name="Chassis_A116_XM551" xml:space="preserve">
+    <value>AR/AAV XM551 Sheridan</value>
   </data>
   <data name="Chassis_A117_T26E5" xml:space="preserve">
     <value>T26E5</value>
   </data>
   <data name="Chassis_A117_T26E5_Patriot" xml:space="preserve">
     <value>T26E5 Patriot</value>
+  </data>
+  <data name="Chassis_A118_M4_Thunderbolt" xml:space="preserve">
+    <value>M4A3E8 Thunderbolt VII</value>
   </data>
   <data name="Chassis_A27_T82" xml:space="preserve">
     <value>T82 Pilot No. 1</value>
@@ -630,12 +657,33 @@ AOS-895-1</value>
   <data name="Continental_AOS-895-3" xml:space="preserve">
     <value>Continental AOS-895-3</value>
   </data>
+  <data name="Continental_AOS-895-3A" xml:space="preserve">
+    <value>Continental AOS-895-3A</value>
+  </data>
+  <data name="Continental_AOS-895-3A_short" xml:space="preserve">
+    <value>Continental
+AOS-895-3A</value>
+  </data>
   <data name="Continental_AOS-895-3_short" xml:space="preserve">
     <value>Continental
 AOS-895-3</value>
   </data>
   <data name="Continental_AOSI-895-5" xml:space="preserve">
     <value>Continental AOSI-895-5</value>
+  </data>
+  <data name="Continental_AOSI-895-5A" xml:space="preserve">
+    <value>Continental AOSI-895-5A</value>
+  </data>
+  <data name="Continental_AOSI-895-5A_short" xml:space="preserve">
+    <value>Continental
+AOSI-895-5A</value>
+  </data>
+  <data name="Continental_AOSI-895-5B" xml:space="preserve">
+    <value>Continental AOSI-895-5B</value>
+  </data>
+  <data name="Continental_AOSI-895-5B_short" xml:space="preserve">
+    <value>Continental
+AOSI-895-5B</value>
   </data>
   <data name="Continental_AOSI-895-5_short" xml:space="preserve">
     <value>Continental
@@ -832,6 +880,9 @@ T-10204</value>
   <data name="Ford_GAA_2" xml:space="preserve">
     <value>Ford GAA</value>
   </data>
+  <data name="Ford_GAA_A" xml:space="preserve">
+    <value>Ford GAA A</value>
+  </data>
   <data name="Ford_GAA_R" xml:space="preserve">
     <value>Ford GAA early</value>
   </data>
@@ -859,6 +910,9 @@ T-10204</value>
   <data name="Ford_GAN" xml:space="preserve">
     <value>Ford GAN</value>
   </data>
+  <data name="Ford_GAN_A" xml:space="preserve">
+    <value>Ford GAN A</value>
+  </data>
   <data name="Ford_GAN_T" xml:space="preserve">
     <value>Ford GAN No. 17</value>
   </data>
@@ -874,6 +928,13 @@ V1710-E32</value>
   </data>
   <data name="General_Motors_6046" xml:space="preserve">
     <value>General Motors 6046</value>
+  </data>
+  <data name="General_Motors_6V53T" xml:space="preserve">
+    <value>General Motors 6V53T</value>
+  </data>
+  <data name="General_Motors_6V53T_short" xml:space="preserve">
+    <value>General Motors
+6V53T</value>
   </data>
   <data name="Guiberson_T-1020-4" xml:space="preserve">
     <value>Guiberson T-1020-4</value>
@@ -1036,7 +1097,7 @@ T-1020-4</value>
     <value>M40/M43</value>
   </data>
   <data name="M40M43_descr" xml:space="preserve">
-    <value>САУ Long Tom и созданная на её базе М43 стали самыми мощными САУ союзников. М40 использовалась в боях за Кёльн. Обе машины активно применялись в Корейской войне.</value>
+    <value>Разработка началась весной 1944 года вследствие нехватки орудий М1918 для САУ М12. Установка была создана на базе шасси M4 Sherman с подвеской типа HVSS. Конструкция предполагала взаимозаменяемость 155-мм пушки M1 и 203-мм гаубицы M1 (САУ с этим орудием получила обозначение М43). Впервые установки были применены в ходе операции «Зебра». Всего было выпущено 418 САУ M40 и 48 машин M43 (ещё 24 были получены в результате перевооружения М40).</value>
   </data>
   <data name="M41" xml:space="preserve">
     <value>M41 HMC</value>
@@ -1192,10 +1253,10 @@ T-1020-4</value>
     <value>Maybach HL 230 P45</value>
   </data>
   <data name="NVSS_T66" xml:space="preserve">
-    <value>NVSS T66</value>
+    <value>HVSS T66</value>
   </data>
   <data name="NVSS_T80" xml:space="preserve">
-    <value>NVSS T80</value>
+    <value>HVSS T80</value>
   </data>
   <data name="Ordnance_QF_2pdr_AT_Gun_Mk.X" xml:space="preserve">
     <value>QF 2-pdr Mk. IX</value>
@@ -1228,7 +1289,7 @@ T-1020-4</value>
     <value>Ram II</value>
   </data>
   <data name="Ram-II_descr" xml:space="preserve">
-    <value>Разработан на базе танка М3. Выпускался в Канаде с 1942 до лета 1943 года. Из 1849 машин ни одна не использовалась в боевых действиях. Использовался только в учебных целях.</value>
+    <value>Основной производственный вариант канадского среднего крейсерского танка «Рэм» (Tank Cruiser Ram) периода Второй мировой войны, вооружённый 57-мм пушкой QF 6 pounder. Разработан в 1941 году на основе американского среднего танка M3 «Ли». За время серийного производства до июля 1943 года было произведено 1899 машин. Танк никогда не применялся в бою, но активно использовался в канадских и британских войсках для учебно-тренировочных целей, а также послужил основой для САУ и различных специализированных машин.</value>
   </data>
   <data name="Ram_II_D1" xml:space="preserve">
     <value>Ram II D1</value>
@@ -1327,7 +1388,7 @@ T-1020-4</value>
     <value>T14</value>
   </data>
   <data name="T14_descr" xml:space="preserve">
-    <value>Разрабатывался с мая 1942 по май 1943 г. По итогам испытаний было принято решение о серийном выпуске, но впоследствии оно было отменено, и танк так и остался экспериментальной машиной. Было выпущено два прототипа.</value>
+    <value>Разрабатывался с мая 1942 по май 1943 года. По итогам испытаний было принято решение о серийном выпуске, но впоследствии оно было отменено, и танк остался экспериментальной машиной. Было выпущено два прототипа.</value>
   </data>
   <data name="T16E2" xml:space="preserve">
     <value>T16E2</value>
@@ -1579,7 +1640,7 @@ T-1020-4</value>
     <value>T49</value>
   </data>
   <data name="T49_descr" xml:space="preserve">
-    <value>Вариант лёгкого танка М41 с увеличенной башней, вооружённый 90-мм пушкой. Поступил на испытания 5 мая 1954 года. Испытания закончились успешно, однако серийное производство танка развёрнуто не было из-за его невостребованности.</value>
+    <value>Вариант лёгкого танка М41 с увеличенной башней, вооружённый 90-мм пушкой. Поступил на испытания 5 мая 1954 года. Испытания закончились успешно, однако серийное производство танка развёрнуто не было из-за его невостребованности.</value>
   </data>
   <data name="T51D1" xml:space="preserve">
     <value>T51D1</value>
@@ -1675,7 +1736,7 @@ T-1020-4</value>
     <value>T92 HMC</value>
   </data>
   <data name="T92_descr" xml:space="preserve">
-    <value>Работы над Т92 начались в начале 1945 года. При проектировании использовались узлы и агрегаты танка М26. В марте прошли испытания машины в Абердине. Серийно не выпускалась.</value>
+    <value>Американская САУ, разработанная в 1945 году на базе танка Т26Е3 для разрушения бункеров и глубоких укрытий в боях с японскими войсками на островах Тихого океана. Было построено пять машин, включая опытный образец. Впоследствии работы над САУ были прекращены в связи с окончанием войны.</value>
   </data>
   <data name="T95" xml:space="preserve">
     <value>T95</value>
@@ -1732,13 +1793,19 @@ T-1020-4</value>
     <value>T25 Pilot Number 1</value>
   </data>
   <data name="Turret_1_A115_Chrysler_K" xml:space="preserve">
-    <value>Chrysler K</value>
+    <value>Chrysler K GF</value>
+  </data>
+  <data name="Turret_1_A116_XM551" xml:space="preserve">
+    <value>AR/AAV XM551 Sheridan</value>
   </data>
   <data name="Turret_1_A117_T26E5" xml:space="preserve">
     <value>T26E5</value>
   </data>
   <data name="Turret_1_A117_T26E5_Patriot" xml:space="preserve">
     <value>T26E5 Patriot</value>
+  </data>
+  <data name="Turret_1_A118_M4_Thunderbolt" xml:space="preserve">
+    <value>M4A3E8 Thunderbolt VII</value>
   </data>
   <data name="Turret_1_A27_T82" xml:space="preserve">
     <value>T82 HMC</value>
@@ -1945,6 +2012,13 @@ Series 42</value>
   <data name="Twin_Cadillac_series_44T4" xml:space="preserve">
     <value>Twin Cadillac, Series 44T4</value>
   </data>
+  <data name="Twin_Cadillac_series_44T4L" xml:space="preserve">
+    <value>Twin Cadillac, Series 44T4L</value>
+  </data>
+  <data name="Twin_Cadillac_series_44T4L_short" xml:space="preserve">
+    <value>Twin Cadillac,
+Series 44T4L</value>
+  </data>
   <data name="Twin_Cadillac_series_44T4_short" xml:space="preserve">
     <value>Twin Cadillac,
 Series 44T4</value>
@@ -1997,6 +2071,12 @@ Series 44T4</value>
   <data name="Wright_Continental_R-975C1" xml:space="preserve">
     <value>Wright Continental R-975C1</value>
   </data>
+  <data name="Wright_Continental_R-975C1L" xml:space="preserve">
+    <value>Wright Continental R-975C1L</value>
+  </data>
+  <data name="Wright_Continental_R-975C1L_short" xml:space="preserve">
+    <value>Wright C. R-975C1L</value>
+  </data>
   <data name="Wright_Continental_R-975C1_short" xml:space="preserve">
     <value>Wright C. R-975C1</value>
   </data>
@@ -2015,11 +2095,23 @@ Series 44T4</value>
   <data name="Wright_Continental_R-975C4" xml:space="preserve">
     <value>Wright Continental R-975C4</value>
   </data>
+  <data name="Wright_Continental_R-975C4L" xml:space="preserve">
+    <value>Wright Continental R-975C4L</value>
+  </data>
+  <data name="Wright_Continental_R-975C4L_short" xml:space="preserve">
+    <value>Wright C. R-975C4L</value>
+  </data>
   <data name="Wright_Continental_R-975C4_short" xml:space="preserve">
     <value>Wright C. R-975C4</value>
   </data>
   <data name="Wright_Continental_R-975EC2" xml:space="preserve">
     <value>Wright Continental R-975EC2</value>
+  </data>
+  <data name="Wright_Continental_R-975EC2L" xml:space="preserve">
+    <value>Wright Continental R-975EC2L</value>
+  </data>
+  <data name="Wright_Continental_R-975EC2L_short" xml:space="preserve">
+    <value>Wright C. R-975EC2L</value>
   </data>
   <data name="Wright_Continental_R-975EC2_short" xml:space="preserve">
     <value>Wright C. R-975EC2</value>
@@ -2091,6 +2183,15 @@ M781C9GC1</value>
   <data name="_105mm_AT_SPH_M4_L23" xml:space="preserve">
     <value>105 mm AT M4</value>
   </data>
+  <data name="_105mm_Exp_APDS" xml:space="preserve">
+    <value>Exp. APDS</value>
+  </data>
+  <data name="_105mm_Exp_HE" xml:space="preserve">
+    <value>Exp. HE</value>
+  </data>
+  <data name="_105mm_Exp_HEAT" xml:space="preserve">
+    <value>Exp. HEAT</value>
+  </data>
   <data name="_105mm_Gun_M68" xml:space="preserve">
     <value>105 mm Gun M68</value>
   </data>
@@ -2135,6 +2236,9 @@ M781C9GC1</value>
   </data>
   <data name="_105mm_Howitzer_M4" xml:space="preserve">
     <value>105 mm Howitzer M4</value>
+  </data>
+  <data name="_105mm_Lightweight_Gun" xml:space="preserve">
+    <value>105 mm Lightweight Gun</value>
   </data>
   <data name="_105mm_SPH_M4_L23" xml:space="preserve">
     <value>105 mm M4</value>
@@ -2228,6 +2332,9 @@ M781C9GC1</value>
   </data>
   <data name="_155mm_HE_M101" xml:space="preserve">
     <value>HE M101</value>
+  </data>
+  <data name="_155mm_HE_M101A1" xml:space="preserve">
+    <value>HE M101A1</value>
   </data>
   <data name="_155mm_HE_M101E1" xml:space="preserve">
     <value>HE M101E1</value>
@@ -2419,8 +2526,14 @@ automatic cannon</value>
   <data name="_75mm_Gun_M2_L28" xml:space="preserve">
     <value>75 mm Gun M2</value>
   </data>
+  <data name="_75mm_Gun_M2_L28L" xml:space="preserve">
+    <value>75 mm Gun M2L</value>
+  </data>
   <data name="_75mm_Gun_M3_L37" xml:space="preserve">
     <value>75 mm Gun M3</value>
+  </data>
+  <data name="_75mm_Gun_M3_L37L" xml:space="preserve">
+    <value>75 mm Gun M3L</value>
   </data>
   <data name="_75mm_Gun_M6" xml:space="preserve">
     <value>75 mm Gun M6</value>
@@ -2467,6 +2580,9 @@ automatic cannon</value>
   <data name="_76mm_APDS_M331A2" xml:space="preserve">
     <value>HVAP-DS-T M331A2</value>
   </data>
+  <data name="_76mm_APDS_M331A3" xml:space="preserve">
+    <value>HVAP-DS-T M331A3</value>
+  </data>
   <data name="_76mm_AP_M339" xml:space="preserve">
     <value>AP M339</value>
   </data>
@@ -2491,6 +2607,9 @@ automatic cannon</value>
   <data name="_76mm_Gun_M1A1" xml:space="preserve">
     <value>76 mm Gun M1A1</value>
   </data>
+  <data name="_76mm_Gun_M1A1L" xml:space="preserve">
+    <value>76 mm Gun M1A1L</value>
+  </data>
   <data name="_76mm_Gun_M1A1T" xml:space="preserve">
     <value>76 mm Gun M1A1</value>
   </data>
@@ -2499,6 +2618,9 @@ automatic cannon</value>
   </data>
   <data name="_76mm_Gun_M1A2A" xml:space="preserve">
     <value>76 mm Gun M1A2</value>
+  </data>
+  <data name="_76mm_Gun_M1A2L" xml:space="preserve">
+    <value>76 mm Gun M1A2L</value>
   </data>
   <data name="_76mm_Gun_M32" xml:space="preserve">
     <value>76 mm Gun M32</value>
@@ -2511,6 +2633,9 @@ automatic cannon</value>
   </data>
   <data name="_76mm_Gun_T185" xml:space="preserve">
     <value>76 mm Gun T185</value>
+  </data>
+  <data name="_76mm_Gun_T185E" xml:space="preserve">
+    <value>76 mm Gun T185E</value>
   </data>
   <data name="_76mm_Gun_T185E1" xml:space="preserve">
     <value>76 mm Gun T185E1</value>
@@ -2533,8 +2658,14 @@ automatic cannon</value>
   <data name="_76mm_HEAT_M496" xml:space="preserve">
     <value>HEAT-T M496</value>
   </data>
+  <data name="_76mm_HEAT_M496A1" xml:space="preserve">
+    <value>HEAT-T M496A1</value>
+  </data>
   <data name="_76mm_HE_M352" xml:space="preserve">
     <value>HE M352</value>
+  </data>
+  <data name="_76mm_HE_M352A1" xml:space="preserve">
+    <value>HE M352A1</value>
   </data>
   <data name="_76mm_HE_M42A1" xml:space="preserve">
     <value>HE M42A1</value>
@@ -2562,6 +2693,9 @@ automatic cannon</value>
   </data>
   <data name="_76mm_M79" xml:space="preserve">
     <value>HVAP M93(M7)</value>
+  </data>
+  <data name="_90mm_APCR_Experimental" xml:space="preserve">
+    <value>APCR Experimental</value>
   </data>
   <data name="_90mm_AP_M318" xml:space="preserve">
     <value>AP M318</value>

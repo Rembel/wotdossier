@@ -490,6 +490,52 @@
       "devices": "\t100\t"
     }
   },
+  "_75mm_Prf1930A": {
+    "id": "\t114\t",
+    "userString": "#france_vehicles:_75mm_Prf1930A",
+    "icon": "ap",
+    "price": "\t210\t",
+    "kind": "ARMOR_PIERCING",
+    "caliber": "\t75\t",
+    "isTracer": "\ttrue\t",
+    "effects": "mediumArmorPiercing",
+    "damage": {
+      "armor": "\t170\t",
+      "devices": "\t100\t"
+    }
+  },
+  "_75mm_FrtPrf1944A": {
+    "id": "\t115\t",
+    "userString": "#france_vehicles:_75mm_FrtPrf1944A",
+    "icon": "ap_cr",
+    "price": {
+      "#text": "\t8\t",
+      "gold": ""
+    },
+    "kind": "ARMOR_PIERCING_CR",
+    "caliber": "\t75\t",
+    "isTracer": "\ttrue\t",
+    "effects": "mediumAPCR",
+    "damage": {
+      "armor": "\t170\t",
+      "devices": "\t100\t"
+    }
+  },
+  "_75mm_OE_mle_1924A": {
+    "id": "\t116\t",
+    "userString": "#france_vehicles:_75mm_OE_mle_1924A",
+    "icon": "he",
+    "price": "\t145\t",
+    "kind": "HIGH_EXPLOSIVE",
+    "caliber": "\t75\t",
+    "explosionRadius": "1.06",
+    "isTracer": "\ttrue\t",
+    "effects": "mediumHighExplosive",
+    "damage": {
+      "armor": "\t260\t",
+      "devices": "\t100\t"
+    }
+  },
   "_75mm_Sprg.18": {
     "id": "\t30\t",
     "userString": "#france_vehicles:_75mm_Sprg.18",
@@ -560,6 +606,7 @@
       "#text": "\t7\t",
       "gold": ""
     },
+    "notInShop": "\ttrue\t",
     "kind": "HOLLOW_CHARGE",
     "caliber": "\t75\t",
     "isTracer": "\ttrue\t",
@@ -671,6 +718,20 @@
     "caliber": "\t90\t",
     "isTracer": "\ttrue\t",
     "effects": "mainArmorPiercing",
+    "damage": {
+      "armor": "\t240\t",
+      "devices": "\t122\t"
+    }
+  },
+  "_90mm_OFL": {
+    "id": "\t117\t",
+    "userString": "#france_vehicles:_90mm_OFL",
+    "icon": "ap_cr",
+    "price": "\t374\t",
+    "kind": "ARMOR_PIERCING_CR",
+    "caliber": "\t90\t",
+    "isTracer": "\ttrue\t",
+    "effects": "\tmainAPCR\t",
     "damage": {
       "armor": "\t240\t",
       "devices": "\t122\t"
@@ -1083,6 +1144,53 @@
       "devices": "\t150\t"
     }
   },
+  "_105mm_OFL_105_D1504": {
+    "id": "\t111\t",
+    "userString": "#france_vehicles:_105mm_OFL_105_D1504",
+    "icon": "ap_cr",
+    "price": "\t1095\t",
+    "kind": "ARMOR_PIERCING_CR",
+    "caliber": "\t105\t",
+    "isTracer": "\ttrue\t",
+    "effects": "\tmainAPCR\t",
+    "damage": {
+      "armor": "\t360\t",
+      "devices": "\t150\t"
+    }
+  },
+  "_105mm_OCC_105_D1504": {
+    "id": "\t112\t",
+    "userString": "#france_vehicles:_105mm_OCC_105_D1504",
+    "icon": "hc",
+    "price": {
+      "#text": "\t12\t",
+      "gold": ""
+    },
+    "kind": "HOLLOW_CHARGE",
+    "caliber": "\t105\t",
+    "isTracer": "\ttrue\t",
+    "effects": "largeHollowCharge",
+    "damage": {
+      "armor": "\t360\t",
+      "devices": "\t150\t"
+    },
+    "piercingPowerLossFactorByDistance": "0.05"
+  },
+  "_105mm_OE_105_Mle_60_D1504": {
+    "id": "\t113\t",
+    "userString": "#france_vehicles:_105mm_OE_105_Mle_60_D1504",
+    "icon": "he",
+    "price": "\t505\t",
+    "kind": "HIGH_EXPLOSIVE",
+    "caliber": "\t105\t",
+    "explosionRadius": "1.91",
+    "isTracer": "\ttrue\t",
+    "effects": "mainHighExplosive",
+    "damage": {
+      "armor": "\t440\t",
+      "devices": "\t150\t"
+    }
+  },
   "_120mm_Prf1943": {
     "id": "\t47\t",
     "userString": "#france_vehicles:_120mm_Prf1943",
@@ -1182,12 +1290,16 @@
     "price": "\t505\t",
     "kind": "HIGH_EXPLOSIVE",
     "caliber": "\t155\t",
-    "explosionRadius": "3.57",
+    "explosionRadius": "\t7\t",
+    "hasStun": "\ttrue\t",
+    "stunDuration": "10.5",
+    "guaranteedStunDuration": "0.65",
+    "damageDurationCoeff": "0.35",
     "isTracer": "\ttrue\t",
     "effects": "hugeHighExplosive",
     "damage": {
-      "armor": "\t720\t",
-      "devices": "\t210\t"
+      "armor": "\t550\t",
+      "devices": "\t105\t"
     }
   },
   "_155mm_OCO_mle_1944": {
@@ -1198,6 +1310,7 @@
       "#text": "\t12\t",
       "gold": ""
     },
+    "notInShop": "\ttrue\t",
     "kind": "HOLLOW_CHARGE",
     "caliber": "\t155\t",
     "isTracer": "\ttrue\t",
@@ -1215,12 +1328,16 @@
     "price": "\t1120\t",
     "kind": "HIGH_EXPLOSIVE",
     "caliber": "\t155\t",
-    "explosionRadius": "3.97",
+    "explosionRadius": "\t8\t",
+    "hasStun": "\ttrue\t",
+    "stunDuration": "\t27\t",
+    "guaranteedStunDuration": "0.50",
+    "damageDurationCoeff": "0.50",
     "isTracer": "\ttrue\t",
     "effects": "hugeHighExplosive",
     "damage": {
-      "armor": "\t1250\t",
-      "devices": "\t210\t"
+      "armor": "\t750\t",
+      "devices": "\t105\t"
     }
   },
   "_155mm_OE_M101M6": {
@@ -1233,12 +1350,16 @@
     },
     "kind": "HIGH_EXPLOSIVE",
     "caliber": "\t155\t",
-    "explosionRadius": "5.34",
+    "explosionRadius": "\t9\t",
+    "hasStun": "\ttrue\t",
+    "stunDuration": "\t27\t",
+    "guaranteedStunDuration": "0.50",
+    "damageDurationCoeff": "0.50",
     "isTracer": "\ttrue\t",
     "effects": "hugeHighExplosive",
     "damage": {
-      "armor": "\t1250\t",
-      "devices": "\t210\t"
+      "armor": "\t750\t",
+      "devices": "\t105\t"
     }
   },
   "_155_OE_mle_1956": {
@@ -1248,12 +1369,16 @@
     "price": "\t1000\t",
     "kind": "HIGH_EXPLOSIVE",
     "caliber": "\t155\t",
-    "explosionRadius": "3.78",
+    "explosionRadius": "\t8\t",
+    "hasStun": "\ttrue\t",
+    "stunDuration": "\t22\t",
+    "guaranteedStunDuration": "0.55",
+    "damageDurationCoeff": "0.45",
     "isTracer": "\ttrue\t",
     "effects": "hugeHighExplosive",
     "damage": {
-      "armor": "\t950\t",
-      "devices": "\t210\t"
+      "armor": "\t700\t",
+      "devices": "\t105\t"
     }
   },
   "_155mm_AP-T_T368": {
@@ -1313,12 +1438,16 @@
     },
     "kind": "HIGH_EXPLOSIVE",
     "caliber": "\t155\t",
-    "explosionRadius": "5.16",
+    "explosionRadius": "\t9\t",
+    "hasStun": "\ttrue\t",
+    "stunDuration": "\t22\t",
+    "guaranteedStunDuration": "0.55",
+    "damageDurationCoeff": "0.45",
     "isTracer": "\ttrue\t",
     "effects": "hugeHighExplosive",
     "damage": {
-      "armor": "\t950\t",
-      "devices": "\t210\t"
+      "armor": "\t700\t",
+      "devices": "\t105\t"
     }
   }
 }
